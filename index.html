@@ -37,7 +37,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 15px 40px;
             background-color: rgba(0,0,0,0.95);
             position: fixed;
             width: 100%;
@@ -49,35 +49,38 @@
         .logo { font-size: 1.8rem; font-weight: 700; color: var(--text-white); }
         .logo span { color: var(--lego-red); }
 
+        .nav-links { display: flex; align-items: center; }
         .nav-links a {
-            margin-left: 30px;
-            font-size: 0.9rem;
+            margin-right: 30px;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--text-white);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         .nav-links a:hover { color: var(--lego-yellow); }
 
         .btn-main {
             background-color: var(--lego-red);
             color: white;
-            padding: 12px 30px;
+            padding: 10px 25px;
             font-weight: 700;
-            border-radius: 2px;
+            font-size: 0.9rem;
             border: none;
             cursor: pointer;
-            letter-spacing: 1px;
+            font-family: 'Oswald', sans-serif;
+            transition: 0.3s;
         }
         .btn-main:hover { background-color: #b00008; }
 
-        /* --- HERO SECTION (With True Parallax) --- */
+        /* --- HERO SECTION --- */
         .hero {
             height: 100vh;
             position: relative;
             overflow: hidden;
             display: flex;
-            align-items: center;
+            align-items: center; 
             padding-left: 10%;
-            margin-top: 60px;
         }
 
         .hero-bg {
@@ -87,44 +90,50 @@
             background-size: cover;
             background-position: center;
             z-index: 0;
-            will-change: transform;
         }
 
         .hero::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.45);
             z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 650px;
-            border-left: 8px solid var(--lego-yellow);
-            padding-left: 40px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            max-width: 1000px;
+            border-left: 10px solid var(--lego-yellow);
+            padding-left: 45px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.9);
+            margin-top: 80px; 
         }
 
-        .hero h1 { font-size: 5rem; line-height: 1; margin-bottom: 25px; }
+        .hero h1 { 
+            font-size: 7.0rem; 
+            line-height: 0.85; 
+            margin-bottom: 25px; 
+            color: var(--text-white);
+        }
+
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             color: #e0e0e0;
             margin-bottom: 35px;
             font-weight: 300;
-            max-width: 550px;
+            max-width: 650px;
+            line-height: 1.2;
         }
 
-        /* --- SPLIT SECTIONS --- */
+        /* --- CONTENT SECTIONS --- */
         .split-section {
             display: flex;
             flex-wrap: wrap;
             min-height: 600px;
-            border-bottom: 1px solid #222;
-            position: relative;
-            z-index: 10;
             background-color: var(--black);
+            z-index: 10;
+            position: relative;
         }
 
         .split-section.reverse { flex-direction: row-reverse; }
@@ -139,74 +148,33 @@
         .split-content {
             flex: 1;
             min-width: 400px;
-            padding: 80px 60px;
+            padding: 60px 80px;
             background-color: var(--dark-gray);
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .split-content h2 { font-size: 2.8rem; margin-bottom: 10px; color: var(--lego-yellow); }
-        .split-content h3 { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 30px; letter-spacing: 3px; }
-        .split-content p { margin-bottom: 20px; line-height: 1.8; color: #dcdcdc; font-size: 1.05rem; }
+        .split-content h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--lego-yellow); }
+        .split-content p { margin-bottom: 15px; line-height: 1.6; color: #dcdcdc; font-size: 1.15rem; }
 
-        .highlight-list { list-style: none; margin-top: 20px; }
-        .highlight-list li { margin-bottom: 15px; font-weight: 700; display: flex; align-items: center; }
-        .highlight-list li span { color: var(--lego-red); margin-right: 10px; }
+        .highlight-list { list-style: none; margin-top: 15px; }
+        .highlight-list li { margin-bottom: 10px; display: flex; align-items: center; color: #fff; }
+        .highlight-list li span { color: var(--lego-red); margin-right: 15px; }
 
-        /* --- GRID SECTION --- */
-        .grid-section {
-            padding: 100px 40px;
-            text-align: center;
-            background-color: var(--black);
-            position: relative;
-            z-index: 10;
-        }
-
-        .grid-section h2 { font-size: 3rem; margin-bottom: 60px; color: var(--text-white); }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .grid-item {
-            background-color: var(--dark-gray);
-            padding: 40px;
-            border: 1px solid #333;
-            transition: transform 0.3s, border-color 0.3s;
-            text-align: left;
-        }
-
-        .grid-item:hover { transform: translateY(-10px); border-color: var(--lego-red); }
-        .grid-icon { font-size: 2.5rem; margin-bottom: 20px; color: var(--lego-yellow); }
-        .grid-item h3 { color: var(--text-white); margin-bottom: 15px; font-size: 1.5rem; }
-        .grid-item p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.6; }
-
-        /* --- FOOTER --- */
         footer {
             background-color: #050505;
-            padding: 80px 20px;
+            padding: 40px 20px;
             text-align: center;
             border-top: 2px solid var(--lego-red);
-            position: relative;
-            z-index: 10;
         }
 
-        .footer-logo { font-family: 'Oswald', sans-serif; font-size: 2rem; color: white; margin-bottom: 10px; }
-        .disclaimer { font-size: 0.75rem; color: #444; max-width: 700px; margin: 30px auto 0; line-height: 1.6; }
+        .disclaimer { font-size: 0.75rem; color: #444; max-width: 800px; margin: 20px auto 0; line-height: 1.5; }
 
+        @media (max-width: 1024px) { .hero h1 { font-size: 5rem; } }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .navbar { padding: 15px 20px; }
-            .nav-links { display: none; } 
-            .hero { padding-left: 20px; text-align: left; }
-            .hero-content { border-left: 4px solid var(--lego-yellow); padding-left: 20px; }
-            .split-content { padding: 50px 25px; }
-            .split-image { min-height: 300px; }
+            .hero h1 { font-size: 3.2rem; }
+            .nav-links a { display: none; }
         }
     </style>
 </head>
@@ -215,30 +183,28 @@
     <nav class="navbar">
         <div class="logo">BLK<span>HDZ</span></div>
         <div class="nav-links">
-            <a href="#about">THE CURATOR</a>
+            <a href="#about">THE HOBBYIST</a>
             <a href="#collection">THE VAULT</a>
             <a href="https://www.ebay.com/str/blkhdz" class="btn-main">SHOP EBAY</a>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-bg"></div>
-        
+        <div class="hero-bg" id="parallax"></div>
         <div class="hero-content">
-            <h1>LEGACY ISN'T BOUGHT.<br>IT'S CURATED.</h1>
-            <p>Premier LEGO® Speed Champions, Technic, and JDM Diecast. We hunt the rare sets so you don't have to.</p>
-            <a href="https://www.ebay.com/str/blkhdz" class="btn-main">ENTER THE STORE</a>
+            <h1>LEGACY<br>ISN'T BOUGHT.<br>IT'S CURATED.</h1>
+            <p>Premier LEGO® Speed Champions, Technic, and JDM Diecast.</p>
+            <a href="https://www.ebay.com/str/blkhdz" class="btn-main" style="width: fit-content;">ENTER THE STORE</a>
         </div>
     </header>
 
     <section class="split-section" id="about">
         <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
         <div class="split-content">
-            <h2>MEET THE CURATOR</h2>
-            <h3>PATRICK REED | FOUNDER</h3>
-            <p><strong>I am a collector first.</strong></p>
-            <p>BLKHDZ began in a home office in Tampa, fueled by a passion for automotive engineering and LEGO precision. What started as a personal hunt for the perfect JDM spec grew into a curated marketplace for serious enthusiasts.</p>
-            <p>With 20 years in IT and a background in the Air Force, I approach this business with a standard of precision. This isn't a toy store. It's a vault for investment-grade collectibles. We don't do "crushed boxes" or "mystery bundles." You get exactly what you see.</p>
+            <h2>HOBBYIST TURNED CURATOR</h2>
+            <p><strong>At BLKHDZ, we are collectors first.</strong></p>
+            <p>Our diversity is what makes our collection unique. We don't just stick to one lane; we specialize in a broad spectrum of building block items and the cars that define generations. From the precision engineering of <strong>Technic sets</strong> and the mechanical beauty of <strong>Rexy (42224)</strong>, to the vibrant storytelling of <strong>Ninjago</strong> and <strong>Monkie Kid</strong>.</p>
+            <p>We have a deep-rooted love for the high-speed world of <strong>F1</strong>, yet we still appreciate the aesthetic calm of <strong>Botanicals</strong>. Whether it's a 1000+ piece masterpiece or a rare collector's find, we look for products that offer true detail and engineering excellence.</p>
         </div>
     </section>
 
@@ -246,55 +212,30 @@
         <div class="split-image" style="background-image: url('custom-car.jpg');"></div>
         <div class="split-content">
             <h2>THE VAULT</h2>
-            <h3>REPRESENTATION & HORSEPOWER</h3>
-            <p><strong>We collect the full story.</strong></p>
-            <p>From the sands of Tatooine to the streets of Brooklyn, our inventory reflects the diversity of the culture. We specialize in the hard-to-find figures and the cars that define generations.</p>
+            <p>From the sands of Tatooine to the <strong>bricks of Daytona</strong>, our diversity is what makes our collection unique.</p>
+            <p>Specializing in a broad spectrum of building block collectors items and the cars that define generations.</p>
             <ul class="highlight-list">
-                <li><span>▶</span> Custom Liberty Walk & JDM Specs</li>
-                <li><span>▶</span> Iconic Minifigures (Mace Windu, Finn, War Machine)</li>
-                <li><span>▶</span> Retired Star Wars UCS Sets</li>
+                <li><span>▶</span> Present day and retired Star Wars sets</li>
+                <li><span>▶</span> Speed Champions Sets</li>
+                <li><span>▶</span> Iconic Minifigure Sets</li>
+                <li><span>▶</span> Rare Retired Sets</li>
             </ul>
-            <br>
-            <a href="https://www.ebay.com/str/blkhdz" class="btn-main">BROWSE INVENTORY</a>
-        </div>
-    </section>
-
-    <section class="grid-section">
-        <h2>THE STANDARD</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <div class="grid-icon">🛡️</div>
-                <h3>COLLECTOR GRADE</h3>
-                <p>We understand the difference between "New" and "Collector New." Every box is inspected for creases and seals before listing.</p>
-            </div>
-            <div class="grid-item">
-                <div class="grid-icon">🏎️</div>
-                <h3>JDM & MUSCLE SPECIALIST</h3>
-                <p>Specializing in the sets retailers ignore. Hard-to-find Nissan, Honda, and Chevy diecast/bricks are our priority.</p>
-            </div>
-            <div class="grid-item">
-                <div class="grid-icon">📦</div>
-                <h3>ARMORED SHIPPING</h3>
-                <p>Bubble wrap is standard, not an upgrade. We ship everything like we are mailing it to ourselves.</p>
-            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo">BLK<span>HDZ</span> LLC</div>
-        <p style="color: #666; margin-top: 10px;">Tampa, FL | Veteran Owned Business</p>
+        <div class="footer-logo" style="font-family: 'Oswald'; font-size: 2rem; color: white;">BLK<span>HDZ</span> LLC</div>
+        <p style="color: #666;">Tampa, FL | Veteran Owned Business</p>
         <div class="disclaimer">
             <p><strong>Affiliate Disclosure:</strong> When you click on links to various merchants on this site and make a purchase, this can result in this site earning a commission. Affiliate programs and affiliations include, but are not limited to, the eBay Partner Network.</p>
-            <p><strong>Privacy Policy:</strong> We do not collect personal data on this site. All transactions are handled securely through eBay.com. We respect your privacy and data security.</p>
-            <p>LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site.</p>
         </div>
     </footer>
 
     <script>
         window.addEventListener('scroll', function() {
-            const parallaxBg = document.querySelector('.hero-bg');
-            let scrollPosition = window.pageYOffset;
-            parallaxBg.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
+            const parallax = document.getElementById('parallax');
+            let offset = window.pageYOffset;
+            parallax.style.transform = 'translateY(' + offset * 0.5 + 'px)';
         });
     </script>
 
