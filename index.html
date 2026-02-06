@@ -80,30 +80,27 @@
             margin-top: 60px;
         }
 
-        /* This is the background layer that moves slower */
         .hero-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            /* Make sure 'hero-parallax.jpg' is on your desktop */
             background-image: url('hero-parallax.jpg'); 
             background-size: cover;
             background-position: center;
             z-index: 0;
-            will-change: transform; /* Optimizes for smooth scrolling */
+            will-change: transform;
         }
 
-        /* Dark overlay */
         .hero::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.4); /* Adjust opacity here (0.1 to 0.9) */
+            background: rgba(0,0,0,0.4);
             z-index: 1;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2; /* Sits on top of everything */
+            z-index: 2;
             max-width: 650px;
             border-left: 8px solid var(--lego-yellow);
             padding-left: 40px;
@@ -126,7 +123,7 @@
             min-height: 600px;
             border-bottom: 1px solid #222;
             position: relative;
-            z-index: 10; /* Ensures content covers the hero when scrolling */
+            z-index: 10;
             background-color: var(--black);
         }
 
@@ -287,7 +284,7 @@
         <div class="footer-logo">BLK<span>HDZ</span> LLC</div>
         <p style="color: #666; margin-top: 10px;">Tampa, FL | Veteran Owned Business</p>
         <div class="disclaimer">
-            <p><strong>Affiliate Disclosure:</strong> BLKHDZ LLC is a participant in the eBay Partner Network. When you click on links to various merchants on this site and make a purchase, this can result in this site earning a commission. Affiliate programs and affiliations include, but are not limited to, the eBay Partner Network.</p>
+            <p><strong>Affiliate Disclosure:</strong> When you click on links to various merchants on this site and make a purchase, this can result in this site earning a commission. Affiliate programs and affiliations include, but are not limited to, the eBay Partner Network.</p>
             <p><strong>Privacy Policy:</strong> We do not collect personal data on this site. All transactions are handled securely through eBay.com. We respect your privacy and data security.</p>
             <p>LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site.</p>
         </div>
@@ -297,10 +294,6 @@
         window.addEventListener('scroll', function() {
             const parallaxBg = document.querySelector('.hero-bg');
             let scrollPosition = window.pageYOffset;
-            // The 0.5 below is the speed. 
-            // 0.5 = Half speed (Classic Parallax)
-            // 0.8 = Almost normal speed
-            // 0.2 = Very slow background
             parallaxBg.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
         });
     </script>
