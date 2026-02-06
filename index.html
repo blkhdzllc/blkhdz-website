@@ -15,6 +15,11 @@
             --text-gray: #b0b0b0;
         }
 
+        /* Enables Smooth Scrolling for the whole page */
+        html { 
+            scroll-behavior: smooth; 
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -22,6 +27,11 @@
             color: var(--text-white);
             font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
+        }
+
+        /* This ensures the sections don't hide behind the sticky navbar when scrolling */
+        section {
+            scroll-margin-top: 100px;
         }
 
         h1, h2, h3 {
@@ -32,7 +42,7 @@
 
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        /* --- NAVIGATION (Restored Font Size) --- */
+        /* --- NAVIGATION --- */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -52,10 +62,11 @@
         .nav-links { display: flex; align-items: center; }
         .nav-links a {
             margin-right: 35px;
-            font-size: 1.1rem; /* Increased from small font */
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--text-white);
             letter-spacing: 1.5px;
+            cursor: pointer;
         }
         .nav-links a:hover { color: var(--lego-yellow); }
 
@@ -70,7 +81,7 @@
             font-family: 'Oswald', sans-serif;
         }
 
-        /* --- HERO SECTION (Restored Large Scale) --- */
+        /* --- HERO SECTION --- */
         .hero {
             height: 100vh;
             position: relative;
@@ -107,7 +118,6 @@
             margin-top: 100px; 
         }
 
-        /* Set back to the Bold Magazine Size */
         .hero h1 { 
             font-size: 7.0rem; 
             line-height: 0.85; 
@@ -170,7 +180,17 @@
 
         .disclaimer { font-size: 0.85rem; color: #444; max-width: 800px; margin: 30px auto 0; line-height: 1.6; }
 
-        @media (max-width: 1024px) { .hero h1 { font-size: 5rem; } }
+        /* Animation for the Bounce */
+        @keyframes scrollBounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .bounce-effect {
+            animation: scrollBounce 0.5s ease;
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 3.5rem; }
             .nav-links { display: none; }
@@ -182,8 +202,8 @@
     <nav class="navbar">
         <div class="logo">BLK<span>HDZ</span></div>
         <div class="nav-links">
-            <a href="#about">THE HOBBYIST</a>
-            <a href="#collection">THE VAULT</a>
+            <a onclick="smoothScrollBounce('about')">THE HOBBYIST</a>
+            <a onclick="smoothScrollBounce('collection')">THE VAULT</a>
             <a href="https://www.ebay.com/str/blkhdz" class="btn-main">SHOP EBAY</a>
         </div>
     </nav>
@@ -199,7 +219,7 @@
 
     <section class="split-section" id="about">
         <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-        <div class="split-content">
+        <div class="split-content" id="about-inner">
             <h2>HOBBYIST TURNED CURATOR</h2>
             <p><strong>At BLKHDZ, we are collectors first.</strong></p>
             <p>Our diversity is what makes our collection unique. We specialize in a broad spectrum of building block items and the cars that define generations. From the precision engineering of <strong>Technic sets</strong> and the mechanical beauty of <strong>Rexy (42224)</strong>, to <strong>Ninjago</strong> and <strong>Monkie Kid</strong>.</p>
@@ -209,7 +229,7 @@
 
     <section class="split-section reverse" id="collection">
         <div class="split-image" style="background-image: url('custom-car.jpg');"></div>
-        <div class="split-content">
+        <div class="split-content" id="collection-inner">
             <h2>THE VAULT</h2>
             <p>From the sands of Tatooine to the <strong>bricks of Daytona</strong>, our diversity is what makes our collection unique.</p>
             <ul class="highlight-list">
@@ -230,11 +250,30 @@
     </footer>
 
     <script>
+        // Parallax Script
         window.addEventListener('scroll', function() {
             const parallax = document.getElementById('parallax');
             let offset = window.pageYOffset;
             parallax.style.transform = 'translateY(' + offset * 0.5 + 'px)';
         });
+
+        // Smooth Scroll + Bounce Function
+        function smoothScrollBounce(targetId) {
+            const element = document.getElementById(targetId);
+            const innerContent = document.getElementById(targetId + '-inner');
+            
+            // Scroll to the section
+            element.scrollIntoView({ behavior: 'smooth' });
+
+            // Wait for scroll to finish, then trigger bounce
+            setTimeout(() => {
+                innerContent.classList.add('bounce-effect');
+                // Remove class after animation so it can trigger again
+                setTimeout(() => {
+                    innerContent.classList.remove('bounce-effect');
+                }, 600);
+            }, 800);
+        }
     </script>
 
 </body>
