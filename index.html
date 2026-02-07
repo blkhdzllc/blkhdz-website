@@ -15,10 +15,7 @@
             --text-gray: #b0b0b0;
         }
 
-        /* Enables Smooth Scrolling for the whole page */
-        html { 
-            scroll-behavior: smooth; 
-        }
+        html { scroll-behavior: smooth; }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -29,10 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* This ensures the sections don't hide behind the sticky navbar when scrolling */
-        section {
-            scroll-margin-top: 100px;
-        }
+        section { scroll-margin-top: 100px; }
 
         h1, h2, h3 {
             font-family: 'Oswald', sans-serif;
@@ -187,9 +181,7 @@
             100% { transform: translateY(0); }
         }
 
-        .bounce-effect {
-            animation: scrollBounce 0.5s ease;
-        }
+        .bounce-effect { animation: scrollBounce 0.5s ease; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 3.5rem; }
@@ -204,7 +196,7 @@
         <div class="nav-links">
             <a onclick="smoothScrollBounce('about')">THE HOBBYIST</a>
             <a onclick="smoothScrollBounce('collection')">THE VAULT</a>
-            <a href="https://www.ebay.com/str/blkhdz" class="btn-main">SHOP EBAY</a>
+            <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=&toolid=10001&mkevt=1" class="btn-main">SHOP EBAY</a>
         </div>
     </nav>
 
@@ -213,7 +205,7 @@
         <div class="hero-content">
             <h1>LEGACY<br>ISN'T BOUGHT.<br>IT'S CURATED.</h1>
             <p>Premier LEGO® Speed Champions, Technic, and JDM Diecast.</p>
-            <a href="https://www.ebay.com/str/blkhdz" class="btn-main" style="width: fit-content;">ENTER THE STORE</a>
+            <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=&toolid=10001&mkevt=1" class="btn-main" style="width: fit-content;">ENTER THE STORE</a>
         </div>
     </header>
 
@@ -250,25 +242,19 @@
     </footer>
 
     <script>
-        // Parallax Script
         window.addEventListener('scroll', function() {
             const parallax = document.getElementById('parallax');
             let offset = window.pageYOffset;
             parallax.style.transform = 'translateY(' + offset * 0.5 + 'px)';
         });
 
-        // Smooth Scroll + Bounce Function
         function smoothScrollBounce(targetId) {
             const element = document.getElementById(targetId);
             const innerContent = document.getElementById(targetId + '-inner');
-            
-            // Scroll to the section
             element.scrollIntoView({ behavior: 'smooth' });
 
-            // Wait for scroll to finish, then trigger bounce
             setTimeout(() => {
                 innerContent.classList.add('bounce-effect');
-                // Remove class after animation so it can trigger again
                 setTimeout(() => {
                     innerContent.classList.remove('bounce-effect');
                 }, 600);
