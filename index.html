@@ -16,7 +16,6 @@
         }
 
         html { scroll-behavior: smooth; }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -73,6 +72,7 @@
             border: none;
             cursor: pointer;
             font-family: 'Oswald', sans-serif;
+            display: inline-block;
         }
 
         /* --- HERO SECTION --- */
@@ -129,7 +129,70 @@
             line-height: 1.2;
         }
 
-        /* --- CONTENT SECTIONS --- */
+        /* --- MARKET WATCH SECTION --- */
+        .market-watch {
+            background-color: var(--black);
+            padding: 80px 10%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .market-card {
+            background: var(--dark-gray);
+            border: 1px solid #333;
+            border-top: 4px solid var(--lego-yellow);
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .market-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+
+        .market-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .market-table th {
+            text-align: left;
+            padding: 15px;
+            color: var(--lego-yellow);
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--lego-red);
+        }
+
+        .market-table td {
+            padding: 20px 15px;
+            border-bottom: 1px solid #2a2a2a;
+            font-size: 1.1rem;
+        }
+
+        .market-table tr:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .invest-link {
+            color: var(--lego-red);
+            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
+            border: 1px solid var(--lego-red);
+            padding: 5px 15px;
+        }
+
+        .invest-link:hover {
+            background: var(--lego-red);
+            color: white;
+        }
+
+        /* --- SPLIT SECTIONS --- */
         .split-section {
             display: flex;
             flex-wrap: wrap;
@@ -174,18 +237,10 @@
 
         .disclaimer { font-size: 0.85rem; color: #444; max-width: 800px; margin: 30px auto 0; line-height: 1.6; }
 
-        /* Animation for the Bounce */
-        @keyframes scrollBounce {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
-        .bounce-effect { animation: scrollBounce 0.5s ease; }
-
         @media (max-width: 768px) {
             .hero h1 { font-size: 3.5rem; }
             .nav-links { display: none; }
+            .market-watch { padding: 40px 5%; }
         }
     </style>
 </head>
@@ -194,6 +249,7 @@
     <nav class="navbar">
         <div class="logo">BLK<span>HDZ</span></div>
         <div class="nav-links">
+            <a onclick="smoothScrollBounce('market-watch')">MARKET WATCH</a>
             <a onclick="smoothScrollBounce('about')">THE HOBBYIST</a>
             <a onclick="smoothScrollBounce('collection')">THE VAULT</a>
             <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=&toolid=10001&mkevt=1" class="btn-main">SHOP EBAY</a>
@@ -205,17 +261,47 @@
         <div class="hero-content">
             <h1>LEGACY<br>ISN'T BOUGHT.<br>IT'S CURATED.</h1>
             <p>Premier LEGO® Speed Champions, Technic, and JDM Diecast.</p>
-            <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=&toolid=10001&mkevt=1" class="btn-main" style="width: fit-content;">ENTER THE STORE</a>
+            <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=&toolid=10001&mkevt=1" class="btn-main">ENTER THE STORE</a>
         </div>
     </header>
+
+    <section id="market-watch" class="market-watch">
+        <div class="market-card">
+            <div class="market-header">
+                <div>
+                    <h2 style="font-size: 2.5rem;">LEGO MARKET WATCH</h2>
+                    <p style="color: var(--text-gray);">Daily Automated Price & Inventory Tracking</p>
+                </div>
+                <div style="text-align: right; font-family: 'Oswald';">
+                    <span style="color: var(--lego-red); font-weight: 700;">● LIVE DATA</span>
+                </div>
+            </div>
+            
+            <div style="overflow-x: auto;">
+                <table class="market-table">
+                    <thead>
+                        <tr>
+                            <th>Set ID</th>
+                            <th>Release Name</th>
+                            <th>Pieces</th>
+                            <th style="text-align: right;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lego-market-body">
+                        <tr><td colspan="4" style="text-align: center; color: var(--text-gray);">Synchronizing with Rebrickable API...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
     <section class="split-section" id="about">
         <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
         <div class="split-content" id="about-inner">
             <h2>HOBBYIST TURNED CURATOR</h2>
             <p><strong>At BLKHDZ, we are collectors first.</strong></p>
-            <p>Our diversity is what makes our collection unique. We specialize in a broad spectrum of building block items and the cars that define generations. From the precision engineering of <strong>Technic sets</strong> and the mechanical beauty of <strong>Rexy (42224)</strong>, to <strong>Ninjago</strong> and <strong>Monkie Kid</strong>.</p>
-            <p>We love <strong>F1</strong>, and still love <strong>Botanicals</strong>. Whether it's a 1000+ piece masterpiece or a rare collector's find, we look for products that offer true detail and engineering excellence.</p>
+            <p>Our diversity is what makes our collection unique. We specialize in a broad spectrum of building block items and the cars that define generations. From the mechanical beauty of <strong>Rexy (42224)</strong>, to <strong>Ninjago</strong> and <strong>Monkie Kid</strong>.</p>
+            <p>Whether it's a 1000+ piece masterpiece or a rare collector's find, we look for products that offer true detail and engineering excellence.</p>
         </div>
     </section>
 
@@ -223,7 +309,7 @@
         <div class="split-image" style="background-image: url('custom-car.jpg');"></div>
         <div class="split-content" id="collection-inner">
             <h2>THE VAULT</h2>
-            <p>From the sands of Tatooine to the <strong>bricks of Daytona</strong>, our diversity is what makes our collection unique.</p>
+            <p>From the sands of Tatooine to the <strong>bricks of Daytona</strong>, our collection spans generations of design.</p>
             <ul class="highlight-list">
                 <li><span>▶</span> Present day and retired Star Wars sets</li>
                 <li><span>▶</span> Speed Champions Sets</li>
@@ -242,25 +328,49 @@
     </footer>
 
     <script>
+        // Parallax Effect
         window.addEventListener('scroll', function() {
             const parallax = document.getElementById('parallax');
             let offset = window.pageYOffset;
             parallax.style.transform = 'translateY(' + offset * 0.5 + 'px)';
         });
 
+        // Smooth Scroll
         function smoothScrollBounce(targetId) {
             const element = document.getElementById(targetId);
-            const innerContent = document.getElementById(targetId + '-inner');
             element.scrollIntoView({ behavior: 'smooth' });
-
-            setTimeout(() => {
-                innerContent.classList.add('bounce-effect');
-                setTimeout(() => {
-                    innerContent.classList.remove('bounce-effect');
-                }, 600);
-            }, 800);
         }
-    </script>
 
+        // Fetch Live LEGO Data
+        async function fetchLegoData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                const tableBody = document.getElementById('lego-market-body');
+                
+                tableBody.innerHTML = ''; // Clear loading
+
+                data.forEach(set => {
+                    const row = `
+                        <tr>
+                            <td style="color: var(--lego-yellow); font-weight: 700; font-family: 'Oswald';">${set.set_id}</td>
+                            <td style="font-weight: 700;">${set.name.toUpperCase()}</td>
+                            <td>${set.parts}</td>
+                            <td style="text-align: right;">
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=${set.set_id}+lego&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1" 
+                                   target="_blank" class="invest-link">VIEW MARKET</a>
+                            </td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('lego-market-body').innerHTML = '<tr><td colspan="4">Data stream offline. Check back shortly.</td></tr>';
+            }
+        }
+
+        fetchLegoData();
+    </script>
 </body>
 </html>
