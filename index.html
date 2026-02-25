@@ -342,35 +342,45 @@
         }
 
         // Fetch Live LEGO Data
-        async function fetchLegoData() {
-            try {
-                const response = await fetch('data.json');
-                const data = await response.json();
-                const tableBody = document.getElementById('lego-market-body');
-                
-                tableBody.innerHTML = ''; // Clear loading
+   async function fetchLegoData() {
+        try {
+            const res = await fetch('data.json');
+            const data = await res.json();
+            const tableBody = document.getElementById('lego-market-body');
+            tableBody.innerHTML = '';
 
-                data.forEach(set => {
-                    const row = `
-                        <tr>
-                            <td style="color: var(--lego-yellow); font-weight: 700; font-family: 'Oswald';">${set.set_id}</td>
-                            <td style="font-weight: 700;">${set.name.toUpperCase()}</td>
-                            <td>${set.parts}</td>
-                            <td style="text-align: right;">
-                                <a href="https://www.ebay.com/sch/i.html?_nkw=${set.set_id}+lego&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1" 
-                                   target="_blank" class="invest-link">VIEW MARKET</a>
-                            </td>
-                        </tr>
-                    `;
-                    tableBody.innerHTML += row;
-                });
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('lego-market-body').innerHTML = '<tr><td colspan="4">Data stream offline. Check back shortly.</td></tr>';
-            }
+            data.forEach(set => {
+                // "Retired" logic: if MSRP is missing or 0, label it as a Legacy/Retired set
+                const priceLabel = (set.msrp && set.msrp > 0) ? `$${set.msrp}` : 'RETIRED';
+                const statusColor = (set.msrp && set.msrp > 0) ? 'var(--lego-yellow)' : 'var(--lego-red)';
+
+                tableBody.innerHTML += `
+                    <tr style="border-bottom: 1px solid #2a2a2a;">
+                        <td style="color: var(--lego-yellow); font-family: 'Oswald'; font-weight:700; padding: 15px;">${set.set_id}</td>
+                        <td style="padding: 15px;">
+                            <div style="display:flex; align-items:center;">
+                                <img src="${set.img}" style="width:50px; height:auto; margin-right:15px; border-radius:4px; border: 1px solid #333;">
+                                <span style="font-size: 0.9rem; font-weight: 700;">${set.name.toUpperCase()}</span>
+                            </div>
+                        </td>
+                        <td style="color: ${statusColor}; font-weight: 700; padding: 15px;">${priceLabel}</td>
+                        <td style="text-align: right; padding: 15px;">
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=${set.set_id}&_ssn=blkhdz&mkcid=1&campid=5339141674&toolid=10001&mkevt=1" 
+                               target="_blank" class="invest-link">EBAY MARKET</a>
+                            
+                            <a href="https://www.amazon.com/s?k=lego+${set.set_id}" 
+                               target="_blank" class="invest-link" style="border-color:#666; color:#aaa; margin-left:5px;">AMAZON</a>
+                        </td>
+                    </tr>
+                `;
+            });
+        } catch (error) {
+            console.error('Market Watch Sync Error:', error);
         }
+    }
 
-        fetchLegoData();
+    // Call the function once to load the data
+    fetchLegoData();
     </script>
 </body>
 </html>
