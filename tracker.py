@@ -20,8 +20,9 @@ def get_lego_data():
                 "name": data['name'],
                 "year": data['year'],
                 "parts": data['num_parts'],
+                "msrp": data.get('retail_price'), # ADDED THIS LINE
                 "img": data['set_img_url'],
-                "last_updated": datetime.now().strftime("%Y-%m-%d")
+                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M") # Added time for 4x daily tracking
             })
     
     with open('data.json', 'w') as f:
