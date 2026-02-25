@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 # Set numbers you want to track
-watch_list = ["75192", "75337", "10316"]
+watch_list = ["75192", "75337", "10316", "42224", "75429", "42130", "77247", "10312", "71847"]
 API_KEY = os.getenv('REBRICKABLE_KEY')
 
 def get_lego_data():
