@@ -13,16 +13,19 @@ def get_lego_data():
         url = f"https://rebrickable.com/api/v3/lego/sets/{set_id}-1/"
         response = requests.get(url, headers={'Authorization': f'key {API_KEY}'})
         
-        if response.status_code == 200:
+       if response.status_code == 200:
             data = response.json()
+            # Try to find the US Retail Price specifically
+            retail = data.get('retail_price') 
+            
             results.append({
                 "set_id": set_id,
                 "name": data['name'],
                 "year": data['year'],
                 "parts": data['num_parts'],
-                "msrp": data.get('retail_price'), # ADDED THIS LINE
+                "msrp": retail if retail else 0, # Force it to 0 if missing
                 "img": data['set_img_url'],
-                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M") # Added time for 4x daily tracking
+                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M")
             })
     
     with open('data.json', 'w') as f:
