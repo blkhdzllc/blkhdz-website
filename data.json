@@ -72,7 +72,12 @@
         "status": "Researching"
      },
      {
-        - name: Commit and Push changes
+     - name: Run Tracker Script
+      env:
+        REBRICKABLE_KEY: ${{ secrets.REBRICKABLE_KEY }}
+      run: python tracker.py
+
+    - name: Commit and Push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
