@@ -1,20 +1,110 @@
 [
-  { "set_num": "75354", "name": "Coruscant Guard Gunship", "ebay_avg_price": 139.99, "image_url": "https://images.brickset.com/sets/images/75354-1.jpg" },
-  { "set_num": "71036", "name": "Series 23 6-Pack Minifigures", "ebay_avg_price": 29.99, "image_url": "https://images.brickset.com/sets/images/71036-1.jpg" },
-  { "set_num": "75356", "name": "Executor Super Star Destroyer", "ebay_avg_price": 69.99, "image_url": "https://images.brickset.com/sets/images/75356-1.jpg" },
-  { "set_num": "75274", "name": "TIE Fighter Pilot Helmet", "ebay_avg_price": 389.99, "image_url": "https://images.brickset.com/sets/images/75274-1.jpg" },
-  { "set_num": "31167", "name": "Creator 3-in-1 Modern House", "ebay_avg_price": 49.99, "image_url": "https://images.brickset.com/sets/images/31167-1.jpg" },
-  { "set_num": "75345", "name": "501st Clone Troopers Battle Pack", "ebay_avg_price": 19.99, "image_url": "https://images.brickset.com/sets/images/75345-1.jpg" },
-  { "set_num": "77247", "name": "LEGO City Space Construction", "ebay_avg_price": 34.99, "image_url": "https://images.brickset.com/sets/images/77247-1.jpg" },
-  { "set_num": "76015", "name": "Doc Ock Truck Heist (Classic)", "ebay_avg_price": 45.00, "image_url": "https://images.brickset.com/sets/images/76015-1.jpg" },
-  { "set_num": "76286", "name": "Guardians of the Galaxy: The Milano", "ebay_avg_price": 169.99, "image_url": "https://images.brickset.com/sets/images/76286-1.jpg" },
-  { "set_num": "42224", "name": "Porsche 911 GT3 R REXY", "ebay_avg_price": 149.99, "image_url": "https://images.brickset.com/sets/images/42224-1.jpg" },
-  { "set_num": "71858", "name": "NINJAGO Blacksmith 15th Anniv.", "ebay_avg_price": 99.99, "image_url": "https://images.brickset.com/sets/images/71858-1.jpg" },
-  { "set_num": "71847", "name": "NINJAGO The Guardian Dragon", "ebay_avg_price": 136.99, "image_url": "https://images.brickset.com/sets/images/71847-1.jpg" },
-  { "set_num": "71813", "name": "Wolf Mask Shadow Dojo (Temple Bounty)", "ebay_avg_price": 119.99, "image_url": "https://images.brickset.com/sets/images/71813-1.jpg" },
-  { "set_num": "30726", "name": "Batman: Bruce Wayne Polybag", "ebay_avg_price": 4.99, "image_url": "https://images.brickset.com/sets/images/30726-1.jpg" },
-  { "set_num": "76332", "name": "The Batman Batmobile (20th)", "ebay_avg_price": 29.99, "image_url": "https://images.brickset.com/sets/images/76332-1.jpg" },
-  { "set_num": "75435", "name": "Star Wars New Release (Watching)", "ebay_avg_price": 0.00, "image_url": "https://images.brickset.com/sets/images/75435-1.jpg" },
-  { "set_num": "75337", "name": "Star Wars AT-TE Walker", "ebay_avg_price": 139.99, "image_url": "https://images.brickset.com/sets/images/75337-1.jpg" },
-  { "set_num": "75389", "name": "Star Wars The Dark Falcon", "ebay_avg_price": 179.99, "image_url": "https://images.brickset.com/sets/images/75389-1.jpg" }
+    {
+        "set_num": "75354-1",
+        "name": "Coruscant Guard Gunship",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75354-1/125950.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "71036-1",
+        "name": "Series 23 - 6 Pack",
+        "image_url": "https://cdn.rebrickable.com/media/sets/71036-1/107951.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "75356-1",
+        "name": "Executor Super Star Destroyer",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75356-1/129771.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "75274-1",
+        "name": "TIE Fighter Pilot",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75274-1/56255.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "31167-1",
+        "name": "Haunted Mansion",
+        "image_url": "https://cdn.rebrickable.com/media/sets/31167-1/155191.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "75345-1",
+        "name": "501st Clone Troopers Battle Pack",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75345-1/130256.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "77247-1",
+        "name": "KICK Sauber F1 Team C44 Race Car",
+        "image_url": "https://cdn.rebrickable.com/media/sets/77247-1/148272.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "76015-1",
+        "name": "Doc Ock Truck Heist",
+        "image_url": "https://cdn.rebrickable.com/media/sets/76015-1/5369.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "76286-1",
+        "name": "The Milano Spaceship",
+        "image_url": "https://cdn.rebrickable.com/media/sets/76286-1/140482.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "42224-1",
+        "name": "Porsche 911 GT3 R REXY AO Racing Car",
+        "image_url": "https://cdn.rebrickable.com/media/sets/42224-1/165275.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "71858-1",
+        "name": "Four Weapons Blacksmith 15th Anniversary",
+        "image_url": "https://cdn.rebrickable.com/media/sets/71858-1/163011.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "71847-1",
+        "name": "The Guardian Dragon",
+        "image_url": "https://cdn.rebrickable.com/media/sets/71847-1/155306.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "71813-1",
+        "name": "Wolf Mask Shadow Dojo",
+        "image_url": "https://cdn.rebrickable.com/media/sets/71813-1/136957.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "30726-1",
+        "name": "Batman: Bruce Wayne and the Batsuit",
+        "image_url": "https://cdn.rebrickable.com/media/sets/30726-1/166530.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "76332-1",
+        "name": "The Batman Batmobile",
+        "image_url": "https://cdn.rebrickable.com/media/sets/76332-1/161909.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "75435-1",
+        "name": "Battle of Felucia Separatist MTT",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75435-1/158323.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "75337-1",
+        "name": "AT-TE Walker",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75337-1/103975.jpg",
+        "ebay_avg_price": "TBD"
+    },
+    {
+        "set_num": "75389-1",
+        "name": "The Dark Falcon",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75389-1/142054.jpg",
+        "ebay_avg_price": "TBD"
+    }
 ]
