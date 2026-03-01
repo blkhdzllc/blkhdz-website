@@ -10,34 +10,34 @@
         
         body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* FULL-SCREEN COMMAND HERO */
+        /* FULL-SCREEN CINEMATIC HERO */
         .parallax-wrapper {
-            height: 70vh; /* Increased height to let the massive logo breathe */
+            height: 100vh; /* Full screen view on landing */
             overflow: hidden;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             border-bottom: 2px solid #111;
-            padding: 0; /* Zero constraints */
         }
         
         .parallax-bg {
             position: absolute;
-            top: -20%; left: 0; width: 100%; height: 160%; 
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('hero-parallax.jpg');
-            background-size: cover; background-position: center; z-index: -1;
+            top: -10%; left: 0; width: 100%; height: 120%; 
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('hero-parallax.jpg');
+            background-size: contain; /* Ensures Stud.io render isn't cropped */
+            background-repeat: no-repeat;
+            background-position: center; 
+            z-index: -1;
             will-change: transform;
         }
 
-        /* THE MASSIVE COMMANDING LOGO */
         .hero-logo {
-            width: 1200px; /* Dominant fixed width */
-            max-width: 95vw; /* Keeps it from breaking mobile */
+            width: 1200px;
+            max-width: 90vw;
             height: auto;
             filter: drop-shadow(0 0 50px rgba(0,0,0,0.9));
             z-index: 1;
-            display: block;
         }
 
         /* NAVIGATION BAR */
@@ -46,8 +46,11 @@
             padding: 40px 0;
             display: flex;
             justify-content: center;
-            gap: 120px;
+            gap: 80px;
             border-bottom: 1px solid #111;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .nav-btn { 
@@ -55,12 +58,12 @@
             text-decoration: none; 
             font-weight: 700; 
             text-transform: uppercase; 
-            font-size: 1.6rem; 
-            letter-spacing: 12px; 
+            font-size: 1.4rem; 
+            letter-spacing: 10px; 
             font-family: 'Syncopate', sans-serif; 
-            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            transition: 0.3s; 
         }
-        .nav-btn:hover { color: var(--accent); letter-spacing: 15px; transform: translateY(-2px); }
+        .nav-btn:hover { color: var(--accent); letter-spacing: 12px; }
 
         /* DATA GRID */
         .main-content { position: relative; background: #000; z-index: 5; }
@@ -69,23 +72,19 @@
         #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 50px; }
         
         .set-card { background: #080808; border: 1px solid #111; position: relative; overflow: hidden; transition: 0.4s; }
-        .set-card:hover { border-color: var(--accent); background: #0a0a0a; }
+        .set-card:hover { border-color: var(--accent); }
         
-        /* RESTORED ZOOM EFFECT */
-        .img-wrapper { width: 100%; height: 450px; background: #000; overflow: hidden; position: relative; }
+        /* ZOOM EFFECT */
+        .img-wrapper { width: 100%; height: 450px; background: #000; overflow: hidden; }
         .set-card img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: contain; 
-            padding: 30px; 
+            width: 100%; height: 100%; object-fit: contain; padding: 30px; 
             transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); 
         }
         .set-card:hover img { transform: scale(1.12); } 
 
         .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 15px 30px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 1.4rem; z-index: 10; }
-        
         .card-content { padding: 40px; }
-        .set-title { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 30px; min-height: 3.2rem; line-height: 1.5; letter-spacing: 1px; }
+        .set-title { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 30px; min-height: 3.2rem; line-height: 1.5; }
 
         .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .action-link { text-decoration: none; text-align: center; padding: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
@@ -110,6 +109,7 @@
 <nav class="sub-nav">
     <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=LEGO&toolid=10001&mkevt=1" target="_blank" class="nav-btn">Inventory</a>
     <a href="#ledger-start" class="nav-btn">Tracker</a>
+    <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=DIECAST&toolid=10001&mkevt=1" target="_blank" class="nav-btn">Diecast</a>
 </nav>
 
 <div class="main-content" id="ledger-start">
@@ -127,13 +127,12 @@
 </div>
 
 <script>
-    // SMOOTH SLIDING PARALLAX
+    // PARALLAX SCRIPT
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
-        document.getElementById('parallax').style.transform = 'translateY(' + (scrolled * 0.25) + 'px)';
+        document.getElementById('parallax').style.transform = 'translateY(' + (scrolled * 0.2) + 'px)';
     });
 
-    // TRACKED EBAY HELPER
     function getTrackedLink(mpre) {
         const base = "https://www.ebay.com/itm/123456789012?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=LEGO&toolid=10001&mkevt=1&mpre=";
         return base + encodeURIComponent(mpre);
@@ -156,9 +155,7 @@
                 container.innerHTML += `
                     <div class="set-card">
                         <div class="price-badge">${displayPrice}</div>
-                        <div class="img-wrapper">
-                            <img src="${set.image_url}" alt="${set.name}" onerror="this.src='hero-parallax.jpg'">
-                        </div>
+                        <div class="img-wrapper"><img src="${set.image_url}" alt="${set.name}" onerror="this.src='hero-parallax.jpg'"></div>
                         <div class="card-content">
                             <div class="set-title">${set.name}</div>
                             <div class="btn-group">
