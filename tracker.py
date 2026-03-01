@@ -3,12 +3,13 @@ from bs4 import BeautifulSoup
 
 API_KEY = os.environ.get('REBRICKABLE_KEY')
 
-# UPDATED LIST: Replaced Wolf Dojo with the Short-Run Sauber F1 (77247)
+# UPDATED LIST: Swapped 71813 for Captain Rex Helmet (75349)
 LEGO_SETS = [
     "75354-1", "71036-1", "75356-1", "75274-1", "31167-1", "75345-1", "77247-1", "76015-1", "76286-1",
-    "42224-1", "71858-1", "71847-1", "77247-1", "30726-1", "76332-1", "75435-1", "75337-1", "75389-1"
+    "42224-1", "71858-1", "71847-1", "75349-1", "30726-1", "76332-1", "75435-1", "75337-1", "75389-1"
 ]
 
+# DIECAST WITH YOUR SPECIFIC FILENAMES
 DIECAST_LIST = [
     {"id": "TW-911-54", "name": "Tarmac Works 1:64 Porsche 911 GT3 R Nürburgring 24h 2023 #54", "img": "Porsche 54.jpg"},
     {"id": "TW-AMG-BIL", "name": "Tarmac Works 1:64 Mercedes-AMG GT3 #4 Nurburgring 2023 Team Bilstein", "img": "Mercedez 4.jpg"},
@@ -57,7 +58,7 @@ def run():
                     img_url = data.get('set_img_url', img_url)
             except: pass
 
-        # Manual image overrides for retired/hero sets
+        # IMAGE OVERRIDE FOR RETIRED MINIFIG 6-PACK
         if "71036" in sn:
             img_url = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
 
