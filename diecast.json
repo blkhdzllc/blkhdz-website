@@ -1,32 +1,32 @@
 [
     {
         "set_num": "TW-911-54",
-        "name": "Tarmac Works 1:64 Porsche 911 GT3 R N\u00fcrburgring 24h 2023 #54",
+        "name": "Tarmac Works Porsche 911 #54",
         "image_url": "Porsche 54.jpg",
-        "ebay_avg_price": "TBD"
+        "ebay_avg_price": 39.99
     },
     {
         "set_num": "TW-AMG-BIL",
-        "name": "Tarmac Works 1:64 Mercedes-AMG GT3 #4 Nurburgring 2023 Team Bilstein",
+        "name": "Mercedes-AMG GT3 Team Bilstein",
         "image_url": "Mercedez 4.jpg",
-        "ebay_avg_price": "TBD"
+        "ebay_avg_price": 31.99
     },
     {
         "set_num": "TW-AMG-BH",
-        "name": "Tarmac Works HOBBY64 Mercedes-AMG GT3 2022 Bathurst 12hr",
+        "name": "Mercedes-AMG GT3 Bathurst",
         "image_url": "Mercedes 2.jpg",
-        "ebay_avg_price": "TBD"
+        "ebay_avg_price": 34.95
     },
     {
         "set_num": "SPK-CIV-16",
-        "name": "1:43 Spark Honda Civic Type R-GT #16 GT500 Super GT 2025",
+        "name": "Spark Honda Civic Type R-GT",
         "image_url": "Honda 16.jpg",
         "ebay_avg_price": 134.95
     },
     {
         "set_num": "TW-F488-51",
-        "name": "Tarmac Works 1:64 Ferrari 488 GT3 Macau GT Cup Harmony #51",
+        "name": "Ferrari 488 GT3 Macau #51",
         "image_url": "Ferrari 51.jpg",
-        "ebay_avg_price": "TBD"
+        "ebay_avg_price": 31.99
     }
 ]
