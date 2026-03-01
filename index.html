@@ -7,8 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #FFD700; --teal: #008080; --warning-red: #ff3b3b; }
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; scroll-behavior: smooth; }
         
+        /* HERO SECTION */
         .parallax-wrapper {
             height: 100vh; overflow: hidden; position: relative;
             display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 2px solid #111;
@@ -16,41 +17,53 @@
         .parallax-bg {
             position: absolute; top: -10%; left: 0; width: 100%; height: 120%; 
             background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('hero-parallax.jpg');
-            background-size: contain; background-repeat: no-repeat; background-position: center; z-index: -1; will-change: transform;
+            background-size: cover; background-position: center; z-index: -1; will-change: transform;
         }
-        .hero-logo { width: 1600px; max-width: 98vw; height: auto; filter: drop-shadow(0 0 60px rgba(0,0,0,0.95)); z-index: 1; }
+        .hero-logo { width: 1600px; max-width: 90vw; height: auto; filter: drop-shadow(0 0 60px rgba(0,0,0,0.95)); z-index: 1; }
 
+        /* NAVIGATION */
         .sub-nav {
-            background: #000; padding: 50px 0; display: flex; justify-content: center; gap: 100px;
+            background: #000; padding: 30px 0; display: flex; justify-content: center; gap: 40px;
             border-bottom: 1px solid #111; position: sticky; top: 0; z-index: 100;
         }
-        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 1.5rem; letter-spacing: 12px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
-        .nav-btn:hover { color: var(--accent); letter-spacing: 15px; }
+        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 6px; font-family: 'Syncopate', sans-serif; transition: 0.3s; cursor: pointer; border: none; background: none; }
+        .nav-btn:hover { color: var(--accent); letter-spacing: 8px; }
 
-        .container { max-width: 1800px; margin: 0 auto; padding: 80px 60px; }
-        #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 60px; }
-        .set-card { background: #080808; border: 1px solid #111; position: relative; overflow: hidden; transition: 0.4s; }
-        .set-card:hover { border-color: var(--accent); }
-        .img-wrapper { width: 100%; height: 450px; background: #000; overflow: hidden; }
-        .set-card img { width: 100%; height: 100%; object-fit: contain; padding: 30px; transition: 0.8s; }
-        .set-card:hover img { transform: scale(1.1); }
-        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 15px 30px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 1.4rem; z-index: 10; }
-        .card-content { padding: 40px; }
-        .set-title { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 30px; min-height: 3.2rem; }
+        .container { max-width: 1600px; margin: 0 auto; padding: 40px 20px; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        
+        .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.5rem; letter-spacing: 10px; margin: 60px 0 30px; text-align: center; color: var(--accent); text-transform: uppercase; }
 
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .action-link { text-decoration: none; text-align: center; padding: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
-        .ebay-btn { background: #111; color: #fff; border: 1px solid #222; }
-        .amazon-btn { background: #111; color: #FF9900; border: 1px solid #222; }
-        .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 10px; font-size: 0.9rem; }
+        /* CARD DESIGN */
+        .set-card { background: #080808; border: 1px solid #151515; position: relative; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column; }
+        .set-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .img-wrapper { width: 100%; height: 300px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .set-card img { max-width: 90%; max-height: 90%; object-fit: contain; transition: 0.8s; }
+        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 8px 15px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 0.9rem; z-index: 10; }
+        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .set-title { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; min-height: 2.5rem; line-height: 1.4; color: #eee; }
 
-        .diecast-showcase { background: #050505; padding: 100px 0; border-top: 1px solid #111; text-align: center; }
-        .showcase-title { font-family: 'Syncopate', sans-serif; font-size: 2.5rem; letter-spacing: 15px; margin-bottom: 50px; color: #fff; }
-        .showcase-img { width: 90%; max-width: 1400px; height: auto; border: 1px solid #333; transition: 0.5s; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        /* BUTTONS */
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
+        .action-link { text-decoration: none; text-align: center; padding: 12px 5px; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Syncopate', sans-serif; transition: 0.3s; border: 1px solid #222; }
+        .ebay-btn { background: #111; color: #fff; }
+        .amazon-btn { background: #111; color: #FF9900; }
+        .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; border: none; font-size: 0.7rem; }
+        .action-link:hover { opacity: 0.8; background: #222; color: var(--accent); }
+        .store-btn:hover { background: #fff; color: #000; }
 
-        footer { padding: 150px 80px; background: #000; text-align: center; border-top: 1px solid #111; }
-        .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 12px; color: var(--teal); font-size: 1.5rem; }
-        .disclosure { max-width: 1000px; margin: 80px auto 0; font-size: 0.8rem; color: var(--warning-red); line-height: 2.5; text-transform: uppercase; font-weight: 900; }
+        /* DIECAST SPECIAL SECTION */
+        .diecast-hero { width: 100%; max-width: 1200px; height: auto; border: 1px solid #222; margin: 0 auto 40px; display: block; }
+
+        footer { padding: 80px 20px; background: #000; text-align: center; border-top: 1px solid #111; }
+        .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 10px; color: var(--teal); font-size: 1rem; margin-bottom: 20px; }
+        .disclosure { max-width: 800px; margin: 0 auto; font-size: 0.65rem; color: #444; line-height: 1.8; text-transform: uppercase; }
+
+        @media (max-width: 768px) {
+            .hero-logo { width: 95vw; }
+            .nav-btn { letter-spacing: 2px; font-size: 0.7rem; }
+            .sub-nav { gap: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -61,62 +74,114 @@
 </div>
 
 <nav class="sub-nav">
-    <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=LEGO&toolid=10001&mkevt=1" target="_blank" class="nav-btn">Inventory</a>
-    <a href="#ledger-start" class="nav-btn">Tracker</a>
-    <a href="https://www.ebay.com/str/blkhdz/DIECAST/_i.html?store_cat=24199046015&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=DIECAST&toolid=10001&mkevt=1" target="_blank" class="nav-btn">Diecast</a>
+    <a href="#inventory-section" class="nav-btn">Inventory</a>
+    <a href="#tracker-section" class="nav-btn">Tracker</a>
+    <a href="#diecast-section" class="nav-btn">Diecast</a>
 </nav>
 
-<div class="main-content" id="ledger-start">
-    <div class="container"><div id="lego-container"></div></div>
-
-    <div class="diecast-showcase">
-        <h2 class="showcase-title">ELITE DIECAST</h2>
-        <img src="diecast-showcase.jpg" alt="Elite Diecast Showcase" class="showcase-img">
-    </div>
-
-    <footer>
-        <div class="vet-badge">VETERAN OWNED BUSINESS</div>
-        <div class="disclosure">
-            AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND THE AMAZON SERVICES LLC ASSOCIATES PROGRAM. WE MAY EARN A COMMISSION FROM QUALIFYING PURCHASES MADE THROUGH LINKS ON THIS WEBSITE.
+<div class="container" id="inventory-section">
+    <h2 class="section-header">Elite Inventory</h2>
+    <div id="inventory-grid" class="grid-layout">
         </div>
-    </footer>
 </div>
 
+<div class="container" id="tracker-section">
+    <h2 class="section-header">2026 Retirement Watch</h2>
+    <div id="tracker-grid" class="grid-layout">
+        </div>
+</div>
+
+<div class="container" id="diecast-section">
+    <h2 class="section-header">Elite Diecast</h2>
+    <img src="diecast-showcase.jpg" alt="Diecast Showcase" class="diecast-hero">
+    <div id="diecast-grid" class="grid-layout">
+        </div>
+</div>
+
+<footer>
+    <div class="vet-badge">VETERAN OWNED BUSINESS</div>
+    <div class="disclosure">
+        AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND AMAZON ASSOCIATES. WE EARN FROM QUALIFYING PURCHASES. PRICES UPDATED EVERY 6 HOURS.
+    </div>
+</footer>
+
 <script>
-    function getTrackedLink(targetUrl, customId = "GENERAL") {
-        const epnBase = "https://www.ebay.com/itm/123456789012?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1&mpre=";
-        return epnBase + encodeURIComponent(targetUrl) + "&customid=" + customId;
+    // TRACKING LINK GENERATOR
+    function getEbayLink(query, isStore = false) {
+        const campId = "5339141674"; // Your CampID
+        const baseUrl = isStore 
+            ? `https://www.ebay.com/str/blkhdz?_nkw=${query}`
+            : `https://www.ebay.com/sch/i.html?_nkw=${query}+new+sealed`;
+        
+        return `https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=${encodeURIComponent(baseUrl)}&campid=${campId}&toolid=10001&customid=BLKHDZ_WEB`;
     }
 
-    async function loadSets() {
-        const container = document.getElementById('lego-container');
+    function createCard(item, categoryName) {
+        const cleanId = item.set_num.split('-')[0];
+        const ebayDataLink = getEbayLink(`${categoryName} ${cleanId}`);
+        const storeLink = getEbayLink(cleanId, true);
+        const amazonLink = `https://www.amazon.com/s?k=${categoryName}+${cleanId}`;
+
+        return `
+            <div class="set-card">
+                <div class="price-badge">$${item.ebay_avg_price || 'TBD'}</div>
+                <div class="img-wrapper">
+                    <img src="${item.image_url}" alt="${item.name}" onerror="this.src='hero-parallax.jpg'">
+                </div>
+                <div class="card-content">
+                    <div class="set-title">${item.name}</div>
+                    <div class="btn-group">
+                        <a href="${ebayDataLink}" target="_blank" class="action-link ebay-btn">eBay Data</a>
+                        <a href="${amazonLink}" target="_blank" class="action-link amazon-btn">Amazon</a>
+                        <a href="${storeLink}" target="_blank" class="action-link store-btn">Acquire from BLKHDZ</a>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    async function initMarket() {
         try {
-            // THE CACHE BUSTER: Forces GitHub to fetch the LATEST data.json
-            const res = await fetch('data.json?nocache=' + new Date().getTime()); 
-            const sets = await res.json();
-            container.innerHTML = '';
-            sets.forEach(set => {
-                const cleanId = set.set_num.split('-')[0];
-                const trackedSearch = getTrackedLink(`https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}+new+sealed`, `DATA_${cleanId}`);
-                const trackedStore = getTrackedLink(`https://www.ebay.com/str/blkhdz?_nkw=${cleanId}`, `BUY_${cleanId}`);
-
-                container.innerHTML += `
-                    <div class="set-card">
-                        <div class="price-badge">$${set.ebay_avg_price}</div>
-                        <div class="img-wrapper"><img src="${set.image_url}" alt="${set.name}" onerror="this.src='hero-parallax.jpg'"></div>
-                        <div class="card-content">
-                            <div class="set-title">${set.name}</div>
-                            <div class="btn-group">
-                                <a href="${trackedSearch}" target="_blank" class="action-link ebay-btn">EBAY DATA</a>
-                                <a href="https://www.amazon.com/s?k=LEGO+${cleanId}" target="_blank" class="action-link amazon-btn">AMAZON</a>
-                                <a href="${trackedStore}" target="_blank" class="action-link store-btn">ACQUIRE FROM BLKHDZ</a>
-                            </div>
-                        </div>
-                    </div>`;
+            // Load LEGO Data
+            const legoRes = await fetch('data.json?v=' + Date.now());
+            const legoData = await legoRes.json();
+            
+            const invGrid = document.getElementById('inventory-grid');
+            const trackGrid = document.getElementById('tracker-grid');
+            
+            // Render first 9 to Inventory, rest to Tracker
+            legoData.forEach((item, index) => {
+                if(index < 9) {
+                    invGrid.innerHTML += createCard(item, 'LEGO');
+                } else {
+                    trackGrid.innerHTML += createCard(item, 'LEGO');
+                }
             });
-        } catch(e) { console.error("Update Error:", e); }
+
+            // Load Diecast Data
+            const diecastRes = await fetch('diecast.json?v=' + Date.now());
+            const diecastData = await diecastRes.json();
+            const diecastGrid = document.getElementById('diecast-grid');
+            
+            diecastData.forEach(item => {
+                diecastGrid.innerHTML += createCard(item, 'Diecast');
+            });
+
+        } catch (e) {
+            console.error("Market Load Error:", e);
+        }
     }
-    window.onload = loadSets;
+
+    // Parallax Effect
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const bg = document.getElementById('parallax');
+        if(bg) {
+            bg.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
+    });
+
+    window.onload = initMarket;
 </script>
+
 </body>
 </html>
