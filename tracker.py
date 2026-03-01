@@ -3,18 +3,18 @@ from bs4 import BeautifulSoup
 
 API_KEY = os.environ.get('REBRICKABLE_KEY')
 
-# UPDATED LIST: Swapped 71813 for Captain Rex Helmet (75349)
+# 9 IN-STOCK ITEMS FIRST, THEN 9 WATCHLIST ITEMS
 LEGO_SETS = [
     "75354-1", "71036-1", "75356-1", "75274-1", "31167-1", "75345-1", "77247-1", "76015-1", "76286-1",
     "42224-1", "71858-1", "71847-1", "75349-1", "30726-1", "76332-1", "75435-1", "75337-1", "75389-1"
 ]
 
-# DIECAST WITH YOUR SPECIFIC FILENAMES
+# DIECAST WITH YOUR SPECIFIC FILENAMES AND SHOP PRICE FOR THE HONDA
 DIECAST_LIST = [
     {"id": "TW-911-54", "name": "Tarmac Works 1:64 Porsche 911 GT3 R Nürburgring 24h 2023 #54", "img": "Porsche 54.jpg"},
     {"id": "TW-AMG-BIL", "name": "Tarmac Works 1:64 Mercedes-AMG GT3 #4 Nurburgring 2023 Team Bilstein", "img": "Mercedez 4.jpg"},
     {"id": "TW-AMG-BH", "name": "Tarmac Works HOBBY64 Mercedes-AMG GT3 2022 Bathurst 12hr", "img": "Mercedes 2.jpg"},
-    {"id": "SPK-CIV-16", "name": "1:43 Spark Honda Civic Type R-GT #16 GT500 Super GT 2025", "img": "Honda 16.jpg"},
+    {"id": "SPK-CIV-16", "name": "1:43 Spark Honda Civic Type R-GT #16 GT500 Super GT 2025", "img": "Honda 16.jpg", "fixed_price": 134.95},
     {"id": "TW-F488-51", "name": "Tarmac Works 1:64 Ferrari 488 GT3 Macau GT Cup Harmony #51", "img": "Ferrari 51.jpg"}
 ]
 
@@ -58,7 +58,6 @@ def run():
                     img_url = data.get('set_img_url', img_url)
             except: pass
 
-        # IMAGE OVERRIDE FOR RETIRED MINIFIG 6-PACK
         if "71036" in sn:
             img_url = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
 
@@ -69,8 +68,18 @@ def run():
 
     diecast_results = []
     for car in DIECAST_LIST:
-        avg = get_ebay_avg(car['name'])
-        diecast_results.append({"set_num": car['id'], "name": car['name'], "image_url": car['img'], "ebay_avg_price": avg})
+        # Check if we have a fixed shop price, otherwise scrape eBay
+        if "fixed_price" in car:
+            avg = car["fixed_price"]
+        else:
+            avg = get_ebay_avg(car['name'])
+            
+        diecast_results.append({
+            "set_num": car['id'], 
+            "name": car['name'], 
+            "image_url": car['img'], 
+            "ebay_avg_price": avg
+        })
     with open('diecast.json', 'w') as f: json.dump(diecast_results, f, indent=4)
 
 if __name__ == "__main__":
