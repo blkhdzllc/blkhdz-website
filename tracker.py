@@ -1,6 +1,6 @@
 import os, requests, json, time, re
 
-# 18 SETS TOTAL - 1-9 are INVENTORY, 10-18 are TRACKER
+# Ensure the output keys match your HTML (set_num, name, image_url, ebay_avg_price)
 LEGO_SETS = [
     {"id": "75354-1", "name": "Coruscant Guard Gunship", "price": 139.99},
     {"id": "71036-1", "name": "Minifigures Series 23 6-Pack", "price": 49.95},
@@ -11,17 +11,11 @@ LEGO_SETS = [
     {"id": "77247-1", "name": "KICK Sauber F1 Team C44", "price": 26.99},
     {"id": "76015-1", "name": "Doc Ock Truck Heist", "price": 45.00},
     {"id": "76286-1", "name": "Guardians Milano", "price": 179.99},
-    # Tracker items (Scraped)
-    {"id": "42224-1", "name": "Rexy the Porsche"},
-    {"id": "71858-1", "name": "Ninjago 2026 Set A"},
-    {"id": "71847-1", "name": "Ninjago 2026 Set B"},
-    {"id": "75349-1", "name": "Captain Rex Helmet"},
-    {"id": "30726-1", "name": "2026 Polybag"},
-    {"id": "76332-1", "name": "Marvel 2026"},
-    {"id": "75435-1", "name": "Star Wars 2026"},
-    {"id": "75337-1", "name": "AT-TE Walker"},
-    {"id": "75389-1", "name": "The Dark Falcon"}
+    {"id": "75349-1", "name": "Captain Rex Helmet", "price": 69.99} # Hardcoded to be safe
 ]
+
+# Adding tracker sets (without hardcoded prices)
+TRACKER_IDS = ["42224-1", "71858-1", "71847-1", "30726-1", "76332-1", "75435-1", "75337-1", "75389-1"]
 
 DIECAST_LIST = [
     {"id": "TW-911-54", "name": "Tarmac Works Porsche 911 #54", "img": "Porsche 54.jpg", "p": 39.99},
@@ -38,38 +32,44 @@ def get_market_price(query):
         prices = re.findall(r'\$(\d+\.\d+)', r.text)
         if prices: return round(sum([float(p) for p in prices[:3]]) / 3, 2)
     except: pass
-    return "TBD"
+    return "Market TBD"
 
 def run():
-    lego_data = []
+    lego_final = []
+    # Process Inventory
     for item in LEGO_SETS:
         clean_id = item['id'].split('-')[0]
-        # Forced Image Links
         img = f"https://images.brickset.com/sets/images/{clean_id}-1.jpg"
-        if "71036" in item['id']: 
-            img = "https://www.lego.com/cdn/cs/set/assets/bltf2874100236f6d50/71036.png"
+        if "71036" in item['id']: img = "https://www.lego.com/cdn/cs/set/assets/bltf2874100236f6d50/71036.png"
         
-        # Use hardcoded price if available, otherwise scrape
-        price = item.get('price', get_market_price(f"LEGO {clean_id} new sealed"))
-        
-        lego_data.append({
+        lego_final.append({
             "set_num": item['id'],
             "name": item['name'],
             "image_url": img,
-            "ebay_avg_price": price
+            "ebay_avg_price": item['price'] # This is the hardcoded fix
         })
 
-    with open('data.json', 'w') as f: json.dump(lego_data, f, indent=4)
+    # Process Tracker
+    for tid in TRACKER_IDS:
+        clean_id = tid.split('-')[0]
+        lego_final.append({
+            "set_num": tid,
+            "name": f"LEGO {clean_id} Tracker",
+            "image_url": f"https://images.brickset.com/sets/images/{clean_id}-1.jpg",
+            "ebay_avg_price": get_market_price(f"LEGO {clean_id} sealed")
+        })
 
-    diecast_data = []
+    with open('data.json', 'w') as f: json.dump(lego_final, f, indent=4)
+
+    diecast_final = []
     for car in DIECAST_LIST:
-        diecast_data.append({
+        diecast_final.append({
             "set_num": car['id'],
             "name": car['name'],
             "image_url": car['img'],
-            "ebay_avg_price": car['p']
+            "ebay_avg_price": car['p'] # Fixed variable name
         })
-    with open('diecast.json', 'w') as f: json.dump(diecast_data, f, indent=4)
+    with open('diecast.json', 'w') as f: json.dump(diecast_final, f, indent=4)
 
 if __name__ == "__main__":
     run()
