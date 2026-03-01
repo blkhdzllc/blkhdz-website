@@ -23,7 +23,7 @@ jobs:
 
       - name: Run Tracker Script
         env:
-          REBRICKABLE_API_KEY: ${{ secrets.REBRICKABLE_API_KEY }}
+          REBRICKABLE_API_KEY: ${{ secrets.REBRICKABLE_KEY }}
         run: python tracker.py
 
       - name: Commit and Push changes
