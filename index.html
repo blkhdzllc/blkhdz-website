@@ -6,15 +6,15 @@
     <title>BLKHDZ | Official Market Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #FFD700; --dark-bg: #0a0a0a; --teal: #008080; --warning-red: #ff3b3b; }
+        :root { --accent: #FFD700; --dark-bg: #000; --teal: #008080; --warning-red: #ff3b3b; }
         
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* HEADER */
+        /* HEADER - LARGE LOGO FOCUS */
         header {
-            background: #000;
+            background: rgba(0,0,0,0.95);
             border-bottom: 1px solid #222;
-            padding: 15px 40px;
+            padding: 30px 50px; /* Increased padding */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -22,66 +22,85 @@
             top: 0;
             z-index: 1000;
         }
-        .header-logo { height: 40px; width: auto; }
-        .nav-btn { color: #888; text-decoration: none; font-weight: 400; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 3px; font-family: 'Syncopate', sans-serif; transition: 0.3s; margin-left: 30px; }
+        /* INCREDIBLY BIGGER LOGO */
+        .header-logo { 
+            height: 120px; /* Tripled the size */
+            width: auto; 
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+        }
+        
+        .nav-buttons { display: flex; gap: 40px; }
+        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 4px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
         .nav-btn:hover { color: var(--accent); }
 
-        /* PARALLAX HERO SECTION */
-        .hero {
-            height: 70vh;
-            position: relative;
+        /* TRUE PARALLAX HERO */
+        .parallax-wrapper {
+            height: 100vh; /* Full screen height to see the whole image */
             overflow: hidden;
+            position: relative;
             display: flex;
-            flex-direction: column;
-            justify-content: center; 
+            justify-content: center;
             align-items: center;
-            text-align: center;
-            /* This creates the 'slide under' effect */
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('hero-parallax.jpg');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
         }
-        .hero h1 { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 3.5rem; text-transform: uppercase; letter-spacing: -2px; margin: 0; }
-        .hero p { font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: 10px; text-transform: uppercase; font-size: 0.8rem; color: var(--accent); margin-top: 10px; }
+        
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%; /* Extra height allows the 'slow slide' */
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('hero-parallax.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            transform: translateY(0);
+            will-change: transform;
+        }
 
-        /* CONTENT SECTION (Covers the hero on scroll) */
+        .hero-text {
+            text-align: center;
+            z-index: 1;
+        }
+        .hero-text h1 { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 5rem; text-transform: uppercase; letter-spacing: -3px; margin: 0; }
+        .hero-text p { font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: 15px; text-transform: uppercase; font-size: 1rem; color: var(--accent); margin-top: 15px; }
+
+        /* CONTENT SECTION */
         .main-content {
             position: relative;
-            background: #000; /* Solid background to cover the image */
-            z-index: 2;
+            background: #000;
+            z-index: 5;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.8);
         }
 
-        .container { max-width: 1400px; margin: 0 auto; padding: 100px 40px; }
-        .section-header { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 2.5rem; text-transform: uppercase; margin-bottom: 60px; letter-spacing: -1px; }
+        .container { max-width: 1600px; margin: 0 auto; padding: 120px 50px; }
+        .section-header { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 3rem; text-transform: uppercase; margin-bottom: 80px; }
         .section-header span { color: var(--accent); }
         
-        #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 40px; }
+        #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 60px; }
         
         .set-card { background: #0a0a0a; border: 1px solid #1a1a1a; position: relative; transition: 0.4s; }
         .set-card:hover { border-color: var(--accent); }
         
-        .img-wrapper { width: 100%; height: 350px; background: #000; overflow: hidden; position: relative; }
-        .set-card img { width: 100%; height: 100%; object-fit: contain; padding: 20px; transition: 0.8s; }
+        .img-wrapper { width: 100%; height: 400px; background: #000; overflow: hidden; position: relative; }
+        .set-card img { width: 100%; height: 100%; object-fit: contain; padding: 30px; }
 
-        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 8px 15px; font-weight: 900; font-family: 'Syncopate', sans-serif; z-index: 10; }
+        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 10px 20px; font-weight: 900; font-family: 'Syncopate', sans-serif; z-index: 10; font-size: 1.2rem; }
         
-        .card-content { padding: 30px; }
-        .set-title { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 20px; min-height: 2.8rem; }
+        .card-content { padding: 40px; }
+        .set-title { font-family: 'Syncopate', sans-serif; font-size: 1rem; text-transform: uppercase; margin-bottom: 25px; min-height: 3rem; line-height: 1.4; }
 
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .action-link { text-decoration: none; text-align: center; padding: 14px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .action-link { text-decoration: none; text-align: center; padding: 16px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
         
         .ebay-btn { background: #111; color: #fff; border: 1px solid #222; }
         .amazon-btn { background: #111; color: #FF9900; border: 1px solid #222; }
         .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; }
 
         /* FOOTER */
-        footer { padding: 120px 40px; background: #000; text-align: center; border-top: 1px solid #111; }
-        .footer-logo { width: 200px; margin-bottom: 40px; filter: brightness(0) invert(1); }
-        .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 4px; color: var(--teal); margin-bottom: 15px; font-size: 0.8rem; }
-        .disclosure { max-width: 800px; margin: 60px auto 0; font-size: 0.65rem; color: var(--warning-red); line-height: 2; text-transform: uppercase; font-weight: 700; }
+        footer { padding: 150px 50px; background: #000; text-align: center; border-top: 1px solid #111; }
+        .footer-logo { width: 250px; margin-bottom: 50px; filter: brightness(0) invert(1); }
+        .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 5px; color: var(--teal); margin-bottom: 20px; font-size: 1rem; }
+        .disclosure { max-width: 900px; margin: 80px auto 0; font-size: 0.7rem; color: var(--warning-red); line-height: 2; text-transform: uppercase; font-weight: 900; }
     </style>
 </head>
 <body>
@@ -94,9 +113,12 @@
     </div>
 </header>
 
-<div class="hero">
-    <h1>GOLD STANDARD</h1>
-    <p>LEGACY IS EARNED</p>
+<div class="parallax-wrapper">
+    <div class="parallax-bg" id="parallax"></div>
+    <div class="hero-text">
+        <h1>GOLD STANDARD</h1>
+        <p>LEGACY IS EARNED</p>
+    </div>
 </div>
 
 <div class="main-content">
@@ -109,15 +131,22 @@
     <footer>
         <img src="BLKHDZ.png" class="footer-logo" alt="BLKHDZ WHITE">
         <div class="vet-badge">VETERAN OWNED BUSINESS</div>
-        <div style="color:#333; font-size:0.6rem; letter-spacing:3px;">BLKHDZ LLC | EST. 2025</div>
+        <div style="color:#444; font-size:0.7rem; letter-spacing:5px;">BLKHDZ LLC | EST. 2025</div>
         <div class="disclosure">
-            AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND THE AMAZON SERVICES LLC ASSOCIATES PROGRAM. 
-            WE MAY EARN A COMMISSION FROM QUALIFYING PURCHASES MADE THROUGH LINKS ON THIS WEBSITE.
+            AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND THE AMAZON SERVICES LLC ASSOCIATES PROGRAM. WE MAY EARN A COMMISSION FROM QUALIFYING PURCHASES MADE THROUGH LINKS ON THIS WEBSITE.
         </div>
     </footer>
 </div>
 
 <script>
+    // SMOOTH SLOW PARALLAX LOGIC
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallax = document.getElementById('parallax');
+        // Multiplying by 0.4 makes the image slide at 40% of the normal scroll speed
+        parallax.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
+    });
+
     async function loadSets() {
         const container = document.getElementById('lego-container');
         try {
