@@ -46,7 +46,7 @@
 
         .diecast-showcase { background: #050505; padding: 100px 0; border-top: 1px solid #111; text-align: center; }
         .showcase-title { font-family: 'Syncopate', sans-serif; font-size: 2.5rem; letter-spacing: 15px; margin-bottom: 50px; color: #fff; }
-        .showcase-img { width: 90%; max-width: 1400px; height: auto; border: 1px solid #333; transition: 0.5s; }
+        .showcase-img { width: 90%; max-width: 1400px; height: auto; border: 1px solid #333; transition: 0.5s; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
 
         footer { padding: 150px 80px; background: #000; text-align: center; border-top: 1px solid #111; }
         .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 12px; color: var(--teal); font-size: 1.5rem; }
@@ -71,13 +71,13 @@
 
     <div class="diecast-showcase">
         <h2 class="showcase-title">ELITE DIECAST</h2>
-        <img src="20260224_201932[1].jpg" alt="Elite Diecast" class="showcase-img">
+        <img src="diecast-showcase.jpg" alt="Elite Diecast Showcase" class="showcase-img">
     </div>
 
     <footer>
         <div class="vet-badge">VETERAN OWNED BUSINESS</div>
         <div class="disclosure">
-            AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND THE AMAZON SERVICES LLC ASSOCIATES PROGRAM.
+            AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND THE AMAZON SERVICES LLC ASSOCIATES PROGRAM. WE MAY EARN A COMMISSION FROM QUALIFYING PURCHASES MADE THROUGH LINKS ON THIS WEBSITE.
         </div>
     </footer>
 </div>
@@ -91,7 +91,8 @@
     async function loadSets() {
         const container = document.getElementById('lego-container');
         try {
-            const res = await fetch('data.json?v=' + Date.now()); 
+            // THE CACHE BUSTER: Forces GitHub to fetch the LATEST data.json
+            const res = await fetch('data.json?nocache=' + new Date().getTime()); 
             const sets = await res.json();
             container.innerHTML = '';
             sets.forEach(set => {
@@ -113,7 +114,7 @@
                         </div>
                     </div>`;
             });
-        } catch(e) { console.error(e); }
+        } catch(e) { console.error("Update Error:", e); }
     }
     window.onload = loadSets;
 </script>
