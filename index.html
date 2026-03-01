@@ -6,38 +6,38 @@
     <title>BLKHDZ | Official Market Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #FFD700; --dark-bg: #000; --teal: #008080; --warning-red: #ff3b3b; }
+        :root { --accent: #FFD700; --teal: #008080; --warning-red: #ff3b3b; }
         
         body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* THE BLOCK HEADER - NO CONSTRAINTS */
+        /* THE COMMANDER HEADER */
         header {
             background: #000;
             border-bottom: 2px solid #111;
-            padding: 80px 0 40px 0; /* Huge vertical padding */
+            padding: 100px 0 50px 0; /* Massive vertical breathing room */
             display: flex;
-            flex-direction: column; /* Stack logo and nav so they don't squeeze each other */
+            flex-direction: column; 
             align-items: center; 
-            position: relative;
-            z-index: 1000;
+            text-align: center;
         }
 
-        /* LOGO FORCED TO 6REM */
+        /* HARD-CODED SCALE */
         .header-logo { 
-            height: 6rem !important; /* Forces height to match "GOLD STANDARD" scale */
-            width: auto; 
+            width: 800px; /* Forced width for impact */
+            height: auto; 
+            max-width: 90vw; /* Prevents it from breaking mobile screens */
             display: block;
-            margin-bottom: 40px; /* Space before nav */
-            filter: drop-shadow(0 0 30px rgba(255,255,255,0.15));
+            margin: 0 auto 60px auto;
+            filter: drop-shadow(0 0 30px rgba(255,255,255,0.1));
         }
         
         .nav-buttons { 
             display: flex; 
-            gap: 80px; 
-            width: 100%; 
+            gap: 100px; 
             justify-content: center;
-            border-top: 1px solid #111;
-            padding-top: 30px;
+            border-top: 1px solid #222;
+            padding-top: 40px;
+            width: 100%;
         }
         
         .nav-btn { 
@@ -45,8 +45,8 @@
             text-decoration: none; 
             font-weight: 700; 
             text-transform: uppercase; 
-            font-size: 1.2rem; 
-            letter-spacing: 8px; 
+            font-size: 1.5rem; 
+            letter-spacing: 10px; 
             font-family: 'Syncopate', sans-serif; 
             transition: 0.3s; 
         }
@@ -64,34 +64,28 @@
         
         .parallax-bg {
             position: absolute;
-            top: -15%; 
-            left: 0;
-            width: 100%;
-            height: 150%; 
+            top: -15%; left: 0; width: 100%; height: 150%; 
             background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('hero-parallax.jpg');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
+            background-size: cover; background-position: center; z-index: -1;
             will-change: transform;
         }
 
-        .hero-text { text-align: center; z-index: 1; }
-        .hero-text h1 { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 6rem; text-transform: uppercase; letter-spacing: -4px; margin: 0; line-height: 1; }
-        .hero-text p { font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: 20px; text-transform: uppercase; font-size: 1.2rem; color: var(--accent); margin-top: 20px; }
+        .hero-text h1 { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 6rem; text-transform: uppercase; letter-spacing: -4px; margin: 0; }
+        .hero-text p { font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: 20px; text-transform: uppercase; font-size: 1.2rem; color: var(--accent); margin-top: 20px; text-align: center; }
 
-        /* CONTENT */
+        /* LEDGER CONTENT */
         .main-content { position: relative; background: #000; z-index: 5; box-shadow: 0 -40px 100px rgba(0,0,0,1); }
         .container { max-width: 1800px; margin: 0 auto; padding: 150px 80px; }
         .section-header { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 4rem; text-transform: uppercase; margin-bottom: 100px; }
         
         #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); gap: 80px; }
-        .set-card { background: #080808; border: 1px solid #111; }
-        .img-wrapper { width: 100%; height: 500px; background: #000; overflow: hidden; position: relative; }
+        .set-card { background: #080808; border: 1px solid #111; position: relative; }
+        .img-wrapper { width: 100%; height: 500px; background: #000; }
         .set-card img { width: 100%; height: 100%; object-fit: contain; padding: 40px; }
-        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 15px 25px; font-weight: 900; font-family: 'Syncopate', sans-serif; z-index: 10; font-size: 1.5rem; }
+        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 15px 25px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 1.5rem; }
         
         .card-content { padding: 50px; }
-        .set-title { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 30px; min-height: 3.5rem; letter-spacing: 1px; }
+        .set-title { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 30px; min-height: 3.5rem; }
 
         .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .action-link { text-decoration: none; text-align: center; padding: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
@@ -103,7 +97,7 @@
         footer { padding: 200px 80px; background: #000; text-align: center; border-top: 1px solid #111; }
         .footer-logo { width: 600px; margin-bottom: 60px; filter: brightness(0) invert(1); }
         .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 10px; color: var(--teal); margin-bottom: 25px; font-size: 1.5rem; }
-        .disclosure { max-width: 1000px; margin: 100px auto 0; font-size: 0.8rem; color: var(--warning-red); line-height: 2.2; text-transform: uppercase; font-weight: 900; letter-spacing: 1px; }
+        .disclosure { max-width: 1000px; margin: 100px auto 0; font-size: 0.8rem; color: var(--warning-red); line-height: 2.2; text-transform: uppercase; font-weight: 900; }
     </style>
 </head>
 <body>
