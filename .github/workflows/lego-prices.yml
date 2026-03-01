@@ -2,7 +2,7 @@ name: Update Market Prices
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Runs every 6 hours
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -29,7 +29,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # Added diecast.json to the tracking list below
           git add data.json diecast.json
           git commit -m "Update Market Prices: LEGO & Elite Diecast" || exit 0
           git push
