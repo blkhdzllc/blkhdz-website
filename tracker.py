@@ -8,7 +8,7 @@ import time
 
 # --- CONFIGURATION ---
 # Replace the API key if you aren't using GitHub Secrets
-REBRICKABLE_API_KEY = os.environ.get('REBRICKABLE_API_KEY')
+REBRICKABLE_API_KEY = os.environ.get('REBRICKABLE_KEY')
 
 # YOUR 9 SETS
 SET_NUMBERS = [
