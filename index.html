@@ -3,428 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ | Legacy Collections</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>BLKHDZ LLC | LEGO Market Tracker</title>
     <style>
-        :root {
-            --lego-red: #E3000B;
-            --lego-yellow: #FFCF00;
-            --black: #0a0a0a;
-            --dark-gray: #1c1c1c;
-            --text-white: #ffffff;
-            --text-gray: #b0b0b0;
-        }
-
-        html { scroll-behavior: smooth; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            background-color: var(--black);
-            color: var(--text-white);
-            font-family: 'Roboto', sans-serif;
-            overflow-x: hidden;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-
-        section { scroll-margin-top: 100px; }
-
-        h1, h2, h3 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-
-        /* --- NAVIGATION --- */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: rgba(0,0,0,0.95);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--lego-red);
-        }
-
-        .logo { font-size: 2.2rem; font-weight: 700; color: var(--text-white); }
-        .logo span { color: var(--lego-red); }
-
-        .nav-links { display: flex; align-items: center; }
-        .nav-links a {
-            margin-right: 35px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-white);
-            letter-spacing: 1.5px;
-            cursor: pointer;
-        }
-        .nav-links a:hover { color: var(--lego-yellow); }
-
-        .btn-main {
-            background-color: var(--lego-red);
-            color: white;
-            padding: 12px 30px;
-            font-weight: 700;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-            font-family: 'Oswald', sans-serif;
-            display: inline-block;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center; 
-            padding-left: 10%;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('hero-parallax.jpg'); 
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero-parallax.jpg');
             background-size: cover;
             background-position: center;
-            z-index: 0;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.45);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1100px;
-            border-left: 10px solid var(--lego-yellow);
-            padding-left: 45px;
-            text-shadow: 2px 2px 15px rgba(0,0,0,0.9);
-            margin-top: 100px; 
-        }
-
-        .hero h1 { 
-            font-size: 7.0rem; 
-            line-height: 0.85; 
-            margin-bottom: 25px; 
-            color: var(--text-white);
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.8rem;
-            color: #e0e0e0;
-            margin-bottom: 35px;
-            font-weight: 300;
-            max-width: 700px;
-            line-height: 1.2;
-        }
-
-        /* --- MARKET WATCH SECTION --- */
-        .market-watch {
-            background-color: var(--black);
-            padding: 80px 10%;
-            position: relative;
-            z-index: 10;
-        }
-
-        .market-card {
-            background: var(--dark-gray);
-            border: 1px solid #333;
-            border-top: 4px solid var(--lego-yellow);
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-        }
-
-        .market-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 20px;
-        }
-
-        .market-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .market-table th {
-            text-align: left;
-            padding: 15px;
-            color: var(--lego-yellow);
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--lego-red);
-        }
-
-        .market-table td {
-            padding: 20px 15px;
-            border-bottom: 1px solid #2a2a2a;
-            font-size: 1.1rem;
-        }
-
-        .market-table tr:hover {
-            background: rgba(255,255,255,0.02);
-        }
-
-        .invest-link {
-            color: var(--lego-red);
-            font-weight: 700;
-            font-family: 'Oswald', sans-serif;
-            border: 1px solid var(--lego-red);
-            padding: 5px 15px;
-        }
-
-        .invest-link:hover {
-            background: var(--lego-red);
-            color: white;
-        }
-
-        /* --- SPLIT SECTIONS --- */
-        .split-section {
-            display: flex;
-            flex-wrap: wrap;
-            min-height: 600px;
-            background-color: var(--black);
-            z-index: 10;
-            position: relative;
-        }
-
-        .split-section.reverse { flex-direction: row-reverse; }
-
-        .split-image {
-            flex: 1;
-            min-width: 400px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .split-content {
-            flex: 1;
-            min-width: 400px;
-            padding: 80px;
-            background-color: var(--dark-gray);
+            height: 300px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
-
-        .split-content h2 { font-size: 3rem; margin-bottom: 15px; color: var(--lego-yellow); }
-        .split-content p { margin-bottom: 15px; line-height: 1.8; color: #dcdcdc; font-size: 1.2rem; }
-
-        .highlight-list { list-style: none; margin-top: 15px; }
-        .highlight-list li { margin-bottom: 12px; display: flex; align-items: center; color: #fff; font-size: 1.1rem; }
-        .highlight-list li span { color: var(--lego-red); margin-right: 15px; }
-
-        footer {
-            background-color: #050505;
-            padding: 60px 20px;
+            align-items: center;
             text-align: center;
-            border-top: 2px solid var(--lego-red);
         }
-
-        .disclaimer { font-size: 0.85rem; color: #444; max-width: 800px; margin: 30px auto 0; line-height: 1.6; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3.5rem; }
-            .nav-links { display: none; }
-            .market-watch { padding: 40px 5%; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #lego-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .set-card {
+            background: rgba(30, 30, 30, 0.9);
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .set-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+        }
+        .set-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .price-badge {
+            background: #FFD700;
+            color: #000;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .btn {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            color: white;
+        }
+        .btn-ebay { background-color: #0064d2; }
+        .btn-amazon { background-color: #ff9900; color: #000; }
+        .btn-store { 
+            display: block; 
+            background-color: #e53238; 
+            margin-top: 10px;
+        }
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .header { height: 200px; }
+            .price-badge { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">BLK<span>HDZ</span></div>
-        <div class="nav-links">
-            <a onclick="smoothScrollBounce('market-watch')">MARKET WATCH</a>
-            <a onclick="smoothScrollBounce('about')">THE HOBBYIST</a>
-            <a onclick="smoothScrollBounce('collection')">THE VAULT</a>
-            <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=&toolid=10001&mkevt=1" class="btn-main">SHOP EBAY</a>
-        </div>
-    </nav>
+<div class="header">
+    <h1 style="color: #FFD700; font-size: 3rem; margin: 0;">BLKHDZ</h1>
+    <p style="letter-spacing: 2px;">LIVE LEGO MARKET TRACKER</p>
+</div>
 
-    <header class="hero">
-        <div class="hero-bg" id="parallax"></div>
-        <div class="hero-content">
-            <h1>LEGACY<br>ISN'T BOUGHT.<br>IT'S CURATED.</h1>
-            <p>Premier LEGO® Speed Champions, Technic, and JDM Diecast.</p>
-            <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=&toolid=10001&mkevt=1" class="btn-main">ENTER THE STORE</a>
-        </div>
-    </header>
+<div class="container">
+    <div id="lego-container">
+        <p style="text-align: center; width: 100%;">Fetching latest market data...</p>
+    </div>
+</div>
 
-    <section id="market-watch" class="market-watch">
-        <div class="market-card">
-            <div class="market-header">
-                <div>
-                    <h2 style="font-size: 2.5rem;">LEGO MARKET WATCH</h2>
-                    <p style="color: var(--text-gray);">Daily Automated Price & Inventory Tracking</p>
-                </div>
-                <div style="text-align: right; font-family: 'Oswald';">
-                    <span style="color: var(--lego-red); font-weight: 700;">● LIVE DATA</span>
-                </div>
-            </div>
-            
-            <div style="overflow-x: auto;">
-                <table class="market-table">
-                    <thead>
-                        <tr>
-                            <th>Set ID</th>
-                            <th>Release Name</th>
-                            <th>Pieces</th>
-                            <th style="text-align: right;">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="lego-market-body">
-                        <tr><td colspan="4" style="text-align: center; color: var(--text-gray);">Synchronizing with Rebrickable API...</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section class="split-section" id="about">
-        <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-        <div class="split-content" id="about-inner">
-            <h2>HOBBYIST TURNED CURATOR</h2>
-            <p><strong>At BLKHDZ, we are collectors first.</strong></p>
-            <p>Our diversity is what makes our collection unique. We specialize in a broad spectrum of building block items and the cars that define generations. From the mechanical beauty of <strong>Rexy (42224)</strong>, to <strong>Ninjago</strong> and <strong>Monkie Kid</strong>.</p>
-            <p>Whether it's a 1000+ piece masterpiece or a rare collector's find, we look for products that offer true detail and engineering excellence.</p>
-        </div>
-    </section>
-
-    <section class="split-section reverse" id="collection">
-        <div class="split-image" style="background-image: url('custom-car.jpg');"></div>
-        <div class="split-content" id="collection-inner">
-            <h2>THE VAULT</h2>
-            <p>From the sands of Tatooine to the <strong>bricks of Daytona</strong>, our collection spans generations of design.</p>
-            <ul class="highlight-list">
-                <li><span>▶</span> Present day and retired Star Wars sets</li>
-                <li><span>▶</span> Speed Champions Sets</li>
-                <li><span>▶</span> Iconic Minifigure Sets</li>
-                <li><span>▶</span> Rare Retired Sets</li>
-            </ul>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-logo" style="font-family: 'Oswald'; font-size: 2.2rem; color: white;">BLK<span>HDZ</span> LLC</div>
-        <p style="color: #666;">Tampa, FL | Veteran Owned Business</p>
-        <div class="disclaimer">
-            <p><strong>Affiliate Disclosure:</strong> When you click on links to various merchants on this site and make a purchase, this can result in this site earning a commission. Affiliate programs and affiliations include, but are not limited to, the eBay Partner Network.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Parallax Effect
-        window.addEventListener('scroll', function() {
-            const parallax = document.getElementById('parallax');
-            let offset = window.pageYOffset;
-            parallax.style.transform = 'translateY(' + offset * 0.5 + 'px)';
-        });
-
-        // Smooth Scroll
-        function smoothScrollBounce(targetId) {
-            const element = document.getElementById(targetId);
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Fetch Live LEGO Data
-   async function fetchLegoData() {
+<script>
+    async function fetchLegoMarketData() {
         try {
-            const res = await fetch('data.json');
-            const data = await res.json();
-            const tableBody = document.getElementById('lego-market-body');
-            tableBody.innerHTML = '';
-
-            data.forEach(set => {
-                // "Retired" logic: if MSRP is missing or 0, label it as a Legacy/Retired set
-                const priceLabel = (set.msrp && set.msrp > 0) ? `$${set.msrp}` : 'RETIRED';
-                const statusColor = (set.msrp && set.msrp > 0) ? 'var(--lego-yellow)' : 'var(--lego-red)';
-
-                tableBody.innerHTML += `
-                    <tr style="border-bottom: 1px solid #2a2a2a;">
-                        <td style="color: var(--lego-yellow); font-family: 'Oswald'; font-weight:700; padding: 15px;">${set.set_id}</td>
-                        <td style="padding: 15px;">
-                            <div style="display:flex; align-items:center;">
-                                <img src="${set.img}" style="width:50px; height:auto; margin-right:15px; border-radius:4px; border: 1px solid #333;">
-                                <span style="font-size: 0.9rem; font-weight: 700;">${set.name.toUpperCase()}</span>
-                            </div>
-                        </td>
-                        <td style="color: ${statusColor}; font-weight: 700; padding: 15px;">${priceLabel}</td>
-                        <td style="text-align: right; padding: 15px;">
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=${set.set_id}&_ssn=blkhdz&mkcid=1&campid=5339141674&toolid=10001&mkevt=1" 
-                               target="_blank" class="invest-link">EBAY MARKET</a>
-                            
-                            <a href="https://www.amazon.com/s?k=lego+${set.set_id}" 
-                               target="_blank" class="invest-link" style="border-color:#666; color:#aaa; margin-left:5px;">AMAZON</a>
-                        </td>
-                    </tr>
-                `;
-            });
-        } catch (error) {
-            console.error('Market Watch Sync Error:', error);
-        }
-    }
-
-    // Call the function once to load the data
-    fetchLegoData();
-   <script>
-    async function loadLegoData() {
-        try {
-            // This fetches the data.json that your GitHub Action updates every 6 hours
             const response = await fetch('data.json');
             const sets = await response.json();
             const container = document.getElementById('lego-container');
             container.innerHTML = '';
 
             sets.forEach(set => {
+                const cleanId = set.set_num.split('-')[0];
                 const card = document.createElement('div');
                 card.className = 'set-card';
                 
-                // Styling the status: Green for Market Active, Yellow for others
-                const statusColor = set.status === 'Market Active' ? '#00FF00' : '#FFD700';
-                
-                card.innerHTML = `
-                    <div style="background: rgba(0,0,0,0.6); padding: 15px; border-radius: 10px; border: 1px solid #333; margin-bottom: 20px;">
-                        <img src="${set.image_url}" alt="${set.name}" style="width:100%; border-radius: 5px;">
-                        <h3 style="color: #FFFFFF; margin: 10px 0;">${set.name}</h3>
-                        <p style="color: #CCCCCC;">Set #${set.set_num}</p>
-                        <p style="font-weight: bold;">Status: <span style="color: ${statusColor}">${set.status}</span></p>
-                        
-                        <div style="background: #FFD700; color: #000; padding: 10px; border-radius: 5px; margin: 10px 0; font-weight: bold; text-align: center;">
-                            eBay Market Avg: $${set.ebay_avg_price}
-                        </div>
+                // eBay and Amazon search URLs with "LEGO" prefix
+                const ebaySearch = `https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}`;
+                const amazonSearch = `https://www.amazon.com/s?k=LEGO+${cleanId}`;
+                const myStore = "https://www.ebay.com/str/blkhdz";
 
-                        <a href="https://www.ebay.com/str/blkhdz" target="_blank" 
-                           style="display: block; background: #e53238; color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: bold;">
-                           View in My Store
-                        </a>
+                card.innerHTML = `
+                    <img src="${set.image_url}" class="set-image" alt="${set.name}">
+                    <h2 style="margin: 0; font-size: 1.4rem;">${set.name}</h2>
+                    <p style="color: #aaa; margin: 5px 0;">Set #${set.set_num} | ${set.year}</p>
+                    
+                    <p>Status: <span style="color: ${set.status === 'Market Active' ? '#00FF00' : '#FFD700'}">${set.status}</span></p>
+                    
+                    <div class="price-badge">
+                        Avg Sold: $${set.ebay_avg_price}
                     </div>
+
+                    <div class="button-group">
+                        <a href="${ebaySearch}" target="_blank" class="btn btn-ebay">eBay</a>
+                        <a href="${amazonSearch}" target="_blank" class="btn btn-amazon">Amazon</a>
+                    </div>
+                    
+                    <a href="${myStore}" target="_blank" class="btn btn-store">View My eBay Store</a>
                 `;
                 container.appendChild(card);
             });
         } catch (error) {
-            console.error('Error loading LEGO data:', error);
-            document.getElementById('lego-container').innerHTML = '<p style="color:white;">Updating market prices... please refresh in a moment.</p>';
+            console.error('Error:', error);
+            document.getElementById('lego-container').innerHTML = 
+                `<p style="color: red; text-align: center;">Error loading data. Check if data.json exists.</p>`;
         }
     }
 
-    // Run the function when the page loads
-    window.onload = loadLegoData;
+    window.onload = fetchLegoMarketData;
 </script>
+
 </body>
 </html>
-
