@@ -70,5 +70,14 @@
         "year": "N/A",
         "ebay_avg_price": "TBD",
         "status": "Researching"
+     },
+     {
+        - name: Commit and Push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data.json
+        git commit -m "Update LEGO market prices" || exit 0
+        git push
     }
 ]
