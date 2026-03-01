@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLKHDZ | Official Market Tracker</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700;900&family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #FFD700; --dark-bg: #0a0a0a; --teal: #008080; --warning-red: #e53238; }
-        body { background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
+        :root { --accent: #FFD700; --dark-bg: #0a0a0a; --teal: #008080; --warning-red: #ff3b3b; }
         
-        /* TOP BORDER / HEADER */
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        
+        /* HEADER */
         header {
             background: #000;
-            border-bottom: 2px solid var(--accent);
-            padding: 20px 40px;
+            border-bottom: 1px solid #222;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -21,69 +22,66 @@
             top: 0;
             z-index: 1000;
         }
-        .header-logo { height: 50px; width: auto; }
-        
-        .nav-buttons { display: flex; gap: 30px; }
-        .nav-btn { color: #fff; text-decoration: none; font-weight: 300; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; transition: 0.3s; }
+        .header-logo { height: 40px; width: auto; }
+        .nav-btn { color: #888; text-decoration: none; font-weight: 400; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 3px; font-family: 'Syncopate', sans-serif; transition: 0.3s; margin-left: 30px; }
         .nav-btn:hover { color: var(--accent); }
 
-        /* HERO SECTION */
+        /* PARALLAX HERO SECTION */
         .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero-parallax.jpg');
-            background-size: cover;
-            background-position: center;
+            height: 70vh;
+            position: relative;
+            overflow: hidden;
             display: flex;
+            flex-direction: column;
             justify-content: center; 
             align-items: center;
+            text-align: center;
+            /* This creates the 'slide under' effect */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('hero-parallax.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; font-style: italic; color: #fff; text-shadow: 2px 2px 20px rgba(0,0,0,0.5); }
+        .hero h1 { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 3.5rem; text-transform: uppercase; letter-spacing: -2px; margin: 0; }
+        .hero p { font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: 10px; text-transform: uppercase; font-size: 0.8rem; color: var(--accent); margin-top: 10px; }
 
-        /* THE LEDGER */
-        .container { max-width: 1600px; margin: 0 auto; padding: 80px 40px; }
-        .section-header { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-style: italic; margin-bottom: 60px; border-left: 8px solid var(--accent); padding-left: 25px; }
+        /* CONTENT SECTION (Covers the hero on scroll) */
+        .main-content {
+            position: relative;
+            background: #000; /* Solid background to cover the image */
+            z-index: 2;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 100px 40px; }
+        .section-header { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 2.5rem; text-transform: uppercase; margin-bottom: 60px; letter-spacing: -1px; }
+        .section-header span { color: var(--accent); }
         
-        #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 50px; }
+        #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 40px; }
         
-        .set-card { background: #111; border: 1px solid #222; padding: 25px; position: relative; transition: 0.4s; }
+        .set-card { background: #0a0a0a; border: 1px solid #1a1a1a; position: relative; transition: 0.4s; }
         .set-card:hover { border-color: var(--accent); }
         
-        .img-wrapper { width: 100%; height: 350px; background: #000; margin-bottom: 20px; }
-        .set-card img { width: 100%; height: 100%; object-fit: contain; }
+        .img-wrapper { width: 100%; height: 350px; background: #000; overflow: hidden; position: relative; }
+        .set-card img { width: 100%; height: 100%; object-fit: contain; padding: 20px; transition: 0.8s; }
 
-        .price-badge { position: absolute; top: 10px; right: 10px; background: var(--accent); color: #000; padding: 5px 15px; font-weight: 900; font-size: 1.2rem; }
+        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 8px 15px; font-weight: 900; font-family: 'Syncopate', sans-serif; z-index: 10; }
         
-        .set-title { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; min-height: 2.4rem; }
+        .card-content { padding: 30px; }
+        .set-title { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 20px; min-height: 2.8rem; }
 
-        /* LINK BUTTONS */
-        .btn-group { display: flex; flex-direction: column; gap: 10px; }
-        .action-link { text-decoration: none; text-align: center; padding: 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .action-link { text-decoration: none; text-align: center; padding: 14px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
         
-        .ebay-btn { background: transparent; border: 1px solid #fff; color: #fff; }
-        .amazon-btn { background: transparent; border: 1px solid #FF9900; color: #FF9900; }
-        .store-btn { background: var(--accent); color: #000; }
+        .ebay-btn { background: #111; color: #fff; border: 1px solid #222; }
+        .amazon-btn { background: #111; color: #FF9900; border: 1px solid #222; }
+        .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; }
 
-        .ebay-btn:hover, .amazon-btn:hover { background: rgba(255,255,255,0.1); }
-        .store-btn:hover { background: #fff; }
-
-        /* FOOTER COLORS */
-        footer { padding: 100px 40px; background: #050505; text-align: center; border-top: 1px solid #111; }
-        
-        /* Footer logo forced to white via brightness filter */
-        .footer-logo { width: 180px; margin-bottom: 30px; filter: brightness(0) invert(1); opacity: 0.9; }
-        
-        .vet-badge { font-weight: 700; letter-spacing: 5px; color: var(--teal); margin-bottom: 20px; font-size: 0.9rem; }
-        
-        .disclosure { 
-            max-width: 900px; 
-            margin: 40px auto 0; 
-            font-size: 0.7rem; 
-            color: var(--warning-red); /* RED AFFILIATION WARNING */
-            line-height: 1.8; 
-            letter-spacing: 1px; 
-            text-transform: uppercase;
-            font-weight: 700;
-        }
+        /* FOOTER */
+        footer { padding: 120px 40px; background: #000; text-align: center; border-top: 1px solid #111; }
+        .footer-logo { width: 200px; margin-bottom: 40px; filter: brightness(0) invert(1); }
+        .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 4px; color: var(--teal); margin-bottom: 15px; font-size: 0.8rem; }
+        .disclosure { max-width: 800px; margin: 60px auto 0; font-size: 0.65rem; color: var(--warning-red); line-height: 2; text-transform: uppercase; font-weight: 700; }
     </style>
 </head>
 <body>
@@ -91,33 +89,33 @@
 <header>
     <img src="BLKHDZ.png" alt="BLKHDZ" class="header-logo">
     <div class="nav-buttons">
-        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="nav-btn">eBay Store</a>
-        <a href="https://www.ebay.com/str/blkhdz?_sacat=222" target="_blank" class="nav-btn">Diecast</a>
-        <a href="#ledger" class="nav-btn">Market Tracker</a>
+        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="nav-btn">Inventory</a>
+        <a href="#ledger" class="nav-btn">Tracker</a>
     </div>
 </header>
 
 <div class="hero">
-    <h1>The Gold Standard.</h1>
+    <h1>GOLD STANDARD</h1>
+    <p>LEGACY IS EARNED</p>
 </div>
 
-<div class="container" id="ledger">
-    <div class="section-header">The Ledger.</div>
-    <div id="lego-container">
-        </div>
-</div>
-
-<footer>
-    <img src="BLKHDZ.png" class="footer-logo" alt="BLKHDZ White">
-    <div class="vet-badge">VETERAN OWNED BUSINESS</div>
-    <div style="font-weight: 100; letter-spacing: 3px; color: #666; font-size: 0.7rem;">BLKHDZ LLC | ESTABLISHED 2025</div>
-    
-    <div class="disclosure">
-        AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND THE AMAZON SERVICES LLC ASSOCIATES PROGRAM. 
-        AS AN AFFILIATE, WE MAY EARN A COMMISSION FROM QUALIFYING PURCHASES MADE THROUGH LINKS ON THIS WEBSITE 
-        TO EBAY, AMAZON, OR THE BLKHDZ OFFICIAL STORE.
+<div class="main-content">
+    <div class="container" id="ledger">
+        <div class="section-header">THE <span>LEDGER.</span></div>
+        <div id="lego-container">
+            </div>
     </div>
-</footer>
+
+    <footer>
+        <img src="BLKHDZ.png" class="footer-logo" alt="BLKHDZ WHITE">
+        <div class="vet-badge">VETERAN OWNED BUSINESS</div>
+        <div style="color:#333; font-size:0.6rem; letter-spacing:3px;">BLKHDZ LLC | EST. 2025</div>
+        <div class="disclosure">
+            AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND THE AMAZON SERVICES LLC ASSOCIATES PROGRAM. 
+            WE MAY EARN A COMMISSION FROM QUALIFYING PURCHASES MADE THROUGH LINKS ON THIS WEBSITE.
+        </div>
+    </footer>
+</div>
 
 <script>
     async function loadSets() {
@@ -126,25 +124,22 @@
             const res = await fetch('data.json?t=' + new Date().getTime());
             const sets = await res.json();
             if (!sets) return;
-
             container.innerHTML = '';
             sets.forEach(set => {
                 const cleanId = set.set_num.split('-')[0];
-                const displayPrice = (typeof set.ebay_avg_price === 'number') ? `$${set.ebay_avg_price.toLocaleString()}` : 'MARKET PENDING';
-                
+                const displayPrice = (typeof set.ebay_avg_price === 'number') ? `$${set.ebay_avg_price.toLocaleString()}` : 'PENDING';
                 container.innerHTML += `
                     <div class="set-card">
                         <div class="price-badge">${displayPrice}</div>
-                        <div class="img-wrapper">
-                            <img src="${set.image_url}" alt="${set.name}" onerror="this.src='hero-parallax.jpg'">
+                        <div class="img-wrapper"><img src="${set.image_url}" alt="${set.name}" onerror="this.src='hero-parallax.jpg'"></div>
+                        <div class="card-content">
+                            <div class="set-title">${set.name}</div>
+                            <div class="btn-group">
+                                <a href="https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}+new+sealed" target="_blank" class="action-link ebay-btn">EBAY DATA</a>
+                                <a href="https://www.amazon.com/s?k=LEGO+${cleanId}" target="_blank" class="action-link amazon-btn">AMAZON</a>
+                                <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="action-link store-btn">ACQUIRE FROM BLKHDZ</a>
+                            </div>
                         </div>
-                        <div class="set-title">${set.name}</div>
-                        <div class="btn-group">
-                            <a href="https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}+new+sealed" target="_blank" class="action-link ebay-btn">Analyze eBay</a>
-                            <a href="https://www.amazon.com/s?k=LEGO+${cleanId}" target="_blank" class="action-link amazon-btn">View on Amazon</a>
-                            <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="action-link store-btn">Buy From BLKHDZ</a>
-                        </div>
-                        <div style="font-size: 0.6rem; color: #444; margin-top: 15px; letter-spacing: 1px;">REF: ${set.set_num}</div>
                     </div>`;
             });
         } catch(e) { console.log("Feed Offline"); }
