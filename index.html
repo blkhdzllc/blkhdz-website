@@ -3,22 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ LLC | Professional LEGO Market Tracker</title>
+    <title>BLKHDZ | LEGO Collector's Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Oswald:wght@300;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles - Keeping it Mobile Friendly & Dark (No White Backgrounds) */
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Restoring your original Hero/Header with Parallax */
+        body { background-color: #000; color: #fff; font-family: 'Oswald', sans-serif; margin: 0; padding: 0; }
         .hero {
-            position: relative;
-            height: 450px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-parallax.jpg');
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero-parallax.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -27,133 +18,62 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: 3px solid #FFD700; /* LEGO Yellow accent */
         }
-
-        .hero h1 { font-size: 4rem; margin: 0; color: #FFD700; text-transform: uppercase; }
-        .hero p { font-size: 1.2rem; letter-spacing: 4px; color: #fff; margin-top: 10px; }
-
-        /* Restoring your original Navigation Buttons */
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .nav-btn {
-            padding: 12px 25px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #ffffff;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
-
-        .nav-btn:hover {
-            background: #FFD700;
-            color: #000;
-            border-color: #FFD700;
-        }
-
-        .container { max-width: 1200px; margin: 40px auto; padding: 20px; }
+        .legacy-headline { font-size: 1.5rem; letter-spacing: 10px; color: #fff; text-transform: uppercase; border-top: 1px solid #FFD700; padding-top: 10px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 6rem; margin: 0; color: #FFD700; font-style: italic; }
+        .hero-statement { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-top: 20px; max-width: 600px; }
+        .nav-buttons { display: flex; gap: 20px; margin-top: 40px; }
+        .nav-btn { padding: 10px 30px; border: 1px solid #fff; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
+        .nav-btn:hover { background: #FFD700; color: #000; border-color: #FFD700; }
         
-        .legacy-section {
-            text-align: center;
-            margin-bottom: 50px;
-            border-left: 4px solid #e53238; /* LEGO Red */
-            padding-left: 20px;
-        }
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        #lego-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .set-card { background: #000; border: 1px solid #222; position: relative; padding-bottom: 20px; }
+        .price-overlay { background: #FFD700; color: #000; font-weight: 700; padding: 10px 20px; position: absolute; top: 20px; left: 0; font-size: 1.2rem; z-index: 10; }
+        .set-name { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 10px 0; padding: 0 20px; }
+        .set-meta { color: #666; font-size: 0.9rem; padding: 0 20px; margin-bottom: 20px; }
+        
+        .action-row { display: flex; gap: 10px; padding: 0 20px; }
+        .affiliate-link { flex: 1; padding: 12px; text-align: center; border: 1px solid #444; color: #fff; text-decoration: none; font-size: 0.8rem; }
+        .store-btn { display: block; margin: 15px 20px 0 20px; background: #e53238; color: #fff; text-align: center; padding: 15px; text-decoration: none; font-weight: bold; }
 
-        /* Market Cards */
-        #lego-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .set-card {
-            background: #1a1a1a;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid #333;
-            transition: 0.3s;
-        }
-
-        .set-card:hover { border-color: #FFD700; transform: translateY(-5px); }
-
-        .price-badge {
-            background: #FFD700;
-            color: #000;
-            font-weight: bold;
-            padding: 15px;
-            text-align: center;
-            font-size: 1.3rem;
-        }
-
-        .market-links {
-            display: flex;
-            gap: 10px;
-            padding: 15px;
-        }
-
-        .m-btn {
-            flex: 1;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            color: white;
-        }
-
-        .m-ebay { background: #0064d2; }
-        .m-amazon { background: #ff9900; color: #000; }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-buttons { gap: 10px; }
-        }
+        footer { padding: 80px 20px; border-top: 1px solid #222; text-align: center; }
+        .vets { color: #e53238; font-weight: bold; letter-spacing: 2px; font-size: 1.2rem; }
+        .disclosure { color: #555; font-size: 0.75rem; margin: 20px auto; max-width: 600px; line-height: 1.5; }
     </style>
 </head>
 <body>
 
 <div class="hero">
-    <h1>BLKHDZ</h1>
-    <p>EST. 2025 | PREMIUM LEGO CURATION</p>
-    
+    <div class="legacy-headline">Legacy is Not Given</div>
+    <h1>It's Earned</h1>
+    <div class="hero-statement">A Curated Chronicle of Modern Investment and Plastic Gold.</div>
     <div class="nav-buttons">
-        <a href="#" class="nav-btn">Home</a>
-        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="nav-btn">My eBay Store</a>
-        <a href="#market" class="nav-btn">Market Watch</a>
-        <a href="mailto:your-email@example.com" class="nav-btn">Contact</a>
+        <a href="https://blkhdzllc.github.io/blkhdz-website/" class="nav-btn">Home</a>
+        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="nav-btn">The Store</a>
+        <a href="#ticker" class="nav-btn">Market Watch</a>
     </div>
 </div>
 
 <div class="container">
-    <div class="legacy-section">
-        <h2 style="color: #FFD700;">THE LEGACY STATEMENT</h2>
-        <p style="font-size: 1.1rem; line-height: 1.6; color: #ccc;">
-            Providing high-quality LEGO sets and market insights for collectors and investors. 
-            Registered 2026 small business with tax-exempt status, committed to fair pricing and authentic products.
-        </p>
-    </div>
-
-    <h2 id="market" style="text-align: center; margin-bottom: 30px; letter-spacing: 2px;">LIVE MARKET TICKER (UPDATED 6HRS)</h2>
-    
-    <div id="lego-container">
-        <p style="text-align: center; width: 100%;">Synchronizing with Market APIs...</p>
-    </div>
+    <h2 id="ticker" style="font-family: 'Playfair Display', serif; font-size: 3rem; text-align: center; margin-bottom: 50px;">The Market Ticker</h2>
+    <div id="lego-container">Loading Ledger...</div>
 </div>
 
+<footer>
+    <h2 style="letter-spacing: 5px; color: #FFD700; margin-bottom: 5px;">BLKHDZ LLC</h2>
+    <p class="vets">VETERAN OWNED & OPERATED</p>
+    <div class="disclosure">
+        <strong>Affiliate Disclosure:</strong> As an eBay Partner and Amazon Associate, BLKHDZ LLC may earn a commission from qualifying purchases. This site provides market research and curation; it is not financial advice.
+    </div>
+    <p style="color: #333;">&copy; 2026 BLKHDZ LLC</p>
+</footer>
+
 <script>
-    async function fetchLegoData() {
+    async function loadData() {
         try {
-            const response = await fetch('data.json');
-            const sets = await response.json();
+            const res = await fetch('data.json');
+            const sets = await res.json();
             const container = document.getElementById('lego-container');
             container.innerHTML = '';
 
@@ -161,29 +81,24 @@
                 const cleanId = set.set_num.split('-')[0];
                 const card = document.createElement('div');
                 card.className = 'set-card';
-                
                 card.innerHTML = `
-                    <img src="${set.image_url}" style="width:100%; height:200px; object-fit: cover;" alt="${set.name}">
-                    <div style="padding: 15px;">
-                        <h3 style="margin:0;">${set.name}</h3>
-                        <p style="color:#888; margin:5px 0;">Set #${set.set_num}</p>
-                        <p>Status: <span style="color:${set.status === 'Market Active' ? '#00FF00' : '#FFD700'}">${set.status}</span></p>
+                    <div class="price-overlay">$${set.ebay_avg_price}</div>
+                    <img src="${set.image_url}" style="width:100%; height:300px; object-fit:cover;">
+                    <div class="set-name">${set.name}</div>
+                    <div class="set-meta">SET #${set.set_num} | STATUS: ${set.status}</div>
+                    <div class="action-row">
+                        <a href="https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}" target="_blank" class="affiliate-link">eBay Market</a>
+                        <a href="https://www.amazon.com/s?k=LEGO+${cleanId}" target="_blank" class="affiliate-link">Amazon Market</a>
                     </div>
-                    <div class="price-badge">Avg Sold: $${set.ebay_avg_price}</div>
-                    <div class="market-links">
-                        <a href="https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}" target="_blank" class="m-btn m-ebay">eBay</a>
-                        <a href="https://www.amazon.com/s?k=LEGO+${cleanId}" target="_blank" class="m-btn m-amazon">Amazon</a>
-                    </div>
+                    <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="store-btn">Acquire from BLKHDZ Store</a>
                 `;
                 container.appendChild(card);
             });
-        } catch (error) {
-            console.error('Error:', error);
-            document.getElementById('lego-container').innerHTML = '<p style="color:red; text-align:center;">Action required: Run GitHub Action to generate data.json</p>';
+        } catch (e) {
+            document.getElementById('lego-container').innerHTML = "Market data is currently being generated. Refresh in 2 minutes.";
         }
     }
-    window.onload = fetchLegoData;
+    window.onload = loadData;
 </script>
-
 </body>
 </html>
