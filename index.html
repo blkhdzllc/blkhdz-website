@@ -3,83 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ | The Gold Standard</title>
+    <title>BLKHDZ | Official Market Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700;900&family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #FFD700; --dark-bg: #0a0a0a; }
-        body { background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        :root { --accent: #FFD700; --dark-bg: #0a0a0a; --teal: #008080; --warning-red: #e53238; }
+        body { background-color: #000; color: #fff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
         
-        /* CINEMATIC HERO SECTION */
+        /* TOP BORDER / HEADER */
+        header {
+            background: #000;
+            border-bottom: 2px solid var(--accent);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-logo { height: 50px; width: auto; }
+        
+        .nav-buttons { display: flex; gap: 30px; }
+        .nav-btn { color: #fff; text-decoration: none; font-weight: 300; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; transition: 0.3s; }
+        .nav-btn:hover { color: var(--accent); }
+
+        /* HERO SECTION */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('hero-parallax.jpg');
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('hero-parallax.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
-            flex-direction: column;
             justify-content: center; 
             align-items: center;
-            text-align: center;
         }
-
-        /* TRANSPARENT LOGO STYLING */
-        .hero-logo { 
-            width: 75%; 
-            max-width: 850px; 
-            height: auto; 
-            margin-bottom: 30px;
-            /* Drop shadow ensures the text pops against the car image */
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
-            animation: fadeIn 2s ease-in-out;
-        }
-        
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-
-        .legacy-tag { font-weight: 100; letter-spacing: 15px; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 40px; color: rgba(255,255,255,0.7); }
-        
-        /* NAVIGATION */
-        .nav-buttons { display: flex; gap: 40px; }
-        .nav-btn { color: #fff; text-decoration: none; font-weight: 300; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 4px; border-bottom: 1px solid transparent; padding-bottom: 8px; transition: 0.4s; }
-        .nav-btn:hover { border-bottom: 1px solid var(--accent); color: var(--accent); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; font-style: italic; color: #fff; text-shadow: 2px 2px 20px rgba(0,0,0,0.5); }
 
         /* THE LEDGER */
-        .container { max-width: 1600px; margin: 0 auto; padding: 120px 40px; }
-        .section-header { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-style: italic; margin-bottom: 80px; text-align: center; }
-        .section-header::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 20px auto; }
+        .container { max-width: 1600px; margin: 0 auto; padding: 80px 40px; }
+        .section-header { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-style: italic; margin-bottom: 60px; border-left: 8px solid var(--accent); padding-left: 25px; }
         
-        #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 80px; }
+        #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 50px; }
         
-        .set-card { position: relative; transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-        .img-wrapper { position: relative; width: 100%; height: 500px; background: var(--dark-bg); overflow: hidden; border: 1px solid #1a1a1a; }
-        .set-card img { width: 100%; height: 100%; object-fit: contain; padding: 40px; box-sizing: border-box; transition: 1.2s ease; }
-        .set-card:hover img { transform: scale(1.08); }
-
-        .price-overlay { position: absolute; bottom: 30px; right: 30px; font-weight: 700; font-size: 2.2rem; color: #fff; text-shadow: 2px 2px 15px rgba(0,0,0,1); }
+        .set-card { background: #111; border: 1px solid #222; padding: 25px; position: relative; transition: 0.4s; }
+        .set-card:hover { border-color: var(--accent); }
         
-        .set-info { margin-top: 35px; text-align: left; }
-        .set-title { font-size: 1.2rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin: 0; color: #eee; }
-        .set-meta { font-size: 0.65rem; color: #555; letter-spacing: 3px; margin-top: 8px; text-transform: uppercase; }
+        .img-wrapper { width: 100%; height: 350px; background: #000; margin-bottom: 20px; }
+        .set-card img { width: 100%; height: 100%; object-fit: contain; }
 
-        .acquire-btn { display: inline-block; margin-top: 25px; color: #fff; text-decoration: none; font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; border: 1px solid #333; padding: 15px 40px; transition: 0.3s; text-transform: uppercase; }
-        .acquire-btn:hover { background: #fff; color: #000; border-color: #fff; }
+        .price-badge { position: absolute; top: 10px; right: 10px; background: var(--accent); color: #000; padding: 5px 15px; font-weight: 900; font-size: 1.2rem; }
+        
+        .set-title { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; min-height: 2.4rem; }
 
-        /* FOOTER DISCLOSURES */
-        footer { padding: 120px 40px; background: #050505; text-align: center; border-top: 1px solid #111; }
-        .footer-logo { width: 180px; opacity: 0.3; margin-bottom: 30px; filter: grayscale(1); }
-        .disclosure { max-width: 800px; margin: 40px auto 0; font-size: 0.65rem; color: #444; line-height: 1.8; letter-spacing: 1px; text-transform: uppercase; }
+        /* LINK BUTTONS */
+        .btn-group { display: flex; flex-direction: column; gap: 10px; }
+        .action-link { text-decoration: none; text-align: center; padding: 12px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        
+        .ebay-btn { background: transparent; border: 1px solid #fff; color: #fff; }
+        .amazon-btn { background: transparent; border: 1px solid #FF9900; color: #FF9900; }
+        .store-btn { background: var(--accent); color: #000; }
+
+        .ebay-btn:hover, .amazon-btn:hover { background: rgba(255,255,255,0.1); }
+        .store-btn:hover { background: #fff; }
+
+        /* FOOTER COLORS */
+        footer { padding: 100px 40px; background: #050505; text-align: center; border-top: 1px solid #111; }
+        
+        /* Footer logo forced to white via brightness filter */
+        .footer-logo { width: 180px; margin-bottom: 30px; filter: brightness(0) invert(1); opacity: 0.9; }
+        
+        .vet-badge { font-weight: 700; letter-spacing: 5px; color: var(--teal); margin-bottom: 20px; font-size: 0.9rem; }
+        
+        .disclosure { 
+            max-width: 900px; 
+            margin: 40px auto 0; 
+            font-size: 0.7rem; 
+            color: var(--warning-red); /* RED AFFILIATION WARNING */
+            line-height: 1.8; 
+            letter-spacing: 1px; 
+            text-transform: uppercase;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
 
-<div class="hero">
-    <div class="legacy-tag">Legacy is Earned.</div>
-    <img src="BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
+<header>
+    <img src="BLKHDZ.png" alt="BLKHDZ" class="header-logo">
     <div class="nav-buttons">
-        <a href="#" class="nav-btn">Home</a>
-        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="nav-btn">Inventory</a>
+        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="nav-btn">eBay Store</a>
         <a href="https://www.ebay.com/str/blkhdz?_sacat=222" target="_blank" class="nav-btn">Diecast</a>
-        <a href="#ledger" class="nav-btn">The Ledger</a>
+        <a href="#ledger" class="nav-btn">Market Tracker</a>
     </div>
+</header>
+
+<div class="hero">
+    <h1>The Gold Standard.</h1>
 </div>
 
 <div class="container" id="ledger">
@@ -89,14 +108,14 @@
 </div>
 
 <footer>
-    <img src="BLKHDZ.png" class="footer-logo">
-    <div style="font-weight: 700; letter-spacing: 5px; color: var(--accent); margin-bottom: 15px; font-size: 0.9rem;">VETERAN OWNED BUSINESS</div>
-    <div style="font-weight: 100; letter-spacing: 4px; color: #333; font-size: 0.7rem;">BLKHDZ LLC | ESTABLISHED 2025</div>
+    <img src="BLKHDZ.png" class="footer-logo" alt="BLKHDZ White">
+    <div class="vet-badge">VETERAN OWNED BUSINESS</div>
+    <div style="font-weight: 100; letter-spacing: 3px; color: #666; font-size: 0.7rem;">BLKHDZ LLC | ESTABLISHED 2025</div>
     
     <div class="disclosure">
-        AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK. 
-        AS AN EBAY PARTNER, WE MAY EARN A COMMISSION FROM QUALIFYING PURCHASES MADE THROUGH 
-        LINKS ON THIS WEBSITE TO THE BLKHDZ EBAY STORE.
+        AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND THE AMAZON SERVICES LLC ASSOCIATES PROGRAM. 
+        AS AN AFFILIATE, WE MAY EARN A COMMISSION FROM QUALIFYING PURCHASES MADE THROUGH LINKS ON THIS WEBSITE 
+        TO EBAY, AMAZON, OR THE BLKHDZ OFFICIAL STORE.
     </div>
 </footer>
 
@@ -110,22 +129,25 @@
 
             container.innerHTML = '';
             sets.forEach(set => {
-                const displayPrice = (typeof set.ebay_avg_price === 'number') ? `$${set.ebay_avg_price.toLocaleString()}` : 'TBD';
+                const cleanId = set.set_num.split('-')[0];
+                const displayPrice = (typeof set.ebay_avg_price === 'number') ? `$${set.ebay_avg_price.toLocaleString()}` : 'MARKET PENDING';
                 
                 container.innerHTML += `
                     <div class="set-card">
+                        <div class="price-badge">${displayPrice}</div>
                         <div class="img-wrapper">
-                            <div class="price-overlay">${displayPrice}</div>
                             <img src="${set.image_url}" alt="${set.name}" onerror="this.src='hero-parallax.jpg'">
                         </div>
-                        <div class="set-info">
-                            <div class="set-title">${set.name}</div>
-                            <div class="set-meta">REF: ${set.set_num} | STATUS: ${set.status}</div>
-                            <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="acquire-btn">Acquire Piece</a>
+                        <div class="set-title">${set.name}</div>
+                        <div class="btn-group">
+                            <a href="https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}+new+sealed" target="_blank" class="action-link ebay-btn">Analyze eBay</a>
+                            <a href="https://www.amazon.com/s?k=LEGO+${cleanId}" target="_blank" class="action-link amazon-btn">View on Amazon</a>
+                            <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="action-link store-btn">Buy From BLKHDZ</a>
                         </div>
+                        <div style="font-size: 0.6rem; color: #444; margin-top: 15px; letter-spacing: 1px;">REF: ${set.set_num}</div>
                     </div>`;
             });
-        } catch(e) { console.log("Feed offline"); }
+        } catch(e) { console.log("Feed Offline"); }
     }
     window.onload = loadSets;
 </script>
