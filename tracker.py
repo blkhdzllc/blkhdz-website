@@ -48,7 +48,19 @@ def run():
             r = requests.get(f"https://rebrickable.com/api/v3/lego/sets/{sn}/", headers={'Authorization': auth_header})
             data = r.json()
             avg = get_ebay_avg(f"LEGO {sn.split('-')[0]} new sealed")
-            lego_results.append({"set_num": sn, "name": data.get('name', 'Unknown'), "image_url": data.get('set_img_url', ''), "ebay_avg_price": avg})
+            
+            # OVERRIDE FOR MINIFIG 6-PACK IMAGE
+            img_url = data.get('set_img_url', '')
+            if "71036" in sn:
+                # This is the official high-res character lineup photo
+                img_url = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
+
+            lego_results.append({
+                "set_num": sn, 
+                "name": data.get('name', 'Unknown'), 
+                "image_url": img_url, 
+                "ebay_avg_price": avg
+            })
         except: pass
     with open('data.json', 'w') as f: json.dump(lego_results, f, indent=4)
 
