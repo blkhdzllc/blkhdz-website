@@ -7,32 +7,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #FFD700; --dark-bg: #000; --teal: #008080; --warning-red: #ff3b3b; }
+        
         body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* SOVEREIGN HEADER */
+        /* THE BLOCK HEADER - NO CONSTRAINTS */
         header {
-            background: rgba(0,0,0,0.98);
+            background: #000;
             border-bottom: 2px solid #111;
-            padding: 60px 80px;
+            padding: 80px 0 40px 0; /* Huge vertical padding */
             display: flex;
-            justify-content: space-between;
+            flex-direction: column; /* Stack logo and nav so they don't squeeze each other */
             align-items: center; 
-            position: sticky;
-            top: 0;
+            position: relative;
             z-index: 1000;
         }
-        .header-logo { height: 6rem; width: auto; display: block; filter: drop-shadow(0 0 20px rgba(255,255,255,0.1)); }
-        .nav-buttons { display: flex; gap: 60px; }
-        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 6px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
+
+        /* LOGO FORCED TO 6REM */
+        .header-logo { 
+            height: 6rem !important; /* Forces height to match "GOLD STANDARD" scale */
+            width: auto; 
+            display: block;
+            margin-bottom: 40px; /* Space before nav */
+            filter: drop-shadow(0 0 30px rgba(255,255,255,0.15));
+        }
+        
+        .nav-buttons { 
+            display: flex; 
+            gap: 80px; 
+            width: 100%; 
+            justify-content: center;
+            border-top: 1px solid #111;
+            padding-top: 30px;
+        }
+        
+        .nav-btn { 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 1.2rem; 
+            letter-spacing: 8px; 
+            font-family: 'Syncopate', sans-serif; 
+            transition: 0.3s; 
+        }
         .nav-btn:hover { color: var(--accent); }
 
         /* PARALLAX HERO */
-        .parallax-wrapper { height: 100vh; overflow: hidden; position: relative; display: flex; justify-content: center; align-items: center; }
-        .parallax-bg {
-            position: absolute; top: -15%; left: 0; width: 100%; height: 150%; 
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('hero-parallax.jpg');
-            background-size: cover; background-position: center; z-index: -1; will-change: transform;
+        .parallax-wrapper {
+            height: 100vh; 
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+        
+        .parallax-bg {
+            position: absolute;
+            top: -15%; 
+            left: 0;
+            width: 100%;
+            height: 150%; 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('hero-parallax.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            will-change: transform;
+        }
+
         .hero-text { text-align: center; z-index: 1; }
         .hero-text h1 { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 6rem; text-transform: uppercase; letter-spacing: -4px; margin: 0; line-height: 1; }
         .hero-text p { font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: 20px; text-transform: uppercase; font-size: 1.2rem; color: var(--accent); margin-top: 20px; }
@@ -41,10 +83,9 @@
         .main-content { position: relative; background: #000; z-index: 5; box-shadow: 0 -40px 100px rgba(0,0,0,1); }
         .container { max-width: 1800px; margin: 0 auto; padding: 150px 80px; }
         .section-header { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 4rem; text-transform: uppercase; margin-bottom: 100px; }
-        .section-header span { color: var(--accent); }
-        #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); gap: 80px; }
         
-        .set-card { background: #080808; border: 1px solid #111; position: relative; }
+        #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); gap: 80px; }
+        .set-card { background: #080808; border: 1px solid #111; }
         .img-wrapper { width: 100%; height: 500px; background: #000; overflow: hidden; position: relative; }
         .set-card img { width: 100%; height: 100%; object-fit: contain; padding: 40px; }
         .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 15px 25px; font-weight: 900; font-family: 'Syncopate', sans-serif; z-index: 10; font-size: 1.5rem; }
@@ -99,7 +140,6 @@
 </div>
 
 <script>
-    // PARALLAX SCRIPT
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         document.getElementById('parallax').style.transform = 'translateY(' + (scrolled * 0.25) + 'px)';
@@ -120,8 +160,6 @@
             sets.forEach(set => {
                 const cleanId = set.set_num.split('-')[0];
                 const displayPrice = (typeof set.ebay_avg_price === 'number') ? `$${set.ebay_avg_price.toLocaleString()}` : 'PENDING';
-                
-                // Tracked Links
                 const trackedSearch = getTrackedLink(`https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}+new+sealed`);
                 const trackedStore = "https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=LEGO&toolid=10001&mkevt=1";
 
