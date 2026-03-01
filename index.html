@@ -10,33 +10,41 @@
         
         body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* CONDENSED HEADER */
-        header {
-            background: #000;
-            border-bottom: 2px solid #111;
-            padding: 20px 0; /* Reduced vertical padding */
+        /* PARALLAX HERO WITH LOGO */
+        .parallax-wrapper {
+            height: 60vh; /* Balanced height for the logo */
+            overflow: hidden;
+            position: relative;
             display: flex;
-            flex-direction: column; 
-            align-items: center; 
-            text-align: center;
-        }
-
-        /* MASSIVE LOGO - NO MARGIN */
-        .header-logo { 
-            width: 800px; 
-            height: auto; 
-            max-width: 90vw; 
-            display: block;
-            margin: 0; /* Deleted space below logo */
-            filter: drop-shadow(0 0 30px rgba(255,255,255,0.1));
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px solid #111;
         }
         
-        .nav-buttons { 
-            display: flex; 
-            gap: 60px; 
+        .parallax-bg {
+            position: absolute;
+            top: -20%; left: 0; width: 100%; height: 160%; 
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('hero-parallax.jpg');
+            background-size: cover; background-position: center; z-index: -1;
+            will-change: transform;
+        }
+
+        .hero-logo {
+            width: 800px;
+            max-width: 85vw;
+            height: auto;
+            filter: drop-shadow(0 0 40px rgba(0,0,0,0.8));
+            z-index: 1;
+        }
+
+        /* NAVIGATION BAR UNDER HERO */
+        .sub-nav {
+            background: #000;
+            padding: 30px 0;
+            display: flex;
             justify-content: center;
-            padding-top: 10px; /* Minimal space between logo and links */
-            width: 100%;
+            gap: 100px;
+            border-bottom: 1px solid #111;
         }
         
         .nav-btn { 
@@ -44,84 +52,65 @@
             text-decoration: none; 
             font-weight: 700; 
             text-transform: uppercase; 
-            font-size: 1.2rem; 
-            letter-spacing: 8px; 
+            font-size: 1.4rem; 
+            letter-spacing: 10px; 
             font-family: 'Syncopate', sans-serif; 
             transition: 0.3s; 
         }
-        .nav-btn:hover { color: var(--accent); }
+        .nav-btn:hover { color: var(--accent); letter-spacing: 12px; }
 
-        /* SMALLER PARALLAX HERO */
-        .parallax-wrapper {
-            height: 40vh; /* Reduced from 100vh to 40vh */
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 1px solid #111;
-        }
-        
-        .parallax-bg {
-            position: absolute;
-            top: -20%; left: 0; width: 100%; height: 160%; 
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('hero-parallax.jpg');
-            background-size: cover; background-position: center; z-index: -1;
-            will-change: transform;
-        }
-
-        .hero-text h1 { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 4rem; text-transform: uppercase; letter-spacing: -3px; margin: 0; }
-        .hero-text p { font-family: 'Inter', sans-serif; font-weight: 300; letter-spacing: 15px; text-transform: uppercase; font-size: 1rem; color: var(--accent); margin-top: 10px; text-align: center; }
-
-        /* LEDGER CONTENT */
+        /* DATA GRID */
         .main-content { position: relative; background: #000; z-index: 5; }
-        .container { max-width: 1800px; margin: 0 auto; padding: 80px 60px; }
-        .section-header { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 3rem; text-transform: uppercase; margin-bottom: 60px; }
-        .section-header span { color: var(--accent); }
+        .container { max-width: 1800px; margin: 0 auto; padding: 60px; }
         
         #lego-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 40px; }
-        .set-card { background: #080808; border: 1px solid #111; position: relative; }
-        .img-wrapper { width: 100%; height: 400px; background: #000; }
-        .set-card img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
-        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 10px 20px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 1.2rem; }
         
-        .card-content { padding: 30px; }
-        .set-title { font-family: 'Syncopate', sans-serif; font-size: 1rem; text-transform: uppercase; margin-bottom: 20px; min-height: 3rem; }
+        .set-card { background: #080808; border: 1px solid #111; position: relative; overflow: hidden; transition: 0.3s; }
+        .set-card:hover { border-color: var(--accent); }
+        
+        /* THE ZOOM EFFECT */
+        .img-wrapper { width: 100%; height: 400px; background: #000; overflow: hidden; }
+        .set-card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+            padding: 20px; 
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); /* SMOOTH ZOOM */
+        }
+        .set-card:hover img { transform: scale(1.15); } /* RESTORED ZOOM */
+
+        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 12px 24px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 1.3rem; z-index: 10; }
+        
+        .card-content { padding: 40px; }
+        .set-title { font-family: 'Syncopate', sans-serif; font-size: 1rem; text-transform: uppercase; margin-bottom: 25px; min-height: 3rem; line-height: 1.4; }
 
         .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .action-link { text-decoration: none; text-align: center; padding: 15px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
+        .action-link { text-decoration: none; text-align: center; padding: 18px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
         .ebay-btn { background: #111; color: #fff; border: 1px solid #222; }
         .amazon-btn { background: #111; color: #FF9900; border: 1px solid #222; }
-        .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; }
+        .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; font-size: 0.8rem; }
 
         /* FOOTER */
         footer { padding: 150px 80px; background: #000; text-align: center; border-top: 1px solid #111; }
         .footer-logo { width: 500px; margin-bottom: 40px; filter: brightness(0) invert(1); }
         .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 10px; color: var(--teal); margin-bottom: 20px; font-size: 1.2rem; }
-        .disclosure { max-width: 900px; margin: 60px auto 0; font-size: 0.75rem; color: var(--warning-red); line-height: 2; text-transform: uppercase; font-weight: 900; }
+        .disclosure { max-width: 900px; margin: 60px auto 0; font-size: 0.75rem; color: var(--warning-red); line-height: 2.2; text-transform: uppercase; font-weight: 900; }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="BLKHDZ.png" alt="BLKHDZ" class="header-logo">
-    <div class="nav-buttons">
-        <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=LEGO&toolid=10001&mkevt=1" target="_blank" class="nav-btn">Inventory</a>
-        <a href="#ledger" class="nav-btn">Tracker</a>
-    </div>
-</header>
-
 <div class="parallax-wrapper">
     <div class="parallax-bg" id="parallax"></div>
-    <div class="hero-text">
-        <h1>GOLD STANDARD</h1>
-        <p>LEGACY IS EARNED</p>
-    </div>
+    <img src="BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
 </div>
 
-<div class="main-content">
-    <div class="container" id="ledger">
-        <div class="section-header">THE <span>LEDGER.</span></div>
+<nav class="sub-nav">
+    <a href="https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=LEGO&toolid=10001&mkevt=1" target="_blank" class="nav-btn">Inventory</a>
+    <a href="#ledger-start" class="nav-btn">Tracker</a>
+</nav>
+
+<div class="main-content" id="ledger-start">
+    <div class="container">
         <div id="lego-container"></div>
     </div>
 
@@ -135,11 +124,13 @@
 </div>
 
 <script>
+    // PARALLAX
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         document.getElementById('parallax').style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
     });
 
+    // TRACKED EBAY LINK HELPER
     function getTrackedLink(mpre) {
         const base = "https://www.ebay.com/itm/123456789012?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=LEGO&toolid=10001&mkevt=1&mpre=";
         return base + encodeURIComponent(mpre);
@@ -155,13 +146,16 @@
             sets.forEach(set => {
                 const cleanId = set.set_num.split('-')[0];
                 const displayPrice = (typeof set.ebay_avg_price === 'number') ? `$${set.ebay_avg_price.toLocaleString()}` : 'PENDING';
+                
                 const trackedSearch = getTrackedLink(`https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}+new+sealed`);
                 const trackedStore = "https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=LEGO&toolid=10001&mkevt=1";
 
                 container.innerHTML += `
                     <div class="set-card">
                         <div class="price-badge">${displayPrice}</div>
-                        <div class="img-wrapper"><img src="${set.image_url}" alt="${set.name}" onerror="this.src='hero-parallax.jpg'"></div>
+                        <div class="img-wrapper">
+                            <img src="${set.image_url}" alt="${set.name}" onerror="this.src='hero-parallax.jpg'">
+                        </div>
                         <div class="card-content">
                             <div class="set-title">${set.name}</div>
                             <div class="btn-group">
