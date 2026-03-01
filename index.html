@@ -381,6 +381,50 @@
 
     // Call the function once to load the data
     fetchLegoData();
-    </script>
+   <script>
+    async function loadLegoData() {
+        try {
+            // This fetches the data.json that your GitHub Action updates every 6 hours
+            const response = await fetch('data.json');
+            const sets = await response.json();
+            const container = document.getElementById('lego-container');
+            container.innerHTML = '';
+
+            sets.forEach(set => {
+                const card = document.createElement('div');
+                card.className = 'set-card';
+                
+                // Styling the status: Green for Market Active, Yellow for others
+                const statusColor = set.status === 'Market Active' ? '#00FF00' : '#FFD700';
+                
+                card.innerHTML = `
+                    <div style="background: rgba(0,0,0,0.6); padding: 15px; border-radius: 10px; border: 1px solid #333; margin-bottom: 20px;">
+                        <img src="${set.image_url}" alt="${set.name}" style="width:100%; border-radius: 5px;">
+                        <h3 style="color: #FFFFFF; margin: 10px 0;">${set.name}</h3>
+                        <p style="color: #CCCCCC;">Set #${set.set_num}</p>
+                        <p style="font-weight: bold;">Status: <span style="color: ${statusColor}">${set.status}</span></p>
+                        
+                        <div style="background: #FFD700; color: #000; padding: 10px; border-radius: 5px; margin: 10px 0; font-weight: bold; text-align: center;">
+                            eBay Market Avg: $${set.ebay_avg_price}
+                        </div>
+
+                        <a href="https://www.ebay.com/str/blkhdz" target="_blank" 
+                           style="display: block; background: #e53238; color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                           View in My Store
+                        </a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        } catch (error) {
+            console.error('Error loading LEGO data:', error);
+            document.getElementById('lego-container').innerHTML = '<p style="color:white;">Updating market prices... please refresh in a moment.</p>';
+        }
+    }
+
+    // Run the function when the page loads
+    window.onload = loadLegoData;
+</script>
 </body>
 </html>
+
