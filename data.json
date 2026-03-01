@@ -1,56 +1,65 @@
 [
-  {
-    "set_num": "42224-1",
-    "name": "Porsche 911 GT3 R REXY AO Racing Car",
-    "ebay_avg_price": 149.99,
-    "image_url": "https://images.brickset.com/sets/images/42224-1.jpg"
-  },
-  {
-    "set_num": "71858-1",
-    "name": "NINJAGO Four Weapons Blacksmith 15th Anniversary",
-    "ebay_avg_price": 99.99,
-    "image_url": "https://images.brickset.com/sets/images/71858-1.jpg"
-  },
-  {
-    "set_num": "31161-1",
-    "name": "Creator Medieval Dragon",
-    "ebay_avg_price": 59.99,
-    "image_url": "https://images.brickset.com/sets/images/31161-1.jpg"
-  },
-  {
-    "set_num": "71847-1",
-    "name": "NINJAGO The Guardian Dragon",
-    "ebay_avg_price": 136.99,
-    "image_url": "https://images.brickset.com/sets/images/71847-1.jpg"
-  },
-  {
-    "set_num": "30726-1",
-    "name": "Batman: Bruce Wayne and the Batsuit Polybag",
-    "ebay_avg_price": 4.99,
-    "image_url": "https://images.brickset.com/sets/images/30726-1.jpg"
-  },
-  {
-    "set_num": "76332-1",
-    "name": "The Batman Batmobile (20th Anniversary)",
-    "ebay_avg_price": 29.99,
-    "image_url": "https://images.brickset.com/sets/images/76332-1.jpg"
-  },
-  {
-    "set_num": "66804-1",
-    "name": "Star Wars: The Clone Wars & Mandalorian Gift Set",
-    "ebay_avg_price": 74.99,
-    "image_url": "https://images.brickset.com/sets/images/66804-1.jpg"
-  },
-  {
-    "set_num": "75274-1",
-    "name": "Star Wars TIE Fighter Pilot Helmet",
-    "ebay_avg_price": 389.99,
-    "image_url": "https://images.brickset.com/sets/images/75274-1.jpg"
-  },
-  {
-    "set_num": "75354-1",
-    "name": "Star Wars Coruscant Guard Gunship",
-    "ebay_avg_price": 139.99,
-    "image_url": "https://images.brickset.com/sets/images/75354-1.jpg"
-  }
+    {
+        "set_num": "75192-1",
+        "name": "Millennium Falcon",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75192-1/30881.jpg",
+        "ebay_avg_price": "TBD",
+        "status": "Researching"
+    },
+    {
+        "set_num": "10333-1",
+        "name": "The Lord of the Rings: Barad-d\u00fbr",
+        "image_url": "https://cdn.rebrickable.com/media/sets/10333-1/140959.jpg",
+        "ebay_avg_price": "TBD",
+        "status": "Researching"
+    },
+    {
+        "set_num": "75313-1",
+        "name": "AT-AT",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75313-1/94568.jpg",
+        "ebay_avg_price": "TBD",
+        "status": "Researching"
+    },
+    {
+        "set_num": "75290-1",
+        "name": "Mos Eisley Cantina",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75290-1/72160.jpg",
+        "ebay_avg_price": "TBD",
+        "status": "Researching"
+    },
+    {
+        "set_num": "10316-1",
+        "name": "Lord of the Rings: Rivendell",
+        "image_url": "https://cdn.rebrickable.com/media/sets/10316-1/132394.jpg",
+        "ebay_avg_price": "TBD",
+        "status": "Researching"
+    },
+    {
+        "set_num": "75308-1",
+        "name": "R2-D2",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75308-1/86528.jpg",
+        "ebay_avg_price": "TBD",
+        "status": "Researching"
+    },
+    {
+        "set_num": "10307-1",
+        "name": "Eiffel Tower",
+        "image_url": "https://cdn.rebrickable.com/media/sets/10307-1/112417.jpg",
+        "ebay_avg_price": "TBD",
+        "status": "Researching"
+    },
+    {
+        "set_num": "75341-1",
+        "name": "Luke Skywalker's Landspeeder",
+        "image_url": "https://cdn.rebrickable.com/media/sets/75341-1/147895.jpg",
+        "ebay_avg_price": "TBD",
+        "status": "Researching"
+    },
+    {
+        "set_num": "10302-1",
+        "name": "Optimus Prime",
+        "image_url": "https://cdn.rebrickable.com/media/sets/10302-1/102780.jpg",
+        "ebay_avg_price": "TBD",
+        "status": "Researching"
+    }
 ]
