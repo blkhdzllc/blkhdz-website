@@ -3,13 +3,12 @@ from bs4 import BeautifulSoup
 
 API_KEY = os.environ.get('REBRICKABLE_KEY')
 
-# 9 IN-STOCK ITEMS FIRST, THEN 9 WATCHLIST ITEMS
+# UPDATED LIST: Replaced Wolf Dojo with the Short-Run Sauber F1 (77247)
 LEGO_SETS = [
     "75354-1", "71036-1", "75356-1", "75274-1", "31167-1", "75345-1", "77247-1", "76015-1", "76286-1",
-    "42224-1", "71858-1", "71847-1", "71813-1", "30726-1", "76332-1", "75435-1", "75337-1", "75389-1"
+    "42224-1", "71858-1", "71847-1", "77247-1", "30726-1", "76332-1", "75435-1", "75337-1", "75389-1"
 ]
 
-# DIECAST WITH UPDATED FILENAMES
 DIECAST_LIST = [
     {"id": "TW-911-54", "name": "Tarmac Works 1:64 Porsche 911 GT3 R Nürburgring 24h 2023 #54", "img": "Porsche 54.jpg"},
     {"id": "TW-AMG-BIL", "name": "Tarmac Works 1:64 Mercedes-AMG GT3 #4 Nurburgring 2023 Team Bilstein", "img": "Mercedez 4.jpg"},
@@ -23,7 +22,7 @@ def get_ebay_avg(query):
     url = f"https://www.ebay.com/sch/i.html?_nkw={search_query}&LH_Sold=1&LH_Complete=1&LH_ItemCondition=3"
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36'}
     try:
-        time.sleep(random.uniform(4, 7)) 
+        time.sleep(random.uniform(3, 6)) 
         res = requests.get(url, headers=headers, timeout=15)
         soup = BeautifulSoup(res.text, 'html.parser')
         prices = []
@@ -43,25 +42,28 @@ def run():
     lego_results = []
     prefix = "key " if API_KEY and not API_KEY.startswith("key ") else ""
     auth_header = f"{prefix}{API_KEY}"
+    
     for sn in LEGO_SETS:
-        try:
-            r = requests.get(f"https://rebrickable.com/api/v3/lego/sets/{sn}/", headers={'Authorization': auth_header})
-            data = r.json()
-            avg = get_ebay_avg(f"LEGO {sn.split('-')[0]} new sealed")
-            
-            # OVERRIDE FOR MINIFIG 6-PACK IMAGE
-            img_url = data.get('set_img_url', '')
-            if "71036" in sn:
-                # This is the official high-res character lineup photo
-                img_url = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
+        clean_id = sn.split('-')[0]
+        set_name = f"LEGO {clean_id}"
+        img_url = "hero-parallax.jpg" 
+        
+        if API_KEY:
+            try:
+                r = requests.get(f"https://rebrickable.com/api/v3/lego/sets/{sn}/", headers={'Authorization': auth_header}, timeout=10)
+                if r.status_code == 200:
+                    data = r.json()
+                    set_name = data.get('name', set_name)
+                    img_url = data.get('set_img_url', img_url)
+            except: pass
 
-            lego_results.append({
-                "set_num": sn, 
-                "name": data.get('name', 'Unknown'), 
-                "image_url": img_url, 
-                "ebay_avg_price": avg
-            })
-        except: pass
+        # Manual image overrides for retired/hero sets
+        if "71036" in sn:
+            img_url = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
+
+        avg = get_ebay_avg(f"LEGO {clean_id} new sealed")
+        lego_results.append({"set_num": sn, "name": set_name, "image_url": img_url, "ebay_avg_price": avg})
+
     with open('data.json', 'w') as f: json.dump(lego_results, f, indent=4)
 
     diecast_results = []
