@@ -16,8 +16,9 @@
             overflow: hidden;
             position: relative;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column; /* Stacks background and logo */
+            justify-content: center; /* VERTICAL CENTER */
+            align-items: center;     /* HORIZONTAL CENTER */
             border-bottom: 2px solid #111;
         }
         
@@ -32,20 +33,22 @@
             will-change: transform;
         }
 
-        /* SUPREME SCALE LOGO */
+        /* SUPREME SCALE LOGO - PERFECTLY CENTERED */
         .hero-logo {
-            width: 1600px; /* INCREASED FROM 1200px */
-            max-width: 98vw; /* Fills nearly the entire width of the screen */
+            width: 1600px;
+            max-width: 98vw;
             height: auto;
             filter: drop-shadow(0 0 60px rgba(0,0,0,0.95)) drop-shadow(0 0 20px rgba(255,255,255,0.05));
             z-index: 1;
-            transition: 0.5s ease-in-out;
+            /* Ensures it accounts for its own height in the center */
+            display: block;
+            margin: 0; 
         }
 
         /* NAVIGATION BAR */
         .sub-nav {
             background: #000;
-            padding: 50px 0; /* More breathing room for the big brand */
+            padding: 50px 0; 
             display: flex;
             justify-content: center;
             gap: 100px;
@@ -76,13 +79,12 @@
         .set-card { background: #080808; border: 1px solid #111; position: relative; overflow: hidden; transition: 0.4s; }
         .set-card:hover { border-color: var(--accent); }
         
-        /* ZOOM EFFECT RESTORED */
         .img-wrapper { width: 100%; height: 450px; background: #000; overflow: hidden; }
         .set-card img { 
             width: 100%; height: 100%; object-fit: contain; padding: 30px; 
             transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); 
         }
-        .set-card:hover img { transform: scale(1.15); } /* Snappy Zoom */
+        .set-card:hover img { transform: scale(1.15); } 
 
         .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 15px 30px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 1.4rem; z-index: 10; }
         .card-content { padding: 40px; }
@@ -149,7 +151,6 @@
             sets.forEach(set => {
                 const cleanId = set.set_num.split('-')[0];
                 const displayPrice = (typeof set.ebay_avg_price === 'number') ? `$${set.ebay_avg_price.toLocaleString()}` : 'PENDING';
-                
                 const trackedSearch = getTrackedLink(`https://www.ebay.com/sch/i.html?_nkw=LEGO+${cleanId}+new+sealed`);
                 const trackedStore = "https://www.ebay.com/str/blkhdz?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&customid=LEGO&toolid=10001&mkevt=1";
 
