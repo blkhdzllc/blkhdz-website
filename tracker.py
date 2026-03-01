@@ -1,35 +1,30 @@
 import requests
-import json
-import os
-from datetime import datetime
+from bs4 import BeautifulSoup
+import re
+import statistics
 
-# Set numbers you want to track
-watch_list = ["75192", "75337", "10316", "42224", "75429", "42130", "77247", "10312", "71847"]
-API_KEY = os.getenv('REBRICKABLE_KEY')
-
-def get_lego_data():
-    results = []
-    for set_id in watch_list:
-        url = f"https://rebrickable.com/api/v3/lego/sets/{set_id}-1/"
-        response = requests.get(url, headers={'Authorization': f'key {API_KEY}'})
-        
-       if response.status_code == 200:
-            data = response.json()
-            # Try to find the US Retail Price specifically
-            retail = data.get('retail_price') 
-            
-            results.append({
-                "set_id": set_id,
-                "name": data['name'],
-                "year": data['year'],
-                "parts": data['num_parts'],
-                "msrp": retail if retail else 0, # Force it to 0 if missing
-                "img": data['set_img_url'],
-                "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M")
-            })
+def get_ebay_sold_average(set_id):
+    # This mimics the "Last 10 Sold" query I run for you
+    search_url = f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{set_id}&LH_Sold=1&LH_Complete=1&_sop=13"
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
     
-    with open('data.json', 'w') as f:
-        json.dump(results, f, indent=4)
+    response = requests.get(search_url, headers=headers)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    # Target the price spans in eBay's search results
+    price_tags = soup.find_all('span', class_='s-item__price')
+    prices = []
 
-if __name__ == "__main__":
-    get_lego_data()
+    for tag in price_tags[1:11]: # Skip the first one (often a range or ad)
+        price_text = tag.get_text().replace('$', '').replace(',', '')
+        # Handle price ranges like "100.00 to 120.00" by taking the first number
+        val = re.findall(r"[-+]?\d*\.\d+|\d+", price_text)
+        if val:
+            prices.append(float(val[0]))
+
+    if prices:
+        return round(statistics.mean(prices), 2)
+    return "N/A"
+
+# Then, in your main loop, update your data.json with this value:
+# data['ebay_avg'] = get_ebay_sold_average(set_id)
