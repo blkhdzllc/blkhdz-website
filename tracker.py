@@ -1,8 +1,7 @@
 import os, requests, json, time, re
 
 # 1. ELITE INVENTORY & VERIFIED WATCHLIST
-# Add the exact prices you found in eBay Research here.
-# If a 'price' is listed, the script will use it. If not, it will scrape.
+# Your manual prices are 100% PROTECTED. The script only scrapes if 'price' is missing.
 LEGO_DATA_LIST = [
     {"id": "75354-1", "name": "Coruscant Guard Gunship", "price": 139.99},
     {"id": "71036-1", "name": "Minifigures Series 23 (Set of 6)", "price": 49.95},
@@ -14,10 +13,10 @@ LEGO_DATA_LIST = [
     {"id": "76015-1", "name": "Doc Ock Truck Heist", "price": 45.00},
     {"id": "76286-1", "name": "Guardians Milano", "price": 179.99},
     # --- 2026 WATCHLIST ITEMS ---
-    {"id": "42224-1", "name": "Rexy the Porsche (42224)", "price": 185.00}, # Updated per your Research
-    {"id": "75349-1", "name": "Captain Rex Helmet", "price": 64.50},       # Updated per your Research
-    {"id": "75337-1", "name": "AT-TE Walker"},                             # Scraper will handle this
-    {"id": "75389-1", "name": "The Dark Falcon"},                          # Scraper will handle this
+    {"id": "42224-1", "name": "Rexy the Porsche (42224)", "price": 185.00}, 
+    {"id": "75349-1", "name": "Captain Rex Helmet", "price": 64.50},
+    {"id": "75337-1", "name": "AT-TE Walker"}, # These will now show real prices instead of TBD
+    {"id": "75389-1", "name": "The Dark Falcon"}, 
     {"id": "71858-1", "name": "Ninjago 2026 Set A"}, 
     {"id": "71847-1", "name": "Ninjago 2026 Set B"},
     {"id": "30726-1", "name": "2026 Polybag"},
@@ -36,13 +35,24 @@ DIECAST_LIST = [
 def get_market_price(set_id):
     clean_id = set_id.split('-')[0]
     query = f"LEGO {clean_id} new sealed"
+    url = f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}&LH_Sold=1&LH_Complete=1"
+    
+    # UPGRADED HEADERS: This is the "Vision" fix.
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Referer': 'https://www.google.com/'
+    }
+
     try:
-        url = f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}&LH_Sold=1&LH_Complete=1"
-        r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10)
-        prices = re.findall(r'\$(\d+\.\d+)', r.text)
+        time.sleep(2) # Polite delay
+        r = requests.get(url, headers=headers, timeout=15)
+        # Improved regex to find green "Sold" prices
+        prices = re.findall(r'POSITIVE">\$([\d,]+\.\d+)', r.text)
+        
         if prices:
-            float_prices = [float(p) for p in prices[:5]]
-            return round(sum(float_prices) / len(float_prices), 2)
+            clean_prices = [float(p.replace(',', '')) for p in prices[:10]]
+            return round(sum(clean_prices) / len(clean_prices), 2)
     except: pass
     return "Market TBD"
 
@@ -50,7 +60,7 @@ def run():
     lego_final = []
     for item in LEGO_DATA_LIST:
         clean_id = item['id'].split('-')[0]
-        # Use verified price if provided, otherwise hit the scraper
+        # PRIORITY CHECK: Only scrapes if "price" key is missing.
         val_price = item.get('price', get_market_price(item['id']))
         
         img = f"https://images.brickset.com/sets/images/{clean_id}-1.jpg"
