@@ -72,7 +72,7 @@
 
 <nav class="sub-nav">
     <a href="#inventory-section" class="nav-btn">Inventory</a>
-    <a href="#tracker-section" class="nav-btn">Tracker</a>
+    <a href="#watchlist-section" class="nav-btn">Watchlist</a>
     <a href="#diecast-section" class="nav-btn">Diecast</a>
 </nav>
 
@@ -81,9 +81,9 @@
     <div id="inventory-grid" class="grid-layout"></div>
 </div>
 
-<div class="container" id="tracker-section">
-    <h2 class="section-header">2026 Retirement Watch</h2>
-    <div id="tracker-grid" class="grid-layout"></div>
+<div class="container" id="watchlist-section">
+    <h2 class="section-header">2026 Watchlist</h2>
+    <div id="watchlist-grid" class="grid-layout"></div>
 </div>
 
 <div class="container" id="diecast-section">
@@ -101,7 +101,6 @@
 <script>
     function createCard(item, categoryName) {
         const cleanId = item.set_num.split('-')[0];
-        // Uses the direct working link from the script
         const ebayDataLink = item.ebay_link;
         const amazonLink = `https://www.amazon.com/s?k=${categoryName}+${cleanId}`;
         const storeLink = `https://www.ebay.com/str/blkhdz?_nkw=${cleanId}`;
@@ -128,13 +127,14 @@
             const legoRes = await fetch('data.json?v=' + Date.now());
             const legoData = await legoRes.json();
             const invGrid = document.getElementById('inventory-grid');
-            const trackGrid = document.getElementById('tracker-grid');
+            const watchGrid = document.getElementById('watchlist-grid');
             
             legoData.forEach((item, index) => {
+                // First 9 sets go to Elite Inventory, rest to 2026 Watchlist
                 if(index < 9) {
                     invGrid.innerHTML += createCard(item, 'LEGO');
                 } else {
-                    trackGrid.innerHTML += createCard(item, 'LEGO');
+                    watchGrid.innerHTML += createCard(item, 'LEGO');
                 }
             });
 
