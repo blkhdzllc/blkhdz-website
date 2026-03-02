@@ -47,7 +47,9 @@ def get_market_price(query):
 
 def run():
     lego_final = []
+    # EPN Details
     campid = "5339141674"
+    toolid = "10001"
     
     for item in (LEGO_INVENTORY + LEGO_WATCHLIST):
         clean_id = item['id'].split('-')[0]
@@ -58,12 +60,11 @@ def run():
         else:
             img = f"https://images.brickset.com/sets/images/{clean_id}-1.jpg"
         
-        # Price Logic
         price = item.get('price', get_market_price(f"LEGO {clean_id} new sealed"))
         
-        # Stable Affiliate Link Logic
-        search_term = f"LEGO+{clean_id}+new+sealed"
-        affiliate_link = f"https://www.ebay.com/sch/i.html?_nkw={search_term}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={campid}&toolid=10001&customid=BLKHDZ_WEB"
+        # NEW DIRECT LINK STRUCTURE
+        search_query = f"LEGO {clean_id} new sealed".replace(' ', '%20')
+        affiliate_link = f"https://www.ebay.com/sch/i.html?_nkw={search_query}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={campid}&toolid={toolid}&customid=BLKHDZ_WEB"
         
         lego_final.append({
             "set_num": item['id'],
@@ -78,8 +79,8 @@ def run():
 
     diecast_final = []
     for car in DIECAST_LIST:
-        search_car = car['name'].replace(' ', '+')
-        car_link = f"https://www.ebay.com/sch/i.html?_nkw={search_car}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={campid}&toolid=10001&customid=BLKHDZ_WEB"
+        search_car = car['name'].replace(' ', '%20')
+        car_link = f"https://www.ebay.com/sch/i.html?_nkw={search_car}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={campid}&toolid={toolid}&customid=BLKHDZ_WEB"
         
         diecast_final.append({
             "set_num": car['id'],
