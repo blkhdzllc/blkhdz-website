@@ -52,9 +52,6 @@
         .action-link:hover { opacity: 0.8; background: #222; color: var(--accent); }
         .store-btn:hover { background: #fff; color: #000; }
 
-        /* DIECAST SPECIAL SECTION */
-        .diecast-hero { width: 100%; max-width: 1200px; height: auto; border: 1px solid #222; margin: 0 auto 40px; display: block; }
-
         footer { padding: 80px 20px; background: #000; text-align: center; border-top: 1px solid #111; }
         .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 10px; color: var(--teal); font-size: 1rem; margin-bottom: 20px; }
         .disclosure { max-width: 800px; margin: 0 auto; font-size: 0.65rem; color: #444; line-height: 1.8; text-transform: uppercase; }
@@ -81,21 +78,17 @@
 
 <div class="container" id="inventory-section">
     <h2 class="section-header">Elite Inventory</h2>
-    <div id="inventory-grid" class="grid-layout">
-        </div>
+    <div id="inventory-grid" class="grid-layout"></div>
 </div>
 
 <div class="container" id="tracker-section">
     <h2 class="section-header">2026 Retirement Watch</h2>
-    <div id="tracker-grid" class="grid-layout">
-        </div>
+    <div id="tracker-grid" class="grid-layout"></div>
 </div>
 
 <div class="container" id="diecast-section">
     <h2 class="section-header">Elite Diecast</h2>
-    <img src="diecast-showcase.jpg" alt="Diecast Showcase" class="diecast-hero">
-    <div id="diecast-grid" class="grid-layout">
-        </div>
+    <div id="diecast-grid" class="grid-layout"></div>
 </div>
 
 <footer>
@@ -106,21 +99,12 @@
 </footer>
 
 <script>
-    // TRACKING LINK GENERATOR
-    function getEbayLink(query, isStore = false) {
-        const campId = "5339141674"; // Your CampID
-        const baseUrl = isStore 
-            ? `https://www.ebay.com/str/blkhdz?_nkw=${query}`
-            : `https://www.ebay.com/sch/i.html?_nkw=${query}+new+sealed`;
-        
-        return `https://rover.ebay.com/rover/1/711-53200-19255-0/1?mpre=${encodeURIComponent(baseUrl)}&campid=${campId}&toolid=10001&customid=BLKHDZ_WEB`;
-    }
-
     function createCard(item, categoryName) {
         const cleanId = item.set_num.split('-')[0];
-        const ebayDataLink = getEbayLink(`${categoryName} ${cleanId}`);
-        const storeLink = getEbayLink(cleanId, true);
+        // Uses the direct working link from the script
+        const ebayDataLink = item.ebay_link;
         const amazonLink = `https://www.amazon.com/s?k=${categoryName}+${cleanId}`;
+        const storeLink = `https://www.ebay.com/str/blkhdz?_nkw=${cleanId}`;
 
         return `
             <div class="set-card">
@@ -141,14 +125,11 @@
 
     async function initMarket() {
         try {
-            // Load LEGO Data
             const legoRes = await fetch('data.json?v=' + Date.now());
             const legoData = await legoRes.json();
-            
             const invGrid = document.getElementById('inventory-grid');
             const trackGrid = document.getElementById('tracker-grid');
             
-            // Render first 9 to Inventory, rest to Tracker
             legoData.forEach((item, index) => {
                 if(index < 9) {
                     invGrid.innerHTML += createCard(item, 'LEGO');
@@ -157,7 +138,6 @@
                 }
             });
 
-            // Load Diecast Data
             const diecastRes = await fetch('diecast.json?v=' + Date.now());
             const diecastData = await diecastRes.json();
             const diecastGrid = document.getElementById('diecast-grid');
@@ -165,23 +145,16 @@
             diecastData.forEach(item => {
                 diecastGrid.innerHTML += createCard(item, 'Diecast');
             });
-
-        } catch (e) {
-            console.error("Market Load Error:", e);
-        }
+        } catch (e) { console.error("Market Load Error:", e); }
     }
 
-    // Parallax Effect
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const bg = document.getElementById('parallax');
-        if(bg) {
-            bg.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
+        if(bg) { bg.style.transform = `translateY(${scrolled * 0.3}px)`; }
     });
 
     window.onload = initMarket;
 </script>
-
 </body>
 </html>
