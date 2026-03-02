@@ -1,12 +1,12 @@
 import os, requests, json, time, re
 
-# 1. INVENTORY (Hardcoded Prices)
+# 1. INVENTORY (Hardcoded Prices - Haunted Mansion updated to 88.99)
 LEGO_INVENTORY = [
     {"id": "75354-1", "name": "Coruscant Guard Gunship", "price": 139.99},
     {"id": "71036-1", "name": "Minifigures Series 23 (Set of 6)", "price": 49.95},
     {"id": "75356-1", "name": "Executor Super Star Destroyer", "price": 69.99},
     {"id": "75274-1", "name": "TIE Fighter Pilot Helmet", "price": 325.00},
-    {"id": "31167-1", "name": "Creative Animals 3-in-1", "price": 34.99},
+    {"id": "31167-1", "name": "Creator Haunted Mansion", "price": 88.99},
     {"id": "75345-1", "name": "501st Clone Troopers Battle Pack", "price": 19.99},
     {"id": "77247-1", "name": "KICK Sauber F1 Team C44", "price": 26.99},
     {"id": "76015-1", "name": "Doc Ock Truck Heist", "price": 45.00},
@@ -47,14 +47,12 @@ def get_market_price(query):
 
 def run():
     lego_final = []
-    # EPN Details
     campid = "5339141674"
     toolid = "10001"
     
     for item in (LEGO_INVENTORY + LEGO_WATCHLIST):
         clean_id = item['id'].split('-')[0]
         
-        # Image Logic
         if "71036" in item['id']:
             img = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
         else:
@@ -62,16 +60,16 @@ def run():
         
         price = item.get('price', get_market_price(f"LEGO {clean_id} new sealed"))
         
-        # NEW DIRECT LINK STRUCTURE
+        # Modern EPN Link Structure (No Rover)
         search_query = f"LEGO {clean_id} new sealed".replace(' ', '%20')
-        affiliate_link = f"https://www.ebay.com/sch/i.html?_nkw={search_query}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={campid}&toolid={toolid}&customid=BLKHDZ_WEB"
+        aff_link = f"https://www.ebay.com/sch/i.html?_nkw={search_query}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={campid}&toolid={toolid}&customid=BLKHDZ_WEB"
         
         lego_final.append({
             "set_num": item['id'],
             "name": item['name'],
             "image_url": img,
             "ebay_avg_price": price,
-            "ebay_link": affiliate_link
+            "ebay_link": aff_link
         })
 
     with open('data.json', 'w') as f:
