@@ -1,6 +1,6 @@
 import os, requests, json, time, re
 
-# YOUR ACTUAL INVENTORY (Hardcoded Prices)
+# 1. INVENTORY (Hardcoded Prices)
 LEGO_INVENTORY = [
     {"id": "75354-1", "name": "Coruscant Guard Gunship", "price": 139.99},
     {"id": "71036-1", "name": "Minifigures Series 23 (Set of 6)", "price": 49.95},
@@ -13,7 +13,7 @@ LEGO_INVENTORY = [
     {"id": "76286-1", "name": "Guardians Milano", "price": 179.99}
 ]
 
-# RETIREMENT WATCH (Scraped Prices, Captain Rex Fixed)
+# 2. WATCHLIST (Scraped, Rex Fixed)
 LEGO_WATCHLIST = [
     {"id": "75349-1", "name": "Captain Rex Helmet", "price": 60.00}, 
     {"id": "42224-1", "name": "Rexy the Porsche (42224)"},
@@ -40,7 +40,6 @@ def get_market_price(query):
         r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=5)
         prices = re.findall(r'\$(\d+\.\d+)', r.text)
         if prices:
-            # Filter for realistic prices (above $10)
             valid = [float(p) for p in prices[:5] if float(p) > 10]
             if valid: return round(sum(valid) / len(valid), 2)
     except: pass
@@ -48,27 +47,30 @@ def get_market_price(query):
 
 def run():
     lego_final = []
+    campid = "5339141674"
     
-    # Process both lists into the same data.json
     for item in (LEGO_INVENTORY + LEGO_WATCHLIST):
         clean_id = item['id'].split('-')[0]
         
-        # IMAGE LOGIC
-        # Use lifestyle photo for Minifig 6-pack to avoid blocks
+        # Image Logic
         if "71036" in item['id']:
             img = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
         else:
             img = f"https://images.brickset.com/sets/images/{clean_id}-1.jpg"
         
-        # PRICE LOGIC
-        # If 'price' key exists, use it. Otherwise, scrape eBay.
+        # Price Logic
         price = item.get('price', get_market_price(f"LEGO {clean_id} new sealed"))
+        
+        # Stable Affiliate Link Logic
+        search_term = f"LEGO+{clean_id}+new+sealed"
+        affiliate_link = f"https://www.ebay.com/sch/i.html?_nkw={search_term}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={campid}&toolid=10001&customid=BLKHDZ_WEB"
         
         lego_final.append({
             "set_num": item['id'],
             "name": item['name'],
             "image_url": img,
-            "ebay_avg_price": price
+            "ebay_avg_price": price,
+            "ebay_link": affiliate_link
         })
 
     with open('data.json', 'w') as f:
@@ -76,12 +78,17 @@ def run():
 
     diecast_final = []
     for car in DIECAST_LIST:
+        search_car = car['name'].replace(' ', '+')
+        car_link = f"https://www.ebay.com/sch/i.html?_nkw={search_car}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={campid}&toolid=10001&customid=BLKHDZ_WEB"
+        
         diecast_final.append({
             "set_num": car['id'],
             "name": car['name'],
             "image_url": car['img'],
-            "ebay_avg_price": car['p']
+            "ebay_avg_price": car['p'],
+            "ebay_link": car_link
         })
+
     with open('diecast.json', 'w') as f:
         json.dump(diecast_final, f, indent=4)
 
