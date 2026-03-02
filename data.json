@@ -63,18 +63,32 @@
         "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO%2076286%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
     },
     {
-        "set_num": "75349-1",
-        "name": "Captain Rex Helmet",
-        "image_url": "https://images.brickset.com/sets/images/75349-1.jpg",
-        "ebay_avg_price": "Market TBD",
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO%2075349%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
-    },
-    {
         "set_num": "42224-1",
         "name": "Rexy the Porsche (42224)",
         "image_url": "https://images.brickset.com/sets/images/42224-1.jpg",
-        "ebay_avg_price": "Market TBD",
+        "ebay_avg_price": 185.0,
         "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO%2042224%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
+    },
+    {
+        "set_num": "75349-1",
+        "name": "Captain Rex Helmet",
+        "image_url": "https://images.brickset.com/sets/images/75349-1.jpg",
+        "ebay_avg_price": 64.5,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO%2075349%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
+    },
+    {
+        "set_num": "75337-1",
+        "name": "AT-TE Walker",
+        "image_url": "https://images.brickset.com/sets/images/75337-1.jpg",
+        "ebay_avg_price": "Market TBD",
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO%2075337%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
+    },
+    {
+        "set_num": "75389-1",
+        "name": "The Dark Falcon",
+        "image_url": "https://images.brickset.com/sets/images/75389-1.jpg",
+        "ebay_avg_price": "Market TBD",
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO%2075389%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
     },
     {
         "set_num": "71858-1",
@@ -110,19 +124,5 @@
         "image_url": "https://images.brickset.com/sets/images/75435-1.jpg",
         "ebay_avg_price": "Market TBD",
         "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO%2075435%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
-    },
-    {
-        "set_num": "75337-1",
-        "name": "AT-TE Walker",
-        "image_url": "https://images.brickset.com/sets/images/75337-1.jpg",
-        "ebay_avg_price": "Market TBD",
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO%2075337%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
-    },
-    {
-        "set_num": "75389-1",
-        "name": "The Dark Falcon",
-        "image_url": "https://images.brickset.com/sets/images/75389-1.jpg",
-        "ebay_avg_price": "Market TBD",
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO%2075389%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
     }
 ]
