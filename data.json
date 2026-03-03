@@ -1,5 +1,93 @@
 [
-    {"set_num": "42224-1", "name": "Rexy the Porsche (42224)", "image_url": "https://images.brickset.com/sets/images/42224-1.jpg", "ebay_avg_price": 187.50, "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+42224+new+sealed"},
-    {"set_num": "75337-1", "name": "AT-TE Walker", "image_url": "https://images.brickset.com/sets/images/75337-1.jpg", "ebay_avg_price": 114.65, "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75337+new+sealed"},
-    {"set_num": "75389-1", "name": "The Dark Falcon", "image_url": "https://images.brickset.com/sets/images/75389-1.jpg", "ebay_avg_price": 158.50, "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75389+new+sealed"}
+    {
+        "set_num": "42224-1",
+        "name": "Rexy the Porsche (42224)",
+        "image_url": "https://images.brickset.com/sets/images/42224-1.jpg",
+        "ebay_avg_price": 187.5,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+42224+new+sealed"
+    },
+    {
+        "set_num": "75337-1",
+        "name": "AT-TE Walker",
+        "image_url": "https://images.brickset.com/sets/images/75337-1.jpg",
+        "ebay_avg_price": 114.65,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75337+new+sealed"
+    },
+    {
+        "set_num": "75389-1",
+        "name": "The Dark Falcon",
+        "image_url": "https://images.brickset.com/sets/images/75389-1.jpg",
+        "ebay_avg_price": 158.5,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75389+new+sealed"
+    },
+    {
+        "set_num": "75354-1",
+        "name": "Coruscant Guard Gunship",
+        "image_url": "https://images.brickset.com/sets/images/75354-1.jpg",
+        "ebay_avg_price": "Market TBD",
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75354+new+sealed"
+    },
+    {
+        "set_num": "75274-1",
+        "name": "TIE Fighter Pilot Helmet",
+        "image_url": "https://images.brickset.com/sets/images/75274-1.jpg",
+        "ebay_avg_price": "Market TBD",
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75274+new+sealed"
+    },
+    {
+        "set_num": "75435-1",
+        "name": "MTT - Battle of Felucia (2026)",
+        "image_url": "https://images.brickset.com/sets/images/75435-1.jpg",
+        "ebay_avg_price": "Market TBD",
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75435+new+sealed"
+    },
+    {
+        "set_num": "71036-1",
+        "name": "Minifigures Series 23 (6-Pack)",
+        "image_url": "https://images.brickset.com/sets/images/71036-1.jpg",
+        "ebay_avg_price": "Market TBD",
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+71036+new+sealed"
+    },
+    {
+        "set_num": "75356-1",
+        "name": "Executor Super Star Destroyer",
+        "image_url": "https://images.brickset.com/sets/images/75356-1.jpg",
+        "ebay_avg_price": "Market TBD",
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75356+new+sealed"
+    },
+    {
+        "set_num": "TW-911-54",
+        "name": "Tarmac Works Porsche 911 #54",
+        "image_url": "Porsche 54.jpg",
+        "ebay_avg_price": 39.99,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Tarmac+Works+Porsche+911+#54"
+    },
+    {
+        "set_num": "TW-AMG-BIL",
+        "name": "Mercedes-AMG GT3 Team Bilstein",
+        "image_url": "Mercedez 4.jpg",
+        "ebay_avg_price": 31.99,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Mercedes-AMG+GT3+Team+Bilstein"
+    },
+    {
+        "set_num": "TW-AMG-BH",
+        "name": "Mercedes-AMG GT3 Bathurst",
+        "image_url": "Mercedes 2.jpg",
+        "ebay_avg_price": 34.95,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Mercedes-AMG+GT3+Bathurst"
+    },
+    {
+        "set_num": "SPK-CIV-16",
+        "name": "Spark Honda Civic Type R-GT",
+        "image_url": "Honda 16.jpg",
+        "ebay_avg_price": 134.95,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Spark+Honda+Civic+Type+R-GT"
+    },
+    {
+        "set_num": "TW-F488-51",
+        "name": "Ferrari 488 GT3 Macau #51",
+        "image_url": "Ferrari 51.jpg",
+        "ebay_avg_price": 31.99,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Ferrari+488+GT3+Macau+#51"
+    }
 ]
