@@ -5,46 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLKHDZ | Elite Inventory</title>
     <style>
-        body { background-color: #0d0d0d; color: #ffffff; font-family: 'Helvetica', sans-serif; padding: 20px; }
-        .section-title { color: #ffcc00; border-left: 5px solid #ffcc00; padding-left: 15px; margin: 40px 0 20px; text-transform: uppercase; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 20px; text-align: center; transition: 0.3s; }
-        .card:hover { border-color: #ffcc00; transform: translateY(-5px); }
-        .card img { max-width: 100%; height: 200px; object-fit: contain; border-radius: 8px; }
-        .price { color: #00ff88; font-size: 1.6rem; font-weight: bold; margin: 15px 0; }
-        .ebay-btn { display: inline-block; background: #ffcc00; color: #000; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        body { background-color: #0d0d0d; color: #ffffff; font-family: 'Inter', sans-serif; padding: 20px; line-height: 1.6; }
+        .title-bar { border-left: 4px solid #ffcc00; padding-left: 15px; margin: 40px 0 20px; color: #ffcc00; text-transform: uppercase; letter-spacing: 2px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: #161616; border: 1px solid #2a2a2a; border-radius: 10px; padding: 20px; text-align: center; }
+        .card img { max-width: 100%; height: 180px; object-fit: contain; margin-bottom: 15px; }
+        .price { color: #00ff88; font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; }
+        .btn { display: block; background: #ffcc00; color: #000; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <h2 class="section-title">2026 Watchlist</h2>
+    <h2 class="title-bar">2026 Watchlist</h2>
     <div id="watchlist" class="grid"></div>
 
-    <h2 class="section-title">Elite LEGO Inventory</h2>
+    <h2 class="title-bar">Elite LEGO Inventory</h2>
     <div id="elite" class="grid"></div>
 
-    <h2 class="section-title">Precision Diecast</h2>
+    <h2 class="title-bar">Precision Diecast</h2>
     <div id="diecast" class="grid"></div>
 
     <script>
-        fetch('data.json?t=' + Date.now()) // Forces fresh data
+        fetch('data.json?nocache=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
             data.forEach(item => {
-                const html = `
+                const cardHtml = `
                     <div class="card">
                         <img src="${item.image_url}">
                         <h3>${item.name}</h3>
                         <div class="price">$${item.ebay_avg_price}</div>
-                        <a href="${item.ebay_link}" class="ebay-btn" target="_blank">View Market</a>
+                        <a href="${item.ebay_link}" class="btn" target="_blank">View Market</a>
                     </div>`;
                 
-                if (item.set_num.startsWith('TW') || item.set_num.startsWith('SPK')) {
-                    document.getElementById('diecast').innerHTML += html;
+                if (item.set_num.includes('TW') || item.set_num.includes('SPK')) {
+                    document.getElementById('diecast').innerHTML += cardHtml;
                 } else if (item.name.includes('2026') || item.set_num.includes('42224')) {
-                    document.getElementById('watchlist').innerHTML += html;
+                    document.getElementById('watchlist').innerHTML += cardHtml;
                 } else {
-                    document.getElementById('elite').innerHTML += html;
+                    document.getElementById('elite').innerHTML += cardHtml;
                 }
             });
         });
