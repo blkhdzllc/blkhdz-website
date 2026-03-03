@@ -13,7 +13,7 @@ LEGO_DATA_LIST = [
     {"id": "76015-1", "name": "Doc Ock Truck Heist", "price": 45.00},
     {"id": "76286-1", "name": "Guardians Milano", "price": 179.99},
     # --- 2026 WATCHLIST ITEMS ---
-    {"id": "42224-1", "name": "Rexy the Porsche (42224)", "price": 185.00}, 
+    {"id": "42224-1", "name": "Rexy the Porsche (42224)", "price": 149.00}, # Updated to match current market
     {"id": "75349-1", "name": "Captain Rex Helmet", "price": 64.50},
     {"id": "75337-1", "name": "AT-TE Walker"}, # These will now show real prices instead of TBD
     {"id": "75389-1", "name": "The Dark Falcon"}, 
