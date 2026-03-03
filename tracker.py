@@ -1,6 +1,6 @@
 import os, requests, json, time, re
 
-# THE KEY
+# AUTHORIZED TOKEN
 SCRAPE_API_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
 
 # --- THE COMPLETE BLKHDZ INVENTORY ---
@@ -24,13 +24,13 @@ DIECAST_LIST = [
 
 def get_market_price(set_num):
     clean_id = set_num.split('-')[0]
-    # PINPOINT: US-Only (LH_PrefLoc=1), Brand New (LH_ItemCondition=1000), Excludes Customs
-    target_url = f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{clean_id}+-pro+-custom&LH_Sold=1&LH_Complete=1&LH_PrefLoc=1&LH_ItemCondition=1000"
+    # Pinpoint: US only (LH_PrefLoc=1), Sold/Completed, New Condition (1000)
+    target_url = f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{clean_id}+new+sealed&LH_Sold=1&LH_Complete=1&LH_PrefLoc=1&LH_ItemCondition=1000"
     api_url = f"https://api.scrape.do?token={SCRAPE_API_TOKEN}&url={target_url}"
 
     try:
         r = requests.get(api_url, timeout=30)
-        # 2026 Search Patterns
+        # Search for price tags in the 2026 eBay layout
         prices = re.findall(r'POSITIVE">\$([\d,]+\.\d+)', r.text)
         if not prices:
             prices = re.findall(r's-item__price">.*?\$([\d,]+\.\d+)', r.text)
@@ -50,8 +50,9 @@ def run():
     final_inventory = []
 
     for item in LEGO_LIST:
-        print(f"Scraping US Market for {item['name']}...")
+        print(f"Syncing {item['name']}...")
         new_price = get_market_price(item['id'])
+        # Fallback to old price if scraper hits a wall
         price = new_price if new_price else old_data.get(item['id'], {}).get('ebay_avg_price', "Market TBD")
         
         final_inventory.append({
@@ -69,7 +70,7 @@ def run():
 
     with open('data.json', 'w') as f:
         json.dump(final_inventory, f, indent=4)
-    print("Full inventory and prices restored.")
+    print("Update Complete.")
 
 if __name__ == "__main__":
     run()
