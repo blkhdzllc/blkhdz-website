@@ -1,104 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ | Official Market Tracker</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root { --accent: #FFD700; --teal: #008080; --warning-red: #ff3b3b; }
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; scroll-behavior: smooth; }
-        
-        .parallax-wrapper {
-            height: 100vh; overflow: hidden; position: relative;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 2px solid #111;
-        }
-        .parallax-bg {
-            position: absolute; top: -10%; left: 0; width: 100%; height: 120%; 
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('hero-parallax.jpg');
-            background-size: cover; background-position: center; z-index: -1; will-change: transform;
-        }
-        .hero-logo { width: 1600px; max-width: 90vw; height: auto; filter: drop-shadow(0 0 60px rgba(0,0,0,0.95)); z-index: 1; }
-
-        .sub-nav {
-            background: #000; padding: 30px 0; display: flex; justify-content: center; gap: 40px;
-            border-bottom: 1px solid #111; position: sticky; top: 0; z-index: 100;
-        }
-        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 6px; font-family: 'Syncopate', sans-serif; transition: 0.3s; cursor: pointer; border: none; background: none; }
-        .nav-btn:hover { color: var(--accent); letter-spacing: 8px; }
-
-        .container { max-width: 1600px; margin: 0 auto; padding: 40px 20px; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-bottom: 80px; }
-        
-        .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.5rem; letter-spacing: 10px; margin: 60px 0 30px; text-align: center; color: var(--accent); text-transform: uppercase; }
-
-        .set-card { background: #080808; border: 1px solid #151515; position: relative; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column; }
-        .set-card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .img-wrapper { width: 100%; height: 300px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .set-card img { max-width: 90%; max-height: 90%; object-fit: contain; transition: 0.8s; }
-        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 8px 15px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 0.9rem; z-index: 10; }
-        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-        .set-title { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; min-height: 2.5rem; line-height: 1.4; color: #eee; }
-
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
-        .action-link { text-decoration: none; text-align: center; padding: 12px 5px; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Syncopate', sans-serif; transition: 0.3s; border: 1px solid #222; }
-        .ebay-btn { background: #111; color: #fff; }
-        .amazon-btn { background: #111; color: #FF9900; }
-        .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; border: none; font-size: 0.7rem; }
-        
-        .diecast-hero { width: 100%; max-width: 1200px; height: auto; border: 1px solid #222; margin: 0 auto 40px; display: block; }
-
-        footer { padding: 80px 20px; background: #000; text-align: center; border-top: 1px solid #111; }
-        .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 10px; color: var(--teal); font-size: 1rem; margin-bottom: 20px; }
-        .disclosure { max-width: 800px; margin: 0 auto; font-size: 0.65rem; color: #444; line-height: 1.8; text-transform: uppercase; }
-
-        @media (max-width: 768px) {
-            .hero-logo { width: 95vw; }
-            .nav-btn { letter-spacing: 2px; font-size: 0.7rem; }
-            .sub-nav { gap: 15px; }
-        }
-    </style>
-</head>
-<body>
-
-<div class="parallax-wrapper">
-    <div class="parallax-bg" id="parallax"></div>
-    <img src="BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
-</div>
-
-<nav class="sub-nav">
-    <a href="#inventory-section" class="nav-btn">Inventory</a>
-    <a href="#watchlist-section" class="nav-btn">2026 Watchlist</a>
-    <a href="#diecast-section" class="nav-btn">Diecast</a>
-</nav>
-
-<div class="container" id="inventory-section">
-    <h2 class="section-header">Elite Inventory</h2>
-    <div id="inventory-grid" class="grid-layout"></div>
-</div>
-
-<div class="container" id="watchlist-section">
-    <h2 class="section-header">2026 Watchlist</h2>
-    <div id="watchlist-grid" class="grid-layout"></div>
-</div>
-
-<div class="container" id="diecast-section">
-    <h2 class="section-header">Elite Diecast</h2>
-    <img src="diecast-showcase.jpg" alt="Diecast Showcase" class="diecast-hero">
-    <div id="diecast-grid" class="grid-layout"></div>
-</div>
-
-<footer>
-    <div class="vet-badge">VETERAN OWNED BUSINESS</div>
-    <div class="disclosure">
-        AFFILIATE DISCLOSURE: BLKHDZ LLC IS A PARTICIPANT IN THE EBAY PARTNER NETWORK AND AMAZON ASSOCIATES. WE EARN FROM QUALIFYING PURCHASES. PRICES UPDATED EVERY 6 HOURS.
-    </div>
-</footer>
-
 <script>
     function createCard(item, categoryName) {
         const cleanId = item.set_num.split('-')[0];
-        const ebayDataLink = item.ebay_link;
         const amazonLink = `https://www.amazon.com/s?k=${categoryName}+${cleanId}`;
         const storeLink = `https://www.ebay.com/str/blkhdz?_nkw=${cleanId}`;
 
@@ -111,7 +13,7 @@
                 <div class="card-content">
                     <div class="set-title">${item.name}</div>
                     <div class="btn-group">
-                        <a href="${ebayDataLink}" target="_blank" class="action-link ebay-btn">eBay Data</a>
+                        <a href="${item.ebay_link}" target="_blank" class="action-link ebay-btn">eBay Data</a>
                         <a href="${amazonLink}" target="_blank" class="action-link amazon-btn">Amazon</a>
                         <a href="${storeLink}" target="_blank" class="action-link store-btn">Acquire from BLKHDZ</a>
                     </div>
@@ -121,34 +23,34 @@
 
     async function initMarket() {
         try {
-            // Force browser to fetch fresh data every time
-            const legoRes = await fetch('data.json?v=' + Date.now());
+            // Load LEGO and Diecast in parallel
+            const [legoRes, diecastRes] = await Promise.all([
+                fetch('data.json?v=' + Date.now()),
+                fetch('diecast.json?v=' + Date.now())
+            ]);
+
             const legoData = await legoRes.json();
+            const diecastData = await diecastRes.json();
             
             const invGrid = document.getElementById('inventory-grid');
             const watchGrid = document.getElementById('watchlist-grid');
-            
-            legoData.forEach((item, index) => {
-                if(index < 9) {
-                    invGrid.innerHTML += createCard(item, 'LEGO');
-                } else {
-                    watchGrid.innerHTML += createCard(item, 'LEGO');
-                }
-            });
-
-            const diecastRes = await fetch('diecast.json?v=' + Date.now());
-            const diecastData = await diecastRes.json();
             const diecastGrid = document.getElementById('diecast-grid');
             
+            // LEGO Split (0-8 Inventory, 9+ Watchlist)
+            legoData.forEach((item, index) => {
+                if(index < 9) invGrid.innerHTML += createCard(item, 'LEGO');
+                else watchGrid.innerHTML += createCard(item, 'LEGO');
+            });
+
+            // Diecast Grid
             diecastData.forEach(car => {
                 diecastGrid.innerHTML += createCard(car, 'Diecast');
             });
 
-        } catch (e) {
-            console.error("Market Load Error:", e);
-        }
+        } catch (e) { console.error("Market Load Error:", e); }
     }
 
+    // Parallax Logic
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const bg = document.getElementById('parallax');
@@ -157,6 +59,3 @@
 
     window.onload = initMarket;
 </script>
-
-</body>
-</html>
