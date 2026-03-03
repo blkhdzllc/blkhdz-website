@@ -5,17 +5,21 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
+# NEW: This is the "Master Key" that lets the bot save data to your site
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.10'
 
       - name: Install Dependencies
         run: pip install requests beautifulsoup4
@@ -27,8 +31,8 @@ jobs:
 
       - name: Commit and Push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add data.json diecast.json
           git commit -m "Update Market Prices: LEGO & Elite Diecast" || exit 0
-          git push
+          git push origin main
