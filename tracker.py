@@ -1,63 +1,88 @@
 import os, requests, json, time, re
 
-# GET YOUR TOKEN at Scrape.do
-SCRAPE_API_TOKEN = "YOUR_TOKEN_HERE"
+# VERIFIED TOKEN [March 2026]
+SCRAPE_API_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
 
-LEGO_DATA_LIST = [
-    {"id": "75354-1", "name": "Coruscant Guard Gunship"},
+# --- ELITE INVENTORY LIST ---
+LEGO_LIST = [
+    {"id": "42224-1", "name": "Rexy the Porsche (42224)"},
     {"id": "75337-1", "name": "AT-TE Walker"},
     {"id": "75389-1", "name": "The Dark Falcon"},
-    {"id": "42224-1", "name": "Rexy the Porsche (42224)"}
+    {"id": "75354-1", "name": "Coruscant Guard Gunship"},
+    {"id": "75274-1", "name": "TIE Fighter Pilot Helmet"},
+    {"id": "75435-1", "name": "MTT - Battle of Felucia (2026)"},
+    {"id": "71036-1", "name": "Minifigures Series 23 (6-Pack)"},
+    {"id": "75356-1", "name": "Executor Super Star Destroyer"}
+]
+
+DIECAST_LIST = [
+    {"id": "TW-911-54", "name": "Tarmac Works Porsche 911 #54", "img": "Porsche 54.jpg", "p": 39.99},
+    {"id": "TW-AMG-BIL", "name": "Mercedes-AMG GT3 Team Bilstein", "img": "Mercedez 4.jpg", "p": 31.99},
+    {"id": "TW-AMG-BH", "name": "Mercedes-AMG GT3 Bathurst", "img": "Mercedes 2.jpg", "p": 34.95},
+    {"id": "SPK-CIV-16", "name": "Spark Honda Civic Type R-GT", "img": "Honda 16.jpg", "p": 134.95},
+    {"id": "TW-F488-51", "name": "Ferrari 488 GT3 Macau #51", "img": "Ferrari 51.jpg", "p": 31.99}
 ]
 
 def get_market_price(set_num):
     clean_id = set_num.split('-')[0]
     target_url = f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{clean_id}+new+sealed&LH_Sold=1&LH_Complete=1"
+    # Routing through Scrape.do Residential Proxy
     api_url = f"https://api.scrape.do?token={SCRAPE_API_TOKEN}&url={target_url}"
 
     try:
         r = requests.get(api_url, timeout=30)
-        # MARCH 2026 MULTI-TARGET SEARCH: Finds prices even if eBay moves them
-        # Target 1: The 'POSITIVE' span (Standard Sold)
-        # Target 2: The 's-item__price' (Listing view)
-        # Target 3: The 'BOLD' price tag (New 2026 variant)
-        patterns = [
-            r'POSITIVE">\$([\d,]+\.\d+)', 
-            r'item__price.*?\$([\d,]+\.\d+)',
-            r's-item__price">\$([\d,]+\.\d+)'
-        ]
+        # Search for the 2026 eBay price tags
+        prices = re.findall(r'POSITIVE">\$([\d,]+\.\d+)', r.text)
+        if not prices:
+            prices = re.findall(r'item__price.*?\$([\d,]+\.\d+)', r.text, re.DOTALL)
         
-        found_prices = []
-        for pattern in patterns:
-            matches = re.findall(pattern, r.text, re.DOTALL)
-            if matches:
-                found_prices.extend([float(p.replace(',', '')) for p in matches[:10]])
-                break # Stop once we find a working pattern
-
-        if found_prices:
-            avg = round(sum(found_prices) / len(found_prices), 2)
-            print(f"Verified {set_num}: ${avg}")
-            return avg
-            
+        if prices:
+            clean_prices = [float(p.replace(',', '')) for p in prices[:10]]
+            return round(sum(clean_prices) / len(clean_prices), 2)
     except Exception as e:
         print(f"Connection error for {set_num}: {e}")
-    
-    return "Market TBD"
+    return None
 
 def run():
-    final = []
-    for item in LEGO_DATA_LIST:
-        price = get_market_price(item['id'])
-        clean_id = item['id'].split('-')[0]
-        final.append({
+    # 1. Load current data as a fallback so we don't 'blank' the site
+    try:
+        with open('data.json', 'r') as f:
+            old_data = {item['set_num']: item for item in json.load(f)}
+    except: old_data = {}
+
+    final_inventory = []
+
+    # 2. Process LEGO with Market Scraping
+    for item in LEGO_LIST:
+        print(f"Scraping Market Value for {item['name']}...")
+        new_price = get_market_price(item['id'])
+        
+        # FAIL-SAFE: Use new price, then old price, then 'Market TBD'
+        price = new_price if new_price else old_data.get(item['id'], {}).get('ebay_avg_price', "Market TBD")
+        
+        final_inventory.append({
             "set_num": item['id'],
             "name": item['name'],
-            "image_url": f"https://images.brickset.com/sets/images/{clean_id}-1.jpg",
+            "image_url": f"https://images.brickset.com/sets/images/{item['id'].split('-')[0]}-1.jpg",
             "ebay_avg_price": price,
-            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{clean_id}+new+sealed"
+            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{item['id'].split('-')[0]}+new+sealed"
         })
+        time.sleep(1) # Polite delay
+
+    # 3. Process Diecast with Static Pricing
+    for car in DIECAST_LIST:
+        final_inventory.append({
+            "set_num": car['id'],
+            "name": car['name'],
+            "image_url": car['img'],
+            "ebay_avg_price": car['p'],
+            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw={car['name'].replace(' ', '+')}"
+        })
+
+    # 4. Save the Verified Data
     with open('data.json', 'w') as f:
-        json.dump(final, f, indent=4)
+        json.dump(final_inventory, f, indent=4)
+    print("Inventory successfully updated and saved.")
 
 if __name__ == "__main__":
     run()
