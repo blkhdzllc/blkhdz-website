@@ -1,56 +1,65 @@
-import os, requests, json, time, re
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLKHDZ | Elite Shop</title>
+    <style>
+        body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('./hero-parallax.jpg'); 
+            height: 450px; background-attachment: fixed; background-size: cover; background-position: center;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .logo { width: 220px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,204,0,0.5)); }
+        .section-header { border-left: 6px solid #ffcc00; padding-left: 20px; margin: 50px 20px 30px; color: #ffcc00; text-transform: uppercase; letter-spacing: 3px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; padding: 0 20px 50px; }
+        .card { background: #121212; border: 1px solid #222; border-radius: 15px; padding: 25px; text-align: center; transition: 0.3s; }
+        .card:hover { border-color: #ffcc00; transform: scale(1.02); }
+        .card img { width: 100%; height: 220px; object-fit: contain; margin-bottom: 20px; border-radius: 10px; background: #fff; }
+        .price { color: #00ff88; font-size: 2rem; font-weight: 900; margin: 15px 0; }
+        .btn-group { display: flex; flex-direction: column; gap: 12px; }
+        .btn { padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem; text-transform: uppercase; }
+        .btn-ebay { background: #0053d6; color: white; }
+        .btn-amazon { background: #ff9900; color: black; }
+    </style>
+</head>
+<body>
 
-SCRAPE_API_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
+    <div class="hero">
+        <img src="./blkhdz.png" alt="BLKHDZ" class="logo">
+    </div>
 
-LEGO_LIST = [
-    {"id": "42224-1", "name": "Rexy the Porsche (42224)"},
-    {"id": "75337-1", "name": "AT-TE Walker"},
-    {"id": "75389-1", "name": "The Dark Falcon"},
-    {"id": "75354-1", "name": "Coruscant Guard Gunship"},
-    {"id": "75435-1", "name": "MTT - Battle of Felucia (2026)"},
-    {"id": "75356-1", "name": "Executor Super Star Destroyer"}
-]
+    <h2 class="section-header">2026 Watchlist</h2>
+    <div id="watchlist-grid" class="grid"></div>
 
-DIECAST_LIST = [
-    {"id": "TW-911-54", "name": "Tarmac Works Porsche 911 #54", "img": "Porsche 54.jpg", "p": 39.99},
-    {"id": "TW-AMG-BIL", "name": "Mercedes-AMG GT3 Team Bilstein", "img": "Mercedez 4.jpg", "p": 31.99},
-    {"id": "TW-AMG-BH", "name": "Mercedes-AMG GT3 Bathurst", "img": "Mercedes 2.jpg", "p": 34.95},
-    {"id": "SPK-CIV-16", "name": "Spark Honda Civic Type R-GT", "img": "Honda 16.jpg", "p": 134.95},
-    {"id": "TW-F488-51", "name": "Ferrari 488 GT3 Macau #51", "img": "Ferrari 51.jpg", "p": 31.99}
-]
+    <h2 class="section-header">Elite LEGO Inventory</h2>
+    <div id="elite-grid" class="grid"></div>
 
-def get_market_price(set_num):
-    clean_id = set_num.split('-')[0]
-    target_url = f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{clean_id}+new+sealed+-custom+-pro&LH_Sold=1&LH_Complete=1&LH_PrefLoc=1&LH_ItemCondition=1000"
-    api_url = f"https://api.scrape.do?token={SCRAPE_API_TOKEN}&url={target_url}"
-    try:
-        r = requests.get(api_url, timeout=30)
-        prices = re.findall(r'POSITIVE">\$([\d,]+\.\d+)', r.text)
-        if not prices: prices = re.findall(r's-item__price">.*?\$([\d,]+\.\d+)', r.text)
-        if prices:
-            clean_prices = [float(p.replace(',', '')) for p in prices[:10]]
-            return round(sum(clean_prices) / len(clean_prices), 2)
-    except: pass
-    return None
+    <h2 class="section-header">Precision Diecast</h2>
+    <div id="diecast-grid" class="grid"></div>
 
-def run():
-    final_inventory = []
-    for item in LEGO_LIST:
-        price = get_market_price(item['id']) or "Market TBD"
-        final_inventory.append({
-            "set_num": item['id'], "name": item['name'],
-            "image_url": f"https://images.brickset.com/sets/images/{item['id'].split('-')[0]}-1.jpg",
-            "ebay_avg_price": price,
-            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{item['id'].split('-')[0]}+new+sealed&LH_PrefLoc=1",
-            "type": "2026" if "42224" in item['id'] or "75435" in item['id'] else "elite"
-        })
-        time.sleep(1)
-    for car in DIECAST_LIST:
-        final_inventory.append({
-            "set_num": car['id'], "name": car['name'], "image_url": car['img'],
-            "ebay_avg_price": car['p'], "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw={car['name'].replace(' ', '+')}",
-            "type": "diecast"
-        })
-    with open('data.json', 'w') as f: json.dump(final_inventory, f, indent=4)
-
-if __name__ == "__main__": run()
+    <script>
+        fetch('data.json?v=' + Date.now())
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(item => {
+                const card = `
+                    <div class="card">
+                        <img src="${item.image_url}" onerror="this.src='./placeholder.jpg'">
+                        <h3>${item.name}</h3>
+                        <div class="price">$${item.ebay_avg_price}</div>
+                        <div class="btn-group">
+                            <a href="${item.ebay_link}" class="btn btn-ebay" target="_blank">View on eBay</a>
+                            <a href="https://www.amazon.com/s?k=LEGO+${item.set_num}" class="btn btn-amazon" target="_blank">View on Amazon</a>
+                        </div>
+                    </div>`;
+                
+                if (item.type === '2026') document.getElementById('watchlist-grid').innerHTML += card;
+                else if (item.type === 'diecast') document.getElementById('diecast-grid').innerHTML += card;
+                else document.getElementById('elite-grid').innerHTML += card;
+            });
+        });
+    </script>
+</body>
+</html>
