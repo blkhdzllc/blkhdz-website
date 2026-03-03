@@ -1,12 +1,15 @@
-import os, requests, json, time, re, urllib.parse
+import os, requests, json, time, re
+import urllib.parse
 
-# 1. API CONFIGURATION
-# Replace this with your actual Scrape.do token
-SCRAPE_API_TOKEN = "YOUR_SCRAPE_DO_TOKEN_HERE"
+# ==========================================================
+# CONFIGURATION - TOKEN INTEGRATED
+# ==========================================================
+SCRAPE_API_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
 
-# 2. DATA LISTS
+# ==========================================================
+# INVENTORY DATA
+# ==========================================================
 LEGO_DATA_LIST = [
-    # ELITE INVENTORY (Index 0-8 for your HTML layout)
     {"id": "75354-1", "name": "Coruscant Guard Gunship", "price": 139.99},
     {"id": "71036-1", "name": "Minifigures Series 23 (Set of 6)", "price": 49.95},
     {"id": "75356-1", "name": "Executor Super Star Destroyer", "price": 69.99},
@@ -16,7 +19,7 @@ LEGO_DATA_LIST = [
     {"id": "77247-1", "name": "KICK Sauber F1 Team C44", "price": 26.99},
     {"id": "76015-1", "name": "Doc Ock Truck Heist", "price": 45.00},
     {"id": "76286-1", "name": "Guardians Milano", "price": 179.99},
-    # 2026 WATCHLIST (Index 9+ for your HTML layout)
+    # 2026 WATCHLIST ITEMS
     {"id": "42224-1", "name": "Rexy the Porsche (42224)"}, 
     {"id": "75349-1", "name": "Captain Rex Helmet"},       
     {"id": "75337-1", "name": "AT-TE Walker"},                             
@@ -36,24 +39,24 @@ DIECAST_LIST = [
     {"id": "TW-F488-51", "name": "Ferrari 488 GT3 Macau #51", "img": "Ferrari 51.jpg", "p": 31.99}
 ]
 
-# 3. CORE LOGIC
+# ==========================================================
+# SCRAPING LOGIC
+# ==========================================================
 def get_market_price(set_id):
     clean_id = set_id.split('-')[0]
-    # Pinpoint Search: LEGO [ID] New Sealed, Sold, Complete, US-Only
-    target_ebay_url = f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{clean_id}+new+sealed&LH_Sold=1&LH_Complete=1&LH_PrefLoc=1&LH_ItemCondition=1000"
-    
-    encoded_url = urllib.parse.quote(target_ebay_url)
-    api_url = f"https://api.scrape.do/?token={SCRAPE_API_TOKEN}&url={encoded_url}"
+    # Pinpoint US-Only New Sealed Market
+    query = f"LEGO {clean_id} new sealed"
+    target_ebay_url = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(query)}&LH_Sold=1&LH_Complete=1&LH_PrefLoc=1&LH_ItemCondition=1000"
+    api_url = f"https://api.scrape.do/?token={SCRAPE_API_TOKEN}&url={urllib.parse.quote(target_ebay_url)}"
     
     try:
         r = requests.get(api_url, timeout=25)
-        # Search for price pattern: POSITIVE">$[Price] or s-item__price">$[Price]
+        # Search for price patterns
         prices = re.findall(r'POSITIVE">\$([\d,]+\.\d+)', r.text)
         if not prices:
             prices = re.findall(r's-item__price">.*?\$([\d,]+\.\d+)', r.text)
             
         if prices:
-            # Clean commas and average the top 5 results
             float_prices = [float(p.replace(',', '')) for p in prices[:5]]
             return round(sum(float_prices) / len(float_prices), 2)
     except Exception as e:
@@ -62,42 +65,35 @@ def get_market_price(set_id):
     return "Market TBD"
 
 def run():
-    print("Starting BLKHDZ Market Update...")
-    
-    # Process LEGO sets
+    print("BLKHDZ Update Starting...")
+    # Process LEGO
     lego_final = []
     for item in LEGO_DATA_LIST:
         clean_id = item['id'].split('-')[0]
         val_price = item.get('price', get_market_price(item['id']))
-        
-        # Image Logic
         img = f"https://images.brickset.com/sets/images/{clean_id}-1.jpg"
         if "71036" in item['id']:
             img = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
 
-        # Affiliate Links
-        aff_link = f"https://www.ebay.com/sch/i.html?_nkw=LEGO%20{clean_id}%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
-        
         lego_final.append({
             "set_num": item['id'], "name": item['name'], "image_url": img,
-            "ebay_avg_price": val_price, "ebay_link": aff_link
+            "ebay_avg_price": val_price,
+            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw=LEGO%20{clean_id}%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
         })
-        print(f"Verified: {item['name']} @ ${val_price}")
 
     # Process Diecast
     diecast_final = []
     for car in DIECAST_LIST:
-        car_query = car['name'].replace(' ', '%20')
         diecast_final.append({
             "set_num": car['id'], "name": car['name'], "image_url": car['img'],
             "ebay_avg_price": car['p'],
-            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw={car_query}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
+            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw={car['name'].replace(' ', '%20')}&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
         })
 
-    # Save Files
+    # Save files
     with open('data.json', 'w') as f: json.dump(lego_final, f, indent=4)
     with open('diecast.json', 'w') as f: json.dump(diecast_final, f, indent=4)
-    print("Update Complete: data.json and diecast.json refreshed.")
+    print("Files Saved. Sync Complete.")
 
 if __name__ == "__main__":
     run()
