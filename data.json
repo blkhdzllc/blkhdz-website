@@ -40,6 +40,14 @@
         "type": "2026"
     },
     {
+        "set_num": "75356-1",
+        "name": "Executor Super Star Destroyer",
+        "image_url": "https://images.brickset.com/sets/images/75356-1.jpg",
+        "ebay_avg_price": "Market TBD",
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75356+new+sealed&LH_PrefLoc=1",
+        "type": "elite"
+    },
+    {
         "set_num": "TW-911-54",
         "name": "Tarmac Works Porsche 911 #54",
         "image_url": "Porsche 54.jpg",
@@ -56,11 +64,27 @@
         "type": "diecast"
     },
     {
+        "set_num": "TW-AMG-BH",
+        "name": "Mercedes-AMG GT3 Bathurst",
+        "image_url": "Mercedes 2.jpg",
+        "ebay_avg_price": 34.95,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Mercedes-AMG+GT3+Bathurst",
+        "type": "diecast"
+    },
+    {
         "set_num": "SPK-CIV-16",
         "name": "Spark Honda Civic Type R-GT",
         "image_url": "Honda 16.jpg",
         "ebay_avg_price": 134.95,
         "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Spark+Honda+Civic+Type+R-GT",
+        "type": "diecast"
+    },
+    {
+        "set_num": "TW-F488-51",
+        "name": "Ferrari 488 GT3 Macau #51",
+        "image_url": "Ferrari 51.jpg",
+        "ebay_avg_price": 31.99,
+        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Ferrari+488+GT3+Macau+#51",
         "type": "diecast"
     }
 ]
