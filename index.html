@@ -3,48 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ | Elite Inventory</title>
+    <title>BLKHDZ | Elite Shop</title>
     <style>
-        body { background-color: #0d0d0d; color: #ffffff; font-family: 'Inter', sans-serif; padding: 20px; line-height: 1.6; }
-        .title-bar { border-left: 4px solid #ffcc00; padding-left: 15px; margin: 40px 0 20px; color: #ffcc00; text-transform: uppercase; letter-spacing: 2px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: #161616; border: 1px solid #2a2a2a; border-radius: 10px; padding: 20px; text-align: center; }
-        .card img { max-width: 100%; height: 180px; object-fit: contain; margin-bottom: 15px; }
-        .price { color: #00ff88; font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; }
-        .btn { display: block; background: #ffcc00; color: #000; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        body { background: #0a0a0a; color: #fff; font-family: sans-serif; padding: 20px; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.lego.com/cdn/cs/set/assets/blt56926f23c93f0b24/42224_Hero.jpg'); height: 300px; background-size: cover; display: flex; align-items: center; justify-content: center; border-radius: 15px; margin-bottom: 50px; }
+        .hero h1 { font-size: 3rem; color: #ffcc00; text-shadow: 2px 2px #000; }
+        .section-header { border-left: 5px solid #ffcc00; padding-left: 15px; margin: 40px 0 20px; color: #ffcc00; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 20px; text-align: center; }
+        .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; background: #fff; border-radius: 8px; }
+        .price { color: #00ff88; font-size: 1.8rem; font-weight: bold; margin-bottom: 15px; }
+        .btn-group { display: flex; flex-direction: column; gap: 10px; }
+        .btn { padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; text-align: center; transition: 0.2s; }
+        .btn-ebay { background: #0053d6; color: #fff; }
+        .btn-amazon { background: #ff9900; color: #000; }
+        .btn:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
 
-    <h2 class="title-bar">2026 Watchlist</h2>
-    <div id="watchlist" class="grid"></div>
+    <div class="hero"><h1>BLKHDZ ELITE</h1></div>
 
-    <h2 class="title-bar">Elite LEGO Inventory</h2>
-    <div id="elite" class="grid"></div>
+    <h2 class="section-header">2026 Watchlist</h2>
+    <div id="watchlist-grid" class="grid"></div>
 
-    <h2 class="title-bar">Precision Diecast</h2>
-    <div id="diecast" class="grid"></div>
+    <h2 class="section-header">Elite LEGO Inventory</h2>
+    <div id="elite-grid" class="grid"></div>
+
+    <h2 class="section-header">Precision Diecast</h2>
+    <div id="diecast-grid" class="grid"></div>
 
     <script>
-        fetch('data.json?nocache=' + new Date().getTime())
+        fetch('data.json')
         .then(res => res.json())
         .then(data => {
             data.forEach(item => {
-                const cardHtml = `
+                const card = `
                     <div class="card">
-                        <img src="${item.image_url}">
+                        <img src="${item.image_url}" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Coming+Soon'">
                         <h3>${item.name}</h3>
                         <div class="price">$${item.ebay_avg_price}</div>
-                        <a href="${item.ebay_link}" class="btn" target="_blank">View Market</a>
+                        <div class="btn-group">
+                            <a href="${item.ebay_link}" class="btn btn-ebay" target="_blank">View on eBay</a>
+                            <a href="https://www.amazon.com/s?k=LEGO+${item.set_num}" class="btn btn-amazon" target="_blank">Search Amazon</a>
+                        </div>
                     </div>`;
                 
-                if (item.set_num.includes('TW') || item.set_num.includes('SPK')) {
-                    document.getElementById('diecast').innerHTML += cardHtml;
-                } else if (item.name.includes('2026') || item.set_num.includes('42224')) {
-                    document.getElementById('watchlist').innerHTML += cardHtml;
-                } else {
-                    document.getElementById('elite').innerHTML += cardHtml;
-                }
+                if (item.type === '2026') document.getElementById('watchlist-grid').innerHTML += card;
+                else if (item.type === 'diecast') document.getElementById('diecast-grid').innerHTML += card;
+                else document.getElementById('elite-grid').innerHTML += card;
             });
         });
     </script>
