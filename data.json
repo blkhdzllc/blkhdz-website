@@ -1,30 +1,5 @@
 [
-    {
-        "set_num": "75354-1",
-        "name": "Coruscant Guard Gunship",
-        "image_url": "https://images.brickset.com/sets/images/75354-1.jpg",
-        "ebay_avg_price": "Market TBD",
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75354+new+sealed"
-    },
-    {
-        "set_num": "75337-1",
-        "name": "AT-TE Walker",
-        "image_url": "https://images.brickset.com/sets/images/75337-1.jpg",
-        "ebay_avg_price": "Market TBD",
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75337+new+sealed"
-    },
-    {
-        "set_num": "75389-1",
-        "name": "The Dark Falcon",
-        "image_url": "https://images.brickset.com/sets/images/75389-1.jpg",
-        "ebay_avg_price": "Market TBD",
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75389+new+sealed"
-    },
-    {
-        "set_num": "42224-1",
-        "name": "Rexy the Porsche (42224)",
-        "image_url": "https://images.brickset.com/sets/images/42224-1.jpg",
-        "ebay_avg_price": "Market TBD",
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+42224+new+sealed"
-    }
+    {"set_num": "42224-1", "name": "Rexy the Porsche (42224)", "image_url": "https://images.brickset.com/sets/images/42224-1.jpg", "ebay_avg_price": 187.50, "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+42224+new+sealed"},
+    {"set_num": "75337-1", "name": "AT-TE Walker", "image_url": "https://images.brickset.com/sets/images/75337-1.jpg", "ebay_avg_price": 114.65, "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75337+new+sealed"},
+    {"set_num": "75389-1", "name": "The Dark Falcon", "image_url": "https://images.brickset.com/sets/images/75389-1.jpg", "ebay_avg_price": 158.50, "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=LEGO+75389+new+sealed"}
 ]
