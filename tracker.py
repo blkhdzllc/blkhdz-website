@@ -1,15 +1,28 @@
 import os, requests, json, time, re
 
-# AUTHORIZED TOKEN
-SCRAPE_API_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
-
-LEGO_LIST = [
-    {"id": "42224-1", "name": "Rexy the Porsche (42224)"},
-    {"id": "75337-1", "name": "AT-TE Walker"},
-    {"id": "75389-1", "name": "The Dark Falcon"},
-    {"id": "75354-1", "name": "Coruscant Guard Gunship"},
-    {"id": "75435-1", "name": "MTT - Battle of Felucia (2026)"},
-    {"id": "75356-1", "name": "Executor Super Star Destroyer"}
+# 1. ELITE INVENTORY & VERIFIED WATCHLIST
+# Add the exact prices you found in eBay Research here.
+# If a 'price' is listed, the script will use it. If not, it will scrape.
+LEGO_DATA_LIST = [
+    {"id": "75354-1", "name": "Coruscant Guard Gunship", "price": 139.99},
+    {"id": "71036-1", "name": "Minifigures Series 23 (Set of 6)", "price": 49.95},
+    {"id": "75356-1", "name": "Executor Super Star Destroyer", "price": 69.99},
+    {"id": "75274-1", "name": "TIE Fighter Pilot Helmet", "price": 325.00},
+    {"id": "31167-1", "name": "Creator Haunted Mansion", "price": 88.99},
+    {"id": "75345-1", "name": "501st Clone Troopers Battle Pack", "price": 19.99},
+    {"id": "77247-1", "name": "KICK Sauber F1 Team C44", "price": 26.99},
+    {"id": "76015-1", "name": "Doc Ock Truck Heist", "price": 45.00},
+    {"id": "76286-1", "name": "Guardians Milano", "price": 179.99},
+    # --- 2026 WATCHLIST ITEMS ---
+    {"id": "42224-1", "name": "Rexy the Porsche (42224)", "price": 185.00}, # Updated per your Research
+    {"id": "75349-1", "name": "Captain Rex Helmet", "price": 64.50},       # Updated per your Research
+    {"id": "75337-1", "name": "AT-TE Walker"},                             # Scraper will handle this
+    {"id": "75389-1", "name": "The Dark Falcon"},                          # Scraper will handle this
+    {"id": "71858-1", "name": "Ninjago 2026 Set A"}, 
+    {"id": "71847-1", "name": "Ninjago 2026 Set B"},
+    {"id": "30726-1", "name": "2026 Polybag"},
+    {"id": "76332-1", "name": "Marvel 2026"},
+    {"id": "75435-1", "name": "Star Wars 2026"}
 ]
 
 DIECAST_LIST = [
@@ -20,39 +33,56 @@ DIECAST_LIST = [
     {"id": "TW-F488-51", "name": "Ferrari 488 GT3 Macau #51", "img": "Ferrari 51.jpg", "p": 31.99}
 ]
 
-def get_market_price(set_num):
-    clean_id = set_num.split('-')[0]
-    # PINPOINT: US-Only (LH_PrefLoc=1), New Condition (1000), Excludes Customs
-    target_url = f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{clean_id}+new+sealed+-custom+-pro&LH_Sold=1&LH_Complete=1&LH_PrefLoc=1&LH_ItemCondition=1000"
-    api_url = f"https://api.scrape.do?token={SCRAPE_API_TOKEN}&url={target_url}"
+def get_market_price(set_id):
+    clean_id = set_id.split('-')[0]
+    query = f"LEGO {clean_id} new sealed"
     try:
-        r = requests.get(api_url, timeout=30)
-        prices = re.findall(r'POSITIVE">\$([\d,]+\.\d+)', r.text)
-        if not prices: prices = re.findall(r's-item__price">.*?\$([\d,]+\.\d+)', r.text)
+        url = f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}&LH_Sold=1&LH_Complete=1"
+        r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10)
+        prices = re.findall(r'\$(\d+\.\d+)', r.text)
         if prices:
-            clean_prices = [float(p.replace(',', '')) for p in prices[:10]]
-            return round(sum(clean_prices) / len(clean_prices), 2)
+            float_prices = [float(p) for p in prices[:5]]
+            return round(sum(float_prices) / len(float_prices), 2)
     except: pass
-    return None
+    return "Market TBD"
 
 def run():
-    final_inventory = []
-    for item in LEGO_LIST:
-        price = get_market_price(item['id']) or "Market TBD"
-        final_inventory.append({
-            "set_num": item['id'], "name": item['name'],
-            "image_url": f"https://images.brickset.com/sets/images/{item['id'].split('-')[0]}-1.jpg",
-            "ebay_avg_price": price,
-            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw=LEGO+{item['id'].split('-')[0]}+new+sealed&LH_PrefLoc=1",
-            "type": "2026" if "42224" in item['id'] or "75435" in item['id'] else "elite"
-        })
-        time.sleep(1)
-    for car in DIECAST_LIST:
-        final_inventory.append({
-            "set_num": car['id'], "name": car['name'], "image_url": car['img'],
-            "ebay_avg_price": car['p'], "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw={car['name'].replace(' ', '+')}",
-            "type": "diecast"
-        })
-    with open('data.json', 'w') as f: json.dump(final_inventory, f, indent=4)
+    lego_final = []
+    for item in LEGO_DATA_LIST:
+        clean_id = item['id'].split('-')[0]
+        # Use verified price if provided, otherwise hit the scraper
+        val_price = item.get('price', get_market_price(item['id']))
+        
+        img = f"https://images.brickset.com/sets/images/{clean_id}-1.jpg"
+        if "71036" in item['id']:
+            img = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
 
-if __name__ == "__main__": run()
+        aff_link = f"https://www.ebay.com/sch/i.html?_nkw=LEGO%20{clean_id}%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
+        
+        lego_final.append({
+            "set_num": item['id'],
+            "name": item['name'],
+            "image_url": img,
+            "ebay_avg_price": val_price,
+            "ebay_link": aff_link
+        })
+
+    with open('data.json', 'w') as f:
+        json.dump(lego_final, f, indent=4)
+
+    diecast_final = []
+    for car in DIECAST_LIST:
+        car_query = car['name'].replace(' ', '%20')
+        diecast_final.append({
+            "set_num": car['id'],
+            "name": car['name'],
+            "image_url": car['img'],
+            "ebay_avg_price": car['p'],
+            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw={car_query}&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&customid=BLKHDZ_WEB"
+        })
+
+    with open('diecast.json', 'w') as f:
+        json.dump(diecast_final, f, indent=4)
+
+if __name__ == "__main__":
+    run()
