@@ -5,24 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEGO Market Tracker</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f9; padding: 20px; color: #333; }
-        .container { max-width: 1200px; margin: auto; }
-        header { text-align: center; margin-bottom: 40px; }
-        #last-updated { font-size: 0.9em; color: #666; margin-top: 10px; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; padding: 20px; }
+        .container { max-width: 1100px; margin: auto; }
+        header { text-align: center; margin-bottom: 30px; }
+        #last-updated { color: #666; font-size: 0.9em; margin-top: 8px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 12px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; text-align: center; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { max-width: 100%; height: 200px; object-fit: contain; border-radius: 8px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; }
+        .card img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 15px; }
         
-        .set-num { font-size: 0.85em; color: #888; margin: 10px 0 5px; }
-        .set-name { font-weight: bold; font-size: 1.1em; height: 3em; display: flex; align-items: center; justify-content: center; }
-        .price { font-size: 1.4em; color: #2c3e50; font-weight: bold; margin: 15px 0; }
+        .set-id { color: #999; font-size: 0.8em; text-transform: uppercase; font-weight: bold; }
+        .set-name { font-weight: 700; margin: 10px 0; height: 2.5em; overflow: hidden; }
+        .price { font-size: 1.5em; color: #1a73e8; font-weight: 800; margin-bottom: 15px; }
         
-        .btn { display: inline-block; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; }
-        .btn:hover { background: #0056b3; }
-        
-        #loading-message { text-align: center; padding: 50px; font-size: 1.2em; color: #555; }
+        .ebay-btn { display: inline-block; background: #0053d6; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        #loading-message { text-align: center; font-size: 1.2em; padding: 100px; }
     </style>
 </head>
 <body>
@@ -30,51 +27,45 @@
 <div class="container">
     <header>
         <h1>LEGO Market Tracker</h1>
-        <div id="last-updated">Checking for latest data...</div>
+        <div id="last-updated">Updating values...</div>
     </header>
 
-    <div id="loading-message">Initializing market data... please wait.</div>
+    <div id="loading-message">Initializing market data...</div>
     <div id="set-grid" class="grid"></div>
 </div>
 
 <script>
-    async function loadMarketData() {
+    async function loadTracker() {
         const grid = document.getElementById('set-grid');
         const loader = document.getElementById('loading-message');
-        const updateText = document.getElementById('last-updated');
+        const updateStamp = document.getElementById('last-updated');
 
         try {
-            // Fetching with cache buster to ensure 2026 data shows immediately
+            // Fetch with a cache-buster (?v=...) to ensure you don't see old data
             const response = await fetch('data.json?v=' + Date.now());
-            if (!response.ok) throw new Error("File not found");
-            
             const data = await response.json();
 
             if (data.sets && data.sets.length > 0) {
-                loader.style.display = 'none'; // Hide loading text
-                updateText.innerText = "Last Updated: " + data.last_updated;
-                
-                grid.innerHTML = data.sets.map(set => `
+                loader.style.display = 'none';
+                updateStamp.innerText = "Last Updated: " + data.last_updated;
+
+                grid.innerHTML = data.sets.map(item => `
                     <div class="card">
-                        <div class="set-num">${set.set_num}</div>
-                        <img src="${set.image_url}" alt="${set.name}" onerror="this.src='https://placehold.co/400x300?text=Image+Coming+Soon'">
-                        <div class="set-name">${set.name}</div>
-                        <div class="price">$${typeof set.ebay_avg_price === 'number' ? set.ebay_avg_price.toFixed(2) : set.ebay_avg_price}</div>
-                        <a href="${set.ebay_link}" target="_blank" class="btn">View on eBay</a>
+                        <div class="set-id">${item.set_num}</div>
+                        <img src="${item.image_url}" onerror="this.src='https://placehold.co/300x200?text=No+Image+Found'">
+                        <div class="set-name">${item.name}</div>
+                        <div class="price">$${Number(item.ebay_avg_price).toLocaleString(undefined, {minimumFractionDigits: 2})}</div>
+                        <a href="${item.ebay_link}" target="_blank" class="ebay-btn">View on eBay</a>
                     </div>
                 `).join('');
-            } else {
-                loader.innerText = "No sets found in data file.";
             }
-        } catch (error) {
-            console.error("Error:", error);
-            loader.innerText = "Updating market values... refresh in 30 seconds.";
+        } catch (e) {
+            console.error("Load failed:", e);
+            loader.innerText = "Website is updating. Refresh in 60 seconds.";
         }
     }
 
-    // Run on page load
-    loadMarketData();
+    loadTracker();
 </script>
-
 </body>
 </html>
