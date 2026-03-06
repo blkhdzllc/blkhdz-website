@@ -1,37 +1,32 @@
 [
     {
-        "set_num": "TW-911-54",
+        "id": "TW-911-54",
         "name": "Tarmac Works Porsche 911 #54",
-        "image_url": "Porsche 54.jpg",
-        "ebay_avg_price": 39.99,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Tarmac%20Works%20Porsche%20911%20%2354&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
+        "img": "Porsche 54.jpg",
+        "p": 39.99
     },
     {
-        "set_num": "TW-AMG-BIL",
+        "id": "TW-AMG-BIL",
         "name": "Mercedes-AMG GT3 Team Bilstein",
-        "image_url": "Mercedez 4.jpg",
-        "ebay_avg_price": 31.99,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Mercedes-AMG%20GT3%20Team%20Bilstein&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
+        "img": "Mercedez 4.jpg",
+        "p": 31.99
     },
     {
-        "set_num": "TW-AMG-BH",
+        "id": "TW-AMG-BH",
         "name": "Mercedes-AMG GT3 Bathurst",
-        "image_url": "Mercedes 2.jpg",
-        "ebay_avg_price": 34.95,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Mercedes-AMG%20GT3%20Bathurst&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
+        "img": "Mercedes 2.jpg",
+        "p": 34.95
     },
     {
-        "set_num": "SPK-CIV-16",
+        "id": "SPK-CIV-16",
         "name": "Spark Honda Civic Type R-GT",
-        "image_url": "Honda 16.jpg",
-        "ebay_avg_price": 134.95,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Spark%20Honda%20Civic%20Type%20R-GT&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
+        "img": "Honda 16.jpg",
+        "p": 134.95
     },
     {
-        "set_num": "TW-F488-51",
+        "id": "TW-F488-51",
         "name": "Ferrari 488 GT3 Macau #51",
-        "image_url": "Ferrari 51.jpg",
-        "ebay_avg_price": 31.99,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Ferrari%20488%20GT3%20Macau%20%2351&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
+        "img": "Ferrari 51.jpg",
+        "p": 31.99
     }
 ]
