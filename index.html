@@ -5,230 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLKHDZ | Official Market Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    
     <style>
-        :root { 
-            --accent: #FFD700; /* Gold */
-            --teal: #008080;   /* Veteran Teal */
-            --bg: #000000; 
-            --card: #080808; 
-            --border: #1a1a1a;
-        }
-
-        /* RESET & BASE */
+        :root { --accent: #FFD700; --teal: #008080; --bg: #000; --card: #080808; --border: #151515; }
+        
         * { box-sizing: border-box; }
-        body { 
-            background-color: var(--bg); 
-            color: #ffffff; 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+        body { background-color: var(--bg); color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* HERO SECTION - ELITE BRANDING */
+        /* MAIN HERO */
         .hero {
-            height: 85vh;
-            min-height: 600px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            border-bottom: 3px solid var(--border);
+            height: 85vh; overflow: hidden; position: relative;
+            display: flex; justify-content: center; align-items: center; 
+            border-bottom: 2px solid var(--border); background: #000;
         }
-
         .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 110%;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('hero-parallax.jpg');
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-            will-change: transform;
+            position: absolute; top: 0; left: 0; width: 100%; height: 120%; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('hero-parallax.jpg') no-repeat center;
+            background-size: cover; z-index: 1; will-change: transform;
         }
-
-        .hero-logo {
-            position: relative;
-            z-index: 10;
-            width: 1200px;
-            max-width: 90vw;
-            filter: drop-shadow(0 0 50px rgba(0,0,0,0.9));
-        }
+        .hero-logo { width: 1200px; max-width: 90vw; z-index: 10; filter: drop-shadow(0 0 50px #000); }
 
         /* NAVIGATION */
         .sub-nav {
-            background: rgba(0,0,0,0.9);
-            backdrop-filter: blur(10px);
-            padding: 25px 0;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background: rgba(0,0,0,0.95); padding: 25px 0; display: flex; justify-content: center; gap: 40px;
+            border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);
         }
-
-        .nav-btn {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 5px;
-            font-family: 'Syncopate', sans-serif;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
+        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 5px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
         .nav-btn:hover { color: var(--accent); letter-spacing: 7px; }
 
-        /* GRID SYSTEM */
         .container { max-width: 1600px; margin: 0 auto; padding: 60px 20px; }
-        
-        .section-header {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 12px;
-            margin: 0 0 50px;
-            text-align: center;
-            color: var(--accent);
-            text-transform: uppercase;
-        }
-
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 35px;
-            margin-bottom: 100px;
-        }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+        .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.4rem; letter-spacing: 10px; margin: 0 0 40px; text-align: center; color: var(--accent); text-transform: uppercase; }
 
         /* PRODUCT CARDS */
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            transition: 0.4s;
-            overflow: hidden;
-        }
+        .card { background: var(--card); border: 1px solid var(--border); position: relative; transition: 0.4s; display: flex; flex-direction: column; overflow: hidden; }
+        .card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.8); }
+        .img-box { width: 100%; height: 320px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .card img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 10px 18px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 0.9rem; z-index: 5; }
+        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-title { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 25px; min-height: 2.5rem; line-height: 1.5; color: #eee; }
 
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-        }
-
-        .price-tag {
-            position: absolute;
-            top: 0; left: 0;
-            background: var(--accent);
-            color: #000;
-            padding: 10px 18px;
-            font-family: 'Syncopate', sans-serif;
-            font-weight: 900;
-            font-size: 0.9rem;
-            z-index: 5;
-        }
-
-        .img-container {
-            width: 100%;
-            height: 320px;
-            background: #fff; /* White background for set art pop */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .card img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .card-details { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
-        
-        .title {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 0.85rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #fff;
-            min-height: 3rem;
-        }
-
-        /* ACTION BUTTONS */
-        .btn-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: auto;
-        }
-
-        .btn {
-            text-decoration: none;
-            text-align: center;
-            padding: 14px 5px;
-            font-family: 'Syncopate', sans-serif;
-            font-size: 0.6rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            border: 1px solid #333;
-        }
-
-        .btn-market { background: #111; color: #fff; }
-        .btn-market:hover { background: #222; }
-        
+        /* BUTTONS */
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
+        .btn { text-decoration: none; text-align: center; padding: 13px 5px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Syncopate', sans-serif; transition: 0.3s; border: 1px solid #222; }
+        .btn-black { background: #111; color: #fff; }
         .btn-amazon { background: #111; color: #FF9900; }
-        .btn-amazon:hover { background: #222; }
+        .btn-gold { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; border: none; font-size: 0.75rem; font-weight: 900; }
+        .btn:hover { filter: brightness(1.3); }
 
-        .btn-buy {
-            grid-column: span 2;
-            background: var(--accent);
-            color: #000;
-            border: none;
-            font-weight: 900;
-            font-size: 0.75rem;
-            margin-top: 8px;
+        /* DIECAST SHOWCASE BREAK */
+        .showcase-divider {
+            height: 500px; width: 100%; position: relative; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            border-top: 2px solid var(--border); border-bottom: 2px solid var(--border);
+            margin: 80px 0;
         }
-        .btn-buy:hover { filter: brightness(1.2); }
-
-        /* FOOTER */
-        footer {
-            padding: 120px 20px;
-            background: #000;
-            text-align: center;
-            border-top: 1px solid var(--border);
+        .showcase-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 140%;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('diecast-showcase.jpg') no-repeat center;
+            background-size: cover; z-index: 1; will-change: transform;
         }
+        .showcase-title { position: relative; z-index: 5; font-family: 'Syncopate', sans-serif; font-size: 2rem; letter-spacing: 15px; text-transform: uppercase; color: #fff; text-shadow: 0 0 20px #000; text-align: center; padding: 0 20px; }
 
-        .vet-badge {
-            font-family: 'Syncopate', sans-serif;
-            color: var(--teal);
-            font-weight: 700;
-            letter-spacing: 12px;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .copy { color: #444; font-size: 0.7rem; letter-spacing: 3px; }
-
+        footer { padding: 100px 20px; background: #000; text-align: center; border-top: 1px solid var(--border); }
+        .vet-badge { font-family: 'Syncopate', sans-serif; letter-spacing: 10px; color: var(--teal); font-size: 1rem; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
     <div class="hero">
-        <div class="hero-bg" id="parallax"></div>
-        <img src="BLKHDZ.png" alt="BLKHDZ Logo" class="hero-logo">
+        <div class="hero-bg" id="parallax-main"></div>
+        <img src="BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
     </div>
 
     <nav class="sub-nav">
         <a href="#inventory" class="nav-btn">Inventory</a>
-        <a href="#watchlist" class="nav-btn">2026 Watchlist</a>
+        <a href="#watchlist" class="nav-btn">Watchlist</a>
         <a href="#diecast" class="nav-btn">Diecast</a>
     </nav>
 
@@ -242,88 +94,74 @@
         <div id="grid-watchlist" class="grid-layout"></div>
     </div>
 
+    <div class="showcase-divider">
+        <div class="showcase-bg" id="parallax-showcase"></div>
+        <h2 class="showcase-title">Elite Diecast</h2>
+    </div>
+
     <div class="container" id="diecast">
-        <h2 class="section-header">Elite Diecast</h2>
         <div id="grid-diecast" class="grid-layout"></div>
     </div>
 
-    <footer>
-        <div class="vet-badge">VETERAN OWNED BUSINESS</div>
-        <div class="copy">ALL RIGHTS RESERVED © 2026</div>
-    </footer>
+    <footer><div class="vet-badge">VETERAN OWNED BUSINESS</div></footer>
 
     <script>
-        function createProductCard(data, type) {
-            const isLego = type === 'LEGO';
-            
-            // Handle Price
-            const priceVal = isLego ? data.ebay_avg_price : data.p;
-            const displayPrice = (priceVal === "TBD" || !priceVal) ? "TBD" : `$${parseFloat(priceVal).toFixed(2)}`;
-            
-            // Handle IDs and Links
-            const rawId = isLego ? data.set_num : data.id;
+        function createCard(item, category) {
+            const isLego = category === 'LEGO';
+            const rawId = isLego ? item.set_num : item.id;
             const cleanId = rawId.split('-')[0];
-            const imgUrl = isLego ? data.image_url : encodeURI(data.img);
+            const price = isLego ? item.ebay_avg_price : item.p;
+            const displayPrice = isNaN(parseFloat(price)) ? price : `$${parseFloat(price).toFixed(2)}`;
+            const imgSrc = isLego ? item.image_url : encodeURI(item.img);
             
-            const marketLink = isLego ? data.ebay_link : `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(data.name)}`;
-            const amazonLink = `https://www.amazon.com/s?k=${type}+${cleanId}`;
-            const shopLink = `https://www.ebay.com/str/blkhdz?_nkw=${cleanId}`;
-
             return `
                 <div class="card">
-                    <div class="price-tag">${displayPrice}</div>
-                    <div class="img-container">
-                        <img src="${imgUrl}" alt="${data.name}" onerror="this.src='hero-parallax.jpg'">
-                    </div>
-                    <div class="card-details">
-                        <div class="title">${data.name}</div>
-                        <div class="btn-grid">
-                            <a href="${marketLink}" target="_blank" class="btn btn-market">eBay Data</a>
-                            <a href="${amazonLink}" target="_blank" class="btn btn-amazon">Amazon</a>
-                            <a href="${shopLink}" target="_blank" class="btn btn-buy">Acquire From BLKHDZ</a>
+                    <div class="price-badge">${displayPrice || 'TBD'}</div>
+                    <div class="img-box"><img src="${imgSrc}" onerror="this.src='hero-parallax.jpg'"></div>
+                    <div class="card-body">
+                        <div class="card-title">${item.name}</div>
+                        <div class="btn-group">
+                            <a href="${item.ebay_link || '#'}" target="_blank" class="btn btn-black">eBay Data</a>
+                            <a href="https://www.amazon.com/s?k=${category}+${cleanId}" target="_blank" class="btn btn-amazon">Amazon</a>
+                            <a href="https://www.ebay.com/str/blkhdz?_nkw=${cleanId}" target="_blank" class="btn btn-gold">Acquire from BLKHDZ</a>
                         </div>
                     </div>
                 </div>`;
         }
 
-        async function syncMarket() {
+        async function init() {
             try {
-                const [legoRes, diecastRes] = await Promise.all([
-                    fetch('data.json?v=' + Date.now()),
-                    fetch('diecast.json?v=' + Date.now())
-                ]);
+                const [lRes, dRes] = await Promise.all([fetch('data.json?v=' + Date.now()), fetch('diecast.json?v=' + Date.now())]);
+                const legoData = await lRes.json();
+                const diecastData = await dRes.json();
 
-                const legoJson = await legoRes.json();
-                const diecastJson = await diecastRes.json();
-
-                // Process LEGO (sets are inside the "sets" key from tracker.py)
-                if (legoJson.sets) {
-                    legoJson.sets.forEach((set, index) => {
-                        const target = index < 9 ? 'grid-inventory' : 'grid-watchlist';
-                        document.getElementById(target).innerHTML += createProductCard(set, 'LEGO');
+                if(legoData.sets) {
+                    legoData.sets.forEach((set, i) => {
+                        const target = i < 9 ? 'grid-inventory' : 'grid-watchlist';
+                        document.getElementById(target).innerHTML += createCard(set, 'LEGO');
                     });
                 }
-
-                // Process Diecast
-                if (diecastJson) {
-                    diecastJson.forEach(car => {
-                        document.getElementById('grid-diecast').innerHTML += createProductCard(car, 'Diecast');
+                if(diecastData) {
+                    diecastData.forEach(car => {
+                        document.getElementById('grid-diecast').innerHTML += createCard(car, 'Diecast');
                     });
                 }
-
-            } catch (err) {
-                console.error("Market Sync Error:", err);
-            }
+            } catch (e) { console.error(e); }
         }
 
-        // Parallax Effect
         window.addEventListener('scroll', () => {
-            const scroll = window.pageYOffset;
-            const bg = document.getElementById('parallax');
-            if (bg) bg.style.transform = `translateY(${scroll * 0.4}px)`;
+            const scrolled = window.pageYOffset;
+            const mainBg = document.getElementById('parallax-main');
+            const showcaseBg = document.getElementById('parallax-showcase');
+            if(mainBg) mainBg.style.transform = `translateY(${scrolled * 0.4}px)`;
+            
+            if(showcaseBg) {
+                const offset = showcaseBg.parentElement.offsetTop;
+                showcaseBg.style.transform = `translateY(${(scrolled - offset) * 0.4}px)`;
+            }
         });
 
-        window.onload = syncMarket;
+        window.onload = init;
     </script>
 </body>
 </html>
