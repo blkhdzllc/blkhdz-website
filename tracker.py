@@ -2,7 +2,7 @@ import os, requests, json, time, re
 import urllib.parse
 
 # ==========================================================
-# CONFIGURATION - Uses GitHub Secrets for Security
+# CONFIGURATION
 # ==========================================================
 SCRAPE_API_TOKEN = os.getenv("SCRAPE_TOKEN")
 
@@ -16,7 +16,7 @@ LEGO_DATA_LIST = [
     {"id": "77247-1", "name": "KICK Sauber F1 Team C44", "msrp": 26.99},
     {"id": "76015-1", "name": "Doc Ock Truck Heist", "msrp": 45.00},
     {"id": "76286-1", "name": "Guardians Milano", "msrp": 179.99},
-    # 2026 WATCHLIST ITEMS
+    # 2026 WATCHLIST - Persistent Scrape Enabled
     {"id": "42224-1", "name": "Rexy the Porsche (42224)"}, 
     {"id": "75349-1", "name": "Captain Rex Helmet"},       
     {"id": "75337-1", "name": "AT-TE Walker"},                             
@@ -38,8 +38,9 @@ DIECAST_LIST = [
 
 def get_market_price(set_id):
     clean_id = set_id.split('-')[0]
-    query = f"LEGO {clean_id} new sealed"
-    target_ebay_url = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(query)}&LH_Sold=1&LH_Complete=1&LH_PrefLoc=1&LH_ItemCondition=1000"
+    # Broadened search to ensure we catch "New" listings across more categories
+    query = f"LEGO {clean_id} new"
+    target_ebay_url = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(query)}&LH_Sold=1&LH_Complete=1&LH_ItemCondition=1000"
     api_url = f"https://api.scrape.do/?token={SCRAPE_API_TOKEN}&url={urllib.parse.quote(target_ebay_url)}"
     
     try:
@@ -48,27 +49,24 @@ def get_market_price(set_id):
         prices = re.findall(r'\$(\d{1,3}(?:,\d{3})*(?:\.\d{2}))', r.text)
         
         if prices:
-            # Get the first 5 results to create a stable average
-            float_prices = [float(p.replace(',', '')) for p in prices[:5]]
+            # Use top 10 results for better accuracy on active sets
+            float_prices = [float(p.replace(',', '')) for p in prices[:10]]
             avg = sum(float_prices) / len(float_prices)
             return round(avg, 2)
     except Exception as e:
         print(f"Scrape Error for {clean_id}: {e}")
-    
     return None
 
 def run():
-    print("BLKHDZ Market Update Starting...")
     lego_final = []
-    
     for item in LEGO_DATA_LIST:
         clean_id = item['id'].split('-')[0]
-        print(f"Processing {clean_id}...")
+        print(f"Updating: {item['name']}...")
         
-        # Try to get market price, fall back to MSRP or 'TBD'
         market_val = get_market_price(item['id'])
         final_price = market_val if market_val else item.get('msrp', "TBD")
 
+        # Dynamically fetch image
         img = f"https://images.brickset.com/sets/images/{clean_id}-1.jpg"
         if "71036" in item['id']:
             img = "https://images.brickset.com/sets/AdditionalImages/71036-1/71036_Lifestyle_1.jpg"
@@ -78,9 +76,9 @@ def run():
             "name": item['name'], 
             "image_url": img,
             "ebay_avg_price": final_price,
-            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw=LEGO%20{clean_id}%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
+            "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw=LEGO%20{clean_id}%20new&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
         })
-        time.sleep(1) # Small delay to be nice to the API
+        time.sleep(1)
 
     diecast_final = []
     for car in DIECAST_LIST:
@@ -94,7 +92,6 @@ def run():
 
     with open('data.json', 'w') as f: json.dump(lego_final, f, indent=4)
     with open('diecast.json', 'w') as f: json.dump(diecast_final, f, indent=4)
-    print("Market sync complete.")
 
 if __name__ == "__main__":
     run()
