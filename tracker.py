@@ -23,9 +23,9 @@ LEGO_DATA_LIST = [
     {"id": "75389-1", "name": "The Dark Falcon"},                          
     {"id": "71858-1", "name": "Ninjago 2026 Set A"}, 
     {"id": "71847-1", "name": "Ninjago 2026 Set B"},
-    {"id": "30726-1", "name": "2026 Polybag"},
-    {"id": "76332-1", "name": "Marvel 2026"},
-    {"id": "75435-1", "name": "Star Wars 2026"}
+    {"id": "30726-1", "name": "Bruce Wayne and Batsuit 30726"},
+    {"id": "76332-1", "name": "Batmobile 73332"},
+    {"id": "75435-1", "name": "Battle of Felucia Separatist MTT 75435"}
 ]
 
 DIECAST_LIST = [
