@@ -5,146 +5,325 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLKHDZ | Official Market Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --accent: #FFD700; --teal: #008080; --bg: #000000; --card: #080808; }
-        
-        /* FORCE BLACK BACKGROUND */
-        body { background-color: var(--bg) !important; color: #ffffff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
-        
-        .parallax-wrapper {
-            height: 80vh; overflow: hidden; position: relative;
-            display: flex; justify-content: center; align-items: center; 
-            border-bottom: 2px solid #111; background: #000;
+        :root { 
+            --accent: #FFD700; /* Gold */
+            --teal: #008080;   /* Veteran Teal */
+            --bg: #000000; 
+            --card: #080808; 
+            --border: #1a1a1a;
         }
-        .parallax-bg {
-            position: absolute; top: -10%; left: 0; width: 100%; height: 120%; 
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('hero-parallax.jpg');
-            background-size: cover; background-position: center; z-index: -1;
-        }
-        .hero-logo { width: 1000px; max-width: 90vw; height: auto; filter: drop-shadow(0 0 50px rgba(0,0,0,1)); z-index: 1; }
 
+        /* RESET & BASE */
+        * { box-sizing: border-box; }
+        body { 
+            background-color: var(--bg); 
+            color: #ffffff; 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* HERO SECTION - ELITE BRANDING */
+        .hero {
+            height: 85vh;
+            min-height: 600px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-bottom: 3px solid var(--border);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 110%;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('hero-parallax.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            will-change: transform;
+        }
+
+        .hero-logo {
+            position: relative;
+            z-index: 10;
+            width: 1200px;
+            max-width: 90vw;
+            filter: drop-shadow(0 0 50px rgba(0,0,0,0.9));
+        }
+
+        /* NAVIGATION */
         .sub-nav {
-            background: #000; padding: 25px 0; display: flex; justify-content: center; gap: 40px;
-            border-bottom: 1px solid #111; position: sticky; top: 0; z-index: 100;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            padding: 25px 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 5px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
-        .nav-btn:hover { color: var(--accent); }
 
-        .container { max-width: 1600px; margin: 0 auto; padding: 40px 20px; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        .nav-btn {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 5px;
+            font-family: 'Syncopate', sans-serif;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-btn:hover { color: var(--accent); letter-spacing: 7px; }
+
+        /* GRID SYSTEM */
+        .container { max-width: 1600px; margin: 0 auto; padding: 60px 20px; }
         
-        .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.4rem; letter-spacing: 10px; margin: 60px 0 30px; text-align: center; color: var(--accent); text-transform: uppercase; }
+        .section-header {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 12px;
+            margin: 0 0 50px;
+            text-align: center;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 35px;
+            margin-bottom: 100px;
+        }
 
         /* PRODUCT CARDS */
-        .set-card { background: var(--card); border: 1px solid #151515; position: relative; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column; }
-        .set-card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        
-        .img-wrapper { width: 100%; height: 320px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 15px; box-sizing: border-box; }
-        .set-card img { max-width: 95%; max-height: 95%; object-fit: contain; }
-        
-        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 10px 15px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 0.9rem; z-index: 10; }
-        
-        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-        .set-title { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 25px; min-height: 2.5rem; line-height: 1.4; color: #eee; }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: 0.4s;
+            overflow: hidden;
+        }
 
-        /* BUTTON GROUP RESTORATION */
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
-        .action-link { text-decoration: none; text-align: center; padding: 12px 5px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Syncopate', sans-serif; transition: 0.3s; border: 1px solid #222; }
-        .ebay-btn { background: #111; color: #fff; }
-        .amazon-btn { background: #111; color: #FF9900; }
-        .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; border: none; font-size: 0.75rem; font-weight: 900; }
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
 
-        footer { padding: 100px 20px; background: #000; text-align: center; border-top: 1px solid #111; }
-        .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 10px; color: var(--teal); font-size: 1rem; }
+        .price-tag {
+            position: absolute;
+            top: 0; left: 0;
+            background: var(--accent);
+            color: #000;
+            padding: 10px 18px;
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 900;
+            font-size: 0.9rem;
+            z-index: 5;
+        }
+
+        .img-container {
+            width: 100%;
+            height: 320px;
+            background: #fff; /* White background for set art pop */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .card-details { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+        
+        .title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #fff;
+            min-height: 3rem;
+        }
+
+        /* ACTION BUTTONS */
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .btn {
+            text-decoration: none;
+            text-align: center;
+            padding: 14px 5px;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border: 1px solid #333;
+        }
+
+        .btn-market { background: #111; color: #fff; }
+        .btn-market:hover { background: #222; }
+        
+        .btn-amazon { background: #111; color: #FF9900; }
+        .btn-amazon:hover { background: #222; }
+
+        .btn-buy {
+            grid-column: span 2;
+            background: var(--accent);
+            color: #000;
+            border: none;
+            font-weight: 900;
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+        .btn-buy:hover { filter: brightness(1.2); }
+
+        /* FOOTER */
+        footer {
+            padding: 120px 20px;
+            background: #000;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .vet-badge {
+            font-family: 'Syncopate', sans-serif;
+            color: var(--teal);
+            font-weight: 700;
+            letter-spacing: 12px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .copy { color: #444; font-size: 0.7rem; letter-spacing: 3px; }
+
     </style>
 </head>
 <body>
 
-<div class="parallax-wrapper">
-    <div class="parallax-bg" id="parallax"></div>
-    <img src="BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
-</div>
+    <div class="hero">
+        <div class="hero-bg" id="parallax"></div>
+        <img src="BLKHDZ.png" alt="BLKHDZ Logo" class="hero-logo">
+    </div>
 
-<nav class="sub-nav">
-    <a href="#inventory-section" class="nav-btn">Inventory</a>
-    <a href="#watchlist-section" class="nav-btn">2026 Watchlist</a>
-    <a href="#diecast-section" class="nav-btn">Diecast</a>
-</nav>
+    <nav class="sub-nav">
+        <a href="#inventory" class="nav-btn">Inventory</a>
+        <a href="#watchlist" class="nav-btn">2026 Watchlist</a>
+        <a href="#diecast" class="nav-btn">Diecast</a>
+    </nav>
 
-<div class="container" id="inventory-section"><h2 class="section-header">Elite Inventory</h2><div id="inventory-grid" class="grid-layout"></div></div>
-<div class="container" id="watchlist-section"><h2 class="section-header">2026 Watchlist</h2><div id="watchlist-grid" class="grid-layout"></div></div>
-<div class="container" id="diecast-section"><h2 class="section-header">Elite Diecast</h2><div id="diecast-grid" class="grid-layout"></div></div>
+    <div class="container" id="inventory">
+        <h2 class="section-header">Elite Inventory</h2>
+        <div id="grid-inventory" class="grid-layout"></div>
+    </div>
 
-<footer><div class="vet-badge">VETERAN OWNED BUSINESS</div></footer>
+    <div class="container" id="watchlist">
+        <h2 class="section-header">2026 Watchlist</h2>
+        <div id="grid-watchlist" class="grid-layout"></div>
+    </div>
 
-<script>
-    function createCard(item, category) {
-        // Handle ID cleaning for LEGO (75354-1 -> 75354)
-        const rawId = item.set_num || item.id;
-        const cleanId = rawId.split('-')[0];
-        
-        // Price logic: LEGO uses 'ebay_avg_price', Diecast uses 'p'
-        const rawPrice = item.ebay_avg_price || item.p || 'TBD';
-        const displayPrice = isNaN(parseFloat(rawPrice)) ? rawPrice : `$${parseFloat(rawPrice).toFixed(2)}`;
-        
-        // Image logic: LEGO uses 'image_url', Diecast uses 'img'
-        const imgSrc = item.image_url || encodeURI(item.img);
-        
-        // Link logic
-        const ebayLink = item.ebay_link || `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(item.name)}`;
-        const amazonLink = `https://www.amazon.com/s?k=${category}+${cleanId}`;
-        const storeLink = `https://www.ebay.com/str/blkhdz?_nkw=${cleanId}`;
+    <div class="container" id="diecast">
+        <h2 class="section-header">Elite Diecast</h2>
+        <div id="grid-diecast" class="grid-layout"></div>
+    </div>
 
-        return `
-            <div class="set-card">
-                <div class="price-badge">${displayPrice}</div>
-                <div class="img-wrapper"><img src="${imgSrc}" alt="${item.name}" onerror="this.src='hero-parallax.jpg'"></div>
-                <div class="card-content">
-                    <div class="set-title">${item.name}</div>
-                    <div class="btn-group">
-                        <a href="${ebayLink}" target="_blank" class="action-link ebay-btn">eBay Data</a>
-                        <a href="${amazonLink}" target="_blank" class="action-link amazon-btn">Amazon</a>
-                        <a href="${storeLink}" target="_blank" class="action-link store-btn">Acquire from BLKHDZ</a>
-                    </div>
-                </div>
-            </div>`;
-    }
+    <footer>
+        <div class="vet-badge">VETERAN OWNED BUSINESS</div>
+        <div class="copy">ALL RIGHTS RESERVED © 2026</div>
+    </footer>
 
-    async function initMarket() {
-        try {
-            const [legoRes, diecastRes] = await Promise.all([
-                fetch('data.json?v=' + Date.now()),
-                fetch('diecast.json?v=' + Date.now())
-            ]);
+    <script>
+        function createProductCard(data, type) {
+            const isLego = type === 'LEGO';
             
-            const legoData = await legoRes.json();
-            const diecastData = await diecastRes.json();
+            // Handle Price
+            const priceVal = isLego ? data.ebay_avg_price : data.p;
+            const displayPrice = (priceVal === "TBD" || !priceVal) ? "TBD" : `$${parseFloat(priceVal).toFixed(2)}`;
+            
+            // Handle IDs and Links
+            const rawId = isLego ? data.set_num : data.id;
+            const cleanId = rawId.split('-')[0];
+            const imgUrl = isLego ? data.image_url : encodeURI(data.img);
+            
+            const marketLink = isLego ? data.ebay_link : `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(data.name)}`;
+            const amazonLink = `https://www.amazon.com/s?k=${type}+${cleanId}`;
+            const shopLink = `https://www.ebay.com/str/blkhdz?_nkw=${cleanId}`;
 
-            // Render LEGO (Split Inventory vs Watchlist)
-            if(legoData.sets) {
-                legoData.sets.forEach((item, index) => {
-                    const gridId = index < 9 ? 'inventory-grid' : 'watchlist-grid';
-                    document.getElementById(gridId).innerHTML += createCard(item, 'LEGO');
-                });
-            }
-
-            // Render Diecast
-            if(diecastData) {
-                diecastData.forEach(car => {
-                    document.getElementById('diecast-grid').innerHTML += createCard(car, 'Diecast');
-                });
-            }
-        } catch (e) {
-            console.error("Load Error:", e);
+            return `
+                <div class="card">
+                    <div class="price-tag">${displayPrice}</div>
+                    <div class="img-container">
+                        <img src="${imgUrl}" alt="${data.name}" onerror="this.src='hero-parallax.jpg'">
+                    </div>
+                    <div class="card-details">
+                        <div class="title">${data.name}</div>
+                        <div class="btn-grid">
+                            <a href="${marketLink}" target="_blank" class="btn btn-market">eBay Data</a>
+                            <a href="${amazonLink}" target="_blank" class="btn btn-amazon">Amazon</a>
+                            <a href="${shopLink}" target="_blank" class="btn btn-buy">Acquire From BLKHDZ</a>
+                        </div>
+                    </div>
+                </div>`;
         }
-    }
 
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const bg = document.getElementById('parallax');
-        if(bg) { bg.style.transform = `translateY(${scrolled * 0.3}px)`; }
-    });
-    window.onload = initMarket;
-</script>
+        async function syncMarket() {
+            try {
+                const [legoRes, diecastRes] = await Promise.all([
+                    fetch('data.json?v=' + Date.now()),
+                    fetch('diecast.json?v=' + Date.now())
+                ]);
+
+                const legoJson = await legoRes.json();
+                const diecastJson = await diecastRes.json();
+
+                // Process LEGO (sets are inside the "sets" key from tracker.py)
+                if (legoJson.sets) {
+                    legoJson.sets.forEach((set, index) => {
+                        const target = index < 9 ? 'grid-inventory' : 'grid-watchlist';
+                        document.getElementById(target).innerHTML += createProductCard(set, 'LEGO');
+                    });
+                }
+
+                // Process Diecast
+                if (diecastJson) {
+                    diecastJson.forEach(car => {
+                        document.getElementById('grid-diecast').innerHTML += createProductCard(car, 'Diecast');
+                    });
+                }
+
+            } catch (err) {
+                console.error("Market Sync Error:", err);
+            }
+        }
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const bg = document.getElementById('parallax');
+            if (bg) bg.style.transform = `translateY(${scroll * 0.4}px)`;
+        });
+
+        window.onload = syncMarket;
+    </script>
 </body>
 </html>
