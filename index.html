@@ -6,63 +6,63 @@
     <title>BLKHDZ | Official Market Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #FFD700; --teal: #008080; --dark-bg: #000; --card-bg: #080808; }
-        body { background-color: var(--dark-bg); color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; scroll-behavior: smooth; }
+        :root { --accent: #FFD700; --teal: #008080; --bg: #000000; --card: #080808; }
         
-        /* HERO SECTION */
+        /* FORCE BLACK BACKGROUND */
+        body { background-color: var(--bg) !important; color: #ffffff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        
         .parallax-wrapper {
             height: 80vh; overflow: hidden; position: relative;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; 
-            border-bottom: 2px solid #111; background: #050505;
+            display: flex; justify-content: center; align-items: center; 
+            border-bottom: 2px solid #111; background: #000;
         }
         .parallax-bg {
             position: absolute; top: -10%; left: 0; width: 100%; height: 120%; 
-            /* Fallback to dark gradient if hero-parallax.jpg is missing */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('hero-parallax.jpg');
-            background-size: cover; background-position: center; z-index: -1; will-change: transform;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('hero-parallax.jpg');
+            background-size: cover; background-position: center; z-index: -1;
         }
-        .hero-logo { width: 1200px; max-width: 85vw; height: auto; filter: drop-shadow(0 0 30px rgba(255,215,0,0.2)); z-index: 1; }
+        .hero-logo { width: 1000px; max-width: 90vw; height: auto; filter: drop-shadow(0 0 50px rgba(0,0,0,1)); z-index: 1; }
 
         .sub-nav {
-            background: rgba(0,0,0,0.95); padding: 25px 0; display: flex; justify-content: center; gap: 40px;
-            border-bottom: 1px solid #111; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);
+            background: #000; padding: 25px 0; display: flex; justify-content: center; gap: 40px;
+            border-bottom: 1px solid #111; position: sticky; top: 0; z-index: 100;
         }
-        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 4px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
-        .nav-btn:hover { color: var(--accent); letter-spacing: 6px; }
+        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 5px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
+        .nav-btn:hover { color: var(--accent); }
 
         .container { max-width: 1600px; margin: 0 auto; padding: 40px 20px; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-bottom: 80px; }
         
-        .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; letter-spacing: 8px; margin: 80px 0 40px; text-align: center; color: var(--accent); text-transform: uppercase; }
+        .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.4rem; letter-spacing: 10px; margin: 60px 0 30px; text-align: center; color: var(--accent); text-transform: uppercase; }
 
-        /* CARDS */
-        .set-card { background: var(--card-bg); border: 1px solid #151515; position: relative; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column; border-radius: 4px; }
-        .set-card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .img-wrapper { width: 100%; height: 280px; background: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 10px; box-sizing: border-box; }
-        .set-card img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s; }
-        .set-card:hover img { transform: scale(1.05); }
+        /* PRODUCT CARDS */
+        .set-card { background: var(--card); border: 1px solid #151515; position: relative; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column; }
+        .set-card:hover { border-color: var(--accent); transform: translateY(-5px); }
         
-        .price-badge { position: absolute; top: 15px; left: 15px; background: var(--accent); color: #000; padding: 6px 12px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 0.8rem; z-index: 10; border-radius: 2px; }
+        .img-wrapper { width: 100%; height: 320px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 15px; box-sizing: border-box; }
+        .set-card img { max-width: 95%; max-height: 95%; object-fit: contain; }
         
-        .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .set-title { font-family: 'Syncopate', sans-serif; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 20px; min-height: 2.8rem; line-height: 1.5; color: #fff; letter-spacing: 1px; }
+        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 10px 15px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 0.9rem; z-index: 10; }
+        
+        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .set-title { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 25px; min-height: 2.5rem; line-height: 1.4; color: #eee; }
 
+        /* BUTTON GROUP RESTORATION */
         .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
-        .action-link { text-decoration: none; text-align: center; padding: 12px 5px; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Syncopate', sans-serif; transition: 0.3s; border: 1px solid #222; }
+        .action-link { text-decoration: none; text-align: center; padding: 12px 5px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Syncopate', sans-serif; transition: 0.3s; border: 1px solid #222; }
         .ebay-btn { background: #111; color: #fff; }
         .amazon-btn { background: #111; color: #FF9900; }
-        .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; border: none; font-size: 0.65rem; padding: 15px; }
-        .store-btn:hover { filter: brightness(1.2); }
+        .store-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; border: none; font-size: 0.75rem; font-weight: 900; }
 
         footer { padding: 100px 20px; background: #000; text-align: center; border-top: 1px solid #111; }
-        .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 10px; color: var(--teal); font-size: 0.9rem; margin-bottom: 20px; }
+        .vet-badge { font-family: 'Syncopate', sans-serif; font-weight: 700; letter-spacing: 10px; color: var(--teal); font-size: 1rem; }
     </style>
 </head>
 <body>
 
 <div class="parallax-wrapper">
     <div class="parallax-bg" id="parallax"></div>
-    <img src="BLKHDZ.png" alt="BLKHDZ" class="hero-logo" onerror="this.style.display='none'; document.querySelector('.parallax-wrapper').innerHTML += '<h1 style=\'font-family:Syncopate; font-size:4rem; color:white;\'>BLKHDZ</h1>'">
+    <img src="BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
 </div>
 
 <nav class="sub-nav">
@@ -71,54 +71,38 @@
     <a href="#diecast-section" class="nav-btn">Diecast</a>
 </nav>
 
-<div class="container" id="inventory-section">
-    <h2 class="section-header">Elite Inventory</h2>
-    <div id="inventory-grid" class="grid-layout"></div>
-</div>
+<div class="container" id="inventory-section"><h2 class="section-header">Elite Inventory</h2><div id="inventory-grid" class="grid-layout"></div></div>
+<div class="container" id="watchlist-section"><h2 class="section-header">2026 Watchlist</h2><div id="watchlist-grid" class="grid-layout"></div></div>
+<div class="container" id="diecast-section"><h2 class="section-header">Elite Diecast</h2><div id="diecast-grid" class="grid-layout"></div></div>
 
-<div class="container" id="watchlist-section">
-    <h2 class="section-header">2026 Watchlist</h2>
-    <div id="watchlist-grid" class="grid-layout"></div>
-</div>
-
-<div class="container" id="diecast-section">
-    <h2 class="section-header">Elite Diecast</h2>
-    <div id="diecast-grid" class="grid-layout"></div>
-</div>
-
-<footer>
-    <div class="vet-badge">VETERAN OWNED BUSINESS</div>
-    <p style="color: #444; font-size: 0.7rem; letter-spacing: 2px;">ALL RIGHTS RESERVED © 2026</p>
-</footer>
+<footer><div class="vet-badge">VETERAN OWNED BUSINESS</div></footer>
 
 <script>
-    function formatPrice(val) {
-        if (!val || val === "TBD") return "TBD";
-        const num = parseFloat(val);
-        return isNaN(num) ? val : `$${num.toFixed(2)}`;
-    }
-
-    function createCard(item, type) {
-        // Logic for LEGO vs Diecast data structures
-        const isLego = type === 'LEGO';
-        const id = isLego ? item.set_num : item.id;
-        const cleanId = id.split('-')[0];
-        const price = isLego ? formatPrice(item.ebay_avg_price) : formatPrice(item.p);
-        const ebayLink = isLego ? item.ebay_link : `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(item.name)}`;
-        const amazonLink = `https://www.amazon.com/s?k=${isLego ? 'LEGO' : 'Diecast'}+${cleanId}`;
+    function createCard(item, category) {
+        // Handle ID cleaning for LEGO (75354-1 -> 75354)
+        const rawId = item.set_num || item.id;
+        const cleanId = rawId.split('-')[0];
+        
+        // Price logic: LEGO uses 'ebay_avg_price', Diecast uses 'p'
+        const rawPrice = item.ebay_avg_price || item.p || 'TBD';
+        const displayPrice = isNaN(parseFloat(rawPrice)) ? rawPrice : `$${parseFloat(rawPrice).toFixed(2)}`;
+        
+        // Image logic: LEGO uses 'image_url', Diecast uses 'img'
+        const imgSrc = item.image_url || encodeURI(item.img);
+        
+        // Link logic
+        const ebayLink = item.ebay_link || `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(item.name)}`;
+        const amazonLink = `https://www.amazon.com/s?k=${category}+${cleanId}`;
         const storeLink = `https://www.ebay.com/str/blkhdz?_nkw=${cleanId}`;
-        const image = isLego ? item.image_url : item.img;
 
         return `
             <div class="set-card">
-                <div class="price-badge">${price}</div>
-                <div class="img-wrapper">
-                    <img src="${image}" alt="${item.name}" onerror="this.src='https://placehold.co/400x300/111/white?text=Image+Loading...'">
-                </div>
+                <div class="price-badge">${displayPrice}</div>
+                <div class="img-wrapper"><img src="${imgSrc}" alt="${item.name}" onerror="this.src='hero-parallax.jpg'"></div>
                 <div class="card-content">
                     <div class="set-title">${item.name}</div>
                     <div class="btn-group">
-                        <a href="${ebayLink}" target="_blank" class="action-link ebay-btn">Market Data</a>
+                        <a href="${ebayLink}" target="_blank" class="action-link ebay-btn">eBay Data</a>
                         <a href="${amazonLink}" target="_blank" class="action-link amazon-btn">Amazon</a>
                         <a href="${storeLink}" target="_blank" class="action-link store-btn">Acquire from BLKHDZ</a>
                     </div>
@@ -132,28 +116,26 @@
                 fetch('data.json?v=' + Date.now()),
                 fetch('diecast.json?v=' + Date.now())
             ]);
-
+            
             const legoData = await legoRes.json();
             const diecastData = await diecastRes.json();
-            
-            // Your tracker.py puts lego sets inside a "sets" property
-            if (legoData.sets) {
+
+            // Render LEGO (Split Inventory vs Watchlist)
+            if(legoData.sets) {
                 legoData.sets.forEach((item, index) => {
-                    const targetGrid = index < 9 ? 'inventory-grid' : 'watchlist-grid';
-                    document.getElementById(targetGrid).innerHTML += createCard(item, 'LEGO');
+                    const gridId = index < 9 ? 'inventory-grid' : 'watchlist-grid';
+                    document.getElementById(gridId).innerHTML += createCard(item, 'LEGO');
                 });
             }
 
-            if (diecastData) {
+            // Render Diecast
+            if(diecastData) {
                 diecastData.forEach(car => {
-                    document.getElementById('diecast-grid').innerHTML += createCard(car, 'DIECAST');
+                    document.getElementById('diecast-grid').innerHTML += createCard(car, 'Diecast');
                 });
             }
         } catch (e) {
-            console.error(e);
-            document.querySelectorAll('.grid-layout').forEach(grid => {
-                grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--accent);">Syncing Live Market Data...</p>`;
-            });
+            console.error("Load Error:", e);
         }
     }
 
@@ -162,7 +144,6 @@
         const bg = document.getElementById('parallax');
         if(bg) { bg.style.transform = `translateY(${scrolled * 0.3}px)`; }
     });
-
     window.onload = initMarket;
 </script>
 </body>
