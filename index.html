@@ -5,78 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Diecast & LEGO Tracker</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; background: #f9f9f9; text-align: center; }
-        .hero { background: #222; color: white; padding: 60px 20px; }
-        .section-title { margin: 40px 0 20px; font-size: 2em; text-transform: uppercase; color: #333; border-bottom: 2px solid #007bff; display: inline-block; padding-bottom: 5px; }
+        /* BRANDING PRESERVATION */
+        body { 
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            background: #000000; /* Original Black Background */
+            color: #ffffff; 
+        }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; padding: 20px; max-width: 1200px; margin: auto; }
-        .card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 200px; object-fit: contain; }
-        .price { font-size: 1.6em; color: #d9534f; font-weight: bold; margin: 10px 0; }
-        .ebay-btn { display: block; background: #007bff; color: white; padding: 12px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        /* HERO SECTION WITH PARALLAX */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-parallax.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 100px 20px; 
+            text-align: center;
+            border-bottom: 4px solid #d9534f;
+        }
+        .logo { max-width: 280px; margin-bottom: 20px; filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.5)); }
+
+        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
+        .section-title { 
+            font-size: 2.5em; 
+            text-transform: uppercase; 
+            margin-bottom: 30px; 
+            color: #ffcc00; /* Lego Gold */
+            letter-spacing: 2px;
+        }
+
+        /* PRODUCT CARDS */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        .card { 
+            background: #111111; 
+            border: 1px solid #333;
+            border-radius: 15px; 
+            padding: 25px; 
+            text-align: center; 
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: scale(1.02); border-color: #ffcc00; }
+        .card img { width: 100%; height: 220px; object-fit: contain; background: #fff; border-radius: 10px; margin-bottom: 20px; }
         
-        footer { background: #222; color: white; padding: 40px 20px; margin-top: 50px; }
-        #loading-text { font-style: italic; color: #666; }
+        .price-label { color: #aaa; font-size: 0.8em; text-transform: uppercase; margin-bottom: 5px; }
+        .price-value { font-size: 2em; color: #5cb85c; font-weight: bold; margin-bottom: 20px; }
+        
+        .btn { 
+            display: block; padding: 12px; text-decoration: none; border-radius: 8px; 
+            font-weight: bold; margin-bottom: 10px; transition: 0.2s; 
+        }
+        .btn-ebay { background: #0053d6; color: white; }
+        .btn-ebay:hover { background: #003994; }
+
+        /* DIECAST SHOWCASE SECTION */
+        .diecast-showcase {
+            background: url('diecast-showcase.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            margin-top: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 4px solid #d9534f;
+        }
+
+        footer { padding: 80px 20px; text-align: center; color: #555; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>ELITE DIECAST & LEGO</h1>
-        <p>Market Value Tracking | Veteran Owned Business</p>
-    </div>
+<div class="hero">
+    <img src="BLKHDZ.png" alt="Elite Diecast Logo" class="logo">
+    <h1>ELITE DIECAST & LEGO</h1>
+    <p style="font-size: 1.2em; color: #ffcc00;">Veteran Owned Business | Market Value Tracker</p>
+</div>
 
-    <h2 class="section-title">2026 LEGO Watchlist</h2>
-    <div id="lego-loading">Loading market data...</div>
+<div class="container">
+    <h2 class="section-title">2026 Watchlist</h2>
+    <div id="loading-text">Synchronizing live market data...</div>
     <div id="lego-grid" class="grid"></div>
+</div>
 
-    <h2 class="section-title">Elite Diecast Inventory</h2>
-    <div id="diecast-grid" class="grid"></div>
+<div class="diecast-showcase">
+    <h2 style="background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px;">Elite Diecast Collection</h2>
+</div>
 
-    <footer>
-        <p>Veteran Owned Business - Updated Daily</p>
-    </footer>
+<footer>
+    <p>Veteran Owned Business - All Rights Reserved © 2026</p>
+</footer>
 
 <script>
-    async function init() {
+    async function loadSite() {
+        const grid = document.getElementById('lego-grid');
+        const loader = document.getElementById('loading-text');
+
         try {
-            // 1. Fetch LEGO Data
-            const legoRes = await fetch('data.json?v=' + Date.now());
-            const legoData = await legoRes.json();
-            const legoGrid = document.getElementById('lego-grid');
-            
-            if (legoData.sets) {
-                document.getElementById('lego-loading').style.display = 'none';
-                legoGrid.innerHTML = legoData.sets.map(s => `
-                    <div class="card">
-                        <img src="${s.image_url}" onerror="this.src='https://placehold.co/300x200?text=Image+Loading'">
-                        <h3>${s.name}</h3>
-                        <div class="price">$${Number(s.ebay_avg_price).toFixed(2)}</div>
-                        <a href="${s.ebay_link}" target="_blank" class="ebay-btn">View Market Deals</a>
-                    </div>
-                `).join('');
+            const response = await fetch('data.json?v=' + Date.now());
+            const data = await response.json();
+
+            if (data.sets) {
+                loader.style.display = 'none';
+                grid.innerHTML = data.sets.map(s => {
+                    // Logic to ensure we don't display $0 or "undefined"
+                    const currentPrice = s.ebay_avg_price > 0 ? `$${parseFloat(s.ebay_avg_price).toFixed(2)}` : "Tracking...";
+                    
+                    return `
+                        <div class="card">
+                            <div style="color: #666; font-size: 0.8em; margin-bottom: 10px;">#${s.set_num}</div>
+                            <img src="${s.image_url}" onerror="this.src='https://placehold.co/400x300?text=Searching+Official+Image'">
+                            <h3>${s.name}</h3>
+                            <div class="price-label">Estimated Market Value</div>
+                            <div class="price-value">${currentPrice}</div>
+                            <a href="${s.ebay_link}" target="_blank" class="btn btn-ebay">CHECK LIVE EBAY DEALS</a>
+                        </div>
+                    `;
+                }).join('');
             }
-
-            // 2. Fetch Diecast Data
-            const diecastRes = await fetch('diecast.json?v=' + Date.now());
-            const diecastData = await diecastRes.json();
-            const diecastGrid = document.getElementById('diecast-grid');
-            
-            diecastGrid.innerHTML = diecastData.map(d => `
-                <div class="card">
-                    <img src="${d.img}" alt="${d.name}">
-                    <h3>${d.name}</h3>
-                    <div class="price">$${d.p}</div>
-                    <button class="ebay-btn">In Stock</button>
-                </div>
-            `).join('');
-
         } catch (err) {
-            console.error("Critical Error:", err);
-            document.getElementById('lego-loading').innerText = "Data temporarily unavailable. Please refresh.";
+            console.error("Data Load Error:", err);
+            loader.innerText = "Market Data Temporarily Unavailable. Refreshing...";
         }
     }
-    init();
+    loadSite();
 </script>
 </body>
 </html>
