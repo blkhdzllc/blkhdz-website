@@ -3,69 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEGO Market Tracker</title>
+    <title>Elite Diecast & LEGO Tracker</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; padding: 20px; }
-        .container { max-width: 1100px; margin: auto; }
-        header { text-align: center; margin-bottom: 30px; }
-        #last-updated { color: #666; font-size: 0.9em; margin-top: 8px; }
+        body { font-family: 'Arial', sans-serif; margin: 0; background: #f9f9f9; text-align: center; }
+        .hero { background: #222; color: white; padding: 60px 20px; }
+        .section-title { margin: 40px 0 20px; font-size: 2em; text-transform: uppercase; color: #333; border-bottom: 2px solid #007bff; display: inline-block; padding-bottom: 5px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; }
-        .card img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; padding: 20px; max-width: 1200px; margin: auto; }
+        .card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 200px; object-fit: contain; }
+        .price { font-size: 1.6em; color: #d9534f; font-weight: bold; margin: 10px 0; }
+        .ebay-btn { display: block; background: #007bff; color: white; padding: 12px; text-decoration: none; border-radius: 5px; font-weight: bold; }
         
-        .set-id { color: #999; font-size: 0.8em; text-transform: uppercase; font-weight: bold; }
-        .set-name { font-weight: 700; margin: 10px 0; height: 2.5em; overflow: hidden; }
-        .price { font-size: 1.5em; color: #1a73e8; font-weight: 800; margin-bottom: 15px; }
-        
-        .ebay-btn { display: inline-block; background: #0053d6; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; }
-        #loading-message { text-align: center; font-size: 1.2em; padding: 100px; }
+        footer { background: #222; color: white; padding: 40px 20px; margin-top: 50px; }
+        #loading-text { font-style: italic; color: #666; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>LEGO Market Tracker</h1>
-        <div id="last-updated">Updating values...</div>
-    </header>
+    <div class="hero">
+        <h1>ELITE DIECAST & LEGO</h1>
+        <p>Market Value Tracking | Veteran Owned Business</p>
+    </div>
 
-    <div id="loading-message">Initializing market data...</div>
-    <div id="set-grid" class="grid"></div>
-</div>
+    <h2 class="section-title">2026 LEGO Watchlist</h2>
+    <div id="lego-loading">Loading market data...</div>
+    <div id="lego-grid" class="grid"></div>
+
+    <h2 class="section-title">Elite Diecast Inventory</h2>
+    <div id="diecast-grid" class="grid"></div>
+
+    <footer>
+        <p>Veteran Owned Business - Updated Daily</p>
+    </footer>
 
 <script>
-    async function loadTracker() {
-        const grid = document.getElementById('set-grid');
-        const loader = document.getElementById('loading-message');
-        const updateStamp = document.getElementById('last-updated');
-
+    async function init() {
         try {
-            // Fetch with a cache-buster (?v=...) to ensure you don't see old data
-            const response = await fetch('data.json?v=' + Date.now());
-            const data = await response.json();
-
-            if (data.sets && data.sets.length > 0) {
-                loader.style.display = 'none';
-                updateStamp.innerText = "Last Updated: " + data.last_updated;
-
-                grid.innerHTML = data.sets.map(item => `
+            // 1. Fetch LEGO Data
+            const legoRes = await fetch('data.json?v=' + Date.now());
+            const legoData = await legoRes.json();
+            const legoGrid = document.getElementById('lego-grid');
+            
+            if (legoData.sets) {
+                document.getElementById('lego-loading').style.display = 'none';
+                legoGrid.innerHTML = legoData.sets.map(s => `
                     <div class="card">
-                        <div class="set-id">${item.set_num}</div>
-                        <img src="${item.image_url}" onerror="this.src='https://placehold.co/300x200?text=No+Image+Found'">
-                        <div class="set-name">${item.name}</div>
-                        <div class="price">$${Number(item.ebay_avg_price).toLocaleString(undefined, {minimumFractionDigits: 2})}</div>
-                        <a href="${item.ebay_link}" target="_blank" class="ebay-btn">View on eBay</a>
+                        <img src="${s.image_url}" onerror="this.src='https://placehold.co/300x200?text=Image+Loading'">
+                        <h3>${s.name}</h3>
+                        <div class="price">$${Number(s.ebay_avg_price).toFixed(2)}</div>
+                        <a href="${s.ebay_link}" target="_blank" class="ebay-btn">View Market Deals</a>
                     </div>
                 `).join('');
             }
-        } catch (e) {
-            console.error("Load failed:", e);
-            loader.innerText = "Website is updating. Refresh in 60 seconds.";
+
+            // 2. Fetch Diecast Data
+            const diecastRes = await fetch('diecast.json?v=' + Date.now());
+            const diecastData = await diecastRes.json();
+            const diecastGrid = document.getElementById('diecast-grid');
+            
+            diecastGrid.innerHTML = diecastData.map(d => `
+                <div class="card">
+                    <img src="${d.img}" alt="${d.name}">
+                    <h3>${d.name}</h3>
+                    <div class="price">$${d.p}</div>
+                    <button class="ebay-btn">In Stock</button>
+                </div>
+            `).join('');
+
+        } catch (err) {
+            console.error("Critical Error:", err);
+            document.getElementById('lego-loading').innerText = "Data temporarily unavailable. Please refresh.";
         }
     }
-
-    loadTracker();
+    init();
 </script>
 </body>
 </html>
