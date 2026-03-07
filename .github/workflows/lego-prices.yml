@@ -18,7 +18,7 @@ jobs:
         persist-credentials: true
 
     - name: Set up Python
-      uses: actions/setup-python@v5 # Fixed: setup-python, not checkout
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -35,5 +35,5 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add data.json
-        git commit -m "Elite Market Sync: Added Mercedes 76909" || exit 0
+        git commit -m "Elite Market Sync: W15 Mercedes Update" || exit 0
         git push
