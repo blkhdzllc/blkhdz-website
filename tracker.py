@@ -2,7 +2,7 @@ import os, requests, json, time, re, urllib.parse, datetime
 
 SCRAPE_API_TOKEN = os.getenv("SCRAPE_TOKEN")
 
-# UPDATED: Removed Sauber, Added Audi F1 (77259)
+# UPDATED: Added Mercedes-AMG F1 (76909)
 LEGO_DATA_LIST = [
     {"id": "75354-1", "name": "Coruscant Guard Gunship", "msrp": 139.99},
     {"id": "71036-1", "name": "Minifigures Series 23 (6-Pack)", "msrp": 29.99},
@@ -20,7 +20,7 @@ LEGO_DATA_LIST = [
     {"id": "30726-1", "name": "Bruce Wayne & Batsuit Polybag", "msrp": 4.99},
     {"id": "75349-1", "name": "Captain Rex Helmet", "msrp": 69.99},
     {"id": "75337-1", "name": "AT-TE Walker", "msrp": 139.99},
-    {"id": "77259-1", "name": "Audi Revolut F1 Team R26", "msrp": 27.99} # NEW REPLACEMENT
+    {"id": "76909-1", "name": "Mercedes-AMG F1 & Project One", "msrp": 34.99}
 ]
 
 def get_market_price(set_id):
@@ -31,12 +31,10 @@ def get_market_price(set_id):
     
     try:
         r = requests.get(api_url, timeout=20)
-        # Regex to find prices in the raw HTML
         prices = re.findall(r'\$(\d{1,3}(?:,\d{3})*(?:\.\d{2}))', r.text)
         
         if prices:
             float_prices = sorted([float(p.replace(',', '')) for p in prices])
-            # Trim top/bottom to get a real average
             if len(float_prices) > 3:
                 float_prices = float_prices[1:-1]
             return round(sum(float_prices) / len(float_prices), 2)
@@ -49,7 +47,6 @@ def run():
     lego_final = []
     for item in LEGO_DATA_LIST:
         market_val = get_market_price(item['id'])
-        # If market fails, use MSRP. If no MSRP, use TBD.
         final_price = market_val if market_val else item.get('msrp', "TBD")
         
         img = f"https://images.brickset.com/sets/images/{item['id'].split('-')[0]}-1.jpg"
@@ -65,5 +62,4 @@ def run():
     with open('data.json', 'w') as f: json.dump(output, f, indent=4)
     print("Market Sync Complete.")
 
-if __name__ == "__main__":
-    run()
+if __name__ == "__main__": run()
