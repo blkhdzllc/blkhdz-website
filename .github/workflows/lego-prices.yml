@@ -1,28 +1,38 @@
 name: BLKHDZ Market Sync
+
 on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
+
     - name: Install Dependencies
       run: pip install requests
+
     - name: Run Tracker
       env:
         SCRAPE_TOKEN: ${{ secrets.SCRAPE_TOKEN }}
       run: python tracker.py
-    - name: Push Data
+
+    - name: Push Updates
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add data.json
-        git commit -m "Elite Market Sync" || exit 0
+        # This '|| exit 0' is the fix for Exit Code 1
+        git commit -m "Elite Market Sync: Update" || exit 0
         git push
