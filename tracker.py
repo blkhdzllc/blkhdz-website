@@ -20,7 +20,7 @@ LEGO_DATA_LIST = [
     {"id": "30726-1", "name": "Bruce Wayne & Batsuit Polybag", "msrp": 4.99},
     {"id": "75349-1", "name": "Captain Rex Helmet", "msrp": 69.99},
     {"id": "75337-1", "name": "AT-TE Walker", "msrp": 139.99},
-    {"id": "76909-1", "name": "Mercedes-AMG F1 & Project One", "msrp": 34.99}
+    {"id": "77244-1", "name": "Mercedes-AMG F1 W15 (2024)", "msrp": 26.99}
 ]
 
 def get_market_price(set_id):
