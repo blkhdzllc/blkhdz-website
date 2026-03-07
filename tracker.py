@@ -2,7 +2,7 @@ import os, requests, json, time, re, urllib.parse, datetime
 
 SCRAPE_API_TOKEN = os.getenv("SCRAPE_TOKEN")
 
-# UPDATED: Added Mercedes-AMG F1 (76909)
+# Corrected List with the 2024 Season Mercedes W15
 LEGO_DATA_LIST = [
     {"id": "75354-1", "name": "Coruscant Guard Gunship", "msrp": 139.99},
     {"id": "71036-1", "name": "Minifigures Series 23 (6-Pack)", "msrp": 29.99},
@@ -32,7 +32,6 @@ def get_market_price(set_id):
     try:
         r = requests.get(api_url, timeout=20)
         prices = re.findall(r'\$(\d{1,3}(?:,\d{3})*(?:\.\d{2}))', r.text)
-        
         if prices:
             float_prices = sorted([float(p.replace(',', '')) for p in prices])
             if len(float_prices) > 3:
@@ -47,12 +46,16 @@ def run():
     lego_final = []
     for item in LEGO_DATA_LIST:
         market_val = get_market_price(item['id'])
+        # Fallback to MSRP so the site never looks "broke"
         final_price = market_val if market_val else item.get('msrp', "TBD")
         
+        # This link format is the most stable for images
         img = f"https://images.brickset.com/sets/images/{item['id'].split('-')[0]}-1.jpg"
         
         lego_final.append({
-            "set_num": item['id'], "name": item['name'], "image_url": img,
+            "set_num": item['id'], 
+            "name": item['name'], 
+            "image_url": img,
             "ebay_avg_price": final_price,
             "ebay_link": f"https://www.ebay.com/sch/i.html?_nkw=LEGO%20{item['id'].split('-')[0]}%20new%20sealed&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
         })
@@ -62,4 +65,5 @@ def run():
     with open('data.json', 'w') as f: json.dump(output, f, indent=4)
     print("Market Sync Complete.")
 
-if __name__ == "__main__": run()
+if __name__ == "__main__":
+    run()
