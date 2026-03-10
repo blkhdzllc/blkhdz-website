@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '0 */6 * * *' # Runs every 6 hours
   workflow_dispatch:      # Allows you to run it manually
+  push:
+    branches:
+      - main               # Runs whenever you push code to the main branch
 
 permissions:
   contents: write
