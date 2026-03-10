@@ -5,37 +5,67 @@
             "set_num": "75354-1",
             "name": "Coruscant Guard Gunship",
             "image_url": "https://images.brickset.com/sets/images/75354-1.jpg",
-            "ebay_avg_price": 139.99
+            "market_value": 139.99,
+            "shipping_info": {
+                "method": "Box Only",
+                "weight_lbs": 3.5,
+                "dimensions": "18x11x3"
+            }
         },
         {
             "set_num": "75356-1",
             "name": "Executor Super Star Destroyer",
             "image_url": "https://images.brickset.com/sets/images/75356-1.jpg",
-            "ebay_avg_price": 69.99
+            "market_value": 69.99,
+            "shipping_info": {
+                "method": "Box Only",
+                "weight_lbs": 2.2,
+                "dimensions": "14x7x3"
+            }
         },
         {
             "set_num": "76286-1",
             "name": "Guardians Milano",
             "image_url": "https://images.brickset.com/sets/images/76286-1.jpg",
-            "ebay_avg_price": 179.99
+            "market_value": 179.99,
+            "shipping_info": {
+                "method": "Box Only",
+                "weight_lbs": 4.1,
+                "dimensions": "19x14x3"
+            }
         },
         {
             "set_num": "75389-1",
             "name": "The Dark Falcon",
             "image_url": "https://images.brickset.com/sets/images/75389-1.jpg",
-            "ebay_avg_price": 179.99
+            "market_value": 179.99,
+            "shipping_info": {
+                "method": "Box Only",
+                "weight_lbs": 4.5,
+                "dimensions": "22x15x4"
+            }
         },
         {
             "set_num": "75337-1",
             "name": "AT-TE Walker",
             "image_url": "https://images.brickset.com/sets/images/75337-1.jpg",
-            "ebay_avg_price": 139.99
+            "market_value": 139.99,
+            "shipping_info": {
+                "method": "Box Only",
+                "weight_lbs": 3.8,
+                "dimensions": "19x14x3"
+            }
         },
         {
             "set_num": "77244-1",
             "name": "Mercedes-AMG F1 W15 (2024)",
             "image_url": "https://images.brickset.com/sets/images/77244-1.jpg",
-            "ebay_avg_price": 26.99
+            "market_value": 26.99,
+            "shipping_info": {
+                "method": "Box Only",
+                "weight_lbs": 1.0,
+                "dimensions": "10x6x3"
+            }
         }
     ]
 }
