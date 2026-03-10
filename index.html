@@ -7,161 +7,86 @@
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #FFD700; --teal: #008080; --bg: #000; --card: #080808; --border: #151515; }
-        
         * { box-sizing: border-box; }
         body { background-color: var(--bg); color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; overflow-x: hidden; scroll-behavior: smooth; }
-
-        /* MAIN HERO */
-        .hero {
-            height: 85vh; overflow: hidden; position: relative;
-            display: flex; justify-content: center; align-items: center; 
-            border-bottom: 2px solid var(--border); background: #000;
-        }
-        .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 120%; 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('hero-parallax.jpg') no-repeat center;
-            background-size: cover; z-index: 1; will-change: transform;
-        }
+        .hero { height: 85vh; overflow: hidden; position: relative; display: flex; justify-content: center; align-items: center; border-bottom: 2px solid var(--border); background: #000; }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 120%; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('hero-parallax.jpg') no-repeat center; background-size: cover; z-index: 1; }
         .hero-logo { width: 1200px; max-width: 90vw; z-index: 10; filter: drop-shadow(0 0 50px #000); }
-
-        /* NAVIGATION */
-        .sub-nav {
-            background: rgba(0,0,0,0.95); padding: 25px 0; display: flex; justify-content: center; gap: 40px;
-            border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);
-        }
+        .sub-nav { background: rgba(0,0,0,0.95); padding: 25px 0; display: flex; justify-content: center; gap: 40px; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
         .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 5px; font-family: 'Syncopate', sans-serif; transition: 0.3s; }
         .nav-btn:hover { color: var(--accent); letter-spacing: 7px; }
-
         .container { max-width: 1600px; margin: 0 auto; padding: 60px 20px; }
         .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
         .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.4rem; letter-spacing: 10px; margin: 0 0 40px; text-align: center; color: var(--accent); text-transform: uppercase; }
-
-        /* PRODUCT CARDS */
         .card { background: var(--card); border: 1px solid var(--border); position: relative; transition: 0.4s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.8); }
         .img-box { width: 100%; height: 320px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .card img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .price-badge { position: absolute; top: 0; left: 0; background: var(--accent); color: #000; padding: 10px 18px; font-weight: 900; font-family: 'Syncopate', sans-serif; font-size: 0.9rem; z-index: 5; }
-        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-title { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 25px; min-height: 2.5rem; line-height: 1.5; color: #eee; }
-
-        /* BUTTONS */
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
-        .btn { text-decoration: none; text-align: center; padding: 13px 5px; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-family: 'Syncopate', sans-serif; transition: 0.3s; border: 1px solid #222; }
-        .btn-black { background: #111; color: #fff; }
-        .btn-amazon { background: #111; color: #FF9900; }
-        .btn-gold { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; border: none; font-size: 0.75rem; font-weight: 900; }
-        .btn:hover { filter: brightness(1.3); }
-
-        /* DIECAST SHOWCASE BREAK */
-        .showcase-divider {
-            height: 500px; width: 100%; position: relative; overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
-            border-top: 2px solid var(--border); border-bottom: 2px solid var(--border);
-            margin: 80px 0;
-        }
-        .showcase-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 140%;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('diecast-showcase.jpg') no-repeat center;
-            background-size: cover; z-index: 1; will-change: transform;
-        }
-        .showcase-title { position: relative; z-index: 5; font-family: 'Syncopate', sans-serif; font-size: 2rem; letter-spacing: 15px; text-transform: uppercase; color: #fff; text-shadow: 0 0 20px #000; text-align: center; padding: 0 20px; }
-
-        footer { padding: 100px 20px; background: #000; text-align: center; border-top: 1px solid var(--border); }
-        .vet-badge { font-family: 'Syncopate', sans-serif; letter-spacing: 10px; color: var(--teal); font-size: 1rem; margin-bottom: 10px; }
+        .info-box { padding: 25px; flex-grow: 1; }
+        .set-id { font-family: 'Syncopate', sans-serif; color: var(--accent); font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 10px; }
+        .set-name { font-weight: 900; font-size: 1.1rem; line-height: 1.2; text-transform: uppercase; margin-bottom: 15px; }
+        .price-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1a1a1a; padding-top: 15px; }
+        .market-price { color: #fff; font-size: 1.5rem; font-weight: 900; }
+        .ship-info { font-size: 0.7rem; color: #666; text-transform: uppercase; margin-top: 10px; }
+        .footer { padding: 100px 0; text-align: center; border-top: 1px solid var(--border); background: #050505; color: #444; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
     <div class="hero">
-        <div class="hero-bg" id="parallax-main"></div>
-        <img src="BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
+        <div class="hero-bg"></div>
+        <img src="BLKHDZ.png" class="hero-logo" alt="BLKHDZ">
     </div>
 
-    <nav class="sub-nav">
-        <a href="#inventory" class="nav-btn">Inventory</a>
-        <a href="#watchlist" class="nav-btn">Watchlist</a>
-        <a href="#diecast" class="nav-btn">Diecast</a>
-    </nav>
+    <div class="sub-nav">
+        <a href="#lego" class="nav-btn">LEGO Inventory</a>
+        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="nav-btn">eBay Store</a>
+    </div>
 
-    <div class="container" id="inventory">
-        <h2 class="section-header">Elite Inventory</h2>
+    <div id="lego" class="container">
+        <h2 class="section-header">Live Market Tracker</h2>
+        <p id="last-updated" style="text-align: center; color: #444; margin-bottom: 40px; font-size: 0.8rem;"></p>
         <div id="grid-inventory" class="grid-layout"></div>
     </div>
 
-    <div class="container" id="watchlist">
-        <h2 class="section-header">2026 Watchlist</h2>
-        <div id="grid-watchlist" class="grid-layout"></div>
+    <div class="footer">
+        © 2026 BLKHDZ LLC | Veteran Owned
     </div>
-
-    <div class="showcase-divider">
-        <div class="showcase-bg" id="parallax-showcase"></div>
-        <h2 class="showcase-title">Elite Diecast</h2>
-    </div>
-
-    <div class="container" id="diecast">
-        <div id="grid-diecast" class="grid-layout"></div>
-    </div>
-
-    <footer><div class="vet-badge">VETERAN OWNED BUSINESS</div></footer>
 
     <script>
-        function createCard(item, category) {
-            const isLego = category === 'LEGO';
-            const rawId = isLego ? item.set_num : item.id;
-            const cleanId = rawId.split('-')[0];
-            const price = isLego ? item.ebay_avg_price : item.p;
-            const displayPrice = isNaN(parseFloat(price)) ? price : `$${parseFloat(price).toFixed(2)}`;
-            const imgSrc = isLego ? item.image_url : encodeURI(item.img);
-            
-            return `
-                <div class="card">
-                    <div class="price-badge">${displayPrice || 'TBD'}</div>
-                    <div class="img-box"><img src="${imgSrc}" onerror="this.src='hero-parallax.jpg'"></div>
-                    <div class="card-body">
-                        <div class="card-title">${item.name}</div>
-                        <div class="btn-group">
-                            <a href="${item.ebay_link || '#'}" target="_blank" class="btn btn-black">eBay Data</a>
-                            <a href="https://www.amazon.com/s?k=${category}+${cleanId}" target="_blank" class="btn btn-amazon">Amazon</a>
-                            <a href="https://www.ebay.com/str/blkhdz?_nkw=${cleanId}" target="_blank" class="btn btn-gold">Acquire from BLKHDZ</a>
-                        </div>
-                    </div>
-                </div>`;
-        }
-
-        async function init() {
+        async function loadData() {
             try {
-                const [lRes, dRes] = await Promise.all([fetch('data.json?v=' + Date.now()), fetch('diecast.json?v=' + Date.now())]);
-                const legoData = await lRes.json();
-                const diecastData = await dRes.json();
+                const response = await fetch('data.json');
+                const data = await response.json();
+                
+                document.getElementById('last-updated').innerText = `Last Market Sync: ${data.last_updated}`;
+                const grid = document.getElementById('grid-inventory');
 
-                if(legoData.sets) {
-                    legoData.sets.forEach((set, i) => {
-                        const target = i < 9 ? 'grid-inventory' : 'grid-watchlist';
-                        document.getElementById(target).innerHTML += createCard(set, 'LEGO');
-                    });
-                }
-                if(diecastData) {
-                    diecastData.forEach(car => {
-                        document.getElementById('grid-diecast').innerHTML += createCard(car, 'Diecast');
-                    });
-                }
-            } catch (e) { console.error(e); }
-        }
-
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const mainBg = document.getElementById('parallax-main');
-            const showcaseBg = document.getElementById('parallax-showcase');
-            if(mainBg) mainBg.style.transform = `translateY(${scrolled * 0.4}px)`;
-            
-            if(showcaseBg) {
-                const offset = showcaseBg.parentElement.offsetTop;
-                showcaseBg.style.transform = `translateY(${(scrolled - offset) * 0.4}px)`;
+                data.sets.forEach(set => {
+                    const card = `
+                        <div class="card">
+                            <div class="img-box">
+                                <img src="${set.image_url}" alt="${set.name}" onerror="this.src='https://via.placeholder.com/300x300?text=Image+Not+Found'">
+                            </div>
+                            <div class="info-box">
+                                <div class="set-id">${set.set_num}</div>
+                                <div class="set-name">${set.name}</div>
+                                <div class="price-row">
+                                    <div class="market-price">$${set.market_value.toFixed(2)}</div>
+                                </div>
+                                <div class="ship-info">
+                                    ${set.shipping_details.method} | ${set.shipping_details.weight_lbs} lbs | ${set.shipping_details.box_dimensions}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    grid.innerHTML += card;
+                });
+            } catch (error) {
+                console.error('Error loading inventory:', error);
             }
-        });
-
-        window.onload = init;
+        }
+        loadData();
     </script>
 </body>
 </html>
