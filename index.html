@@ -6,78 +6,73 @@
     <title>BLKHDZ | Official Market Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #FFD700; --bg: #000; --card: #080808; --border: #151515; }
+        :root { --accent: #FFD700; --bg: #000; --card: #0a0a0a; --border: #1a1a1a; }
         * { box-sizing: border-box; }
         body { background-color: var(--bg); color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
-        .hero { height: 60vh; display: flex; justify-content: center; align-items: center; border-bottom: 2px solid var(--border); background: #000; }
-        .hero-logo { width: 800px; max-width: 90vw; }
-        .sub-nav { background: rgba(0,0,0,0.9); padding: 20px; display: flex; justify-content: center; gap: 30px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
-        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; font-family: 'Syncopate', sans-serif; }
+        .hero { height: 50vh; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid var(--border); }
+        .hero-logo { width: 600px; max-width: 80vw; }
         .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; }
-        .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; letter-spacing: 8px; margin-bottom: 30px; color: var(--accent); text-transform: uppercase; border-left: 4px solid var(--accent); padding-left: 15px; }
-        .card { background: var(--card); border: 1px solid var(--border); display: flex; flex-direction: column; transition: 0.3s; overflow: hidden; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; letter-spacing: 5px; color: var(--accent); text-transform: uppercase; margin-bottom: 30px; border-left: 3px solid var(--accent); padding-left: 15px; }
+        .card { background: var(--card); border: 1px solid var(--border); transition: 0.3s; display: flex; flex-direction: column; overflow: hidden; border-radius: 4px; }
         .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .img-box { width: 100%; height: 280px; background: #fff; padding: 20px; display: flex; align-items: center; justify-content: center; }
+        .img-box { width: 100%; height: 260px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .card img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .info-box { padding: 20px; flex-grow: 1; }
-        .set-name { font-weight: 900; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 10px; min-height: 45px; }
-        .market-price { font-size: 1.6rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
-        .ship-info { font-size: 0.75rem; color: #666; margin-bottom: 20px; text-transform: uppercase; border-top: 1px solid #1a1a1a; padding-top: 10px; }
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .shop-btn { padding: 12px; text-align: center; text-decoration: none; font-size: 0.75rem; font-weight: 900; text-transform: uppercase; border-radius: 2px; transition: 0.2s; font-family: 'Syncopate', sans-serif; }
+        .info-box { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .set-name { font-weight: 800; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 10px; min-height: 50px; }
+        .market-price { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 15px; }
+        .ship-info { font-size: 0.75rem; color: #777; margin-bottom: 20px; text-transform: uppercase; border-top: 1px solid #222; padding-top: 10px; }
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
+        .shop-btn { padding: 12px 5px; text-align: center; text-decoration: none; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; border-radius: 2px; transition: 0.2s; font-family: 'Syncopate', sans-serif; }
         .ebay-btn { background: #0053a0; color: white; }
-        .amazon-btn { background: #333; color: #ff9900; border: 1px solid #ff9900; }
-        .footer { padding: 60px; text-align: center; color: #444; font-size: 0.7rem; letter-spacing: 2px; border-top: 1px solid var(--border); }
+        .amazon-btn { background: #232f3e; color: #ff9900; border: 1px solid #ff9900; }
+        .footer { padding: 80px; text-align: center; color: #333; font-size: 0.7rem; letter-spacing: 2px; border-top: 1px solid var(--border); background: #050505; }
     </style>
 </head>
 <body>
     <div class="hero"><img src="BLKHDZ.png" class="hero-logo" alt="BLKHDZ"></div>
-    <div class="sub-nav">
-        <a href="#lego-section" class="nav-btn">LEGO</a>
-        <a href="#diecast-section" class="nav-btn">Diecast</a>
-    </div>
     <div class="container">
-        <h2 id="lego-section" class="section-header">LEGO Market Tracker</h2>
+        <h2 class="section-header">LEGO Inventory</h2>
         <div id="lego-grid" class="grid-layout"></div>
-        <h2 id="diecast-section" class="section-header">Diecast Collection</h2>
+        <h2 class="section-header">Diecast Collection</h2>
         <div id="diecast-grid" class="grid-layout"></div>
     </div>
     <div class="footer">© 2026 BLKHDZ LLC | Veteran Owned</div>
 
     <script>
         async function loadInventory() {
-            // Fetch LEGO data
+            // Load LEGO
             try {
-                const lRes = await fetch('data.json');
-                const lData = await lRes.json();
-                const lGrid = document.getElementById('lego-grid');
-                lData.sets.forEach(set => {
-                    const ebayLink = `https://www.ebay.com/sch/i.html?_nkw=LEGO+${set.set_num.split('-')[0]}`;
-                    lGrid.innerHTML += createCard(set, ebayLink, "#");
+                const res = await fetch('data.json');
+                const data = await res.json();
+                const grid = document.getElementById('lego-grid');
+                data.sets.forEach(set => {
+                    const price = set.market_value || set.ebay_avg_price || 0;
+                    const ebay = `https://www.ebay.com/sch/i.html?_nkw=LEGO+${set.set_num.split('-')[0]}`;
+                    grid.innerHTML += createCard(set, price, ebay, "#");
                 });
-            } catch(e) { console.error("Lego error", e); }
+            } catch(e) { console.error("LEGO Error", e); }
 
-            // Fetch Diecast data
+            // Load Diecast
             try {
-                const dRes = await fetch('diecast.json');
-                const dData = await dRes.json();
-                const dGrid = document.getElementById('diecast-grid');
-                dData.items.forEach(item => {
-                    dGrid.innerHTML += createCard(item, item.ebay_link, item.amazon_link);
+                const res = await fetch('diecast.json');
+                const data = await res.json();
+                const grid = document.getElementById('diecast-grid');
+                data.items.forEach(item => {
+                    const price = item.market_value || item.price || 0;
+                    grid.innerHTML += createCard(item, price, item.ebay_link, item.amazon_link);
                 });
-            } catch(e) { console.error("Diecast error", e); }
+            } catch(e) { console.error("Diecast Error", e); }
         }
 
-        function createCard(item, ebay, amazon) {
-            const price = item.market_value || item.price || 0;
-            const ship = item.shipping_details ? `${item.shipping_details.weight_lbs} lbs | ${item.shipping_details.box_dimensions}` : 'Standard Box Shipping';
+        function createCard(item, price, ebay, amazon) {
+            const ship = item.shipping_details ? `${item.shipping_details.weight_lbs} lbs | ${item.shipping_details.box_dimensions}` : 'Box Only Shipping';
             return `
                 <div class="card">
                     <div class="img-box"><img src="${item.image_url}" alt="${item.name}"></div>
                     <div class="info-box">
                         <div class="set-name">${item.name}</div>
-                        <div class="market-price">$${price.toFixed(2)}</div>
+                        <div class="market-price">$${Number(price).toFixed(2)}</div>
                         <div class="ship-info">📦 ${ship}</div>
                         <div class="btn-group">
                             <a href="${ebay}" target="_blank" class="shop-btn ebay-btn">Shop eBay</a>
