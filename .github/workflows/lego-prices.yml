@@ -1,4 +1,4 @@
-name: Inventory Management
+name: Update BLKHDZ Inventory
 
 on:
   schedule:
@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
 
-    - name: Run tracker script
+    - name: Run LEGO Tracker
       env:
         SCRAPE_TOKEN: ${{ secrets.SCRAPE_TOKEN }}
       run: python tracker.py
@@ -40,7 +40,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
-        # We are now tracking diecast.json and package.json only
-        git add diecast.json package.json
-        git diff --quiet && git diff --staged --quiet || git commit -m "Sync Inventory and Metadata"
+        # Track LEGO data, Diecast data, and the Node 24 metadata
+        git add data.json diecast.json package.json
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update Market Values (LEGO & Diecast)"
         git push
