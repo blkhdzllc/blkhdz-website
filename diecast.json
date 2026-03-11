@@ -1,37 +1,59 @@
-[
-    {
-        "set_num": "TW-911-54",
-        "name": "Tarmac Works Porsche 911 #54",
-        "image_url": "Porsche 54.jpg",
-        "ebay_avg_price": 39.99,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Tarmac%20Works%20Porsche%20911%20#54&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
-    },
-    {
-        "set_num": "TW-AMG-BIL",
-        "name": "Mercedes-AMG GT3 Team Bilstein",
-        "image_url": "Mercedez 4.jpg",
-        "ebay_avg_price": 31.99,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Mercedes-AMG%20GT3%20Team%20Bilstein&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
-    },
-    {
-        "set_num": "TW-AMG-BH",
-        "name": "Mercedes-AMG GT3 Bathurst",
-        "image_url": "Mercedes 2.jpg",
-        "ebay_avg_price": 34.95,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Mercedes-AMG%20GT3%20Bathurst&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
-    },
-    {
-        "set_num": "SPK-CIV-16",
-        "name": "Spark Honda Civic Type R-GT",
-        "image_url": "Honda 16.jpg",
-        "ebay_avg_price": 134.95,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Spark%20Honda%20Civic%20Type%20R-GT&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
-    },
-    {
-        "set_num": "TW-F488-51",
-        "name": "Ferrari 488 GT3 Macau #51",
-        "image_url": "Ferrari 51.jpg",
-        "ebay_avg_price": 31.99,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Ferrari%20488%20GT3%20Macau%20#51&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB"
-    }
+import os, requests, json, time, re, urllib.parse, datetime
+
+SCRAPE_API_TOKEN = os.getenv("SCRAPE_TOKEN")
+
+# Inventory with Weight (lbs) and Box Dimensions per your requirements
+LEGO_DATA_LIST = [
+    {"id": "75354-1", "name": "Coruscant Guard Gunship", "msrp": 139.99, "weight_lbs": 3.5, "box_size": "18x11x3"},
+    {"id": "75356-1", "name": "Executor Super Star Destroyer", "msrp": 69.99, "weight_lbs": 2.2, "box_size": "14x7x3"},
+    {"id": "76286-1", "name": "Guardians Milano", "msrp": 179.99, "weight_lbs": 4.1, "box_size": "19x14x3"},
+    {"id": "75389-1", "name": "The Dark Falcon", "msrp": 179.99, "weight_lbs": 4.5, "box_size": "22x15x4"},
+    {"id": "75337-1", "name": "AT-TE Walker", "msrp": 139.99, "weight_lbs": 3.8, "box_size": "19x14x3"},
+    {"id": "77244-1", "name": "Mercedes-AMG F1 W15 (2024)", "msrp": 26.99, "weight_lbs": 1.0, "box_size": "10x6x3"}
 ]
+
+def get_market_price(set_id):
+    clean_id = set_id.split('-')[0]
+    query = f"LEGO {clean_id} new sealed"
+    target_url = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(query)}&LH_Sold=1&LH_Complete=1&LH_ItemCondition=1000"
+    api_url = f"https://api.scrape.do/?token={SCRAPE_API_TOKEN}&url={urllib.parse.quote(target_url)}"
+    
+    try:
+        r = requests.get(api_url, timeout=20)
+        prices = re.findall(r's-item__price.*?\$([\d,]+\.\d{2})', r.text)
+        if prices:
+            float_prices = sorted([float(p.replace(',', '')) for p in prices[:10]])
+            if len(float_prices) > 0:
+                n = len(float_prices)
+                # Median calculation
+                return float_prices[n//2] if n % 2 == 1 else (float_prices[n//2 - 1] + float_prices[n//2]) / 2
+    except: return None
+    return None
+
+def run():
+    print("Starting BLKHDZ Market Sync...")
+    lego_final = []
+    for item in LEGO_DATA_LIST:
+        market_val = get_market_price(item['id'])
+        final_price = market_val if market_val else item.get('msrp', 0.00)
+        set_num_only = item['id'].split('-')[0]
+        lego_final.append({
+            "set_num": item['id'], 
+            "name": item['name'], 
+            "image_url": f"https://images.brickset.com/sets/images/{set_num_only}-1.jpg",
+            "market_value": round(final_price, 2),
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": item.get('weight_lbs'),
+                "box_dimensions": item.get('box_size')
+            }
+        })
+        time.sleep(1)
+
+    output = {"last_updated": datetime.datetime.now().strftime("%B %d, %Y"), "sets": lego_final}
+    with open('data.json', 'w') as f:
+        json.dump(output, f, indent=4)
+    print("Sync Complete.")
+
+if __name__ == "__main__":
+    run()
