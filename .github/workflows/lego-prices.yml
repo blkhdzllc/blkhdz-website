@@ -1,4 +1,4 @@
-name: Update LEGO Prices
+name: Inventory Management
 
 on:
   schedule:
@@ -11,15 +11,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # Clears the Node.js 20 warning
-
+    
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4  # Updated version
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
 
     - name: Set up Python
-      uses: actions/setup-python@v5 # Updated version
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
 
@@ -37,6 +40,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
-        git add data.json
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update market data"
+        # We are now tracking diecast.json and package.json only
+        git add diecast.json package.json
+        git diff --quiet && git diff --staged --quiet || git commit -m "Sync Inventory and Metadata"
         git push
