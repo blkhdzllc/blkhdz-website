@@ -1,72 +1,78 @@
-[
-    {
-        "set_num": "TSMV0027",
-        "name": "TrueScale 1/43 Mazda RX-7 LB Super Silhouette #1",
-        "image_url": "TSMV0027.jpg",
-        "market_value": 85.00,
-        "shipping_details": { "weight_lbs": 0.6, "box_dimensions": "7x4x3" }
+{
+    "environment": {
+        "node_version": "24.x",
+        "last_updated": "2026-03-10"
     },
-    {
-        "set_num": "43SGT25016",
-        "name": "Spark 1/43 Honda Civic Type R-GT Team Arta Mugen #16",
-        "image_url": "43SGT25016.jpg",
-        "market_value": 79.95,
-        "shipping_details": { "weight_lbs": 0.6, "box_dimensions": "7x4x3" }
-    },
-    {
-        "set_num": "MGT01046-R",
-        "name": "Mini GT 1:64 Mazda RX-7 RE Amemiya - Ama-san Go Blue",
-        "image_url": "MGT01046R.jpg",
-        "market_value": 34.95,
-        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
-    },
-    {
-        "set_num": "T64-084-23NUR54",
-        "name": "Tarmac Works 1:64 Porsche 911 (992) GT3 R Team Dinamic #54",
-        "image_url": "T6408423NUR54.jpg",
-        "market_value": 25.99,
-        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
-    },
-    {
-        "set_num": "PR640212",
-        "name": "Pop Race 1:64 Honda Civic EG6 Pandem v1.5 - Idemitsu",
-        "image_url": "PR640212.jpg",
-        "market_value": 24.99,
-        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
-    },
-    {
-        "set_num": "T64-062-20NUR02",
-        "name": "Tarmac Works 1:64 Mercedes-AMG GT3 Team Bilstein #2",
-        "image_url": "T6406220NUR02.jpg",
-        "market_value": 24.95,
-        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
-    },
-    {
-        "set_num": "T64-062-23NUR04",
-        "name": "Tarmac Works 1:64 Mercedes-AMG GT3 Team Bilstein #4",
-        "image_url": "T6406223NUR04.jpg",
-        "market_value": 24.95,
-        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
-    },
-    {
-        "set_num": "PR640255",
-        "name": "Pop Race 1:64 Mazda RX-7 FD3S RE Amemiya - Gun Metal",
-        "image_url": "PR640255.jpg",
-        "market_value": 21.95,
-        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
-    },
-    {
-        "set_num": "MGT00716-MJ",
-        "name": "Mini GT 1:64 Cadillac V-Series.R #2 2023 Le Mans 3rd",
-        "image_url": "MGT00716MJ.jpg",
-        "market_value": 21.00,
-        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
-    },
-    {
-        "set_num": "MGT00773-MJ",
-        "name": "Mini GT 1:64 Mazda RX-7 LB-Super Silhouette #41",
-        "image_url": "MGT00773MJ.jpg",
-        "market_value": 18.50,
-        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
-    }
-]
+    "inventory": [
+        {
+            "set_num": "TSMV0027",
+            "name": "TrueScale 1/43 Mazda RX-7 LB Super Silhouette #1",
+            "image_url": "TSMV0027.jpg",
+            "market_value": 85.00,
+            "shipping_details": { "weight_lbs": 0.6, "box_dimensions": "7x4x3" }
+        },
+        {
+            "set_num": "43SGT25016",
+            "name": "Spark 1/43 Honda Civic Type R-GT Team Arta Mugen #16",
+            "image_url": "43SGT25016.jpg",
+            "market_value": 79.95,
+            "shipping_details": { "weight_lbs": 0.6, "box_dimensions": "7x4x3" }
+        },
+        {
+            "set_num": "MGT01046-R",
+            "name": "Mini GT 1:64 Mazda RX-7 RE Amemiya - Ama-san Go Blue",
+            "image_url": "MGT01046-R.jpg",
+            "market_value": 34.95,
+            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+        },
+        {
+            "set_num": "T64-072-22MGP51",
+            "name": "Tarmac Works 1:64 Ferrari 488 GT3 Harmony Racing #51",
+            "image_url": "T64-072-22MGP51.jpg",
+            "market_value": 28.50,
+            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+        },
+        {
+            "set_num": "T64-084-23NUR54",
+            "name": "Tarmac Works 1:64 Porsche 911 (992) GT3 R Team Dinamic #54",
+            "image_url": "T64-084-23NUR54.jpg",
+            "market_value": 25.99,
+            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+        },
+        {
+            "set_num": "PR640212",
+            "name": "Pop Race 1:64 Honda Civic EG6 Pandem v1.5 - Idemitsu",
+            "image_url": "PR640212.jpg",
+            "market_value": 24.99,
+            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+        },
+        {
+            "set_num": "T64-062-20NUR02",
+            "name": "Tarmac Works 1:64 Mercedes-AMG GT3 Team Bilstein #2",
+            "image_url": "T64-062-20NUR02.jpg",
+            "market_value": 24.95,
+            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+        },
+        {
+            "set_num": "PR640255",
+            "name": "Pop Race 1:64 Mazda RX-7 FD3S RE Amemiya - Gun Metal",
+            "image_url": "PR640255.jpg",
+            "market_value": 21.95,
+            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+        },
+        {
+            "set_num": "MGT00716-MJ",
+            "name": "Mini GT 1:64 Cadillac V-Series.R #2 2023 Le Mans 3rd",
+            "image_url": "MGT00716-MJ.jpg",
+            "market_value": 21.00,
+            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+        },
+        {
+            "set_num": "MGT00773-MJ",
+            "name": "Mini GT 1:64 Mazda RX-7 LB-Super Silhouette #41",
+            "image_url": "MGT00773-MJ.jpg",
+            "market_value": 18.50,
+            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+        }
+    ]
+}
