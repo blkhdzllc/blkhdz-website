@@ -1,10 +1,30 @@
 [
     {
+        "set_num": "PR640212",
+        "name": "Pop Race Honda Civic EG6 Pandem v1.5 - Idemitsu",
+        "image_url": "PR640212.jpg",
+        "market_value": 24.99,
+        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+    },
+    {
+        "set_num": "PR640255",
+        "name": "Pop Race Mazda RX-7 FD3S RE Amemiya - Gun Metal",
+        "image_url": "PR640255.jpg",
+        "market_value": 21.95,
+        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+    },
+    {
+        "set_num": "MGT01046-R",
+        "name": "Mini GT Mazda RX-7 (FD3S) RE Amemiya - Ama-san Go Blue",
+        "image_url": "MGT01046R.jpg",
+        "market_value": 34.95,
+        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
+    },
+    {
         "set_num": "TW-911-54",
         "name": "Tarmac Works Porsche 911 #54",
         "image_url": "Porsche 54.jpg",
         "market_value": 39.99,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Tarmac%20Works%20Porsche%20911%20#54&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB",
         "shipping_details": { "weight_lbs": 0.5, "box_dimensions": "7x4x3" }
     },
     {
@@ -12,31 +32,27 @@
         "name": "Mercedes-AMG GT3 Team Bilstein",
         "image_url": "Mercedez 4.jpg",
         "market_value": 31.99,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Mercedes-AMG%20GT3%20Team%20Bilstein&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB",
         "shipping_details": { "weight_lbs": 0.5, "box_dimensions": "7x4x3" }
     },
     {
-        "set_num": "TW-AMG-BH",
-        "name": "Mercedes-AMG GT3 Bathurst",
-        "image_url": "Mercedes 2.jpg",
-        "market_value": 34.95,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Mercedes-AMG%20GT3%20Bathurst&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB",
-        "shipping_details": { "weight_lbs": 0.5, "box_dimensions": "7x4x3" }
+        "set_num": "PR640101",
+        "name": "Pop Race Skyline GT-R V-Spec II",
+        "image_url": "Skyline_V2.jpg",
+        "market_value": 22.50,
+        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
     },
     {
-        "set_num": "SPK-CIV-16",
-        "name": "Spark Honda Civic Type R-GT",
-        "image_url": "Honda 16.jpg",
-        "market_value": 134.95,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Spark%20Honda%20Civic%20Type%20R-GT&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB",
-        "shipping_details": { "weight_lbs": 0.8, "box_dimensions": "8x5x4" }
+        "set_num": "MGT00500",
+        "name": "Mini GT Lamborghini Aventador SVJ",
+        "image_url": "Lambo_SVJ.jpg",
+        "market_value": 18.00,
+        "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
     },
     {
-        "set_num": "TW-F488-51",
-        "name": "Ferrari 488 GT3 Macau #51",
-        "image_url": "Ferrari 51.jpg",
-        "market_value": 31.99,
-        "ebay_link": "https://www.ebay.com/sch/i.html?_nkw=Ferrari%20488%20GT3%20Macau%20#51&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=BLKHDZ_WEB",
+        "set_num": "TW-R34-Z",
+        "name": "Tarmac Works Nissan Skyline R34 Z-Tune",
+        "image_url": "R34_ZTune.jpg",
+        "market_value": 28.00,
         "shipping_details": { "weight_lbs": 0.5, "box_dimensions": "7x4x3" }
     }
 ]
