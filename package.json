@@ -1,0 +1,9 @@
+{
+  "name": "blkhdz-inventory",
+  "version": "1.0.0",
+  "description": "BLKHDZ Inventory Management",
+  "engines": {
+    "node": "24.x"
+  },
+  "last_audit": "2026-03-10"
+}
