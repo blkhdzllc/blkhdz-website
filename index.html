@@ -47,6 +47,7 @@
                 const data = await res.json();
                 const grid = document.getElementById('lego-grid');
                 data.sets.forEach(set => {
+                    // Check for both labels to ensure prices show up
                     const price = set.market_value || set.ebay_avg_price || 0;
                     const ebay = `https://www.ebay.com/sch/i.html?_nkw=LEGO+${set.set_num.split('-')[0]}`;
                     grid.innerHTML += createCard(set, price, ebay, "#");
@@ -66,6 +67,7 @@
         }
 
         function createCard(item, price, ebay, amazon) {
+            // Display Weight in LBS and Box Dimensions per your requirements
             const ship = item.shipping_details ? `${item.shipping_details.weight_lbs} lbs | ${item.shipping_details.box_dimensions}` : 'Box Only Shipping';
             return `
                 <div class="card">
