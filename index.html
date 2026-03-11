@@ -9,12 +9,12 @@
         :root { --accent: #FFD700; --bg: #000; --card: #080808; --border: #151515; }
         * { box-sizing: border-box; }
         body { background-color: var(--bg); color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
-        .hero { height: 50vh; display: flex; justify-content: center; align-items: center; border-bottom: 2px solid var(--border); }
-        .hero-logo { width: 600px; max-width: 85vw; }
+        .hero { height: 40vh; display: flex; justify-content: center; align-items: center; border-bottom: 2px solid var(--border); background: #000; }
+        .hero-logo { width: 500px; max-width: 85vw; }
         .sub-nav { background: rgba(0,0,0,0.9); padding: 20px; display: flex; justify-content: center; gap: 30px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
         .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; font-family: 'Syncopate', sans-serif; }
         .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; min-height: 100px; }
         .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; letter-spacing: 8px; margin-bottom: 30px; color: var(--accent); text-transform: uppercase; border-left: 4px solid var(--accent); padding-left: 15px; }
         .card { background: var(--card); border: 1px solid var(--border); display: flex; flex-direction: column; transition: 0.3s; overflow: hidden; }
         .card:hover { border-color: var(--accent); transform: translateY(-5px); }
@@ -40,7 +40,7 @@
     </div>
     <div class="container">
         <h2 id="lego-section" class="section-header">Elite LEGO Market Tracker</h2>
-        <div id="lego-grid" class=\"grid-layout\"></div>
+        <div id="lego-grid" class="grid-layout"></div>
         <h2 id="diecast-section" class="section-header">Premium Diecast</h2>
         <div id="diecast-grid" class="grid-layout"></div>
     </div>
@@ -49,44 +49,68 @@
     <script>
         async function loadInventory() {
             try {
-                // Fetch LEGO
-                const lRes = await fetch('data.json');
+                // Fetch LEGO - Using Cache Busting to ensure fresh data
+                const lRes = await fetch('data.json?v=' + Date.now());
                 const lData = await lRes.json();
-                lData.sets.forEach(set => {
-                    const ebayData = `https://www.ebay.com/sch/i.html?_nkw=LEGO+${set.set_num.split('-')[0]}+new+sealed`;
-                    const amazonSearch = `https://www.amazon.com/s?k=LEGO+${set.set_num.split('-')[0]}`;
-                    const acquire = `https://www.ebay.com/str/blkhdz?_nkw=${set.set_num.split('-')[0]}`;
-                    document.getElementById('lego-grid').innerHTML += createCard(set, ebayData, amazonSearch, acquire);
-                });
+                const legoGrid = document.getElementById('lego-grid');
+                
+                if (lData.sets) {
+                    lData.sets.forEach(set => {
+                        const setNum = set.set_num.split('-')[0];
+                        const price = set.market_value || set.ebay_avg_price || 0;
+                        const links = {
+                            ebay: `https://www.ebay.com/sch/i.html?_nkw=LEGO+${setNum}+new+sealed&LH_Sold=1&LH_Complete=1`,
+                            amazon: `https://www.amazon.com/s?k=LEGO+${setNum}`,
+                            store: `https://www.ebay.com/str/blkhdz?_nkw=${setNum}`
+                        };
+                        legoGrid.innerHTML += createCard(set, price, links);
+                    });
+                }
+            } catch(e) { console.error("LEGO Load Error", e); }
 
+            try {
                 // Fetch Diecast
-                const dRes = await fetch('diecast.json');
+                const dRes = await fetch('diecast.json?v=' + Date.now());
                 const dData = await dRes.json();
+                const diecastGrid = document.getElementById('diecast-grid');
+                
                 dData.forEach(item => {
-                    document.getElementById('diecast-grid').innerHTML += createCard(item, item.ebay_link, item.amazon_link || '#', item.ebay_link);
+                    const price = item.market_value || item.ebay_avg_price || 0;
+                    const links = {
+                        ebay: item.ebay_link,
+                        amazon: "#",
+                        store: item.ebay_link
+                    };
+                    diecastGrid.innerHTML += createCard(item, price, links, true);
                 });
-            } catch(e) { console.error(\"Inventory Load Error\", e); }
+            } catch(e) { console.error("Diecast Load Error", e); }
         }
 
-        function createCard(item, ebay, amazon, acquire) {
-            const price = item.market_value || item.ebay_avg_price || 0;
+        function createCard(item, price, links, isDiecast = false) {
             const ship = item.shipping_details ? `${item.shipping_details.weight_lbs} lbs | ${item.shipping_details.box_dimensions}` : 'Box Only Shipping';
+            
+            // Diecast only gets 2 buttons (eBay Data and Store)
+            const buttons = isDiecast ? `
+                <a href="${links.ebay}" target="_blank" class="shop-btn ebay-btn">Market Data</a>
+                <a href="${links.store}" target="_blank" class="shop-btn acquire-btn">Shop BLKHDZ</a>
+            ` : `
+                <a href="${links.ebay}" target="_blank" class="shop-btn ebay-btn">eBay Data</a>
+                <a href="${links.amazon}" target="_blank" class="shop-btn amazon-btn">Amazon</a>
+                <a href="${links.store}" target="_blank" class="shop-btn acquire-btn">Acquire from BLKHDZ</a>
+            `;
+
             return `
                 <div class="card">
-                    <div class=\"img-box\"><img src=\"${item.image_url}\" alt=\"${item.name}\" onerror=\"this.src='hero-parallax.jpg'\"></div>
+                    <div class="img-box"><img src="${item.image_url}" alt="${item.name}" onerror="this.src='hero-parallax.jpg'"></div>
                     <div class="info-box">
                         <div class="set-name">${item.name}</div>
                         <div class="market-price">$${Number(price).toFixed(2)}</div>
                         <div class="ship-info">📦 ${ship}</div>
-                        <div class="btn-group">
-                            <a href="${ebay}" target="_blank" class="shop-btn ebay-btn">eBay Data</a>
-                            <a href="${amazon}" target="_blank" class="shop-btn amazon-btn">Amazon</a>
-                            <a href="${acquire}" target="_blank" class="shop-btn acquire-btn">Acquire from BLKHDZ</a>
-                        </div>
+                        <div class="btn-group">${buttons}</div>
                     </div>
                 </div>`;
         }
-        loadInventory();
+        window.onload = loadInventory;
     </script>
 </body>
 </html>
