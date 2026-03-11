@@ -8,7 +8,6 @@ on:
     branches:
       - main
 
-# This applies the Node 24 force to EVERYTHING in this file
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -47,7 +46,12 @@ jobs:
         git diff --quiet && git diff --staged --quiet || git commit -m "Update Market Values (LEGO & Diecast)"
         git push
 
-  # If you have a separate deploy job in this file, ensure it's listed here
+    # THIS STEP FIXES THE "NO ARTIFACTS" ERROR
+    - name: Upload Pages Artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.' # This uploads your whole folder to be hosted on the site
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
