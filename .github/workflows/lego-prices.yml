@@ -8,10 +8,13 @@ on:
     branches:
       - main
 
+# This applies the Node 24 force to EVERYTHING in this file
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -40,7 +43,19 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
-        # Track LEGO data, Diecast data, and the Node 24 metadata
         git add data.json diecast.json package.json
         git diff --quiet && git diff --staged --quiet || git commit -m "Update Market Values (LEGO & Diecast)"
         git push
+
+  # If you have a separate deploy job in this file, ensure it's listed here
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
