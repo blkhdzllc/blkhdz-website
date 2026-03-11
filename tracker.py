@@ -2,7 +2,7 @@ import os, requests, json, time, re, urllib.parse, datetime
 
 SCRAPE_API_TOKEN = os.getenv("SCRAPE_TOKEN")
 
-# Inventory with Weight in lbs and Box Dimensions
+# Inventory with Weight (lbs) and Box Dimensions per your requirements
 LEGO_DATA_LIST = [
     {"id": "75354-1", "name": "Coruscant Guard Gunship", "msrp": 139.99, "weight_lbs": 3.5, "box_size": "18x11x3"},
     {"id": "75356-1", "name": "Executor Super Star Destroyer", "msrp": 69.99, "weight_lbs": 2.2, "box_size": "14x7x3"},
@@ -25,11 +25,13 @@ def get_market_price(set_id):
             float_prices = sorted([float(p.replace(',', '')) for p in prices[:10]])
             if len(float_prices) > 0:
                 n = len(float_prices)
+                # Median calculation
                 return float_prices[n//2] if n % 2 == 1 else (float_prices[n//2 - 1] + float_prices[n//2]) / 2
     except: return None
     return None
 
 def run():
+    print("Starting BLKHDZ Market Sync...")
     lego_final = []
     for item in LEGO_DATA_LIST:
         market_val = get_market_price(item['id'])
@@ -51,6 +53,7 @@ def run():
     output = {"last_updated": datetime.datetime.now().strftime("%B %d, %Y"), "sets": lego_final}
     with open('data.json', 'w') as f:
         json.dump(output, f, indent=4)
+    print("Sync Complete.")
 
 if __name__ == "__main__":
     run()
