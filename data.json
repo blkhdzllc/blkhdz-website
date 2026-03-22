@@ -5,64 +5,101 @@
             "set_num": "31020",
             "name": "LEGO Creator Twinblade Adventures",
             "asin": "B00GSPF9PU",
-            "market_value": 19.99,
-            "shipping_details": { "weight_lbs": 0.7, "box_dimensions": "10x7x2" }
+            "market_value": 56.0,
+            "shipping_details": {
+                "weight_lbs": 0.7,
+                "box_dimensions": "10x7x2"
+            }
         },
         {
             "set_num": "71738",
             "name": "Ninjago Zane's Titan Mech Battle",
             "asin": "B08NF9YF5R",
-            "market_value": 64.99,
-            "shipping_details": { "weight_lbs": 2.8, "box_dimensions": "14x15x3" }
+            "market_value": 104.85,
+            "shipping_details": {
+                "weight_lbs": 2.8,
+                "box_dimensions": "14x15x3"
+            }
         },
         {
             "set_num": "31144",
             "name": "Creator 3-in-1 Exotic Pink Parrot",
             "asin": "B0BBRYTCXG",
-            "market_value": 19.99,
-            "shipping_details": { "weight_lbs": 0.8, "box_dimensions": "10x7x2" }
+            "market_value": 28.54,
+            "shipping_details": {
+                "weight_lbs": 0.8,
+                "box_dimensions": "10x7x2"
+            }
         },
         {
             "set_num": "76015",
             "name": "Marvel Doc Ock Truck Heist",
             "asin": "B00I3P7HRC",
-            "market_value": 45.00,
-            "shipping_details": { "weight_lbs": 0.9, "box_dimensions": "11x7x2" }
+            "market_value": 64.95,
+            "shipping_details": {
+                "weight_lbs": 0.9,
+                "box_dimensions": "11x7x2"
+            }
         },
         {
             "set_num": "77247",
             "name": "Speed Champions Kicks Sauber F1",
             "asin": "B0CW9VRD3Y",
-            "market_value": 26.99,
-            "shipping_details": { "weight_lbs": 0.9, "box_dimensions": "10x6x3" }
+            "market_value": 49.99,
+            "shipping_details": {
+                "weight_lbs": 0.9,
+                "box_dimensions": "10x6x3"
+            }
         },
         {
             "set_num": "76295",
             "name": "Marvel Avengers Helicarrier",
             "asin": "B0CW9V1W1R",
-            "market_value": 79.99,
-            "shipping_details": { "weight_lbs": 1.9, "box_dimensions": "15x10x3" }
+            "market_value": 69.95,
+            "shipping_details": {
+                "weight_lbs": 1.9,
+                "box_dimensions": "15x10x3"
+            }
         },
         {
             "set_num": "76232",
             "name": "The Marvels: Hoopty Spaceship",
             "asin": "B0BXQ5Z9W7",
-            "market_value": 89.99,
-            "shipping_details": { "weight_lbs": 1.8, "box_dimensions": "15x10x3" }
+            "market_value": 59.95,
+            "shipping_details": {
+                "weight_lbs": 1.8,
+                "box_dimensions": "15x10x3"
+            }
+        },
+        {
+            "set_num": "60449",
+            "name": "City Off-Road Police Car Chase",
+            "asin": "B0CW9V6K9F",
+            "market_value": 49.95,
+            "shipping_details": {
+                "weight_lbs": 1.6,
+                "box_dimensions": "11x10x3"
+            }
+        },
+        {
+            "set_num": "30726",
+            "name": "Batman: Bruce Wayne and the Batsuit",
+            "asin": "B0CXBB9L9X",
+            "market_value": 11.93,
+            "shipping_details": {
+                "weight_lbs": 0.6,
+                "box_dimensions": "7x5x3"
+            }
         },
         {
             "set_num": "41619",
             "name": "Brickheadz Darth Vader",
             "asin": "B07B52S53D",
-            "market_value": 45.00,
-            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "5x4x3" }
-        },
-        {
-            "set_num": "60449",
-            "name": "City Off-Road Police Car Chase (Kohl's)",
-            "asin": "B0CW9V6K9F",
-            "market_value": 39.99,
-            "shipping_details": { "weight_lbs": 1.6, "box_dimensions": "11x10x3" }
+            "market_value": 65.0,
+            "shipping_details": {
+                "weight_lbs": 0.4,
+                "box_dimensions": "5x4x3"
+            }
         }
     ],
     "diecast": []
