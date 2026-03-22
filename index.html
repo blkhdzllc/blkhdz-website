@@ -7,54 +7,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; }
-        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Syncopate', sans-serif; }
+        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Syncopate', sans-serif; overflow-x: hidden; }
         
-        /* Hero & Logo */
+        /* Hero Section */
         .hero { 
-            height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./images/hero.jpg') center/cover;
+            height: 50vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./images/hero.jpg') center/cover no-repeat;
             border-bottom: 2px solid var(--blk-red);
         }
-        .logo { max-width: 250px; margin-bottom: 20px; }
+        .logo { max-width: 250px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,0,0,0.3)); }
 
-        /* Main Diecast Spotlight */
-        .diecast-spotlight {
-            width: 100%; height: 400px;
-            background: url('./images/diecast-main.jpg') center/cover no-repeat;
-            border-bottom: 1px solid #333;
-            display: flex; align-items: flex-end;
-        }
-        .spotlight-text { background: rgba(0,0,0,0.8); padding: 20px; width: 100%; letter-spacing: 5px; font-size: 0.9rem; }
-
-        /* Grid Layout */
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-        .section-header { border-left: 4px solid var(--blk-red); padding-left: 15px; margin-bottom: 30px; letter-spacing: 3px; }
+        /* Container & Grid */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
         
-        footer { text-align: center; padding: 40px; font-size: 0.7rem; border-top: 1px solid #222; opacity: 0.8; }
+        .section-header { 
+            border-left: 4px solid var(--blk-red); padding-left: 15px; margin-bottom: 40px; 
+            letter-spacing: 5px; text-transform: uppercase; font-size: 1.2rem;
+        }
+
+        /* Item Cards */
+        .card { 
+            background: var(--blk-card); border: 1px solid #222; padding: 0; 
+            transition: all 0.3s ease; display: flex; flex-direction: column;
+        }
+        .card:hover { border-color: var(--blk-red); transform: translateY(-5px); }
+        .card-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #222; }
+        .card-content { padding: 20px; }
+        .set-num { color: var(--blk-red); font-size: 0.7rem; margin-bottom: 5px; }
+        .set-name { font-size: 0.9rem; margin-bottom: 15px; height: 40px; overflow: hidden; }
+        .market-value { font-size: 1.1rem; font-weight: bold; color: #fff; margin-bottom: 10px; }
+        
+        /* Shipping Info - Per your Business Rules */
+        .shipping-box { 
+            font-family: sans-serif; font-size: 0.7rem; color: #888; 
+            background: #000; padding: 10px; border-radius: 4px;
+        }
+
+        footer { text-align: center; padding: 60px 20px; font-size: 0.7rem; border-top: 1px solid #111; opacity: 0.6; }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <img src="./images/logo.png" alt="BLKHDZ LLC" class="logo">
-        <h1 style="letter-spacing: 10px; font-size: 1rem;">Official Market Tracker</h1>
+        <div style="letter-spacing: 8px; font-size: 0.8rem; color: var(--blk-red);">ELITE INVENTORY TRACKER</div>
     </header>
 
-    <section class="diecast-spotlight">
-        <div class="spotlight-text">ELITE DIECAST SERIES // CURRENTLY TRACKING MARKET VALUES</div>
-    </section>
-
     <div class="container">
-        <h2 class="section-header">Elite Inventory</h2>
+        <h2 class="section-header">Lego Portfolio</h2>
         <div id="lego-grid" class="grid">
-            <p style="font-size: 0.8rem; opacity: 0.5;">Syncing LEGO Market Data...</p>
-        </div>
-
-        <h2 class="section-header" style="margin-top: 60px;">Diecast Archive</h2>
-        <div id="diecast-grid" class="grid">
-            <p style="font-size: 0.8rem; opacity: 0.5;">Elite Stock Sold Out // Refreshing Catalog...</p>
-        </div>
+            </div>
     </div>
 
     <footer>
@@ -63,26 +66,33 @@
     </footer>
 
     <script>
-        // Huyen-style Data Loader: Handles empty files without breaking
-        async function loadData(file, elementId) {
-            const grid = document.getElementById(elementId);
+        async function loadInventory() {
+            const grid = document.getElementById('lego-grid');
             try {
-                const response = await fetch(`./${file}`);
-                if (!response.ok) throw new Error();
+                const response = await fetch('./data.json');
                 const data = await response.json();
-                if (data.length > 0) {
-                    grid.innerHTML = ''; // Clear the "loading" text
-                    // Logic to build cards will go here in the next step
-                }
-            } catch (e) {
-                console.log(`Notice: ${file} is currently empty or offline.`);
+                
+                // Map to your specific "sets" array
+                grid.innerHTML = data.sets.map(set => `
+                    <div class="card">
+                        <img src="${set.image_url}" class="card-img" alt="${set.name}" onerror="this.src='./images/hero.jpg'">
+                        <div class="card-content">
+                            <div class="set-num">SET #${set.set_num}</div>
+                            <div class="set-name">${set.name}</div>
+                            <div class="market-value">$${set.market_value}</div>
+                            <div class="shipping-box">
+                                SHIP: ${set.shipping_details.box_dimensions} | ${set.shipping_details.weight_lbs} LBS
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error("Data Sync Error:", error);
+                grid.innerHTML = "<p>OFFLINE: DATA UPLOAD PENDING</p>";
             }
         }
-
-        window.onload = () => {
-            loadData('data.json', 'lego-grid');
-            loadData('diecast.json', 'diecast-grid');
-        };
+        window.onload = loadInventory;
     </script>
 </body>
 </html>
