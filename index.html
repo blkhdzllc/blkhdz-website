@@ -10,85 +10,89 @@
         
         body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Archivo Black', sans-serif; overflow-x: hidden; }
 
-        /* THE STAGE */
+        /* HEADER TIER */
+        .site-header {
+            background-color: var(--blk-bg);
+            padding: 30px 5%;
+            display: flex;
+            align-items: center;
+            border-bottom: 5px solid var(--blk-red); /* Tactical Red Border */
+        }
+
+        .header-logo {
+            width: 450px; /* Sized for the header bar */
+            height: auto;
+        }
+
+        /* FULL SPAN HERO - No Borders */
         .hero-wrapper {
             position: relative;
-            height: 100vh;
+            height: 90vh; /* Deep hero section */
             overflow: hidden; 
-            border-bottom: 8px solid var(--blk-red);
             background-color: var(--blk-bg);
         }
 
-        /* 50% SCALE HERO IMAGE - Recessed and floating */
+        /* THE PARALLAX ENGINE - Full Width */
         .hero-bg {
             position: absolute;
-            top: 15%; /* Centered vertically */
-            right: 0%; 
-            width: 55%; /* 50% of the previous Titan size */
-            height: 70%; 
-            background: url('./images/hero-parallax.jpg') center/contain no-repeat;
+            top: -10%;
+            left: 0;
+            width: 100%;
+            height: 130%; /* Extra height for scroll drift */
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%), 
+                        url('./images/hero-parallax.jpg') center/cover no-repeat;
             z-index: 1;
             will-change: transform;
-            opacity: 0.85; /* Slight fade for depth */
         }
 
-        /* CONTENT OVERLAY */
+        /* TEXT ON TOP OF IMAGE */
         .hero-content { 
             position: relative;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-left: 5%;
+            padding-left: 8%; /* Indented for magazine look */
             z-index: 10;
-        }
-
-        /* TITAN LOGO - Anchored Top-Left */
-        .hero-logo {
-            width: 850px; 
-            max-width: 95vw; 
-            height: auto;
-            margin-bottom: 40px;
-            filter: drop-shadow(0px 15px 30px rgba(0,0,0,1));
         }
 
         .hero-text-box {
             max-width: 900px;
-            border-left: 20px solid var(--blk-yellow); 
-            padding-left: 40px;
+            border-left: 15px solid var(--blk-yellow); 
+            padding-left: 35px;
         }
 
         .legacy-title {
-            font-size: 5.5rem; 
-            line-height: 0.85;
+            font-size: 5rem; 
+            line-height: 0.9;
             color: #ffffff;
             text-transform: uppercase;
-            text-shadow: 4px 4px 15px rgba(0, 0, 0, 1), 0px 0px 40px rgba(0,0,0,0.9);
-            margin-bottom: 25px;
+            /* Heavy shadows to pop off the hero image */
+            text-shadow: 5px 5px 20px rgba(0, 0, 0, 1), 0px 0px 40px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
         }
 
-        /* TACTICAL RED PRECISION FONT */
         .legacy-sub {
-            font-size: 1.5rem;
-            letter-spacing: 4px;
-            color: var(--blk-red); /* Changed to Red as requested */
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            color: var(--blk-red); /* Precision Red */
             text-transform: uppercase;
-            text-shadow: 2px 2px 5px rgba(0,0,0,1);
+            text-shadow: 2px 2px 10px rgba(0,0,0,1);
         }
 
-        /* Navigation */
+        /* Navigation Tabs */
         .tabs { 
             display: flex; justify-content: center; background: #080808; 
             border-bottom: 2px solid #222; position: sticky; top: 0; z-index: 100;
         }
         .tab-btn { 
-            padding: 35px 60px; border: none; background: none; color: #444; 
-            font-family: 'Archivo Black', sans-serif; cursor: pointer; transition: 0.3s; font-size: 1.1rem;
+            padding: 30px 50px; border: none; background: none; color: #444; 
+            font-family: 'Archivo Black', sans-serif; cursor: pointer; transition: 0.3s; font-size: 1rem;
         }
-        .tab-btn.active { color: var(--blk-red); border-bottom: 5px solid var(--blk-red); background: #000; }
+        .tab-btn.active { color: var(--blk-red); border-bottom: 4px solid var(--blk-red); background: #000; }
 
-        /* Inventory Layout */
-        .container { max-width: 1400px; margin: 0 auto; padding: 60px 20px; position: relative; z-index: 10; background: var(--blk-bg); }
+        /* Grid System */
+        .container { max-width: 1400px; margin: 0 auto; padding: 60px 20px; background: var(--blk-bg); }
         .grid { display: none; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
         .grid.active { display: grid; }
 
@@ -99,17 +103,19 @@
         .market-val { font-size: 1.8rem; padding: 0 30px; margin: 15px 0; color: #fff; }
         .shipping-info { background: #000; padding: 18px; font-family: sans-serif; font-size: 0.8rem; color: #888; border-top: 1px solid #222; }
 
-        footer { text-align: center; padding: 120px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 6px; background: #000; position: relative; z-index: 10; }
+        footer { text-align: center; padding: 100px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 6px; background: #000; }
     </style>
 </head>
 <body>
+
+    <header class="site-header">
+        <img src="./images/BLKHDZ.png" alt="BLKHDZ" class="header-logo">
+    </header>
 
     <section class="hero-wrapper">
         <div class="hero-bg" id="parallax-bg"></div>
         
         <div class="hero-content">
-            <img src="./images/BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
-            
             <div class="hero-text-box">
                 <div class="legacy-title">LEGACY ISN'T<br>BOUGHT.<br>IT'S BUILT.</div>
                 <div class="legacy-sub">Precision for those who see the details others miss.</div>
@@ -127,7 +133,7 @@
         <div id="lego-grid" class="grid active"></div>
         <div id="diecast-grid" class="grid"></div>
         <div id="tracker-grid" class="grid">
-            <p style="text-align: center; width: 100%; color: var(--blk-red); letter-spacing: 5px;">ESTABLISHING MARKET UPLINK...</p>
+            <p style="text-align: center; width: 100%; color: var(--blk-red);">UPLINKING DATASET...</p>
         </div>
     </div>
 
@@ -144,11 +150,11 @@
             btn.classList.add('active');
         }
 
-        // SLOW VERTICAL DRIFT
+        // SLOW PARALLAX DRIFT
         window.addEventListener('scroll', function() {
             const parallax = document.getElementById('parallax-bg');
             let scrollPosition = window.pageYOffset;
-            parallax.style.transform = 'translateY(' + (scrollPosition * 0.15) + 'px)';
+            parallax.style.transform = 'translateY(' + (scrollPosition * 0.2) + 'px)';
         });
 
         async function loadData() {
@@ -160,7 +166,7 @@
                         <img src="./images/${set.set_num}.jpg" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
                         <div style="padding:30px;">
                             <div style="color:var(--blk-red); font-size:0.75rem; margin-bottom:5px;">SET #${set.set_num}</div>
-                            <div style="font-size:1.2rem; min-height:50px; line-height:1.3;">${set.name}</div>
+                            <div style="font-size:1.2rem; min-height:50px;">${set.name}</div>
                             <div class="market-val">$${set.market_value}</div>
                         </div>
                         <div class="shipping-info">
@@ -168,7 +174,7 @@
                         </div>
                     </div>
                 `).join('');
-            } catch(e) { console.log("Sync error or waiting for data..."); }
+            } catch(e) { console.log("Waiting for data..."); }
         }
         window.onload = loadData;
     </script>
