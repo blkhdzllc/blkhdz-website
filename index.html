@@ -4,60 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLKHDZ LLC | Elite Market Tracker</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; }
-        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Syncopate', sans-serif; overflow-x: hidden; }
-        
-        /* Hero Section */
-        .hero { 
-            height: 50vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./images/hero.jpg') center/cover no-repeat;
+        :root {
+            --blk-red: #ff0000;
+            --blk-bg: #000000;
+            --blk-card: #111111;
+            --blk-text: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--blk-bg);
+            color: var(--blk-text);
+            font-family: 'Syncopate', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section with Fixed Layering */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #000;
+            /* Corrected filename for your parallax image */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./images/hero-parallax.jpg');
+            background-size: cover;
+            background-position: center;
             border-bottom: 2px solid var(--blk-red);
         }
-        .logo { max-width: 250px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,0,0,0.3)); }
 
-        /* Container & Grid */
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        
-        .section-header { 
-            border-left: 4px solid var(--blk-red); padding-left: 15px; margin-bottom: 40px; 
-            letter-spacing: 5px; text-transform: uppercase; font-size: 1.2rem;
+        .logo {
+            position: relative;
+            z-index: 10; /* Ensures logo is on top of hero background */
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255,0,0,0.4));
         }
 
-        /* Item Cards */
-        .card { 
-            background: var(--blk-card); border: 1px solid #222; padding: 0; 
-            transition: all 0.3s ease; display: flex; flex-direction: column;
-        }
-        .card:hover { border-color: var(--blk-red); transform: translateY(-5px); }
-        .card-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #222; }
-        .card-content { padding: 20px; }
-        .set-num { color: var(--blk-red); font-size: 0.7rem; margin-bottom: 5px; }
-        .set-name { font-size: 0.9rem; margin-bottom: 15px; height: 40px; overflow: hidden; }
-        .market-value { font-size: 1.1rem; font-weight: bold; color: #fff; margin-bottom: 10px; }
-        
-        /* Shipping Info - Per your Business Rules */
-        .shipping-box { 
-            font-family: sans-serif; font-size: 0.7rem; color: #888; 
-            background: #000; padding: 10px; border-radius: 4px;
+        .tagline {
+            font-size: 0.8rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--blk-red);
         }
 
-        footer { text-align: center; padding: 60px 20px; font-size: 0.7rem; border-top: 1px solid #111; opacity: 0.6; }
+        /* Main Content Area */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-header {
+            font-size: 1.3rem;
+            letter-spacing: 4px;
+            border-left: 4px solid var(--blk-red);
+            padding-left: 15px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* Portfolio Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--blk-card);
+            border: 1px solid #222;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blk-red);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid #222;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .set-id {
+            color: var(--blk-red);
+            font-size: 0.7rem;
+            margin-bottom: 5px;
+        }
+
+        .set-name {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            height: 45px;
+            overflow: hidden;
+        }
+
+        .market-val {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Shipping Box - Dimensions and Weight rule */
+        .shipping-info {
+            background: #000;
+            padding: 12px;
+            border-radius: 2px;
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            color: #aaa;
+            border-top: 1px solid #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            border-top: 1px solid #111;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <img src="./images/logo.png" alt="BLKHDZ LLC" class="logo">
-        <div style="letter-spacing: 8px; font-size: 0.8rem; color: var(--blk-red);">ELITE INVENTORY TRACKER</div>
+        <div class="tagline">Elite Market Tracker</div>
     </header>
 
     <div class="container">
         <h2 class="section-header">Lego Portfolio</h2>
-        <div id="lego-grid" class="grid">
-            </div>
+        <div id="portfolio-grid" class="grid">
+            <p>Syncing Live Data...</p>
+        </div>
     </div>
 
     <footer>
@@ -66,33 +165,33 @@
     </footer>
 
     <script>
-        async function loadInventory() {
-            const grid = document.getElementById('lego-grid');
+        async function syncData() {
+            const grid = document.getElementById('portfolio-grid');
             try {
                 const response = await fetch('./data.json');
                 const data = await response.json();
                 
-                // Map to your specific "sets" array
+                // Maps your specific data.json structure
                 grid.innerHTML = data.sets.map(set => `
                     <div class="card">
-                        <img src="${set.image_url}" class="card-img" alt="${set.name}" onerror="this.src='./images/hero.jpg'">
-                        <div class="card-content">
-                            <div class="set-num">SET #${set.set_num}</div>
+                        <img src="${set.image_url}" class="card-img" alt="${set.name}" onerror="this.src='./images/hero-parallax.jpg'">
+                        <div class="card-body">
+                            <div class="set-id">SET #${set.set_num}</div>
                             <div class="set-name">${set.name}</div>
-                            <div class="market-value">$${set.market_value}</div>
-                            <div class="shipping-box">
-                                SHIP: ${set.shipping_details.box_dimensions} | ${set.shipping_details.weight_lbs} LBS
+                            <div class="market-val">$${set.market_value}</div>
+                            <div class="shipping-info">
+                                <strong>SHIPPING:</strong> ${set.shipping_details.box_dimensions} | ${set.shipping_details.weight_lbs} LBS
                             </div>
                         </div>
                     </div>
                 `).join('');
                 
-            } catch (error) {
-                console.error("Data Sync Error:", error);
-                grid.innerHTML = "<p>OFFLINE: DATA UPLOAD PENDING</p>";
+            } catch (err) {
+                console.error("Critical Sync Error:", err);
+                grid.innerHTML = "<p>OFFLINE: DATA SOURCE UNREACHABLE</p>";
             }
         }
-        window.onload = loadInventory;
+        window.onload = syncData;
     </script>
 </body>
 </html>
