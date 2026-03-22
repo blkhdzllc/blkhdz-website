@@ -15,14 +15,14 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--primary-bg);
             color: var(--text-main);
             margin: 0;
             padding: 0;
         }
 
-        /* HERO SECTION WITH LOGO AND PARALLAX */
+        /* HERO SECTION */
         .hero {
             position: relative;
             height: 450px;
@@ -39,7 +39,6 @@
             max-width: 400px;
             height: auto;
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(0, 128, 128, 0.5));
         }
 
         .hero p {
@@ -47,7 +46,6 @@
             color: var(--text-main);
             letter-spacing: 5px;
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(0,0,0,1);
         }
 
         .container {
@@ -120,6 +118,7 @@
             margin-top: 20px;
         }
 
+        /* FOOTER & AFFILIATION */
         footer {
             background: #000;
             padding: 50px 20px;
@@ -127,12 +126,21 @@
             border-top: 1px solid #222;
         }
 
+        .affiliation-warning {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            line-height: 1.5;
+        }
+
         .vet-footer {
-            color: var(--accent-green);
+            color: var(--accent-teal); /* Teal as requested */
             font-weight: bold;
             text-transform: uppercase;
             display: block;
             margin-top: 15px;
+            letter-spacing: 2px;
         }
     </style>
 </head>
@@ -149,16 +157,20 @@
 </div>
 
 <footer>
+    <div class="affiliation-warning">
+        LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site. 
+        BLKHDZ LLC is an independent reseller. All other trademarks are the property of their respective owners.
+    </div>
     <p>&copy; 2026 BLKHDZ LLC</p>
-    <a href="https://www.ebay.com/str/blkhdz" target="_blank" style="color:var(--accent-teal); text-decoration:none;">Visit eBay Store</a>
+    <a href="https://www.ebay.com/str/blkhdz" target="_blank" style="color:var(--accent-teal); text-decoration:none;">Official Store</a>
     <span class="vet-footer">Veteran Owned</span>
 </footer>
 
 <script>
     async function init() {
         try {
-            // Fetching with a cache-buster so your manual prices reflect instantly
-            const res = await fetch('./data.json?v=' + Date.now());
+            // Timestamp added to bypass cache and show your manual prices instantly
+            const res = await fetch('./data.json?t=' + Date.now());
             const data = await res.json();
             const grid = document.getElementById('inventory-target');
             
@@ -176,7 +188,7 @@
                             <div><strong>Box:</strong> ${set.shipping_details.box_dimensions}</div>
                             <div><strong>Weight:</strong> ${set.shipping_details.weight_lbs} lbs</div>
                         </div>
-                        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="buy-btn">VIEW ON EBAY</a>
+                        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="buy-btn">BUY ON EBAY</a>
                     </div>
                 `;
                 grid.appendChild(div);
