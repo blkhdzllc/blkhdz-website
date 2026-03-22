@@ -1,15 +1,19 @@
 import os, json, datetime
 
-# YOUR MANUAL PRICES
+# YOUR MANUAL PRICES WITH VARIATION RANGES
 MANUAL_PRICES = {
     "31020": 56.00, "71738": 104.85, "31144": 28.54,
     "76015": 64.95, "77247": 49.99, "76295": 69.95,
     "76232": 59.95, "60449": 49.95, "30726": 11.93,
-    "41619": 42.95 
+    "41619": 42.95, 
+    "75274": "84.95 - 425.00", # Variation Range
+    "31167": "14.99 - 145.00"  # Variation Range
 }
 
-# FULL INVENTORY WITH AFFILIATE LINKS
+# FULL INVENTORY WITH DEEP LINKS
 LEGO_DATA_LIST = [
+    {"id": "75274", "name": "Star Wars Helmet Collection (Variation)", "weight": 3.2, "box": "14x10x6", "url": "https://www.ebay.com/itm/116951073772?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1", "featured": True},
+    {"id": "31167", "name": "Haunted Mansion 3-in-1 Seasonal Bundle", "weight": 3.5, "box": "15x14x3", "url": "https://www.ebay.com/itm/117037598121?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1", "featured": True},
     {"id": "31020", "name": "LEGO Creator Twinblade Adventures", "weight": 0.7, "box": "10x7x2", "url": "https://www.ebay.com/itm/117004206278?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
     {"id": "71738", "name": "Ninjago Zane's Titan Mech Battle", "weight": 2.8, "box": "14x15x3", "url": "https://www.ebay.com/itm/117058462903?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
     {"id": "31144", "name": "Creator 3-in-1 Exotic Pink Parrot", "weight": 0.8, "box": "10x7x2", "url": "https://www.ebay.com/itm/116989698157?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
@@ -27,11 +31,16 @@ def run():
     for item in LEGO_DATA_LIST:
         set_id = item['id']
         price = MANUAL_PRICES.get(set_id, 0.00)
+        
+        # Handle formatting for both strings (ranges) and floats
+        display_price = price if isinstance(price, str) else f"{price:.2f}"
+        
         lego_final.append({
             "set_num": set_id, 
             "name": item['name'], 
-            "market_value": round(price, 2),
+            "market_value": display_price,
             "buy_link": item['url'],
+            "is_featured": item.get("featured", False),
             "shipping_details": {"weight_lbs": item['weight'], "box_dimensions": item['box']}
         })
 
