@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ | The Definitive Edition</title>
+    <title>BLKHDZ | Pure Branding</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <style>
-        :root { --blk-red: #ff0000; --blk-yellow: #ffcc00; --blk-bg: #000000; --blk-card: #111111; }
+        :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; }
         
         body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Archivo Black', sans-serif; overflow-x: hidden; }
 
-        /* THE EDITORIAL STAGE */
+        /* THE MASTHEAD STAGE */
         .magazine-cover {
             position: relative;
-            height: 100vh;
+            height: 85vh; /* Slightly shorter to bring inventory up sooner */
             display: flex;
             flex-direction: column;
+            align-items: center; /* Center the massive logo */
             overflow: hidden;
             border-bottom: 8px solid var(--blk-red);
         }
@@ -27,53 +28,29 @@
             left: 0;
             width: 100%;
             height: 130%; 
-            background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%), 
+            /* Subtle vignette so the logo pops */
+            background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), 
                         url('./images/hero-parallax.jpg') center/cover no-repeat;
             z-index: 1;
             will-change: transform;
         }
 
-        /* MASTHEAD & CONTENT LAYER */
+        /* LOGO LAYER */
         .cover-content {
             position: relative;
             z-index: 10;
-            padding: 40px 5%;
-            height: 100%;
+            padding: 60px 5%;
+            width: 100%;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
         }
 
-        /* GQ-STYLE MASTHEAD LOGO */
+        /* GQ-STYLE MASTHEAD LOGO - FULL IMPACT */
         .masthead-logo {
-            width: 100%; /* Spans the full content width */
-            max-width: 1200px; /* Limits size on massive monitors */
+            width: 100%; 
+            max-width: 1400px; /* Full span of the canvas */
             height: auto;
-            margin-bottom: 50px;
-            filter: drop-shadow(0 10px 30px rgba(0,0,0,1));
-        }
-
-        /* STATEMENT POSITIONED BELOW LOGO */
-        .headline-box {
-            border-left: 15px solid var(--blk-yellow);
-            padding-left: 35px;
-            max-width: 800px;
-            margin-top: 20px;
-        }
-
-        .main-headline {
-            font-size: 4.8rem;
-            line-height: 0.9;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            text-shadow: 4px 4px 20px rgba(0,0,0,1);
-        }
-
-        .sub-headline {
-            font-size: 1.4rem;
-            color: var(--blk-red);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 10px rgba(0,0,0,1);
+            filter: drop-shadow(0 15px 40px rgba(0,0,0,1));
         }
 
         /* STICKY MEAT & POTATOES NAV */
@@ -82,7 +59,7 @@
             justify-content: center;
             background: #080808;
             border-bottom: 2px solid #222;
-            position: sticky; /* Locks to top on scroll */
+            position: sticky; 
             top: 0;
             z-index: 100;
         }
@@ -111,6 +88,7 @@
         .grid { display: none; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
         .grid.active { display: grid; }
 
+        /* PREMIUM CARDS */
         .card { background: var(--blk-card); border: 1px solid #1a1a1a; transition: 0.4s; }
         .card:hover { border-color: var(--blk-red); transform: translateY(-12px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
         .card-img { width: 100%; height: 320px; object-fit: cover; }
@@ -128,11 +106,6 @@
         
         <div class="cover-content">
             <img src="./images/BLKHDZ.png" alt="BLKHDZ" class="masthead-logo">
-            
-            <div class="headline-box">
-                <div class="main-headline">LEGACY ISN'T<br>BOUGHT.<br>IT'S BUILT.</div>
-                <div class="sub-headline">Precision for those who see the details others miss.</div>
-            </div>
         </div>
     </section>
 
@@ -146,7 +119,7 @@
         <div id="lego-market" class="grid active"></div>
         <div id="diecast-market" class="grid"></div>
         <div id="tracker-market" class="grid">
-            <p style="text-align: center; width: 100%; color: var(--blk-red); letter-spacing: 5px; padding-top: 100px;">ESTABLISHING LIVE MARKET UPLINK...</p>
+            <p style="text-align: center; width: 100%; color: var(--blk-red); letter-spacing: 5px; padding-top: 100px;">UPLINKING LIVE DATA...</p>
         </div>
     </div>
 
@@ -161,7 +134,6 @@
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             el.classList.add('active');
-            // Smoothly jump down to the meat and potatoes
             window.scrollTo({ top: document.querySelector('.market-nav').offsetTop, behavior: 'smooth' });
         }
 
