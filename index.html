@@ -3,89 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ | Built, Not Bought</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <title>BLKHDZ | Build Your Legacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; --blk-teal: #008080; }
+        :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; }
         
         body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Syncopate', sans-serif; overflow-x: hidden; }
 
-        /* Left-Aligned Magazine Hero */
+        /* Magazine Hero - 501st Layout */
         .hero { 
             position: relative;
-            height: 90vh;
+            height: 95vh;
             display: flex;
-            align-items: center; /* Vertical Center */
-            justify-content: flex-start; /* Push content to left */
-            background: url('./images/hero-parallax.jpg') center/cover no-repeat;
-            border-bottom: 5px solid var(--blk-red);
-            padding-left: 8%; /* Margin from the left edge */
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%), 
+                        url('./images/hero-parallax.jpg') center/cover no-repeat;
+            border-bottom: 6px solid var(--blk-red);
+            padding-left: 5%;
         }
 
-        /* The "If You Know, You Know" Text Block */
+        /* Captain Rex Style Text Block */
         .hero-text-box {
-            max-width: 500px;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.5); /* Slight black background behind letters */
-            backdrop-filter: blur(5px); /* Professional "Glass" effect */
-            border-left: 4px solid var(--blk-red);
+            max-width: 700px;
+            padding: 30px;
+            /* Black background behind letters as requested */
+            background: rgba(0, 0, 0, 0.7);
+            border-left: 8px solid var(--blk-red);
             z-index: 10;
         }
 
         .legacy-title {
-            font-weight: 700;
-            font-size: 2.2rem;
-            line-height: 1.2;
-            letter-spacing: 4px;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 3.5rem; /* Large Impact */
+            line-height: 1;
+            letter-spacing: -1px;
             color: #ffffff;
-            margin-bottom: 20px;
             text-transform: uppercase;
+            margin-bottom: 15px;
         }
 
         .legacy-sub {
-            font-family: sans-serif; /* Clean contrast to Syncopate */
-            font-size: 1rem;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.1rem;
             letter-spacing: 2px;
-            color: #ddd;
-            line-height: 1.6;
+            color: #aaa;
             text-transform: uppercase;
         }
 
-        /* Logo at the Bottom of Hero */
-        .hero-logo {
+        /* Logo matched to Title Size at Bottom */
+        .hero-footer {
             position: absolute;
-            bottom: 40px;
-            left: 8%;
-            max-width: 250px;
-            height: auto;
-            opacity: 0.9;
+            bottom: 50px;
+            left: 5%;
+            display: flex;
+            align-items: center;
+            gap: 30px;
         }
 
-        /* Navigation Tabs */
+        .hero-logo {
+            height: 80px; /* Scaled up to match text impact */
+            width: auto;
+        }
+
+        /* Beefed Up Navigation Tabs */
         .tabs { 
-            display: flex; justify-content: center; background: #050505; 
-            border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 100;
+            display: flex; 
+            justify-content: center; 
+            background: #0a0a0a; 
+            border-bottom: 2px solid #222; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
         }
         .tab-btn { 
-            padding: 25px 35px; border: none; background: none; color: #555; 
-            font-family: 'Syncopate', sans-serif; cursor: pointer; transition: 0.4s; font-size: 0.7rem;
+            padding: 30px 50px; /* Larger hit area */
+            border: none; 
+            background: none; 
+            color: #777; 
+            font-family: 'Archivo Black', sans-serif; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            font-size: 1rem; /* Bigger Font */
+            letter-spacing: 2px;
         }
-        .tab-btn.active { color: var(--blk-red); border-bottom: 3px solid var(--blk-red); }
+        .tab-btn:hover { color: #fff; background: #111; }
+        .tab-btn.active { color: var(--blk-red); border-bottom: 4px solid var(--blk-red); background: #000; }
 
-        /* Container & Grid */
+        /* Inventory Grid */
         .container { max-width: 1400px; margin: 0 auto; padding: 60px 20px; }
-        .grid { display: none; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 35px; }
+        .grid { display: none; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
         .grid.active { display: grid; }
 
-        .card { background: var(--blk-card); border: 1px solid #1a1a1a; transition: 0.4s ease; }
-        .card:hover { border-color: var(--blk-red); transform: translateY(-10px); }
-        .card-img { width: 100%; height: 280px; object-fit: cover; }
+        .card { background: var(--blk-card); border: 1px solid #1a1a1a; transition: 0.3s; }
+        .card:hover { border-color: var(--blk-red); transform: translateY(-5px); }
+        .card-img { width: 100%; height: 300px; object-fit: cover; }
         .card-body { padding: 30px; }
         
-        .market-val { font-size: 1.5rem; font-weight: 700; margin: 15px 0; }
-        .shipping-info { background: #000; padding: 12px; font-family: sans-serif; font-size: 0.7rem; color: #666; border: 1px solid #222; }
+        .market-val { font-size: 1.6rem; font-weight: 700; color: #fff; margin: 15px 0; font-family: 'Archivo Black'; }
+        .shipping-info { background: #000; padding: 15px; font-family: sans-serif; font-size: 0.75rem; color: #888; border: 1px solid #222; }
 
-        footer { text-align: center; padding: 80px; font-size: 0.6rem; opacity: 0.5; letter-spacing: 3px; }
+        footer { text-align: center; padding: 100px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 5px; }
     </style>
 </head>
 <body>
@@ -95,7 +113,10 @@
             <div class="legacy-title">LEGACY ISN'T BOUGHT.<br>IT'S BUILT.</div>
             <div class="legacy-sub">Precision for those who see the details others miss.</div>
         </div>
-        <img src="./images/BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
+        
+        <div class="hero-footer">
+            <img src="./images/BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
+        </div>
     </header>
 
     <nav class="tabs">
@@ -108,7 +129,7 @@
         <div id="lego-grid" class="grid active"></div>
         <div id="diecast-grid" class="grid"></div>
         <div id="tracker-grid" class="grid">
-            <p style="text-align: center; width: 100%; color: var(--blk-red);">ESTABLISHING UPLINK TO DATASET...</p>
+            <p style="text-align: center; width: 100%; color: var(--blk-red); font-family: 'Archivo Black';">UPLINKING TO MARKET DATA...</p>
         </div>
     </div>
 
@@ -133,16 +154,16 @@
                     <div class="card">
                         <img src="${set.image_url}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
                         <div class="card-body">
-                            <div style="color:var(--blk-red); font-size:0.65rem; margin-bottom:5px;">SET #${set.set_num}</div>
-                            <div style="font-size:0.95rem; min-height:45px;">${set.name}</div>
+                            <div style="color:var(--blk-red); font-size:0.7rem; margin-bottom:5px; font-family:'Archivo Black';">SET #${set.set_num}</div>
+                            <div style="font-size:1.1rem; min-height:50px; font-family:'Archivo Black';">${set.name}</div>
                             <div class="market-val">$${set.market_value}</div>
                             <div class="shipping-info">
-                                DIM: ${set.shipping_details.box_dimensions} | ${set.shipping_details.weight_lbs} LBS
+                                BOX: ${set.shipping_details.box_dimensions} | WT: ${set.shipping_details.weight_lbs} LBS
                             </div>
                         </div>
                     </div>
                 `).join('');
-            } catch(e) { console.error("Sync error."); }
+            } catch(e) { console.error("Syncing..."); }
         }
         window.onload = loadData;
     </script>
