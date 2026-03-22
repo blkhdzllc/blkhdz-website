@@ -28,16 +28,16 @@ LEGO_INVENTORY = [
 
 # --- 3. DIECAST INVENTORY DATA ---
 DIECAST_INVENTORY = [
-    {"id": "MGT00773-CHASE", "name": "Mazda RX-7 LB-Super Silhouette #41 [CHASE BUNDLE]", "img": "MGT00773.jpg", "price": 95.00, "status": "LIMITED CHASE BUNDLE", "featured": True},
-    {"id": "43SGT25016", "name": "1/43 Spark Honda Civic Type R-GT #16 GT500 2025 Otsu/Sato", "img": "43SGT25016.jpg", "price": 134.95, "status": "PREMIUM 2025 RELEASE", "featured": True},
-    {"id": "MGT00773-REG", "name": "Mazda RX-7 LB-Super Silhouette #41 [Numero White]", "img": "MGT00773.jpg", "price": 14.99, "status": "22 IN STOCK"},
-    {"id": "PR640255", "name": "Pop Race Mazda RX-7 FD3S RE Amemiya Gunmetal/Carbon Spec", "img": "PR640255.jpg", "price": 28.99, "status": "POP RACE APPROVED"},
-    {"id": "PR640212", "name": "Pop Race Honda Civic EG6 Pandem V1.5 Idemitsu Infinite", "img": "PR6400212.jpg", "price": 26.99, "status": "IN STOCK"},
-    {"id": "MGT01046-R", "name": "Mazda RX-7 FD3S RE Amemiya 20B NA 3 Rotor-7 Ama-San Go", "img": "MGT01046-R.jpg", "price": 14.99, "status": "IN STOCK"},
-    {"id": "MGT00716-MJ", "name": "Cadillac V-Series.R #2 2023 Le Mans 3rd Blue (MiJo 1/4200)", "img": "MGT00716-MJ.jpg", "price": 16.99, "status": "LIMITED EDITION"},
-    {"id": "TSMV0027", "name": "1/43 Mazda RX-7 FD3S LB Super Silhouette IMSA Liberty Walk", "img": "TSMV0027.jpg", "price": 32.00, "status": "1/43 SCALE"},
-    {"id": "T64-070-51", "name": "Ferrari 488 GT3 Macau GT Cup Harmony Racing #51 (Last 2)", "img": "T64-0702-22MGP51.jpg", "price": 24.95, "status": "LOW STOCK"},
-    {"id": "T64-062-04", "name": "Mercedes-AMG GT3 #4 Nurburgring 2023 Team Bilstein (Last 1)", "img": "T64-062-23NUR04.jpg", "price": 22.95, "status": "LAST ONE"}
+    {"id": "MGT00773-C", "name": "Mazda RX-7 LB-Super Silhouette #41 [CHASE BUNDLE]", "img": "MGT00773.jpg", "price": 95.00, "status": "LIMITED CHASE BUNDLE", "url": "https://www.ebay.com/itm/117098917766?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1", "featured": True},
+    {"id": "43SGT25016", "name": "1/43 Spark Honda Civic Type R-GT #16 GT500 2025", "img": "43SGT25016.jpg", "price": 134.95, "status": "PREMIUM 2025 RELEASE", "url": "https://www.ebay.com/itm/117055371825?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1", "featured": True},
+    {"id": "MGT00773-R", "name": "Mazda RX-7 LB-Super Silhouette #41 [Numero White]", "img": "MGT00773.jpg", "price": 14.99, "status": "22 IN STOCK", "url": "https://www.ebay.com/itm/117080910055?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
+    {"id": "PR640255", "name": "Pop Race Mazda RX-7 FD3S RE Amemiya Gunmetal", "img": "PR640255.jpg", "price": 28.99, "status": "POP RACE APPROVED", "url": "https://www.ebay.com/itm/117078677592?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
+    {"id": "PR640212", "name": "Pop Race Honda Civic EG6 Pandem Idemitsu", "img": "PR640212.jpg", "price": 26.99, "status": "IN STOCK", "url": "https://www.ebay.com/itm/117078703657?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
+    {"id": "MGT01046", "name": "Mazda RX-7 FD3S RE Amemiya 20B Ama-San Go", "img": "MGT01046.jpg", "price": 14.99, "status": "IN STOCK", "url": "https://www.ebay.com/itm/117078628407?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
+    {"id": "MGT00716", "name": "Cadillac V-Series.R #2 Le Mans 3rd Blue", "img": "MGT00716.jpg", "price": 16.99, "status": "LIMITED EDITION", "url": "https://www.ebay.com/itm/117081912634?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
+    {"id": "TSMV0027", "name": "1/43 Mazda RX-7 LB Silhouette IMSA Liberty Walk", "img": "TSMV0027.jpg", "price": 32.00, "status": "1/43 SCALE", "url": "https://www.ebay.com/itm/117078591872?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
+    {"id": "T64-070-51", "name": "Ferrari 488 GT3 Macau GT Cup #51", "img": "T64-070-51.jpg", "price": 24.95, "status": "LOW STOCK", "url": "https://www.ebay.com/itm/117056036936?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"},
+    {"id": "T64-062-04", "name": "Mercedes-AMG GT3 #4 Nurburgring Team Bilstein", "img": "T64-062-04.jpg", "price": 22.95, "status": "LAST ONE", "url": "https://www.ebay.com/itm/117057905289?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"}
 ]
 
 # --- 4. DATA PROCESSING ---
@@ -63,7 +63,7 @@ def run():
     
     with open('data.json', 'w') as f:
         json.dump(output, f, indent=4)
-    print("Successfully updated data.json.")
+    print("Successfully updated data.json with LEGO and Diecast inventory.")
 
 if __name__ == "__main__":
     run()
