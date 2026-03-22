@@ -3,161 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ LLC | Official Market Tracker</title>
-    
+    <title>BLKHDZ LLC | Elite Market Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
-    
     <style>
-        :root {
-            --blk-bg: #000000;
-            --blk-red: #ff0000;
-            --blk-text: #ffffff;
-            --blk-accent: #333333;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--blk-bg);
-            color: var(--blk-text);
-            font-family: 'Syncopate', sans-serif;
-            line-height: 1.6;
-        }
-
-        /* Hero Section with Relative Path Fix for GitHub Pages */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-color: #111;
-            /* Using ./ to ensure it looks inside the /blkhdz-website/images/ folder */
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./images/hero.jpg');
-            background-size: cover;
-            background-position: center;
+        :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; }
+        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Syncopate', sans-serif; }
+        
+        /* Hero & Logo */
+        .hero { 
+            height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./images/hero.jpg') center/cover;
             border-bottom: 2px solid var(--blk-red);
         }
+        .logo { max-width: 250px; margin-bottom: 20px; }
 
-        .logo {
-            max-width: 280px;
-            height: auto;
-            margin-bottom: 30px;
-            filter: drop-shadow(0 0 10px rgba(255,0,0,0.3));
+        /* Main Diecast Spotlight */
+        .diecast-spotlight {
+            width: 100%; height: 400px;
+            background: url('./images/diecast-main.jpg') center/cover no-repeat;
+            border-bottom: 1px solid #333;
+            display: flex; align-items: flex-end;
         }
+        .spotlight-text { background: rgba(0,0,0,0.8); padding: 20px; width: 100%; letter-spacing: 5px; font-size: 0.9rem; }
 
-        .headline {
-            font-size: 1.2rem;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            margin: 0;
-            color: var(--blk-text);
-        }
-
-        /* Inventory Grid Layout */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            border-left: 4px solid var(--blk-red);
-            padding-left: 15px;
-            margin-bottom: 40px;
-            letter-spacing: 3px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--blk-accent);
-            border: 1px solid #444;
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--blk-red);
-        }
-
-        footer {
-            background: #0a0a0a;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            border-top: 1px solid var(--blk-accent);
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 5px 10px;
-            background: var(--blk-red);
-            font-size: 0.6rem;
-            margin-top: 10px;
-        }
+        /* Grid Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .section-header { border-left: 4px solid var(--blk-red); padding-left: 15px; margin-bottom: 30px; letter-spacing: 3px; }
+        
+        footer { text-align: center; padding: 40px; font-size: 0.7rem; border-top: 1px solid #222; opacity: 0.8; }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <img src="./images/logo.png" alt="BLKHDZ LLC" class="logo">
-        <h1 class="headline">Official Market Tracker</h1>
-        <div class="status-badge">System Status: Live 2026</div>
+        <h1 style="letter-spacing: 10px; font-size: 1rem;">Official Market Tracker</h1>
     </header>
 
+    <section class="diecast-spotlight">
+        <div class="spotlight-text">ELITE DIECAST SERIES // CURRENTLY TRACKING MARKET VALUES</div>
+    </section>
+
     <div class="container">
-        <h2 class="section-title">Elite Inventory</h2>
-        
-        <div id="inventory-display" class="grid">
-            <p style="letter-spacing: 2px;">Syncing with Market Data...</p>
+        <h2 class="section-header">Elite Inventory</h2>
+        <div id="lego-grid" class="grid">
+            <p style="font-size: 0.8rem; opacity: 0.5;">Syncing LEGO Market Data...</p>
+        </div>
+
+        <h2 class="section-header" style="margin-top: 60px;">Diecast Archive</h2>
+        <div id="diecast-grid" class="grid">
+            <p style="font-size: 0.8rem; opacity: 0.5;">Elite Stock Sold Out // Refreshing Catalog...</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 BLOCKHEADZ LLC. ALL RIGHTS RESERVED.</p>
-        <p><strong>Veteran Owned</strong></p>
+        &copy; 2026 BLOCKHEADZ LLC. ALL RIGHTS RESERVED.<br>
+        <strong>Veteran Owned</strong>
     </footer>
 
     <script>
-        // Check if images are loading properly
-        function checkImages() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.onerror = function() {
-                    console.error("BLKHDZ Error: Image not found at " + img.src);
-                    img.style.border = "1px solid red";
-                };
-            });
-        }
-
-        // Placeholder for loading your data.json
-        async function fetchMarketData() {
+        // Huyen-style Data Loader: Handles empty files without breaking
+        async function loadData(file, elementId) {
+            const grid = document.getElementById(elementId);
             try {
-                const response = await fetch('./data.json');
-                if (!response.ok) throw new Error('Data Sync Offline');
+                const response = await fetch(`./${file}`);
+                if (!response.ok) throw new Error();
                 const data = await response.json();
-                console.log("Market Data Successfully Ingested");
-            } catch (err) {
-                console.warn("Notice: data.json not found yet. Ready for Scraper Integration.");
+                if (data.length > 0) {
+                    grid.innerHTML = ''; // Clear the "loading" text
+                    // Logic to build cards will go here in the next step
+                }
+            } catch (e) {
+                console.log(`Notice: ${file} is currently empty or offline.`);
             }
         }
 
         window.onload = () => {
-            checkImages();
-            fetchMarketData();
+            loadData('data.json', 'lego-grid');
+            loadData('diecast.json', 'diecast-grid');
         };
     </script>
-
 </body>
 </html>
