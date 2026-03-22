@@ -6,87 +6,113 @@
     <title>BLKHDZ LLC | Elite Market Tracker</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; }
-        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Syncopate', sans-serif; overflow-x: hidden; }
+        :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; --blk-gray: #cccccc; }
+        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Syncopate', sans-serif; }
         
-        /* Hero Section - Using your new naming convention */
+        /* Hero Section - Scaled Logo */
         .hero { 
-            position: relative;
-            height: 60vh; width: 100%;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            background-color: #000;
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                              url('./images/hero-parallax.jpg');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 2px solid var(--blk-red);
+            height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./images/hero-parallax.jpg') center/cover no-repeat;
+            border-bottom: 3px solid var(--blk-red);
         }
-        
-        /* Your Title Image */
-        .logo { z-index: 10; max-width: 350px; height: auto; margin-bottom: 20px; }
+        .logo { width: 85%; max-width: 800px; height: auto; z-index: 10; filter: drop-shadow(0 0 20px rgba(0,0,0,0.8)); }
+        .tagline { letter-spacing: 12px; color: var(--blk-gray); font-size: 1rem; margin-top: 20px; text-transform: uppercase; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
-        .section-header { border-left: 4px solid var(--blk-red); padding-left: 15px; margin-bottom: 40px; letter-spacing: 5px; text-transform: uppercase; }
+        /* Navigation Tabs */
+        .tabs { display: flex; justify-content: center; background: #0a0a0a; border-bottom: 1px solid #222; sticky: top; }
+        .tab-btn { 
+            padding: 20px 30px; border: none; background: none; color: #666; 
+            font-family: 'Syncopate', sans-serif; cursor: pointer; transition: 0.3s; font-size: 0.8rem;
+        }
+        .tab-btn.active { color: var(--blk-red); border-bottom: 2px solid var(--blk-red); }
 
-        .card { background: var(--blk-card); border: 1px solid #222; transition: 0.3s; display: flex; flex-direction: column; }
+        /* Container & Grid */
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; display: none; }
+        .grid.active { display: grid; }
+
+        /* Inventory Cards */
+        .card { background: var(--blk-card); border: 1px solid #222; transition: 0.3s; }
         .card:hover { border-color: var(--blk-red); transform: translateY(-5px); }
-        .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #222; }
-        .card-body { padding: 20px; }
-        .market-val { font-size: 1.2rem; font-weight: bold; margin: 10px 0; }
-        
-        .shipping-info { 
-            background: #000; padding: 12px; font-family: sans-serif; font-size: 0.75rem; color: #888; border-top: 1px solid #333;
-        }
+        .card-img { width: 100%; height: 250px; object-fit: cover; }
+        .card-body { padding: 25px; }
+        .market-val { font-size: 1.3rem; font-weight: bold; margin: 15px 0; color: #fff; }
+        .shipping-info { background: #000; padding: 12px; font-family: sans-serif; font-size: 0.75rem; color: #888; border: 1px solid #222; }
 
-        footer { text-align: center; padding: 60px; font-size: 0.7rem; border-top: 1px solid #111; opacity: 0.7; letter-spacing: 2px; }
+        footer { text-align: center; padding: 80px; font-size: 0.7rem; opacity: 0.6; letter-spacing: 3px; }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <img src="./images/BLKHDZ.png" alt="BLKHDZ LLC" class="logo">
-        <div style="letter-spacing: 8px; color: var(--blk-red); font-size: 0.8rem;">ELITE MARKET TRACKER</div>
+        <div class="tagline">Elite Market Tracker</div>
     </header>
 
+    <nav class="tabs">
+        <button class="tab-btn active" onclick="showTab('lego-grid', this)">LEGO INVENTORY</button>
+        <button class="tab-btn" onclick="showTab('diecast-grid', this)">DIECAST</button>
+        <button class="tab-btn" onclick="showTab('tracker-grid', this)">LEGO TRACKER</button>
+    </nav>
+
     <div class="container">
-        <h2 class="section-header">Lego Portfolio</h2>
-        <div id="portfolio-grid" class="grid">
-            <p>Syncing Live Inventory...</p>
+        <div id="lego-grid" class="grid active"></div>
+        
+        <div id="diecast-grid" class="grid"></div>
+
+        <div id="tracker-grid" class="grid">
+            <p style="text-align: center; width: 100%; color: var(--blk-red);">System Syncing with eBay API...</p>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 BLOCKHEADZ LLC. ALL RIGHTS RESERVED.<br>
+        &copy; 2026 BLOCKHEADZ LLC. ALL RIGHTS RESERVED.<br><br>
         <strong>Veteran Owned</strong>
     </footer>
 
     <script>
-        async function syncData() {
-            const grid = document.getElementById('portfolio-grid');
+        function showTab(gridId, btn) {
+            document.querySelectorAll('.grid').forEach(g => g.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(gridId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        async function loadAllData() {
+            // Load LEGO
             try {
-                const response = await fetch('./data.json');
-                const data = await response.json();
-                
-                // This maps the image names to the set numbers automatically
-                grid.innerHTML = data.sets.map(set => `
-                    <div class="card">
-                        <img src="./images/${set.set_num}.jpg" class="card-img" alt="${set.name}" onerror="this.src='./images/hero-parallax.jpg'">
-                        <div class="card-body">
-                            <div style="color:red; font-size:0.7rem;">SET #${set.set_num}</div>
-                            <div style="font-size:0.9rem; margin:10px 0;">${set.name}</div>
-                            <div class="market-val">$${set.market_value}</div>
-                            <div class="shipping-info">
-                                <strong>SHIPPING:</strong> ${set.shipping_details.box_dimensions} | ${set.shipping_details.weight_lbs} LBS
-                            </div>
+                const resLego = await fetch('./data.json');
+                const legoData = await resLego.json();
+                document.getElementById('lego-grid').innerHTML = legoData.sets.map(set => renderCard(set, true)).join('');
+            } catch(e) { console.log("Lego data pending..."); }
+
+            // Load DIECAST
+            try {
+                const resDie = await fetch('./diecast.json');
+                const dieData = await resDie.json();
+                document.getElementById('diecast-grid').innerHTML = dieData.map(item => renderCard(item, false)).join('');
+            } catch(e) { console.log("Diecast data pending..."); }
+        }
+
+        function renderCard(item, isLego) {
+            const id = isLego ? item.set_num : item.sku;
+            const imgPath = `./images/${id}.jpg`;
+            return `
+                <div class="card">
+                    <img src="${item.image_url || imgPath}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
+                    <div class="card-body">
+                        <div style="color:var(--blk-red); font-size:0.7rem; margin-bottom:10px;">${isLego ? 'SET' : 'SKU'} #${id}</div>
+                        <div style="font-size:0.9rem; min-height:40px;">${item.name || item.title}</div>
+                        <div class="market-val">$${item.market_value || item.price}</div>
+                        <div class="shipping-info">
+                            SHIP: ${item.shipping_details?.box_dimensions || 'N/A'} | ${item.shipping_details?.weight_lbs || 'N/A'} LBS
                         </div>
                     </div>
-                `).join('');
-            } catch (e) { 
-                grid.innerHTML = "<p>OFFLINE: DATA SOURCE UNREACHABLE</p>"; 
-            }
+                </div>
+            `;
         }
-        window.onload = syncData;
+
+        window.onload = loadAllData;
     </script>
 </body>
 </html>
