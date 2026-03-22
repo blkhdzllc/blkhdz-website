@@ -13,10 +13,9 @@
         /* THE MASTHEAD STAGE */
         .magazine-cover {
             position: relative;
-            height: 85vh; /* Slightly shorter to bring inventory up sooner */
+            height: 90vh; /* Deep enough to show off the hero shot */
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center the massive logo */
             overflow: hidden;
             border-bottom: 8px solid var(--blk-red);
         }
@@ -27,28 +26,29 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 130%; 
-            /* Subtle vignette so the logo pops */
-            background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), 
+            height: 140%; /* Extra height for a deep parallax drift */
+            background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), 
                         url('./images/hero-parallax.jpg') center/cover no-repeat;
             z-index: 1;
             will-change: transform;
         }
 
-        /* LOGO LAYER */
+        /* LOGO LAYER - PULLED TO TOP */
         .cover-content {
             position: relative;
             z-index: 10;
-            padding: 60px 5%;
+            padding: 20px 5% 0 5%; /* Tight 20px top padding to remove dead space */
             width: 100%;
+            height: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: center; /* Horizontally centered */
+            align-items: flex-start; /* Pulled to the absolute top */
         }
 
-        /* GQ-STYLE MASTHEAD LOGO - FULL IMPACT */
+        /* GQ-STYLE MASTHEAD LOGO */
         .masthead-logo {
             width: 100%; 
-            max-width: 1400px; /* Full span of the canvas */
+            max-width: 1400px; 
             height: auto;
             filter: drop-shadow(0 15px 40px rgba(0,0,0,1));
         }
@@ -88,7 +88,6 @@
         .grid { display: none; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
         .grid.active { display: grid; }
 
-        /* PREMIUM CARDS */
         .card { background: var(--blk-card); border: 1px solid #1a1a1a; transition: 0.4s; }
         .card:hover { border-color: var(--blk-red); transform: translateY(-12px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
         .card-img { width: 100%; height: 320px; object-fit: cover; }
@@ -137,11 +136,11 @@
             window.scrollTo({ top: document.querySelector('.market-nav').offsetTop, behavior: 'smooth' });
         }
 
-        // SMOOTH PARALLAX ENGINE
         window.addEventListener('scroll', function() {
             const hero = document.getElementById('parallax-hero');
             let scroll = window.pageYOffset;
-            hero.style.transform = 'translateY(' + (scroll * 0.2) + 'px)';
+            // Parallax factor at 0.25 for a more noticeable shift
+            hero.style.transform = 'translateY(' + (scroll * 0.25) + 'px)';
         });
 
         async function loadMarket() {
