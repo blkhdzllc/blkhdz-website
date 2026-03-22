@@ -3,114 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ | Official Market Tracker</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>BLKHDZ LLC | Official Market Tracker</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --accent: #FFD700; --bg: #000; --card: #080808; --border: #151515; }
-        * { box-sizing: border-box; }
-        body { background-color: var(--bg); color: #fff; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
-        .hero { height: 40vh; display: flex; justify-content: center; align-items: center; border-bottom: 2px solid var(--border); background: #000; }
-        .hero-logo { width: 500px; max-width: 85vw; }
-        .sub-nav { background: rgba(0,0,0,0.9); padding: 20px; display: flex; justify-content: center; gap: 30px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
-        .nav-btn { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; font-family: 'Syncopate', sans-serif; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; margin-bottom: 60px; min-height: 100px; }
-        .section-header { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; letter-spacing: 8px; margin-bottom: 30px; color: var(--accent); text-transform: uppercase; border-left: 4px solid var(--accent); padding-left: 15px; }
-        .card { background: var(--card); border: 1px solid var(--border); display: flex; flex-direction: column; transition: 0.3s; overflow: hidden; }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .img-box { width: 100%; height: 280px; background: #fff; padding: 20px; display: flex; align-items: center; justify-content: center; }
-        .card img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .info-box { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-        .set-name { font-weight: 900; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 10px; min-height: 45px; }
-        .market-price { font-size: 1.6rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
-        .ship-info { font-size: 0.75rem; color: #666; margin-bottom: 20px; text-transform: uppercase; border-top: 1px solid #1a1a1a; padding-top: 10px; }
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .shop-btn { padding: 12px; text-align: center; text-decoration: none; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; border-radius: 2px; transition: 0.2s; font-family: 'Syncopate', sans-serif; }
-        .ebay-btn { background: #0053a0; color: white; }
-        .amazon-btn { background: #333; color: #ff9900; border: 1px solid #ff9900; }
-        .acquire-btn { background: var(--accent); color: #000; grid-column: span 2; margin-top: 5px; }
-        .footer { padding: 60px; text-align: center; color: #444; font-size: 0.7rem; letter-spacing: 2px; border-top: 1px solid var(--border); }
+        :root {
+            --blk-bg: #000000;
+            --blk-red: #ff0000;
+            --blk-text: #ffffff;
+            --blk-accent: #333333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--blk-bg);
+            color: var(--blk-text);
+            font-family: 'Syncopate', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Hero Section with Relative Path Fix for GitHub Pages */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #111;
+            /* Using ./ to ensure it looks inside the /blkhdz-website/images/ folder */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./images/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid var(--blk-red);
+        }
+
+        .logo {
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 10px rgba(255,0,0,0.3));
+        }
+
+        .headline {
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+            color: var(--blk-text);
+        }
+
+        /* Inventory Grid Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 4px solid var(--blk-red);
+            padding-left: 15px;
+            margin-bottom: 40px;
+            letter-spacing: 3px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--blk-accent);
+            border: 1px solid #444;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blk-red);
+        }
+
+        footer {
+            background: #0a0a0a;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            border-top: 1px solid var(--blk-accent);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background: var(--blk-red);
+            font-size: 0.6rem;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-    <div class="hero"><img src="BLKHDZ.png" class="hero-logo" alt="BLKHDZ"></div>
-    <div class="sub-nav">
-        <a href="#lego-section" class="nav-btn">LEGO Inventory</a>
-        <a href="#diecast-section" class="nav-btn">Diecast Showcase</a>
-    </div>
+
+    <header class="hero">
+        <img src="./images/logo.png" alt="BLKHDZ LLC" class="logo">
+        <h1 class="headline">Official Market Tracker</h1>
+        <div class="status-badge">System Status: Live 2026</div>
+    </header>
+
     <div class="container">
-        <h2 id="lego-section" class="section-header">Elite LEGO Market Tracker</h2>
-        <div id="lego-grid" class="grid-layout"></div>
-        <h2 id="diecast-section" class="section-header">Premium Diecast</h2>
-        <div id="diecast-grid" class="grid-layout"></div>
+        <h2 class="section-title">Elite Inventory</h2>
+        
+        <div id="inventory-display" class="grid">
+            <p style="letter-spacing: 2px;">Syncing with Market Data...</p>
+        </div>
     </div>
-    <div class="footer">© 2026 BLKHDZ LLC | VETERAN OWNED</div>
+
+    <footer>
+        <p>&copy; 2026 BLOCKHEADZ LLC. ALL RIGHTS RESERVED.</p>
+        <p><strong>Veteran Owned</strong></p>
+    </footer>
 
     <script>
-        async function loadInventory() {
-            try {
-                // Fetch LEGO - Using Cache Busting to ensure fresh data
-                const lRes = await fetch('data.json?v=' + Date.now());
-                const lData = await lRes.json();
-                const legoGrid = document.getElementById('lego-grid');
-                
-                if (lData.sets) {
-                    lData.sets.forEach(set => {
-                        const setNum = set.set_num.split('-')[0];
-                        const price = set.market_value || set.ebay_avg_price || 0;
-                        const links = {
-                            ebay: `https://www.ebay.com/sch/i.html?_nkw=LEGO+${setNum}+new+sealed&LH_Sold=1&LH_Complete=1`,
-                            amazon: `https://www.amazon.com/s?k=LEGO+${setNum}`,
-                            store: `https://www.ebay.com/str/blkhdz?_nkw=${setNum}`
-                        };
-                        legoGrid.innerHTML += createCard(set, price, links);
-                    });
-                }
-            } catch(e) { console.error("LEGO Load Error", e); }
-
-            try {
-                // Fetch Diecast
-                const dRes = await fetch('diecast.json?v=' + Date.now());
-                const dData = await dRes.json();
-                const diecastGrid = document.getElementById('diecast-grid');
-                
-                dData.forEach(item => {
-                    const price = item.market_value || item.ebay_avg_price || 0;
-                    const links = {
-                        ebay: item.ebay_link,
-                        amazon: "#",
-                        store: item.ebay_link
-                    };
-                    diecastGrid.innerHTML += createCard(item, price, links, true);
-                });
-            } catch(e) { console.error("Diecast Load Error", e); }
+        // Check if images are loading properly
+        function checkImages() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    console.error("BLKHDZ Error: Image not found at " + img.src);
+                    img.style.border = "1px solid red";
+                };
+            });
         }
 
-        function createCard(item, price, links, isDiecast = false) {
-            const ship = item.shipping_details ? `${item.shipping_details.weight_lbs} lbs | ${item.shipping_details.box_dimensions}` : 'Box Only Shipping';
-            
-            // Diecast only gets 2 buttons (eBay Data and Store)
-            const buttons = isDiecast ? `
-                <a href="${links.ebay}" target="_blank" class="shop-btn ebay-btn">Market Data</a>
-                <a href="${links.store}" target="_blank" class="shop-btn acquire-btn">Shop BLKHDZ</a>
-            ` : `
-                <a href="${links.ebay}" target="_blank" class="shop-btn ebay-btn">eBay Data</a>
-                <a href="${links.amazon}" target="_blank" class="shop-btn amazon-btn">Amazon</a>
-                <a href="${links.store}" target="_blank" class="shop-btn acquire-btn">Acquire from BLKHDZ</a>
-            `;
-
-            return `
-                <div class="card">
-                    <div class="img-box"><img src="${item.image_url}" alt="${item.name}" onerror="this.src='hero-parallax.jpg'"></div>
-                    <div class="info-box">
-                        <div class="set-name">${item.name}</div>
-                        <div class="market-price">$${Number(price).toFixed(2)}</div>
-                        <div class="ship-info">📦 ${ship}</div>
-                        <div class="btn-group">${buttons}</div>
-                    </div>
-                </div>`;
+        // Placeholder for loading your data.json
+        async function fetchMarketData() {
+            try {
+                const response = await fetch('./data.json');
+                if (!response.ok) throw new Error('Data Sync Offline');
+                const data = await response.json();
+                console.log("Market Data Successfully Ingested");
+            } catch (err) {
+                console.warn("Notice: data.json not found yet. Ready for Scraper Integration.");
+            }
         }
-        window.onload = loadInventory;
+
+        window.onload = () => {
+            checkImages();
+            fetchMarketData();
+        };
     </script>
+
 </body>
 </html>
