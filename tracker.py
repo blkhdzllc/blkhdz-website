@@ -11,7 +11,7 @@ MANUAL_PRICES = {
     "76232": 59.95,
     "60449": 49.95,
     "30726": 11.93, # Batman Polybag
-    "41619": 65.00  # Darth Vader
+    "41619": 42.95  # Darth Vader
 }
 
 # FULL INVENTORY LIST (10 ITEMS)
