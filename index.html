@@ -15,40 +15,39 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--primary-bg);
             color: var(--text-main);
             margin: 0;
             padding: 0;
         }
 
-        /* HERO SECTION RESTORED */
+        /* HERO SECTION WITH LOGO AND PARALLAX */
         .hero {
             position: relative;
-            height: 400px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('images/hero.jpg') no-repeat center center/cover;
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('images/hero-parallax.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-bottom: 3px solid var(--accent-teal);
+            border-bottom: 4px solid var(--accent-teal);
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--accent-green);
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            margin: 0;
-            text-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+        .hero img.main-logo {
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0, 128, 128, 0.5));
         }
 
         .hero p {
             font-size: 1.2rem;
             color: var(--text-main);
-            margin-top: 10px;
-            letter-spacing: 2px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0,0,0,1);
         }
 
         .container {
@@ -66,20 +65,19 @@
         .item-card {
             background-color: var(--card-bg);
             border: 1px solid #222;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: 0.3s ease;
         }
 
         .item-card:hover {
             border-color: var(--accent-teal);
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transform: translateY(-5px);
         }
 
         .item-card img {
             width: 100%;
-            height: 280px;
+            height: 300px;
             object-fit: cover;
         }
 
@@ -87,59 +85,44 @@
             padding: 20px;
         }
 
-        .card-body h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.1rem;
-            color: var(--text-main);
-            height: 2.4em; /* Keeps alignment uniform */
-            overflow: hidden;
-        }
-
         .price-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin: 15px 0;
         }
 
         .price {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            color: var(--text-main); /* Restored to White for professionalism */
+            color: #fff;
         }
 
         .shipping-box {
             background: #222;
-            padding: 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
             color: var(--text-dim);
-            border-left: 3px solid var(--accent-teal);
+            border-left: 4px solid var(--accent-teal);
         }
 
         .buy-btn {
             display: block;
             width: 100%;
-            padding: 12px;
-            background: transparent;
-            border: 2px solid var(--accent-teal);
-            color: var(--accent-teal);
+            padding: 14px;
+            background: var(--accent-teal);
+            color: white;
             text-align: center;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 4px;
+            border-radius: 6px;
             margin-top: 20px;
-            transition: 0.3s;
-        }
-
-        .buy-btn:hover {
-            background: var(--accent-teal);
-            color: white;
         }
 
         footer {
             background: #000;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             border-top: 1px solid #222;
         }
@@ -148,17 +131,16 @@
             color: var(--accent-green);
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 15px;
             display: block;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
 <section class="hero">
-    <h1>BLKHDZ</h1>
-    <p>VA-EXEMPT | PREMIUM COLLECTIBLES</p>
+    <img src="images/BLKHDZ.png" alt="BLKHDZ Logo" class="main-logo">
+    <p>Premium Collectibles & Logistics</p>
 </section>
 
 <div class="container">
@@ -168,25 +150,25 @@
 
 <footer>
     <p>&copy; 2026 BLKHDZ LLC</p>
-    <a href="https://www.ebay.com/str/blkhdz" target="_blank" style="color:var(--accent-teal); text-decoration:none;">Official eBay Store</a>
+    <a href="https://www.ebay.com/str/blkhdz" target="_blank" style="color:var(--accent-teal); text-decoration:none;">Visit eBay Store</a>
     <span class="vet-footer">Veteran Owned</span>
 </footer>
 
 <script>
     async function init() {
         try {
-            const res = await fetch('./data.json');
+            // Fetching with a cache-buster so your manual prices reflect instantly
+            const res = await fetch('./data.json?v=' + Date.now());
             const data = await res.json();
             const grid = document.getElementById('inventory-target');
             
-            // Loop through all sets (no limit)
             data.sets.forEach(set => {
                 const div = document.createElement('div');
                 div.className = 'item-card';
                 div.innerHTML = `
                     <img src="images/${set.set_num}.jpg" alt="${set.name}" onerror="this.src='images/placeholder.jpg'">
                     <div class="card-body">
-                        <h3>${set.name}</h3>
+                        <h3 style="margin:0; font-size:1.1rem; height:2.5em; overflow:hidden;">${set.name}</h3>
                         <div class="price-row">
                             <span class="price">$${set.market_value}</span>
                         </div>
@@ -194,7 +176,7 @@
                             <div><strong>Box:</strong> ${set.shipping_details.box_dimensions}</div>
                             <div><strong>Weight:</strong> ${set.shipping_details.weight_lbs} lbs</div>
                         </div>
-                        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="buy-btn">CHECK AVAILABILITY</a>
+                        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="buy-btn">VIEW ON EBAY</a>
                     </div>
                 `;
                 grid.appendChild(div);
