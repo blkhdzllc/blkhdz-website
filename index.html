@@ -13,24 +13,22 @@
         /* THE PARALLAX WRAPPER */
         .hero-wrapper {
             position: relative;
-            height: 95vh;
-            overflow: hidden; /* Clips the moving background */
-            border-bottom: 6px solid var(--blk-red);
+            height: 100vh; /* Full screen height for maximum impact */
+            overflow: hidden; 
+            border-bottom: 8px solid var(--blk-red);
         }
 
-        /* The actual moving background image */
         .hero-bg {
             position: absolute;
-            top: 0;
+            top: -10%; /* Start slightly higher to allow for slow downward drift */
             left: 0;
             width: 100%;
-            height: 120%; /* Extra height so it has room to "drift" */
+            height: 130%; 
             background: url('./images/hero-parallax.jpg') center/cover no-repeat;
             z-index: 1;
-            will-change: transform; /* Smooths out the animation */
+            will-change: transform;
         }
 
-        /* Hero Content Container */
         .hero-content { 
             position: relative;
             height: 100%;
@@ -41,31 +39,33 @@
             z-index: 10;
         }
 
+        /* MASSIVE LOGO SCALING */
         .hero-logo {
-            width: 450px; 
+            width: 650px; /* Scaled up from 450px */
+            max-width: 95%; /* Safe for mobile */
             height: auto;
-            margin-bottom: 40px;
-            filter: drop-shadow(4px 4px 10px rgba(0,0,0,0.8));
+            margin-bottom: 30px;
+            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.9));
         }
 
         .hero-text-box {
-            max-width: 800px;
-            border-left: 12px solid var(--blk-yellow); 
-            padding-left: 30px;
+            max-width: 850px;
+            border-left: 15px solid var(--blk-yellow); 
+            padding-left: 35px;
         }
 
         .legacy-title {
-            font-size: 4.5rem; 
-            line-height: 0.95;
+            font-size: 4.8rem; 
+            line-height: 0.9;
             color: #ffffff;
             text-transform: uppercase;
-            text-shadow: 4px 4px 15px rgba(40, 40, 40, 0.9), 0px 0px 25px rgba(0,0,0,1);
-            margin-bottom: 20px;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 1), 0px 0px 30px rgba(0,0,0,0.8);
+            margin-bottom: 25px;
         }
 
         .legacy-sub {
-            font-size: 1.2rem;
-            letter-spacing: 2px;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
             color: #bbbbbb; 
             text-transform: uppercase;
             text-shadow: 2px 2px 10px rgba(0,0,0,1);
@@ -73,14 +73,16 @@
 
         /* Navigation */
         .tabs { 
-            display: flex; justify-content: center; background: #0a0a0a; 
+            display: flex; justify-content: center; background: #080808; 
             border-bottom: 2px solid #222; position: sticky; top: 0; z-index: 100;
         }
         .tab-btn { 
-            padding: 30px 50px; border: none; background: none; color: #555; 
-            font-family: 'Archivo Black', sans-serif; cursor: pointer; transition: 0.3s; font-size: 1rem;
+            padding: 35px 60px; border: none; background: none; color: #444; 
+            font-family: 'Archivo Black', sans-serif; cursor: pointer; transition: 0.3s; font-size: 1.1rem;
+            letter-spacing: 2px;
         }
-        .tab-btn.active { color: var(--blk-red); border-bottom: 4px solid var(--blk-red); background: #000; }
+        .tab-btn:hover { color: #fff; background: #111; }
+        .tab-btn.active { color: var(--blk-red); border-bottom: 5px solid var(--blk-red); background: #000; }
 
         /* Inventory Layout */
         .container { max-width: 1400px; margin: 0 auto; padding: 60px 20px; position: relative; z-index: 10; background: var(--blk-bg); }
@@ -88,13 +90,13 @@
         .grid.active { display: grid; }
 
         .card { background: var(--blk-card); border: 1px solid #1a1a1a; transition: 0.3s; }
-        .card:hover { border-color: var(--blk-red); transform: translateY(-5px); }
-        .card-img { width: 100%; height: 300px; object-fit: cover; }
+        .card:hover { border-color: var(--blk-red); transform: translateY(-8px); }
+        .card-img { width: 100%; height: 320px; object-fit: cover; }
         
-        .market-val { font-size: 1.6rem; padding: 0 30px; margin: 15px 0; }
-        .shipping-info { background: #000; padding: 15px; font-family: sans-serif; font-size: 0.75rem; color: #888; border-top: 1px solid #222; }
+        .market-val { font-size: 1.8rem; padding: 0 30px; margin: 15px 0; color: #fff; }
+        .shipping-info { background: #000; padding: 18px; font-family: sans-serif; font-size: 0.8rem; color: #888; border-top: 1px solid #222; }
 
-        footer { text-align: center; padding: 100px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 5px; background: #000; position: relative; z-index: 10; }
+        footer { text-align: center; padding: 120px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 6px; background: #000; position: relative; z-index: 10; }
     </style>
 </head>
 <body>
@@ -104,6 +106,7 @@
         
         <div class="hero-content">
             <img src="./images/BLKHDZ.png" alt="BLKHDZ" class="hero-logo">
+            
             <div class="hero-text-box">
                 <div class="legacy-title">LEGACY ISN'T<br>BOUGHT.<br>IT'S BUILT.</div>
                 <div class="legacy-sub">Precision for those who see the details others miss.</div>
@@ -121,17 +124,16 @@
         <div id="lego-grid" class="grid active"></div>
         <div id="diecast-grid" class="grid"></div>
         <div id="tracker-grid" class="grid">
-            <p style="text-align: center; width: 100%; color: var(--blk-red);">UPLINKING DATASET...</p>
+            <p style="text-align: center; width: 100%; color: var(--blk-red); letter-spacing: 5px;">ESTABLISHING MARKET UPLINK...</p>
         </div>
     </div>
 
     <footer>
         &copy; 2026 BLOCKHEADZ LLC. ALL RIGHTS RESERVED.<br><br>
-        <strong>Veteran Owned</strong>
+        <strong>VETERAN OWNED</strong>
     </footer>
 
     <script>
-        // Tab Switcher
         function showTab(gridId, btn) {
             document.querySelectorAll('.grid').forEach(g => g.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -139,12 +141,11 @@
             btn.classList.add('active');
         }
 
-        // SLOW SCROLL PARALLAX LOGIC
+        // SLOW DRIFT PARALLAX
         window.addEventListener('scroll', function() {
             const parallax = document.getElementById('parallax-bg');
             let scrollPosition = window.pageYOffset;
-            // 0.3 means the background moves at 30% of the speed of the scroll
-            parallax.style.transform = 'translateY(' + (scrollPosition * 0.3) + 'px)';
+            parallax.style.transform = 'translateY(' + (scrollPosition * 0.25) + 'px)';
         });
 
         async function loadData() {
@@ -155,8 +156,8 @@
                     <div class="card">
                         <img src="./images/${set.set_num}.jpg" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
                         <div style="padding:30px;">
-                            <div style="color:var(--blk-red); font-size:0.7rem; margin-bottom:5px;">SET #${set.set_num}</div>
-                            <div style="font-size:1.1rem; min-height:50px;">${set.name}</div>
+                            <div style="color:var(--blk-red); font-size:0.75rem; margin-bottom:5px;">SET #${set.set_num}</div>
+                            <div style="font-size:1.2rem; min-height:50px; line-height:1.3;">${set.name}</div>
                             <div class="market-val">$${set.market_value}</div>
                         </div>
                         <div class="shipping-info">
@@ -164,7 +165,7 @@
                         </div>
                     </div>
                 `).join('');
-            } catch(e) { console.log("Syncing..."); }
+            } catch(e) { console.log("Sync in progress..."); }
         }
         window.onload = loadData;
     </script>
