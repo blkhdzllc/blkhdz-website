@@ -7,9 +7,9 @@
             "market_value": "84.95 - 425.00",
             "buy_link": "https://www.ebay.com/itm/116951073772?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": true,
-            "shipping_details": {
-                "weight_lbs": 3.2,
-                "box_dimensions": "14x10x6"
+            "shipping": {
+                "weight": 3.2,
+                "box": "14x10x6"
             }
         },
         {
@@ -18,9 +18,9 @@
             "market_value": "14.99 - 145.00",
             "buy_link": "https://www.ebay.com/itm/117037598121?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": true,
-            "shipping_details": {
-                "weight_lbs": 3.5,
-                "box_dimensions": "15x14x3"
+            "shipping": {
+                "weight": 3.5,
+                "box": "15x14x3"
             }
         },
         {
@@ -29,9 +29,9 @@
             "market_value": "56.00",
             "buy_link": "https://www.ebay.com/itm/117004206278?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 0.7,
-                "box_dimensions": "10x7x2"
+            "shipping": {
+                "weight": 0.7,
+                "box": "10x7x2"
             }
         },
         {
@@ -40,9 +40,9 @@
             "market_value": "104.85",
             "buy_link": "https://www.ebay.com/itm/117058462903?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 2.8,
-                "box_dimensions": "14x15x3"
+            "shipping": {
+                "weight": 2.8,
+                "box": "14x15x3"
             }
         },
         {
@@ -51,9 +51,9 @@
             "market_value": "28.54",
             "buy_link": "https://www.ebay.com/itm/116989698157?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 0.8,
-                "box_dimensions": "10x7x2"
+            "shipping": {
+                "weight": 0.8,
+                "box": "10x7x2"
             }
         },
         {
@@ -62,9 +62,9 @@
             "market_value": "64.95",
             "buy_link": "https://www.ebay.com/itm/117029953980?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 0.9,
-                "box_dimensions": "11x7x2"
+            "shipping": {
+                "weight": 0.9,
+                "box": "11x7x2"
             }
         },
         {
@@ -73,9 +73,9 @@
             "market_value": "49.99",
             "buy_link": "https://www.ebay.com/itm/117089969442?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 0.9,
-                "box_dimensions": "10x6x3"
+            "shipping": {
+                "weight": 0.9,
+                "box": "10x6x3"
             }
         },
         {
@@ -84,9 +84,9 @@
             "market_value": "69.95",
             "buy_link": "https://www.ebay.com/itm/117007504223?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 1.9,
-                "box_dimensions": "15x10x3"
+            "shipping": {
+                "weight": 1.9,
+                "box": "15x10x3"
             }
         },
         {
@@ -95,9 +95,9 @@
             "market_value": "59.95",
             "buy_link": "https://www.ebay.com/itm/117038961595?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 1.8,
-                "box_dimensions": "15x10x3"
+            "shipping": {
+                "weight": 1.8,
+                "box": "15x10x3"
             }
         },
         {
@@ -106,9 +106,9 @@
             "market_value": "49.95",
             "buy_link": "https://www.ebay.com/itm/117070479765?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 1.6,
-                "box_dimensions": "11x10x3"
+            "shipping": {
+                "weight": 1.6,
+                "box": "11x10x3"
             }
         },
         {
@@ -117,9 +117,9 @@
             "market_value": "11.93",
             "buy_link": "https://www.ebay.com/itm/117076682926?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 0.6,
-                "box_dimensions": "7x5x3"
+            "shipping": {
+                "weight": 0.6,
+                "box": "7x5x3"
             }
         },
         {
@@ -128,11 +128,94 @@
             "market_value": "42.95",
             "buy_link": "https://www.ebay.com/itm/116928952963?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
             "is_featured": false,
-            "shipping_details": {
-                "weight_lbs": 0.4,
-                "box_dimensions": "5x4x3"
+            "shipping": {
+                "weight": 0.4,
+                "box": "5x4x3"
             }
         }
     ],
-    "diecast": []
+    "diecast": [
+        {
+            "id": "MGT00773-C",
+            "name": "Mazda RX-7 LB-Super Silhouette #41 [CHASE BUNDLE]",
+            "img": "MGT00773.jpg",
+            "price": 95.0,
+            "status": "LIMITED CHASE BUNDLE",
+            "url": "https://www.ebay.com/itm/117098917766?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "featured": true
+        },
+        {
+            "id": "43SGT25016",
+            "name": "1/43 Spark Honda Civic Type R-GT #16 GT500 2025",
+            "img": "43SGT25016.jpg",
+            "price": 134.95,
+            "status": "PREMIUM 2025 RELEASE",
+            "url": "https://www.ebay.com/itm/117055371825?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "featured": true
+        },
+        {
+            "id": "MGT00773-R",
+            "name": "Mazda RX-7 LB-Super Silhouette #41 [Numero White]",
+            "img": "MGT00773.jpg",
+            "price": 14.99,
+            "status": "22 IN STOCK",
+            "url": "https://www.ebay.com/itm/117080910055?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"
+        },
+        {
+            "id": "PR640255",
+            "name": "Pop Race Mazda RX-7 FD3S RE Amemiya Gunmetal",
+            "img": "PR640255.jpg",
+            "price": 28.99,
+            "status": "POP RACE APPROVED",
+            "url": "https://www.ebay.com/itm/117078677592?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"
+        },
+        {
+            "id": "PR640212",
+            "name": "Pop Race Honda Civic EG6 Pandem Idemitsu",
+            "img": "PR640212.jpg",
+            "price": 26.99,
+            "status": "IN STOCK",
+            "url": "https://www.ebay.com/itm/117078703657?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"
+        },
+        {
+            "id": "MGT01046",
+            "name": "Mazda RX-7 FD3S RE Amemiya 20B Ama-San Go",
+            "img": "MGT01046.jpg",
+            "price": 14.99,
+            "status": "IN STOCK",
+            "url": "https://www.ebay.com/itm/117078628407?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"
+        },
+        {
+            "id": "MGT00716",
+            "name": "Cadillac V-Series.R #2 Le Mans 3rd Blue",
+            "img": "MGT00716.jpg",
+            "price": 16.99,
+            "status": "LIMITED EDITION",
+            "url": "https://www.ebay.com/itm/117081912634?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"
+        },
+        {
+            "id": "TSMV0027",
+            "name": "1/43 Mazda RX-7 LB Silhouette IMSA Liberty Walk",
+            "img": "TSMV0027.jpg",
+            "price": 32.0,
+            "status": "1/43 SCALE",
+            "url": "https://www.ebay.com/itm/117078591872?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"
+        },
+        {
+            "id": "T64-070-51",
+            "name": "Ferrari 488 GT3 Macau GT Cup #51",
+            "img": "T64-070-51.jpg",
+            "price": 24.95,
+            "status": "LOW STOCK",
+            "url": "https://www.ebay.com/itm/117056036936?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"
+        },
+        {
+            "id": "T64-062-04",
+            "name": "Mercedes-AMG GT3 #4 Nurburgring Team Bilstein",
+            "img": "T64-062-04.jpg",
+            "price": 22.95,
+            "status": "LAST ONE",
+            "url": "https://www.ebay.com/itm/117057905289?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1"
+        }
+    ]
 }
