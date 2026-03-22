@@ -6,8 +6,8 @@ LEGO_PRICES = {
     "76015": 64.95, "77247": 49.99, "76295": 69.95,
     "76232": 59.95, "60449": 49.95, "30726": 11.93,
     "41619": 42.95, 
-    "75274": "84.95 - 425.00", # Variation Range: TIE Pilot is top end
-    "31167": "14.99 - 145.00"  # Variation Range: Includes seasonal add-ons
+    "75274": "84.95 - 425.00", 
+    "31167": "14.99 - 145.00"
 }
 
 # --- 2. LEGO INVENTORY DATA ---
@@ -29,8 +29,8 @@ LEGO_INVENTORY = [
 # --- 3. DIECAST INVENTORY DATA ---
 DIECAST_INVENTORY = [
     {"id": "MGT00773-CHASE", "name": "Mazda RX-7 LB-Super Silhouette #41 [CHASE BUNDLE]", "img": "MGT00773.jpg", "price": 95.00, "status": "LIMITED CHASE BUNDLE", "featured": True},
+    {"id": "43SGT25016", "name": "1/43 Spark Honda Civic Type R-GT #16 GT500 2025 Otsu/Sato", "img": "43SGT25016.jpg", "price": 134.95, "status": "PREMIUM 2025 RELEASE", "featured": True},
     {"id": "MGT00773-REG", "name": "Mazda RX-7 LB-Super Silhouette #41 [Numero White]", "img": "MGT00773.jpg", "price": 14.99, "status": "22 IN STOCK"},
-    {"id": "43SGT25016", "name": "1/43 Spark Honda Civic Type R-GT #16 GT500 2025 Otsu/Sato", "img": "43SGT25016.jpg", "price": 85.00, "status": "2025 NEW RELEASE"},
     {"id": "PR640255", "name": "Pop Race Mazda RX-7 FD3S RE Amemiya Gunmetal/Carbon Spec", "img": "PR640255.jpg", "price": 28.99, "status": "POP RACE APPROVED"},
     {"id": "PR640212", "name": "Pop Race Honda Civic EG6 Pandem V1.5 Idemitsu Infinite", "img": "PR6400212.jpg", "price": 26.99, "status": "IN STOCK"},
     {"id": "MGT01046-R", "name": "Mazda RX-7 FD3S RE Amemiya 20B NA 3 Rotor-7 Ama-San Go", "img": "MGT01046-R.jpg", "price": 14.99, "status": "IN STOCK"},
@@ -42,7 +42,6 @@ DIECAST_INVENTORY = [
 
 # --- 4. DATA PROCESSING ---
 def run():
-    # Process Lego
     lego_final = []
     for item in LEGO_INVENTORY:
         price = LEGO_PRICES.get(item['id'], 0.00)
@@ -56,7 +55,6 @@ def run():
             "shipping": {"weight": item['weight'], "box": item['box']}
         })
 
-    # Output to data.json
     output = {
         "last_updated": datetime.datetime.now().strftime("%B %d, %Y"),
         "sets": lego_final,
@@ -65,7 +63,7 @@ def run():
     
     with open('data.json', 'w') as f:
         json.dump(output, f, indent=4)
-    print("Successfully updated data.json with LEGO and Diecast inventory.")
+    print("Successfully updated data.json.")
 
 if __name__ == "__main__":
     run()
