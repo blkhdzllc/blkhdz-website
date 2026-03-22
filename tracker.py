@@ -1,6 +1,6 @@
 import os, json, datetime
 
-# Your specific prices as of March 22, 2026
+# YOUR MANUAL PRICES - LOCKED IN
 MANUAL_PRICES = {
     "31020": 56.00,
     "71738": 104.85,
@@ -10,10 +10,11 @@ MANUAL_PRICES = {
     "76295": 69.95,
     "76232": 59.95,
     "60449": 49.95,
-    "30726": 11.93
+    "30726": 11.93, # Batman Polybag
+    "41619": 65.00  # Darth Vader
 }
 
-# Full inventory list with Box-specific shipping requirements
+# FULL INVENTORY LIST (10 ITEMS)
 LEGO_DATA_LIST = [
     {"id": "31020", "name": "LEGO Creator Twinblade Adventures", "weight": 0.7, "box": "10x7x2", "asin": "B00GSPF9PU"},
     {"id": "71738", "name": "Ninjago Zane's Titan Mech Battle", "weight": 2.8, "box": "14x15x3", "asin": "B08NF9YF5R"},
@@ -23,39 +24,39 @@ LEGO_DATA_LIST = [
     {"id": "76295", "name": "Marvel Avengers Helicarrier", "weight": 1.9, "box": "15x10x3", "asin": "B0CW9V1W1R"},
     {"id": "76232", "name": "The Marvels: Hoopty Spaceship", "weight": 1.8, "box": "15x10x3", "asin": "B0BXQ5Z9W7"},
     {"id": "60449", "name": "City Off-Road Police Car Chase", "weight": 1.6, "box": "11x10x3", "asin": "B0CW9V6K9F"},
-    {"id": "30726", "name": "Batman: Bruce Wayne and the Batsuit", "weight": 0.6, "box": "7x5x3", "asin": "B0CXBB9L9X"}
+    {"id": "30726", "name": "Batman: Bruce Wayne and the Batsuit", "weight": 0.6, "box": "7x5x3", "asin": "B0CXBB9L9X"},
+    {"id": "41619", "name": "Brickheadz Darth Vader", "weight": 0.4, "box": "5x4x3", "asin": "B07B52S53D"}
 ]
 
 def run():
-    print("Starting BLKHDZ Manual Price Sync...")
+    print("Generating BLKHDZ Inventory Data...")
     lego_final = []
     
     for item in LEGO_DATA_LIST:
         set_id = item['id']
-        final_price = MANUAL_PRICES.get(set_id, 0.00)
-        
-        print(f"Processing: {item['name']} -> ${final_price}")
+        # Pulling your manual prices directly
+        price = MANUAL_PRICES.get(set_id, 0.00)
         
         lego_final.append({
             "set_num": set_id, 
             "name": item['name'], 
-            "asin": item.get('asin', ""),
-            "market_value": round(final_price, 2),
+            "asin": item['asin'],
+            "market_value": round(price, 2),
             "shipping_details": {
-                "weight_lbs": item.get('weight'),
-                "box_dimensions": item.get('box')
+                "weight_lbs": item['weight'],
+                "box_dimensions": item['box']
             }
         })
 
     output = {
         "last_updated": datetime.datetime.now().strftime("%B %d, %Y"), 
         "sets": lego_final,
-        "diecast": [] 
+        "diecast": [] # Placeholder for your cars
     }
     
     with open('data.json', 'w') as f:
         json.dump(output, f, indent=4)
-    print(f"Sync Complete. {len(lego_final)} sets updated in data.json.")
+    print(f"Success! 10 sets updated in data.json with manual pricing.")
 
 if __name__ == "__main__":
     run()
