@@ -1,6 +1,6 @@
-import os, requests, json, time, re, urllib.parse, datetime
+import os, json, datetime
 
-# Your specific set numbers and the prices you provided
+# Your specific prices as of March 22, 2026
 MANUAL_PRICES = {
     "31020": 56.00,
     "71738": 104.85,
@@ -13,7 +13,7 @@ MANUAL_PRICES = {
     "30726": 11.93
 }
 
-# Full inventory list with verified shipping data
+# Full inventory list with Box-specific shipping requirements
 LEGO_DATA_LIST = [
     {"id": "31020", "name": "LEGO Creator Twinblade Adventures", "weight": 0.7, "box": "10x7x2", "asin": "B00GSPF9PU"},
     {"id": "71738", "name": "Ninjago Zane's Titan Mech Battle", "weight": 2.8, "box": "14x15x3", "asin": "B08NF9YF5R"},
@@ -23,7 +23,7 @@ LEGO_DATA_LIST = [
     {"id": "76295", "name": "Marvel Avengers Helicarrier", "weight": 1.9, "box": "15x10x3", "asin": "B0CW9V1W1R"},
     {"id": "76232", "name": "The Marvels: Hoopty Spaceship", "weight": 1.8, "box": "15x10x3", "asin": "B0BXQ5Z9W7"},
     {"id": "60449", "name": "City Off-Road Police Car Chase", "weight": 1.6, "box": "11x10x3", "asin": "B0CW9V6K9F"},
-    {"id": "30726", "name": "Batman: Bruce Wayne and the Batsuit", "weight": 0.1, "box": "7x7x1", "asin": "B0CXBB9L9X"}
+    {"id": "30726", "name": "Batman: Bruce Wayne and the Batsuit", "weight": 0.6, "box": "7x5x3", "asin": "B0CXBB9L9X"}
 ]
 
 def run():
@@ -32,7 +32,6 @@ def run():
     
     for item in LEGO_DATA_LIST:
         set_id = item['id']
-        # Use the manual price provided, or default to 0.00 if missing
         final_price = MANUAL_PRICES.get(set_id, 0.00)
         
         print(f"Processing: {item['name']} -> ${final_price}")
@@ -48,7 +47,6 @@ def run():
             }
         })
 
-    # Prepare final JSON structure
     output = {
         "last_updated": datetime.datetime.now().strftime("%B %d, %Y"), 
         "sets": lego_final,
