@@ -10,29 +10,28 @@
         
         body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Archivo Black', sans-serif; overflow-x: hidden; }
 
-        /* DEEP SPACE WRAPPER - Black Canvas */
+        /* THE PARALLAX STAGE */
         .hero-wrapper {
             position: relative;
             height: 100vh;
             overflow: hidden; 
             border-bottom: 8px solid var(--blk-red);
-            background-color: var(--blk-bg); /* Pure black stage */
+            background-color: var(--blk-bg);
         }
 
-        /* MUCH SMALLER HERO IMAGE - Recessed into distance */
+        /* HERO IMAGE - Restored to large size but with room to move */
         .hero-bg {
             position: absolute;
-            top: 5%; /* Centered vertically within the 100vh */
-            right: -10%; /* Recessed right to provide void on the left */
-            width: 90%; /* Smaller width for recission */
-            height: 90%; /* Much smaller height to recoil from edges */
-            background: url('./images/hero-parallax.jpg') center/contain no-repeat; /* Contain ensures it doesn't stretch huge */
+            top: -10%;
+            left: 0;
+            width: 110%; /* Slightly wider than screen for parallax buffer */
+            height: 120%; 
+            background: url('./images/hero-parallax.jpg') center/cover no-repeat;
             z-index: 1;
             will-change: transform;
-            opacity: 0.9;
         }
 
-        /* Left-Aligned Floating Content */
+        /* TITAN CONTENT - Overlays the image */
         .hero-content { 
             position: relative;
             height: 100%;
@@ -43,37 +42,36 @@
             z-index: 10;
         }
 
-        /* Massive Logo Scaling */
+        /* THE TITAN LOGO */
         .hero-logo {
-            width: 650px; 
-            max-width: 95%; 
+            width: 850px; /* Massive scale increase */
+            max-width: 95vw; 
             height: auto;
-            margin-bottom: 30px;
-            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.9));
+            margin-bottom: 40px;
+            filter: drop-shadow(0px 15px 30px rgba(0,0,0,0.9));
         }
 
         .hero-text-box {
-            max-width: 850px;
-            border-left: 15px solid var(--blk-yellow); 
-            padding-left: 35px;
+            max-width: 900px;
+            border-left: 20px solid var(--blk-yellow); /* Heavier yellow bar */
+            padding-left: 40px;
         }
 
         .legacy-title {
-            font-size: 4.8rem; 
-            line-height: 0.9;
+            font-size: 5.5rem; /* Pushed from 4.8 to 5.5 */
+            line-height: 0.85;
             color: #ffffff;
             text-transform: uppercase;
-            text-shadow: 4px 4px 15px rgba(0, 0, 0, 1), 0px 0px 30px rgba(0,0,0,0.8);
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 1), 0px 0px 40px rgba(0,0,0,0.9);
             margin-bottom: 25px;
         }
 
-        /* Black Precision Wording */
         .legacy-sub {
-            font-size: 1.3rem;
-            letter-spacing: 3px;
-            color: #000000; /* Precision Black */
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            color: #000000; /* Precision Black as requested */
             text-transform: uppercase;
-            text-shadow: 1px 1px 5px rgba(255,255,255,0.2); /* Subtle edge highlight for readability */
+            text-shadow: 0.5px 0.5px 1px rgba(255,255,255,0.3); /* Barely-there highlight */
         }
 
         /* Navigation */
@@ -84,12 +82,10 @@
         .tab-btn { 
             padding: 35px 60px; border: none; background: none; color: #444; 
             font-family: 'Archivo Black', sans-serif; cursor: pointer; transition: 0.3s; font-size: 1.1rem;
-            letter-spacing: 2px;
         }
-        .tab-btn:hover { color: #fff; background: #111; }
         .tab-btn.active { color: var(--blk-red); border-bottom: 5px solid var(--blk-red); background: #000; }
 
-        /* Inventory Grid */
+        /* Inventory Layout */
         .container { max-width: 1400px; margin: 0 auto; padding: 60px 20px; position: relative; z-index: 10; background: var(--blk-bg); }
         .grid { display: none; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
         .grid.active { display: grid; }
@@ -146,12 +142,11 @@
             btn.classList.add('active');
         }
 
-        // SLOW DRIFT PARALLAX
+        // DYNAMIC DRIFT
         window.addEventListener('scroll', function() {
             const parallax = document.getElementById('parallax-bg');
             let scrollPosition = window.pageYOffset;
-            // Negative drift moves it slowly upwards for recession feel
-            parallax.style.transform = 'translateY(' + (scrollPosition * -0.15) + 'px)';
+            parallax.style.transform = 'translateY(' + (scrollPosition * 0.2) + 'px)';
         });
 
         async function loadData() {
@@ -171,7 +166,7 @@
                         </div>
                     </div>
                 `).join('');
-            } catch(e) { console.log("Waiting for data uplink..."); }
+            } catch(e) { console.log("Sync in progress..."); }
         }
         window.onload = loadData;
     </script>
