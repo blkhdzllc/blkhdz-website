@@ -30,6 +30,7 @@ LEGO_INVENTORY = [
 DIECAST_INVENTORY = [
     {"id": "MGT00773-CHASE", "name": "Mazda RX-7 LB-Super Silhouette #41 [CHASE BUNDLE]", "img": "MGT00773.jpg", "price": 95.00, "status": "LIMITED CHASE BUNDLE", "featured": True},
     {"id": "MGT00773-REG", "name": "Mazda RX-7 LB-Super Silhouette #41 [Numero White]", "img": "MGT00773.jpg", "price": 14.99, "status": "22 IN STOCK"},
+    {"id": "43SGT25016", "name": "1/43 Spark Honda Civic Type R-GT #16 GT500 2025 Otsu/Sato", "img": "43SGT25016.jpg", "price": 85.00, "status": "2025 NEW RELEASE"},
     {"id": "PR640255", "name": "Pop Race Mazda RX-7 FD3S RE Amemiya Gunmetal/Carbon Spec", "img": "PR640255.jpg", "price": 28.99, "status": "POP RACE APPROVED"},
     {"id": "PR640212", "name": "Pop Race Honda Civic EG6 Pandem V1.5 Idemitsu Infinite", "img": "PR6400212.jpg", "price": 26.99, "status": "IN STOCK"},
     {"id": "MGT01046-R", "name": "Mazda RX-7 FD3S RE Amemiya 20B NA 3 Rotor-7 Ama-San Go", "img": "MGT01046-R.jpg", "price": 14.99, "status": "IN STOCK"},
