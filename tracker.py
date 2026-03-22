@@ -1,59 +1,63 @@
 import os, requests, json, time, re, urllib.parse, datetime
 
-SCRAPE_API_TOKEN = os.getenv("SCRAPE_TOKEN")
+# Your specific set numbers and the prices you provided
+MANUAL_PRICES = {
+    "31020": 56.00,
+    "71738": 104.85,
+    "31144": 28.54,
+    "76015": 64.95,
+    "77247": 49.99,
+    "76295": 69.95,
+    "76232": 59.95,
+    "60449": 49.95,
+    "30726": 11.93
+}
 
-# Inventory with Weight (lbs) and Box Dimensions per your requirements
+# Full inventory list with verified shipping data
 LEGO_DATA_LIST = [
-    {"id": "75354-1", "name": "Coruscant Guard Gunship", "msrp": 139.99, "weight_lbs": 3.5, "box_size": "18x11x3"},
-    {"id": "75356-1", "name": "Executor Super Star Destroyer", "msrp": 69.99, "weight_lbs": 2.2, "box_size": "14x7x3"},
-    {"id": "76286-1", "name": "Guardians Milano", "msrp": 179.99, "weight_lbs": 4.1, "box_size": "19x14x3"},
-    {"id": "75389-1", "name": "The Dark Falcon", "msrp": 179.99, "weight_lbs": 4.5, "box_size": "22x15x4"},
-    {"id": "75337-1", "name": "AT-TE Walker", "msrp": 139.99, "weight_lbs": 3.8, "box_size": "19x14x3"},
-    {"id": "77244-1", "name": "Mercedes-AMG F1 W15 (2024)", "msrp": 26.99, "weight_lbs": 1.0, "box_size": "10x6x3"}
+    {"id": "31020", "name": "LEGO Creator Twinblade Adventures", "weight": 0.7, "box": "10x7x2", "asin": "B00GSPF9PU"},
+    {"id": "71738", "name": "Ninjago Zane's Titan Mech Battle", "weight": 2.8, "box": "14x15x3", "asin": "B08NF9YF5R"},
+    {"id": "31144", "name": "Creator 3-in-1 Exotic Pink Parrot", "weight": 0.8, "box": "10x7x2", "asin": "B0BBRYTCXG"},
+    {"id": "76015", "name": "Marvel Doc Ock Truck Heist", "weight": 0.9, "box": "11x7x2", "asin": "B00I3P7HRC"},
+    {"id": "77247", "name": "Speed Champions Kicks Sauber F1", "weight": 0.9, "box": "10x6x3", "asin": "B0CW9VRD3Y"},
+    {"id": "76295", "name": "Marvel Avengers Helicarrier", "weight": 1.9, "box": "15x10x3", "asin": "B0CW9V1W1R"},
+    {"id": "76232", "name": "The Marvels: Hoopty Spaceship", "weight": 1.8, "box": "15x10x3", "asin": "B0BXQ5Z9W7"},
+    {"id": "60449", "name": "City Off-Road Police Car Chase", "weight": 1.6, "box": "11x10x3", "asin": "B0CW9V6K9F"},
+    {"id": "30726", "name": "Batman: Bruce Wayne and the Batsuit", "weight": 0.1, "box": "7x7x1", "asin": "B0CXBB9L9X"}
 ]
 
-def get_market_price(set_id):
-    clean_id = set_id.split('-')[0]
-    query = f"LEGO {clean_id} new sealed"
-    target_url = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(query)}&LH_Sold=1&LH_Complete=1&LH_ItemCondition=1000"
-    api_url = f"https://api.scrape.do/?token={SCRAPE_API_TOKEN}&url={urllib.parse.quote(target_url)}"
-    
-    try:
-        r = requests.get(api_url, timeout=20)
-        prices = re.findall(r's-item__price.*?\$([\d,]+\.\d{2})', r.text)
-        if prices:
-            float_prices = sorted([float(p.replace(',', '')) for p in prices[:10]])
-            if len(float_prices) > 0:
-                n = len(float_prices)
-                # Median calculation
-                return float_prices[n//2] if n % 2 == 1 else (float_prices[n//2 - 1] + float_prices[n//2]) / 2
-    except: return None
-    return None
-
 def run():
-    print("Starting BLKHDZ Market Sync...")
+    print("Starting BLKHDZ Manual Price Sync...")
     lego_final = []
+    
     for item in LEGO_DATA_LIST:
-        market_val = get_market_price(item['id'])
-        final_price = market_val if market_val else item.get('msrp', 0.00)
-        set_num_only = item['id'].split('-')[0]
+        set_id = item['id']
+        # Use the manual price provided, or default to 0.00 if missing
+        final_price = MANUAL_PRICES.get(set_id, 0.00)
+        
+        print(f"Processing: {item['name']} -> ${final_price}")
+        
         lego_final.append({
-            "set_num": item['id'], 
+            "set_num": set_id, 
             "name": item['name'], 
-            "image_url": f"https://images.brickset.com/sets/images/{set_num_only}-1.jpg",
+            "asin": item.get('asin', ""),
             "market_value": round(final_price, 2),
             "shipping_details": {
-                "method": "Box Only",
-                "weight_lbs": item.get('weight_lbs'),
-                "box_dimensions": item.get('box_size')
+                "weight_lbs": item.get('weight'),
+                "box_dimensions": item.get('box')
             }
         })
-        time.sleep(1)
 
-    output = {"last_updated": datetime.datetime.now().strftime("%B %d, %Y"), "sets": lego_final}
+    # Prepare final JSON structure
+    output = {
+        "last_updated": datetime.datetime.now().strftime("%B %d, %Y"), 
+        "sets": lego_final,
+        "diecast": [] 
+    }
+    
     with open('data.json', 'w') as f:
         json.dump(output, f, indent=4)
-    print("Sync Complete.")
+    print(f"Sync Complete. {len(lego_final)} sets updated in data.json.")
 
 if __name__ == "__main__":
     run()
