@@ -1,83 +1,71 @@
 {
-  "sets": [
-    {
-      "set_num": "31020",
-      "name": "LEGO Creator Twinblade Adventures",
-      "asin": "B00GSPF9PU",
-      "market_value": "19.99",
-      "shipping_details": { "box_dimensions": "10x7x2", "weight_lbs": "0.7" }
-    },
-    {
-      "set_num": "71738",
-      "name": "Ninjago Zane's Titan Mech Battle",
-      "asin": "B08NF9YF5R",
-      "market_value": "64.99",
-      "shipping_details": { "box_dimensions": "14x15x3", "weight_lbs": "2.8" }
-    },
-    {
-      "set_num": "31144",
-      "name": "Creator 3-in-1 Exotic Pink Parrot",
-      "asin": "B0BBRYTCXG",
-      "market_value": "19.99",
-      "shipping_details": { "box_dimensions": "10x7x2", "weight_lbs": "0.8" }
-    },
-    {
-      "set_num": "77247",
-      "name": "Speed Champions Kicks Sauber F1",
-      "asin": "B0CW9VRD3Y",
-      "market_value": "26.99",
-      "shipping_details": { "box_dimensions": "10x6x3", "weight_lbs": "0.9" }
-    },
-    {
-      "set_num": "76295",
-      "name": "Marvel Avengers Helicarrier",
-      "asin": "B0CW9V1W1R",
-      "market_value": "79.99",
-      "shipping_details": { "box_dimensions": "15x10x3", "weight_lbs": "1.9" }
-    },
-    {
-      "set_num": "41619",
-      "name": "Brickheadz Darth Vader",
-      "asin": "B07B52S53D",
-      "market_value": "45.00",
-      "shipping_details": { "box_dimensions": "5x4x3", "weight_lbs": "0.4" }
-    }
-  ],
-  "diecast": [
-    {
-      "item_id": "TSMV0027",
-      "name": "TrueScale Mazda RX-7",
-      "asin": "B09X64P8L7",
-      "market_value": "25.00",
-      "shipping_details": { "box_dimensions": "6x4x2", "weight_lbs": "0.4" }
-    },
-    {
-      "item_id": "43SGT25016",
-      "name": "Spark Honda Civic",
-      "asin": "B0B9T5X298",
-      "market_value": "18.00",
-      "shipping_details": { "box_dimensions": "6x4x2", "weight_lbs": "0.4" }
-    },
-    {
-      "item_id": "MGT01046-R",
-      "name": "Mini GT Mazda RX-7",
-      "asin": "B0B9T5X298",
-      "market_value": "15.00",
-      "shipping_details": { "box_dimensions": "6x4x2", "weight_lbs": "0.4" }
-    },
-    {
-      "item_id": "T64-072-22MGP51",
-      "name": "Tarmac Ferrari 488",
-      "asin": "B0B9T5X298",
-      "market_value": "22.00",
-      "shipping_details": { "box_dimensions": "6x4x2", "weight_lbs": "0.4" }
-    },
-    {
-      "item_id": "T64-084-23NUR54",
-      "name": "Tarmac Porsche 911",
-      "asin": "B0B9T5X298",
-      "market_value": "22.00",
-      "shipping_details": { "box_dimensions": "6x4x2", "weight_lbs": "0.4" }
-    }
-  ]
+    "last_updated": "March 22, 2026",
+    "sets": [
+        {
+            "set_num": "75354-1",
+            "name": "Coruscant Guard Gunship",
+            "image_url": "https://images.brickset.com/sets/images/75354-1.jpg",
+            "market_value": 139.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 3.5,
+                "box_dimensions": "18x11x3"
+            }
+        },
+        {
+            "set_num": "75356-1",
+            "name": "Executor Super Star Destroyer",
+            "image_url": "https://images.brickset.com/sets/images/75356-1.jpg",
+            "market_value": 69.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 2.2,
+                "box_dimensions": "14x7x3"
+            }
+        },
+        {
+            "set_num": "76286-1",
+            "name": "Guardians Milano",
+            "image_url": "https://images.brickset.com/sets/images/76286-1.jpg",
+            "market_value": 179.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 4.1,
+                "box_dimensions": "19x14x3"
+            }
+        },
+        {
+            "set_num": "75389-1",
+            "name": "The Dark Falcon",
+            "image_url": "https://images.brickset.com/sets/images/75389-1.jpg",
+            "market_value": 179.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 4.5,
+                "box_dimensions": "22x15x4"
+            }
+        },
+        {
+            "set_num": "75337-1",
+            "name": "AT-TE Walker",
+            "image_url": "https://images.brickset.com/sets/images/75337-1.jpg",
+            "market_value": 139.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 3.8,
+                "box_dimensions": "19x14x3"
+            }
+        },
+        {
+            "set_num": "77244-1",
+            "name": "Mercedes-AMG F1 W15 (2024)",
+            "image_url": "https://images.brickset.com/sets/images/77244-1.jpg",
+            "market_value": 26.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 1.0,
+                "box_dimensions": "10x6x3"
+            }
+        }
+    ]
 }
