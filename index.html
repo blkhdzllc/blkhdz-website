@@ -3,201 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ | Official Inventory</title>
+    <title>BLKHDZ | LEGO & Diecast Inventory</title>
     <style>
         :root {
-            --primary-bg: #0a0a0a;
-            --card-bg: #161616;
+            --primary-bg: #121212;
+            --card-bg: #1e1e1e;
             --accent-teal: #008080;
             --accent-green: #39ff14;
-            --text-main: #ffffff;
-            --text-dim: #a0a0a0;
+            --text-main: #e0e0e0;
+            --text-dim: #b0b0b0;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--primary-bg);
             color: var(--text-main);
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
 
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            height: 450px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('images/hero-parallax.jpg') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 4px solid var(--accent-teal);
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--accent-teal);
+            margin-bottom: 40px;
         }
 
-        .hero img.main-logo {
-            max-width: 400px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-main);
-            letter-spacing: 5px;
+        header h1 {
+            color: var(--accent-green);
+            font-size: 2.5rem;
+            margin: 0;
             text-transform: uppercase;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 40px auto;
-            padding: 0 20px;
+            letter-spacing: 4px;
         }
 
         .inventory-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .item-card {
             background-color: var(--card-bg);
-            border: 1px solid #222;
             border-radius: 12px;
             overflow: hidden;
-            transition: 0.3s ease;
+            transition: transform 0.3s ease, border 0.3s ease;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
         }
 
         .item-card:hover {
-            border-color: var(--accent-teal);
             transform: translateY(-5px);
+            border-color: var(--accent-teal);
         }
 
         .item-card img {
             width: 100%;
-            height: 300px;
+            height: 250px;
             object-fit: cover;
+            background-color: #000;
         }
 
-        .card-body {
+        .card-content {
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .price-row {
+        .card-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .price-tag {
+            font-size: 1.5rem;
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .shipping-specs {
+            background: #2a2a2a;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 15px;
+        }
+
+        .shipping-specs div {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin: 15px 0;
+            margin-bottom: 4px;
         }
 
-        .price {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #fff;
-        }
-
-        .shipping-box {
-            background: #222;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: var(--text-dim);
-            border-left: 4px solid var(--accent-teal);
-        }
-
-        .buy-btn {
+        .buy-link {
             display: block;
-            width: 100%;
-            padding: 14px;
-            background: var(--accent-teal);
+            text-align: center;
+            background-color: var(--accent-teal);
             color: white;
-            text-align: center;
             text-decoration: none;
-            font-weight: bold;
+            padding: 12px;
             border-radius: 6px;
-            margin-top: 20px;
-        }
-
-        /* FOOTER & AFFILIATION */
-        footer {
-            background: #000;
-            padding: 50px 20px;
-            text-align: center;
-            border-top: 1px solid #222;
-        }
-
-        .affiliation-warning {
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-            line-height: 1.5;
-        }
-
-        .vet-footer {
-            color: var(--accent-teal); /* Teal as requested */
             font-weight: bold;
-            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .buy-link:hover {
+            background-color: #006666;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            border-top: 1px solid #333;
+            color: var(--text-dim);
+        }
+
+        .veteran-badge {
+            color: var(--accent-green);
+            font-weight: bold;
+            letter-spacing: 1px;
             display: block;
-            margin-top: 15px;
-            letter-spacing: 2px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-<section class="hero">
-    <img src="images/BLKHDZ.png" alt="BLKHDZ Logo" class="main-logo">
-    <p>Premium Collectibles & Logistics</p>
-</section>
+<header>
+    <h1>BLKHDZ INVENTORY</h1>
+    <p>Premium LEGO & Diecast Collectibles</p>
+</header>
 
-<div class="container">
-    <div class="inventory-grid" id="inventory-target">
-        </div>
-</div>
+<div class="inventory-grid" id="lego-container">
+    </div>
 
 <footer>
-    <div class="affiliation-warning">
-        LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site. 
-        BLKHDZ LLC is an independent reseller. All other trademarks are the property of their respective owners.
-    </div>
-    <p>&copy; 2026 BLKHDZ LLC</p>
-    <a href="https://www.ebay.com/str/blkhdz" target="_blank" style="color:var(--accent-teal); text-decoration:none;">Official Store</a>
-    <span class="vet-footer">Veteran Owned</span>
+    <p>&copy; 2026 BLKHDZ LLC. All Rights Reserved.</p>
+    <a href="https://www.ebay.com/str/blkhdz" style="color: var(--accent-teal);">Visit eBay Store</a>
+    <span class="veteran-badge">Veteran Owned</span>
 </footer>
 
 <script>
-    async function init() {
+    async function loadInventory() {
         try {
-            // Timestamp added to bypass cache and show your manual prices instantly
-            const res = await fetch('./data.json?t=' + Date.now());
-            const data = await res.json();
-            const grid = document.getElementById('inventory-target');
+            const response = await fetch('./data.json');
+            const data = await response.json();
+            const container = document.getElementById('lego-container');
             
+            // This ensures EVERY set in your data.json is displayed
             data.sets.forEach(set => {
-                const div = document.createElement('div');
-                div.className = 'item-card';
-                div.innerHTML = `
+                const card = document.createElement('div');
+                card.className = 'item-card';
+                
+                card.innerHTML = `
                     <img src="images/${set.set_num}.jpg" alt="${set.name}" onerror="this.src='images/placeholder.jpg'">
-                    <div class="card-body">
-                        <h3 style="margin:0; font-size:1.1rem; height:2.5em; overflow:hidden;">${set.name}</h3>
-                        <div class="price-row">
-                            <span class="price">$${set.market_value}</span>
+                    <div class="card-content">
+                        <h3>${set.name}</h3>
+                        <div class="price-tag">$${set.market_value}</div>
+                        <div class="shipping-specs">
+                            <div><span>Box:</span> <span>${set.shipping_details.box_dimensions}</span></div>
+                            <div><span>Weight:</span> <span>${set.shipping_details.weight_lbs} lbs</span></div>
                         </div>
-                        <div class="shipping-box">
-                            <div><strong>Box:</strong> ${set.shipping_details.box_dimensions}</div>
-                            <div><strong>Weight:</strong> ${set.shipping_details.weight_lbs} lbs</div>
-                        </div>
-                        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="buy-btn">BUY ON EBAY</a>
+                        <a href="https://www.ebay.com/str/blkhdz" target="_blank" class="buy-link">View Listing</a>
                     </div>
                 `;
-                grid.appendChild(div);
+                container.appendChild(card);
             });
-        } catch (e) {
-            console.error("Load failed", e);
+        } catch (error) {
+            console.error('Error loading inventory:', error);
         }
     }
-    init();
+
+    window.onload = loadInventory;
 </script>
 
 </body>
