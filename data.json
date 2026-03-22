@@ -2,68 +2,70 @@
     "last_updated": "March 22, 2026",
     "sets": [
         {
-            "set_num": "31020",
-            "name": "LEGO Creator Twinblade Adventures",
-            "asin": "B00GSPF9PU",
-            "market_value": 19.99,
-            "shipping_details": { "weight_lbs": 0.7, "box_dimensions": "10x7x2" }
+            "set_num": "75354-1",
+            "name": "Coruscant Guard Gunship",
+            "image_url": "https://images.brickset.com/sets/images/75354-1.jpg",
+            "market_value": 139.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 3.5,
+                "box_dimensions": "18x11x3"
+            }
         },
         {
-            "set_num": "71738",
-            "name": "Ninjago Zane's Titan Mech Battle",
-            "asin": "B08NF9YF5R",
-            "market_value": 64.99,
-            "shipping_details": { "weight_lbs": 2.8, "box_dimensions": "14x15x3" }
+            "set_num": "75356-1",
+            "name": "Executor Super Star Destroyer",
+            "image_url": "https://images.brickset.com/sets/images/75356-1.jpg",
+            "market_value": 69.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 2.2,
+                "box_dimensions": "14x7x3"
+            }
         },
         {
-            "set_num": "31144",
-            "name": "Creator 3-in-1 Exotic Pink Parrot",
-            "asin": "B0BBRYTCXG",
-            "market_value": 19.99,
-            "shipping_details": { "weight_lbs": 0.8, "box_dimensions": "10x7x2" }
+            "set_num": "76286-1",
+            "name": "Guardians Milano",
+            "image_url": "https://images.brickset.com/sets/images/76286-1.jpg",
+            "market_value": 179.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 4.1,
+                "box_dimensions": "19x14x3"
+            }
         },
         {
-            "set_num": "76015",
-            "name": "Marvel Doc Ock Truck Heist",
-            "asin": "B00I3P7HRC",
-            "market_value": 45.00,
-            "shipping_details": { "weight_lbs": 0.9, "box_dimensions": "11x7x2" }
+            "set_num": "75389-1",
+            "name": "The Dark Falcon",
+            "image_url": "https://images.brickset.com/sets/images/75389-1.jpg",
+            "market_value": 179.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 4.5,
+                "box_dimensions": "22x15x4"
+            }
         },
         {
-            "set_num": "77247",
-            "name": "Speed Champions Kicks Sauber F1",
-            "asin": "B0CW9VRD3Y",
+            "set_num": "75337-1",
+            "name": "AT-TE Walker",
+            "image_url": "https://images.brickset.com/sets/images/75337-1.jpg",
+            "market_value": 139.99,
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 3.8,
+                "box_dimensions": "19x14x3"
+            }
+        },
+        {
+            "set_num": "77244-1",
+            "name": "Mercedes-AMG F1 W15 (2024)",
+            "image_url": "https://images.brickset.com/sets/images/77244-1.jpg",
             "market_value": 26.99,
-            "shipping_details": { "weight_lbs": 0.9, "box_dimensions": "10x6x3" }
-        },
-        {
-            "set_num": "76295",
-            "name": "Marvel Avengers Helicarrier",
-            "asin": "B0CW9V1W1R",
-            "market_value": 79.99,
-            "shipping_details": { "weight_lbs": 1.9, "box_dimensions": "15x10x3" }
-        },
-        {
-            "set_num": "76232",
-            "name": "The Marvels: Hoopty Spaceship",
-            "asin": "B0BXQ5Z9W7",
-            "market_value": 89.99,
-            "shipping_details": { "weight_lbs": 1.8, "box_dimensions": "15x10x3" }
-        },
-        {
-            "set_num": "41619",
-            "name": "Brickheadz Darth Vader",
-            "asin": "B07B52S53D",
-            "market_value": 45.00,
-            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "5x4x3" }
-        },
-        {
-            "set_num": "60449",
-            "name": "City Off-Road Police Car Chase (Kohl's)",
-            "asin": "B0CW9V6K9F",
-            "market_value": 39.99,
-            "shipping_details": { "weight_lbs": 1.6, "box_dimensions": "11x10x3" }
+            "shipping_details": {
+                "method": "Box Only",
+                "weight_lbs": 1.0,
+                "box_dimensions": "10x6x3"
+            }
         }
-    ],
-    "diecast": []
+    ]
 }
