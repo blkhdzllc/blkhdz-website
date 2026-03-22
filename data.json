@@ -2,10 +2,33 @@
     "last_updated": "March 22, 2026",
     "sets": [
         {
+            "set_num": "75274",
+            "name": "Star Wars Helmet Collection (Variation)",
+            "market_value": "84.95 - 425.00",
+            "buy_link": "https://www.ebay.com/itm/116951073772?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": true,
+            "shipping_details": {
+                "weight_lbs": 3.2,
+                "box_dimensions": "14x10x6"
+            }
+        },
+        {
+            "set_num": "31167",
+            "name": "Haunted Mansion 3-in-1 Seasonal Bundle",
+            "market_value": "14.99 - 145.00",
+            "buy_link": "https://www.ebay.com/itm/117037598121?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": true,
+            "shipping_details": {
+                "weight_lbs": 3.5,
+                "box_dimensions": "15x14x3"
+            }
+        },
+        {
             "set_num": "31020",
             "name": "LEGO Creator Twinblade Adventures",
-            "market_value": 56.0,
+            "market_value": "56.00",
             "buy_link": "https://www.ebay.com/itm/117004206278?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 0.7,
                 "box_dimensions": "10x7x2"
@@ -14,8 +37,9 @@
         {
             "set_num": "71738",
             "name": "Ninjago Zane's Titan Mech Battle",
-            "market_value": 104.85,
+            "market_value": "104.85",
             "buy_link": "https://www.ebay.com/itm/117058462903?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 2.8,
                 "box_dimensions": "14x15x3"
@@ -24,8 +48,9 @@
         {
             "set_num": "31144",
             "name": "Creator 3-in-1 Exotic Pink Parrot",
-            "market_value": 28.54,
+            "market_value": "28.54",
             "buy_link": "https://www.ebay.com/itm/116989698157?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 0.8,
                 "box_dimensions": "10x7x2"
@@ -34,8 +59,9 @@
         {
             "set_num": "76015",
             "name": "Marvel Doc Ock Truck Heist",
-            "market_value": 64.95,
+            "market_value": "64.95",
             "buy_link": "https://www.ebay.com/itm/117029953980?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 0.9,
                 "box_dimensions": "11x7x2"
@@ -44,8 +70,9 @@
         {
             "set_num": "77247",
             "name": "Speed Champions Kicks Sauber F1",
-            "market_value": 49.99,
+            "market_value": "49.99",
             "buy_link": "https://www.ebay.com/itm/117089969442?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 0.9,
                 "box_dimensions": "10x6x3"
@@ -54,8 +81,9 @@
         {
             "set_num": "76295",
             "name": "Marvel Avengers Helicarrier",
-            "market_value": 69.95,
+            "market_value": "69.95",
             "buy_link": "https://www.ebay.com/itm/117007504223?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 1.9,
                 "box_dimensions": "15x10x3"
@@ -64,8 +92,9 @@
         {
             "set_num": "76232",
             "name": "The Marvels: Hoopty Spaceship",
-            "market_value": 59.95,
+            "market_value": "59.95",
             "buy_link": "https://www.ebay.com/itm/117038961595?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 1.8,
                 "box_dimensions": "15x10x3"
@@ -74,8 +103,9 @@
         {
             "set_num": "60449",
             "name": "City Off-Road Police Car Chase",
-            "market_value": 49.95,
+            "market_value": "49.95",
             "buy_link": "https://www.ebay.com/itm/117070479765?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 1.6,
                 "box_dimensions": "11x10x3"
@@ -84,8 +114,9 @@
         {
             "set_num": "30726",
             "name": "Batman: Bruce Wayne and the Batsuit",
-            "market_value": 11.93,
+            "market_value": "11.93",
             "buy_link": "https://www.ebay.com/itm/117076682926?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 0.6,
                 "box_dimensions": "7x5x3"
@@ -94,8 +125,9 @@
         {
             "set_num": "41619",
             "name": "Brickheadz Darth Vader",
-            "market_value": 42.95,
+            "market_value": "42.95",
             "buy_link": "https://www.ebay.com/itm/116928952963?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339141674&toolid=10001&mkevt=1",
+            "is_featured": false,
             "shipping_details": {
                 "weight_lbs": 0.4,
                 "box_dimensions": "5x4x3"
