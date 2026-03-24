@@ -1,10 +1,4045 @@
 {
-    "errors": [
+    "warnings": [
         {
-            "errorId": 12001,
+            "errorId": 12003,
             "domain": "API_BROWSE",
             "category": "REQUEST",
-            "message": "The call must have a valid 'q', 'category_ids', 'charity_ids', 'epid' or 'gtin' query parameter."
+            "message": "A seller 'username' provided in the request filters is invalid."
+        }
+    ],
+    "href": "https://api.ebay.com/buy/browse/v1/item_summary/search?limit=50&filter=sellers%3A%7Bblkhdz%7D&offset=0",
+    "total": 31171495,
+    "next": "https://api.ebay.com/buy/browse/v1/item_summary/search?limit=50&filter=sellers%3A%7Bblkhdz%7D&offset=50",
+    "limit": 50,
+    "offset": 0,
+    "itemSummaries": [
+        {
+            "itemId": "v1|326967503391|515885360676",
+            "title": "2026 Mcdonalds Changeables Happy Meal Toy  Brand New 1-16 Single Or Set With Box",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=326967503391",
+            "leafCategoryIds": [
+                "767"
+            ],
+            "categories": [
+                {
+                    "categoryId": "767",
+                    "categoryName": "Fast Food"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "19077",
+                    "categoryName": "Fast Food & Cereal Premiums"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/NDsAAeSwJbJpeMBP/s-l225.jpg"
+            },
+            "price": {
+                "value": "5.98",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C326967503391%7C515885360676",
+            "seller": {
+                "username": "molls001",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 10958
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/NDsAAeSwJbJpeMBP/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "2.98",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/326967503391?_skw=+&hash=item4c20c82a1f:g:NDsAAeSwJbJpeMBP",
+            "itemLocation": {
+                "postalCode": "230**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/1swAAeSwGR1pcolS/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "326967503391",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-23T15:27:10.000Z",
+            "itemCreationDate": "2026-01-23T15:27:10.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|155431634664|455633884041",
+            "title": "Patient Horse Rotating Pole Tie Out",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=155431634664",
+            "leafCategoryIds": [
+                "301"
+            ],
+            "categories": [
+                {
+                    "categoryId": "301",
+                    "categoryName": "Other Pet Supplies"
+                },
+                {
+                    "categoryId": "1281",
+                    "categoryName": "Pet Supplies"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/RLUAAOSwGJJj~jN0/s-l225.jpg"
+            },
+            "price": {
+                "value": "210.00",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C155431634664%7C455633884041",
+            "seller": {
+                "username": "bantoz",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 125
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RLUAAOSwGJJj~jN0/s-l1600.jpg"
+                }
+            ],
+            "pickupOptions": [
+                {
+                    "pickupLocationType": "ARRANGED_LOCATION"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/155431634664?_skw=+&hash=item24307286e8:g:RLUAAOSwGJJj~jN0&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYV33tNGtnjPQE14X2OAAnIknEXJna%2Ba220D2G%2B6L4PHT2CDSe0hhNQNUYVuFzTWTXB49KpIZG%2BQIexh6TwsqgE6YJboCSM0T%2F%2BLjR07TKXLLdSHlNnwg0pGpGFqdkbN9CvRbeWzWlR7T5aUxbf%2BGaAFYvUkrluTsJOxqYyQWoFjWwqDiiSHXeCkUw%2BiP52LRSANMu0UKVKlHfXsS%2FduDVdktQ1VJyBaYthsflKJnafQ8Jd%2BsbwAYtOioU%2FtugkF9Vqj0rFUNeuFXj0lnahIl2q",
+            "itemLocation": {
+                "postalCode": "604**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ecYAAOSwtJ5j~jN0/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/LMsAAOSwLGBj~jNz/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "155431634664",
+            "availableCoupons": false,
+            "itemOriginDate": "2023-02-28T17:14:46.000Z",
+            "itemCreationDate": "2023-02-28T17:15:46.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|377050821588|0",
+            "title": "Harris RPM14 Porgramming Software for Windows and Mac easy use sent via email CA",
+            "leafCategoryIds": [
+                "182"
+            ],
+            "categories": [
+                {
+                    "categoryId": "182",
+                    "categoryName": "Other Computer Software"
+                },
+                {
+                    "categoryId": "18793",
+                    "categoryName": "Software"
+                },
+                {
+                    "categoryId": "58058",
+                    "categoryName": "Computers/Tablets & Networking"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/VsUAAeSwVxhpvfuX/s-l225.jpg"
+            },
+            "price": {
+                "value": "75.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C377050821588%7C0",
+            "seller": {
+                "username": "motorola_seller272",
+                "feedbackPercentage": "83.3",
+                "feedbackScore": 8
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/VsUAAeSwVxhpvfuX/s-l1600.jpg"
+                }
+            ],
+            "pickupOptions": [
+                {
+                    "pickupLocationType": "ARRANGED_LOCATION"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE",
+                "BEST_OFFER"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/377050821588?_skw=+&hash=item57c9faf3d4:g:VsUAAeSwVxhpvfuX&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGam6VFeSKC1mZa09Bmk0tiq9cQCIHbI9mHk4IJW6VIZpXIpsCOT5iiFeL5f5BrkB7UVluXFhxN326zQnc%2FewGNxyEMj%2FQ3e3BjQiqYewLXk4TY6x7HtLy3v0REYI6j5irRrYzVnrhkzTD0gvHkxyFjsCcNiRCgyuoiPy9KioDS6PSYDSuhpP9c83VXYCJ1GA93DUoECTP%2FCavYHLLU7djqJvhBYfWO6hieCfvw1uSO4gXnFaz9zfFHls6fjvl%2Bc87smg1Ij2gqkReqLndTzIfVI",
+            "itemLocation": {
+                "postalCode": "925**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "377050821588",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-21T02:03:33.000Z",
+            "itemCreationDate": "2026-03-21T02:03:33.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|406741216861|0",
+            "title": "New Eau de Parfum 3.3oz/ 100ml Tester Sealed / Aventus",
+            "leafCategoryIds": [
+                "602"
+            ],
+            "categories": [
+                {
+                    "categoryId": "602",
+                    "categoryName": "Other Perfume Collectibles"
+                },
+                {
+                    "categoryId": "1",
+                    "categoryName": "Collectibles"
+                },
+                {
+                    "categoryId": "597",
+                    "categoryName": "Vanity, Perfume & Shaving"
+                },
+                {
+                    "categoryId": "35982",
+                    "categoryName": "Perfumes"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/eIkAAeSwfJZpqmTQ/s-l225.jpg"
+            },
+            "price": {
+                "value": "113.98",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C406741216861%7C0",
+            "seller": {
+                "username": "amje_7148",
+                "feedbackPercentage": "98.7",
+                "feedbackScore": 541
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/eIkAAeSwfJZpqmTQ/s-l640.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE",
+                "BEST_OFFER"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/406741216861?_skw=+&hash=item5eb3aa6e5d:g:eIkAAeSwfJZpqmTQ&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaQOTucPz5AqQlsuj1Budaqu6ksDhNPQy3SqwFbZerfZX7e5rrJSn6CWbwuxj8Nkq1hENi2n5Io6jyrhM96QMsqAt8%2Bc8SsO7BTqLWzlSD%2FTEimMKZBgSmX2uCGUlrnZYJUmXYr2uEHbPAPe3%2B7HQBNApV881oyQDHh6gzKo9n731Uyu8K0mWAqx2sTYe2YYj2Kxml0tlv2f8z0J9pNCwI6syB8lWRFsbU%2Fvrk4fvQersJjOxrVvJiin6zQKrWvibhPMD84qNvcM1zfp%2BFiU%2BJp",
+            "itemLocation": {
+                "postalCode": "243**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/67QAAeSwlD9pqmTQ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/NiMAAeSwW15pqmTR/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "406741216861",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-06T05:26:37.000Z",
+            "itemCreationDate": "2026-03-06T05:26:37.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|168228849985|467785927347",
+            "title": "Tokuten Sneakers Classic Retro Low Top Unisex Running Shoes 36-45 US Size",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=168228849985",
+            "leafCategoryIds": [
+                "312"
+            ],
+            "categories": [
+                {
+                    "categoryId": "312",
+                    "categoryName": "Other Clothing, Shoes & Accessories"
+                },
+                {
+                    "categoryId": "11450",
+                    "categoryName": "Clothing, Shoes & Accessories"
+                },
+                {
+                    "categoryId": "260033",
+                    "categoryName": "Specialty"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/MWEAAeSwhnhpc1Dt/s-l225.jpg"
+            },
+            "price": {
+                "value": "47.97",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C168228849985%7C467785927347",
+            "seller": {
+                "username": "guangzhouchengchenq0",
+                "feedbackPercentage": "90.9",
+                "feedbackScore": 9
+            },
+            "condition": "New without tags",
+            "conditionId": "1500",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/MWEAAeSwhnhpc1Dt/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "19.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-17T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-04T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/168228849985?_skw=+&hash=item272b388941:g:MWEAAeSwhnhpc1Dt",
+            "itemLocation": {
+                "country": "CN"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/-5sAAeSw4A9pZGj7/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "168228849985",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-13T05:23:01.000Z",
+            "itemCreationDate": "2026-03-13T05:23:01.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|366202072962|0",
+            "title": "(3 x 300 per box) 900 Total! Large Kitchen Diamond Strike Anywhere Matches NEW!!",
+            "leafCategoryIds": [
+                "477"
+            ],
+            "categories": [
+                {
+                    "categoryId": "477",
+                    "categoryName": "Other Collectible Matchbooks"
+                },
+                {
+                    "categoryId": "1",
+                    "categoryName": "Collectibles"
+                },
+                {
+                    "categoryId": "124",
+                    "categoryName": "Paper"
+                },
+                {
+                    "categoryId": "156496",
+                    "categoryName": "Matchbooks"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/vVQAAeSwl8VpkQrT/s-l225.jpg"
+            },
+            "price": {
+                "value": "17.50",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C366202072962%7C0",
+            "seller": {
+                "username": "aureviadeals",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 23
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/vVQAAeSwl8VpkQrT/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/366202072962?_skw=+&hash=item5543582f82:g:vVQAAeSwl8VpkQrT",
+            "itemLocation": {
+                "postalCode": "774**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/W~UAAeSwgeJpkQrd/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/O-IAAeSw8s5pkQrd/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/W5gAAeSwezhput8-/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/lWUAAeSw6YBpuwUc/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/j1cAAeSwO~JpuwUc/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "366202072962",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-02-14T23:54:23.000Z",
+            "itemCreationDate": "2026-02-14T23:54:23.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|196643513403|496539013728",
+            "title": "Battletech - Large Selection of Individual Vehicles [Mercenaries Kickstarter]",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=196643513403",
+            "leafCategoryIds": [
+                "234"
+            ],
+            "categories": [
+                {
+                    "categoryId": "234",
+                    "categoryName": "Other Games"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "233",
+                    "categoryName": "Games"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/rH0AAOSw45Fm6OBy/s-l225.jpg"
+            },
+            "price": {
+                "value": "8.00",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C196643513403%7C496539013728",
+            "seller": {
+                "username": "frogrodeo",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 5196
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/rH0AAOSw45Fm6OBy/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "4.75",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/196643513403?_skw=+&hash=item2dc8dde43b:g:rH0AAOSw45Fm6OBy",
+            "itemLocation": {
+                "postalCode": "551**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/5eMAAOSwOqZm6OB2/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/PMkAAOSw4P5m6OB6/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/S4wAAOSwnhBm6OB8/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0z0AAOSwbvhm6OB~/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/CmAAAOSwUPlm6OCC/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/WP4AAOSwo4Bm6OCF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/CmQAAOSwkwBm6OCH/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/t4UAAOSw8S9m6OCJ/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "196643513403",
+            "availableCoupons": false,
+            "itemOriginDate": "2024-09-17T02:45:22.000Z",
+            "itemCreationDate": "2024-09-17T02:45:22.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|314778804720|613315237794",
+            "title": "GARBAGE PAIL KIDS ORIGINAL SERIES OS1-OS15 CARD STORAGE BINDERS PICK YOUR BINDER",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=314778804720",
+            "leafCategoryIds": [
+                "219"
+            ],
+            "categories": [
+                {
+                    "categoryId": "219",
+                    "categoryName": "Other Non-Sport Trading Card Merchandise"
+                },
+                {
+                    "categoryId": "1",
+                    "categoryName": "Collectibles"
+                },
+                {
+                    "categoryId": "182982",
+                    "categoryName": "Non-Sport Trading Cards"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/ggMAAOSwRv5k4MuS/s-l225.jpg"
+            },
+            "price": {
+                "value": "335.00",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C314778804720%7C613315237794",
+            "seller": {
+                "username": "coastal_breeze_collectibles",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 2785
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ggMAAOSwRv5k4MuS/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "7.71",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-01T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/314778804720?_skw=+&hash=item494a4761f0:g:ggMAAOSwRv5k4MuS",
+            "itemLocation": {
+                "postalCode": "921**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/9loAAOSwAOxk3vso/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/EMQAAOSw1Tdk4M8B/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/hCgAAOSwVz1k3vsp/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "314778804720",
+            "availableCoupons": false,
+            "itemOriginDate": "2023-08-18T05:33:13.000Z",
+            "itemCreationDate": "2023-08-18T05:33:13.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|306794399880|0",
+            "title": "Tungsten Alloy H1, H2, H3 Weights, 3-Pack,~1.37 OZ EA,~4.11 OZ (~117 gr) Total",
+            "leafCategoryIds": [
+                "310"
+            ],
+            "categories": [
+                {
+                    "categoryId": "310",
+                    "categoryName": "Other Sporting Goods"
+                },
+                {
+                    "categoryId": "888",
+                    "categoryName": "Sporting Goods"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/QNwAAeSw3FxpthuH/s-l225.jpg"
+            },
+            "price": {
+                "value": "49.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C306794399880%7C0",
+            "seller": {
+                "username": "wolframprecision",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 748
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/QNwAAeSw3FxpthuH/s-l640.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/306794399880?_skw=+&hash=item476e5f0888:g:QNwAAeSw3FxpthuH",
+            "itemLocation": {
+                "postalCode": "321**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/tp0AAeSw6IJpthuH/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/escAAeSwz6BpthuH/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~gMAAOSw7-VoAmHj/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "306794399880",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-02-28T01:00:29.000Z",
+            "itemCreationDate": "2026-02-28T01:00:29.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|374938638924|644040321956",
+            "title": "Disney Trading Pins - You Pick Size Up to 500 Pins With No Duplicates",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=374938638924",
+            "leafCategoryIds": [
+                "143"
+            ],
+            "categories": [
+                {
+                    "categoryId": "143",
+                    "categoryName": "Other Disney Pins & Patches"
+                },
+                {
+                    "categoryId": "1",
+                    "categoryName": "Collectibles"
+                },
+                {
+                    "categoryId": "137",
+                    "categoryName": "Disneyana"
+                },
+                {
+                    "categoryId": "1369",
+                    "categoryName": "Contemporary (1968-Now)"
+                },
+                {
+                    "categoryId": "38004",
+                    "categoryName": "Pins, Patches & Buttons"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/L5QAAOSws7dlCOyX/s-l225.jpg"
+            },
+            "price": {
+                "value": "299.00",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C374938638924%7C644040321956",
+            "seller": {
+                "username": "pins-n-thingz",
+                "feedbackPercentage": "99.7",
+                "feedbackScore": 1162
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/L5QAAOSws7dlCOyX/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/374938638924?_skw=+&hash=item574c159a4c:g:L5QAAOSws7dlCOyX",
+            "itemLocation": {
+                "postalCode": "077**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TBkAAOSwT6RlCOyY/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/UaQAAOSwQ9tlCOya/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "374938638924",
+            "availableCoupons": false,
+            "itemOriginDate": "2023-09-19T00:46:47.000Z",
+            "itemCreationDate": "2023-09-19T00:46:47.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117105780157|0",
+            "title": "Ana Anastasia Inciardi Mini Print - New - The Clark - Now Showing - Now Playing",
+            "leafCategoryIds": [
+                "360"
+            ],
+            "categories": [
+                {
+                    "categoryId": "360",
+                    "categoryName": "Art Prints"
+                },
+                {
+                    "categoryId": "550",
+                    "categoryName": "Art"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/wrIAAeSwcalpwo7v/s-l225.jpg"
+            },
+            "price": {
+                "value": "68.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117105780157%7C0",
+            "seller": {
+                "username": "heartgate",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 590
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/wrIAAeSwcalpwo7v/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-01T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE",
+                "BEST_OFFER"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/117105780157?_skw=+&hash=item1b440c65bd:g:wrIAAeSwcalpwo7v",
+            "itemLocation": {
+                "postalCode": "112**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "117105780157",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-24T13:18:12.000Z",
+            "itemCreationDate": "2026-03-24T13:18:12.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|306754297309|606646538784",
+            "title": "2-in-1 pick lishi tool",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=306754297309",
+            "leafCategoryIds": [
+                "303"
+            ],
+            "categories": [
+                {
+                    "categoryId": "303",
+                    "categoryName": "Other Hand Tools"
+                },
+                {
+                    "categoryId": "631",
+                    "categoryName": "Tools & Workshop Equipment"
+                },
+                {
+                    "categoryId": "3244",
+                    "categoryName": "Hand Tools"
+                },
+                {
+                    "categoryId": "11700",
+                    "categoryName": "Home & Garden"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/tC4AAeSwExpphL9R/s-l225.jpg"
+            },
+            "price": {
+                "value": "129.99",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C306754297309%7C606646538784",
+            "seller": {
+                "username": "model-center",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 82
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/tC4AAeSwExpphL9R/s-l960.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "3.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-13T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-17T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/306754297309?_skw=+&hash=item476bfb1ddd:g:tC4AAeSwExpphL9R",
+            "itemLocation": {
+                "country": "CN"
+            },
+            "adultOnly": false,
+            "legacyItemId": "306754297309",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-02-06T16:12:37.000Z",
+            "itemCreationDate": "2026-02-06T16:12:37.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|377052905626|645540430576",
+            "title": "Sirius Dungeons & Dragons Ravenloft Treasure Pack Individual Dice Coins Bags D&D",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=377052905626",
+            "leafCategoryIds": [
+                "234"
+            ],
+            "categories": [
+                {
+                    "categoryId": "234",
+                    "categoryName": "Other Games"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "233",
+                    "categoryName": "Games"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/AbUAAeSwcIRpvedu/s-l225.jpg"
+            },
+            "price": {
+                "value": "5.00",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C377052905626%7C645540430576",
+            "seller": {
+                "username": "jessta_29",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 1398
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/AbUAAeSwcIRpvedu/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/377052905626?_skw=+&hash=item57ca1ac09a:g:AbUAAeSwcIRpvedu",
+            "itemLocation": {
+                "postalCode": "975**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "377052905626",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-21T21:57:31.000Z",
+            "itemCreationDate": "2026-03-21T21:57:31.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|297885653096|0",
+            "title": "11 Boxes YNBY Capsules for Pets - (Each Box has 16 Capsules plus one Red Pill)",
+            "leafCategoryIds": [
+                "301"
+            ],
+            "categories": [
+                {
+                    "categoryId": "301",
+                    "categoryName": "Other Pet Supplies"
+                },
+                {
+                    "categoryId": "1281",
+                    "categoryName": "Pet Supplies"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/EykAAeSw0kBpUXk5/s-l225.jpg"
+            },
+            "price": {
+                "value": "79.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C297885653096%7C0",
+            "seller": {
+                "username": "roots-4933",
+                "feedbackPercentage": "97.5",
+                "feedbackScore": 319
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/EykAAeSw0kBpUXk5/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/297885653096?_skw=+&hash=item455b5e5868:g:EykAAeSw0kBpUXk5&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbNWAeRf1birQYTkvkbL7HwJotgx%2BKTppBq1YjOpf0NSbFAe6MCuak8hjmSG%2B23%2FWClw9hhuDQoM%2B7cAZ3kXpWw5A3vvPVPownQ4zxPeEYj8MGtHv%2B2DAqLPTTvEZiICTM42cuCAahfp14%2FiLz9AE1i3b61cB98lhGuenKc5OUfN8s2PUon3DnLBrZSSQFgwj0JcYTUSqmUcFa9pOd5%2FsEAMnUhoBCw96lK0ywwI1fQF2aWFUmKOE9EzVoJA6%2BSlt8cMsgY0OPZ6P3fkbGeWpUW",
+            "itemLocation": {
+                "postalCode": "762**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/OnIAAeSwv89pHgLf/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/NWUAAeSwNOFpHgLf/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Nv8AAeSwwaJpHgLf/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "297885653096",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-12-28T18:39:33.000Z",
+            "itemCreationDate": "2025-12-28T18:39:33.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|376805807766|0",
+            "title": "Shorty Exhaust Headers For 2009\u20132018 Dodge Ram 1500 Pickup HEMI V8 5.7L",
+            "leafCategoryIds": [
+                "12"
+            ],
+            "categories": [
+                {
+                    "categoryId": "12",
+                    "categoryName": "Other Antiques"
+                },
+                {
+                    "categoryId": "20081",
+                    "categoryName": "Antiques"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/B4QAAeSwEutpTb5~/s-l225.jpg"
+            },
+            "price": {
+                "value": "179.97",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C376805807766%7C0",
+            "seller": {
+                "username": "fun-motors",
+                "feedbackPercentage": "97.2",
+                "feedbackScore": 306
+            },
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/B4QAAeSwEutpTb5~/s-l640.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/376805807766?_skw=+&hash=item57bb605696:g:B4QAAeSwEutpTb5~&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZQlFMTk%2F1rdt%2Fc7pkcr43OLrlKUfvmUpvNzGk0GtSYFARXz4%2BksvanHHMH6hH3ffDTLY2kV2OLR82rjlzEddZj9thJhiKHcuRChauo8AvzS%2BU%2BsddT4wrxwdqdJ1j673iN9l7VEMxgWCcDJoBKqiZ59M5KI1dmTKFbbonYJVk%2BDJzFbpGNLUxaybLAIRdoD%2BZ1GDYM6rgzish1dXYo2TiY972GjmBIZHNKh36aI9z0PJwS5dBmKkWlZWp0e1EmaVwcGSeKhKI%2FoP%2BEK%2BYbtPr5",
+            "itemLocation": {
+                "postalCode": "925**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/B9oAAeSwztNpTb6H/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/FlQAAeSwChppTb6N/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/J-IAAeSwRpBpTb6W/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Nh8AAeSwx~1pTb6b/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "376805807766",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-12-25T22:48:34.000Z",
+            "itemCreationDate": "2025-12-25T22:48:34.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|355950854457|0",
+            "title": "Automatic Feeder for Cows and Calves, Food Dispenser with Timer, Healthier Herd",
+            "leafCategoryIds": [
+                "301"
+            ],
+            "categories": [
+                {
+                    "categoryId": "301",
+                    "categoryName": "Other Pet Supplies"
+                },
+                {
+                    "categoryId": "1281",
+                    "categoryName": "Pet Supplies"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/gVgAAOSw4uBnvf2I/s-l225.jpg"
+            },
+            "price": {
+                "value": "222.88",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C355950854457%7C0",
+            "seller": {
+                "username": "reidosalimentadores",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 123
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/gVgAAOSw4uBnvf2I/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    }
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/355950854457?_skw=+&hash=item52e0530139:g:gVgAAOSw4uBnvf2I&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbyFHZNGau2Q6RlQ1OblCLBvvj3MEsW5Ji4g%2FkD1K5lBg%2FptXd7QnyYIjJP8kr%2F2sj%2FUnbRErn9RX%2BV%2Bse2nVIe0%2Fr6B9r0cWtasrRS6xQF6hahBq%2FnPOVauucnX313zO3OtZWv7pjFuDWnPHubYNJjjw%2FdXRVEoDg6%2Bx%2FZPcpUJv5AGeNIEz81lmJoG72Xb4cWeVUZ9p2GyypRXlDbhpSnXqMJVwY8sNFSRbly9GmgiunA82SRLhHIQqRTN%2F6pK%2FoXZbgdpp6Wj7WLlxQn0rqW",
+            "itemLocation": {
+                "country": "BR"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/NeMAAOSwNrZnxxJl/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/E~AAAOSwciJms39i/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/IUgAAOSwxu9nvf25/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/BSUAAOSwcJ5nvf3E/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/cy8AAOSwxEFms2bt/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/rO8AAOSwiqJnvf2e/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/MyAAAOSw5FZnvf2n/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/U-QAAOSwnSJms2bY/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/YjsAAOSwghFms2cC/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/4e8AAOSwINRms2cP/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/iEYAAOSwHjZms2cK/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/-bkAAOSwEdhms2cn/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/n9MAAOSwsVZnxwSJ/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "355950854457",
+            "availableCoupons": false,
+            "itemOriginDate": "2024-08-13T12:58:01.000Z",
+            "itemCreationDate": "2024-08-13T12:58:01.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|406738015884|0",
+            "title": "Squishy Bun Dumpling NEW UV color changing Five Below Sealed rainbow mystery",
+            "leafCategoryIds": [
+                "234"
+            ],
+            "categories": [
+                {
+                    "categoryId": "234",
+                    "categoryName": "Other Games"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "233",
+                    "categoryName": "Games"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/XqAAAeSwURJpqMcP/s-l225.jpg"
+            },
+            "price": {
+                "value": "32.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C406738015884%7C0",
+            "seller": {
+                "username": "achillesa21",
+                "feedbackPercentage": "99.5",
+                "feedbackScore": 208
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/XqAAAeSwURJpqMcP/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-01T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE",
+                "BEST_OFFER"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/406738015884?_skw=+&hash=item5eb379968c:g:XqAAAeSwURJpqMcP",
+            "itemLocation": {
+                "postalCode": "029**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "406738015884",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-04T23:59:13.000Z",
+            "itemCreationDate": "2026-03-04T23:59:13.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|376876538942|645426327660",
+            "title": "BG3 Baldur's Gate 3 Treasure Pack Individual D20 Bag Coin Dungeons & Dragons D&D",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=376876538942",
+            "leafCategoryIds": [
+                "234"
+            ],
+            "categories": [
+                {
+                    "categoryId": "234",
+                    "categoryName": "Other Games"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "233",
+                    "categoryName": "Games"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/vfEAAeSwgkVpbWKr/s-l225.jpg"
+            },
+            "price": {
+                "value": "6.00",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C376876538942%7C645426327660",
+            "seller": {
+                "username": "jessta_29",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 1398
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/vfEAAeSwgkVpbWKr/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/376876538942?_skw=+&hash=item57bf979c3e:g:vfEAAeSwgkVpbWKr",
+            "itemLocation": {
+                "postalCode": "975**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "376876538942",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-19T00:30:03.000Z",
+            "itemCreationDate": "2026-01-19T00:30:03.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|157780230174|459204668271",
+            "title": "December Diamonds Magnets - MULTIPLE DESIGNS - Discontinued/RARE Mermaid/Mermen",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=157780230174",
+            "leafCategoryIds": [
+                "476"
+            ],
+            "categories": [
+                {
+                    "categoryId": "476",
+                    "categoryName": "Refrigerator Magnets"
+                },
+                {
+                    "categoryId": "1",
+                    "categoryName": "Collectibles"
+                },
+                {
+                    "categoryId": "13905",
+                    "categoryName": "Kitchen & Home"
+                },
+                {
+                    "categoryId": "261694",
+                    "categoryName": "Kitchen Tools & Gadgets"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/gL8AAeSwkk9pwiFh/s-l225.jpg"
+            },
+            "price": {
+                "value": "8.99",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C157780230174%7C459204668271",
+            "seller": {
+                "username": "money4dogs",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 9990
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/gL8AAeSwkk9pwiFh/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "7.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-03T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/157780230174?_skw=+&hash=item24bc6f401e:g:gL8AAeSwkk9pwiFh",
+            "itemLocation": {
+                "postalCode": "844**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/1tMAAeSwfcVpwfGI/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/PbEAAeSwHGxpwfF4/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/5CIAAeSwnVlpwfGb/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/8YYAAeSwwThpwfGr/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/3msAAeSwgSxpwfG5/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/SHgAAeSwO4lpwfHH/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/5OEAAeSwBf9pwfHX/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/2MUAAeSwqLFpwfHt/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/DHgAAeSwFKhpwfID/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/AO0AAeSwG8ZpwfIS/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/JYMAAeSwrmFpwfIu/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/8qQAAeSweLRpwfI8/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/5GMAAeSw-QxpwfJL/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/B8gAAeSwHXlpwfJX/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/SJ4AAeSw3mtpwfJm/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/WdgAAeSw6YtpwgVD/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/wH0AAeSwwkppwgVV/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "157780230174",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-24T03:00:54.000Z",
+            "itemCreationDate": "2026-03-24T03:00:54.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|174965146923|0",
+            "title": "The Pocket Pinger w/ Stack Stick - Coin Ping Test, Coin Pinger",
+            "leafCategoryIds": [
+                "531"
+            ],
+            "categories": [
+                {
+                    "categoryId": "531",
+                    "categoryName": "Other Coin & Money Supplies"
+                },
+                {
+                    "categoryId": "11116",
+                    "categoryName": "Coins & Paper Money"
+                },
+                {
+                    "categoryId": "83274",
+                    "categoryName": "Publications & Supplies"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/MtIAAOSwsaRg-OJy/s-l225.jpg"
+            },
+            "price": {
+                "value": "38.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C174965146923%7C0",
+            "seller": {
+                "username": "soundmoneymetals",
+                "feedbackPercentage": "99.8",
+                "feedbackScore": 2248
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/MtIAAOSwsaRg-OJy/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "21048633395",
+            "itemWebUrl": "https://www.ebay.com/itm/174965146923?_skw=+&hash=item28bcbc452b:g:MtIAAOSwsaRg-OJy",
+            "itemLocation": {
+                "postalCode": "482**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/LDwAAOSwzh5oTNXu/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/P2cAAeSw0NBowgYg/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Ku8AAOSwq7hg-OKF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/pK8AAOSwBnJn2IMK/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/j8kAAOSwIcRnSsK5/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/pGAAAeSwDKhoecXi/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/474AAeSwgIZowgYk/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "174965146923",
+            "availableCoupons": false,
+            "itemOriginDate": "2021-07-22T04:16:09.000Z",
+            "itemCreationDate": "2021-10-05T02:56:53.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|306774318368|0",
+            "title": "Buried in Barstow (2022) DVD Angie Harmon Thriller MOD DVD",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/0C0AAeSwj4dpRet9/s-l225.jpg"
+            },
+            "price": {
+                "value": "15.95",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C306774318368%7C0",
+            "seller": {
+                "username": "retroandc68",
+                "feedbackPercentage": "99.4",
+                "feedbackScore": 1304
+            },
+            "condition": "Like New",
+            "conditionId": "2750",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0C0AAeSwj4dpRet9/s-l960.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/306774318368?_skw=+&hash=item476d2c9d20:g:0C0AAeSwj4dpRet9",
+            "itemLocation": {
+                "postalCode": "606**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "306774318368",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-02-16T18:28:26.000Z",
+            "itemCreationDate": "2026-02-16T18:28:26.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|127751502019|0",
+            "title": "To Wong Foo Thanks for Everything Julie Newmar ",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/zzwAAeSwfUJpuWLV/s-l225.jpg"
+            },
+            "price": {
+                "value": "7.71",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C127751502019%7C0",
+            "seller": {
+                "username": "discountpalace",
+                "feedbackPercentage": "99.5",
+                "feedbackScore": 608
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/zzwAAeSwfUJpuWLV/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "24046027783",
+            "itemWebUrl": "https://www.ebay.com/itm/127751502019?_skw=+&hash=item1dbe9538c3:g:zzwAAeSwfUJpuWLV",
+            "itemLocation": {
+                "postalCode": "077**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/SBEAAeSwlvBpuWLV/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "127751502019",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-17T14:13:50.000Z",
+            "itemCreationDate": "2026-03-17T14:13:50.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|406601562774|0",
+            "title": "NEW!! Red Book US Paper Money  Book- 9th Edition by Arthur Friedberg",
+            "leafCategoryIds": [
+                "530",
+                "261186"
+            ],
+            "categories": [
+                {
+                    "categoryId": "530",
+                    "categoryName": "US"
+                },
+                {
+                    "categoryId": "261186",
+                    "categoryName": "Books"
+                },
+                {
+                    "categoryId": "267",
+                    "categoryName": "Books & Magazines"
+                },
+                {
+                    "categoryId": "11116",
+                    "categoryName": "Coins & Paper Money"
+                },
+                {
+                    "categoryId": "82190",
+                    "categoryName": "Publications"
+                },
+                {
+                    "categoryId": "83274",
+                    "categoryName": "Publications & Supplies"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/LYgAAeSwReVpnLpX/s-l225.jpg"
+            },
+            "price": {
+                "value": "23.96",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C406601562774%7C0",
+            "seller": {
+                "username": "greysheet",
+                "feedbackPercentage": "99.6",
+                "feedbackScore": 8855
+            },
+            "marketingPrice": {
+                "originalPrice": {
+                    "value": "29.95",
+                    "currency": "USD"
+                },
+                "discountPercentage": "20",
+                "discountAmount": {
+                    "value": "5.99",
+                    "currency": "USD"
+                },
+                "priceTreatment": "MARKDOWN"
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/LYgAAeSwReVpnLpX/s-l960.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "11070468270",
+            "itemWebUrl": "https://www.ebay.com/itm/406601562774?_skw=+&hash=item5eab577a96:g:LYgAAeSwReVpnLpX",
+            "itemLocation": {
+                "postalCode": "234**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/LHUAAeSwviJpnLpm/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/u6AAAeSwKf9pnLp3/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~dkAAeSwyBdpnLqK/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/-30AAeSwPNNpnLqZ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/B9kAAeSwH8ppnLqp/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "406601562774",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-06-11T18:21:35.000Z",
+            "itemCreationDate": "2026-01-15T15:00:42.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|365724220208|0",
+            "title": "MOVING VIOLATIONS (1985) DVD BRAND NEW (USA Compatible)",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/JLwAAeSwKVRocTaj/s-l225.jpg"
+            },
+            "price": {
+                "value": "16.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C365724220208%7C0",
+            "seller": {
+                "username": "valhallagroup",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 118907
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/JLwAAeSwKVRocTaj/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "24080392075",
+            "itemWebUrl": "https://www.ebay.com/itm/365724220208?_skw=+&hash=item5526dcbb30:g:JLwAAeSwKVRocTaj",
+            "itemLocation": {
+                "postalCode": "750**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Hq0AAeSw0OFocTam/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "365724220208",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-07-11T16:09:59.000Z",
+            "itemCreationDate": "2025-07-11T16:09:59.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|314659988928|0",
+            "title": "Cigarette Crush Balls Blue Menthol Aroma Balls Burst Beads (10X Bundle) 100 CT",
+            "leafCategoryIds": [
+                "44"
+            ],
+            "categories": [
+                {
+                    "categoryId": "44",
+                    "categoryName": "Cigarettes"
+                },
+                {
+                    "categoryId": "1",
+                    "categoryName": "Collectibles"
+                },
+                {
+                    "categoryId": "593",
+                    "categoryName": "Tobacciana"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/CrQAAOSwejpkkaN7/s-l225.jpg"
+            },
+            "price": {
+                "value": "25.50",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C314659988928%7C0",
+            "seller": {
+                "username": "simplymentholusa",
+                "feedbackPercentage": "99.8",
+                "feedbackScore": 1999
+            },
+            "marketingPrice": {
+                "originalPrice": {
+                    "value": "30.00",
+                    "currency": "USD"
+                },
+                "discountPercentage": "15",
+                "discountAmount": {
+                    "value": "4.50",
+                    "currency": "USD"
+                },
+                "priceTreatment": "MARKDOWN"
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/CrQAAOSwejpkkaN7/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/314659988928?_skw=+&hash=item49433265c0:g:CrQAAOSwejpkkaN7",
+            "itemLocation": {
+                "postalCode": "958**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/od4AAOSwLo1mzs47/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/x8oAAeSwi19ok1SX/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/GwIAAOSwoQtkkaRe/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/6P8AAOSw8Qdjag8o/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/QOsAAOSwDUljag8p/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "314659988928",
+            "availableCoupons": false,
+            "itemOriginDate": "2023-06-20T13:19:00.000Z",
+            "itemCreationDate": "2023-06-20T13:19:00.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|277311327259|0",
+            "title": "Virtuoso Premium Cleaner & Polish Combo",
+            "leafCategoryIds": [
+                "308"
+            ],
+            "categories": [
+                {
+                    "categoryId": "308",
+                    "categoryName": "Other Musical Instruments"
+                },
+                {
+                    "categoryId": "619",
+                    "categoryName": "Musical Instruments & Gear"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/9EAAAOSwDRNidUKF/s-l225.jpg"
+            },
+            "price": {
+                "value": "29.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C277311327259%7C0",
+            "seller": {
+                "username": "lynchburgmusic",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 2950
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/9EAAAOSwDRNidUKF/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/277311327259?_skw=+&hash=item40910b0c1b:g:9EAAAOSwDRNidUKF",
+            "itemLocation": {
+                "postalCode": "245**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "277311327259",
+            "availableCoupons": false,
+            "itemOriginDate": "2021-09-01T15:11:53.000Z",
+            "itemCreationDate": "2025-08-06T16:03:16.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|256772569192|557979639806",
+            "title": "Live Spikes, Maggots Blue Bottle Fly Larvae  Free Shipping, Live Guarantee",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=256772569192",
+            "leafCategoryIds": [
+                "384"
+            ],
+            "categories": [
+                {
+                    "categoryId": "384",
+                    "categoryName": "Other Fishing"
+                },
+                {
+                    "categoryId": "888",
+                    "categoryName": "Sporting Goods"
+                },
+                {
+                    "categoryId": "1492",
+                    "categoryName": "Fishing"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/R7kAAOSwFbdeRBVh/s-l225.jpg"
+            },
+            "price": {
+                "value": "73.99",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C256772569192%7C557979639806",
+            "seller": {
+                "username": "best_bait",
+                "feedbackPercentage": "99.3",
+                "feedbackScore": 11799
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/R7kAAOSwFbdeRBVh/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/256772569192?_skw=+&hash=item3bc8d67868:g:R7kAAOSwFbdeRBVh",
+            "itemLocation": {
+                "postalCode": "434**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "256772569192",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-01-04T15:42:07.000Z",
+            "itemCreationDate": "2025-01-04T15:42:07.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|157600582446|0",
+            "title": "1 WASHINGTON DC Goldback Aurum Gold Foil Note 1/1000 oz 24kt .999 Fine GOLD",
+            "leafCategoryIds": [
+                "376"
+            ],
+            "categories": [
+                {
+                    "categoryId": "376",
+                    "categoryName": "Other US Paper Money"
+                },
+                {
+                    "categoryId": "3412",
+                    "categoryName": "Paper Money: US"
+                },
+                {
+                    "categoryId": "11116",
+                    "categoryName": "Coins & Paper Money"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/55AAAeSw6yBpj-yX/s-l225.jpg"
+            },
+            "price": {
+                "value": "26.95",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C157600582446%7C0",
+            "seller": {
+                "username": "silverguyzz",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 43270
+            },
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/55AAAeSw6yBpj-yX/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-04T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-08T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/157600582446?_skw=+&hash=item24b1ba0b2e:g:55AAAeSw6yBpj-yX",
+            "itemLocation": {
+                "postalCode": "847**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/QIUAAeSwuvJpX-uV/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/zI8AAeSwzk9pX-tF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/l0IAAeSwHotpX-tF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/QYcAAeSwzLJpX-tF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/QG8AAeSwJOlpX-tF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Pg0AAeSwzkVpX-uV/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/R-wAAeSwAmhpX-uV/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/VZEAAeSwfBlpX-uW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/W4wAAeSwH2FpX-uV/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/XX8AAeSw~LZpX-uV/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/fWYAAeSwmxpo5cGh/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "157600582446",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-08T17:40:16.000Z",
+            "itemCreationDate": "2026-01-08T17:40:16.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|387894015073|655157249291",
+            "title": "Ring Sizing Fee",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=387894015073",
+            "leafCategoryIds": [
+                "494"
+            ],
+            "categories": [
+                {
+                    "categoryId": "494",
+                    "categoryName": "Other Jewelry Care, Design & Repair"
+                },
+                {
+                    "categoryId": "281",
+                    "categoryName": "Jewelry & Watches"
+                },
+                {
+                    "categoryId": "164352",
+                    "categoryName": "Jewelry Care, Design & Repair"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/KOUAAOSwrB1mDByc/s-l225.jpg"
+            },
+            "price": {
+                "value": "20.00",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C387894015073%7C655157249291",
+            "seller": {
+                "username": "jewelryauthority",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 16391
+            },
+            "condition": "Pre-owned",
+            "conditionId": "3000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/KOUAAOSwrB1mDByc/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-03T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/387894015073?_skw=+&hash=item5a5048f461:g:KOUAAOSwrB1mDByc&amdata=enc%3AAQALAAAA0ACCtXRWQnOEpyOqnQQ8KGaicsUoG%2Fx2G%2FYjsCO8JQd3JouwNYyBT%2FhOqnjZrOWQiFaaNzaRkdjcqcCiC0Juzgyjt37Dw8mcVactrKjt7B2YRVk%2BiOnyaO%2FIi2fgAgjqnYYnz4wyqriXMrL5eFbNS0bj4yWVAC0YQp3O%2FFqJ%2F6lMBKx5hq1YulDiW2XWYIVXj7Tpg2%2BwEWapavIuKii1EGNEwrAyhf%2FJsOx27AZ4GuXn5jaBYHaXh7VgevS2HRYlN0DOeWy0v%2FRCrq0BSulfSms%3D",
+            "itemLocation": {
+                "postalCode": "274**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/vGIAAOSwm7VmDByR/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "387894015073",
+            "availableCoupons": false,
+            "itemOriginDate": "2024-04-02T16:03:34.000Z",
+            "itemCreationDate": "2025-02-05T15:16:44.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|306832585444|606716499718",
+            "title": "Car Connector Removal Tool Wire Terminal Release Extractor Auto Electrical Plug",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=306832585444",
+            "leafCategoryIds": [
+                "303"
+            ],
+            "categories": [
+                {
+                    "categoryId": "303",
+                    "categoryName": "Other Hand Tools"
+                },
+                {
+                    "categoryId": "631",
+                    "categoryName": "Tools & Workshop Equipment"
+                },
+                {
+                    "categoryId": "3244",
+                    "categoryName": "Hand Tools"
+                },
+                {
+                    "categoryId": "11700",
+                    "categoryName": "Home & Garden"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/UHgAAeSwkyxpoQc8/s-l225.jpg"
+            },
+            "price": {
+                "value": "98.71",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C306832585444%7C606716499718",
+            "seller": {
+                "username": "helloamiah",
+                "feedbackPercentage": "99.3",
+                "feedbackScore": 4287
+            },
+            "marketingPrice": {
+                "originalPrice": {
+                    "value": "123.39",
+                    "currency": "USD"
+                },
+                "discountPercentage": "20",
+                "discountAmount": {
+                    "value": "24.68",
+                    "currency": "USD"
+                },
+                "priceTreatment": "MARKDOWN"
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/UHgAAeSwkyxpoQc8/s-l500.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/306832585444?_skw=+&hash=item4770a5b2e4:g:UHgAAeSwkyxpoQc8&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYEa9P%2Br5FI9Jh%2BSLsJo60uCG4gpnIjeh%2B%2FEKV7pu41WfxAAuDJ0nZcEP069Geh7lcyr2mSy%2F7K8VdWrmJmh01OuIMPNCj7C9cqtt1CDjfZCmpFT3cH9lNNGYoCrBnV0hys4iv95Dp6przd3v8GU4%2B0V9NaPYmKCnHsV2B6Gk6dmFbifv%2FBW%2F6i4SVsX0tKuJTg6JMbVPEH5yuEXZjs5DqIm%2FD%2B6SDRIJ%2FE4omZgQVB47je%2Fkvez9B5h4uflbGXJWVkTDvzjwaPax9Sc5PBL49F",
+            "itemLocation": {
+                "postalCode": "142**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/C2EAAeSwkPxpbx9C/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/r8wAAeSwb-xotrCe/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/I1YAAeSwVS9pbx9D/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/5xEAAeSwhQdpbx9E/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/kqwAAeSw-5Rpbx9C/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/JJAAAeSwoGdpbx9E/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/CyEAAeSwJO5pbx9E/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "306832585444",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-20T07:18:01.000Z",
+            "itemCreationDate": "2026-03-20T07:18:01.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|389769347970|0",
+            "title": "29111 Solid Weight Cage Replacement for Governor Flex Ring Fit Roosa Master S610",
+            "leafCategoryIds": [
+                "632"
+            ],
+            "categories": [
+                {
+                    "categoryId": "632",
+                    "categoryName": "Other Power Tools"
+                },
+                {
+                    "categoryId": "631",
+                    "categoryName": "Tools & Workshop Equipment"
+                },
+                {
+                    "categoryId": "3247",
+                    "categoryName": "Power Tools"
+                },
+                {
+                    "categoryId": "11700",
+                    "categoryName": "Home & Garden"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/lm8AAeSwiBppu7XE/s-l225.jpg"
+            },
+            "price": {
+                "value": "97.29",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C389769347970%7C0",
+            "seller": {
+                "username": "autopartsrich",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 3
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/lm8AAeSwiBppu7XE/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-04T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE",
+                "BEST_OFFER"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/389769347970?_skw=+&hash=item5ac0104382:g:lm8AAeSwiBppu7XE&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGatDXC%2BD956gkAm7r4s1xELd8u02cm6OmkXNyZTXkRZglxkQ44CLqR0AuL%2BlCqJk%2BRC%2F33dl07XVOKFj23AY6ipVtScYshT1oteYxBrs557wGPX5Cs2qd31mTDrzR54DOyH79thco5MmjFiFgeFrm3x7adJEoP%2FajCpt0rNEiBpJRNOe6JcIEYSMKwdj8T6HhLJIgW8vY9mKTv%2F8rwpt9FhCFV0gr3EqW%2FA%2FynWXTOrj1CPyPPcLlNI3ABkKybYpmNCW4Q5EGQleTwi9%2Bc0DsaH",
+            "itemLocation": {
+                "postalCode": "917**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Fn4AAeSwwXdpqpet/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/tK0AAeSwqihpqpev/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/1yUAAeSwO2Vpqpex/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/woEAAeSwmUtpqpez/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/w-4AAeSwYFlpqpe1/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/1~UAAeSwSsJpqpe4/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "389769347970",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-19T08:37:25.000Z",
+            "itemCreationDate": "2026-03-19T08:37:25.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|406485420882|0",
+            "title": "2PCS Front Shock Struts Assys with Coil Springs for Toyota 4Runner Limited 4W...",
+            "leafCategoryIds": [
+                "303"
+            ],
+            "categories": [
+                {
+                    "categoryId": "303",
+                    "categoryName": "Other Hand Tools"
+                },
+                {
+                    "categoryId": "631",
+                    "categoryName": "Tools & Workshop Equipment"
+                },
+                {
+                    "categoryId": "3244",
+                    "categoryName": "Hand Tools"
+                },
+                {
+                    "categoryId": "11700",
+                    "categoryName": "Home & Garden"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/EG4AAeSwCQBpLlpR/s-l225.jpg"
+            },
+            "price": {
+                "value": "290.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C406485420882%7C0",
+            "seller": {
+                "username": "avidautopart",
+                "feedbackPercentage": "96.8",
+                "feedbackScore": 436
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/EG4AAeSwCQBpLlpR/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/406485420882?_skw=+&hash=item5ea46b4b52:g:EG4AAeSwCQBpLlpR&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGY%2BYa98IwUlL8XYXYQYqJ8GNeRRDxKWT%2FzUAdIUsMK%2B3HI7S3yBNkjFz7qxLfsCTv89wNlTggWDlaZ1%2Fxm7DZS37ZqxjNpWSBIpcaTIZHTlY0fBfYpWI1oTbFjhf%2FIL3cDVgLeoiQJgMES0CQXxHK%2BlnKLh17QrtEvoYvZpnTuGi4Woh5pqTpM5O17gxHLefgdnwyWscAK6dDPnAZxJgF6dyG2onWNmc3qBwi2v5%2B9ADLOuqARm2xGV%2Bcl8AylbtgrnZZbKAfbguQG5PGVdsqRz",
+            "itemLocation": {
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/WcoAAeSw8K5pLlpS/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/g4kAAeSwI1BpLlpT/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/aW0AAeSwKRlpLlpT/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/F3gAAeSwPfVpLlpV/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/S94AAeSwT3FpLlpV/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "406485420882",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-12-16T08:47:26.000Z",
+            "itemCreationDate": "2025-12-16T08:47:26.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|143410790130|442408258109",
+            "title": "Bonderite M-CR 1201 Aero, Formerly Alodine 1201, Pint, Quart, Gallons & 1132 Pen",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=143410790130",
+            "leafCategoryIds": [
+                "300"
+            ],
+            "categories": [
+                {
+                    "categoryId": "300",
+                    "categoryName": "Other Home Cleaning Supplies"
+                },
+                {
+                    "categoryId": "299",
+                    "categoryName": "Household Supplies & Cleaning"
+                },
+                {
+                    "categoryId": "11700",
+                    "categoryName": "Home & Garden"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/DnsAAOSwK~pdo-jb/s-l225.jpg"
+            },
+            "price": {
+                "value": "219.99",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C143410790130%7C442408258109",
+            "seller": {
+                "username": "2aad",
+                "feedbackPercentage": "99.7",
+                "feedbackScore": 14968
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/DnsAAOSwK~pdo-jb/s-l960.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/143410790130?_skw=+&hash=item2163f2fef2:g:DnsAAOSwK~pdo-jb",
+            "itemLocation": {
+                "postalCode": "330**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/U88AAOSwj4dbnaxS/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "143410790130",
+            "availableCoupons": false,
+            "itemOriginDate": "2019-10-14T03:26:19.000Z",
+            "itemCreationDate": "2019-10-14T03:26:19.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|125956495909|426911349604",
+            "title": "CHEVROLET Fleet Side or Stepside Bed TAILGATE DECAL 90-91 Style",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=125956495909",
+            "leafCategoryIds": [
+                "310"
+            ],
+            "categories": [
+                {
+                    "categoryId": "310",
+                    "categoryName": "Other Sporting Goods"
+                },
+                {
+                    "categoryId": "888",
+                    "categoryName": "Sporting Goods"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/EU4AAOSwN6xkdrRJ/s-l225.jpg"
+            },
+            "price": {
+                "value": "22.95",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C125956495909%7C426911349604",
+            "seller": {
+                "username": "performancedecals",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 12087
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/EU4AAOSwN6xkdrRJ/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/125956495909?_skw=+&hash=item1d53979a25:g:EU4AAOSwN6xkdrRJ",
+            "itemLocation": {
+                "postalCode": "315**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/-DwAAOSwEt5kdrRw/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/PeUAAOSwuzNkdrTI/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "125956495909",
+            "availableCoupons": false,
+            "itemOriginDate": "2023-05-31T02:55:40.000Z",
+            "itemCreationDate": "2023-05-31T02:55:40.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|317982455865|0",
+            "title": "Die Hard (4K / Blu-ray + Digital) NEW",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/3mAAAeSwNVtpuw34/s-l225.jpg"
+            },
+            "price": {
+                "value": "18.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C317982455865%7C0",
+            "seller": {
+                "username": "pleaserewindadmin",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 113890
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/3mAAAeSwNVtpuw34/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-03T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/317982455865?_skw=+&hash=item4a093b3839:g:3mAAAeSwNVtpuw34",
+            "itemLocation": {
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/4bwAAeSwMGhpuw34/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/yAEAAeSwo5xpuw34/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "317982455865",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-10-29T18:27:02.000Z",
+            "itemCreationDate": "2026-03-10T21:46:56.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|377003116612|0",
+            "title": "IKEA DJUNGELSKOG Orangutan Soft Toy - Brown - Brand New with Tags",
+            "leafCategoryIds": [
+                "230"
+            ],
+            "categories": [
+                {
+                    "categoryId": "230",
+                    "categoryName": "Other Stuffed Animals"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "436",
+                    "categoryName": "Stuffed Animals"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/~z8AAeSwq0tpp~9B/s-l225.jpg"
+            },
+            "price": {
+                "value": "32.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C377003116612%7C0",
+            "seller": {
+                "username": "tecspa-59",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 65
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~z8AAeSwq0tpp~9B/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE",
+                "BEST_OFFER"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/377003116612?_skw=+&hash=item57c7230844:g:~z8AAeSwq0tpp~9B",
+            "itemLocation": {
+                "postalCode": "088**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/MCsAAeSw5tRpvPbQ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Bl4AAeSwv6Jpp~9A/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/A1wAAeSwkONpp~9A/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/2dwAAeSwnrxpp~9B/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/yDYAAeSwcrlpp~9B/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~awAAeSwmeNpp~9B/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/zYMAAeSwkRVpp~9B/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/3EIAAeSw0gNpp~9A/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~7sAAeSwSlFpp~9B/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/-xMAAeSwdnFpp~9B/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ERsAAeSwqihpp~9C/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/5NwAAeSwYOVpp~9B/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "377003116612",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-02T09:57:55.000Z",
+            "itemCreationDate": "2026-03-02T09:57:55.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|125557775131|0",
+            "title": "Innerspace DVD Dennis Quaid NEW",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/6eEAAeSw7MRpwcbQ/s-l225.jpg"
+            },
+            "price": {
+                "value": "8.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C125557775131%7C0",
+            "seller": {
+                "username": "gruv-entertainment",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 612793
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/6eEAAeSw7MRpwcbQ/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "3396857",
+            "itemWebUrl": "https://www.ebay.com/itm/125557775131?_skw=+&hash=item1d3bd39b1b:g:6eEAAeSw7MRpwcbQ",
+            "itemLocation": {
+                "postalCode": "386**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/nm4AAeSwV8xpwcbR/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/psYAAeSw6B5pwcbS/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "125557775131",
+            "availableCoupons": false,
+            "itemOriginDate": "2022-10-11T18:09:42.000Z",
+            "itemCreationDate": "2022-10-11T18:09:42.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|333634965073|545554055730",
+            "title": "You Pick - Cald - Magi Nation Duel (MND) TCG/CCG Cards - Promo/Rare/Uncommon",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=333634965073",
+            "leafCategoryIds": [
+                "234"
+            ],
+            "categories": [
+                {
+                    "categoryId": "234",
+                    "categoryName": "Other Games"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "233",
+                    "categoryName": "Games"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/qM8AAOSw9fZe8sOP/s-l225.jpg"
+            },
+            "price": {
+                "value": "124.99",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C333634965073%7C545554055730",
+            "seller": {
+                "username": "theformoto",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 2190
+            },
+            "condition": "Used",
+            "conditionId": "3000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/qM8AAOSw9fZe8sOP/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "4.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-30T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/333634965073?_skw=+&hash=item4dae318e51:g:qM8AAOSw9fZe8sOP",
+            "itemLocation": {
+                "postalCode": "079**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "333634965073",
+            "availableCoupons": false,
+            "itemOriginDate": "2020-06-25T02:34:41.000Z",
+            "itemCreationDate": "2020-06-25T02:34:41.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|385069462812|0",
+            "title": "Penny Press/Dell Fill-In Pack 24 (Paperback)",
+            "leafCategoryIds": [
+                "280"
+            ],
+            "categories": [
+                {
+                    "categoryId": "280",
+                    "categoryName": "Magazines"
+                },
+                {
+                    "categoryId": "267",
+                    "categoryName": "Books & Magazines"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/TdAAAOSwceBi~ie-/s-l225.jpg"
+            },
+            "price": {
+                "value": "35.45",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C385069462812%7C0",
+            "seller": {
+                "username": "pennypress_dell",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 2979
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TdAAAOSwceBi~ie-/s-l500.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/385069462812?_skw=+&hash=item59a7edb51c:g:TdAAAOSwceBi~ie-&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYS1X0vDgtXSCTieAhXGzmVht22pgnRDHs0IuKhvWy00hj1TISIXfbyv%2FSRm0ViemtGGen2nNMGkVlxkaSPvnW3H72jwCO7Ka6D%2FpYcTVPK9lL5Tlp7kgMQalfp8%2BuTZhwt9dmrrEc6rYNO1DHO%2FyTaoRO01BmHqYHb3BwYbGiuU7cDkGXaZ%2FHoKrY8OvD%2BQQrHFqgyjbzIJTfFFc9KsUbrTxLf17CMZNBgVx3BP0pmJbgud%2FQnU67BMy14XHzxduVIQITDxFEFmpbXZVQVevDa",
+            "itemLocation": {
+                "postalCode": "033**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "385069462812",
+            "availableCoupons": false,
+            "itemOriginDate": "2021-11-23T15:23:09.000Z",
+            "itemCreationDate": "2022-08-18T12:06:56.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|267539386086|567355401159",
+            "title": "Lenovo Desktop Computer i5 Tower PC Up To 32GB RAM 4TB HDD/SSD Windows 11 Pro",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=267539386086",
+            "leafCategoryIds": [
+                "179"
+            ],
+            "categories": [
+                {
+                    "categoryId": "179",
+                    "categoryName": "PC Desktops & All-In-Ones"
+                },
+                {
+                    "categoryId": "58058",
+                    "categoryName": "Computers/Tablets & Networking"
+                },
+                {
+                    "categoryId": "171957",
+                    "categoryName": "Desktops & All-In-Ones"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/7BcAAeSw5Alpk4M3/s-l225.jpg"
+            },
+            "price": {
+                "value": "313.25",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C267539386086%7C567355401159",
+            "seller": {
+                "username": "discountcomputerdepot",
+                "feedbackPercentage": "99.3",
+                "feedbackScore": 155542
+            },
+            "marketingPrice": {
+                "originalPrice": {
+                    "value": "391.56",
+                    "currency": "USD"
+                },
+                "discountPercentage": "20",
+                "discountAmount": {
+                    "value": "78.31",
+                    "currency": "USD"
+                },
+                "priceTreatment": "MARKDOWN"
+            },
+            "condition": "Excellent - Refurbished",
+            "conditionId": "2010",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/7BcAAeSw5Alpk4M3/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-01T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/267539386086?_skw=+&hash=item3e4a970ee6:g:7BcAAeSw5Alpk4M3&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYgRkRHnpYxZjq%2B1SYAwc6%2FtDTepWLKbZpieTSNJ1eXR2B5yaZTPDnVYe%2F8kULJHDAzFtDaJB00wrvqw9xIe3SwNTYQHXUc281OIt6AT09AilfiwKUqRZ9idlEHJCfRVToG%2F4ABsEOn%2BXRyKTIxVA9M4MCaJ4qsbaAML76hYA%2B4i7ArhQauEz8YN41NSVeueMdXsmpEpEJ8f6RvjwDYHNV7PETH%2BLznD4FSQjNJ2D4%2BE131TTYW0KeInQDHdCztlAOs3P2y7Tj1EcHnjC2DnxDq",
+            "itemLocation": {
+                "postalCode": "757**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/XokAAeSwVkBpk4M3/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/t7kAAeSwAcJpk4M3/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Vf0AAeSwQDVpk4M3/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "267539386086",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-09T21:09:44.000Z",
+            "itemCreationDate": "2026-01-09T21:09:44.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|318010319790|0",
+            "title": "Reacher season 3, Region-1, Free Shipping, A complete Season-3",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/~1MAAeSwQ6Rpt0iH/s-l225.jpg"
+            },
+            "price": {
+                "value": "19.95",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C318010319790%7C0",
+            "seller": {
+                "username": "aa-454860",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 10
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~1MAAeSwQ6Rpt0iH/s-l500.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-03T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/318010319790?_skw=+&hash=item4a0ae463ae:g:~1MAAeSwQ6Rpt0iH",
+            "itemLocation": {
+                "postalCode": "945**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/jbsAAeSwWhdpt0iH/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "318010319790",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-16T00:10:58.000Z",
+            "itemCreationDate": "2026-03-16T00:10:58.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|177807466319|0",
+            "title": "Animated Collection She-Ra and the Princess of Power with English Audio",
+            "leafCategoryIds": [
+                "201"
+            ],
+            "categories": [
+                {
+                    "categoryId": "201",
+                    "categoryName": "Other Television Memorabilia"
+                },
+                {
+                    "categoryId": "1424",
+                    "categoryName": "Television Memorabilia"
+                },
+                {
+                    "categoryId": "45100",
+                    "categoryName": "Entertainment Memorabilia"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/0zMAAeSwF8BoYVtW/s-l225.jpg"
+            },
+            "price": {
+                "value": "40.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C177807466319%7C0",
+            "seller": {
+                "username": "martimar-1210",
+                "feedbackPercentage": "99.4",
+                "feedbackScore": 2988
+            },
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0zMAAeSwF8BoYVtW/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-03T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "13071191908",
+            "itemWebUrl": "https://www.ebay.com/itm/177807466319?_skw=+&hash=item2966269f4f:g:0zMAAeSwF8BoYVtW",
+            "itemLocation": {
+                "postalCode": "331**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/3JgAAeSwpOVoYVtW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/4YsAAeSwQq5oYVtW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/uesAAeSwtS9oYVtW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/POwAAeSwpgJoYVtW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/v3EAAeSw5lloYVtW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/2pkAAeSwul1oYVtW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/LY8AAeSw4GdoYVtW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TysAAeSw1JRoYVtW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/E8oAAeSwzoRoYVtW/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "177807466319",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-06-29T15:27:40.000Z",
+            "itemCreationDate": "2026-01-25T18:13:11.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|395704622565|0",
+            "title": "(3 boxes) Diamond Strike Anywhere Matches (300 per box/900 Total)  New Sealed",
+            "leafCategoryIds": [
+                "477"
+            ],
+            "categories": [
+                {
+                    "categoryId": "477",
+                    "categoryName": "Other Collectible Matchbooks"
+                },
+                {
+                    "categoryId": "1",
+                    "categoryName": "Collectibles"
+                },
+                {
+                    "categoryId": "124",
+                    "categoryName": "Paper"
+                },
+                {
+                    "categoryId": "156496",
+                    "categoryName": "Matchbooks"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/XpYAAOSwURJm7IhF/s-l225.jpg"
+            },
+            "price": {
+                "value": "18.49",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C395704622565%7C0",
+            "seller": {
+                "username": "tdtransportat-0",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 1012
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/XpYAAOSwURJm7IhF/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/395704622565?_skw=+&hash=item5c21d55de5:g:XpYAAOSwURJm7IhF",
+            "itemLocation": {
+                "postalCode": "532**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/mfAAAOSw41Jm7IhI/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/iOsAAOSw6yJm7IhK/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/K9EAAOSwpqhm7IhN/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/K8IAAeSwkDxo3zcv/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/IH0AAeSwkBdo3zc1/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/zA8AAOSwgSZm7IhP/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "395704622565",
+            "availableCoupons": false,
+            "itemOriginDate": "2024-09-19T20:31:49.000Z",
+            "itemCreationDate": "2024-09-19T20:31:49.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|127232106353|0",
+            "title": "M3GAN 2.0 - Unrated Edition DVD  NEW",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/ghQAAeSw7MRpwf4Y/s-l225.jpg"
+            },
+            "price": {
+                "value": "12.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C127232106353%7C0",
+            "seller": {
+                "username": "gruv-entertainment",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 612793
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ghQAAeSw7MRpwf4Y/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "15083568851",
+            "itemWebUrl": "https://www.ebay.com/itm/127232106353?_skw=+&hash=item1d9f9fdf71:g:ghQAAeSw7MRpwf4Y",
+            "itemLocation": {
+                "postalCode": "386**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/akoAAeSwGkFpwf4Z/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/oRwAAeSwZUtpwf4a/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/iBIAAeSwIIFpwf4a/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "127232106353",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-07-14T17:02:20.000Z",
+            "itemCreationDate": "2025-07-14T17:02:20.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|297995332419|0",
+            "title": "Chernobyl DVD Stellan Skarsg\u00e5rd - Brand New Sealed",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/jXUAAOSwU0xgh-HR/s-l225.jpg"
+            },
+            "price": {
+                "value": "15.98",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C297995332419%7C0",
+            "seller": {
+                "username": "icemancds",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 23684
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/jXUAAOSwU0xgh-HR/s-l500.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-01T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "3046040123",
+            "itemWebUrl": "https://www.ebay.com/itm/297995332419?_skw=+&hash=item4561e7eb43:g:jXUAAOSwU0xgh-HR",
+            "itemLocation": {
+                "postalCode": "913**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "297995332419",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-28T04:29:45.000Z",
+            "itemCreationDate": "2026-02-03T04:43:49.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|317872859093|0",
+            "title": "(6 boxes) Diamond Strike Anywhere Vintage Matches 300 per Box Total1800 FreeShip",
+            "leafCategoryIds": [
+                "477"
+            ],
+            "categories": [
+                {
+                    "categoryId": "477",
+                    "categoryName": "Other Collectible Matchbooks"
+                },
+                {
+                    "categoryId": "1",
+                    "categoryName": "Collectibles"
+                },
+                {
+                    "categoryId": "124",
+                    "categoryName": "Paper"
+                },
+                {
+                    "categoryId": "156496",
+                    "categoryName": "Matchbooks"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/MPIAAeSwJPdpjjoo/s-l225.jpg"
+            },
+            "price": {
+                "value": "26.90",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C317872859093%7C0",
+            "seller": {
+                "username": "ashleypottersuperstore",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 69
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/MPIAAeSwJPdpjjoo/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-03T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE",
+                "BEST_OFFER"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/317872859093?_skw=+&hash=item4a02b2e7d5:g:MPIAAeSwJPdpjjoo",
+            "itemLocation": {
+                "postalCode": "774**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/x9UAAeSwODlpjjop/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/v1cAAeSwafFpjjop/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/8AUAAeSwaS9pusyM/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "317872859093",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-02-12T20:40:28.000Z",
+            "itemCreationDate": "2026-02-12T20:40:28.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|317823338594|0",
+            "title": "Steelbook Panic Room (4K UHD + Blu-ray + Digital) New",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/3HgAAeSwYuRpuw0D/s-l225.jpg"
+            },
+            "price": {
+                "value": "29.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C317823338594%7C0",
+            "seller": {
+                "username": "pleaserewindadmin",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 113890
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/3HgAAeSwYuRpuw0D/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-03T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "5074137941",
+            "itemWebUrl": "https://www.ebay.com/itm/317823338594?_skw=+&hash=item49ffbf4862:g:3HgAAeSwYuRpuw0D",
+            "itemLocation": {
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/1fcAAeSw2jNpuw0E/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/j44AAeSwqd9puw0D/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "317823338594",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-31T01:10:14.000Z",
+            "itemCreationDate": "2026-01-31T01:10:14.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|126526661026|0",
+            "title": "Furiosa A Mad Max Saga DVD  NEW",
+            "leafCategoryIds": [
+                "617"
+            ],
+            "categories": [
+                {
+                    "categoryId": "617",
+                    "categoryName": "DVDs & Blu-ray Discs"
+                },
+                {
+                    "categoryId": "11232",
+                    "categoryName": "Movies & TV"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/RnQAAeSwSIxpwfly/s-l225.jpg"
+            },
+            "price": {
+                "value": "9.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C126526661026%7C0",
+            "seller": {
+                "username": "gruv-entertainment",
+                "feedbackPercentage": "99.9",
+                "feedbackScore": 612793
+            },
+            "condition": "Brand New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RnQAAeSwSIxpwfly/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "22071194752",
+            "itemWebUrl": "https://www.ebay.com/itm/126526661026?_skw=+&hash=item1d7593a1a2:g:RnQAAeSwSIxpwfly",
+            "itemLocation": {
+                "postalCode": "386**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/NcEAAeSws~lpwflz/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/BkcAAeSw9H9pwfl1/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/N08AAeSwYqFpwfl2/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "126526661026",
+            "availableCoupons": false,
+            "itemOriginDate": "2024-06-12T17:00:30.000Z",
+            "itemCreationDate": "2024-06-12T17:00:30.000Z",
+            "topRatedBuyingExperience": true,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|116315178971|0",
+            "title": "Manganese PARKERIZING ORIGINAL HOME KIT USA Gunsmith Knife USGI WWII Phosphate",
+            "leafCategoryIds": [
+                "310"
+            ],
+            "categories": [
+                {
+                    "categoryId": "310",
+                    "categoryName": "Other Sporting Goods"
+                },
+                {
+                    "categoryId": "888",
+                    "categoryName": "Sporting Goods"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/mKoAAOSwa9hoCVSt/s-l225.jpg"
+            },
+            "price": {
+                "value": "48.95",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C116315178971%7C0",
+            "seller": {
+                "username": "mg.arms.llc",
+                "feedbackPercentage": "99.7",
+                "feedbackScore": 2894
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/mKoAAOSwa9hoCVSt/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "20.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-26T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/116315178971?_skw=+&hash=item1b14ecc7db:g:mKoAAOSwa9hoCVSt&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaQfhwEelDcnBQ2U7GyB60hdRi%2FMp4DEB5bd8inKDJZi5ntMknEBNFrsnAmPZAPD%2FGY2Np1kKuf4B3bUleytgq5%2Fk5fbX%2FRjkNk0n%2B65h4YrVXEOm9R0MW0HLiUvPqoxd28Rb%2BPFrwH1EzSi6OQ4VahTDv0UpZogD57FM8TlgGkzQ%2BcFprA9wbos8xTR3FARGwuadjmKV2o9RlU6POLfiaJ3UHOhAVlJLu6wD%2Fnt4meCkZAzRN4oxwP5u%2F7g9tv9RDk0hwmmI7gJ1pF5p7Gywn4",
+            "itemLocation": {
+                "postalCode": "167**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/alQAAOSwZYdoCVTK/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/YakAAeSwMaxoycHG/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/IxgAAeSwgnxoycHG/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TTUAAeSwcb9oycHG/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/uoQAAeSwkoZoycab/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/o9MAAeSw6wpo2ta~/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "116315178971",
+            "availableCoupons": false,
+            "itemOriginDate": "2024-09-04T20:29:35.000Z",
+            "itemCreationDate": "2024-09-04T20:29:35.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|227232021371|526431966274",
+            "title": "Ground/Earth/Utility/Eye/Mobile Home/Hurricane Anchor Driver Adapter Tool MHA50C",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=227232021371",
+            "leafCategoryIds": [
+                "303"
+            ],
+            "categories": [
+                {
+                    "categoryId": "303",
+                    "categoryName": "Other Hand Tools"
+                },
+                {
+                    "categoryId": "631",
+                    "categoryName": "Tools & Workshop Equipment"
+                },
+                {
+                    "categoryId": "3244",
+                    "categoryName": "Hand Tools"
+                },
+                {
+                    "categoryId": "11700",
+                    "categoryName": "Home & Garden"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/LsAAAeSwLkVpFbxO/s-l225.jpg"
+            },
+            "price": {
+                "value": "56.97",
+                "currency": "USD"
+            },
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C227232021371%7C526431966274",
+            "seller": {
+                "username": "3s-craftings",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 850
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/LsAAAeSwLkVpFbxO/s-l500.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "0.00",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-03-31T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/227232021371?_skw=+&hash=item34e8157b7b:g:LsAAAeSwLkVpFbxO&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGY8qtQ0bOnBc8cbl6bWTao%2FZYx%2F1JUkjpoeWH%2BpePU3f676s%2F%2Bx7ajczv8CoSJ64RG58J1rnjj%2BR9EAey2GnW0zLcLeIYaYebRBEwdAwvnn1H2D6BYj%2BNNNrZeS2E2Hy3ka9sf0Nw8ahXQyZODPJ7K4j43Q0JSdsHZTwEgam6FHZN4WuapchtJbONtNJTjZKuTXaKzVRwTu%2BTGBVcBBXgWrl84DQvR7djfWzyP6naPYM0UUzVu%2BU9PQu3naiihxLmjt7zJLqc3uV0cHXGauRLnN",
+            "itemLocation": {
+                "postalCode": "486**",
+                "country": "US"
+            },
+            "adultOnly": false,
+            "legacyItemId": "227232021371",
+            "availableCoupons": false,
+            "itemOriginDate": "2025-11-13T11:24:49.000Z",
+            "itemCreationDate": "2026-02-25T13:50:25.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
         }
     ]
 }
