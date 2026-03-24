@@ -38,7 +38,7 @@ def get_access_token():
 def fetch_inventory(token):
     """Pulls live listings for the blkhdz store"""
     # Specifically filters for your eBay username
-    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?filter=sellers:{blkhdz}"
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?filter=sellers:blkhdz"
     headers = {
         "Authorization": f"Bearer {token}",
         "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"
