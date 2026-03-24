@@ -30,19 +30,12 @@ def get_access_token():
     
     response = requests.post(url, headers=headers, data=payload)
     data = response.json()
-    
-    if response.status_code != 200:
-        error_msg = data.get('error_description', 'Unknown Auth Error')
-        with open(LOG_FILE, "a") as log:
-            log.write(f"Application Auth Failed: {error_msg}\n")
-        return None
-        
     return data.get('access_token')
 
 def fetch_inventory(token):
-    """Pulls ONLY 'blkhdz' listings by using a strict seller filter"""
-    # We use q=LEGO but strictly wrap the seller filter to ensure it only pulls YOUR items.
-    # The {blkhdz} format is sometimes required by the API to distinguish the variable.
+    """Pulls only blkhdz items. Note the exact curly brace syntax."""
+    # We use q=LEGO and the sellers filter. 
+    # If this still pulls 1.7M, we will try the URL without 'q' entirely.
     url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=LEGO&filter=sellers:{blkhdz}"
     
     headers = {
@@ -55,35 +48,34 @@ def fetch_inventory(token):
 
 def main():
     try:
-        print("Starting Blockheadz LLC Inventory Sync...")
-        
+        print("Syncing Blockheadz LLC Inventory...")
         token = get_access_token()
         if not token:
             return
 
         inventory = fetch_inventory(token)
         
-        if 'errors' in inventory:
-            # Fallback if the curly braces cause an issue (eBay can be picky)
-            url_fallback = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=LEGO&filter=sellers:blkhdz"
-            headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"}
-            inventory = requests.get(url_fallback, headers=headers).json()
+        # Check if the filter failed and returned global results
+        total_found = inventory.get('total', 0)
+        if total_found > 1000000:
+             print("Filter ignored by eBay. Retrying with explicit category seed...")
+             # Using Category 220 (Toys & Hobbies) to narrow the scope if global fails
+             url_retry = "https://api.ebay.com/buy/browse/v1/item_summary/search?category_ids=220&filter=sellers:{blkhdz}"
+             headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"}
+             inventory = requests.get(url_retry, headers=headers).json()
 
-        # Save the result
         with open(DATA_FILE, "w") as f:
             json.dump(inventory, f, indent=4)
             
-        item_count = inventory.get('total', 0)
+        final_count = inventory.get('total', 0)
         with open(LOG_FILE, "a") as log:
-            log.write(f"Sync Successful: Found {item_count} items.\n")
+            log.write(f"Sync Successful: Found {final_count} items.\n")
         
-        print(f"Success! {item_count} items synced.")
+        print(f"Success! {final_count} items synced.")
 
     except Exception as e:
-        error_str = f"CRITICAL SCRIPT ERROR: {str(e)}"
-        print(error_str)
         with open(LOG_FILE, "a") as log:
-            log.write(f"{error_str}\n")
+            log.write(f"CRITICAL ERROR: {str(e)}\n")
 
 if __name__ == "__main__":
     main()
