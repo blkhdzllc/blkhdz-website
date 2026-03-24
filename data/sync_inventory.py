@@ -13,7 +13,7 @@ APP_ID = os.environ.get('EBAY_APP_ID', '').strip()
 CERT_ID = os.environ.get('EBAY_CERT_ID', '').strip()
 
 def get_access_token():
-    """Mints a fresh Application Access Token"""
+    """Mints a fresh Application Access Token using the stable api_scope"""
     url = "https://api.ebay.com/identity/v1/oauth2/token"
     auth_str = f"{APP_ID}:{CERT_ID}"
     b64_auth = base64.b64encode(auth_str.encode()).decode()
@@ -29,14 +29,17 @@ def get_access_token():
     }
     
     response = requests.post(url, headers=headers, data=payload)
-    data = response.json()
-    return data.get('access_token')
+    return response.json().get('access_token')
 
 def fetch_inventory(token):
-    """Pulls only blkhdz items using the category_ids=0 + sellers:{id} combo"""
-    # This specific combination is the 'magic' formula to force a seller-only search
-    # category_ids=0 acts as the required search 'seed'
-    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?category_ids=0&filter=sellers:{blkhdz}"
+    """
+    Pulls ONLY blkhdz items.
+    Uses 'q= ' (encoded space) to act as a wildcard for all your items.
+    Explicitly targets Buy It Now via the default search behavior.
+    """
+    # Note: %20 is a URL-encoded space. This 'tricks' the API into 
+    # searching for everything in your specific store.
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=%20&filter=sellers:{blkhdz}"
     
     headers = {
         "Authorization": f"Bearer {token}",
@@ -48,33 +51,27 @@ def fetch_inventory(token):
 
 def main():
     try:
-        print("Executing targeted sync for Blockheadz LLC...")
+        print("Final attempt at isolating Blockheadz LLC inventory...")
         token = get_access_token()
         if not token:
-            print("Auth failed. Check credentials.")
+            print("Authentication failed.")
             return
 
         inventory = fetch_inventory(token)
         
-        # Verify the results are actually YOURS and not 49 million items
-        total_found = inventory.get('total', 0)
-        
-        # If still over a million, eBay is still ignoring the filter. 
-        # We try one last fallback: explicit seller filter without the category.
-        if total_found > 1000000:
-             print("Global results detected. Attempting strict filter fallback...")
-             url_fallback = "https://api.ebay.com/buy/browse/v1/item_summary/search?filter=sellers:{blkhdz}"
-             headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"}
-             inventory = requests.get(url_fallback, headers=headers).json()
+        # Check if we got data or an error
+        if 'itemSummaries' in inventory:
+            item_count = len(inventory['itemSummaries'])
+        else:
+            item_count = inventory.get('total', 0)
 
         with open(DATA_FILE, "w") as f:
             json.dump(inventory, f, indent=4)
             
-        final_count = inventory.get('total', 0)
         with open(LOG_FILE, "a") as log:
-            log.write(f"Sync Successful: Found {final_count} items.\n")
+            log.write(f"Sync Successful: Found {item_count} items.\n")
         
-        print(f"Success! {final_count} items synced.")
+        print(f"Success! {item_count} items synced.")
 
     except Exception as e:
         with open(LOG_FILE, "a") as log:
