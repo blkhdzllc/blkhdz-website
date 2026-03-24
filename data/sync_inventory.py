@@ -1,16 +1,16 @@
 import os
 import json
 
-# This points to your new folder path
-data_path = "data/test/inventory.json"
-log_path = "data/test/sync_log.txt"
+# Since the script is already IN the data folder, 
+# it just needs to look for the 'test' folder next to it.
+data_path = "test/inventory.json"
+log_path = "test/test/sync_log.txt"
 
-# Ensure the folder exists before writing
-os.makedirs("data/test", exist_ok=True)
+# This ensures the 'test' folder exists
+os.makedirs("test", exist_ok=True)
 
 def sync():
     try:
-        # For now, we create a test entry to see if it works
         test_data = {
             "store": "Blockheadz LLC",
             "status": "Online",
@@ -24,8 +24,8 @@ def sync():
             log.write("Sync successful: Created test data.\n")
             
     except Exception as e:
-        with open(log_path, "a") as log:
-            log.write(f"Error: {str(e)}\n")
+        # If it fails, it will print the error to the GitHub console
+        print(f"Error: {str(e)}")
 
 if __name__ == "__main__":
     sync()
