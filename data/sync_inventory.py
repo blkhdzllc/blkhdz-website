@@ -33,10 +33,10 @@ def get_access_token():
     return data.get('access_token')
 
 def fetch_inventory(token):
-    """Pulls only blkhdz items. Note the exact curly brace syntax."""
-    # We use q=LEGO and the sellers filter. 
-    # If this still pulls 1.7M, we will try the URL without 'q' entirely.
-    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=LEGO&filter=sellers:{blkhdz}"
+    """Pulls only blkhdz items using the category_ids=0 + sellers:{id} combo"""
+    # This specific combination is the 'magic' formula to force a seller-only search
+    # category_ids=0 acts as the required search 'seed'
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?category_ids=0&filter=sellers:{blkhdz}"
     
     headers = {
         "Authorization": f"Bearer {token}",
@@ -48,21 +48,24 @@ def fetch_inventory(token):
 
 def main():
     try:
-        print("Syncing Blockheadz LLC Inventory...")
+        print("Executing targeted sync for Blockheadz LLC...")
         token = get_access_token()
         if not token:
+            print("Auth failed. Check credentials.")
             return
 
         inventory = fetch_inventory(token)
         
-        # Check if the filter failed and returned global results
+        # Verify the results are actually YOURS and not 49 million items
         total_found = inventory.get('total', 0)
+        
+        # If still over a million, eBay is still ignoring the filter. 
+        # We try one last fallback: explicit seller filter without the category.
         if total_found > 1000000:
-             print("Filter ignored by eBay. Retrying with explicit category seed...")
-             # Using Category 220 (Toys & Hobbies) to narrow the scope if global fails
-             url_retry = "https://api.ebay.com/buy/browse/v1/item_summary/search?category_ids=220&filter=sellers:{blkhdz}"
+             print("Global results detected. Attempting strict filter fallback...")
+             url_fallback = "https://api.ebay.com/buy/browse/v1/item_summary/search?filter=sellers:{blkhdz}"
              headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"}
-             inventory = requests.get(url_retry, headers=headers).json()
+             inventory = requests.get(url_fallback, headers=headers).json()
 
         with open(DATA_FILE, "w") as f:
             json.dump(inventory, f, indent=4)
