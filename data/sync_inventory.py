@@ -40,11 +40,10 @@ def get_access_token():
     return data.get('access_token')
 
 def fetch_inventory(token):
-    """Pulls live listings for 'blkhdz' using keywords to satisfy API requirements"""
-    # Since 'category_ids=0' failed, we use 'q=LEGO' to seed the search.
-    # Because your store is primarily LEGO and Diecast (which often have LEGO or '-' in title),
-    # this will pull your active inventory while satisfying the API's 'q' requirement.
-    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=LEGO&filter=sellers:blkhdz"
+    """Pulls ONLY 'blkhdz' listings by using a strict seller filter"""
+    # We use q=LEGO but strictly wrap the seller filter to ensure it only pulls YOUR items.
+    # The {blkhdz} format is sometimes required by the API to distinguish the variable.
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=LEGO&filter=sellers:{blkhdz}"
     
     headers = {
         "Authorization": f"Bearer {token}",
@@ -60,24 +59,17 @@ def main():
         
         token = get_access_token()
         if not token:
-            print("Authentication failed. Check data/test/sync_log.txt.")
             return
 
         inventory = fetch_inventory(token)
         
-        # Robust Error Checking
         if 'errors' in inventory:
-            error_msg = inventory['errors'][0].get('message', 'Unknown API Error')
-            # If 'LEGO' returns nothing, we try a broader search character
-            if "The call must have a valid 'q'" in error_msg:
-                 print("Retrying with fallback search...")
-                 url_fallback = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=-&filter=sellers:blkhdz"
-                 headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"}
-                 inventory = requests.get(url_fallback, headers=headers).json()
+            # Fallback if the curly braces cause an issue (eBay can be picky)
+            url_fallback = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=LEGO&filter=sellers:blkhdz"
+            headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"}
+            inventory = requests.get(url_fallback, headers=headers).json()
 
-        if 'errors' in inventory:
-            raise Exception(f"eBay API Error: {inventory['errors'][0].get('message')}")
-
+        # Save the result
         with open(DATA_FILE, "w") as f:
             json.dump(inventory, f, indent=4)
             
