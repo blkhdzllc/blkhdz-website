@@ -13,9 +13,8 @@ APP_ID = os.environ.get('EBAY_APP_ID', '').strip()
 CERT_ID = os.environ.get('EBAY_CERT_ID', '').strip()
 
 def get_access_token():
-    """Mints a fresh Application Access Token using the base public scope"""
+    """Mints a fresh Application Access Token"""
     url = "https://api.ebay.com/identity/v1/oauth2/token"
-    
     auth_str = f"{APP_ID}:{CERT_ID}"
     b64_auth = base64.b64encode(auth_str.encode()).decode()
     
@@ -24,7 +23,6 @@ def get_access_token():
         "Authorization": f"Basic {b64_auth}"
     }
     
-    # We are using the base scope which is universally granted to all apps
     payload = {
         "grant_type": "client_credentials",
         "scope": "https://api.ebay.com/oauth/api_scope"
@@ -42,9 +40,9 @@ def get_access_token():
     return data.get('access_token')
 
 def fetch_inventory(token):
-    """Pulls live listings for the blkhdz store"""
-    # Using the Browse API to search for items from your specific seller ID
-    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?filter=sellers:blkhdz"
+    """Pulls all live listings for 'blkhdz' using Category 0 as a wildcard"""
+    # We add category_ids=0 to satisfy the API requirement for a 'seed' parameter
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?category_ids=0&filter=sellers:blkhdz"
     
     headers = {
         "Authorization": f"Bearer {token}",
@@ -65,10 +63,10 @@ def main():
 
         inventory = fetch_inventory(token)
         
-        # Check if we actually got data or an API error
-        if 'itemSummaries' not in inventory and 'total' not in inventory:
-            error_note = inventory.get('errors', [{'message': 'No data returned'}])[0]['message']
-            raise Exception(f"API Error: {error_note}")
+        # Check for error responses from eBay
+        if 'errors' in inventory:
+            error_note = inventory['errors'][0].get('message', 'Unknown eBay API Error')
+            raise Exception(f"eBay API Error: {error_note}")
 
         with open(DATA_FILE, "w") as f:
             json.dump(inventory, f, indent=4)
