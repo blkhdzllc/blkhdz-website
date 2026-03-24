@@ -1,1 +1,354 @@
-
+{
+  "href": "https://api.ebay.com/buy/browse/v1/item_summary/search?q=drone&limit=3&offset=0",
+  "total": 47730,
+  "next": "https://api.ebay.com/buy/browse/v1/item_summary/search?q=drone&limit=3&offset=3",
+  "limit": 3,
+  "offset": 0,
+  "itemSummaries": [
+    {
+      "itemId": "v1|306507455408|606300949641",
+      "title": "4K HD Camera Drone WiFi FPV RC Foldable Dual Camera with 4 Batteries",
+      "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=306507455408",
+      "leafCategoryIds": [
+        "179697"
+      ],
+      "categories": [
+        {
+          "categoryId": "179697",
+          "categoryName": "Camera Drones"
+        },
+        {
+          "categoryId": "625",
+          "categoryName": "Cameras & Photo"
+        }
+      ],
+      "image": {
+        "imageUrl": "https://i.ebayimg.com/images/g/ABcAAeSwokVpgyaz/s-l225.jpg"
+      },
+      "price": {
+        "value": "24.76",
+        "currency": "USD"
+      },
+      "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+      "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C306507455408%7C606300949641",
+      "seller": {
+        "username": "omizo01",
+        "feedbackPercentage": "99.5",
+        "feedbackScore": 1949
+      },
+      "marketingPrice": {
+        "originalPrice": {
+          "value": "41.27",
+          "currency": "USD"
+        },
+        "discountPercentage": "40",
+        "discountAmount": {
+          "value": "16.51",
+          "currency": "USD"
+        },
+        "priceTreatment": "MARKDOWN"
+      },
+      "condition": "New",
+      "conditionId": "1000",
+      "thumbnailImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/ABcAAeSwokVpgyaz/s-l1600.jpg"
+        }
+      ],
+      "shippingOptions": [
+        {
+          "shippingCostType": "FIXED",
+          "shippingCost": {
+            "value": "0.00",
+            "currency": "USD"
+          },
+          "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+          "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+        }
+      ],
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "itemAffiliateWebUrl": "https://www.ebay.com/itm/306507455408?_skw=drone&hash=item475d449bb0%3Ag%3AABcAAeSwokVpgyaz&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=%253CePNCampaignId%253E&customid=%253CreferenceId%253E&toolid=10049",
+      "itemWebUrl": "https://www.ebay.com/itm/306507455408?_skw=drone&hash=item475d449bb0:g:ABcAAeSwokVpgyaz",
+      "itemLocation": {
+        "postalCode": "928**",
+        "country": "US"
+      },
+      "additionalImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/UiIAAeSwuXxoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/8csAAeSw1VBoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/gh0AAeSwxNJo0L9T/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/9MUAAeSwNDVoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/fOQAAeSwinxozeRi/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/2ZsAAeSwKhdoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/rC4AAeSwkqho0MOx/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/wbgAAeSwLi5oqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/jNYAAeSwgpJoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/wgIAAeSwvL9oqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/r3wAAeSwiWloqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/aLUAAeSwQvBoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/3WsAAeSw3KFoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/xnkAAeSwB0BoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/8FkAAeSwyQZoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/z6sAAeSwwlVoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/JbAAAeSwddtoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/0R4AAeSwGE1oqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/HowAAeSwt6RoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/wLgAAeSwn7ZoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/Qh0AAeSw1MdoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/xIgAAeSwjoVoqPps/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/2kMAAeSwgv1oqPps/s-l225.jpg"
+        }
+      ],
+      "adultOnly": false,
+      "legacyItemId": "306507455408",
+      "availableCoupons": false,
+      "itemOriginDate": "2025-09-19T23:21:20.000Z",
+      "itemCreationDate": "2025-09-19T23:21:20.000Z",
+      "topRatedBuyingExperience": true,
+      "priorityListing": false,
+      "listingMarketplaceId": "EBAY_US"
+    },
+    {
+      "itemId": "v1|225839065411|0",
+      "title": "Drone 2026 4K HD Dual Camera WiFi FPV RC Foldable Quadcopter + 4 Batteries",
+      "leafCategoryIds": [
+        "179697"
+      ],
+      "categories": [
+        {
+          "categoryId": "179697",
+          "categoryName": "Camera Drones"
+        },
+        {
+          "categoryId": "625",
+          "categoryName": "Cameras & Photo"
+        }
+      ],
+      "image": {
+        "imageUrl": "https://i.ebayimg.com/images/g/NJ0AAOSwaP9lO61s/s-l225.jpg"
+      },
+      "price": {
+        "value": "29.98",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C225839065411%7C0",
+      "seller": {
+        "username": "hanksminerals",
+        "feedbackPercentage": "99.2",
+        "feedbackScore": 123455
+      },
+      "condition": "New",
+      "conditionId": "1000",
+      "thumbnailImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/NJ0AAOSwaP9lO61s/s-l960.jpg"
+        }
+      ],
+      "shippingOptions": [
+        {
+          "shippingCostType": "FIXED",
+          "shippingCost": {
+            "value": "0.00",
+            "currency": "USD"
+          },
+          "minEstimatedDeliveryDate": "2026-03-27T07:00:00.000Z",
+          "maxEstimatedDeliveryDate": "2026-04-02T07:00:00.000Z"
+        }
+      ],
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "itemAffiliateWebUrl": "https://www.ebay.com/itm/225839065411?_skw=drone&hash=item34950ea943%3Ag%3ANJ0AAOSwaP9lO61s&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbFLq1ynahXjzu%2BjEkoDMOSIh14pYcq%2Bx6%2FlEMJfUY8MJLAxKTEovs3YbwgNRQEgflVDhC4SJy7JpSdph9e%2BeVLV8Rqt2%2BBYhSBku4%2BsdL0jlGKtaRVGWzhiDD0gfe7%2B0WAPa8k0UI7VxMP18DbiygiUPzv9kFQfyjVendMetzCe%2FRCpz6MbPfvJvFBS72ZtOqvzoLm53bEZApcqauXKA6i%2BwCYuHWN%2Bp6yFTdNf94G5nKmJ1OyBbr2tACkXhWmGylMUl0yP4jip0hMPucFPiwX&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=%253CePNCampaignId%253E&customid=%253CreferenceId%253E&toolid=10049",
+      "itemWebUrl": "https://www.ebay.com/itm/225839065411?_skw=drone&hash=item34950ea943:g:NJ0AAOSwaP9lO61s&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbFLq1ynahXjzu%2BjEkoDMOSIh14pYcq%2Bx6%2FlEMJfUY8MJLAxKTEovs3YbwgNRQEgflVDhC4SJy7JpSdph9e%2BeVLV8Rqt2%2BBYhSBku4%2BsdL0jlGKtaRVGWzhiDD0gfe7%2B0WAPa8k0UI7VxMP18DbiygiUPzv9kFQfyjVendMetzCe%2FRCpz6MbPfvJvFBS72ZtOqvzoLm53bEZApcqauXKA6i%2BwCYuHWN%2Bp6yFTdNf94G5nKmJ1OyBbr2tACkXhWmGylMUl0yP4jip0hMPucFPiwX",
+      "itemLocation": {
+        "postalCode": "462**",
+        "country": "US"
+      },
+      "additionalImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/HWYAAOSwX1JlO61s/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/BMIAAOSwOUJlO61s/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/EC4AAOSwBmZlO61t/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/lrwAAOSw-6plO61s/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/zCMAAOSwZTVlO61s/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/8cQAAOSwuqplO61t/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/pscAAOSwbFhlO61s/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/Bs4AAOSwMgxlO61s/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/gPQAAOSwX~tlO61s/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/gpgAAOSwFLBlO61t/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/ct8AAOSwZhRlO61s/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/ctUAAOSwIpJlO61s/s-l225.jpg"
+        }
+      ],
+      "adultOnly": false,
+      "legacyItemId": "225839065411",
+      "availableCoupons": false,
+      "itemOriginDate": "2023-10-27T12:51:58.000Z",
+      "itemCreationDate": "2023-10-27T12:51:58.000Z",
+      "topRatedBuyingExperience": false,
+      "priorityListing": true,
+      "listingMarketplaceId": "EBAY_US"
+    },
+    {
+      "itemId": "v1|257230603990|0",
+      "title": "Drone 2026 4K HD Dual Camera WiFi FPV RC Foldable Quadcopter Remote With Screen",
+      "leafCategoryIds": [
+        "179697"
+      ],
+      "categories": [
+        {
+          "categoryId": "179697",
+          "categoryName": "Camera Drones"
+        },
+        {
+          "categoryId": "625",
+          "categoryName": "Cameras & Photo"
+        }
+      ],
+      "image": {
+        "imageUrl": "https://i.ebayimg.com/images/g/5a0AAeSw-RppJzMK/s-l225.jpg"
+      },
+      "price": {
+        "value": "29.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C257230603990%7C0",
+      "seller": {
+        "username": "cuus079",
+        "feedbackPercentage": "97.9",
+        "feedbackScore": 1909
+      },
+      "condition": "New",
+      "conditionId": "1000",
+      "thumbnailImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/5a0AAeSw-RppJzMK/s-l1200.jpg"
+        }
+      ],
+      "shippingOptions": [
+        {
+          "shippingCostType": "FIXED",
+          "shippingCost": {
+            "value": "0.00",
+            "currency": "USD"
+          },
+          "minEstimatedDeliveryDate": "2026-03-28T07:00:00.000Z",
+          "maxEstimatedDeliveryDate": "2026-04-03T07:00:00.000Z"
+        }
+      ],
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "itemAffiliateWebUrl": "https://www.ebay.com/itm/257230603990?_skw=drone&hash=item3be42386d6%3Ag%3A5a0AAeSw-RppJzMK&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZRFviSUWj4PB%2BvIR6vkmkdeh3ztlNxYZKfQIz08eELM4a%2FioaGhJtXhvEN%2FhYBgZjyBmjEBjLZZVtix42Or69vTQ0twI2vR3Mo2vtE4265j7RXhygoIHdquvlAb887u8Ikdj8bqLDZ1%2BuHpqJKAvaAd9FrfRWxasjRnKn8M3eCTjVi%2FRTisz1w3Q4FTQ6eA0aCbyRFtj0%2FQG8ruVOzLx4utobuhpi8g%2FCELF09AxFaMgC44HCDhCJykauTLnVlXoEkd%2BxncRDUI2pNbZoZg%2BI%2B&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=%253CePNCampaignId%253E&customid=%253CreferenceId%253E&toolid=10049",
+      "itemWebUrl": "https://www.ebay.com/itm/257230603990?_skw=drone&hash=item3be42386d6:g:5a0AAeSw-RppJzMK&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZRFviSUWj4PB%2BvIR6vkmkdeh3ztlNxYZKfQIz08eELM4a%2FioaGhJtXhvEN%2FhYBgZjyBmjEBjLZZVtix42Or69vTQ0twI2vR3Mo2vtE4265j7RXhygoIHdquvlAb887u8Ikdj8bqLDZ1%2BuHpqJKAvaAd9FrfRWxasjRnKn8M3eCTjVi%2FRTisz1w3Q4FTQ6eA0aCbyRFtj0%2FQG8ruVOzLx4utobuhpi8g%2FCELF09AxFaMgC44HCDhCJykauTLnVlXoEkd%2BxncRDUI2pNbZoZg%2BI%2B",
+      "itemLocation": {
+        "postalCode": "917**",
+        "country": "US"
+      },
+      "additionalImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/DQwAAeSwGCtpJzNB/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/SSkAAeSwrTlpJzNA/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/CfgAAeSwt~xpJzNA/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/-IwAAeSwYlxpJzNB/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/~sUAAeSwHbhpJzNB/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/C~QAAeSwedhpJzNB/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/~KAAAeSw4GxpJzNB/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/EKYAAeSwAgFpJzNO/s-l225.jpg"
+        }
+      ],
+      "adultOnly": false,
+      "legacyItemId": "257230603990",
+      "availableCoupons": false,
+      "itemOriginDate": "2025-11-26T17:11:42.000Z",
+      "itemCreationDate": "2025-11-26T17:11:42.000Z",
+      "topRatedBuyingExperience": false,
+      "priorityListing": true,
+      "listingMarketplaceId": "EBAY_US"
+    }
+  ]
+}
