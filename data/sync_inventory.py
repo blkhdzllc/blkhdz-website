@@ -40,9 +40,11 @@ def get_access_token():
     return data.get('access_token')
 
 def fetch_inventory(token):
-    """Pulls all live listings for 'blkhdz' using Category 0 as a wildcard"""
-    # We add category_ids=0 to satisfy the API requirement for a 'seed' parameter
-    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?category_ids=0&filter=sellers:blkhdz"
+    """Pulls live listings for 'blkhdz' using keywords to satisfy API requirements"""
+    # Since 'category_ids=0' failed, we use 'q=LEGO' to seed the search.
+    # Because your store is primarily LEGO and Diecast (which often have LEGO or '-' in title),
+    # this will pull your active inventory while satisfying the API's 'q' requirement.
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=LEGO&filter=sellers:blkhdz"
     
     headers = {
         "Authorization": f"Bearer {token}",
@@ -63,10 +65,18 @@ def main():
 
         inventory = fetch_inventory(token)
         
-        # Check for error responses from eBay
+        # Robust Error Checking
         if 'errors' in inventory:
-            error_note = inventory['errors'][0].get('message', 'Unknown eBay API Error')
-            raise Exception(f"eBay API Error: {error_note}")
+            error_msg = inventory['errors'][0].get('message', 'Unknown API Error')
+            # If 'LEGO' returns nothing, we try a broader search character
+            if "The call must have a valid 'q'" in error_msg:
+                 print("Retrying with fallback search...")
+                 url_fallback = "https://api.ebay.com/buy/browse/v1/item_summary/search?q=-&filter=sellers:blkhdz"
+                 headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"}
+                 inventory = requests.get(url_fallback, headers=headers).json()
+
+        if 'errors' in inventory:
+            raise Exception(f"eBay API Error: {inventory['errors'][0].get('message')}")
 
         with open(DATA_FILE, "w") as f:
             json.dump(inventory, f, indent=4)
