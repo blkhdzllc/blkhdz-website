@@ -4,23 +4,22 @@ import requests
 import base64
 
 # --- 1. FOLDER SETUP ---
-# Ensures the 'test' directory exists inside the 'data' folder
+# Path is relative to the script's location in /data
 os.makedirs("test", exist_ok=True)
 
 DATA_FILE = os.path.join("test", "inventory.json")
 LOG_FILE = os.path.join("test", "sync_log.txt")
 
 # --- 2. CREDENTIALS ---
-# .strip() is used here to remove any accidental spaces from GitHub Secrets
+# Pulling from GitHub Secrets - .strip() removes any accidental spaces
 APP_ID = os.environ.get('EBAY_APP_ID', '').strip()
 CERT_ID = os.environ.get('EBAY_CERT_ID', '').strip()
-REFRESH_TOKEN = os.environ.get('EBAY_REFRESH_TOKEN', '').strip()
 
 def get_access_token():
-    """Exchanges Refresh Token for a temporary Access Token"""
+    """Mints a fresh Application Access Token using Client Credentials"""
     url = "https://api.ebay.com/identity/v1/oauth2/token"
     
-    # Prepare Base64 Auth String (App ID : Cert ID)
+    # Prepare Base64 Auth String
     auth_str = f"{APP_ID}:{CERT_ID}"
     b64_auth = base64.b64encode(auth_str.encode()).decode()
     
@@ -29,9 +28,9 @@ def get_access_token():
         "Authorization": f"Basic {b64_auth}"
     }
     
+    # grant_type: client_credentials is the most stable for background syncing
     payload = {
-        "grant_type": "refresh_token",
-        "refresh_token": REFRESH_TOKEN,
+        "grant_type": "client_credentials",
         "scope": "https://api.ebay.com/oauth/api_scope/buy.browse.readonly"
     }
     
@@ -39,10 +38,9 @@ def get_access_token():
     data = response.json()
     
     if response.status_code != 200:
-        # This will write the SPECIFIC eBay error to your sync_log.txt
         error_msg = data.get('error_description', 'Unknown Auth Error')
         with open(LOG_FILE, "a") as log:
-            log.write(f"eBay Auth Failed: {error_msg}\n")
+            log.write(f"Application Auth Failed: {error_msg}\n")
         return None
         
     return data.get('access_token')
@@ -64,25 +62,25 @@ def main():
     try:
         print("Starting Blockheadz LLC Inventory Sync...")
         
-        # 1. Get Access Token
+        # 1. Get Token
         token = get_access_token()
         if not token:
-            print("Authentication failed. Check data/test/sync_log.txt for the specific eBay error.")
+            print("Error: Could not acquire access token. Check data/test/sync_log.txt.")
             return
 
-        # 2. Fetch Data from eBay
+        # 2. Fetch Data
         inventory = fetch_inventory(token)
         
-        # 3. Save to inventory.json
+        # 3. Save Inventory File
         with open(DATA_FILE, "w") as f:
             json.dump(inventory, f, indent=4)
             
-        # 4. Log the success and count
+        # 4. Log Success
         item_count = inventory.get('total', 0)
         with open(LOG_FILE, "a") as log:
             log.write(f"Sync Successful: Found {item_count} items.\n")
         
-        print(f"Success! {item_count} items synced.")
+        print(f"Success! {item_count} items synced to {DATA_FILE}")
 
     except Exception as e:
         error_str = f"CRITICAL SCRIPT ERROR: {str(e)}"
