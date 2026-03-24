@@ -1,0 +1,670 @@
+{
+  "href": "https://api.ebay.com/buy/browse/v1/item_summary/search?q=diecast&limit=50&filter=sellers%3A%7Breedpb%7D&offset=0",
+  "total": 6,
+  "limit": 50,
+  "offset": 0,
+  "itemSummaries": [
+    {
+      "itemId": "v1|117081912634|0",
+      "title": "Mini GT 716 Cadillac V-Series.R #2 2023 Le Mans 3rd Blue MiJo 1 of 4200 1/64",
+      "leafCategoryIds": [
+        "180506"
+      ],
+      "categories": [
+        {
+          "categoryId": "180506",
+          "categoryName": "Contemporary Manufacture"
+        },
+        {
+          "categoryId": "220",
+          "categoryName": "Toys & Hobbies"
+        },
+        {
+          "categoryId": "222",
+          "categoryName": "Diecast & Toy Vehicles"
+        },
+        {
+          "categoryId": "180273",
+          "categoryName": "Cars, Trucks & Vans"
+        }
+      ],
+      "image": {
+        "imageUrl": "https://i.ebayimg.com/images/g/kuYAAeSwUotpsaM6/s-l225.jpg"
+      },
+      "price": {
+        "value": "16.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117081912634%7C0",
+      "seller": {
+        "username": "reedpb",
+        "feedbackPercentage": "100.0",
+        "feedbackScore": 208
+      },
+      "condition": "New",
+      "conditionId": "1000",
+      "thumbnailImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/kuYAAeSwUotpsaM6/s-l1600.jpg"
+        }
+      ],
+      "shippingOptions": [
+        {
+          "shippingCostType": "CALCULATED"
+        }
+      ],
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "epid": "25071833374",
+      "itemAffiliateWebUrl": "https://www.ebay.com/itm/117081912634?_skw=diecast&hash=item1b42a0353a%3Ag%3AkuYAAeSwUotpsaM6&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=%253CePNCampaignId%253E&customid=%253CreferenceId%253E&toolid=10049",
+      "itemWebUrl": "https://www.ebay.com/itm/117081912634?_skw=diecast&hash=item1b42a0353a:g:kuYAAeSwUotpsaM6",
+      "itemLocation": {
+        "postalCode": "336**",
+        "country": "US"
+      },
+      "additionalImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/TlkAAeSwO6xpsaMr/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/j4oAAeSwEaNpsaMg/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/phQAAeSwDBBpsaOY/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/DrUAAeSwF~FpsaNQ/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/lNsAAeSw6IJpsaNT/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/mCoAAeSwD7RpsaNY/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/JbEAAeSwMWJpsaNb/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/nF0AAeSwyndpsaNf/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/IfkAAeSwPqFpsaNt/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/mzQAAeSw7x1psaNx/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/S00AAeSwFOBpsaNp/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/QdAAAeSw83tpsaN1/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/Eb0AAeSwON5psaN-/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/phsAAeSwYs9psaOC/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/aasAAeSwNKxpsaOG/s-l225.jpg"
+        }
+      ],
+      "adultOnly": false,
+      "legacyItemId": "117081912634",
+      "availableCoupons": false,
+      "itemOriginDate": "2026-03-11T17:19:52.000Z",
+      "itemCreationDate": "2026-03-11T17:19:52.000Z",
+      "topRatedBuyingExperience": false,
+      "priorityListing": false,
+      "listingMarketplaceId": "EBAY_US"
+    },
+    {
+      "itemId": "v1|117078703657|0",
+      "title": "POP RACE 1/64 Honda Civic EG6 Pandem V1.5 Idemitsu Infinite PR640212 NEW",
+      "leafCategoryIds": [
+        "180506"
+      ],
+      "categories": [
+        {
+          "categoryId": "180506",
+          "categoryName": "Contemporary Manufacture"
+        },
+        {
+          "categoryId": "220",
+          "categoryName": "Toys & Hobbies"
+        },
+        {
+          "categoryId": "222",
+          "categoryName": "Diecast & Toy Vehicles"
+        },
+        {
+          "categoryId": "180273",
+          "categoryName": "Cars, Trucks & Vans"
+        }
+      ],
+      "image": {
+        "imageUrl": "https://i.ebayimg.com/images/g/WA8AAeSwDAJprzai/s-l225.jpg"
+      },
+      "price": {
+        "value": "21.50",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117078703657%7C0",
+      "seller": {
+        "username": "reedpb",
+        "feedbackPercentage": "100.0",
+        "feedbackScore": 208
+      },
+      "condition": "New",
+      "conditionId": "1000",
+      "thumbnailImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/WA8AAeSwDAJprzai/s-l960.jpg"
+        }
+      ],
+      "shippingOptions": [
+        {
+          "shippingCostType": "CALCULATED"
+        }
+      ],
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "epid": "27080365905",
+      "itemAffiliateWebUrl": "https://www.ebay.com/itm/117078703657?_skw=diecast&hash=item1b426f3e29%3Ag%3AWA8AAeSwDAJprzai&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=%253CePNCampaignId%253E&customid=%253CreferenceId%253E&toolid=10049",
+      "itemWebUrl": "https://www.ebay.com/itm/117078703657?_skw=diecast&hash=item1b426f3e29:g:WA8AAeSwDAJprzai",
+      "itemLocation": {
+        "postalCode": "336**",
+        "country": "US"
+      },
+      "additionalImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/SpoAAeSwkXJprzWD/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/NTEAAeSwD7RprzWZ/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/SVcAAeSwtZdprzWc/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/RJ8AAeSw9fpprzXc/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/QJsAAeSwFxxprzY5/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/LNQAAeSwJNBprzZ5/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/flAAAeSwdnFprzaF/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/TO0AAeSwwRlprzaQ/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/S7kAAeSwbiZprzaS/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/OBkAAeSwCONprzaU/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/PlwAAeSwKO1przag/s-l225.jpg"
+        }
+      ],
+      "adultOnly": false,
+      "legacyItemId": "117078703657",
+      "availableCoupons": false,
+      "itemOriginDate": "2026-03-09T21:08:26.000Z",
+      "itemCreationDate": "2026-03-09T21:08:26.000Z",
+      "topRatedBuyingExperience": false,
+      "priorityListing": false,
+      "listingMarketplaceId": "EBAY_US"
+    },
+    {
+      "itemId": "v1|117098917766|0",
+      "title": "MINI GT #773 MAZDA RX-7 LB-SUPER SILHOUETTE NUMERO RESERVE CHASE SET (LOT OF 2)",
+      "leafCategoryIds": [
+        "180506"
+      ],
+      "categories": [
+        {
+          "categoryId": "180506",
+          "categoryName": "Contemporary Manufacture"
+        },
+        {
+          "categoryId": "220",
+          "categoryName": "Toys & Hobbies"
+        },
+        {
+          "categoryId": "222",
+          "categoryName": "Diecast & Toy Vehicles"
+        },
+        {
+          "categoryId": "180273",
+          "categoryName": "Cars, Trucks & Vans"
+        }
+      ],
+      "image": {
+        "imageUrl": "https://i.ebayimg.com/images/g/4uYAAeSwQBFpvbwg/s-l225.jpg"
+      },
+      "price": {
+        "value": "84.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117098917766%7C0",
+      "seller": {
+        "username": "reedpb",
+        "feedbackPercentage": "100.0",
+        "feedbackScore": 208
+      },
+      "condition": "New",
+      "conditionId": "1000",
+      "thumbnailImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/4uYAAeSwQBFpvbwg/s-l1600.jpg"
+        }
+      ],
+      "shippingOptions": [
+        {
+          "shippingCostType": "CALCULATED"
+        }
+      ],
+      "buyingOptions": [
+        "FIXED_PRICE",
+        "BEST_OFFER"
+      ],
+      "itemAffiliateWebUrl": "https://www.ebay.com/itm/117098917766?_skw=diecast&hash=item1b43a3af86%3Ag%3A4uYAAeSwQBFpvbwg&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=%253CePNCampaignId%253E&customid=%253CreferenceId%253E&toolid=10049",
+      "itemWebUrl": "https://www.ebay.com/itm/117098917766?_skw=diecast&hash=item1b43a3af86:g:4uYAAeSwQBFpvbwg",
+      "itemLocation": {
+        "postalCode": "336**",
+        "country": "US"
+      },
+      "additionalImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/0G0AAeSwY0ppvbxz/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/5tkAAeSwl8Fpvb03/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/5Q8AAeSwH~dpvbzL/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/7B8AAeSwyc1pvbxk/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/0aAAAeSwfg1pvbww/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/yLAAAeSwOi5pvbw1/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/kkEAAeSw7MRpvbw7/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/HAsAAeSwgidpvbyH/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/dg0AAeSw~BdpvbxA/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/1uwAAeSwpyZpvbxJ/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/lAkAAeSwKyRpvbxd/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/GqgAAeSwdVJpvbyf/s-l225.jpg"
+        }
+      ],
+      "adultOnly": false,
+      "legacyItemId": "117098917766",
+      "availableCoupons": false,
+      "itemOriginDate": "2026-03-20T21:40:35.000Z",
+      "itemCreationDate": "2026-03-20T21:40:35.000Z",
+      "topRatedBuyingExperience": false,
+      "priorityListing": false,
+      "listingMarketplaceId": "EBAY_US"
+    },
+    {
+      "itemId": "v1|117078677592|0",
+      "title": "POP RACE 1/64 Mazda RX-7 FD3S RE Amemiya Gunmetal / Carbon Spec PR640255 NEW",
+      "leafCategoryIds": [
+        "180506"
+      ],
+      "categories": [
+        {
+          "categoryId": "180506",
+          "categoryName": "Contemporary Manufacture"
+        },
+        {
+          "categoryId": "220",
+          "categoryName": "Toys & Hobbies"
+        },
+        {
+          "categoryId": "222",
+          "categoryName": "Diecast & Toy Vehicles"
+        },
+        {
+          "categoryId": "180273",
+          "categoryName": "Cars, Trucks & Vans"
+        }
+      ],
+      "image": {
+        "imageUrl": "https://i.ebayimg.com/images/g/-JQAAeSwU8Fpry~l/s-l225.jpg"
+      },
+      "price": {
+        "value": "22.95",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117078677592%7C0",
+      "seller": {
+        "username": "reedpb",
+        "feedbackPercentage": "100.0",
+        "feedbackScore": 208
+      },
+      "condition": "New",
+      "conditionId": "1000",
+      "thumbnailImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/-JQAAeSwU8Fpry~l/s-l1600.jpg"
+        }
+      ],
+      "shippingOptions": [
+        {
+          "shippingCostType": "CALCULATED"
+        }
+      ],
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "epid": "13085394298",
+      "itemAffiliateWebUrl": "https://www.ebay.com/itm/117078677592?_skw=diecast&hash=item1b426ed858%3Ag%3A-JQAAeSwU8Fpry%7El&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=%253CePNCampaignId%253E&customid=%253CreferenceId%253E&toolid=10049",
+      "itemWebUrl": "https://www.ebay.com/itm/117078677592?_skw=diecast&hash=item1b426ed858:g:-JQAAeSwU8Fpry~l",
+      "itemLocation": {
+        "postalCode": "336**",
+        "country": "US"
+      },
+      "additionalImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/F50AAeSwFXpprzAy/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/FgAAAeSwk1ppry7N/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/WZ8AAeSwprxpry7V/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/GL0AAeSwkKxpry7a/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/D7cAAeSwcKNpry7l/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/C14AAeSw705pry7y/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/Ix0AAeSwYs9przAM/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/7LQAAeSw2jNprzA9/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/GsEAAeSwy5lprzBA/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/6oMAAeSwgR1przBD/s-l225.jpg"
+        }
+      ],
+      "adultOnly": false,
+      "legacyItemId": "117078677592",
+      "availableCoupons": false,
+      "itemOriginDate": "2026-03-09T20:41:03.000Z",
+      "itemCreationDate": "2026-03-09T20:41:03.000Z",
+      "topRatedBuyingExperience": false,
+      "priorityListing": false,
+      "listingMarketplaceId": "EBAY_US"
+    },
+    {
+      "itemId": "v1|117078628407|0",
+      "title": "MINI GT 1/64 Mazda RX-7 FD3S RE Amemiya 20B NA 3ROTOR-7 Ama-san Go MGT01046 NEW",
+      "leafCategoryIds": [
+        "180506"
+      ],
+      "categories": [
+        {
+          "categoryId": "180506",
+          "categoryName": "Contemporary Manufacture"
+        },
+        {
+          "categoryId": "220",
+          "categoryName": "Toys & Hobbies"
+        },
+        {
+          "categoryId": "222",
+          "categoryName": "Diecast & Toy Vehicles"
+        },
+        {
+          "categoryId": "180273",
+          "categoryName": "Cars, Trucks & Vans"
+        }
+      ],
+      "image": {
+        "imageUrl": "https://i.ebayimg.com/images/g/r6AAAeSwlD9pr0TI/s-l225.jpg"
+      },
+      "price": {
+        "value": "17.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117078628407%7C0",
+      "seller": {
+        "username": "reedpb",
+        "feedbackPercentage": "100.0",
+        "feedbackScore": 208
+      },
+      "condition": "New",
+      "conditionId": "1000",
+      "thumbnailImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/r6AAAeSwlD9pr0TI/s-l1600.jpg"
+        }
+      ],
+      "shippingOptions": [
+        {
+          "shippingCostType": "CALCULATED"
+        }
+      ],
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "itemAffiliateWebUrl": "https://www.ebay.com/itm/117078628407?_skw=diecast&hash=item1b426e1837%3Ag%3Ar6AAAeSwlD9pr0TI&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=%253CePNCampaignId%253E&customid=%253CreferenceId%253E&toolid=10049",
+      "itemWebUrl": "https://www.ebay.com/itm/117078628407?_skw=diecast&hash=item1b426e1837:g:r6AAAeSwlD9pr0TI",
+      "itemLocation": {
+        "postalCode": "336**",
+        "country": "US"
+      },
+      "additionalImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/0QoAAeSwJe1pryRJ/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/cyIAAeSwciBpr0aF/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/my0AAeSw~ZZpr0TB/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/5EcAAeSw~eppr0TY/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/kJoAAeSwPqFpr0Te/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/pLUAAeSwIY9pr0Tm/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/5J8AAeSwcQFpr0T1/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/dpYAAeSwUjNpr0UT/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/nLkAAeSwKO1pr0TS/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/nqMAAeSwVqdpr0UM/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/0kkAAeSwXdhpryRD/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/1NYAAeSwSHlpryRO/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/usQAAeSwZAFpryRR/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/HzUAAeSwAYxpryR6/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/uncAAeSwFAlpr0aQ/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/7-cAAeSwPvlpr0aa/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/61EAAeSwAYxpr0aj/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/omsAAeSwI6dpr0ar/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/3NIAAeSww-Vpr0ay/s-l225.jpg"
+        }
+      ],
+      "adultOnly": false,
+      "legacyItemId": "117078628407",
+      "availableCoupons": false,
+      "itemOriginDate": "2026-03-09T19:57:20.000Z",
+      "itemCreationDate": "2026-03-09T19:57:20.000Z",
+      "topRatedBuyingExperience": false,
+      "priorityListing": false,
+      "listingMarketplaceId": "EBAY_US"
+    },
+    {
+      "itemId": "v1|117080910055|0",
+      "title": "MINI GT 1/64 Mazda RX-7 LB-Super Silhouette #41 Numero White MGT00773-MJ NEW",
+      "leafCategoryIds": [
+        "180506"
+      ],
+      "categories": [
+        {
+          "categoryId": "180506",
+          "categoryName": "Contemporary Manufacture"
+        },
+        {
+          "categoryId": "220",
+          "categoryName": "Toys & Hobbies"
+        },
+        {
+          "categoryId": "222",
+          "categoryName": "Diecast & Toy Vehicles"
+        },
+        {
+          "categoryId": "180273",
+          "categoryName": "Cars, Trucks & Vans"
+        }
+      ],
+      "image": {
+        "imageUrl": "https://i.ebayimg.com/images/g/sVoAAeSwkshpsOuB/s-l225.jpg"
+      },
+      "price": {
+        "value": "14.99",
+        "currency": "USD"
+      },
+      "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117080910055%7C0",
+      "seller": {
+        "username": "reedpb",
+        "feedbackPercentage": "100.0",
+        "feedbackScore": 208
+      },
+      "condition": "New",
+      "conditionId": "1000",
+      "thumbnailImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/sVoAAeSwkshpsOuB/s-l1200.jpg"
+        }
+      ],
+      "shippingOptions": [
+        {
+          "shippingCostType": "CALCULATED"
+        }
+      ],
+      "buyingOptions": [
+        "FIXED_PRICE"
+      ],
+      "epid": "22074536855",
+      "itemAffiliateWebUrl": "https://www.ebay.com/itm/117080910055?_skw=diecast&hash=item1b4290e8e7%3Ag%3AsVoAAeSwkshpsOuB&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=%253CePNCampaignId%253E&customid=%253CreferenceId%253E&toolid=10049",
+      "itemWebUrl": "https://www.ebay.com/itm/117080910055?_skw=diecast&hash=item1b4290e8e7:g:sVoAAeSwkshpsOuB",
+      "itemLocation": {
+        "postalCode": "336**",
+        "country": "US"
+      },
+      "additionalImages": [
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/2wEAAeSwVRppsOtm/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/yL4AAeSwqd9psOth/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/3ooAAeSw2MtpsOtr/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/s1kAAeSwVbxpsOtt/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/sR0AAeSwMD1psOtv/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/0oAAAeSwTyVpsOtw/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/s0YAAeSwXQJpsOt2/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/OzYAAeSwAZNpsOt4/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/sPEAAeSwykppsOt5/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/ya0AAeSwCONpsOt-/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/wTsAAeSwYXxpsOuA/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/PjQAAeSwprxpsOuM/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/r04AAeSwJL9psOuQ/s-l225.jpg"
+        },
+        {
+          "imageUrl": "https://i.ebayimg.com/images/g/w7UAAeSw1-NpsOuo/s-l225.jpg"
+        }
+      ],
+      "adultOnly": false,
+      "legacyItemId": "117080910055",
+      "availableCoupons": false,
+      "itemOriginDate": "2026-03-11T04:13:01.000Z",
+      "itemCreationDate": "2026-03-11T04:13:01.000Z",
+      "topRatedBuyingExperience": false,
+      "priorityListing": false,
+      "listingMarketplaceId": "EBAY_US"
+    }
+  ]
+}
