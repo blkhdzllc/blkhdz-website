@@ -4,19 +4,21 @@ import requests
 import base64
 
 # --- 1. SETTINGS & FOLDER SETUP ---
-# Blockheadz LLC - eBay Partner Network Integration
 EPN_CAMPAIGN_ID = "5339141674" 
 
-# FIXED: Hardcoded seller ID to prevent global trending leak
+# FIXED: Your exact eBay account username
 SELLER_ID = "reedpb"
 
 os.makedirs("test", exist_ok=True)
 DATA_FILE = os.path.join("test", "inventory.json")
 
 def get_ebay_token():
-    # This remains the same - ensure your ENV variables are set in GitHub Secrets
     client_id = os.environ.get("APP_ID")
     client_secret = os.environ.get("CERT_ID")
+    
+    if not client_id or not client_secret:
+        print("ERROR: Missing APP_ID or CERT_ID.")
+        return None
     
     auth_str = f"{client_id}:{client_secret}"
     encoded_auth = base64.b64encode(auth_str.encode()).decode()
@@ -31,17 +33,19 @@ def get_ebay_token():
         "scope": "https://api.ebay.com/oauth/api_scope"
     }
     
-    response = requests.post(url, headers=headers, data=data)
-    return response.json().get("access_token")
+    try:
+        response = requests.post(url, headers=headers, data=data)
+        response.raise_for_status()
+        return response.json().get("access_token")
+    except Exception as e:
+        print(f"Token Retrieval Error: {e}")
+        return None
 
 def sync_lego_inventory():
     token = get_ebay_token()
     if not token:
-        print("Failed to retrieve eBay Token")
         return
 
-    # FIXED URL: Correctly formatted seller filter and keywords
-    # Using sellers:{{seller_id}} per eBay API requirements
     url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q=LEGO&filter=sellers:{{{SELLER_ID}}}"
     
     headers = {
@@ -49,22 +53,27 @@ def sync_lego_inventory():
         "X-EBAY-C-ENDUSERCTX": f"affiliateCampaignId={EPN_CAMPAIGN_ID},affiliateReferenceId=blockheadz"
     }
 
-    response = requests.get(url, headers=headers)
-    inventory_data = response.json()
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+        inventory_data = response.json()
 
-    # Final Verification: Manually filter to ensure ONLY blkhdz items are saved
-    if "itemSummaries" in inventory_data:
-        filtered_items = [
-            item for item in inventory_data["itemSummaries"] 
-            if item.get("seller", {}).get("username") == SELLER_ID
-        ]
-        inventory_data["itemSummaries"] = filtered_items
-        print(f"Successfully synced {len(filtered_items)} LEGO items for {SELLER_ID}")
-    else:
-        print("Warning: No items found or API error occurred.")
+        # THE SAFETY NET: Deletes any item that doesn't match your exact username
+        if "itemSummaries" in inventory_data:
+            filtered_items = [
+                item for item in inventory_data["itemSummaries"] 
+                if item.get("seller", {}).get("username", "").lower() == SELLER_ID.lower()
+            ]
+            inventory_data["itemSummaries"] = filtered_items
+            print(f"Successfully synced {len(filtered_items)} LEGO items for {SELLER_ID}")
+        else:
+            print("Warning: No items found or API error occurred.")
 
-    with open(DATA_FILE, "w") as f:
-        json.dump(inventory_data, f, indent=4)
+        with open(DATA_FILE, "w") as f:
+            json.dump(inventory_data, f, indent=4)
+            
+    except Exception as e:
+        print(f"Sync Error: {e}")
 
 if __name__ == "__main__":
     sync_lego_inventory()
