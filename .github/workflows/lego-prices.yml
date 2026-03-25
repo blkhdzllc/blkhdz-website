@@ -20,19 +20,24 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run Sync Script
+      - name: Run LEGO Sync
         working-directory: data
         env:
-          EBAY_APP_ID: ${{ secrets.EBAY_APP_ID }}
-          EBAY_CERT_ID: ${{ secrets.EBAY_CERT_ID }}
-          EBAY_REFRESH_TOKEN: ${{ secrets.EBAY_REFRESH_TOKEN }}
+          APP_ID: ${{ secrets.APP_ID }}
+          CERT_ID: ${{ secrets.CERT_ID }}
         run: python sync_inventory.py
+
+      - name: Run Diecast Sync
+        working-directory: data
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          CERT_ID: ${{ secrets.CERT_ID }}
+        run: python sync_diecast.py
 
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # This stages the entire test folder including the new JSON and LOG files
           git add data/test/*
           git commit -m "Automated Inventory Sync" || echo "No changes to commit"
           git push
