@@ -4,23 +4,20 @@ import requests
 import base64
 
 # --- 1. SETTINGS & FOLDER SETUP ---
-# Blockheadz LLC - eBay Partner Network Integration
 EPN_CAMPAIGN_ID = "5339141674" 
 
-# Hardcoded seller ID to prevent global trending leak
+# FIXED: Your exact eBay account username
 SELLER_ID = "reedpb"
 
-# Ensure the directory exists for GitHub Actions
 os.makedirs("test", exist_ok=True)
 DATA_FILE = os.path.join("test", "diecast.json")
 
 def get_ebay_token():
-    # Uses your standardized GitHub Secret names
     client_id = os.environ.get("APP_ID")
     client_secret = os.environ.get("CERT_ID")
     
     if not client_id or not client_secret:
-        print("ERROR: Missing APP_ID or CERT_ID in environment.")
+        print("ERROR: Missing APP_ID or CERT_ID.")
         return None
     
     auth_str = f"{client_id}:{client_secret}"
@@ -49,7 +46,7 @@ def sync_diecast_inventory():
     if not token:
         return
 
-    # FIXED URL: Uses category_ids=222 (Diecast & Toy Vehicles) to pull all brands
+    # Category 222 = Diecast & Toy Vehicles
     url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?category_ids=222&filter=sellers:{{{SELLER_ID}}}"
     
     headers = {
@@ -62,11 +59,11 @@ def sync_diecast_inventory():
         response.raise_for_status()
         inventory_data = response.json()
 
-        # Final Verification: Manually filter to ensure ONLY blkhdz items are saved
+        # THE SAFETY NET: Deletes any item that doesn't match your exact username
         if "itemSummaries" in inventory_data:
             filtered_items = [
                 item for item in inventory_data["itemSummaries"] 
-                if item.get("seller", {}).get("username") == SELLER_ID
+                if item.get("seller", {}).get("username", "").lower() == SELLER_ID.lower()
             ]
             inventory_data["itemSummaries"] = filtered_items
             print(f"Successfully synced {len(filtered_items)} Diecast items for {SELLER_ID}")
