@@ -52,12 +52,16 @@ def sync_lego_inventory():
     response = requests.get(url, headers=headers)
     inventory_data = response.json()
 
-    # Log verification to console
+    # Final Verification: Manually filter to ensure ONLY blkhdz items are saved
     if "itemSummaries" in inventory_data:
-        print(f"Successfully retrieved {len(inventory_data['itemSummaries'])} items for {SELLER_ID}")
+        filtered_items = [
+            item for item in inventory_data["itemSummaries"] 
+            if item.get("seller", {}).get("username") == SELLER_ID
+        ]
+        inventory_data["itemSummaries"] = filtered_items
+        print(f"Successfully synced {len(filtered_items)} LEGO items for {SELLER_ID}")
     else:
         print("Warning: No items found or API error occurred.")
-        print(json.dumps(inventory_data, indent=2))
 
     with open(DATA_FILE, "w") as f:
         json.dump(inventory_data, f, indent=4)
