@@ -8,7 +8,7 @@ import base64
 EPN_CAMPAIGN_ID = "5339141674" 
 
 # FIXED: Hardcoded seller ID to prevent global trending leak
-SELLER_ID = "blkhdz"
+SELLER_ID = "reedpb"
 
 os.makedirs("test", exist_ok=True)
 DATA_FILE = os.path.join("test", "inventory.json")
