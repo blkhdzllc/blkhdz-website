@@ -11,8 +11,8 @@ EPN_CAMPAIGN_ID = "5339141674"
 SELLER_ID = "blkhdz"
 
 # Ensure the directory exists for GitHub Actions
-os.makedirs("data/test", exist_ok=True)
-DATA_FILE = "data/test/diecast.json"
+os.makedirs("test", exist_ok=True)
+DATA_FILE = os.path.join("test", "diecast.json")
 
 def get_ebay_token():
     # Uses your standardized GitHub Secret names
