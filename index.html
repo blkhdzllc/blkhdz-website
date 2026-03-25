@@ -113,22 +113,12 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.8); 
         }
 
-        .card-img { width: 100%; height: 300px; object-fit: cover; background: #000; }
+        .card-img { width: 100%; height: 300px; object-fit: contain; background: #000; padding: 10px; box-sizing: border-box; }
         
         .card-body { padding: 25px; flex-grow: 1; }
-        .card-sku { font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 8px; }
+        .card-sku { font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 8px; font-family: sans-serif; }
         .card-title { font-size: 1.1rem; line-height: 1.3; min-height: 3em; margin-bottom: 15px; }
         .price-tag { font-size: 1.6rem; color: #fff; }
-        .status-tag { font-size: 0.75rem; margin-top: 10px; color: var(--blk-teal); }
-
-        .ship-data { 
-            background: #000; 
-            padding: 15px 25px; 
-            font-family: sans-serif; 
-            font-size: 0.7rem; 
-            color: #555; 
-            border-top: 1px solid #222; 
-        }
 
         /* FOOTER */
         footer { text-align: center; padding: 60px 10%; background: #000; border-top: 1px solid #111; }
@@ -153,13 +143,13 @@
     </section>
 
     <nav class="market-nav">
-        <button class="nav-btn active" onclick="switchTab('lego-market', this)">LEGO INVENTORY</button>
-        <button class="nav-btn" onclick="switchTab('diecast-market', this)">DIECAST CARS</button>
+        <button class="nav-btn active" onclick="switchTab('inventory.json', this)">LEGO INVENTORY</button>
+        <button class="nav-btn" onclick="switchTab('diecast.json', this)">DIECAST CARS</button>
     </nav>
 
     <div class="container">
-        <div id="lego-market" class="grid active"></div>
-        <div id="diecast-market" class="grid"></div>
+        <div id="market-grid" class="grid active">
+            </div>
     </div>
 
     <footer>
@@ -171,62 +161,64 @@
     </footer>
 
     <script>
-        function switchTab(id, el) {
-            document.querySelectorAll('.grid').forEach(g => g.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            el.classList.add('active');
-        }
-
         // Parallax Logic
         window.addEventListener('scroll', () => {
             const hero = document.getElementById('parallax-hero');
             hero.style.transform = `translateY(${window.pageYOffset * 0.3}px)`;
         });
 
-        async function initMarket() {
+        async function switchTab(fileName, el) {
+            // Update UI buttons
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+
+            const container = document.getElementById('market-grid');
+            container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">SCANNING DATABASE...</div>';
+
             try {
-                const response = await fetch('./data.json?v=' + Date.now());
+                const response = await fetch('data/test/' + fileName + '?v=' + Date.now());
                 const data = await response.json();
+                const items = data.itemSummaries || [];
 
-                // Render LEGO
-                const legoContainer = document.getElementById('lego-market');
-                legoContainer.innerHTML = data.lego.map(item => `
-                    <a href="${item.url}" target="_blank" class="card-link">
-                        <div class="card">
-                            <img src="./images/${item.img}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
-                            <div class="card-body">
-                                <div class="card-sku" style="color:var(--blk-red)">SET #${item.id}</div>
-                                <div class="card-title">${item.name}</div>
-                                <div class="price-tag">$${item.price}</div>
-                            </div>
-                            <div class="ship-data">${item.shipping}</div>
-                        </div>
-                    </a>
-                `).join('');
+                if (items.length === 0) {
+                    container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px;">NO ACTIVE LISTINGS FOUND.</div>';
+                    return;
+                }
 
-                // Render Diecast
-                const diecastContainer = document.getElementById('diecast-market');
-                diecastContainer.innerHTML = data.diecast.map(item => `
-                    <a href="${item.url}" target="_blank" class="card-link">
-                        <div class="card">
-                            <img src="./images/${item.img}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
-                            <div class="card-body">
-                                <div class="card-sku" style="color:var(--blk-teal)">SKU: ${item.id}</div>
-                                <div class="card-title">${item.name}</div>
-                                <div class="price-tag">$${item.price}</div>
-                                <div class="status-tag">${item.status}</div>
+                container.innerHTML = items.map(item => {
+                    const img = (item.image && item.image.imageUrl) ? item.image.imageUrl : './images/hero-parallax.jpg';
+                    const price = item.price ? `$${parseFloat(item.price.value).toFixed(2)}` : 'VIEW ON EBAY';
+                    // USE AFFILIATE LINK
+                    const url = item.itemAffiliateWebUrl || item.itemWebUrl;
+                    
+                    // Determine if LEGO or Diecast for SKU color
+                    const skuColor = fileName === 'inventory.json' ? 'var(--blk-red)' : 'var(--blk-teal)';
+                    const skuLabel = fileName === 'inventory.json' ? 'SET' : 'SKU';
+
+                    return `
+                        <a href="${url}" target="_blank" class="card-link">
+                            <div class="card">
+                                <img src="${img}" class="card-img" alt="${item.title}">
+                                <div class="card-body">
+                                    <div class="card-sku" style="color:${skuColor}">${skuLabel} #${item.itemId.split('|')[1] || 'ACTIVE'}</div>
+                                    <div class="card-title">${item.title}</div>
+                                    <div class="price-tag">${price}</div>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                `).join('');
+                        </a>
+                    `;
+                }).join('');
 
             } catch (error) {
                 console.error("Market Load Error:", error);
+                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">ERROR LOADING ' + fileName + '</div>';
             }
         }
 
-        window.onload = initMarket;
+        // Default Load
+        window.onload = () => {
+            switchTab('inventory.json', document.querySelector('.nav-btn.active'));
+        };
     </script>
 </body>
 </html>
