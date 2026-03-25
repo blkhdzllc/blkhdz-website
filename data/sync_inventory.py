@@ -5,19 +5,31 @@ import base64
 
 # --- 1. SETTINGS & FOLDER SETUP ---
 EPN_CAMPAIGN_ID = "5339141674" 
-
-# FIXED: Your exact eBay account username
 SELLER_ID = "reedpb"
 
 os.makedirs("test", exist_ok=True)
 DATA_FILE = os.path.join("test", "inventory.json")
+
+def force_error_to_website(error_msg):
+    # This forces the error to show up as a card on your website so we can read it
+    error_data = {
+        "itemSummaries": [{
+            "itemId": "ERROR|000",
+            "title": f"🚨 SYSTEM ALERT: {error_msg} 🚨",
+            "price": {"value": "0.00", "currency": "USD"},
+            "seller": {"username": SELLER_ID}
+        }]
+    }
+    with open(DATA_FILE, "w") as f:
+        json.dump(error_data, f, indent=4)
+    print(f"Diagnostic Error Logged: {error_msg}")
 
 def get_ebay_token():
     client_id = os.environ.get("APP_ID")
     client_secret = os.environ.get("CERT_ID")
     
     if not client_id or not client_secret:
-        print("ERROR: Missing APP_ID or CERT_ID.")
+        force_error_to_website("GITHUB SECRETS MISSING! Cannot find APP_ID or CERT_ID.")
         return None
     
     auth_str = f"{client_id}:{client_secret}"
@@ -38,7 +50,7 @@ def get_ebay_token():
         response.raise_for_status()
         return response.json().get("access_token")
     except Exception as e:
-        print(f"Token Retrieval Error: {e}")
+        force_error_to_website(f"EBAY API KEY REJECTED! Error: {e}")
         return None
 
 def sync_lego_inventory():
@@ -58,22 +70,19 @@ def sync_lego_inventory():
         response.raise_for_status()
         inventory_data = response.json()
 
-        # THE SAFETY NET: Deletes any item that doesn't match your exact username
+        # The Safety Net
         if "itemSummaries" in inventory_data:
             filtered_items = [
                 item for item in inventory_data["itemSummaries"] 
                 if item.get("seller", {}).get("username", "").lower() == SELLER_ID.lower()
             ]
             inventory_data["itemSummaries"] = filtered_items
-            print(f"Successfully synced {len(filtered_items)} LEGO items for {SELLER_ID}")
-        else:
-            print("Warning: No items found or API error occurred.")
-
+        
         with open(DATA_FILE, "w") as f:
             json.dump(inventory_data, f, indent=4)
             
     except Exception as e:
-        print(f"Sync Error: {e}")
+        force_error_to_website(f"SEARCH FAILED! Error: {e}")
 
 if __name__ == "__main__":
     sync_lego_inventory()
