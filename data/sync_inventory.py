@@ -15,8 +15,8 @@ DATA_FILE = os.path.join("test", "inventory.json")
 
 def get_ebay_token():
     # This remains the same - ensure your ENV variables are set in GitHub Secrets
-    client_id = os.environ.get("EBAY_CLIENT_ID")
-    client_secret = os.environ.get("EBAY_CLIENT_SECRET")
+    client_id = os.environ.get("APP_ID")
+    client_secret = os.environ.get("CERT_ID")
     
     auth_str = f"{client_id}:{client_secret}"
     encoded_auth = base64.b64encode(auth_str.encode()).decode()
