@@ -8,7 +8,7 @@ import base64
 EPN_CAMPAIGN_ID = "5339141674" 
 
 # Hardcoded seller ID to prevent global trending leak
-SELLER_ID = "blkhdz"
+SELLER_ID = "reedpb"
 
 # Ensure the directory exists for GitHub Actions
 os.makedirs("test", exist_ok=True)
