@@ -1,7 +1,7 @@
 name: Manual Market Test (BrickEconomy)
 
 on:
-  workflow_dispatch: # Manual Button
+  workflow_dispatch: # Adds the manual button in Actions tab
 
 jobs:
   run-test:
@@ -19,12 +19,14 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Execute Scraper
+        # Run the script from the tests directory
         run: python tests/test_brickeconomy.py
 
       - name: Commit Test Results
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # NPW: Only add files from the tests folder to avoid touching production
           git add tests/results/*
           git commit -m "Updated BrickEconomy Test Results [Manual Run]" || echo "No changes"
           git push
