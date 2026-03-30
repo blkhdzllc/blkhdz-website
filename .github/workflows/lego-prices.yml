@@ -38,6 +38,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/test/*
+          git add data/brick-collection/* data/diecast/*
           git commit -m "Automated Inventory Sync" || echo "No changes to commit"
           git push
