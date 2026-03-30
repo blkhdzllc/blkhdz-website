@@ -143,7 +143,7 @@
     </section>
 
     <nav class="market-nav">
-        <button class="nav-btn active" onclick="switchTab('inventory.json', this)">LEGO INVENTORY</button>
+        <button class="nav-btn active" onclick="switchTab('inventory.json', this)">BRICK COLLECTION</button>
         <button class="nav-btn" onclick="switchTab('diecast.json', this)">DIECAST CARS</button>
     </nav>
 
@@ -176,7 +176,9 @@
             container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">SCANNING DATABASE...</div>';
 
             try {
-                const response = await fetch('data/test/' + fileName + '?v=' + Date.now());
+                // NPW: Pointing to new clean directory structure
+                const folder = fileName === 'inventory.json' ? 'data/brick-collection/' : 'data/diecast/';
+                const response = await fetch(folder + fileName + '?v=' + Date.now());
                 const data = await response.json();
                 const items = data.itemSummaries || [];
 
@@ -188,10 +190,8 @@
                 container.innerHTML = items.map(item => {
                     const img = (item.image && item.image.imageUrl) ? item.image.imageUrl : './images/hero-parallax.jpg';
                     const price = item.price ? `$${parseFloat(item.price.value).toFixed(2)}` : 'VIEW ON EBAY';
-                    // USE AFFILIATE LINK
                     const url = item.itemAffiliateWebUrl || item.itemWebUrl;
                     
-                    // Determine if LEGO or Diecast for SKU color
                     const skuColor = fileName === 'inventory.json' ? 'var(--blk-red)' : 'var(--blk-teal)';
                     const skuLabel = fileName === 'inventory.json' ? 'SET' : 'SKU';
 
