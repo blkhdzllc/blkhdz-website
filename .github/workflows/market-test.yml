@@ -1,0 +1,30 @@
+name: Manual Market Test (BrickEconomy)
+
+on:
+  workflow_dispatch: # Manual Button
+
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Scraper Tools
+        run: pip install requests beautifulsoup4
+
+      - name: Execute Scraper
+        run: python tests/test_brickeconomy.py
+
+      - name: Commit Test Results
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add tests/results/*
+          git commit -m "Updated BrickEconomy Test Results [Manual Run]" || echo "No changes"
+          git push
