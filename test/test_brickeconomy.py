@@ -53,9 +53,9 @@ if __name__ == "__main__":
         print(f"Fetching: Set {s}")
         results.append(get_brickeconomy_data(s))
     
-    # NPW: Save results ONLY to the tests/results folder
-    os.makedirs('tests/results', exist_ok=True)
-    with open('tests/results/brickeconomy_test.json', 'w') as f:
+    # NPW: Save results ONLY to your existing 'test' folder
+    os.makedirs('test/results', exist_ok=True)
+    with open('test/results/brickeconomy_test.json', 'w') as f:
         json.dump(results, f, indent=4)
     
-    print(f"--- TEST COMPLETE. RESULTS IN tests/results/brickeconomy_test.json ---")
+    print(f"--- TEST COMPLETE. RESULTS IN test/results/brickeconomy_test.json ---")
