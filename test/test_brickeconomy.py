@@ -9,10 +9,10 @@ TEST_SETS = ["75274", "31167", "71738"]
 
 def get_brickeconomy_data(set_id):
     url = f"https://www.brickeconomy.com/set/{set_id}-1/"
+    # Mimic a modern browser to avoid being blocked as a bot
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5'
+        'Accept-Language': 'en-US,en;q=0.9'
     }
     
     try:
@@ -30,8 +30,7 @@ def get_brickeconomy_data(set_id):
             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
 
-        # STRATEGY 1: Targeted Table Cell Selection
-        # BrickEconomy often wraps key stats in a specific summary table
+        # Targeted logic: Search the specific summary table cells
         rows = soup.find_all('tr')
         for row in rows:
             cells = row.find_all('td')
@@ -43,32 +42,40 @@ def get_brickeconomy_data(set_id):
                 elif "Retail Price" in label:
                     data["retail_price"] = val
 
-        # STRATEGY 2: Precise Status Selection
-        # The '6' came from a generic badge; we need the one specifically for availability
-        status_container = soup.find('div', class_='mb-2', string=lambda t: t and 'Status' in t)
-        if status_container:
-            status_badge = status_container.find('span', class_='badge')
-            if status_badge:
-                data["status"] = status_badge.get_text(strip=True)
-        else:
-            # Fallback for status
-            for badge in soup.find_all('span', class_='badge'):
-                text = badge.get_text(strip=True)
-                if text in ['Retired', 'Available', 'Retiring Soon']:
-                    data["status"] = text
-                    break
+        # Targeted logic: Find the availability status badge
+        status_tag = soup.find('span', class_='badge')
+        if status_tag:
+            # Filters out numeric codes and looks for actual status words
+            text = status_tag.get_text(strip=True)
+            if any(word in text for word in ['Retired', 'Available', 'Soon']):
+                data["status"] = text
 
         return data
     except Exception as e:
         return {"id": set_id, "error": str(e)}
 
 if __name__ == "__main__":
-    print(f"--- BRICKECONOMY NPW TEST: {datetime.datetime.now()} ---")
-    results = [get_brickeconomy_data(s) for s in TEST_SETS]
+    print("--- BRICKECONOMY TEST START ---")
+    new_results = [get_brickeconomy_data(s) for s in TEST_SETS]
     
-    # Save results ONLY to the 'test' directory
+    # NPW: Logic to APPEND to a history file instead of overwriting
     os.makedirs('test/results', exist_ok=True)
-    with open('test/results/brickeconomy_test.json', 'w') as f:
-        json.dump(results, f, indent=4)
+    history_file = 'test/results/brickeconomy_history.json'
     
-    print("--- TEST COMPLETE. CHECK test/results/brickeconomy_test.json ---")
+    history = []
+    if os.path.exists(history_file):
+        with open(history_file, 'r') as f:
+            try:
+                history = json.load(f)
+            except:
+                history = []
+    
+    history.append({
+        "run_time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "data": new_results
+    })
+    
+    with open(history_file, 'w') as f:
+        json.dump(history, f, indent=4)
+    
+    print(f"--- TEST COMPLETE. DATA APPENDED TO {history_file} ---")
