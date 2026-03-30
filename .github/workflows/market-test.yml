@@ -19,14 +19,14 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Execute Scraper
-        # Run the script from the tests directory
-        run: python tests/test_brickeconomy.py
+        # NPW: Points to your actual folder name: 'test'
+        run: python test/test_brickeconomy.py
 
       - name: Commit Test Results
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # NPW: Only add files from the tests folder to avoid touching production
-          git add tests/results/*
+          # NPW: Adds results specifically to the 'test' directory
+          git add test/results/*
           git commit -m "Updated BrickEconomy Test Results [Manual Run]" || echo "No changes"
           git push
