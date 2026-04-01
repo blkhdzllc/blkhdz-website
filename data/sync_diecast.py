@@ -5,12 +5,11 @@ import base64
 
 # --- 1. SETTINGS & FOLDER SETUP ---
 EPN_CAMPAIGN_ID = "5339141674" 
-
-# FIXED: Your exact eBay account username
 SELLER_ID = "reedpb"
 
-os.makedirs("test", exist_ok=True)
-DATA_FILE = os.path.join("test", "diecast.json")
+# NPW: Ensuring we use the correct professional directory
+os.makedirs("data/diecast", exist_ok=True)
+DATA_FILE = os.path.join("data/diecast", "diecast.json")
 
 def get_ebay_token():
     client_id = os.environ.get("APP_ID")
@@ -59,14 +58,15 @@ def sync_diecast_inventory():
         response.raise_for_status()
         inventory_data = response.json()
 
-        # THE SAFETY NET: Deletes any item that doesn't match your exact username
         if "itemSummaries" in inventory_data:
+            # NPW: Added 'estimatedAvailabilityStatus' check to filter out sold/out-of-stock items
             filtered_items = [
                 item for item in inventory_data["itemSummaries"] 
-                if item.get("seller", {}).get("username", "").lower() == SELLER_ID.lower()
+                if item.get("seller", {}).get("username", "").lower() == SELLER_ID.lower() and
+                item.get("estimatedAvailabilityStatus") != "OUT_OF_STOCK"
             ]
             inventory_data["itemSummaries"] = filtered_items
-            print(f"Successfully synced {len(filtered_items)} Diecast items for {SELLER_ID}")
+            print(f"Successfully synced {len(filtered_items)} active items for {SELLER_ID}")
         else:
             print("Warning: No items found or API error occurred.")
 
