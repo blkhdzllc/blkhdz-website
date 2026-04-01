@@ -8,6 +8,7 @@ EPN_CAMPAIGN_ID = "5339141674"
 SELLER_ID = "reedpb"
 
 # NPW: Ensuring we use the correct professional directory
+# Change this line in your production script
 os.makedirs("data/diecast", exist_ok=True)
 DATA_FILE = os.path.join("data/diecast", "diecast.json")
 
