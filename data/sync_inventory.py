@@ -7,29 +7,21 @@ import base64
 EPN_CAMPAIGN_ID = "5339141674" 
 SELLER_ID = "reedpb"
 
-os.makedirs("test", exist_ok=True)
-DATA_FILE = os.path.join("test", "inventory.json")
+# NPW Fix: Target the production folder that the website actually reads
+# We check the current folder to ensure we don't double-nest 'data/data'
+if os.path.basename(os.getcwd()) == 'data':
+    BASE_DIR = "brick-collection"
+else:
+    BASE_DIR = os.path.join("data", "brick-collection")
 
-def force_error_to_website(error_msg):
-    # This forces the error to show up as a card on your website so we can read it
-    error_data = {
-        "itemSummaries": [{
-            "itemId": "ERROR|000",
-            "title": f"🚨 SYSTEM ALERT: {error_msg} 🚨",
-            "price": {"value": "0.00", "currency": "USD"},
-            "seller": {"username": SELLER_ID}
-        }]
-    }
-    with open(DATA_FILE, "w") as f:
-        json.dump(error_data, f, indent=4)
-    print(f"Diagnostic Error Logged: {error_msg}")
+os.makedirs(BASE_DIR, exist_ok=True)
+DATA_FILE = os.path.join(BASE_DIR, "inventory.json")
 
 def get_ebay_token():
     client_id = os.environ.get("APP_ID")
     client_secret = os.environ.get("CERT_ID")
     
     if not client_id or not client_secret:
-        force_error_to_website("GITHUB SECRETS MISSING! Cannot find APP_ID or CERT_ID.")
         return None
     
     auth_str = f"{client_id}:{client_secret}"
@@ -49,8 +41,7 @@ def get_ebay_token():
         response = requests.post(url, headers=headers, data=data)
         response.raise_for_status()
         return response.json().get("access_token")
-    except Exception as e:
-        force_error_to_website(f"EBAY API KEY REJECTED! Error: {e}")
+    except Exception:
         return None
 
 def sync_lego_inventory():
@@ -58,6 +49,7 @@ def sync_lego_inventory():
     if not token:
         return
 
+    # Category search for LEGO items from your specific seller ID
     url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q=LEGO&filter=sellers:{{{SELLER_ID}}}"
     
     headers = {
@@ -70,19 +62,21 @@ def sync_lego_inventory():
         response.raise_for_status()
         inventory_data = response.json()
 
-        # The Safety Net
         if "itemSummaries" in inventory_data:
+            # Filters for your username and ensures items are available
             filtered_items = [
                 item for item in inventory_data["itemSummaries"] 
-                if item.get("seller", {}).get("username", "").lower() == SELLER_ID.lower()
+                if item.get("seller", {}).get("username", "").lower() == SELLER_ID.lower() and
+                item.get("estimatedAvailabilityStatus") != "OUT_OF_STOCK"
             ]
             inventory_data["itemSummaries"] = filtered_items
         
         with open(DATA_FILE, "w") as f:
             json.dump(inventory_data, f, indent=4)
+        print(f"Success: {len(filtered_items)} LEGO items synced to {DATA_FILE}")
             
     except Exception as e:
-        force_error_to_website(f"SEARCH FAILED! Error: {e}")
+        print(f"Search Failed: {e}")
 
 if __name__ == "__main__":
     sync_lego_inventory()
