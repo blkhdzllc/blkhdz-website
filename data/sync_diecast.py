@@ -7,7 +7,8 @@ import base64
 EPN_CAMPAIGN_ID = "5339141674" 
 SELLER_ID = "reedpb"
 
-# NPW Fix: Check current directory to ensure correct pathing within GitHub Actions
+# NPW Fix: Target the EXACT path your index.html uses to load diecast data
+# We check if already in 'data' folder to avoid 'data/data' nesting
 if os.path.basename(os.getcwd()) == 'data':
     BASE_DIR = "diecast"
 else:
