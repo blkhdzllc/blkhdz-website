@@ -1,7 +1,7 @@
 {
     "environment": {
         "node_version": "24.x",
-        "last_updated": "2026-03-10"
+        "last_updated": "2026-04-05"
     },
     "inventory": [
         {
@@ -44,13 +44,6 @@
             "name": "Pop Race 1:64 Honda Civic EG6 Pandem v1.5 - Idemitsu",
             "image_url": "PR640212.jpg",
             "market_value": 24.99,
-            "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
-        },
-        {
-            "set_num": "T64-062-20NUR02",
-            "name": "Tarmac Works 1:64 Mercedes-AMG GT3 Team Bilstein #2",
-            "image_url": "T64-062-20NUR02.jpg",
-            "market_value": 24.95,
             "shipping_details": { "weight_lbs": 0.4, "box_dimensions": "6x3x3" }
         },
         {
