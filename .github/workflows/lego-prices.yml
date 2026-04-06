@@ -1,15 +1,15 @@
 name: Update BLKHDZ Inventory
 
 on:
-  workflow_dispatch: # Allows manual run
   schedule:
     - cron: '0 0 * * *' # Runs daily at midnight
+  workflow_dispatch: # Allows manual trigger
 
 jobs:
-  build:
+  sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -17,27 +17,28 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: pip install requests
 
-      - name: Run LEGO Sync
-        working-directory: data
-        env:
-          APP_ID: ${{ secrets.APP_ID }}
-          CERT_ID: ${{ secrets.CERT_ID }}
-        run: python sync_inventory.py
-
-      - name: Run Diecast Sync
+      - name: Sync Diecast Inventory
         working-directory: data
         env:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
         run: python sync_diecast.py
 
+      - name: Sync LEGO Inventory
+        working-directory: data
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          CERT_ID: ${{ secrets.CERT_ID }}
+        run: python sync_inventory.py
+
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/brick-collection/* data/diecast/*
+          # NPW Fix: Add all changes to ensure inventory updates are pushed
+          git add .
           git commit -m "Automated Inventory Sync" || echo "No changes to commit"
           git push
