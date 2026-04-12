@@ -127,84 +127,6 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|116979816913|0",
-            "title": "LEGO Star Wars BrickHeadz General Grievous 40796 4 Arms RETIRED 20th Anniv NEW",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/T9AAAeSw-odpPYKF/s-l225.jpg"
-            },
-            "price": {
-                "value": "29.00",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C116979816913%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/T9AAAeSw-odpPYKF/s-l1200.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/116979816913?_skw=LEGO&hash=item1b3c8a59d1%3Ag%3AT9AAAeSw-odpPYKF&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/116979816913?_skw=LEGO&hash=item1b3c8a59d1:g:T9AAAeSw-odpPYKF",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/hI0AAeSwyShpPPks/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "116979816913",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-01-12T16:02:12.000Z",
-            "itemCreationDate": "2026-01-12T16:02:12.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
             "itemId": "v1|117037598121|417105502364",
             "title": "LEGO Halloween Spooky Collection 31167 40822 40772 40721 Pick Your Set",
             "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=117037598121",
@@ -302,6 +224,84 @@
             "availableCoupons": false,
             "itemOriginDate": "2025-10-24T03:15:03.000Z",
             "itemCreationDate": "2026-02-14T18:34:17.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|116979816913|0",
+            "title": "LEGO Star Wars BrickHeadz General Grievous 40796 4 Arms RETIRED 20th Anniv NEW",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/T9AAAeSw-odpPYKF/s-l225.jpg"
+            },
+            "price": {
+                "value": "32.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C116979816913%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/T9AAAeSw-odpPYKF/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/116979816913?_skw=LEGO&hash=item1b3c8a59d1%3Ag%3AT9AAAeSw-odpPYKF&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/116979816913?_skw=LEGO&hash=item1b3c8a59d1:g:T9AAAeSw-odpPYKF",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/hI0AAeSwyShpPPks/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "116979816913",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-12T16:02:12.000Z",
+            "itemCreationDate": "2026-01-12T16:02:12.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
@@ -408,280 +408,6 @@
             "availableCoupons": false,
             "itemOriginDate": "2026-03-31T00:58:53.000Z",
             "itemCreationDate": "2026-03-31T00:58:53.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117137794597|0",
-            "title": "LEGO Star Wars BrickHeadz Mace Windu 40796 Purple Lightsaber RETIRED New",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/~RwAAeSwbc5pPYMN/s-l225.jpg"
-            },
-            "price": {
-                "value": "13.00",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137794597%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/~RwAAeSwbc5pPYMN/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137794597?_skw=LEGO&hash=item1b45f4e625%3Ag%3A%7ERwAAeSwbc5pPYMN&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117137794597?_skw=LEGO&hash=item1b45f4e625:g:~RwAAeSwbc5pPYMN",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/Qu4AAeSwrgtpPPpf/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117137794597",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-11T19:29:12.000Z",
-            "itemCreationDate": "2026-04-11T19:29:12.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117137821228|0",
-            "title": "LEGO Celebration 40758 Ferris Wheel with Fireworks Seasonal Limited Edition NEW",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/ZC8AAeSwUbhp2qO6/s-l225.jpg"
-            },
-            "price": {
-                "value": "22.00",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137821228%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ZC8AAeSwUbhp2qO6/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137821228?_skw=LEGO&hash=item1b45f54e2c%3Ag%3AZC8AAeSwUbhp2qO6&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117137821228?_skw=LEGO&hash=item1b45f54e2c:g:ZC8AAeSwUbhp2qO6",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/bEcAAeSwNw1p2qPV/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/d9wAAeSwVNVp2qPe/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ffMAAeSwC1Zp2qPh/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/o0sAAeSwgIRp2qPj/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/5LgAAeSwJVdp2qPm/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/nhkAAeSwLGBp2qPo/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/tAgAAeSwgcVp2qPq/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117137821228",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-11T19:41:52.000Z",
-            "itemCreationDate": "2026-04-11T19:41:52.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117137844415|0",
-            "title": "LEGO CITY: F1 Williams Racing & Haas F1 Race Cars (60464)",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/ZWYAAeSw8Zdp2qo3/s-l225.jpg"
-            },
-            "price": {
-                "value": "21.75",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137844415%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ZWYAAeSw8Zdp2qo3/s-l1200.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "22074070064",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137844415?_skw=LEGO&hash=item1b45f5a8bf%3Ag%3AZWYAAeSw8Zdp2qo3&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117137844415?_skw=LEGO&hash=item1b45f5a8bf:g:ZWYAAeSw8Zdp2qo3",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/wpAAAeSwPZBp2qeX/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/gAoAAeSwuqdp2qee/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/zrkAAeSwETJp2qeg/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/-WMAAeSwp2Jp2qei/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/xogAAeSwPfdp2qek/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/yZIAAeSw9-pp2qel/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/yrEAAeSwG25p2qfv/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/sT4AAeSwpQZp2qfx/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117137844415",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-11T20:00:49.000Z",
-            "itemCreationDate": "2026-04-11T20:00:49.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
@@ -1320,6 +1046,277 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
+            "itemId": "v1|117067109523|0",
+            "title": "LEGO Icons Poinsettia 10370 Botanical Collection 100% Complete Used Open Box",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/56kAAeSwjhBppjVl/s-l225.jpg"
+            },
+            "price": {
+                "value": "26.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117067109523%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "Used",
+            "conditionId": "3000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/56kAAeSwjhBppjVl/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "15072727974",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117067109523?_skw=LEGO&hash=item1b41be5493%3Ag%3A56kAAeSwjhBppjVl&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117067109523?_skw=LEGO&hash=item1b41be5493:g:56kAAeSwjhBppjVl",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/VDkAAeSwlNtpqJvk/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/1VEAAeSwtplppjVv/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/zGsAAeSwv1xppjV1/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/JZYAAeSwb25ppjV8/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/HCAAAeSwJEJppjWA/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/01oAAeSwjdJppjWD/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0cIAAeSwTKRppjWG/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/x1EAAeSwDtlppjWI/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/52cAAeSwvDJppjWL/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117067109523",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-03T01:24:34.000Z",
+            "itemCreationDate": "2026-03-03T01:24:34.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117137821228|0",
+            "title": "LEGO Celebration 40758 Ferris Wheel with Fireworks Seasonal Limited Edition NEW",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/ZC8AAeSwUbhp2qO6/s-l225.jpg"
+            },
+            "price": {
+                "value": "22.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137821228%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ZC8AAeSwUbhp2qO6/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137821228?_skw=LEGO&hash=item1b45f54e2c%3Ag%3AZC8AAeSwUbhp2qO6&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117137821228?_skw=LEGO&hash=item1b45f54e2c:g:ZC8AAeSwUbhp2qO6",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/bEcAAeSwNw1p2qPV/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/d9wAAeSwVNVp2qPe/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ffMAAeSwC1Zp2qPh/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/o0sAAeSwgIRp2qPj/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/5LgAAeSwJVdp2qPm/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/nhkAAeSwLGBp2qPo/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/tAgAAeSwgcVp2qPq/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117137821228",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-11T19:41:52.000Z",
+            "itemCreationDate": "2026-04-11T19:41:52.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117137794597|0",
+            "title": "LEGO Star Wars BrickHeadz Mace Windu 40796 Purple Lightsaber RETIRED New",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/~RwAAeSwbc5pPYMN/s-l225.jpg"
+            },
+            "price": {
+                "value": "19.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137794597%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~RwAAeSwbc5pPYMN/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137794597?_skw=LEGO&hash=item1b45f4e625%3Ag%3A%7ERwAAeSwbc5pPYMN&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117137794597?_skw=LEGO&hash=item1b45f4e625:g:~RwAAeSwbc5pPYMN",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Qu4AAeSwrgtpPPpf/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117137794597",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-11T19:29:12.000Z",
+            "itemCreationDate": "2026-04-11T19:29:12.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
             "itemId": "v1|117122764799|0",
             "title": "LEGO ARCHITECTURE: San Francisco (21043)",
             "leafCategoryIds": [
@@ -1372,8 +1369,8 @@
                 "FIXED_PRICE"
             ],
             "epid": "6042048464",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117122764799?_skw=LEGO&hash=item1b450f8fff%3Ag%3A%7ErsAAeSwGvhpWNXy&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZmpFYIyO9wsNyj1nHMst8S3SW8ZXKXHQyc7hdDflRWctkB%2Fp6wQH10DNZltrMmn0%2FT9OELnBMlaHLvyhXmUlv2X89Rb9ZcE%2BuBvIrDCzAAk9xRiczKB2Ly7kt55sf8VnMMDzmQg7rVS%2B2qXLEtbf1FsNP2gUw4fdE4ifCELkyyYlEF47js%2FsohxxUMEpbawPnQpLLlBf86%2Fe1dhEBhzs8IfYRi2quBBGMxmAgwvlOGwt0rjibwreObN4DS8XW4QdRODUltmpB6lA31FCoFJFV5&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117122764799?_skw=LEGO&hash=item1b450f8fff:g:~rsAAeSwGvhpWNXy&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZmpFYIyO9wsNyj1nHMst8S3SW8ZXKXHQyc7hdDflRWctkB%2Fp6wQH10DNZltrMmn0%2FT9OELnBMlaHLvyhXmUlv2X89Rb9ZcE%2BuBvIrDCzAAk9xRiczKB2Ly7kt55sf8VnMMDzmQg7rVS%2B2qXLEtbf1FsNP2gUw4fdE4ifCELkyyYlEF47js%2FsohxxUMEpbawPnQpLLlBf86%2Fe1dhEBhzs8IfYRi2quBBGMxmAgwvlOGwt0rjibwreObN4DS8XW4QdRODUltmpB6lA31FCoFJFV5",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117122764799?_skw=LEGO&hash=item1b450f8fff%3Ag%3A%7ErsAAeSwGvhpWNXy&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZmpFYIyO9wsNyj1nHMst8S3SW8ZXKXHQyc7hdDflRWctkB%2Fp6wQH10DNZltrMmn0%2FT9OELnBMlaHLvyhXmUlv2X89Rb9ZcE%2BuBvIrDCzAAk9xRiczKB2Ly7kt55sf8VnMYocDIrAwnIQkt84573vbsZIC6n%2FBSclp2pa74rGIaqN0psrAo0DDWyGs1U0MDCIM9hU9xHNxLUqNgVkAkkfTZi6J7RBLNIisApIHAFeKPQaW3rEjPyF6m8p618mYzHxKPkIgItLNM3%2BUlwyHKiTRb&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117122764799?_skw=LEGO&hash=item1b450f8fff:g:~rsAAeSwGvhpWNXy&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZmpFYIyO9wsNyj1nHMst8S3SW8ZXKXHQyc7hdDflRWctkB%2Fp6wQH10DNZltrMmn0%2FT9OELnBMlaHLvyhXmUlv2X89Rb9ZcE%2BuBvIrDCzAAk9xRiczKB2Ly7kt55sf8VnMYocDIrAwnIQkt84573vbsZIC6n%2FBSclp2pa74rGIaqN0psrAo0DDWyGs1U0MDCIM9hU9xHNxLUqNgVkAkkfTZi6J7RBLNIisApIHAFeKPQaW3rEjPyF6m8p618mYzHxKPkIgItLNM3%2BUlwyHKiTRb",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1472,8 +1469,8 @@
                 "FIXED_PRICE"
             ],
             "epid": "20070905529",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117004214642?_skw=LEGO&hash=item1b3dfea172%3Ag%3A%7E8UAAeSwR6BpKeTr&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaw2ea5c2ZZEfJMibFPNrF%2BsgOcV%2FGPr8FYfsjB7V51JmgKW8%2FUP4RUO9%2BFuZ0IefbbizzzkDkrQdDJ30mrjkv3qLeVQ8XVYX6gGhN4l8hAQRcCpwAY1eJYAjA4bRzapeQI14kS2NppZmyjAOT0at1RtsKJqQxa2TqF5WqDBteaFCSWMKH6jOtBaO6qiPsvaOVIplm5BIHoLIMVjGHE1puVb6FCsyaQsJFusMz9klcGJV812EAAuh%2Bw4FzXQVjDtEKWGRV0mI9lWJTUwvIAKEuN&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117004214642?_skw=LEGO&hash=item1b3dfea172:g:~8UAAeSwR6BpKeTr&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaw2ea5c2ZZEfJMibFPNrF%2BsgOcV%2FGPr8FYfsjB7V51JmgKW8%2FUP4RUO9%2BFuZ0IefbbizzzkDkrQdDJ30mrjkv3qLeVQ8XVYX6gGhN4l8hAQRcCpwAY1eJYAjA4bRzapeQI14kS2NppZmyjAOT0at1RtsKJqQxa2TqF5WqDBteaFCSWMKH6jOtBaO6qiPsvaOVIplm5BIHoLIMVjGHE1puVb6FCsyaQsJFusMz9klcGJV812EAAuh%2Bw4FzXQVjDtEKWGRV0mI9lWJTUwvIAKEuN",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117004214642?_skw=LEGO&hash=item1b3dfea172%3Ag%3A%7E8UAAeSwR6BpKeTr&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaw2ea5c2ZZEfJMibFPNrF%2BsgOcV%2FGPr8FYfsjB7V51JmgKW8%2FUP4RUO9%2BFuZ0IefbbizzzkDkrQdDJ30mrjkv3qLeVQ8XVYX6gGhN4l8hAQRcCpwAY1eJYAjA4bRzapeT0zAv1n7FQi4HKF09799WQpGBzhUcI9LMow9tBwtwxacaNLJqeT7kwgbQVYtMS2srOZIsIMoh8oeercZ99TB1wdcP20knCGWCrE4pBGkVEmH%2FLBQ3Y1dQ9dwyPkpm%2FPRyL1xMuK88ssImVwpBjJMne&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117004214642?_skw=LEGO&hash=item1b3dfea172:g:~8UAAeSwR6BpKeTr&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaw2ea5c2ZZEfJMibFPNrF%2BsgOcV%2FGPr8FYfsjB7V51JmgKW8%2FUP4RUO9%2BFuZ0IefbbizzzkDkrQdDJ30mrjkv3qLeVQ8XVYX6gGhN4l8hAQRcCpwAY1eJYAjA4bRzapeT0zAv1n7FQi4HKF09799WQpGBzhUcI9LMow9tBwtwxacaNLJqeT7kwgbQVYtMS2srOZIsIMoh8oeercZ99TB1wdcP20knCGWCrE4pBGkVEmH%2FLBQ3Y1dQ9dwyPkpm%2FPRyL1xMuK88ssImVwpBjJMne",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1575,8 +1572,8 @@
                 "FIXED_PRICE"
             ],
             "epid": "18070913214",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117009164991?_skw=LEGO&hash=item1b3e4a2abf%3Ag%3AD14AAeSw5M9pfLZu&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbm3UQu8EpPsr8XlqyxHQJD457cgU8Db0Cv27YfovZVKOvE%2BsX6toCG%2BHJnt29IIPjWLZKKa%2B%2FGilqMzs14pI6fikVJYLsR4Vuq6FiWPKzxrY2ihLv%2Bs%2B2XebFUM1DL9SJtvK1Iw0XoNiyrKu%2BCS1Nu6x2sb7RkF7D1Cq4qUs0FChWA5vQ7k6qOi1lgAgr4nV6gruFsgeYNzVb6us0tsHrVaGAz%2BFx2tB2ux8ENUKgZ5AGkNFeCYEVcdUzMfB7dpvLdUbFRjfkJ4Z7xoUFDDZhs&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117009164991?_skw=LEGO&hash=item1b3e4a2abf:g:D14AAeSw5M9pfLZu&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbm3UQu8EpPsr8XlqyxHQJD457cgU8Db0Cv27YfovZVKOvE%2BsX6toCG%2BHJnt29IIPjWLZKKa%2B%2FGilqMzs14pI6fikVJYLsR4Vuq6FiWPKzxrY2ihLv%2Bs%2B2XebFUM1DL9SJtvK1Iw0XoNiyrKu%2BCS1Nu6x2sb7RkF7D1Cq4qUs0FChWA5vQ7k6qOi1lgAgr4nV6gruFsgeYNzVb6us0tsHrVaGAz%2BFx2tB2ux8ENUKgZ5AGkNFeCYEVcdUzMfB7dpvLdUbFRjfkJ4Z7xoUFDDZhs",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117009164991?_skw=LEGO&hash=item1b3e4a2abf%3Ag%3AD14AAeSw5M9pfLZu&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbm3UQu8EpPsr8XlqyxHQJD457cgU8Db0Cv27YfovZVKOvE%2BsX6toCG%2BHJnt29IIPjWLZKKa%2B%2FGilqMzs14pI6fikVJYLsR4Vuq6FiWPKzxrY2ihLv%2Bs%2B2XebFUM1DL9SLxWrOA3N9QP4utd818nNFfrXkOcgdfQsb8cjSPnckVOhG%2FD9cZztDQ6MxPNyW8ApGre9cOppRAWiUmsfuoUJ7Ud%2BgMtqo2vk0Y1Q1RSHQoz1Mpc5AO7WRINhqPijqI0ZBAy1aeAQJiv6ryvKaQ1%2FQu&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117009164991?_skw=LEGO&hash=item1b3e4a2abf:g:D14AAeSw5M9pfLZu&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbm3UQu8EpPsr8XlqyxHQJD457cgU8Db0Cv27YfovZVKOvE%2BsX6toCG%2BHJnt29IIPjWLZKKa%2B%2FGilqMzs14pI6fikVJYLsR4Vuq6FiWPKzxrY2ihLv%2Bs%2B2XebFUM1DL9SLxWrOA3N9QP4utd818nNFfrXkOcgdfQsb8cjSPnckVOhG%2FD9cZztDQ6MxPNyW8ApGre9cOppRAWiUmsfuoUJ7Ud%2BgMtqo2vk0Y1Q1RSHQoz1Mpc5AO7WRINhqPijqI0ZBAy1aeAQJiv6ryvKaQ1%2FQu",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1617,275 +1614,6 @@
             "itemCreationDate": "2026-01-30T13:48:26.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": true,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117067109523|0",
-            "title": "LEGO Icons Poinsettia 10370 Botanical Collection 100% Complete Used Open Box",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/56kAAeSwjhBppjVl/s-l225.jpg"
-            },
-            "price": {
-                "value": "26.99",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117067109523%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "Used",
-            "conditionId": "3000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/56kAAeSwjhBppjVl/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "CALCULATED"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "15072727974",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117067109523?_skw=LEGO&hash=item1b41be5493%3Ag%3A56kAAeSwjhBppjVl&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117067109523?_skw=LEGO&hash=item1b41be5493:g:56kAAeSwjhBppjVl",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/VDkAAeSwlNtpqJvk/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/1VEAAeSwtplppjVv/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/zGsAAeSwv1xppjV1/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/JZYAAeSwb25ppjV8/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/HCAAAeSwJEJppjWA/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/01oAAeSwjdJppjWD/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/0cIAAeSwTKRppjWG/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/x1EAAeSwDtlppjWI/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/52cAAeSwvDJppjWL/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117067109523",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-03-03T01:24:34.000Z",
-            "itemCreationDate": "2026-03-03T01:24:34.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117137834682|0",
-            "title": "LEGO City Green Race Car 60399 Great Vehicles Racing Set NEW Sealed 2 Minifigs",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/RRwAAeSwctZp2qYL/s-l225.jpg"
-            },
-            "price": {
-                "value": "6.00",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137834682%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/RRwAAeSwctZp2qYL/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "3064784521",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137834682?_skw=LEGO&hash=item1b45f582ba%3Ag%3ARRwAAeSwctZp2qYL&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117137834682?_skw=LEGO&hash=item1b45f582ba:g:RRwAAeSwctZp2qYL",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/taQAAeSwFh9p2qYm/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/h1kAAeSw8kxp2qYR/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/Tq4AAeSw-Bhp2qYU/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/xiwAAeSwKh9p2qYV/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/PfAAAeSwK8Np2qYc/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/uk4AAeSwhHJp2qYf/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117137834682",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-11T19:54:10.000Z",
-            "itemCreationDate": "2026-04-11T19:54:10.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|116979824487|0",
-            "title": "LEGO Star Wars BrickHeadz Padme Amidala 40796 RETIRED Revenge of Sith NEW",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/MWsAAeSwi0ZpPYOC/s-l225.jpg"
-            },
-            "price": {
-                "value": "13.00",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C116979824487%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/MWsAAeSwi0ZpPYOC/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/116979824487?_skw=LEGO&hash=item1b3c8a7767%3Ag%3AMWsAAeSwi0ZpPYOC&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/116979824487?_skw=LEGO&hash=item1b3c8a7767:g:MWsAAeSwi0ZpPYOC",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/gT4AAeSwxcRpPP0m/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "116979824487",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-01-12T16:12:25.000Z",
-            "itemCreationDate": "2026-01-12T16:12:25.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
         },
         {
@@ -2375,6 +2103,200 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
+            "itemId": "v1|117137825890|0",
+            "title": "LEGO CREATOR: Propeller Plane (31099)",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/05sAAeSw~yxp2qly/s-l225.jpg"
+            },
+            "price": {
+                "value": "23.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137825890%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/05sAAeSw~yxp2qly/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "19042038342",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137825890?_skw=LEGO&hash=item1b45f56062%3Ag%3A05sAAeSw%7Eyxp2qly&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117137825890?_skw=LEGO&hash=item1b45f56062:g:05sAAeSw~yxp2qly",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Z0QAAeSwqUtp2qUK/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TwEAAeSwZqJp2qmA/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/u9cAAeSwwZhp2qUg/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/sD0AAeSwrURp2qUi/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Yt8AAeSwZeRp2qmI/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/qGQAAeSwQytp2qUm/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117137825890",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-11T19:49:29.000Z",
+            "itemCreationDate": "2026-04-11T19:49:29.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117137844415|0",
+            "title": "LEGO CITY: F1 Williams Racing & Haas F1 Race Cars (60464)",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/ZWYAAeSw8Zdp2qo3/s-l225.jpg"
+            },
+            "price": {
+                "value": "21.75",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137844415%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ZWYAAeSw8Zdp2qo3/s-l1200.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "22074070064",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137844415?_skw=LEGO&hash=item1b45f5a8bf%3Ag%3AZWYAAeSw8Zdp2qo3&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117137844415?_skw=LEGO&hash=item1b45f5a8bf:g:ZWYAAeSw8Zdp2qo3",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/wpAAAeSwPZBp2qeX/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/gAoAAeSwuqdp2qee/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/zrkAAeSwETJp2qeg/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/-WMAAeSwp2Jp2qei/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/xogAAeSwPfdp2qek/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/yZIAAeSw9-pp2qel/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/yrEAAeSwG25p2qfv/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/sT4AAeSwpQZp2qfx/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117137844415",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-11T20:00:49.000Z",
+            "itemCreationDate": "2026-04-11T20:00:49.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
             "itemId": "v1|116979817563|0",
             "title": "LEGO Star Wars BrickHeadz Emperor Palpatine 40796 Darth Sidious RETIRED NEW",
             "leafCategoryIds": [
@@ -2448,6 +2370,100 @@
             "availableCoupons": false,
             "itemOriginDate": "2026-01-12T16:02:51.000Z",
             "itemCreationDate": "2026-01-12T16:02:51.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117137834682|0",
+            "title": "LEGO City Green Race Car 60399 Great Vehicles Racing Set NEW Sealed 2 Minifigs",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/RRwAAeSwctZp2qYL/s-l225.jpg"
+            },
+            "price": {
+                "value": "6.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137834682%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RRwAAeSwctZp2qYL/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "3064784521",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137834682?_skw=LEGO&hash=item1b45f582ba%3Ag%3ARRwAAeSwctZp2qYL&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117137834682?_skw=LEGO&hash=item1b45f582ba:g:RRwAAeSwctZp2qYL",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/taQAAeSwFh9p2qYm/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/h1kAAeSw8kxp2qYR/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Tq4AAeSw-Bhp2qYU/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/xiwAAeSwKh9p2qYV/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/PfAAAeSwK8Np2qYc/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/uk4AAeSwhHJp2qYf/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117137834682",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-11T19:54:10.000Z",
+            "itemCreationDate": "2026-04-11T19:54:10.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
@@ -2660,6 +2676,772 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
+            "itemId": "v1|116979824487|0",
+            "title": "LEGO Star Wars Brickheadz Padme Amidala SENATOR 40796 Revenge of the Sith NEW",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/MWsAAeSwi0ZpPYOC/s-l225.jpg"
+            },
+            "price": {
+                "value": "19.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C116979824487%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/MWsAAeSwi0ZpPYOC/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/116979824487?_skw=LEGO&hash=item1b3c8a7767%3Ag%3AMWsAAeSwi0ZpPYOC&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/116979824487?_skw=LEGO&hash=item1b3c8a7767:g:MWsAAeSwi0ZpPYOC",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/gT4AAeSwxcRpPP0m/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "116979824487",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-12T16:12:25.000Z",
+            "itemCreationDate": "2026-01-12T16:12:25.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117070265037|0",
+            "title": "LEGO Icons Poinsettia 10370 Botanical Collection Plant Set New Sealed NIB",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/Rc8AAeSwq0tpqJuk/s-l225.jpg"
+            },
+            "price": {
+                "value": "44.95",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117070265037%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Rc8AAeSwq0tpqJuk/s-l640.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE",
+                "BEST_OFFER"
+            ],
+            "epid": "15072727974",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117070265037?_skw=LEGO&hash=item1b41ee7acd%3Ag%3ARc8AAeSwq0tpqJuk&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZ7TsBRGbS5bIJeEWg8DW%2Bi27hEfho4DZuFIt8PDJ49zr9J4o9K5m%2BXbWcMe4xZzXkoTzcBKB561qraT1ROBBCW8Whyvjedy06g2ZgRlLz%2FwjgWVpNPO2KYoJ2UWU2zt47XskA3TMa9vyc6CJeD9jw3dU8R1zqEvDZ4MY5A%2FLbH9NBEJ2zpTIytOyJOKGrHhb5%2BuwsbC%2BPySA9IzgFMOcsLKNJ91Ucb34qD7KUcHI6eQa0%2BOoepxXLqLUaKMFTK%2BFCTNG7BbZR1DIi3f5W8ZEEk&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117070265037?_skw=LEGO&hash=item1b41ee7acd:g:Rc8AAeSwq0tpqJuk&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZ7TsBRGbS5bIJeEWg8DW%2Bi27hEfho4DZuFIt8PDJ49zr9J4o9K5m%2BXbWcMe4xZzXkoTzcBKB561qraT1ROBBCW8Whyvjedy06g2ZgRlLz%2FwjgWVpNPO2KYoJ2UWU2zt47XskA3TMa9vyc6CJeD9jw3dU8R1zqEvDZ4MY5A%2FLbH9NBEJ2zpTIytOyJOKGrHhb5%2BuwsbC%2BPySA9IzgFMOcsLKNJ91Ucb34qD7KUcHI6eQa0%2BOoepxXLqLUaKMFTK%2BFCTNG7BbZR1DIi3f5W8ZEEk",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/iEAAAeSwJL9pqJu4/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/YnwAAeSw~dxpqJrg/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RD4AAeSwiCBpqJrl/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/z2UAAeSwjx5pqJrq/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/mq8AAeSwQvppqJt8/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/T7kAAeSwJe1pqJuR/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/XGsAAeSwrZRpqJuZ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/zSYAAeSwkXJpqJr~/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/mK4AAeSwgnhpqJsD/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/vE8AAeSw1olpqJsF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/BEQAAeSww5NpqJsG/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/KvUAAeSw9s1pqJun/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117070265037",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-04T20:48:40.000Z",
+            "itemCreationDate": "2026-03-04T20:48:40.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117121526197|0",
+            "title": "LEGO Icons PAC-MAN Arcade 10323 Machine Retro Video Game Moving Maze Light Brick",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/9UIAAeSwzxVpL7we/s-l225.jpg"
+            },
+            "price": {
+                "value": "298.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117121526197%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/9UIAAeSwzxVpL7we/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "13064774722",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117121526197?_skw=LEGO&hash=item1b44fca9b5%3Ag%3A9UIAAeSwzxVpL7we&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZd8LZrICIOVq%2Fk1Ay28ct97dlGtfjT55r8m3cOQKK%2B4ekWJhfsKcrpA3IiWUgoFvvjpChWJ14Zmbd1sPzE2Hk0Ffq3XNT4wLPvPV%2FeE%2FktddUEPWRQFg4DIRP%2BaB1sZl%2BXH9I5sv5jfCWx3vF%2FbtHlVC3w9bCA42tB5v%2FZfkoEnseaUJPuJ6ekdLqs%2F49sUbQj5p7Sb61F5GeAKeAxPsxVlPO2OVw3B%2F66wKRt9IXDADe%2FxrNZq4qTxqGqXyxUpK25Z62JFWrXC2axneWQI0ib&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117121526197?_skw=LEGO&hash=item1b44fca9b5:g:9UIAAeSwzxVpL7we&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZd8LZrICIOVq%2Fk1Ay28ct97dlGtfjT55r8m3cOQKK%2B4ekWJhfsKcrpA3IiWUgoFvvjpChWJ14Zmbd1sPzE2Hk0Ffq3XNT4wLPvPV%2FeE%2FktddUEPWRQFg4DIRP%2BaB1sZl%2BXH9I5sv5jfCWx3vF%2FbtHlVC3w9bCA42tB5v%2FZfkoEnseaUJPuJ6ekdLqs%2F49sUbQj5p7Sb61F5GeAKeAxPsxVlPO2OVw3B%2F66wKRt9IXDADe%2FxrNZq4qTxqGqXyxUpK25Z62JFWrXC2axneWQI0ib",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/s7UAAeSwlURpL7wl/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/OKUAAeSw8xZpL7ws/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/9AMAAeSwVktpL7wz/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/CwwAAeSw~GdpL7w4/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/np4AAeSwPYppL7w7/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~XYAAeSwWfppL7w~/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/GBgAAeSwzxVpL7xC/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/JcYAAeSwjP1pL7xF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/zxIAAeSwEF9pL7xJ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/h3IAAeSwYfhpL7xO/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0cgAAeSwUoNpL7xS/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/z54AAeSw3PFpL7xW/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117121526197",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-02T11:28:31.000Z",
+            "itemCreationDate": "2026-04-02T11:28:31.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117011733540|0",
+            "title": "LEGO 76402 Harry Potter Hogwarts Dumbledore\u2019s Office - NISB Retired New",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/VaUAAeSwC7lpfo4q/s-l225.jpg"
+            },
+            "price": {
+                "value": "82.64",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117011733540%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/VaUAAeSwC7lpfo4q/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "15057118451",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117011733540?_skw=LEGO&hash=item1b3e715c24%3Ag%3AVaUAAeSwC7lpfo4q&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZkz%2FMYhLCW6hu8uMwaGiw2bgik%2Fa59xZtowbVKNnYfu320auYuLv7RzXPujTkyy1WU0RIYrdJlpo7M%2Bj0qqnHmlJzbhKjhZP11gvU9GWXDTrgZhvou0FLia6jmgdEjiO0egSx8DKI1SWseXyeZYf0BrHcBtH2HgStzlUkWH73lBOnA7rl%2F8GnDfVZ8MNs8obaTtWMr0LHchKIYbEBQzEVef921XECw9rTObEWMv%2BLwgvfX2FOX1PJEIHkSphN3uo1m6aDvLZG4m0kkYREieFhn&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117011733540?_skw=LEGO&hash=item1b3e715c24:g:VaUAAeSwC7lpfo4q&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZkz%2FMYhLCW6hu8uMwaGiw2bgik%2Fa59xZtowbVKNnYfu320auYuLv7RzXPujTkyy1WU0RIYrdJlpo7M%2Bj0qqnHmlJzbhKjhZP11gvU9GWXDTrgZhvou0FLia6jmgdEjiO0egSx8DKI1SWseXyeZYf0BrHcBtH2HgStzlUkWH73lBOnA7rl%2F8GnDfVZ8MNs8obaTtWMr0LHchKIYbEBQzEVef921XECw9rTObEWMv%2BLwgvfX2FOX1PJEIHkSphN3uo1m6aDvLZG4m0kkYREieFhn",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/a9sAAeSwDeJpfo4t/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~koAAeSwJ2dpfo4x/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/WtkAAeSwvD5pfo41/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/E3AAAeSw39dpfo45/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/FykAAeSw1u1pfo49/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/I3UAAeSw00hpfo5B/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/HP8AAeSw-M9pfo5I/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/VqcAAeSwW4Npfo5N/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117011733540",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-31T23:26:35.000Z",
+            "itemCreationDate": "2026-01-31T23:26:35.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117127326128|0",
+            "title": "LEGO 10317 Land Rover Defender 90 - Retired Icons 4x4 - New Sealed Collector Set",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/tTcAAeSwh3tp0pUT/s-l225.jpg"
+            },
+            "price": {
+                "value": "250.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117127326128%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/tTcAAeSwh3tp0pUT/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "9059665329",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117127326128?_skw=LEGO&hash=item1b455529b0%3Ag%3AtTcAAeSwh3tp0pUT&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGb94ngj0OC7s0ZJd74HQhQpWb03DzbHoiJiQX3rs7%2BTb9i5i6lvIz4p%2Fc1dqGApOxzKQ23fXo%2BG95thpMHtz%2BAJcb9FHqh%2BHMXJhoa1jtmsgnvjKy48c%2Bw0OdlqJQ9%2BV5bcYf32w4gIMaXGB8MqtsGw2Nh5O4DNLOWFNv%2BV3CyaCaSSOI1vh7IeiZZzC%2B8gHtUjyB9xS7%2F0RA%2BR09ZkQBYaK%2B5Ri4JWk72eu%2FQFUJ%2Bxv6DDT0LlTLbxYH9urpUgoQcafMZfrjtq6F9L1JkDxqEa&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117127326128?_skw=LEGO&hash=item1b455529b0:g:tTcAAeSwh3tp0pUT&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGb94ngj0OC7s0ZJd74HQhQpWb03DzbHoiJiQX3rs7%2BTb9i5i6lvIz4p%2Fc1dqGApOxzKQ23fXo%2BG95thpMHtz%2BAJcb9FHqh%2BHMXJhoa1jtmsgnvjKy48c%2Bw0OdlqJQ9%2BV5bcYf32w4gIMaXGB8MqtsGw2Nh5O4DNLOWFNv%2BV3CyaCaSSOI1vh7IeiZZzC%2B8gHtUjyB9xS7%2F0RA%2BR09ZkQBYaK%2B5Ri4JWk72eu%2FQFUJ%2Bxv6DDT0LlTLbxYH9urpUgoQcafMZfrjtq6F9L1JkDxqEa",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ac8AAeSw0vBp0pVH/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/lIAAAeSwPO5p0p8X/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/sFMAAeSwyZRp0pUw/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/arEAAeSwXBNp0pK8/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/s3sAAeSw-YFp0pK~/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/pysAAeSwfDRp0pLC/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/DasAAeSwteRp0pLH/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/IxYAAeSwd6Fp0pUe/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/P1UAAeSwXEhp0pUj/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/HqcAAeSwteRp0pUm/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/bqMAAeSwin9p0pUr/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/GccAAeSwarpp0p7u/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/AfQAAeSw58xp0p7z/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117127326128",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-05T17:43:07.000Z",
+            "itemCreationDate": "2026-04-05T17:43:07.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117119962335|0",
+            "title": "LEGO Ninjago 71738 Zane's Titan Mech Battle Legacy Retired New Sealed Robot Gold",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/iq0AAeSwXNZpTuHP/s-l225.jpg"
+            },
+            "price": {
+                "value": "114.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117119962335%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/iq0AAeSwXNZpTuHP/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "26043442025",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117119962335?_skw=LEGO&hash=item1b44e4ccdf%3Ag%3Aiq0AAeSwXNZpTuHP&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117119962335?_skw=LEGO&hash=item1b44e4ccdf:g:iq0AAeSwXNZpTuHP",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/-fMAAeSwMoRpwdJu/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/bg0AAeSwLt5pTuH5/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ONgAAeSw5V9pTuHT/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/kkMAAeSwPq9pTuHf/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/UrAAAeSw9JRpTuHm/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/jsMAAeSwllxpTuHr/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/E~cAAeSw1CRpTuHx/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TaMAAeSwQ1JpTuH2/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/pGoAAeSw8oFpTuID/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/aVIAAeSw8EhpTuIH/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117119962335",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-01T12:36:50.000Z",
+            "itemCreationDate": "2026-04-01T12:36:50.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|116979815291|0",
+            "title": "LEGO D&D Minifigure Strahd 71047 Vampire Count Series 26 RETIRED New",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/OPkAAeSwMzppPXXw/s-l225.jpg"
+            },
+            "price": {
+                "value": "13.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C116979815291%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/OPkAAeSwMzppPXXw/s-l960.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "5.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "6071305763",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/116979815291?_skw=LEGO&hash=item1b3c8a537b%3Ag%3AOPkAAeSwMzppPXXw&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/116979815291?_skw=LEGO&hash=item1b3c8a537b:g:OPkAAeSwMzppPXXw",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/7n8AAeSweiBpPXUk/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/hNQAAeSwk~JpPXUp/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "116979815291",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-01-12T15:59:56.000Z",
+            "itemCreationDate": "2026-01-12T15:59:56.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117116776101|0",
+            "title": "Honda S2000 JDM Lot: LEGO Suki 2 Fast + MEGA Hot Wheels Brick Shop Set NEW",
+            "leafCategoryIds": [
+                "258040"
+            ],
+            "categories": [
+                {
+                    "categoryId": "258040",
+                    "categoryName": "Building Toy Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "263016",
+                    "categoryName": "Building Toys & Blocks"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/onsAAeSwZAVpaD-M/s-l225.jpg"
+            },
+            "price": {
+                "value": "74.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117116776101%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 214
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/onsAAeSwZAVpaD-M/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117116776101?_skw=LEGO&hash=item1b44b42ea5%3Ag%3AonsAAeSwZAVpaD-M&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117116776101?_skw=LEGO&hash=item1b44b42ea5:g:onsAAeSwZAVpaD-M",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0LEAAeSwzBdpaD-S/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/33gAAeSwAmhpaD-o/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/7EQAAeSwyw5paD~C/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/pZsAAeSws9FpaD~b/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ivUAAeSwgNJpaD~1/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/9pYAAeSw-E9paEAG/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/jOMAAeSwXn5paEAK/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117116776101",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-30T17:49:56.000Z",
+            "itemCreationDate": "2026-03-30T17:49:56.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
             "itemId": "v1|117130676228|0",
             "title": "LEGO 77249 Speed Champions Williams Racing FW46 F1 New",
             "leafCategoryIds": [
@@ -2766,420 +3548,6 @@
             "itemCreationDate": "2026-04-07T16:47:17.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117070265037|0",
-            "title": "LEGO Icons Poinsettia 10370 Botanical Collection Plant Set New Sealed NIB",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/Rc8AAeSwq0tpqJuk/s-l225.jpg"
-            },
-            "price": {
-                "value": "44.95",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117070265037%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/Rc8AAeSwq0tpqJuk/s-l640.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "CALCULATED"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE",
-                "BEST_OFFER"
-            ],
-            "epid": "15072727974",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117070265037?_skw=LEGO&hash=item1b41ee7acd%3Ag%3ARc8AAeSwq0tpqJuk&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZ7TsBRGbS5bIJeEWg8DW%2Bi27hEfho4DZuFIt8PDJ49zr9J4o9K5m%2BXbWcMe4xZzXkoTzcBKB561qraT1ROBBCW8Whyvjedy06g2ZgRlLz%2FwjgWVpNPO2KYoJ2UWU2zt477s4o5TNeJzw8P1JAIS9kRZByXInkaVIMhNzEjNkNQa6MqnnCzm9VLlkGgpFGRPDw6sGYXyra75f2CYVQuY86OdJqU8YdRRHo7skvVEyMsAwnLwDmf5aDrcuTaIxlKiqW5jr30S%2F1VdoDJJ5YkpCpl&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117070265037?_skw=LEGO&hash=item1b41ee7acd:g:Rc8AAeSwq0tpqJuk&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZ7TsBRGbS5bIJeEWg8DW%2Bi27hEfho4DZuFIt8PDJ49zr9J4o9K5m%2BXbWcMe4xZzXkoTzcBKB561qraT1ROBBCW8Whyvjedy06g2ZgRlLz%2FwjgWVpNPO2KYoJ2UWU2zt477s4o5TNeJzw8P1JAIS9kRZByXInkaVIMhNzEjNkNQa6MqnnCzm9VLlkGgpFGRPDw6sGYXyra75f2CYVQuY86OdJqU8YdRRHo7skvVEyMsAwnLwDmf5aDrcuTaIxlKiqW5jr30S%2F1VdoDJJ5YkpCpl",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/iEAAAeSwJL9pqJu4/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/YnwAAeSw~dxpqJrg/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/RD4AAeSwiCBpqJrl/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/z2UAAeSwjx5pqJrq/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/mq8AAeSwQvppqJt8/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/T7kAAeSwJe1pqJuR/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/XGsAAeSwrZRpqJuZ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/zSYAAeSwkXJpqJr~/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/mK4AAeSwgnhpqJsD/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/vE8AAeSw1olpqJsF/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/BEQAAeSww5NpqJsG/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/KvUAAeSw9s1pqJun/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117070265037",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-03-04T20:48:40.000Z",
-            "itemCreationDate": "2026-03-04T20:48:40.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": true,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117121526197|0",
-            "title": "LEGO Icons PAC-MAN Arcade 10323 Machine Retro Video Game Moving Maze Light Brick",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/9UIAAeSwzxVpL7we/s-l225.jpg"
-            },
-            "price": {
-                "value": "298.99",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117121526197%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/9UIAAeSwzxVpL7we/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "CALCULATED"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "13064774722",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117121526197?_skw=LEGO&hash=item1b44fca9b5%3Ag%3A9UIAAeSwzxVpL7we&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZd8LZrICIOVq%2Fk1Ay28ct97dlGtfjT55r8m3cOQKK%2B4ekWJhfsKcrpA3IiWUgoFvvjpChWJ14Zmbd1sPzE2Hk0Ffq3XNT4wLPvPV%2FeE%2FktddUEPWRQFg4DIRP%2BaB1sZl93LMiqxiBqDuXGugRqmzTwCZXp2wvSYnK6QtOe3Hqhud8DIBsN40FbputgzDwNASlgFQWX3n2M%2Bd7ZBLO7yQDEIxUJXsNU4UxquQi%2FVmF5HSfUnHSswGa%2F%2B%2FKXtIqkwDhRBZgKPCOtlcJ0Atkz4WO2&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117121526197?_skw=LEGO&hash=item1b44fca9b5:g:9UIAAeSwzxVpL7we&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZd8LZrICIOVq%2Fk1Ay28ct97dlGtfjT55r8m3cOQKK%2B4ekWJhfsKcrpA3IiWUgoFvvjpChWJ14Zmbd1sPzE2Hk0Ffq3XNT4wLPvPV%2FeE%2FktddUEPWRQFg4DIRP%2BaB1sZl93LMiqxiBqDuXGugRqmzTwCZXp2wvSYnK6QtOe3Hqhud8DIBsN40FbputgzDwNASlgFQWX3n2M%2Bd7ZBLO7yQDEIxUJXsNU4UxquQi%2FVmF5HSfUnHSswGa%2F%2B%2FKXtIqkwDhRBZgKPCOtlcJ0Atkz4WO2",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/s7UAAeSwlURpL7wl/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/OKUAAeSw8xZpL7ws/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/9AMAAeSwVktpL7wz/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/CwwAAeSw~GdpL7w4/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/np4AAeSwPYppL7w7/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/~XYAAeSwWfppL7w~/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/GBgAAeSwzxVpL7xC/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/JcYAAeSwjP1pL7xF/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/zxIAAeSwEF9pL7xJ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/h3IAAeSwYfhpL7xO/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/0cgAAeSwUoNpL7xS/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/z54AAeSw3PFpL7xW/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117121526197",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-02T11:28:31.000Z",
-            "itemCreationDate": "2026-04-02T11:28:31.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": true,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117011733540|0",
-            "title": "LEGO 76402 Harry Potter Hogwarts Dumbledore\u2019s Office - NISB Retired New",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/VaUAAeSwC7lpfo4q/s-l225.jpg"
-            },
-            "price": {
-                "value": "82.64",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117011733540%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/VaUAAeSwC7lpfo4q/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "CALCULATED"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "15057118451",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117011733540?_skw=LEGO&hash=item1b3e715c24%3Ag%3AVaUAAeSwC7lpfo4q&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZkz%2FMYhLCW6hu8uMwaGiw2bgik%2Fa59xZtowbVKNnYfu320auYuLv7RzXPujTkyy1WU0RIYrdJlpo7M%2Bj0qqnHmlJzbhKjhZP11gvU9GWXDTrgZhvou0FLia6jmgdEjiO1In2NNQA2UdgDNe18KOq9JXB9qu6OwqnahdZqryeRqDyy4NdZUBsGbUr6NQ3eaFG5O08x2BAla6rITUIqKMyOE%2BChxZ6uZBq5M90HgXQK58nKyo%2FUHq8C0GonLktPU1T%2Fe1Mh%2FfNKko9yE2hcB2Q1P&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117011733540?_skw=LEGO&hash=item1b3e715c24:g:VaUAAeSwC7lpfo4q&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZkz%2FMYhLCW6hu8uMwaGiw2bgik%2Fa59xZtowbVKNnYfu320auYuLv7RzXPujTkyy1WU0RIYrdJlpo7M%2Bj0qqnHmlJzbhKjhZP11gvU9GWXDTrgZhvou0FLia6jmgdEjiO1In2NNQA2UdgDNe18KOq9JXB9qu6OwqnahdZqryeRqDyy4NdZUBsGbUr6NQ3eaFG5O08x2BAla6rITUIqKMyOE%2BChxZ6uZBq5M90HgXQK58nKyo%2FUHq8C0GonLktPU1T%2Fe1Mh%2FfNKko9yE2hcB2Q1P",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/a9sAAeSwDeJpfo4t/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/~koAAeSwJ2dpfo4x/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/WtkAAeSwvD5pfo41/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/E3AAAeSw39dpfo45/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/FykAAeSw1u1pfo49/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/I3UAAeSw00hpfo5B/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/HP8AAeSw-M9pfo5I/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/VqcAAeSwW4Npfo5N/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117011733540",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-01-31T23:26:35.000Z",
-            "itemCreationDate": "2026-01-31T23:26:35.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": true,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117117390396|0",
-            "title": "LEGO ICONS 10375 HTTYD TOOTHLESS - NEW/SEALED - 2025 ASSET",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/xDYAAeSwjr1pyysP/s-l225.jpg"
-            },
-            "price": {
-                "value": "92.50",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117117390396%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/xDYAAeSwjr1pyysP/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "CALCULATED"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE",
-                "BEST_OFFER"
-            ],
-            "epid": "4089373751",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117117390396?_skw=LEGO&hash=item1b44bd8e3c%3Ag%3AxDYAAeSwjr1pyysP&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZ3pPhleG1ifkySDLRDnqjH7OIQZ%2B0YgmJ2E0mivUjkuMXXswqzCVOfNubQOh1mlP1jNtmV0v%2B%2F1bifr4Qujp%2BpriDF4Q4rDaj7zXla9hJlBfllxBuU07nX6Tknr7MGuJOqMz3GSyy6Hy06458kRfyOdsy%2FrAc6T0A2J%2B2501nNNptE%2F%2BgEtN1p1x9Y20UegpihczADiJTHB0qakAPPMFwOxrXJrFX6qb8f4XUUnzNeab7xaPTp7GImZ1ioHseg7SN59QDw64yeSaU1FyTBWuL%2F&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117117390396?_skw=LEGO&hash=item1b44bd8e3c:g:xDYAAeSwjr1pyysP&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZ3pPhleG1ifkySDLRDnqjH7OIQZ%2B0YgmJ2E0mivUjkuMXXswqzCVOfNubQOh1mlP1jNtmV0v%2B%2F1bifr4Qujp%2BpriDF4Q4rDaj7zXla9hJlBfllxBuU07nX6Tknr7MGuJOqMz3GSyy6Hy06458kRfyOdsy%2FrAc6T0A2J%2B2501nNNptE%2F%2BgEtN1p1x9Y20UegpihczADiJTHB0qakAPPMFwOxrXJrFX6qb8f4XUUnzNeab7xaPTp7GImZ1ioHseg7SN59QDw64yeSaU1FyTBWuL%2F",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/4mYAAeSwEeppyyso/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/cy8AAeSw2YFpyyuI/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/6P4AAeSwQKxpyytM/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/3P4AAeSwSqppyytE/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/LRIAAeSwShhpyytQ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/cp4AAeSw-YFpyysx/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/IKoAAeSwEhNpyysz/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ZCIAAeSwO05pyys2/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/RqMAAeSwGTppyys4/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/80EAAeSwnuZpyys6/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/J8wAAeSwPxVpyys8/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/guoAAeSwG4ppyyt3/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117117390396",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-03-31T02:15:29.000Z",
-            "itemCreationDate": "2026-03-31T02:15:29.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": true,
             "listingMarketplaceId": "EBAY_US"
         },
         {
@@ -3292,15 +3660,16 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|117116776101|0",
-            "title": "Honda S2000 JDM Lot: LEGO Suki 2 Fast + MEGA Hot Wheels Brick Shop Set NEW",
+            "itemId": "v1|116951073772|417058097202",
+            "title": "LEGO Star Wars Helmets - TIE Fighter 75274 Stormtrooper Rex Vader - Choose Yours",
+            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=116951073772",
             "leafCategoryIds": [
-                "258040"
+                "19006"
             ],
             "categories": [
                 {
-                    "categoryId": "258040",
-                    "categoryName": "Building Toy Complete Sets & Packs"
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
                 },
                 {
                     "categoryId": "220",
@@ -3311,28 +3680,29 @@
                     "categoryName": "Building Toys"
                 },
                 {
-                    "categoryId": "263016",
-                    "categoryName": "Building Toys & Blocks"
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
                 }
             ],
             "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/onsAAeSwZAVpaD-M/s-l225.jpg"
+                "imageUrl": "https://i.ebayimg.com/images/g/~mQAAeSwhwxpdmEF/s-l225.jpg"
             },
             "price": {
-                "value": "74.99",
+                "value": "84.95",
                 "currency": "USD"
             },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117116776101%7C0",
+            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C116951073772%7C417058097202",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
                 "feedbackScore": 214
             },
-            "condition": "New",
-            "conditionId": "1000",
+            "condition": "New: Other (See Details)",
+            "conditionId": "1500",
             "thumbnailImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/onsAAeSwZAVpaD-M/s-l1600.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/~mQAAeSwhwxpdmEF/s-l1600.jpg"
                 }
             ],
             "shippingOptions": [
@@ -3343,47 +3713,69 @@
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117116776101?_skw=LEGO&hash=item1b44b42ea5%3Ag%3AonsAAeSwZAVpaD-M&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117116776101?_skw=LEGO&hash=item1b44b42ea5:g:onsAAeSwZAVpaD-M",
+            "epid": "24046110046",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/116951073772?_skw=LEGO&hash=item1b3ad3c3ec%3Ag%3A%7EmQAAeSwhwxpdmEF&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/116951073772?_skw=LEGO&hash=item1b3ad3c3ec:g:~mQAAeSwhwxpdmEF",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
             },
             "additionalImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/0LEAAeSwzBdpaD-S/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/ag0AAeSwYC5pwdk4/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/33gAAeSwAmhpaD-o/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/aosAAeSwpYRpdmQc/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/7EQAAeSwyw5paD~C/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/irUAAeSwQBBpNkKC/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/pZsAAeSws9FpaD~b/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/YoQAAeSwwWFpNkKN/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ivUAAeSwgNJpaD~1/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/8ysAAeSw0ylpHUAS/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/9pYAAeSw-E9paEAG/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/hJAAAeSw1dppHTEk/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/jOMAAeSwXn5paEAK/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/5EoAAeSwzoRpHTEW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/7NkAAeSwjQ5pHT6c/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/8lsAAeSwKMhpHT6l/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/78YAAeSwHFxpHT7R/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/8JIAAeSwvuBpHT~M/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/9AQAAeSw4iVpHT7V/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/8SIAAeSweKtpHT~5/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/o88AAeSwkrdpHTEh/s-l225.jpg"
                 }
             ],
             "adultOnly": false,
-            "legacyItemId": "117116776101",
+            "legacyItemId": "116951073772",
             "availableCoupons": false,
-            "itemOriginDate": "2026-03-30T17:49:56.000Z",
-            "itemCreationDate": "2026-03-30T17:49:56.000Z",
+            "itemOriginDate": "2025-12-28T01:40:33.000Z",
+            "itemCreationDate": "2025-12-28T01:40:33.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|116979815291|0",
-            "title": "LEGO D&D Minifigure Strahd 71047 Vampire Count Series 26 RETIRED New",
+            "itemId": "v1|117117390396|0",
+            "title": "LEGO ICONS 10375 HTTYD TOOTHLESS - NEW/SEALED - 2025 ASSET",
             "leafCategoryIds": [
                 "19006"
             ],
@@ -3406,13 +3798,13 @@
                 }
             ],
             "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/OPkAAeSwMzppPXXw/s-l225.jpg"
+                "imageUrl": "https://i.ebayimg.com/images/g/xDYAAeSwjr1pyysP/s-l225.jpg"
             },
             "price": {
-                "value": "13.99",
+                "value": "92.50",
                 "currency": "USD"
             },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C116979815291%7C0",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117117390396%7C0",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
@@ -3422,50 +3814,75 @@
             "conditionId": "1000",
             "thumbnailImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/OPkAAeSwMzppPXXw/s-l960.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/xDYAAeSwjr1pyysP/s-l1600.jpg"
                 }
             ],
             "shippingOptions": [
                 {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "5.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
+                    "shippingCostType": "CALCULATED"
                 }
             ],
             "buyingOptions": [
-                "FIXED_PRICE"
+                "FIXED_PRICE",
+                "BEST_OFFER"
             ],
-            "epid": "6071305763",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/116979815291?_skw=LEGO&hash=item1b3c8a537b%3Ag%3AOPkAAeSwMzppPXXw&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/116979815291?_skw=LEGO&hash=item1b3c8a537b:g:OPkAAeSwMzppPXXw",
+            "epid": "4089373751",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117117390396?_skw=LEGO&hash=item1b44bd8e3c%3Ag%3AxDYAAeSwjr1pyysP&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZ3pPhleG1ifkySDLRDnqjH7OIQZ%2B0YgmJ2E0mivUjkuMXXswqzCVOfNubQOh1mlP1jNtmV0v%2B%2F1bifr4Qujp%2BpriDF4Q4rDaj7zXla9hJlBfllxBuU07nX6Tknr7MGuJO38bS%2Bo6H8fJ69O%2FoZQ1uxDqygM2BC%2BafHvE%2B%2Bu3tfWWZgQxz6qCN6nc6sjVJEHc9A%2FzF36U13nPDTMUMd2Wxb6IIagrEZ0HJ9bZAOp1HUcu4eb%2BBGl%2B2l7oU4qkNCDNFCILW0bD1OnsBzCeDyfD%2Bd&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117117390396?_skw=LEGO&hash=item1b44bd8e3c:g:xDYAAeSwjr1pyysP&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZ3pPhleG1ifkySDLRDnqjH7OIQZ%2B0YgmJ2E0mivUjkuMXXswqzCVOfNubQOh1mlP1jNtmV0v%2B%2F1bifr4Qujp%2BpriDF4Q4rDaj7zXla9hJlBfllxBuU07nX6Tknr7MGuJO38bS%2Bo6H8fJ69O%2FoZQ1uxDqygM2BC%2BafHvE%2B%2Bu3tfWWZgQxz6qCN6nc6sjVJEHc9A%2FzF36U13nPDTMUMd2Wxb6IIagrEZ0HJ9bZAOp1HUcu4eb%2BBGl%2B2l7oU4qkNCDNFCILW0bD1OnsBzCeDyfD%2Bd",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
             },
             "additionalImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/7n8AAeSweiBpPXUk/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/4mYAAeSwEeppyyso/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/hNQAAeSwk~JpPXUp/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/cy8AAeSw2YFpyyuI/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/6P4AAeSwQKxpyytM/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/3P4AAeSwSqppyytE/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/LRIAAeSwShhpyytQ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/cp4AAeSw-YFpyysx/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/IKoAAeSwEhNpyysz/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ZCIAAeSwO05pyys2/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RqMAAeSwGTppyys4/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/80EAAeSwnuZpyys6/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/J8wAAeSwPxVpyys8/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/guoAAeSwG4ppyyt3/s-l225.jpg"
                 }
             ],
             "adultOnly": false,
-            "legacyItemId": "116979815291",
+            "legacyItemId": "117117390396",
             "availableCoupons": false,
-            "itemOriginDate": "2026-01-12T15:59:56.000Z",
-            "itemCreationDate": "2026-01-12T15:59:56.000Z",
+            "itemOriginDate": "2026-03-31T02:15:29.000Z",
+            "itemCreationDate": "2026-03-31T02:15:29.000Z",
             "topRatedBuyingExperience": false,
-            "priorityListing": false,
+            "priorityListing": true,
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|117119962335|0",
-            "title": "LEGO Ninjago 71738 Zane's Titan Mech Battle Legacy Retired New Sealed Robot Gold",
+            "itemId": "v1|117070479765|0",
+            "title": "LEGO City 60449 Off-Road Police Car Chase RETIRED Hard to Find NEW SEALED",
             "leafCategoryIds": [
                 "19006"
             ],
@@ -3488,13 +3905,13 @@
                 }
             ],
             "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/iq0AAeSwXNZpTuHP/s-l225.jpg"
+                "imageUrl": "https://i.ebayimg.com/images/g/5bQAAeSwucpo6x7D/s-l225.jpg"
             },
             "price": {
-                "value": "114.00",
+                "value": "49.95",
                 "currency": "USD"
             },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117119962335%7C0",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117070479765%7C0",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
@@ -3504,7 +3921,7 @@
             "conditionId": "1000",
             "thumbnailImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/iq0AAeSwXNZpTuHP/s-l1600.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/5bQAAeSwucpo6x7D/s-l1600.jpg"
                 }
             ],
             "shippingOptions": [
@@ -3515,57 +3932,57 @@
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "epid": "26043442025",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117119962335?_skw=LEGO&hash=item1b44e4ccdf%3Ag%3Aiq0AAeSwXNZpTuHP&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117119962335?_skw=LEGO&hash=item1b44e4ccdf:g:iq0AAeSwXNZpTuHP",
+            "epid": "6075658153",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117070479765?_skw=LEGO&hash=item1b41f1c195%3Ag%3A5bQAAeSwucpo6x7D&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaIC8N7FDtn71DwzCSLRDYQdJOvuLmQ1QCnUKJ47zcI8%2F2mXPnvRKH0ZX9oRwrzgBWC9fLMCKc4aeN9oXtzbHb2SkHG9oEsxNawtknEByFlna1fIKn9AsjFIhxtS8aED8rVHT3Zh2HOY4tuVCB2FDKuy0XDxVV1LhJpQoztcwl%2FYKRuUaY34%2FO0Va3ob5q6ogKN59eVXxyUfK5lP4jcUwoglbcOY5f9%2BSLvyGieRpgZd6%2FNShHmPjpGAFdCxvxVeTR4JkCOU205Gy3ww82tBhY0&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117070479765?_skw=LEGO&hash=item1b41f1c195:g:5bQAAeSwucpo6x7D&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaIC8N7FDtn71DwzCSLRDYQdJOvuLmQ1QCnUKJ47zcI8%2F2mXPnvRKH0ZX9oRwrzgBWC9fLMCKc4aeN9oXtzbHb2SkHG9oEsxNawtknEByFlna1fIKn9AsjFIhxtS8aED8rVHT3Zh2HOY4tuVCB2FDKuy0XDxVV1LhJpQoztcwl%2FYKRuUaY34%2FO0Va3ob5q6ogKN59eVXxyUfK5lP4jcUwoglbcOY5f9%2BSLvyGieRpgZd6%2FNShHmPjpGAFdCxvxVeTR4JkCOU205Gy3ww82tBhY0",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
             },
             "additionalImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/-fMAAeSwMoRpwdJu/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/de4AAeSww8FpqMZO/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/bg0AAeSwLt5pTuH5/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/CTsAAeSwVNZo6x7L/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ONgAAeSw5V9pTuHT/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/olYAAeSw0pJo6x7O/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/kkMAAeSwPq9pTuHf/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/vPMAAeSwt1ho6x7U/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/UrAAAeSw9JRpTuHm/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/wlcAAeSws1Bo6x7g/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/jsMAAeSwllxpTuHr/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/~e0AAeSweIJo6x7q/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/E~cAAeSw1CRpTuHx/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/ehgAAeSwd9to6x7u/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/TaMAAeSwQ1JpTuH2/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/~kkAAeSwkDxo6x7y/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/pGoAAeSw8oFpTuID/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/prMAAeSwj79o6x72/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/aVIAAeSw8EhpTuIH/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/y~YAAeSwkONpqMZA/s-l225.jpg"
                 }
             ],
             "adultOnly": false,
-            "legacyItemId": "117119962335",
+            "legacyItemId": "117070479765",
             "availableCoupons": false,
-            "itemOriginDate": "2026-04-01T12:36:50.000Z",
-            "itemCreationDate": "2026-04-01T12:36:50.000Z",
+            "itemOriginDate": "2026-03-05T00:03:43.000Z",
+            "itemCreationDate": "2026-03-05T00:03:43.000Z",
             "topRatedBuyingExperience": false,
-            "priorityListing": false,
+            "priorityListing": true,
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|117137825890|0",
-            "title": "LEGO CREATOR: Propeller Plane (31099)",
+            "itemId": "v1|117132265838|0",
+            "title": "LEGO 30726 Batman Bruce Wayne & Batsuit Minifigure 2026 DC Super Heroes Polybag",
             "leafCategoryIds": [
                 "19006"
             ],
@@ -3588,13 +4005,13 @@
                 }
             ],
             "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/05sAAeSw~yxp2qly/s-l225.jpg"
+                "imageUrl": "https://i.ebayimg.com/images/g/jXQAAeSwDPJp2qzK/s-l225.jpg"
             },
             "price": {
-                "value": "23.00",
+                "value": "11.87",
                 "currency": "USD"
             },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117137825890%7C0",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117132265838%7C0",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
@@ -3604,7 +4021,7 @@
             "conditionId": "1000",
             "thumbnailImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/05sAAeSw~yxp2qly/s-l1200.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/jXQAAeSwDPJp2qzK/s-l1600.jpg"
                 }
             ],
             "shippingOptions": [
@@ -3619,40 +4036,38 @@
                 }
             ],
             "buyingOptions": [
-                "FIXED_PRICE"
+                "FIXED_PRICE",
+                "BEST_OFFER"
             ],
-            "epid": "19042038342",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117137825890?_skw=LEGO&hash=item1b45f56062%3Ag%3A05sAAeSw%7Eyxp2qly&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117137825890?_skw=LEGO&hash=item1b45f56062:g:05sAAeSw~yxp2qly",
+            "epid": "5091948849",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117132265838?_skw=LEGO&hash=item1b45a0896e%3Ag%3AjXQAAeSwDPJp2qzK&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117132265838?_skw=LEGO&hash=item1b45a0896e:g:jXQAAeSwDPJp2qzK",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
             },
             "additionalImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/Z0QAAeSwqUtp2qUK/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/YAcAAeSwFO1p2qzX/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/TwEAAeSwZqJp2qmA/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/L4QAAeSwnCdprZ9H/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/u9cAAeSwwZhp2qUg/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/QVYAAeSwIQVprZ9S/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/sD0AAeSwrURp2qUi/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/clQAAeSw-8pp2qvE/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/Yt8AAeSwZeRp2qmI/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/qGQAAeSwQytp2qUm/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/dmcAAeSwmT1p2qv6/s-l225.jpg"
                 }
             ],
             "adultOnly": false,
-            "legacyItemId": "117137825890",
+            "legacyItemId": "117132265838",
             "availableCoupons": false,
-            "itemOriginDate": "2026-04-11T19:49:29.000Z",
-            "itemCreationDate": "2026-04-11T19:49:29.000Z",
+            "itemOriginDate": "2026-04-08T13:23:22.000Z",
+            "itemCreationDate": "2026-04-08T13:23:22.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
@@ -3777,412 +4192,6 @@
             "availableCoupons": false,
             "itemOriginDate": "2026-02-24T17:42:06.000Z",
             "itemCreationDate": "2026-02-24T17:42:06.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117127326128|0",
-            "title": "LEGO 10317 Land Rover Defender 90 - Retired Icons 4x4 - New Sealed Collector Set",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/tTcAAeSwh3tp0pUT/s-l225.jpg"
-            },
-            "price": {
-                "value": "250.00",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117127326128%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/tTcAAeSwh3tp0pUT/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "CALCULATED"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "9059665329",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117127326128?_skw=LEGO&hash=item1b455529b0%3Ag%3AtTcAAeSwh3tp0pUT&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGb94ngj0OC7s0ZJd74HQhQpWb03DzbHoiJiQX3rs7%2BTb9i5i6lvIz4p%2Fc1dqGApOxzKQ23fXo%2BG95thpMHtz%2BAJcb9FHqh%2BHMXJhoa1jtmsgnvjKy48c%2Bw0OdlqJQ9%2BV5bZSS1n7Bylp3ITTa%2F5Y6tbMK7ZCVZHw7z2tfauPXWzUdxe%2FOjO2KSyH%2Fo%2BePDUMvuWGHShMpCscwdI0hz8NVxMmV36S6WLx79sZopHrjH7%2BK7vIWhyEIZu3auHOQiYQLS6ONOs9gNazudNDF0ROvT%2B&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117127326128?_skw=LEGO&hash=item1b455529b0:g:tTcAAeSwh3tp0pUT&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGb94ngj0OC7s0ZJd74HQhQpWb03DzbHoiJiQX3rs7%2BTb9i5i6lvIz4p%2Fc1dqGApOxzKQ23fXo%2BG95thpMHtz%2BAJcb9FHqh%2BHMXJhoa1jtmsgnvjKy48c%2Bw0OdlqJQ9%2BV5bZSS1n7Bylp3ITTa%2F5Y6tbMK7ZCVZHw7z2tfauPXWzUdxe%2FOjO2KSyH%2Fo%2BePDUMvuWGHShMpCscwdI0hz8NVxMmV36S6WLx79sZopHrjH7%2BK7vIWhyEIZu3auHOQiYQLS6ONOs9gNazudNDF0ROvT%2B",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ac8AAeSw0vBp0pVH/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/lIAAAeSwPO5p0p8X/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/sFMAAeSwyZRp0pUw/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/arEAAeSwXBNp0pK8/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/s3sAAeSw-YFp0pK~/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/pysAAeSwfDRp0pLC/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/DasAAeSwteRp0pLH/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/IxYAAeSwd6Fp0pUe/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/P1UAAeSwXEhp0pUj/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/HqcAAeSwteRp0pUm/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/bqMAAeSwin9p0pUr/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/GccAAeSwarpp0p7u/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/AfQAAeSw58xp0p7z/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117127326128",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-05T17:43:07.000Z",
-            "itemCreationDate": "2026-04-05T17:43:07.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": true,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117070479765|0",
-            "title": "LEGO City 60449 Off-Road Police Car Chase RETIRED Hard to Find NEW SEALED",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/5bQAAeSwucpo6x7D/s-l225.jpg"
-            },
-            "price": {
-                "value": "49.95",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117070479765%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/5bQAAeSwucpo6x7D/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "CALCULATED"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "6075658153",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117070479765?_skw=LEGO&hash=item1b41f1c195%3Ag%3A5bQAAeSwucpo6x7D&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaIC8N7FDtn71DwzCSLRDYQdJOvuLmQ1QCnUKJ47zcI8%2F2mXPnvRKH0ZX9oRwrzgBWC9fLMCKc4aeN9oXtzbHb2SkHG9oEsxNawtknEByFlna1fIKn9AsjFIhxtS8aED8rp58XrkZzAU30W9%2FMMkMhPX4PeqtL4TCqOOHYEDpUpL5mR%2FsXd7ulr5oh093aNzosWnW8avCjHc%2BMFFH2vTzDIsxgT2FXKCAo0EXxFRiDQQbQ5O3lOd3K313wqlbz5w3CwfvV4Q8V%2FDNbtlnKlBXvi&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117070479765?_skw=LEGO&hash=item1b41f1c195:g:5bQAAeSwucpo6x7D&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGaIC8N7FDtn71DwzCSLRDYQdJOvuLmQ1QCnUKJ47zcI8%2F2mXPnvRKH0ZX9oRwrzgBWC9fLMCKc4aeN9oXtzbHb2SkHG9oEsxNawtknEByFlna1fIKn9AsjFIhxtS8aED8rp58XrkZzAU30W9%2FMMkMhPX4PeqtL4TCqOOHYEDpUpL5mR%2FsXd7ulr5oh093aNzosWnW8avCjHc%2BMFFH2vTzDIsxgT2FXKCAo0EXxFRiDQQbQ5O3lOd3K313wqlbz5w3CwfvV4Q8V%2FDNbtlnKlBXvi",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/de4AAeSww8FpqMZO/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/CTsAAeSwVNZo6x7L/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/olYAAeSw0pJo6x7O/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/vPMAAeSwt1ho6x7U/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/wlcAAeSws1Bo6x7g/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/~e0AAeSweIJo6x7q/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ehgAAeSwd9to6x7u/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/~kkAAeSwkDxo6x7y/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/prMAAeSwj79o6x72/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/y~YAAeSwkONpqMZA/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117070479765",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-03-05T00:03:43.000Z",
-            "itemCreationDate": "2026-03-05T00:03:43.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": true,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|116951073772|417058097202",
-            "title": "LEGO Star Wars Helmets - TIE Fighter 75274 Stormtrooper Rex Vader - Choose Yours",
-            "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=116951073772",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/~mQAAeSwhwxpdmEF/s-l225.jpg"
-            },
-            "price": {
-                "value": "84.95",
-                "currency": "USD"
-            },
-            "itemGroupType": "SELLER_DEFINED_VARIATIONS",
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C116951073772%7C417058097202",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New: Other (See Details)",
-            "conditionId": "1500",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/~mQAAeSwhwxpdmEF/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "CALCULATED"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "24046110046",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/116951073772?_skw=LEGO&hash=item1b3ad3c3ec%3Ag%3A%7EmQAAeSwhwxpdmEF&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/116951073772?_skw=LEGO&hash=item1b3ad3c3ec:g:~mQAAeSwhwxpdmEF",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ag0AAeSwYC5pwdk4/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/aosAAeSwpYRpdmQc/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/irUAAeSwQBBpNkKC/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/YoQAAeSwwWFpNkKN/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/8ysAAeSw0ylpHUAS/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/hJAAAeSw1dppHTEk/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/5EoAAeSwzoRpHTEW/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/7NkAAeSwjQ5pHT6c/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/8lsAAeSwKMhpHT6l/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/78YAAeSwHFxpHT7R/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/8JIAAeSwvuBpHT~M/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/9AQAAeSw4iVpHT7V/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/8SIAAeSweKtpHT~5/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/o88AAeSwkrdpHTEh/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "116951073772",
-            "availableCoupons": false,
-            "itemOriginDate": "2025-12-28T01:40:33.000Z",
-            "itemCreationDate": "2025-12-28T01:40:33.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117132265838|0",
-            "title": "LEGO 30726 Batman Bruce Wayne & Batsuit Minifigure 2026 DC Super Heroes Polybag",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/bR0AAeSwxbxprZ9C/s-l225.jpg"
-            },
-            "price": {
-                "value": "11.87",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117132265838%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 214
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/bR0AAeSwxbxprZ9C/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-15T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE",
-                "BEST_OFFER"
-            ],
-            "epid": "5091948849",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117132265838?_skw=LEGO&hash=item1b45a0896e%3Ag%3AbR0AAeSwxbxprZ9C&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117132265838?_skw=LEGO&hash=item1b45a0896e:g:bR0AAeSwxbxprZ9C",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/L4QAAeSwnCdprZ9H/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/QVYAAeSwIQVprZ9S/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117132265838",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-08T13:23:22.000Z",
-            "itemCreationDate": "2026-04-08T13:23:22.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
@@ -4642,8 +4651,8 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|117113678382|0",
-            "title": "LEGO ARCHITECTURE: London (21034)",
+            "itemId": "v1|117006627668|0",
+            "title": "LEGO 1552 Maersk Line Container Truck - NEW SEALED BAGS - Mint Stickers & Parts",
             "leafCategoryIds": [
                 "19006"
             ],
@@ -4666,23 +4675,23 @@
                 }
             ],
             "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/3XoAAeSwYghpyEEQ/s-l225.jpg"
+                "imageUrl": "https://i.ebayimg.com/images/g/VH0AAeSwTHpovIB-/s-l225.jpg"
             },
             "price": {
-                "value": "22.00",
+                "value": "3800.00",
                 "currency": "USD"
             },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117113678382%7C0",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117006627668%7C0",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
                 "feedbackScore": 214
             },
-            "condition": "Used",
-            "conditionId": "3000",
+            "condition": "New: Other (See Details)",
+            "conditionId": "1500",
             "thumbnailImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/3XoAAeSwYghpyEEQ/s-l1200.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/VH0AAeSwTHpovIB-/s-l1600.jpg"
                 }
             ],
             "shippingOptions": [
@@ -4691,40 +4700,89 @@
                 }
             ],
             "buyingOptions": [
-                "FIXED_PRICE"
+                "FIXED_PRICE",
+                "BEST_OFFER"
             ],
-            "epid": "20053426835",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117113678382?_skw=LEGO&hash=item1b4484ea2e%3Ag%3A3XoAAeSwYghpyEEQ&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117113678382?_skw=LEGO&hash=item1b4484ea2e:g:3XoAAeSwYghpyEEQ",
+            "epid": "149137664",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117006627668?_skw=LEGO&hash=item1b3e237354%3Ag%3AVH0AAeSwTHpovIB-&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117006627668?_skw=LEGO&hash=item1b3e237354:g:VH0AAeSwTHpovIB-",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
             },
             "additionalImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/CdIAAeSwPENpyEBl/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/p~YAAeSwDzZprvcF/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/~LAAAeSwXEhpyEA4/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/mwQAAeSwEh1ovIDD/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/2ekAAeSwM9xpyEA6/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/WfcAAeSwYyhovICZ/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ExQAAeSwyVdpyEA9/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/K1sAAeSwGUhovICX/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/GrcAAeSwBo9pyEBA/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/G7cAAeSwN5JovICY/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/cq0AAeSwkFNpyEBL/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/WiEAAeSwxftovICY/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/j0oAAeSwF2xovICY/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/VkIAAeSwxR5ovICX/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/BEUAAeSw05FovICX/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/WjwAAeSwpWhovICZ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/xksAAeSw0atovICD/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/LTIAAeSwtWNovICZ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TSwAAeSwSClovICG/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/DZ8AAeSwYcxovICZ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/OgYAAeSwCpRovIC2/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/W0sAAeSwSytovICa/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/R0sAAeSweMNovICZ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/CsEAAeSwwLNovICa/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/iaQAAeSw0PdovIEA/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/CA4AAeSwBVlovIED/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/nEQAAeSwrNBovIDM/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RrgAAeSwlVRovIDP/s-l225.jpg"
                 }
             ],
             "adultOnly": false,
-            "legacyItemId": "117113678382",
+            "legacyItemId": "117006627668",
             "availableCoupons": false,
-            "itemOriginDate": "2026-03-28T20:59:16.000Z",
-            "itemCreationDate": "2026-03-28T20:59:16.000Z",
+            "itemOriginDate": "2026-01-29T00:56:37.000Z",
+            "itemCreationDate": "2026-01-29T00:56:37.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
@@ -4783,8 +4841,8 @@
                 "BEST_OFFER"
             ],
             "epid": "17051646258",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117116810639?_skw=LEGO&hash=item1b44b4b58f%3Ag%3A%7EckAAeSwb1Zpyroa&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbiPqns3YkXW6Rd1DEvCj9P7a%2Bfw9%2BdNX6coOFcU1aMC6HtQrl8CCvl2iE0tCCcJuFaZuMB8PwMbcDVn3FPjZ4pweOO7krboteKtzwyKJsw2OekoZL4P%2BlTq5m%2B%2FjoOcinVV2A2f27ZiOGJLqh71uL%2FWulHFy9IBxvhjXAb0nHu5fnXWqZ8%2Fj4SpXjsKHvUQ0FqR0DYSX3pUbp%2Bf%2FVqJAHe4sLqdMwgOLiTsx3nGsdJmRvrowmvrpKo%2BlbYVJzF8hID%2Fs2KJnwnpUAxeCOQM0Yv&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117116810639?_skw=LEGO&hash=item1b44b4b58f:g:~ckAAeSwb1Zpyroa&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbiPqns3YkXW6Rd1DEvCj9P7a%2Bfw9%2BdNX6coOFcU1aMC6HtQrl8CCvl2iE0tCCcJuFaZuMB8PwMbcDVn3FPjZ4pweOO7krboteKtzwyKJsw2OekoZL4P%2BlTq5m%2B%2FjoOcinVV2A2f27ZiOGJLqh71uL%2FWulHFy9IBxvhjXAb0nHu5fnXWqZ8%2Fj4SpXjsKHvUQ0FqR0DYSX3pUbp%2Bf%2FVqJAHe4sLqdMwgOLiTsx3nGsdJmRvrowmvrpKo%2BlbYVJzF8hID%2Fs2KJnwnpUAxeCOQM0Yv",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117116810639?_skw=LEGO&hash=item1b44b4b58f%3Ag%3A%7EckAAeSwb1Zpyroa&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbiPqns3YkXW6Rd1DEvCj9P7a%2Bfw9%2BdNX6coOFcU1aMC6HtQrl8CCvl2iE0tCCcJuFaZuMB8PwMbcDVn3FPjZ4pweOO7krboteKtzwyKJsw2OekoZL4P%2BlTq5m%2B%2FjoOcikG2uLrLZ0hYRj%2Bq3Qi%2F04Ilv4Z%2BuKPv7Bqniqyb9Icyk863RPjF6B0oZmCpUmMPLSU0ezPog25UCt25qR42Fqv35c%2FTOcSrXVcX5gYWwJSe6zGIOQbSLQOI3JjU5BNHZ3r6O5LZcnIDLLYuUeydXSi&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117116810639?_skw=LEGO&hash=item1b44b4b58f:g:~ckAAeSwb1Zpyroa&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbiPqns3YkXW6Rd1DEvCj9P7a%2Bfw9%2BdNX6coOFcU1aMC6HtQrl8CCvl2iE0tCCcJuFaZuMB8PwMbcDVn3FPjZ4pweOO7krboteKtzwyKJsw2OekoZL4P%2BlTq5m%2B%2FjoOcikG2uLrLZ0hYRj%2Bq3Qi%2F04Ilv4Z%2BuKPv7Bqniqyb9Icyk863RPjF6B0oZmCpUmMPLSU0ezPog25UCt25qR42Fqv35c%2FTOcSrXVcX5gYWwJSe6zGIOQbSLQOI3JjU5BNHZ3r6O5LZcnIDLLYuUeydXSi",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -4892,8 +4950,8 @@
                 "FIXED_PRICE"
             ],
             "epid": "26070918363",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117067124363?_skw=LEGO&hash=item1b41be8e8b%3Ag%3A9fcAAeSwD1tpWMKM&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZuGfSyptudHuf8zteEU8NRsDZMLhPBhoZjeX4JLfu%2Bu1RfMHJ5A5Lz4fFu%2BuI0qZEjxtfPGiy2JdyVK79MOpY9U7snj97jkKOiAqTHJVmZFOqJPb3n8%2FUbMEOyAm%2FRUIh2YTFqQsoy0oYXDeMbHMStR6htqEABrBBUhUvRXG0Igb1TcChG7LgATgZYnUde7Zs8%2B93FlmXIa4T%2BYoSiXCFSiqAvrg%2Fi3y9nsj1LPeIj3LbLtJlEA%2FWFQNOpjAKsW1lrHQBs6ew5C4T89tYgRdcs&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117067124363?_skw=LEGO&hash=item1b41be8e8b:g:9fcAAeSwD1tpWMKM&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZuGfSyptudHuf8zteEU8NRsDZMLhPBhoZjeX4JLfu%2Bu1RfMHJ5A5Lz4fFu%2BuI0qZEjxtfPGiy2JdyVK79MOpY9U7snj97jkKOiAqTHJVmZFOqJPb3n8%2FUbMEOyAm%2FRUIh2YTFqQsoy0oYXDeMbHMStR6htqEABrBBUhUvRXG0Igb1TcChG7LgATgZYnUde7Zs8%2B93FlmXIa4T%2BYoSiXCFSiqAvrg%2Fi3y9nsj1LPeIj3LbLtJlEA%2FWFQNOpjAKsW1lrHQBs6ew5C4T89tYgRdcs",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117067124363?_skw=LEGO&hash=item1b41be8e8b%3Ag%3A9fcAAeSwD1tpWMKM&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZuGfSyptudHuf8zteEU8NRsDZMLhPBhoZjeX4JLfu%2Bu1RfMHJ5A5Lz4fFu%2BuI0qZEjxtfPGiy2JdyVK79MOpY9U7snj97jkKOiAqTHJVmZFOqJPb3n8%2FUbMEOyAm%2FRUIgVPhKrOvy5STrO8b4nc0kq8rxf2S8ifDi2%2FB8cFn5abKLp3mae5oM01N78mWUF2LHETrp5%2BVcjzIfGuN5xfGIRGHuyVOOjAT1%2BXP0mI%2FaGdO34XJtArF6A%2BeqCfwpQe1PP0eSi3XqXd4AgOQ61HNit&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117067124363?_skw=LEGO&hash=item1b41be8e8b:g:9fcAAeSwD1tpWMKM&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZuGfSyptudHuf8zteEU8NRsDZMLhPBhoZjeX4JLfu%2Bu1RfMHJ5A5Lz4fFu%2BuI0qZEjxtfPGiy2JdyVK79MOpY9U7snj97jkKOiAqTHJVmZFOqJPb3n8%2FUbMEOyAm%2FRUIgVPhKrOvy5STrO8b4nc0kq8rxf2S8ifDi2%2FB8cFn5abKLp3mae5oM01N78mWUF2LHETrp5%2BVcjzIfGuN5xfGIRGHuyVOOjAT1%2BXP0mI%2FaGdO34XJtArF6A%2BeqCfwpQe1PP0eSi3XqXd4AgOQ61HNit",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
