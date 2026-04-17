@@ -39,7 +39,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -55,8 +55,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -113,6 +113,259 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
+            "itemId": "v1|117081912634|0",
+            "title": "Mini GT 716 Cadillac V-Series.R #2 2023 Le Mans 3rd Blue MiJo 1 of 4200 1/64",
+            "leafCategoryIds": [
+                "180506"
+            ],
+            "categories": [
+                {
+                    "categoryId": "180506",
+                    "categoryName": "Contemporary Manufacture"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "222",
+                    "categoryName": "Diecast & Toy Vehicles"
+                },
+                {
+                    "categoryId": "180273",
+                    "categoryName": "Cars, Trucks & Vans"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/kuYAAeSwUotpsaM6/s-l225.jpg"
+            },
+            "price": {
+                "value": "16.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117081912634%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 217
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/kuYAAeSwUotpsaM6/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "25071833374",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117081912634?hash=item1b42a0353a%3Ag%3AkuYAAeSwUotpsaM6&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYh7%2FZbo1JlOZOaYwTKPDHhqOmuET8HNjZLAbFlu60c5aIv45puOUwzt04qZxlMQtVkrkBVGuQ9VkCt9tOER0uz%2BvzIMsqm2a3%2FCy%2FXBTnq6yRaw6oFFpUlYSBE5jE1W93moy8m9gbx39lPEPfg6rAJy7U7T7I6Z6Csnt7tSLbXa30bSu2GfoxDfKhb9qPdedYdGsXJ%2Bdgucej%2B%2FzFjBECVv7iOQlktHSPkcgzaKDiv4LeyIgAwqFjLz7d6mI%2FIrNAzhy6SdwRPtUVMwQqDz0HB&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117081912634?hash=item1b42a0353a:g:kuYAAeSwUotpsaM6&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYh7%2FZbo1JlOZOaYwTKPDHhqOmuET8HNjZLAbFlu60c5aIv45puOUwzt04qZxlMQtVkrkBVGuQ9VkCt9tOER0uz%2BvzIMsqm2a3%2FCy%2FXBTnq6yRaw6oFFpUlYSBE5jE1W93moy8m9gbx39lPEPfg6rAJy7U7T7I6Z6Csnt7tSLbXa30bSu2GfoxDfKhb9qPdedYdGsXJ%2Bdgucej%2B%2FzFjBECVv7iOQlktHSPkcgzaKDiv4LeyIgAwqFjLz7d6mI%2FIrNAzhy6SdwRPtUVMwQqDz0HB",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TlkAAeSwO6xpsaMr/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/j4oAAeSwEaNpsaMg/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/phQAAeSwDBBpsaOY/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/DrUAAeSwF~FpsaNQ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/lNsAAeSw6IJpsaNT/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/mCoAAeSwD7RpsaNY/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/JbEAAeSwMWJpsaNb/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/nF0AAeSwyndpsaNf/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/IfkAAeSwPqFpsaNt/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/mzQAAeSw7x1psaNx/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/S00AAeSwFOBpsaNp/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/QdAAAeSw83tpsaN1/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Eb0AAeSwON5psaN-/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/phsAAeSwYs9psaOC/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/aasAAeSwNKxpsaOG/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117081912634",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-03-11T17:19:52.000Z",
+            "itemCreationDate": "2026-03-11T17:19:52.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
+            "itemId": "v1|117134068361|0",
+            "title": "MINI GT 1/64 Mazda RX-7 FD3S RE Amemiya 20B NA 3ROTOR-7 Ama-san Go MGT01046 NEW",
+            "leafCategoryIds": [
+                "180506"
+            ],
+            "categories": [
+                {
+                    "categoryId": "180506",
+                    "categoryName": "Contemporary Manufacture"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "222",
+                    "categoryName": "Diecast & Toy Vehicles"
+                },
+                {
+                    "categoryId": "180273",
+                    "categoryName": "Cars, Trucks & Vans"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/usQAAeSwZAFpryRR/s-l225.jpg"
+            },
+            "price": {
+                "value": "15.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117134068361%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 217
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/usQAAeSwZAFpryRR/s-l960.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117134068361?hash=item1b45bc0a89%3Ag%3AusQAAeSwZAFpryRR&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbMbX7mXHg7YjcM0SlbiubR2X2l7wJhLkkaBbpyRvp5YLgmmvJACoKMtvsC2wwft1CcKQPPs0S64D9vsZYy%2FvVx3WjNIgngdMbWSTbteLoPj0BrH5WU013zc8G6WCOQ38EoPhvLvO%2FHrjOlJERSLE8YL1AF3Dx8rn1P%2F%2B7qEjDUKBNhqnRpNIKizv9XvYqHKTorgmFV8tqzqF9xZHBon%2FJ8CjW0bZLfM9M5Zek1IWyAUc6wYy0Q5wppdHncx71PSeELbqrTHJtlU42nlBDLVX7Z&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117134068361?hash=item1b45bc0a89:g:usQAAeSwZAFpryRR&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbMbX7mXHg7YjcM0SlbiubR2X2l7wJhLkkaBbpyRvp5YLgmmvJACoKMtvsC2wwft1CcKQPPs0S64D9vsZYy%2FvVx3WjNIgngdMbWSTbteLoPj0BrH5WU013zc8G6WCOQ38EoPhvLvO%2FHrjOlJERSLE8YL1AF3Dx8rn1P%2F%2B7qEjDUKBNhqnRpNIKizv9XvYqHKTorgmFV8tqzqF9xZHBon%2FJ8CjW0bZLfM9M5Zek1IWyAUc6wYy0Q5wppdHncx71PSeELbqrTHJtlU42nlBDLVX7Z",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0QoAAeSwJe1pryRJ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/r6AAAeSwlD9pr0TI/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/cyIAAeSwciBpr0aF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/my0AAeSw~ZZpr0TB/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/5EcAAeSw~eppr0TY/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/kJoAAeSwPqFpr0Te/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/pLUAAeSwIY9pr0Tm/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/5J8AAeSwcQFpr0T1/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/dpYAAeSwUjNpr0UT/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/nLkAAeSwKO1pr0TS/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/nqMAAeSwVqdpr0UM/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0kkAAeSwXdhpryRD/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/1NYAAeSwSHlpryRO/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/HzUAAeSwAYxpryR6/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/uncAAeSwFAlpr0aQ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/7-cAAeSwPvlpr0aa/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/61EAAeSwAYxpr0aj/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/omsAAeSwI6dpr0ar/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/3NIAAeSww-Vpr0ay/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117134068361",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-09T14:37:53.000Z",
+            "itemCreationDate": "2026-04-09T14:37:53.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
             "itemId": "v1|117056036936|0",
             "title": "Tarmac Works 1:64 Ferrari 488 GT3 Macau GT Cup Harmony Racing #51 Chen Weian NEW",
             "leafCategoryIds": [
@@ -140,14 +393,14 @@
                 "imageUrl": "https://i.ebayimg.com/images/g/Y8oAAeSw70lpnmgj/s-l225.jpg"
             },
             "price": {
-                "value": "29.95",
+                "value": "25.00",
                 "currency": "USD"
             },
             "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117056036936%7C0",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -163,15 +416,15 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-18T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-24T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117056036936?hash=item1b41156048%3Ag%3AY8oAAeSw70lpnmgj&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbBy5b0k0YizyHeYQaMXCqmOLk4pZzaWhNnbeujEmUYTYfZVvmHLtqnMmXvJSBP4%2F3QMheD0g5M%2FcYK%2FnmSGobfkuNhHDC6QzKcYw3jmHqy2o%2FlAs%2BWwiO7Cit5PNiWcLaYpGgoXN3X5%2BNe%2BCFu72tkNxtx9F9PAuwwMxMFzhZHnakcc%2FeIzZli6kXkQFut%2BZ1GHtaKqfgxENjluKEAq6zY%2FyOagB5J%2By8rfaHm0DmbB3xOMNl7ohIh025be2qtU4yryVay1BJ%2BrGKN87SaaqMP&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117056036936?hash=item1b41156048:g:Y8oAAeSw70lpnmgj&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbBy5b0k0YizyHeYQaMXCqmOLk4pZzaWhNnbeujEmUYTYfZVvmHLtqnMmXvJSBP4%2F3QMheD0g5M%2FcYK%2FnmSGobfkuNhHDC6QzKcYw3jmHqy2o%2FlAs%2BWwiO7Cit5PNiWcLaYpGgoXN3X5%2BNe%2BCFu72tkNxtx9F9PAuwwMxMFzhZHnakcc%2FeIzZli6kXkQFut%2BZ1GHtaKqfgxENjluKEAq6zY%2FyOagB5J%2By8rfaHm0DmbB3xOMNl7ohIh025be2qtU4yryVay1BJ%2BrGKN87SaaqMP",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117056036936?hash=item1b41156048%3Ag%3AY8oAAeSw70lpnmgj&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbBy5b0k0YizyHeYQaMXCqmOLk4pZzaWhNnbeujEmUYTYfZVvmHLtqnMmXvJSBP4%2F3QMheD0g5M%2FcYK%2FnmSGobfkuNhHDC6QzKcYw3jmHqy2o%2FlAs%2BWwiO7Cit5PNiWcLbODzTMmoyvHoISaGuKpiNjep6BQV4yThBetV3EUhPvyJ3WoXAAJg7W1CuRuVKb0yEGBu1%2FVW6Vo%2FoqbQptQVCXt73aYAcKTc%2FggsMhLfrgzvG6kMIFCizMruRUrHeJ9y4F7wWTmLq1jUFHdohvCiZw&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117056036936?hash=item1b41156048:g:Y8oAAeSw70lpnmgj&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbBy5b0k0YizyHeYQaMXCqmOLk4pZzaWhNnbeujEmUYTYfZVvmHLtqnMmXvJSBP4%2F3QMheD0g5M%2FcYK%2FnmSGobfkuNhHDC6QzKcYw3jmHqy2o%2FlAs%2BWwiO7Cit5PNiWcLbODzTMmoyvHoISaGuKpiNjep6BQV4yThBetV3EUhPvyJ3WoXAAJg7W1CuRuVKb0yEGBu1%2FVW6Vo%2FoqbQptQVCXt73aYAcKTc%2FggsMhLfrgzvG6kMIFCizMruRUrHeJ9y4F7wWTmLq1jUFHdohvCiZw",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -251,8 +504,8 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|117134068361|0",
-            "title": "MINI GT 1/64 Mazda RX-7 FD3S RE Amemiya 20B NA 3ROTOR-7 Ama-san Go MGT01046 NEW",
+            "itemId": "v1|117143680119|0",
+            "title": "2026 HOT WHEELS FAST & FURIOUS SUBARU IMPREZA WRX RED NEW CASTING 1/5",
             "leafCategoryIds": [
                 "180506"
             ],
@@ -275,23 +528,23 @@
                 }
             ],
             "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/usQAAeSwZAFpryRR/s-l225.jpg"
+                "imageUrl": "https://i.ebayimg.com/images/g/rUoAAeSwQrNp3vFj/s-l225.jpg"
             },
             "price": {
-                "value": "15.99",
+                "value": "13.25",
                 "currency": "USD"
             },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117134068361%7C0",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117143680119%7C0",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
             "thumbnailImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/usQAAeSwZAFpryRR/s-l960.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/rUoAAeSwQrNp3vFj/s-l1600.jpg"
                 }
             ],
             "shippingOptions": [
@@ -301,206 +554,31 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117134068361?hash=item1b45bc0a89%3Ag%3AusQAAeSwZAFpryRR&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbMbX7mXHg7YjcM0SlbiubR2X2l7wJhLkkaBbpyRvp5YLgmmvJACoKMtvsC2wwft1CcKQPPs0S64D9vsZYy%2FvVx3WjNIgngdMbWSTbteLoPj0BrH5WU013zc8G6WCOQ38EdpKOLXr5iqYmMHs3vDnoCKSBF5WgOctDjc6y9zHsEjf4UFRnvJLkowGRMWxbbAp0FCdAtBeJsPGEGfL6au%2Fc4uW2eTtcG3rzQH8SVv8A%2FWzrPHJDCdaEd7X7gP4MAn%2F%2BhQpwmaUT2W5hSaeER3Bja&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117134068361?hash=item1b45bc0a89:g:usQAAeSwZAFpryRR&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGbMbX7mXHg7YjcM0SlbiubR2X2l7wJhLkkaBbpyRvp5YLgmmvJACoKMtvsC2wwft1CcKQPPs0S64D9vsZYy%2FvVx3WjNIgngdMbWSTbteLoPj0BrH5WU013zc8G6WCOQ38EdpKOLXr5iqYmMHs3vDnoCKSBF5WgOctDjc6y9zHsEjf4UFRnvJLkowGRMWxbbAp0FCdAtBeJsPGEGfL6au%2Fc4uW2eTtcG3rzQH8SVv8A%2FWzrPHJDCdaEd7X7gP4MAn%2F%2BhQpwmaUT2W5hSaeER3Bja",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117143680119?hash=item1b464eb477%3Ag%3ArUoAAeSwQrNp3vFj&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117143680119?hash=item1b464eb477:g:rUoAAeSwQrNp3vFj",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
             },
             "additionalImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/0QoAAeSwJe1pryRJ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/r6AAAeSwlD9pr0TI/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/cyIAAeSwciBpr0aF/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/my0AAeSw~ZZpr0TB/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/5EcAAeSw~eppr0TY/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/kJoAAeSwPqFpr0Te/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/pLUAAeSwIY9pr0Tm/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/5J8AAeSwcQFpr0T1/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/dpYAAeSwUjNpr0UT/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/nLkAAeSwKO1pr0TS/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/nqMAAeSwVqdpr0UM/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/0kkAAeSwXdhpryRD/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/1NYAAeSwSHlpryRO/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/HzUAAeSwAYxpryR6/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/uncAAeSwFAlpr0aQ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/7-cAAeSwPvlpr0aa/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/61EAAeSwAYxpr0aj/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/omsAAeSwI6dpr0ar/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/3NIAAeSww-Vpr0ay/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/c4oAAeSwi0Vp3vGI/s-l225.jpg"
                 }
             ],
             "adultOnly": false,
-            "legacyItemId": "117134068361",
+            "legacyItemId": "117143680119",
             "availableCoupons": false,
-            "itemOriginDate": "2026-04-09T14:37:53.000Z",
-            "itemCreationDate": "2026-04-09T14:37:53.000Z",
+            "itemOriginDate": "2026-04-15T02:17:41.000Z",
+            "itemCreationDate": "2026-04-15T02:17:41.000Z",
             "topRatedBuyingExperience": false,
-            "priorityListing": true,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117081912634|0",
-            "title": "Mini GT 716 Cadillac V-Series.R #2 2023 Le Mans 3rd Blue MiJo 1 of 4200 1/64",
-            "leafCategoryIds": [
-                "180506"
-            ],
-            "categories": [
-                {
-                    "categoryId": "180506",
-                    "categoryName": "Contemporary Manufacture"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "222",
-                    "categoryName": "Diecast & Toy Vehicles"
-                },
-                {
-                    "categoryId": "180273",
-                    "categoryName": "Cars, Trucks & Vans"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/kuYAAeSwUotpsaM6/s-l225.jpg"
-            },
-            "price": {
-                "value": "16.99",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117081912634%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 216
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/kuYAAeSwUotpsaM6/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "25071833374",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117081912634?hash=item1b42a0353a%3Ag%3AkuYAAeSwUotpsaM6&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYh7%2FZbo1JlOZOaYwTKPDHhqOmuET8HNjZLAbFlu60c5aIv45puOUwzt04qZxlMQtVkrkBVGuQ9VkCt9tOER0uz%2BvzIMsqm2a3%2FCy%2FXBTnq6yRaw6oFFpUlYSBE5jE1W91%2FEUjIabglRrpQXTtBFnfzeh0muK62nNXaNdNOdEIWbC9ZxxNcfgTPCk%2BtokGHDriG%2BinoV32JI7OhaCHYIvltGC0KYGGZWrRbOwnK2Ml3WHCbZ%2BnDIak5mUs3%2BEzZSdGgtJ0MAz%2B9dxAA17RSoWb1&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117081912634?hash=item1b42a0353a:g:kuYAAeSwUotpsaM6&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYh7%2FZbo1JlOZOaYwTKPDHhqOmuET8HNjZLAbFlu60c5aIv45puOUwzt04qZxlMQtVkrkBVGuQ9VkCt9tOER0uz%2BvzIMsqm2a3%2FCy%2FXBTnq6yRaw6oFFpUlYSBE5jE1W91%2FEUjIabglRrpQXTtBFnfzeh0muK62nNXaNdNOdEIWbC9ZxxNcfgTPCk%2BtokGHDriG%2BinoV32JI7OhaCHYIvltGC0KYGGZWrRbOwnK2Ml3WHCbZ%2BnDIak5mUs3%2BEzZSdGgtJ0MAz%2B9dxAA17RSoWb1",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/TlkAAeSwO6xpsaMr/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/j4oAAeSwEaNpsaMg/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/phQAAeSwDBBpsaOY/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/DrUAAeSwF~FpsaNQ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/lNsAAeSw6IJpsaNT/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/mCoAAeSwD7RpsaNY/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/JbEAAeSwMWJpsaNb/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/nF0AAeSwyndpsaNf/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/IfkAAeSwPqFpsaNt/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/mzQAAeSw7x1psaNx/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/S00AAeSwFOBpsaNp/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/QdAAAeSw83tpsaN1/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/Eb0AAeSwON5psaN-/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/phsAAeSwYs9psaOC/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/aasAAeSwNKxpsaOG/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117081912634",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-03-11T17:19:52.000Z",
-            "itemCreationDate": "2026-03-11T17:19:52.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": true,
+            "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
         },
         {
@@ -538,7 +616,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -554,8 +632,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -577,162 +655,6 @@
             "availableCoupons": false,
             "itemOriginDate": "2026-04-15T02:34:07.000Z",
             "itemCreationDate": "2026-04-15T02:34:07.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117143699166|0",
-            "title": "2026 HOT WHEELS SILVER SERIES FAST & FURIOUS 1969 CHEVY CAMARO YENKO BLUE",
-            "leafCategoryIds": [
-                "180506"
-            ],
-            "categories": [
-                {
-                    "categoryId": "180506",
-                    "categoryName": "Contemporary Manufacture"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "222",
-                    "categoryName": "Diecast & Toy Vehicles"
-                },
-                {
-                    "categoryId": "180273",
-                    "categoryName": "Cars, Trucks & Vans"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/fEAAAeSwLQ1p3vl0/s-l225.jpg"
-            },
-            "price": {
-                "value": "9.45",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117143699166%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 216
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/fEAAAeSwLQ1p3vl0/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117143699166?hash=item1b464efede%3Ag%3AfEAAAeSwLQ1p3vl0&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117143699166?hash=item1b464efede:g:fEAAAeSwLQ1p3vl0",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/aRUAAeSwQldp3vl7/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117143699166",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-15T02:42:20.000Z",
-            "itemCreationDate": "2026-04-15T02:42:20.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US"
-        },
-        {
-            "itemId": "v1|117143682451|0",
-            "title": "2026 HOT WHEELS SILVER SERIES FAST & FURIOUS NISSAN MAXIMA METAL BASE CHASE",
-            "leafCategoryIds": [
-                "180506"
-            ],
-            "categories": [
-                {
-                    "categoryId": "180506",
-                    "categoryName": "Contemporary Manufacture"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "222",
-                    "categoryName": "Diecast & Toy Vehicles"
-                },
-                {
-                    "categoryId": "180273",
-                    "categoryName": "Cars, Trucks & Vans"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/YEoAAeSw88dp3vXf/s-l225.jpg"
-            },
-            "price": {
-                "value": "17.50",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117143682451%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 216
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/YEoAAeSw88dp3vXf/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117143682451?hash=item1b464ebd93%3Ag%3AYEoAAeSw88dp3vXf&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117143682451?hash=item1b464ebd93:g:YEoAAeSw88dp3vXf",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/aRUAAeSwg6Bp3vXo/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117143682451",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-15T02:26:18.000Z",
-            "itemCreationDate": "2026-04-15T02:26:18.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
@@ -772,7 +694,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -788,8 +710,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -816,8 +738,8 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|117143680119|0",
-            "title": "2026 HOT WHEELS FAST & FURIOUS SUBARU IMPREZA WRX RED NEW CASTING 1/5",
+            "itemId": "v1|117143699166|0",
+            "title": "2026 HOT WHEELS SILVER SERIES FAST & FURIOUS 1969 CHEVY CAMARO YENKO BLUE",
             "leafCategoryIds": [
                 "180506"
             ],
@@ -840,23 +762,23 @@
                 }
             ],
             "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/rUoAAeSwQrNp3vFj/s-l225.jpg"
+                "imageUrl": "https://i.ebayimg.com/images/g/fEAAAeSwLQ1p3vl0/s-l225.jpg"
             },
             "price": {
-                "value": "13.25",
+                "value": "9.45",
                 "currency": "USD"
             },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117143680119%7C0",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117143699166%7C0",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
             "thumbnailImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/rUoAAeSwQrNp3vFj/s-l1600.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/fEAAAeSwLQ1p3vl0/s-l1600.jpg"
                 }
             ],
             "shippingOptions": [
@@ -866,29 +788,29 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117143680119?hash=item1b464eb477%3Ag%3ArUoAAeSwQrNp3vFj&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117143680119?hash=item1b464eb477:g:rUoAAeSwQrNp3vFj",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117143699166?hash=item1b464efede%3Ag%3AfEAAAeSwLQ1p3vl0&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117143699166?hash=item1b464efede:g:fEAAAeSwLQ1p3vl0",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
             },
             "additionalImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/c4oAAeSwi0Vp3vGI/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/aRUAAeSwQldp3vl7/s-l225.jpg"
                 }
             ],
             "adultOnly": false,
-            "legacyItemId": "117143680119",
+            "legacyItemId": "117143699166",
             "availableCoupons": false,
-            "itemOriginDate": "2026-04-15T02:17:41.000Z",
-            "itemCreationDate": "2026-04-15T02:17:41.000Z",
+            "itemOriginDate": "2026-04-15T02:42:20.000Z",
+            "itemCreationDate": "2026-04-15T02:42:20.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
@@ -928,7 +850,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -944,8 +866,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-18T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-24T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1000,6 +922,84 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
+            "itemId": "v1|117143682451|0",
+            "title": "2026 HOT WHEELS SILVER SERIES FAST & FURIOUS NISSAN MAXIMA METAL BASE CHASE",
+            "leafCategoryIds": [
+                "180506"
+            ],
+            "categories": [
+                {
+                    "categoryId": "180506",
+                    "categoryName": "Contemporary Manufacture"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "222",
+                    "categoryName": "Diecast & Toy Vehicles"
+                },
+                {
+                    "categoryId": "180273",
+                    "categoryName": "Cars, Trucks & Vans"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/YEoAAeSw88dp3vXf/s-l225.jpg"
+            },
+            "price": {
+                "value": "17.50",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117143682451%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 217
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/YEoAAeSw88dp3vXf/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117143682451?hash=item1b464ebd93%3Ag%3AYEoAAeSw88dp3vXf&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117143682451?hash=item1b464ebd93:g:YEoAAeSw88dp3vXf",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/aRUAAeSwg6Bp3vXo/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117143682451",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-15T02:26:18.000Z",
+            "itemCreationDate": "2026-04-15T02:26:18.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US"
+        },
+        {
             "itemId": "v1|117112554848|0",
             "title": "Hot Wheels 2026 Pantone Silver Series '69 COPO CAMARO #5/6 Yellow - JKY50",
             "leafCategoryIds": [
@@ -1034,7 +1034,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1050,8 +1050,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1121,7 +1121,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1137,8 +1137,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-18T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-23T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1218,7 +1218,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1234,8 +1234,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1305,7 +1305,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1324,8 +1324,8 @@
                 "BEST_OFFER"
             ],
             "epid": "9089085435",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117116760799?hash=item1b44b3f2df%3Ag%3ATHUAAeSwdUJpipV0&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYB34FNyV%2BVxccE329v5BVal2uqrJFWh8a1XVkh%2BgbZDNdX5MwhxPV5mziZiKSzaIcJE2jhYYGkuS4VgB3bsYyp%2BOD7u%2FQu182APfeSAwPyHNx61EIyBm6Wtbii2poyMMu%2BRScHXvg4XXZhEBovOQ2HGebrfodNqx%2FK%2FVlg0LW3KjRjqzkRf3HdFu7c6tGBWkekTLWERotwgYW%2B3T965E9ucxuhpaoXamY9LOhkkv6e15jlqIcStbTH4e2iQEQITu1STMgX6Uhp%2FhB8VUx0pSBt&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117116760799?hash=item1b44b3f2df:g:THUAAeSwdUJpipV0&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYB34FNyV%2BVxccE329v5BVal2uqrJFWh8a1XVkh%2BgbZDNdX5MwhxPV5mziZiKSzaIcJE2jhYYGkuS4VgB3bsYyp%2BOD7u%2FQu182APfeSAwPyHNx61EIyBm6Wtbii2poyMMu%2BRScHXvg4XXZhEBovOQ2HGebrfodNqx%2FK%2FVlg0LW3KjRjqzkRf3HdFu7c6tGBWkekTLWERotwgYW%2B3T965E9ucxuhpaoXamY9LOhkkv6e15jlqIcStbTH4e2iQEQITu1STMgX6Uhp%2FhB8VUx0pSBt",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117116760799?hash=item1b44b3f2df%3Ag%3ATHUAAeSwdUJpipV0&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYB34FNyV%2BVxccE329v5BVal2uqrJFWh8a1XVkh%2BgbZDNdX5MwhxPV5mziZiKSzaIcJE2jhYYGkuS4VgB3bsYyp%2BOD7u%2FQu182APfeSAwPyHNx61EIyBm6Wtbii2poyMMtWJwmTPXDJteu8p0TS9JS%2BGLTCZKVrIVZUSnwB0%2BlLum%2FbkdclzbEA3WUPAB7DM05UVmNWQX0ziFAUJ2kEcbLbUy0TdabicIGQjNnUIN7%2F922YYpM9d2fZqtEDQ1MSSTS7nnn6cA3d28%2BVML23MKHD&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117116760799?hash=item1b44b3f2df:g:THUAAeSwdUJpipV0&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYB34FNyV%2BVxccE329v5BVal2uqrJFWh8a1XVkh%2BgbZDNdX5MwhxPV5mziZiKSzaIcJE2jhYYGkuS4VgB3bsYyp%2BOD7u%2FQu182APfeSAwPyHNx61EIyBm6Wtbii2poyMMtWJwmTPXDJteu8p0TS9JS%2BGLTCZKVrIVZUSnwB0%2BlLum%2FbkdclzbEA3WUPAB7DM05UVmNWQX0ziFAUJ2kEcbLbUy0TdabicIGQjNnUIN7%2F922YYpM9d2fZqtEDQ1MSSTS7nnn6cA3d28%2BVML23MKHD",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1369,8 +1369,8 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|117135837460|0",
-            "title": "MINI GT 1/64 Mazda RX-7 LB-Super Silhouette #41 Numero White MGT00773-MJ NEW",
+            "itemId": "v1|117134067552|0",
+            "title": "TSM 1/43 Mazda RX-7 FD3S LB Super Silhouette IMSA Liberty Walk TSMV0027 MIB",
             "leafCategoryIds": [
                 "180506"
             ],
@@ -1393,95 +1393,59 @@
                 }
             ],
             "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/sVoAAeSwkshpsOuB/s-l225.jpg"
+                "imageUrl": "https://i.ebayimg.com/images/g/eUkAAeSw7oJpsOHm/s-l225.jpg"
             },
             "price": {
-                "value": "14.99",
+                "value": "134.95",
                 "currency": "USD"
             },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117135837460%7C0",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117134067552%7C0",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
             "thumbnailImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/sVoAAeSwkshpsOuB/s-l1200.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/eUkAAeSw7oJpsOHm/s-l640.jpg"
                 }
             ],
             "shippingOptions": [
                 {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
+                    "shippingCostType": "CALCULATED"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "epid": "22074536855",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117135837460?hash=item1b45d70914%3Ag%3AsVoAAeSwkshpsOuB&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZCt3lVqr5yQMSQTycR1PGC96c3rHEDA80UTA7BMHmvd3%2Bb3CRgWAQ31Xa%2BUEsQVbGnZDZFxn35Hs02u5tqUewhtRq6YGIXfWJGsOKi8pDArNFzgAzu4FuWfcywTPxAGSauQZyMu1PJctspH6JrRyo8C%2FqZLWV8Z6FN8cW4Reb9n7r0yUwQRo8DgB7Rx6jrZSVCmNC3nywaVyNDwQ%2BANID1ZyPauvJ2zxskaOv0VpWD1S9oIl6zuIkvOF5LNaUtRkKduUxNhUxSQs7uoPIwzE4Y&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117135837460?hash=item1b45d70914:g:sVoAAeSwkshpsOuB&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZCt3lVqr5yQMSQTycR1PGC96c3rHEDA80UTA7BMHmvd3%2Bb3CRgWAQ31Xa%2BUEsQVbGnZDZFxn35Hs02u5tqUewhtRq6YGIXfWJGsOKi8pDArNFzgAzu4FuWfcywTPxAGSauQZyMu1PJctspH6JrRyo8C%2FqZLWV8Z6FN8cW4Reb9n7r0yUwQRo8DgB7Rx6jrZSVCmNC3nywaVyNDwQ%2BANID1ZyPauvJ2zxskaOv0VpWD1S9oIl6zuIkvOF5LNaUtRkKduUxNhUxSQs7uoPIwzE4Y",
+            "epid": "14090935970",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117134067552?hash=item1b45bc0760%3Ag%3AeUkAAeSw7oJpsOHm&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYve%2BD2owbj5u6cXYrYxQ0981ZuAMlNqQIimF%2FpBLD3SesYMZIrSMRtTn%2B3ghR%2FnGYiwgfxq0utAa5jg9DFeLygztpr0oUb%2BSjLWrqvIv2xfHujsIp4DV%2FqIxwsyELGgngXYVCkoJwnEkr82d2y%2BUPJwGeswGuGrQwZ9tJK9Tq3e%2B6Ia2RJzEAMLw%2BbaqIELaMQ8cuOtJKg3uaqPYl5Y%2FYZHKSZxBtUqeMMKJV%2BhPcU1vkyyKS0KlsLj%2B7I4BOvlKDBFUsweezJB1VZy%2FxBOCEy&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117134067552?hash=item1b45bc0760:g:eUkAAeSw7oJpsOHm&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGYve%2BD2owbj5u6cXYrYxQ0981ZuAMlNqQIimF%2FpBLD3SesYMZIrSMRtTn%2B3ghR%2FnGYiwgfxq0utAa5jg9DFeLygztpr0oUb%2BSjLWrqvIv2xfHujsIp4DV%2FqIxwsyELGgngXYVCkoJwnEkr82d2y%2BUPJwGeswGuGrQwZ9tJK9Tq3e%2B6Ia2RJzEAMLw%2BbaqIELaMQ8cuOtJKg3uaqPYl5Y%2FYZHKSZxBtUqeMMKJV%2BhPcU1vkyyKS0KlsLj%2B7I4BOvlKDBFUsweezJB1VZy%2FxBOCEy",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
             },
             "additionalImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/2wEAAeSwVRppsOtm/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/ff8AAeSwqkdprxxg/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/yL4AAeSwqd9psOth/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/l6oAAeSwFOBpsOHr/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/3ooAAeSw2MtpsOtr/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/bCcAAeSwON5psOHo/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/s1kAAeSwVbxpsOtt/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/sR0AAeSwMD1psOtv/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/0oAAAeSwTyVpsOtw/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/s0YAAeSwXQJpsOt2/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/OzYAAeSwAZNpsOt4/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/sPEAAeSwykppsOt5/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ya0AAeSwCONpsOt-/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/wTsAAeSwYXxpsOuA/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/PjQAAeSwprxpsOuM/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/r04AAeSwJL9psOuQ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/w7UAAeSw1-NpsOuo/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/clsAAeSw~dxpsOHt/s-l225.jpg"
                 }
             ],
             "adultOnly": false,
-            "legacyItemId": "117135837460",
+            "legacyItemId": "117134067552",
             "availableCoupons": false,
-            "itemOriginDate": "2026-04-10T15:25:29.000Z",
-            "itemCreationDate": "2026-04-10T15:25:29.000Z",
+            "itemOriginDate": "2026-04-09T14:36:25.000Z",
+            "itemCreationDate": "2026-04-09T14:36:25.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": true,
             "listingMarketplaceId": "EBAY_US"
@@ -1521,7 +1485,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1539,8 +1503,8 @@
                 "FIXED_PRICE",
                 "BEST_OFFER"
             ],
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117098917766?hash=item1b43a3af86%3Ag%3A4uYAAeSwQBFpvbwg&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZVFTXGvTI0kfU0FKMpzKWi08ZGFPdPKrBIPRy3HRD2fKSyGtQjjw%2FoZhXmnGlP7wMCq%2BT7kToiTwovi2XAcucXGjyebufNypgd%2BvgKPAEffS9FDv1LSmmnF3lNioG5isjaptTNaNuUjkFKFYhlTrpgx0BY%2FdbpEFk7VkPNcNekUAWX4oUzP5uZve5nzMfG%2B0BNnCK1LrtNdr6SeEcxSWa%2BXKNZ8z2idkOI%2BmT6MBNsD90Uqwm5dH1rM05aQojCsDddx5V%2FCtuywc%2BdHd6JjuQ4&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117098917766?hash=item1b43a3af86:g:4uYAAeSwQBFpvbwg&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZVFTXGvTI0kfU0FKMpzKWi08ZGFPdPKrBIPRy3HRD2fKSyGtQjjw%2FoZhXmnGlP7wMCq%2BT7kToiTwovi2XAcucXGjyebufNypgd%2BvgKPAEffS9FDv1LSmmnF3lNioG5isjaptTNaNuUjkFKFYhlTrpgx0BY%2FdbpEFk7VkPNcNekUAWX4oUzP5uZve5nzMfG%2B0BNnCK1LrtNdr6SeEcxSWa%2BXKNZ8z2idkOI%2BmT6MBNsD90Uqwm5dH1rM05aQojCsDddx5V%2FCtuywc%2BdHd6JjuQ4",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117098917766?hash=item1b43a3af86%3Ag%3A4uYAAeSwQBFpvbwg&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZVFTXGvTI0kfU0FKMpzKWi08ZGFPdPKrBIPRy3HRD2fKSyGtQjjw%2FoZhXmnGlP7wMCq%2BT7kToiTwovi2XAcucXGjyebufNypgd%2BvgKPAEffS9FDv1LSmmnF3lNioG5ishfCiM6Q7p7dRp6Bb2LAT%2FjHSaojVSc2TIhp6AS3insoR0s5hzRwvb39lquIWkHSGFMEP8Uf9nPGz7CrzX0TMra2WImb8ZywpsxnDpmKzzMNe01nvYwdZI32JUCZpAP6yOWc7JzNFDSgopqiByoSH8i&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117098917766?hash=item1b43a3af86:g:4uYAAeSwQBFpvbwg&amdata=enc%3AAQALAAAA4ACCtXRWQnOEpyOqnQQ8KGZVFTXGvTI0kfU0FKMpzKWi08ZGFPdPKrBIPRy3HRD2fKSyGtQjjw%2FoZhXmnGlP7wMCq%2BT7kToiTwovi2XAcucXGjyebufNypgd%2BvgKPAEffS9FDv1LSmmnF3lNioG5ishfCiM6Q7p7dRp6Bb2LAT%2FjHSaojVSc2TIhp6AS3insoR0s5hzRwvb39lquIWkHSGFMEP8Uf9nPGz7CrzX0TMra2WImb8ZywpsxnDpmKzzMNe01nvYwdZI32JUCZpAP6yOWc7JzNFDSgopqiByoSH8i",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1627,7 +1591,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1643,8 +1607,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-04-20T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-04-25T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1677,8 +1641,8 @@
             "listingMarketplaceId": "EBAY_US"
         },
         {
-            "itemId": "v1|117134067552|0",
-            "title": "TSM 1/43 Mazda RX-7 FD3S LB Super Silhouette IMSA Liberty Walk TSMV0027 MIB",
+            "itemId": "v1|117135837460|0",
+            "title": "MINI GT 1/64 Mazda RX-7 LB-Super Silhouette #41 Numero White MGT00773-MJ NEW",
             "leafCategoryIds": [
                 "180506"
             ],
@@ -1701,59 +1665,95 @@
                 }
             ],
             "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/eUkAAeSw7oJpsOHm/s-l225.jpg"
+                "imageUrl": "https://i.ebayimg.com/images/g/sVoAAeSwkshpsOuB/s-l225.jpg"
             },
             "price": {
-                "value": "134.95",
+                "value": "14.99",
                 "currency": "USD"
             },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117134067552%7C0",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117135837460%7C0",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
             "thumbnailImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/eUkAAeSw7oJpsOHm/s-l640.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/sVoAAeSwkshpsOuB/s-l1200.jpg"
                 }
             ],
             "shippingOptions": [
                 {
-                    "shippingCostType": "CALCULATED"
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-04-21T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-04-27T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "epid": "14090935970",
-            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117134067552?hash=item1b45bc0760%3Ag%3AeUkAAeSw7oJpsOHm&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
-            "itemWebUrl": "https://www.ebay.com/itm/117134067552?hash=item1b45bc0760:g:eUkAAeSw7oJpsOHm",
+            "epid": "22074536855",
+            "itemAffiliateWebUrl": "https://www.ebay.com/itm/117135837460?hash=item1b45d70914%3Ag%3AsVoAAeSwkshpsOuB&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&customid=blockheadz&toolid=10049",
+            "itemWebUrl": "https://www.ebay.com/itm/117135837460?hash=item1b45d70914:g:sVoAAeSwkshpsOuB",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
             },
             "additionalImages": [
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ff8AAeSwqkdprxxg/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/2wEAAeSwVRppsOtm/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/l6oAAeSwFOBpsOHr/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/yL4AAeSwqd9psOth/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/bCcAAeSwON5psOHo/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/3ooAAeSw2MtpsOtr/s-l225.jpg"
                 },
                 {
-                    "imageUrl": "https://i.ebayimg.com/images/g/clsAAeSw~dxpsOHt/s-l225.jpg"
+                    "imageUrl": "https://i.ebayimg.com/images/g/s1kAAeSwVbxpsOtt/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/sR0AAeSwMD1psOtv/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0oAAAeSwTyVpsOtw/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/s0YAAeSwXQJpsOt2/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/OzYAAeSwAZNpsOt4/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/sPEAAeSwykppsOt5/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ya0AAeSwCONpsOt-/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/wTsAAeSwYXxpsOuA/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/PjQAAeSwprxpsOuM/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/r04AAeSwJL9psOuQ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/w7UAAeSw1-NpsOuo/s-l225.jpg"
                 }
             ],
             "adultOnly": false,
-            "legacyItemId": "117134067552",
+            "legacyItemId": "117135837460",
             "availableCoupons": false,
-            "itemOriginDate": "2026-04-09T14:36:25.000Z",
-            "itemCreationDate": "2026-04-09T14:36:25.000Z",
+            "itemOriginDate": "2026-04-10T15:25:29.000Z",
+            "itemCreationDate": "2026-04-10T15:25:29.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US"
@@ -1793,7 +1793,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 216
+                "feedbackScore": 217
             },
             "condition": "New",
             "conditionId": "1000",
