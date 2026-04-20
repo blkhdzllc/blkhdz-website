@@ -3,22 +3,6 @@ import json
 import datetime
 from services.market_intel import get_aggregated_valuation
 
-# --- 1. SETTINGS & PRICE LIST ---
-# Centralized pricing for LEGO sets (Handles ranges and fixed prices)
-LEGO_PRICES = {
-    "75274": "84.95 - 425.00",
-    "31167": "14.99 - 145.00",
-    "31020": 56.00,
-    "71738": 104.85,
-    "31144": 28.54,
-    "76015": 64.95,
-    "77247": 49.99,
-    "76295": 69.95,
-    "76232": 59.95,
-    "60449": 49.95,
-    "30726": 11.93,
-    "41619": 42.95
-}
 
 # --- 2. RAW INVENTORY DATA ---
 # LEGO DATA: Standardized with your specific shipping dimensions and weights
@@ -68,6 +52,7 @@ def run_harmonization():
     # Process LEGO
    for item in LEGO_DATA:
         price_val = get_aggregated_valuation(item['id']) # <--- ADD THIS LINE
+        
         output["lego"].append({
             "id": item['id'],
             "name": item['name'],
