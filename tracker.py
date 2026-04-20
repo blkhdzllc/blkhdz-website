@@ -1,6 +1,7 @@
 import os
 import json
 import datetime
+from services.market_intel import get_aggregated_valuation
 
 # --- 1. SETTINGS & PRICE LIST ---
 # Centralized pricing for LEGO sets (Handles ranges and fixed prices)
@@ -65,8 +66,8 @@ def run_harmonization():
     ebay_affiliate = "?mkcid=1&mkrid=711-53200-19255-0&campid=5339141674&toolid=10001&mkevt=1"
 
     # Process LEGO
-    for item in LEGO_DATA:
-        price_val = LEGO_PRICES.get(item['id'], 0.00)
+   for item in LEGO_DATA:
+        price_val = get_aggregated_valuation(item['id']) # <--- ADD THIS LINE
         output["lego"].append({
             "id": item['id'],
             "name": item['name'],
