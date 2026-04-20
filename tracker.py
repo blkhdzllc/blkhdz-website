@@ -65,11 +65,13 @@ def run_harmonization():
 
     # Process Diecast
     for item in DIECAST_DATA:
+        price_val = get_aggregated_valuation(item['id'])
+        
         output["diecast"].append({
             "id": item['id'],
             "name": item['name'],
             "img": item['img'],
-            "price": f"{item['p']:.2f}",
+            "price": str(price_val) if isinstance(price_val, str) else f"{price_val:.2f}",
             "url": item['url'] + ebay_affiliate,
             "featured": item['feat'],
             "status": item['stat']
