@@ -60,20 +60,36 @@ def sync_diecast_inventory():
         inventory_data = response.json()
 
         if "itemSummaries" in inventory_data:
-            # NPW Filter: Drop sold/out-of-stock items and verify seller
+            # 1. Filter for your items that are in stock
             filtered_items = [
                 item for item in inventory_data["itemSummaries"] 
                 if item.get("seller", {}).get("username", "").lower() == SELLER_ID.lower() and
                 item.get("estimatedAvailabilityStatus") != "OUT_OF_STOCK"
             ]
-            inventory_data["itemSummaries"] = filtered_items
-
-            with open(DATA_FILE, "w") as f:
-                json.dump(inventory_data, f, indent=4)
-            print(f"Sync complete. {len(filtered_items)} active items saved to {DATA_FILE}")
             
-    except Exception as e:
-        print(f"Sync Error: {e}")
+            # 2. Process each item to add the SEO Schema
+            for item in filtered_items:
+                item_id = item.get("itemId", "N/A")
+                title = item.get("title", "Unknown Diecast")
+                price = item.get("price", {}).get("value", "0.00")
+                image_url = item.get("image", {}).get("imageUrl", "")
+                
+                # Hidden ID card for Google Search
+                item["seo_schema"] = {
+                    "@context": "https://schema.org/",
+                    "@type": "Product",
+                    "name": title,
+                    "image": image_url,
+                    "offers": {
+                        "@type": "Offer",
+                        "price": price,
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock",
+                        "url": f"https://www.ebay.com/itm/{item_id}"
+                    }
+                }
+            
+            inventory_data["itemSummaries"] = filtered_items
 
 if __name__ == "__main__":
     sync_diecast_inventory()
