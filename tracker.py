@@ -38,48 +38,35 @@ DIECAST_DATA = [
 # --- 3. HARMONIZATION ENGINE ---
 def run_harmonization():
     # Process LEGO
-for item in LEGO_DATA:
-    price_val = get_aggregated_valuation(item['id'])
-    
-    # NEW: Create the SEO Schema Object
-    seo_data = {
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": item['name'],
-        "image": f"https://yourdomain.com/images/{item['img']}", # Update with your real domain
-        "sku": item['id'],
-        "offers": {
-            "@type": "Offer",
-            "price": f"{price_val:.2f}",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": item['url'] + ebay_affiliate
+# Process LEGO
+    for item in LEGO_DATA:
+        price_val = get_aggregated_valuation(item['id'])
+        
+        # NEW: Create the SEO Schema Object for Google
+        seo_data = {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": item['name'],
+            "image": f"https://www.ebay.com/str/blkhdz/images/{item['img']}", 
+            "sku": item['id'],
+            "offers": {
+                "@type": "Offer",
+                "price": str(price_val) if isinstance(price_val, str) else f"{price_val:.2f}",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": item['url']
+            }
         }
-    }
-    
-    output["lego"].append({
-        "id": item['id'],
-        "name": item['name'],
-        "img": item['img'],
-        "price": f"{price_val:.2f}",
-        "url": item['url'] + ebay_affiliate,
-        "featured": item['feat'],
-        "shipping": f"BOX: {item['b']} | WT: {item['w']} LBS",
-        "seo_schema": seo_data  # <--- ADD THIS LINE
-    })
-
-    # Process LEGO
-   for item in LEGO_DATA:
-        price_val = get_aggregated_valuation(item['id']) # <--- ADD THIS LINE
         
         output["lego"].append({
             "id": item['id'],
             "name": item['name'],
             "img": item['img'],
             "price": str(price_val) if isinstance(price_val, str) else f"{price_val:.2f}",
-            "url": item['url'] + ebay_affiliate,
+            "url": item['url'],
             "featured": item['feat'],
-            "shipping": f"BOX: {item['b']} | WT: {item['w']} LBS"
+            "shipping": f"BOX: {item['b']} | WT: {item['w']} LBS",
+            "seo_schema": seo_data  # This attaches the SEO info to the item
         })
 
     # Process Diecast
