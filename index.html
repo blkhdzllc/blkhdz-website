@@ -181,6 +181,31 @@
                 const response = await fetch(folder + fileName + '?v=' + Date.now());
                 const data = await response.json();
                 const items = data.itemSummaries || [];
+                const oldScript = document.getElementById('dynamic-seo');
+        if (oldScript) oldScript.remove();
+
+        // Check if items have the seo_schema we built in Python
+        const schemas = items
+            .map(item => {
+                // Handle different JSON structures from your two sync scripts
+                return item.seo_schema || (item.itemSummaries ? item.itemSummaries.map(s => s.seo_schema) : null);
+            })
+            .flat()
+            .filter(Boolean);
+
+        if (schemas.length > 0) {
+            const fullSchema = {
+                "@context": "https://schema.org",
+                "@graph": schemas
+            };
+
+            const script = document.createElement('script');
+            script.id = 'dynamic-seo';
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify(fullSchema);
+            document.head.appendChild(script);
+        }
+        // --- END SEO ENGINE ---
 
                 if (items.length === 0) {
                     container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px;">NO ACTIVE LISTINGS FOUND.</div>';
