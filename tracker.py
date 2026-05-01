@@ -37,12 +37,21 @@ DIECAST_DATA = [
 
 # --- 3. HARMONIZATION ENGINE ---
 def run_harmonization():
+    # Initialize the output structure
+    output = {
+        "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "lego": [],
+        "diecast": []
+    }
+    
+    # Define affiliate string (keep empty if not used yet)
+    ebay_affiliate = "" 
+
     # Process LEGO
-# Process LEGO
     for item in LEGO_DATA:
         price_val = get_aggregated_valuation(item['id'])
         
-        # NEW: Create the SEO Schema Object for Google
+        # SEO Schema Object
         seo_data = {
             "@context": "https://schema.org/",
             "@type": "Product",
@@ -63,24 +72,42 @@ def run_harmonization():
             "name": item['name'],
             "img": item['img'],
             "price": str(price_val) if isinstance(price_val, str) else f"{price_val:.2f}",
-            "url": item['url'],
+            "url": item['url'] + ebay_affiliate,
             "featured": item['feat'],
             "shipping": f"BOX: {item['b']} | WT: {item['w']} LBS",
-            "seo_schema": seo_data  # This attaches the SEO info to the item
+            "seo_schema": seo_data
         })
 
     # Process Diecast
     for item in DIECAST_DATA:
-        price_val = get_aggregated_valuation(item['id'])
+        # Use price in DIECAST_DATA if get_aggregated_valuation returns 0
+        val = get_aggregated_valuation(item['id'])
+        price_val = val if val != 0 else item['p']
         
+        seo_data = {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": item['name'],
+            "image": f"https://www.ebay.com/str/blkhdz/images/{item['img']}",
+            "sku": item['id'],
+            "offers": {
+                "@type": "Offer",
+                "price": f"{price_val:.2f}",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": item['url']
+            }
+        }
+
         output["diecast"].append({
             "id": item['id'],
             "name": item['name'],
             "img": item['img'],
-            "price": str(price_val) if isinstance(price_val, str) else f"{price_val:.2f}",
+            "price": f"{price_val:.2f}",
             "url": item['url'] + ebay_affiliate,
             "featured": item['feat'],
-            "status": item['stat']
+            "status": item['stat'],
+            "seo_schema": seo_data
         })
 
     # Save to data.json
