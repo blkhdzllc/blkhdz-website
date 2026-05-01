@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 def generate_sitemap():
-    base_url = "https://blkhdz.com" 
+    base_url = "https://blkhdzllc.github.io/blkhdz-website"
     pages = [
         {"url": "/", "priority": "1.0"},
     ]
