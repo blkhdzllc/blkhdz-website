@@ -21,24 +21,24 @@ jobs:
         run: pip install requests
 
       - name: Sync Diecast Inventory
-        working-directory: data
         env:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
-        run: python sync_diecast.py
+        run: python data/sync_diecast.py
 
       - name: Sync LEGO Inventory
-        working-directory: data
         env:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
-        run: python sync_inventory.py
+        run: python data/sync_inventory.py
+
+      - name: Generate Sitemap
+        run: python generate_sitemap.py
 
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # NPW Fix: Add all changes to ensure inventory updates are pushed
           git add .
-          git commit -m "Automated Inventory Sync" || echo "No changes to commit"
+          git commit -m "Automated Inventory & Sitemap Sync" || echo "No changes to commit"
           git push
