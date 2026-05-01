@@ -63,12 +63,35 @@ def sync_lego_inventory():
         inventory_data = response.json()
 
         if "itemSummaries" in inventory_data:
-            # Filters for your username and ensures items are available
+            # 1. Filter for your items that are in stock
             filtered_items = [
                 item for item in inventory_data["itemSummaries"] 
                 if item.get("seller", {}).get("username", "").lower() == SELLER_ID.lower() and
                 item.get("estimatedAvailabilityStatus") != "OUT_OF_STOCK"
             ]
+            
+            # 2. Process each item to add the SEO Schema
+            for item in filtered_items:
+                item_id = item.get("itemId", "N/A")
+                title = item.get("title", "Unknown Product")
+                price = item.get("price", {}).get("value", "0.00")
+                image_url = item.get("image", {}).get("imageUrl", "")
+                
+                # Create the SEO Schema Object for Google
+                item["seo_schema"] = {
+                    "@context": "https://schema.org/",
+                    "@type": "Product",
+                    "name": title,
+                    "image": image_url,
+                    "offers": {
+                        "@type": "Offer",
+                        "price": price,
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock",
+                        "url": f"https://www.ebay.com/itm/{item_id}"
+                    }
+                }
+            
             inventory_data["itemSummaries"] = filtered_items
         
         with open(DATA_FILE, "w") as f:
