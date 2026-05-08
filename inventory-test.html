@@ -3,155 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ | Staging - PowerBuild Visual Upgrade</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <title>BLKHDZ Sandbox | Inventory Test</title>
     <style>
-        :root { 
-            --blk-red: #ff0000; 
-            --blk-bg: #0b0b0b; 
-            --blk-card: #151515; 
-            --blk-teal: #008080; 
-        }
-        
-        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Archivo Black', sans-serif; }
-
-        /* SANDBOX WARNING HEADER */
-        .sandbox-banner {
-            background: var(--blk-red);
-            color: white;
-            text-align: center;
-            padding: 5px;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-        }
-
-        /* HERO SLIDESHOW SECTION */
-        .slideshow {
-            position: relative;
-            height: 60vh;
-            background: #000;
-            overflow: hidden;
-            border-bottom: 4px solid var(--blk-red);
-        }
-
-        .slide {
-            position: absolute;
-            width: 100%; height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .slide.active { opacity: 1; }
-
-        .hero-content {
-            position: absolute;
-            bottom: 40px; left: 5%;
-            z-index: 10;
-        }
-
-        /* NAVIGATION */
-        .market-nav {
-            display: flex;
-            justify-content: center;
-            background: #000;
-            position: sticky; top: 0; z-index: 100;
-            border-bottom: 1px solid #222;
-        }
-
-        .nav-btn {
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
             padding: 20px;
-            background: none; border: none;
-            color: #555; font-family: 'Archivo Black', sans-serif;
-            cursor: pointer; transition: 0.3s;
         }
-
-        .nav-btn.active { color: var(--blk-red); border-bottom: 3px solid var(--blk-red); }
-        .nav-btn span { display: block; font-size: 0.6rem; color: #ffd700; }
-
-        /* GRID */
-        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
-
-        .card { 
-            background: var(--blk-card); 
-            border: 1px solid #222;
-            transition: 0.3s;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .card:hover { border-color: var(--blk-red); transform: translateY(-5px); }
-        .card-img { width: 100%; height: 250px; object-fit: contain; background: #000; }
-        .card-body { padding: 15px; }
-        .price { color: var(--blk-red); font-size: 1.2rem; }
-
-        footer { text-align: center; padding: 50px; background: #050505; color: #444; }
+        .header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #161616;
+            border: 1px solid #333;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #555;
+        }
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #333;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .price {
+            color: #00ff41;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .btn-group {
+            margin-bottom: 20px;
+        }
+        button {
+            background: #222;
+            color: white;
+            border: 1px solid #444;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #333;
+        }
+        button.active {
+            background: #444;
+            border-color: #888;
+        }
     </style>
 </head>
 <body>
 
-    <div class="sandbox-banner">STAGING ENVIRONMENT - TESTING VISUAL UPGRADE v2.0</div>
-
-    <section class="slideshow">
-        <div class="slide active" style="background-image: url('./images/hero-parallax.jpg');"></div>
-        <div class="slide" style="background-image: url('./images/diecast-showcase.jpg');"></div>
-        
-        <div class="hero-content">
-            <img src="./images/BLKHDZ.png" style="width: 300px;">
+<div class="container">
+    <div class="header">
+        <h1>BLOCKHEADZ <span style="color: #666; font-size: 1.2rem;">SANDBOX v2.0</span></h1>
+        <div class="btn-group">
+            <button onclick="loadCategory('LEGO')" id="btn-LEGO">LEGO</button>
+            <button onclick="loadCategory('DIECAST')" id="btn-DIECAST">DIECAST</button>
         </div>
-    </section>
-
-    <nav class="market-nav">
-        <button class="nav-btn active" onclick="load('inventory.json', this)">BRICK COLLECTION</button>
-        <button class="nav-btn" onclick="load('diecast.json', this)">DIECAST CARS</button>
-        <button class="nav-btn" style="opacity: 0.5; cursor: not-allowed;">COLORING<span>COMING SOON</span></button>
-    </nav>
-
-    <div class="container">
-        <div id="market-grid" class="grid">
-            </div>
     </div>
 
-    <footer>
-        <div style="letter-spacing: 3px; color: var(--blk-teal);">VETERAN OWNED</div>
-    </footer>
+    <div id="inventory-grid" class="grid">
+        <div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #666;">
+            Select a category to load real-time eBay data...
+        </div>
+    </div>
+</div>
 
-    <script>
-        // Slideshow logic
-        let current = 0;
-        const slides = document.querySelectorAll('.slide');
-        setInterval(() => {
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-        }, 5000);
+<script>
+    async function loadCategory(cat) {
+        const grid = document.getElementById('inventory-grid');
+        const buttons = document.querySelectorAll('button');
+        
+        // UI Reset
+        buttons.forEach(b => b.classList.remove('active'));
+        document.getElementById(`btn-${cat}`).classList.add('active');
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">Loading Live Data...</div>';
 
-        async function load(file, btn) {
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+        // Set path based on selection
+        const path = cat === 'LEGO' ? 'data/test/inventory.json' : 'data/test/diecast.json';
+
+        try {
+            const response = await fetch(path);
+            if (!response.ok) throw new Error('Data file not found. Run Manual Market Test first.');
             
-            const grid = document.getElementById('market-grid');
-            grid.innerHTML = '<p>FETCHING SANDBOX DATA...</p>';
+            const data = await response.json();
+            const items = data.itemSummaries || [];
 
-            try {
-                // NPW: Point specifically to your TEST data folder
-                const response = await fetch('data/test/' + file + '?v=' + Date.now());
-                const data = await response.json();
-                const items = data.itemSummaries || [];
-
-                grid.innerHTML = items.map(item => `
-                    <div class="card">
-                        <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" class="card-img">
-                        <div class="card-body">
-                            <div style="font-size: 0.8rem; height: 3em;">${item.title}</div>
-                            <div class="price">$${item.price.value}</div>
-                        </div>
-                    </div>
-                `).join('');
-            } catch (e) {
-                grid.innerHTML = '<p>Error: Run "Manual Market Test" to generate sandbox JSON files.</p>';
+            if (items.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">No active items found in this category.</div>';
+                return;
             }
+
+            // Build the Active Cards
+            grid.innerHTML = items.map(item => {
+                const itemLink = item.itemWebUrl || '#';
+                const itemImg = item.image?.imageUrl || './images/hero-parallax.jpg';
+                const itemPrice = item.price ? item.price.value : 'N/A';
+                const itemDesc = item.shortDescription || 'Collector Grade Item. Shipped in reinforced boxes with professional dunnage.';
+
+                return `
+                    <a href="${itemLink}" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="card">
+                            <img src="${itemImg}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
+                            <div class="card-body">
+                                <div style="font-size: 0.9rem; margin-bottom: 10px; line-height: 1.2; height: 2.4em; overflow: hidden;">
+                                    ${item.title}
+                                </div>
+                                <div class="price">$${itemPrice}</div>
+                                <div style="font-size: 0.65rem; color: #888; margin-top: 10px; font-family: sans-serif; line-height: 1.3;">
+                                    ${itemDesc}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+
+        } catch (error) {
+            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #ff4444;">Error: ${error.message}</div>`;
         }
-        window.onload = () => load('inventory.json', document.querySelector('.nav-btn.active'));
-    </script>
+    }
+</script>
+
 </body>
 </html>
