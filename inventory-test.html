@@ -3,95 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blockheadz LLC - Live Inventory Test</title>
+    <title>BLKHDZ | Staging - PowerBuild Visual Upgrade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0b0e14; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; }
-        header { text-align: center; margin-bottom: 40px; border-bottom: 2px solid #ffd700; padding-bottom: 20px; }
-        h1 { color: #ffd700; text-transform: uppercase; letter-spacing: 2px; }
-        .tab-container { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; }
-        .tab-btn { padding: 12px 30px; font-size: 1rem; font-weight: bold; text-transform: uppercase; cursor: pointer; border: 2px solid transparent; border-radius: 5px; transition: 0.3s; }
-        .lego-btn { background: #ffd700; color: #000; }
-        .lego-btn:hover { background: #fff; border-color: #ffd700; }
-        .diecast-btn { background: #e60000; color: #fff; }
-        .diecast-btn:hover { background: #ff4d4d; border-color: #fff; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .product-card { background: #1a1f29; border: 1px solid #333; border-radius: 10px; overflow: hidden; transition: transform 0.2s; display: flex; flex-direction: column; }
-        .product-card:hover { transform: translateY(-5px); border-color: #ffd700; }
-        .image-container { width: 100%; height: 200px; background: #000; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .image-container img { width: 100%; height: 100%; object-fit: contain; }
-        .details { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .title { font-size: 0.95rem; margin-bottom: 10px; color: #eee; line-height: 1.4; height: 40px; overflow: hidden; }
-        .price { font-size: 1.2rem; font-weight: bold; color: #ffd700; margin-bottom: 15px; }
-        .buy-button { display: block; background: #007bff; color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .buy-button:hover { background: #0056b3; }
-        footer { text-align: center; margin-top: 50px; font-size: 0.8rem; color: #666; }
+        :root { 
+            --blk-red: #ff0000; 
+            --blk-bg: #0b0b0b; 
+            --blk-card: #151515; 
+            --blk-teal: #008080; 
+        }
+        
+        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Archivo Black', sans-serif; }
+
+        /* SANDBOX WARNING HEADER */
+        .sandbox-banner {
+            background: var(--blk-red);
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+        }
+
+        /* HERO SLIDESHOW SECTION */
+        .slideshow {
+            position: relative;
+            height: 60vh;
+            background: #000;
+            overflow: hidden;
+            border-bottom: 4px solid var(--blk-red);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active { opacity: 1; }
+
+        .hero-content {
+            position: absolute;
+            bottom: 40px; left: 5%;
+            z-index: 10;
+        }
+
+        /* NAVIGATION */
+        .market-nav {
+            display: flex;
+            justify-content: center;
+            background: #000;
+            position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-btn {
+            padding: 20px;
+            background: none; border: none;
+            color: #555; font-family: 'Archivo Black', sans-serif;
+            cursor: pointer; transition: 0.3s;
+        }
+
+        .nav-btn.active { color: var(--blk-red); border-bottom: 3px solid var(--blk-red); }
+        .nav-btn span { display: block; font-size: 0.6rem; color: #ffd700; }
+
+        /* GRID */
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+
+        .card { 
+            background: var(--blk-card); 
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--blk-red); transform: translateY(-5px); }
+        .card-img { width: 100%; height: 250px; object-fit: contain; background: #000; }
+        .card-body { padding: 15px; }
+        .price { color: var(--blk-red); font-size: 1.2rem; }
+
+        footer { text-align: center; padding: 50px; background: #050505; color: #444; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Blockheadz LLC</h1>
-    <p>Live Inventory Feed</p>
-</header>
+    <div class="sandbox-banner">STAGING ENVIRONMENT - TESTING VISUAL UPGRADE v2.0</div>
 
-<div class="tab-container">
-    <button class="tab-btn lego-btn" onclick="loadInventory('inventory.json')">LEGO Sets</button>
-    <button class="tab-btn diecast-btn" onclick="loadInventory('diecast.json')">Diecast Cars</button>
-</div>
+    <section class="slideshow">
+        <div class="slide active" style="background-image: url('./images/hero-parallax.jpg');"></div>
+        <div class="slide" style="background-image: url('./images/diecast-showcase.jpg');"></div>
+        
+        <div class="hero-content">
+            <img src="./images/BLKHDZ.png" style="width: 300px;">
+        </div>
+    </section>
 
-<div id="inventory-grid" class="grid-container"></div>
+    <nav class="market-nav">
+        <button class="nav-btn active" onclick="load('inventory.json', this)">BRICK COLLECTION</button>
+        <button class="nav-btn" onclick="load('diecast.json', this)">DIECAST CARS</button>
+        <button class="nav-btn" style="opacity: 0.5; cursor: not-allowed;">COLORING<span>COMING SOON</span></button>
+    </nav>
 
-<footer>
-    <p>&copy; 2026 Blockheadz LLC. All Rights Reserved.</p>
-    <p><strong>Veteran Owned Business</strong></p>
-</footer>
+    <div class="container">
+        <div id="market-grid" class="grid">
+            </div>
+    </div>
 
-<script>
-    async function loadInventory(fileName) {
-        const grid = document.getElementById('inventory-grid');
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;"><p style="color: #ffd700;">Scanning Database for ' + fileName + '...</p></div>';
+    <footer>
+        <div style="letter-spacing: 3px; color: var(--blk-teal);">VETERAN OWNED</div>
+    </footer>
 
-        try {
-            const response = await fetch('data/test/' + fileName + '?t=' + new Date().getTime());
-            if (!response.ok) throw new Error('File not found');
-            const data = await response.json();
-            grid.innerHTML = ''; 
-            const items = data.itemSummaries || [];
+    <script>
+        // Slideshow logic
+        let current = 0;
+        const slides = document.querySelectorAll('.slide');
+        setInterval(() => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }, 5000);
 
-            if (items.length === 0) {
-                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;"><p>No active ' + fileName.split('.')[0] + ' listings found.</p></div>';
-                return;
+        async function load(file, btn) {
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const grid = document.getElementById('market-grid');
+            grid.innerHTML = '<p>FETCHING SANDBOX DATA...</p>';
+
+            try {
+                // NPW: Point specifically to your TEST data folder
+                const response = await fetch('data/test/' + file + '?v=' + Date.now());
+                const data = await response.json();
+                const items = data.itemSummaries || [];
+
+                grid.innerHTML = items.map(item => `
+                    <div class="card">
+                        <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" class="card-img">
+                        <div class="card-body">
+                            <div style="font-size: 0.8rem; height: 3em;">${item.title}</div>
+                            <div class="price">$${item.price.value}</div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                grid.innerHTML = '<p>Error: Run "Manual Market Test" to generate sandbox JSON files.</p>';
             }
-
-            items.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                
-                const imageUrl = (item.image && item.image.imageUrl) ? item.image.imageUrl : 'https://via.placeholder.com/300?text=No+Image';
-                const priceValue = item.price ? `$${parseFloat(item.price.value).toFixed(2)}` : 'View Item';
-                const title = item.title || 'Untitled Item';
-                
-                // USES AFFILIATE LINK FIRST, THEN FALLS BACK TO REGULAR URL
-                const ebayLink = item.itemAffiliateWebUrl || item.itemWebUrl;
-
-                card.innerHTML = `
-                    <div class="image-container">
-                        <img src="${imageUrl}" alt="${title}">
-                    </div>
-                    <div class="details">
-                        <div class="title">${title}</div>
-                        <div class="price">${priceValue}</div>
-                        <a href="${ebayLink}" target="_blank" class="buy-button">View on eBay</a>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        } catch (error) {
-            console.error('Error:', error);
-            grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;"><p style="color: #ff4444;">Error loading ' + fileName + '.</p></div>';
         }
-    }
-    loadInventory('inventory.json');
-</script>
+        window.onload = () => load('inventory.json', document.querySelector('.nav-btn.active'));
+    </script>
 </body>
 </html>
