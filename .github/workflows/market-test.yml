@@ -1,9 +1,8 @@
 name: Manual Market Test & Sandbox Sync
 
 on:
-  workflow_dispatch: # Adds the manual button in Actions tab
+  workflow_dispatch:
 
-# NPW Fix: Explicitly grant Write permission to fix Exit Code 128
 permissions:
   contents: write
 
@@ -13,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # NPW: Fetches full history to prevent 128 "shallow" errors
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -23,25 +24,27 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Execute Market Scraper
-        # Updates research data in test/results/
         run: python test/test_brickeconomy.py
 
       - name: Execute Sandbox Inventory Sync
-        # Creates the dynamic data/test/inventory.json
         working-directory: data
         env:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
-        run: python sync_test.py
+        run: |
+          mkdir -p test # Force create the folder if it's missing
+          python sync_test.py
 
-      - name: Commit All Sandbox Changes
+      - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # NPW: Stage both research results and sandbox inventory
-          git add test/results/*
+          # Force the bot to pull current state before pushing
+          git pull origin main --rebase
+          
+          git add test/results/*.json
           git add data/test/*.json
           
-          git commit -m "Updated Sandbox Data and Market Results [Manual Run]" || echo "No changes"
-          git push
+          git commit -m "Sandbox Sync: Updated Inventory and Market Data" || echo "No changes to commit"
+          git push origin main
