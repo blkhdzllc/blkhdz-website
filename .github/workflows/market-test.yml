@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0 
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
 
@@ -29,22 +29,20 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
         run: |
-          # 1. Clear the path BEFORE creating files
+          # 1. Initialize Bot and Sync with Main BEFORE generating new data
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull origin main --rebase
           
-          # 2. Now create the data
+          # 2. Execute the cleaned script (Ensuring data/test/ exists)
           mkdir -p test
           python sync_test.py
 
       - name: Secure Commit and Push
         run: |
-          # 3. Save only the new data
+          # 3. Add only the updated JSON files
           git add data/test/*.json
           
-          # The '|| true' prevents a crash if the data hasn't changed
-          git commit -m "Sandbox Sync: Updated Inventory" || true
-          
-          # 4. Final push
+          # 4. Commit and push (The '|| true' prevents failure if no data changed)
+          git commit -m "Sandbox Sync: Clean Inventory Update" || true
           git push origin main
