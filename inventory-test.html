@@ -5,74 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLKHDZ Sandbox | Inventory Test</title>
     <style>
-        body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
+        body { 
+            background-color: #0a0a0a; 
+            color: #e0e0e0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { 
+            border-bottom: 2px solid #333; 
+            padding-bottom: 10px; 
+            margin-bottom: 30px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
         }
-        .header {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .hero { 
+            width: 100%; 
+            height: 300px; 
+            background: #111 url('./images/hero-parallax.jpg') center/cover no-repeat; 
+            border: 1px solid #333; 
+            margin-bottom: 30px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 4px; 
         }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: #161616;
-            border: 1px solid #333;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #555;
-        }
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid #333;
-        }
-        .card-body {
-            padding: 15px;
-        }
-        .price {
-            color: #00ff41;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-        .btn-group {
-            margin-bottom: 20px;
-        }
-        button {
-            background: #222;
-            color: white;
+        .hero h2 {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 30px;
             border: 1px solid #444;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-right: 10px;
-            border-radius: 4px;
+            letter-spacing: 2px;
         }
-        button:hover {
-            background: #333;
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 20px; 
         }
-        button.active {
-            background: #444;
-            border-color: #888;
+        .card { 
+            background: #161616; 
+            border: 1px solid #333; 
+            border-radius: 4px; 
+            overflow: hidden; 
+            transition: transform 0.2s, border-color 0.2s; 
+        }
+        .card:hover { 
+            transform: translateY(-5px); 
+            border-color: #555; 
+        }
+        .card-img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-bottom: 1px solid #333; 
+        }
+        .card-body { padding: 15px; }
+        .price { 
+            color: #00ff41; 
+            font-weight: bold; 
+            font-size: 1.2rem; 
+            margin: 10px 0; 
+        }
+        button { 
+            background: #222; 
+            color: white; 
+            border: 1px solid #444; 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            margin-left: 10px; 
+            transition: 0.2s;
+        }
+        button:hover { background: #333; }
+        button.active { 
+            background: #444; 
+            border-color: #888; 
         }
     </style>
 </head>
@@ -87,11 +95,12 @@
         </div>
     </div>
 
-    <div id="inventory-grid" class="grid">
-        <div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #666;">
-            Select a category to load real-time eBay data...
-        </div>
+    <div class="hero">
+        <h2>PREMIUM COLLECTIBLES</h2>
     </div>
+
+    <div id="inventory-grid" class="grid">
+        </div>
 </div>
 
 <script>
@@ -99,55 +108,53 @@
         const grid = document.getElementById('inventory-grid');
         const buttons = document.querySelectorAll('button');
         
-        // UI Reset
+        // UI State Update
         buttons.forEach(b => b.classList.remove('active'));
         document.getElementById(`btn-${cat}`).classList.add('active');
+        
         grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">Loading Live Data...</div>';
-
-        // Set path based on selection
-        const path = cat === 'LEGO' ? 'data/test/inventory.json' : 'data/test/diecast.json';
+        
+        // Pathing Logic
+        const path = `./data/test/${cat === 'LEGO' ? 'inventory.json' : 'diecast.json'}`;
 
         try {
-            const response = await fetch(path);
-            if (!response.ok) throw new Error('Data file not found. Run Manual Market Test first.');
+            const response = await fetch(`${path}?t=${new Date().getTime()}`);
+            if (!response.ok) throw new Error('Data sync required. Run Manual Market Test.');
             
             const data = await response.json();
             const items = data.itemSummaries || [];
 
             if (items.length === 0) {
-                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">No active items found in this category.</div>';
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">No active listings found.</div>';
                 return;
             }
 
-            // Build the Active Cards
-            grid.innerHTML = items.map(item => {
-                const itemLink = item.itemWebUrl || '#';
-                const itemImg = item.image?.imageUrl || './images/hero-parallax.jpg';
-                const itemPrice = item.price ? item.price.value : 'N/A';
-                const itemDesc = item.shortDescription || 'Collector Grade Item. Shipped in reinforced boxes with professional dunnage.';
-
-                return `
-                    <a href="${itemLink}" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="card">
-                            <img src="${itemImg}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
-                            <div class="card-body">
-                                <div style="font-size: 0.9rem; margin-bottom: 10px; line-height: 1.2; height: 2.4em; overflow: hidden;">
-                                    ${item.title}
-                                </div>
-                                <div class="price">$${itemPrice}</div>
-                                <div style="font-size: 0.65rem; color: #888; margin-top: 10px; font-family: sans-serif; line-height: 1.3;">
-                                    ${itemDesc}
-                                </div>
+            grid.innerHTML = items.map(item => `
+                <a href="${item.itemWebUrl}" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="card">
+                        <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" 
+                             class="card-img" 
+                             onerror="this.src='./images/hero-parallax.jpg'">
+                        <div class="card-body">
+                            <div style="font-size: 0.9rem; margin-bottom: 10px; height: 2.4em; overflow: hidden; line-height: 1.2;">
+                                ${item.title}
+                            </div>
+                            <div class="price">$${item.price.value}</div>
+                            <div style="font-size: 0.65rem; color: #888; margin-top: 10px; line-height: 1.3; font-family: sans-serif;">
+                                ${item.shortDescription}
                             </div>
                         </div>
-                    </a>
-                `;
-            }).join('');
+                    </div>
+                </a>
+            `).join('');
 
         } catch (error) {
             grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #ff4444;">Error: ${error.message}</div>`;
         }
     }
+
+    // NPW: Auto-load LEGO on startup so the page isn't empty
+    window.onload = () => loadCategory('LEGO');
 </script>
 
 </body>
