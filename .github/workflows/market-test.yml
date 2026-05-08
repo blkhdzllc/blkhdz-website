@@ -35,16 +35,15 @@ jobs:
           mkdir -p test # Force create the folder if it's missing
           python sync_test.py
 
-      - name: Commit and Push Changes
+      - - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Force the bot to pull current state before pushing
           git pull origin main --rebase
           
-          git add test/results/*.json
+          # NPW: Explicitly stage the files in the data/test folder
           git add data/test/*.json
+          git add test/results/*.json
           
           git commit -m "Sandbox Sync: Updated Inventory and Market Data" || echo "No changes to commit"
           git push origin main
