@@ -46,7 +46,6 @@ def sync_enriched_data(category_name, query):
         items_to_save = []
         if "itemSummaries" in data:
             for item in data["itemSummaries"]:
-                # Robust ID extraction for the URL
                 raw_id = item.get('legacyItemId')
                 if not raw_id and 'itemId' in item:
                     parts = item['itemId'].split('|')
@@ -54,8 +53,9 @@ def sync_enriched_data(category_name, query):
                 
                 item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}" if raw_id else "#"
                 
-                # CLEAN: Explicitly setting description to empty to avoid JS crashes
-                item['shortDescription'] = ""
+                # SEO: Pull actual eBay description snippet ONLY. No custom text.
+                # This gives Google keywords without creating liability for you.
+                item['shortDescription'] = item.get('shortDescription', '')
                 items_to_save.append(item)
 
         data['itemSummaries'] = items_to_save
