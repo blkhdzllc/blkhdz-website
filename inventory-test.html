@@ -51,8 +51,6 @@
         document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
         document.getElementById(`btn-${cat}`).classList.add('active');
         
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">Fetching Live Inventory...</div>';
-        
         try {
             const response = await fetch(`./data/test/${cat === 'LEGO' ? 'inventory.json' : 'diecast.json'}?t=${Date.now()}`);
             const data = await response.json();
@@ -76,7 +74,7 @@
         const detail = document.getElementById('product-detail');
         grid.style.display = 'none'; detail.style.display = 'grid';
         
-        const galleryHtml = item.customGallery.map(img => `
+        const galleryHtml = (item.customGallery || []).map(img => `
             <img src="${img}" class="thumb" onclick="document.getElementById('main-img').src='${img}'" onerror="this.style.display='none'">
         `).join('');
 
@@ -92,12 +90,12 @@
                 <a href="${item.itemWebUrl}" target="_blank" class="buy-btn">PURCHASE ON EBAY</a>
                 <div class="accordion">
                     <div class="acc-item" onclick="toggleAcc(this)">
-                        <strong>+ FULL PRODUCT SPECIFICATIONS</strong>
-                        <div class="acc-content">${item.fullHtmlDescription || 'Detailed specs available on our eBay storefront.'}</div>
+                        <strong>+ PRODUCT SPECIFICATIONS</strong>
+                        <div class="acc-content">${item.fullHtmlDescription || 'Detailed specifications and high-resolution photos available on our eBay storefront.'}</div>
                     </div>
                     <div class="acc-item" onclick="toggleAcc(this)">
-                        <strong>+ SHIPPING & RETURNS</strong>
-                        <div class="acc-content">Veteran owned business. We ship in reinforced boxes. 30-day return policy.</div>
+                        <strong>+ ABOUT BLOCKHEADZ</strong>
+                        <div class="acc-content">USAF Veteran Owned & Operated. Specialized IT Professionals providing premium collector sourcing since 1991.</div>
                     </div>
                 </div>
             </div>
