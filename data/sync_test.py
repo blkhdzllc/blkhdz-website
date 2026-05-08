@@ -28,10 +28,22 @@ def get_ebay_token():
         return response.json().get("access_token")
     except: return None
 
+def fetch_ebay_item_details(item_id, token):
+    """Fetches all images and details for a specific item using the Browse API."""
+    url = f"https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id?legacy_item_id={item_id}"
+    headers = {"Authorization": f"Bearer {token}"}
+    try:
+        response = requests.get(url, headers=headers)
+        if response.status_code == 200:
+            return response.json()
+    except: return None
+    return None
+
 def fetch_full_description(url):
+    """Deep fetch of eBay HTML description via Scrape.do"""
     try:
         target_url = f"http://api.scrape.do?token={SCRAPE_DO_TOKEN}&url={url}"
-        response = requests.get(target_url, timeout=10)
+        response = requests.get(target_url, timeout=12)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
             desc_div = soup.find("div", {"id": "ds_div"})
@@ -44,7 +56,6 @@ def sync_enriched_data(category_name, query):
     if not token: return
     
     search_query = "1/64 diecast" if category_name == "DIECAST" else query
-    # FIXED URL: Removed extra 'api.' prefix
     url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={search_query}&filter=sellers:{{{SELLER_ID}}}&limit=100"
     headers = {"Authorization": f"Bearer {token}"}
     
@@ -53,15 +64,25 @@ def sync_enriched_data(category_name, query):
         data = response.json()
         items_to_save = []
         
-        all_local_images = []
-        if os.path.exists(IMAGES_DIR):
-            all_local_images = [f for f in os.listdir(IMAGES_DIR) if f.endswith(".jpg")]
+        all_local_images = sorted([f for f in os.listdir(IMAGES_DIR) if f.endswith(".jpg")])
 
         if "itemSummaries" in data:
             for item in data["itemSummaries"]:
                 title = item.get('title', '')
                 raw_id = item.get('legacyItemId')
-                
+                if not raw_id: continue
+
+                print(f"Syncing BLKHDZ Item: {raw_id}")
+
+                # 1. Fetch ALL images from eBay listing
+                details = fetch_ebay_item_details(raw_id, token)
+                ebay_images = []
+                if details and 'additionalImages' in details:
+                    ebay_images = [img['imageUrl'] for img in details['additionalImages']]
+                elif details and 'image' in details:
+                    ebay_images = [details['image']['imageUrl']]
+
+                # 2. Check for local high-res overrides in GitHub images folder
                 sku_id = None
                 for img_file in all_local_images:
                     potential_id = img_file.split('.')[0].split('_')[0]
@@ -69,27 +90,22 @@ def sync_enriched_data(category_name, query):
                         sku_id = potential_id
                         break
                 
-                gallery = []
+                local_gallery = []
                 if sku_id:
-                    matches = sorted([f"./images/{f}" for f in all_local_images if f.startswith(sku_id)])
-                    gallery = matches
+                    local_gallery = [f"./images/{f}" for f in all_local_images if f.startswith(sku_id)]
                 
-                item['customGallery'] = gallery if gallery else [item.get('image', {}).get('imageUrl')]
-                item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}" if raw_id else "#"
+                # Combine: Local Overrides come first, then eBay's full gallery
+                item['customGallery'] = local_gallery + ebay_images
+                item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}"
                 
-                # Only fetch description if an item ID exists to save Scrape.do credits
-                if raw_id:
-                    item['fullHtmlDescription'] = fetch_full_description(item['itemWebUrl'])
-                else:
-                    item['fullHtmlDescription'] = ""
+                # 3. Pull Full HTML for the description box
+                item['fullHtmlDescription'] = fetch_full_description(item['itemWebUrl'])
                 
                 items_to_save.append(item)
 
-        data['itemSummaries'] = items_to_save
         filename = "inventory.json" if category_name == "LEGO" else "diecast.json"
         with open(os.path.join(SANDBOX_DIR, filename), "w") as f:
             json.dump(data, f, indent=4)
-        print(f"Success: Synced {category_name}")
         
     except Exception as e: print(f"Sync Error: {e}")
 
