@@ -9,6 +9,7 @@
         body { background-color: var(--bg); color: #e0e0e0; font-family: 'Segoe UI', sans-serif; margin: 0; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         .header { border-bottom: 2px solid var(--border); padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: bold; letter-spacing: 2px; cursor: pointer; }
         button { background: #222; color: white; border: 1px solid #444; padding: 10px 15px; cursor: pointer; border-radius: 4px; font-weight: bold; }
         button.active { background: var(--accent); color: #000; border-color: var(--accent); }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
@@ -32,10 +33,10 @@
 <body>
 <div class="container">
     <header class="header">
-        <div style="font-weight:bold; letter-spacing:2px; cursor:pointer;" onclick="location.reload()">BLOCKHEADZ</div>
+        <div class="logo" onclick="location.reload()">BLOCKHEADZ</div>
         <div id="nav-btns">
             <button onclick="loadCategory('LEGO')" id="btn-LEGO">LEGO</button>
-            <button onclick="loadCategory('DIECAST')" id="btn-DIECAST">DIECAST</button>
+            <button onclick="loadCategory('DIECAST')" id="btn-DIECAST" style="margin-left:10px;">DIECAST</button>
         </div>
     </header>
     <main id="inventory-grid" class="grid"></main>
@@ -50,13 +51,15 @@
         document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
         document.getElementById(`btn-${cat}`).classList.add('active');
         
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">Fetching Live Inventory...</div>';
+        
         try {
             const response = await fetch(`./data/test/${cat === 'LEGO' ? 'inventory.json' : 'diecast.json'}?t=${Date.now()}`);
             const data = await response.json();
             currentData = data.itemSummaries || [];
             grid.innerHTML = currentData.map((item, index) => `
                 <div class="card" onclick="showProduct(${index})">
-                    <img src="${item.customGallery[0] || './images/hero-parallax.jpg'}" class="card-img">
+                    <img src="${item.customGallery[0] || './images/hero-parallax.jpg'}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
                     <div class="card-body">
                         <div style="font-weight:bold; height: 2.8em; overflow: hidden;">${item.title}</div>
                         <div class="price">$${item.price.value}</div>
@@ -64,7 +67,7 @@
                     </div>
                 </div>
             `).join('');
-        } catch (e) { grid.innerHTML = '<div style="text-align:center; padding:50px;">Syncing data...</div>'; }
+        } catch (e) { grid.innerHTML = '<div style="text-align:center; padding:50px;">Run manual sync to load items.</div>'; }
     }
 
     function showProduct(index) {
@@ -74,12 +77,12 @@
         grid.style.display = 'none'; detail.style.display = 'grid';
         
         const galleryHtml = item.customGallery.map(img => `
-            <img src="${img}" class="thumb" onclick="document.getElementById('main-img').src='${img}'">
+            <img src="${img}" class="thumb" onclick="document.getElementById('main-img').src='${img}'" onerror="this.style.display='none'">
         `).join('');
 
         detail.innerHTML = `
             <div class="gallery">
-                <img src="${item.customGallery[0]}" id="main-img" class="gallery-main">
+                <img src="${item.customGallery[0]}" id="main-img" class="gallery-main" onerror="this.src='./images/hero-parallax.jpg'">
                 <div class="thumb-strip">${galleryHtml}</div>
             </div>
             <div class="info">
