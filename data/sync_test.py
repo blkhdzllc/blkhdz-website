@@ -45,9 +45,16 @@ def sync_enriched_data(category_name, query):
         
         if "itemSummaries" in data:
             for item in data["itemSummaries"]:
-                # Construct direct eBay Link
-                raw_id = item['itemId'].split('|')[-1]
-                item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}"
+                # FIX: Robust ID extraction for eBay URLs
+                raw_id = item.get('legacyItemId')
+                if not raw_id and 'itemId' in item:
+                    parts = item['itemId'].split('|')
+                    if len(parts) > 1:
+                        raw_id = parts[1]
+                
+                # Construct the clean Web URL
+                item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}" if raw_id else "#"
+                
                 # Professional branding description
                 item['shortDescription'] = "Collector Grade. Shipped in reinforced boxes with professional dunnage."
 
