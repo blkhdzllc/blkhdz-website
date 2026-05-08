@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 
 # --- SETTINGS ---
 SELLER_ID = "reedpb"
-# Replace with your actual eBay Partner Network (EPN) Campaign ID
 CAMPAIGN_ID = "5339053531" 
 SCRAPE_DO_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
 
@@ -31,11 +30,11 @@ def get_ebay_token():
     except: return None
 
 def fetch_full_description(url):
-    """Uses Scrape.do to bypass eBay frames and pull your actual HTML description."""
+    """Deep fetch using render=true to pull the actual HTML description content."""
     try:
-        # Using render=true to ensure Scrape.do executes the JavaScript that loads your description
+        # Added &render=true to Scrape.do to ensure eBay's internal frames load
         target_url = f"http://api.scrape.do?token={SCRAPE_DO_TOKEN}&render=true&url={url}"
-        response = requests.get(target_url, timeout=20)
+        response = requests.get(target_url, timeout=25)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
             # Look for the primary eBay description div
@@ -43,10 +42,6 @@ def fetch_full_description(url):
             return str(desc_div) if desc_div else ""
     except: return ""
     return ""
-
-def create_affiliate_link(item_id):
-    """Converts a standard eBay item ID into an EPN Affiliate Link."""
-    return f"https://www.ebay.com/itm/{item_id}?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={CAMPAIGN_ID}&customid=BLKHDZ_WEB&toolid=10001&mkevt=1"
 
 def sync_enriched_data(category_name, query):
     token = get_ebay_token()
@@ -66,28 +61,21 @@ def sync_enriched_data(category_name, query):
         if "itemSummaries" in data:
             for item in data["itemSummaries"]:
                 raw_id = item.get('legacyItemId')
-                if not raw_id:
-                    # Robust ID extraction if legacyItemId is missing
-                    parts = item.get('itemId', '').split('|')
-                    raw_id = parts[1] if len(parts) > 1 else None
-                
                 if not raw_id: continue
 
-                # IMAGE PRIORITY: 1. Main "Hero" (Logo Image) -> 2. Additional Gallery
+                # Image Logic: Hero Image Priority
                 main_img = item.get('image', {}).get('imageUrl')
                 ebay_images = [main_img] if main_img else []
 
-                # Fetch all additional images from the eBay detail endpoint
+                # Fetch Gallery
                 detail_url = f"https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id?legacy_item_id={raw_id}"
                 detail_res = requests.get(detail_url, headers=headers)
                 if detail_res.status_code == 200:
                     details = detail_res.json()
                     if 'additionalImages' in details:
-                        for img in details['additionalImages']:
-                            if img['imageUrl'] not in ebay_images:
-                                ebay_images.append(img['imageUrl'])
+                        ebay_images += [img['imageUrl'] for img in details['additionalImages'] if img['imageUrl'] not in ebay_images]
 
-                # Match Overrides from GitHub images folder
+                # Match Overrides
                 sku_id = None
                 for img_file in all_local_images:
                     potential_id = img_file.split('.')[0].split('_')[0]
@@ -95,18 +83,12 @@ def sync_enriched_data(category_name, query):
                         sku_id = potential_id
                         break
                 
-                local_gallery = []
-                if sku_id:
-                    local_gallery = [f"./images/{f}" for f in all_local_images if f.startswith(sku_id)]
-                
-                # Combine: Overrides -> Hero -> Gallery
+                local_gallery = [f"./images/{f}" for f in all_local_images if sku_id and f.startswith(sku_id)]
                 item['customGallery'] = local_gallery + ebay_images
                 
-                # AFFILIATE LINK: Generate the tracking URL
-                item['itemWebUrl'] = create_affiliate_link(raw_id)
-                
-                # FULL HTML DESCRIPTION: Fetching from live eBay listing
-                print(f"Deep Syncing Description for BLKHDZ: {raw_id}")
+                # Affiliate & Description
+                item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}?mkcid=1&mkrid=711-53200-19255-0&campid={CAMPAIGN_ID}&toolid=10001&mkevt=1"
+                print(f"Deep Fetching HTML: {raw_id}")
                 item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
                 
                 items_to_save.append(item)
@@ -114,7 +96,6 @@ def sync_enriched_data(category_name, query):
         filename = "inventory.json" if category_name == "LEGO" else "diecast.json"
         with open(os.path.join(SANDBOX_DIR, filename), "w") as f:
             json.dump(data, f, indent=4)
-        print(f"Success: Synced {category_name}")
         
     except Exception as e: print(f"Sync Error: {e}")
 
