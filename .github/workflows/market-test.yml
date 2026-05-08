@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write  # CRITICAL: This allows the bot to save the JSON files
 
 jobs:
   run-test:
@@ -29,20 +29,16 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
         run: |
-          # 1. Initialize Bot and Sync with Main BEFORE generating new data
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull origin main --rebase
           
-          # 2. Execute the cleaned script (Ensuring data/test/ exists)
+          # Ensure the test directory exists before running script
           mkdir -p test
           python sync_test.py
 
       - name: Secure Commit and Push
         run: |
-          # 3. Add only the updated JSON files
           git add data/test/*.json
-          
-          # 4. Commit and push (The '|| true' prevents failure if no data changed)
-          git commit -m "Sandbox Sync: Clean Inventory Update" || true
+          git commit -m "Sandbox Sync: PowerBuild Format Update" || true
           git push origin main
