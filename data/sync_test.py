@@ -1,4 +1,10 @@
+import os
+import json
+import requests
+import base64
+
 # --- SETTINGS ---
+# ... rest of your code ...# --- SETTINGS ---
 EPN_CAMPAIGN_ID = "5339141674" 
 SELLER_ID = "reedpb"
 
