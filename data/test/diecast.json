@@ -67,7 +67,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -122,7 +122,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "./images/PR640255.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117134068361|0",
@@ -176,7 +179,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -258,7 +261,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "./images/MGT01046.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117167261432|0",
@@ -312,7 +318,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -370,7 +376,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/gk4AAeSwr9dp8nI1/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117167378791|0",
@@ -423,8 +432,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -476,7 +485,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/AGkAAeSwr9dp9K5i/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117134065697|0",
@@ -530,7 +542,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -588,7 +600,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "./images/PR640212.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117081912634|0",
@@ -642,7 +657,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -712,7 +727,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/fuUAAeSwKnpp617j/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117167312661|0",
@@ -765,8 +783,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -814,7 +832,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/WTsAAeSwKzJp8WCR/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117143682451|0",
@@ -868,7 +889,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -892,7 +913,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/YEoAAeSw88dp3vXf/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117152354845|0",
@@ -946,7 +970,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -972,7 +996,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/L1IAAeSwCB9p5W2r/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117143695401|0",
@@ -1026,7 +1053,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1050,7 +1077,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/ZugAAeSwWz1p3vjg/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117143699166|0",
@@ -1104,7 +1134,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1128,7 +1158,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/fEAAAeSwLQ1p3vl0/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117143692918|0",
@@ -1182,7 +1215,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1207,7 +1240,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/mAgAAeSwCfZp3~i-/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117135837460|0",
@@ -1261,7 +1297,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1328,7 +1364,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "./images/MGT00773-MJ.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117112530682|0",
@@ -1382,7 +1421,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1412,7 +1451,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/7osAAeSw9hFpx4jc/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117112548829|0",
@@ -1490,7 +1532,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/7~oAAeSwEv1px4k4/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117098917766|0",
@@ -1596,7 +1641,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/4uYAAeSwQBFpvbwg/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117152406099|0",
@@ -1680,7 +1728,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/W3EAAeSwkXBp5Xc4/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117143680119|0",
@@ -1734,7 +1785,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1758,7 +1809,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/rUoAAeSwQrNp3vFj/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117112554848|0",
@@ -1812,7 +1866,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1845,7 +1899,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/nE4AAeSwUh1px4ol/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117112537891|0",
@@ -1899,7 +1956,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-18T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1932,7 +1989,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/2fwAAeSwDe5p7VSD/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         },
         {
             "itemId": "v1|117112521439|0",
@@ -1985,8 +2045,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -2031,7 +2091,10 @@
             "topRatedBuyingExperience": false,
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/h6oAAeSwQ5pp62B0/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
         }
     ]
 }
