@@ -64,7 +64,7 @@
                     </div>
                 </div>
             `).join('');
-        } catch (e) { grid.innerHTML = '<div style="text-align:center; padding:50px;">Syncing data for BLKHDZ LLC...</div>'; }
+        } catch (e) { grid.innerHTML = '<div style="text-align:center; padding:50px;">Syncing for BLKHDZ LLC...</div>'; }
     }
 
     function showProduct(index) {
@@ -87,7 +87,6 @@
                 <h2>${item.title}</h2>
                 <div class="price">$${item.price.value}</div>
                 <a href="${item.itemWebUrl}" target="_blank" class="buy-btn">PURCHASE ON EBAY</a>
-                
                 <h3 style="margin-top:30px; border-bottom: 1px solid var(--border); padding-bottom:10px;">PRODUCT DESCRIPTION</h3>
                 <div class="description-box">
                     ${item.fullHtmlDescription || 'Detailed specifications available on our eBay storefront.'}
