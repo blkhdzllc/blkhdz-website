@@ -3,6 +3,10 @@ name: Manual Market Test & Sandbox Sync
 on:
   workflow_dispatch: # Adds the manual button in Actions tab
 
+# NPW Fix: Explicitly grant Write permission to fix Exit Code 128
+permissions:
+  contents: write
+
 jobs:
   run-test:
     runs-on: ubuntu-latest
@@ -19,11 +23,11 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Execute Market Scraper
-        # Keeps your research data updated in test/results/
+        # Updates research data in test/results/
         run: python test/test_brickeconomy.py
 
       - name: Execute Sandbox Inventory Sync
-        # NPW: This step creates the missing data/test/inventory.json
+        # Creates the dynamic data/test/inventory.json
         working-directory: data
         env:
           APP_ID: ${{ secrets.APP_ID }}
@@ -34,8 +38,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # NPW: Commits both the research results AND the sandbox inventory files
+          
+          # NPW: Stage both research results and sandbox inventory
           git add test/results/*
           git add data/test/*.json
+          
           git commit -m "Updated Sandbox Data and Market Results [Manual Run]" || echo "No changes"
           git push
