@@ -393,8 +393,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -922,7 +922,7 @@
             "shortDescription": ""
         },
         {
-            "itemId": "v1|117174906829|417172098697",
+            "itemId": "v1|117174906829|417172098694",
             "title": "LEGO MINIFIGURES: Series 27 (71048)",
             "itemGroupHref": "https://api.ebay.com/buy/browse/v1/item/get_items_by_item_group?item_group_id=117174906829",
             "leafCategoryIds": [
@@ -950,11 +950,11 @@
                 "imageUrl": "https://i.ebayimg.com/images/g/GaAAAeSwiY5p9rvQ/s-l225.jpg"
             },
             "price": {
-                "value": "11.00",
+                "value": "12.95",
                 "currency": "USD"
             },
             "itemGroupType": "SELLER_DEFINED_VARIATIONS",
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117174906829%7C417172098697",
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117174906829%7C417172098694",
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
@@ -2958,6 +2958,99 @@
             "shortDescription": ""
         },
         {
+            "itemId": "v1|117140621493|0",
+            "title": "LEGO 71047 Dungeons & Dragons Minifigure Gith Warlock CMF NEW SEALED",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/DmcAAeSwiY5p3NSB/s-l225.jpg"
+            },
+            "price": {
+                "value": "9.36",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117140621493%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 230
+            },
+            "marketingPrice": {
+                "originalPrice": {
+                    "value": "10.77",
+                    "currency": "USD"
+                },
+                "discountPercentage": "13",
+                "discountAmount": {
+                    "value": "1.41",
+                    "currency": "USD"
+                }
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/DmcAAeSwiY5p3NSB/s-l960.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "5.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "6071305763",
+            "itemWebUrl": "https://www.ebay.com/itm/117140621493",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/4JIAAeSw26hp3NX3/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RxUAAeSw7T5p3NZ9/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117140621493",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-13T11:38:23.000Z",
+            "itemCreationDate": "2026-04-13T11:38:23.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US",
+            "shortDescription": ""
+        },
+        {
             "itemId": "v1|117137844415|0",
             "title": "LEGO CITY: F1 Williams Racing & Haas F1 Race Cars (60464)",
             "leafCategoryIds": [
@@ -3052,99 +3145,6 @@
             "availableCoupons": false,
             "itemOriginDate": "2026-04-11T20:00:49.000Z",
             "itemCreationDate": "2026-04-11T20:00:49.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": true,
-            "listingMarketplaceId": "EBAY_US",
-            "shortDescription": ""
-        },
-        {
-            "itemId": "v1|117140621493|0",
-            "title": "LEGO 71047 Dungeons & Dragons Minifigure Gith Warlock CMF NEW SEALED",
-            "leafCategoryIds": [
-                "19006"
-            ],
-            "categories": [
-                {
-                    "categoryId": "19006",
-                    "categoryName": "LEGO (R) Complete Sets & Packs"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "183446",
-                    "categoryName": "Building Toys"
-                },
-                {
-                    "categoryId": "183447",
-                    "categoryName": "LEGO (R) Building Toys"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/DmcAAeSwiY5p3NSB/s-l225.jpg"
-            },
-            "price": {
-                "value": "9.36",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117140621493%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 230
-            },
-            "marketingPrice": {
-                "originalPrice": {
-                    "value": "10.77",
-                    "currency": "USD"
-                },
-                "discountPercentage": "13",
-                "discountAmount": {
-                    "value": "1.41",
-                    "currency": "USD"
-                }
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/DmcAAeSwiY5p3NSB/s-l960.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "5.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "6071305763",
-            "itemWebUrl": "https://www.ebay.com/itm/117140621493",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/4JIAAeSw26hp3NX3/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/RxUAAeSw7T5p3NZ9/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117140621493",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-13T11:38:23.000Z",
-            "itemCreationDate": "2026-04-13T11:38:23.000Z",
             "topRatedBuyingExperience": false,
             "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
@@ -3373,8 +3373,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -4320,8 +4320,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -5968,8 +5968,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -6186,8 +6186,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
