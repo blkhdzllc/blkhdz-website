@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # CRITICAL: Fetches full history to stop Error 128
+          fetch-depth: 0 
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -37,9 +37,9 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Force sync before pushing
+          # Sync with remote to prevent Code 128 conflicts
           git pull origin main --rebase
           
           git add data/test/*.json
-          git commit -m "Sandbox Sync: Updated Inventory" || echo "No changes to commit"
+          git commit -m "Sandbox Sync: Updated Inventory Data" || echo "No changes to commit"
           git push origin main
