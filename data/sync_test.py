@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 
 # --- SETTINGS ---
 SELLER_ID = "reedpb"
-CAMPAIGN_ID = "5339053531" 
 SCRAPE_DO_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,14 +29,12 @@ def get_ebay_token():
     except: return None
 
 def fetch_full_description(url):
-    """Deep fetch using render=true to pull the actual HTML description content."""
     try:
-        # CRITICAL: render=true ensures Scrape.do waits for the eBay description iframe to load
+        # Added render=true for eBay description reliability
         target_url = f"http://api.scrape.do?token={SCRAPE_DO_TOKEN}&render=true&url={url}"
-        response = requests.get(target_url, timeout=25)
+        response = requests.get(target_url, timeout=15)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            # Primary target for professional eBay listings
             desc_div = soup.find("div", {"id": "ds_div"})
             return str(desc_div) if desc_div else ""
     except: return ""
@@ -48,6 +45,7 @@ def sync_enriched_data(category_name, query):
     if not token: return
     
     search_query = "1/64 diecast" if category_name == "DIECAST" else query
+    # Fixed eBay URL
     url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={search_query}&filter=sellers:{{{SELLER_ID}}}&limit=100"
     headers = {"Authorization": f"Bearer {token}"}
     
@@ -56,52 +54,40 @@ def sync_enriched_data(category_name, query):
         data = response.json()
         items_to_save = []
         
-        all_local_images = sorted([f for f in os.listdir(IMAGES_DIR) if f.endswith(".jpg")])
+        # NPW FIX: Now looks for both PNG and JPG/JPEG files
+        valid_extensions = ('.jpg', '.jpeg', '.png')
+        all_local_images = [f for f in os.listdir(IMAGES_DIR) if f.lower().endswith(valid_extensions)]
 
         if "itemSummaries" in data:
             for item in data["itemSummaries"]:
+                title = item.get('title', '')
                 raw_id = item.get('legacyItemId')
-                if not raw_id: continue
-
-                # Image Priority: Hero Image (the one with your logo) must be first
-                main_img = item.get('image', {}).get('imageUrl')
-                ebay_images = [main_img] if main_img else []
-
-                # Fetch the full gallery from the detail endpoint
-                detail_url = f"https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id?legacy_item_id={raw_id}"
-                detail_res = requests.get(detail_url, headers=headers)
-                if detail_res.status_code == 200:
-                    details = detail_res.json()
-                    if 'additionalImages' in details:
-                        for d_img in details['additionalImages']:
-                            if d_img['imageUrl'] not in ebay_images:
-                                ebay_images.append(d_img['imageUrl'])
-
-                # Match Local High-Res Overrides
+                
                 sku_id = None
                 for img_file in all_local_images:
-                    potential_id = img_file.split('.')[0].split('_')[0]
-                    if potential_id in item.get('title', ''):
+                    # Strip extension correctly for ID matching
+                    potential_id = os.path.splitext(img_file)[0].split('_')[0]
+                    if potential_id in title:
                         sku_id = potential_id
                         break
                 
-                local_gallery = [f"./images/{f}" for f in all_local_images if sku_id and f.startswith(sku_id)]
+                gallery = []
+                if sku_id:
+                    # Find all files starting with that ID regardless of format
+                    matches = sorted([f"./images/{f}" for f in all_local_images if f.startswith(sku_id)])
+                    gallery = matches
                 
-                # FINAL GALLERY: Local First -> Main Hero -> Extra eBay Gallery
-                item['customGallery'] = local_gallery + ebay_images
-                
-                # Affiliate Tracking Link
-                item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}?mkcid=1&mkrid=711-53200-19255-0&campid={CAMPAIGN_ID}&toolid=10001&mkevt=1"
-                
-                # DEEP SYNC DESCRIPTION
-                print(f"Deep Fetching BLKHDZ SEO Data for: {raw_id}")
-                item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
+                # Prioritize Local Gallery -> Fallback to eBay Image
+                item['customGallery'] = gallery if gallery else [item.get('image', {}).get('imageUrl')]
+                item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}" if raw_id else "#"
+                item['fullHtmlDescription'] = fetch_full_description(item['itemWebUrl']) if raw_id else ""
                 
                 items_to_save.append(item)
 
         filename = "inventory.json" if category_name == "LEGO" else "diecast.json"
         with open(os.path.join(SANDBOX_DIR, filename), "w") as f:
             json.dump(data, f, indent=4)
+        print(f"Success: {category_name} sync complete.")
         
     except Exception as e: print(f"Sync Error: {e}")
 
