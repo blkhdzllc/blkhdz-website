@@ -5,83 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLKHDZ Sandbox | Inventory Test</title>
     <style>
-        body { 
-            background-color: #0a0a0a; 
-            color: #e0e0e0; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 20px; 
-        }
+        body { background-color: #0a0a0a; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 1200px; margin: 0 auto; }
-        .header { 
-            border-bottom: 2px solid #333; 
-            padding-bottom: 10px; 
-            margin-bottom: 30px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        .hero { 
-            width: 100%; 
-            height: 300px; 
-            background: #111 url('./images/hero-parallax.jpg') center/cover no-repeat; 
-            border: 1px solid #333; 
-            margin-bottom: 30px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            border-radius: 4px; 
-        }
-        .hero h2 {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px 30px;
-            border: 1px solid #444;
-            letter-spacing: 2px;
-        }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-            gap: 20px; 
-        }
-        .card { 
-            background: #161616; 
-            border: 1px solid #333; 
-            border-radius: 4px; 
-            overflow: hidden; 
-            transition: transform 0.2s, border-color 0.2s; 
-        }
-        .card:hover { 
-            transform: translateY(-5px); 
-            border-color: #555; 
-        }
-        .card-img { 
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
-            border-bottom: 1px solid #333; 
-        }
-        .card-body { padding: 15px; }
-        .price { 
-            color: #00ff41; 
-            font-weight: bold; 
-            font-size: 1.2rem; 
-            margin: 10px 0; 
-        }
-        button { 
-            background: #222; 
-            color: white; 
-            border: 1px solid #444; 
-            padding: 10px 20px; 
-            cursor: pointer; 
-            border-radius: 4px; 
-            margin-left: 10px; 
-            transition: 0.2s;
-        }
-        button:hover { background: #333; }
-        button.active { 
-            background: #444; 
-            border-color: #888; 
-        }
+        .header { border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .hero { width: 100%; height: 300px; background: #111 url('./images/hero-parallax.jpg') center/cover no-repeat; border: 1px solid #333; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .hero h2 { background: rgba(0, 0, 0, 0.8); padding: 15px 30px; border: 1px solid #444; letter-spacing: 2px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: #161616; border: 1px solid #333; border-radius: 4px; overflow: hidden; transition: transform 0.2s; height: 100%; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); border-color: #555; }
+        .card-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #333; }
+        .card-body { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+        .price { color: #00ff41; font-weight: bold; font-size: 1.2rem; margin: 10px 0; }
+        .desc-text { font-size: 0.75rem; color: #aaa; line-height: 1.4; margin-top: auto; }
+        button { background: #222; color: white; border: 1px solid #444; padding: 10px 20px; cursor: pointer; border-radius: 4px; margin-left: 10px; transition: 0.2s; }
+        button.active { background: #444; border-color: #888; }
     </style>
 </head>
 <body>
@@ -94,68 +31,50 @@
             <button onclick="loadCategory('DIECAST')" id="btn-DIECAST">DIECAST</button>
         </div>
     </div>
-
-    <div class="hero">
-        <h2>PREMIUM COLLECTIBLES</h2>
-    </div>
-
-    <div id="inventory-grid" class="grid">
-        </div>
+    <div class="hero"><h2>PREMIUM COLLECTIBLES</h2></div>
+    <div id="inventory-grid" class="grid"></div>
 </div>
 
 <script>
     async function loadCategory(cat) {
         const grid = document.getElementById('inventory-grid');
-        const buttons = document.querySelectorAll('button');
-        
-        // UI State Update
-        buttons.forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
         document.getElementById(`btn-${cat}`).classList.add('active');
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">Loading Inventory...</div>';
         
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">Loading Live Data...</div>';
-        
-        // Pathing Logic
         const path = `./data/test/${cat === 'LEGO' ? 'inventory.json' : 'diecast.json'}`;
-
         try {
             const response = await fetch(`${path}?t=${new Date().getTime()}`);
-            if (!response.ok) throw new Error('Data sync required. Run Manual Market Test.');
-            
+            if (!response.ok) throw new Error('Data sync required.');
             const data = await response.json();
             const items = data.itemSummaries || [];
 
-            if (items.length === 0) {
-                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">No active listings found.</div>';
-                return;
-            }
+            grid.innerHTML = items.map(item => {
+                // If eBay shortDescription is empty, provide a standard call-to-action
+                const displayDesc = item.shortDescription && item.shortDescription.length > 0 
+                                    ? item.shortDescription 
+                                    : "Click to view full item specifics and photos on eBay.";
 
-            grid.innerHTML = items.map(item => `
-                <a href="${item.itemWebUrl}" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="card">
-                        <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" 
-                             class="card-img" 
-                             onerror="this.src='./images/hero-parallax.jpg'">
-                        <div class="card-body">
-                            <div style="font-size: 0.9rem; margin-bottom: 10px; height: 2.4em; overflow: hidden; line-height: 1.2;">
-                                ${item.title}
-                            </div>
-                            <div class="price">$${item.price.value}</div>
-                            <div style="font-size: 0.65rem; color: #888; margin-top: 10px; line-height: 1.3; font-family: sans-serif;">
-                                ${item.shortDescription}
+                return `
+                    <a href="${item.itemWebUrl}" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="card">
+                            <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
+                            <div class="card-body">
+                                <div style="font-size: 0.9rem; margin-bottom: 10px; height: 2.4em; overflow: hidden; line-height: 1.2; color: #fff;">
+                                    ${item.title}
+                                </div>
+                                <div class="price">$${item.price.value}</div>
+                                <div class="desc-text">${displayDesc}</div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            `).join('');
-
+                    </a>
+                `;
+            }).join('');
         } catch (error) {
             grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #ff4444;">Error: ${error.message}</div>`;
         }
     }
-
-    // NPW: Auto-load LEGO on startup so the page isn't empty
     window.onload = () => loadCategory('LEGO');
 </script>
-
 </body>
 </html>
