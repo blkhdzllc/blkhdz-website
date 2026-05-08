@@ -4,10 +4,8 @@ import requests
 import base64
 
 # --- SETTINGS ---
-EPN_CAMPAIGN_ID = "5339141674" 
 SELLER_ID = "reedpb"
-
-# NPW Fix: Ensures path accuracy whether run by bot or human
+# NPW Fix: Accurate pathing for sandbox
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SANDBOX_DIR = os.path.join(base_dir, "data", "test")
 os.makedirs(SANDBOX_DIR, exist_ok=True)
@@ -26,19 +24,33 @@ def get_ebay_token():
         return response.json().get("access_token")
     except: return None
 
-def sync_sandbox(query, filename):
+def run_test_sync(category_name, query):
     token = get_ebay_token()
     if not token: return
+    
+    # 1. Search for items
     url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={query}&filter=sellers:{{{SELLER_ID}}}"
     headers = {"Authorization": f"Bearer {token}"}
+    
     try:
         response = requests.get(url, headers=headers)
-        target_path = os.path.join(SANDBOX_DIR, filename)
-        with open(target_path, "w") as f:
-            json.dump(response.json(), f, indent=4)
-        print(f"Sandbox Sync: {filename} saved to {target_path}")
-    except Exception as e: print(f"Failed: {e}")
+        data = response.json()
+        
+        # 2. Detail Enrichment: Adding the 'Item Link' and 'Description' placeholder
+        # We simulate the Detail API logic for the sandbox
+        if "itemSummaries" in data:
+            for item in data["itemSummaries"]:
+                # Creates a direct link to the item on eBay
+                item['itemWebUrl'] = f"https://www.ebay.com/itm/{item['itemId'].split('|')[-1]}"
+                # Placeholder for description (to be filled by SEO engine later)
+                item['shortDescription'] = "Authentic Collector Grade Item. Shipped in reinforced boxes with professional dunnage."
+
+        filename = "inventory.json" if category_name == "LEGO" else "diecast.json"
+        with open(os.path.join(SANDBOX_DIR, filename), "w") as f:
+            json.dump(data, f, indent=4)
+        print(f"Enriched Sandbox Sync: {category_name} saved to {SANDBOX_DIR}")
+    except Exception as e: print(f"Test Sync Failed: {e}")
 
 if __name__ == "__main__":
-    sync_sandbox("LEGO", "inventory.json")
-    sync_sandbox("Diecast", "diecast.json")
+    run_test_sync("LEGO", "LEGO")
+    run_test_sync("DIECAST", "Hot Wheels")
