@@ -32,12 +32,12 @@ def get_ebay_token():
 def fetch_full_description(url):
     """Deep fetch using render=true to pull the actual HTML description content."""
     try:
-        # Added &render=true to Scrape.do to ensure eBay's internal frames load
+        # CRITICAL: render=true ensures Scrape.do waits for the eBay description iframe to load
         target_url = f"http://api.scrape.do?token={SCRAPE_DO_TOKEN}&render=true&url={url}"
         response = requests.get(target_url, timeout=25)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            # Look for the primary eBay description div
+            # Primary target for professional eBay listings
             desc_div = soup.find("div", {"id": "ds_div"})
             return str(desc_div) if desc_div else ""
     except: return ""
@@ -63,19 +63,21 @@ def sync_enriched_data(category_name, query):
                 raw_id = item.get('legacyItemId')
                 if not raw_id: continue
 
-                # Image Logic: Hero Image Priority
+                # Image Priority: Hero Image (the one with your logo) must be first
                 main_img = item.get('image', {}).get('imageUrl')
                 ebay_images = [main_img] if main_img else []
 
-                # Fetch Gallery
+                # Fetch the full gallery from the detail endpoint
                 detail_url = f"https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id?legacy_item_id={raw_id}"
                 detail_res = requests.get(detail_url, headers=headers)
                 if detail_res.status_code == 200:
                     details = detail_res.json()
                     if 'additionalImages' in details:
-                        ebay_images += [img['imageUrl'] for img in details['additionalImages'] if img['imageUrl'] not in ebay_images]
+                        for d_img in details['additionalImages']:
+                            if d_img['imageUrl'] not in ebay_images:
+                                ebay_images.append(d_img['imageUrl'])
 
-                # Match Overrides
+                # Match Local High-Res Overrides
                 sku_id = None
                 for img_file in all_local_images:
                     potential_id = img_file.split('.')[0].split('_')[0]
@@ -84,11 +86,15 @@ def sync_enriched_data(category_name, query):
                         break
                 
                 local_gallery = [f"./images/{f}" for f in all_local_images if sku_id and f.startswith(sku_id)]
+                
+                # FINAL GALLERY: Local First -> Main Hero -> Extra eBay Gallery
                 item['customGallery'] = local_gallery + ebay_images
                 
-                # Affiliate & Description
+                # Affiliate Tracking Link
                 item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}?mkcid=1&mkrid=711-53200-19255-0&campid={CAMPAIGN_ID}&toolid=10001&mkevt=1"
-                print(f"Deep Fetching HTML: {raw_id}")
+                
+                # DEEP SYNC DESCRIPTION
+                print(f"Deep Fetching BLKHDZ SEO Data for: {raw_id}")
                 item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
                 
                 items_to_save.append(item)
