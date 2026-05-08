@@ -64,9 +64,8 @@ def sync_enriched_data(category_name, query):
                     
                     item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}" if raw_id else "#"
                     
-                    # CLEANUP: Removed all "Collector Grade" and "Reinforced Box" text.
-                    # Only pulls the actual eBay snippet if it exists.
-                    item['shortDescription'] = item.get('shortDescription', '')
+                    # CLEAN: Only use what eBay provides. No added text or guarantees.
+                    item['shortDescription'] = item.get('shortDescription', '').strip()
                     
                     items_to_save.append(item)
                 except Exception:
