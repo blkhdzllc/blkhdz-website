@@ -36,7 +36,13 @@ def sync_enriched_data(category_name, query):
     token = get_ebay_token()
     if not token: return
     
-    url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={query}&filter=sellers:{{{SELLER_ID}}}"
+    # NPW Fix: Added 'limit=100' to ensure more than the default 50 items are pulled
+    # Broader query for Diecast to ensure all brands (Mini GT, Tarmac, etc.) are caught
+    search_query = query
+    if category_name == "DIECAST":
+        search_query = "1/64 diecast" # Broader than just 'Hot Wheels'
+        
+    url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={search_query}&filter=sellers:{{{SELLER_ID}}}&limit=100"
     headers = {"Authorization": f"Bearer {token}"}
     
     try:
@@ -63,7 +69,7 @@ def sync_enriched_data(category_name, query):
         
         with open(target_path, "w") as f:
             json.dump(data, f, indent=4)
-        print(f"Success: Saved {category_name} to {target_path}")
+        print(f"Success: Saved {len(data.get('itemSummaries', []))} {category_name} items to {target_path}")
         
     except Exception as e:
         print(f"Sync Error: {e}")
