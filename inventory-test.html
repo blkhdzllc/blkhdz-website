@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLKHDZ Sandbox | Inventory Test</title>
+    <title>BLKHDZ Inventory | LEGO & Diecast Collector Sourcing</title>
     <style>
         body { background-color: #0a0a0a; color: #e0e0e0; font-family: sans-serif; margin: 0; padding: 20px; }
         .container { max-width: 1200px; margin: 0 auto; }
@@ -15,7 +15,8 @@
         .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #333; }
         .card-body { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
         .price { color: #00ff41; font-weight: bold; font-size: 1.3rem; margin: 10px 0; }
-        .title-text { font-size: 0.95rem; font-weight: 500; height: 2.8em; overflow: hidden; line-height: 1.4; color: #fff; }
+        .title-text { font-size: 0.95rem; font-weight: bold; height: 2.8em; overflow: hidden; line-height: 1.4; color: #fff; margin: 0; }
+        .desc-text { font-size: 0.75rem; color: #888; margin-top: 10px; line-height: 1.4; }
         button { background: #222; color: white; border: 1px solid #444; padding: 10px 25px; cursor: pointer; border-radius: 4px; font-weight: bold; }
         button.active { background: #00ff41; color: #000; border-color: #00ff41; }
     </style>
@@ -23,19 +24,20 @@
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>BLOCKHEADZ <span style="color: #666; font-size: 1.1rem;">SANDBOX v2.0</span></h1>
-        <div class="btn-group">
-            <button onclick="loadCategory('LEGO')" id="btn-LEGO">LEGO</button>
-            <button onclick="loadCategory('DIECAST')" id="btn-DIECAST" style="margin-left:10px;">DIECAST</button>
-        </div>
-    </div>
+    <header class="header">
+        <h1>BLOCKHEADZ <span style="color: #666; font-size: 1.1rem;">INVENTORY SYNC</span></h1>
+        <nav class="btn-group">
+            <button onclick="loadCategory('LEGO')" id="btn-LEGO">LEGO Sets</button>
+            <button onclick="loadCategory('DIECAST')" id="btn-DIECAST" style="margin-left:10px;">Diecast Cars</button>
+        </nav>
+    </header>
 
     <div class="hero">
-        <h2 style="background: rgba(0,0,0,0.8); padding: 15px 30px; border: 1px solid #444; letter-spacing: 2px;">LIVE INVENTORY</h2>
+        <h2 style="background: rgba(0,0,0,0.8); padding: 15px 30px; border: 1px solid #444; letter-spacing: 2px;">LIVE EBAY INVENTORY</h2>
     </div>
 
-    <div id="inventory-grid" class="grid"></div>
+    <main id="inventory-grid" class="grid">
+        </main>
 </div>
 
 <script>
@@ -44,7 +46,7 @@
         document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
         document.getElementById(`btn-${cat}`).classList.add('active');
         
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; color:#666;">Synchronizing with eBay...</div>';
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; color:#666;">Updating keywords and inventory...</div>';
         
         const path = `./data/test/${cat === 'LEGO' ? 'inventory.json' : 'diecast.json'}`;
         try {
@@ -54,19 +56,22 @@
             const items = data.itemSummaries || [];
 
             grid.innerHTML = items.map(item => `
-                <a href="${item.itemWebUrl}" target="_blank" style="text-decoration: none; color: inherit;">
-                    <div class="card">
-                        <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
+                <article class="card">
+                    <a href="${item.itemWebUrl}" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" alt="${item.title}" class="card-img" onerror="this.src='./images/hero-parallax.jpg'">
                         <div class="card-body">
-                            <div class="title-text">${item.title}</div>
+                            <h3 class="title-text">${item.title}</h3>
                             <div class="price">$${item.price.value}</div>
-                            <div style="font-size: 0.75rem; color: #666; margin-top: auto;">Click to view photos & details on eBay</div>
+                            <p class="desc-text">${item.shortDescription || 'View full product details and high-resolution photos on our eBay store.'}</p>
+                            <div style="font-size: 0.7rem; color: #444; margin-top: auto; border-top: 1px solid #222; padding-top: 10px;">
+                                Click to source on eBay
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </article>
             `).join('');
         } catch (e) {
-            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #ff4444;">Status: Run Manual Market Test to refresh data.</div>`;
+            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: #ff4444;">Please run Manual Market Test in GitHub Actions to populate inventory.</div>`;
         }
     }
     window.onload = () => loadCategory('LEGO');
