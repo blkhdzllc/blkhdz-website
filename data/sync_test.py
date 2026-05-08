@@ -6,6 +6,8 @@ from bs4 import BeautifulSoup
 
 # --- SETTINGS ---
 SELLER_ID = "reedpb"
+# Replace with your actual eBay Partner Network (EPN) Campaign ID
+CAMPAIGN_ID = "5339053531" 
 SCRAPE_DO_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,20 +31,22 @@ def get_ebay_token():
     except: return None
 
 def fetch_full_description(url):
-    """Deep fetch specifically targeting the eBay description content using render for JS content."""
+    """Uses Scrape.do to bypass eBay frames and pull your actual HTML description."""
     try:
+        # Using render=true to ensure Scrape.do executes the JavaScript that loads your description
         target_url = f"http://api.scrape.do?token={SCRAPE_DO_TOKEN}&render=true&url={url}"
         response = requests.get(target_url, timeout=20)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
+            # Look for the primary eBay description div
             desc_div = soup.find("div", {"id": "ds_div"})
-            if desc_div:
-                return str(desc_div)
-            desc_section = soup.find("section", {"id": "DESCRIPTION"})
-            return str(desc_section) if desc_section else ""
-    except Exception as e:
-        print(f"Scrape Error: {e}")
+            return str(desc_div) if desc_div else ""
+    except: return ""
     return ""
+
+def create_affiliate_link(item_id):
+    """Converts a standard eBay item ID into an EPN Affiliate Link."""
+    return f"https://www.ebay.com/itm/{item_id}?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={CAMPAIGN_ID}&customid=BLKHDZ_WEB&toolid=10001&mkevt=1"
 
 def sync_enriched_data(category_name, query):
     token = get_ebay_token()
@@ -62,9 +66,14 @@ def sync_enriched_data(category_name, query):
         if "itemSummaries" in data:
             for item in data["itemSummaries"]:
                 raw_id = item.get('legacyItemId')
+                if not raw_id:
+                    # Robust ID extraction if legacyItemId is missing
+                    parts = item.get('itemId', '').split('|')
+                    raw_id = parts[1] if len(parts) > 1 else None
+                
                 if not raw_id: continue
 
-                # HERO IMAGE FIX: Prioritize main image first
+                # IMAGE PRIORITY: 1. Main "Hero" (Logo Image) -> 2. Additional Gallery
                 main_img = item.get('image', {}).get('imageUrl')
                 ebay_images = [main_img] if main_img else []
 
@@ -78,7 +87,7 @@ def sync_enriched_data(category_name, query):
                             if img['imageUrl'] not in ebay_images:
                                 ebay_images.append(img['imageUrl'])
 
-                # Match Local Overrides from your GitHub images folder
+                # Match Overrides from GitHub images folder
                 sku_id = None
                 for img_file in all_local_images:
                     potential_id = img_file.split('.')[0].split('_')[0]
@@ -90,12 +99,15 @@ def sync_enriched_data(category_name, query):
                 if sku_id:
                     local_gallery = [f"./images/{f}" for f in all_local_images if f.startswith(sku_id)]
                 
-                # Combine: Local First -> Hero eBay Image -> Extended eBay Gallery
+                # Combine: Overrides -> Hero -> Gallery
                 item['customGallery'] = local_gallery + ebay_images
-                item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}"
                 
-                print(f"Syncing BLKHDZ SEO Data for {raw_id}...")
-                item['fullHtmlDescription'] = fetch_full_description(item['itemWebUrl'])
+                # AFFILIATE LINK: Generate the tracking URL
+                item['itemWebUrl'] = create_affiliate_link(raw_id)
+                
+                # FULL HTML DESCRIPTION: Fetching from live eBay listing
+                print(f"Deep Syncing Description for BLKHDZ: {raw_id}")
+                item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
                 
                 items_to_save.append(item)
 
