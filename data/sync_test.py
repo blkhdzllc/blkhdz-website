@@ -44,7 +44,8 @@ def sync_enriched_data(category_name, query):
     if not token: return
     
     search_query = "1/64 diecast" if category_name == "DIECAST" else query
-    url = f"https://api.api.ebay.com/buy/browse/v1/item_summary/search?q={search_query}&filter=sellers:{{{SELLER_ID}}}&limit=100"
+    # FIXED URL: Removed extra 'api.' prefix
+    url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={search_query}&filter=sellers:{{{SELLER_ID}}}&limit=100"
     headers = {"Authorization": f"Bearer {token}"}
     
     try:
@@ -52,15 +53,15 @@ def sync_enriched_data(category_name, query):
         data = response.json()
         items_to_save = []
         
-        all_local_images = [f for f in os.listdir(IMAGES_DIR) if f.endswith(".jpg")]
+        all_local_images = []
+        if os.path.exists(IMAGES_DIR):
+            all_local_images = [f for f in os.listdir(IMAGES_DIR) if f.endswith(".jpg")]
 
         if "itemSummaries" in data:
             for item in data["itemSummaries"]:
                 title = item.get('title', '')
                 raw_id = item.get('legacyItemId')
                 
-                # Identify the ID for the naming match (Set # or SKU)
-                # We extract the 5-digit LEGO number or SKU from title if possible
                 sku_id = None
                 for img_file in all_local_images:
                     potential_id = img_file.split('.')[0].split('_')[0]
@@ -68,22 +69,27 @@ def sync_enriched_data(category_name, query):
                         sku_id = potential_id
                         break
                 
-                # --- GALLERY LOGIC ---
                 gallery = []
                 if sku_id:
-                    # Find all files starting with that ID (e.g., 75274.jpg, 75274_1.jpg)
                     matches = sorted([f"./images/{f}" for f in all_local_images if f.startswith(sku_id)])
                     gallery = matches
                 
                 item['customGallery'] = gallery if gallery else [item.get('image', {}).get('imageUrl')]
                 item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}" if raw_id else "#"
-                item['fullHtmlDescription'] = fetch_full_description(item['itemWebUrl']) if raw_id else ""
+                
+                # Only fetch description if an item ID exists to save Scrape.do credits
+                if raw_id:
+                    item['fullHtmlDescription'] = fetch_full_description(item['itemWebUrl'])
+                else:
+                    item['fullHtmlDescription'] = ""
                 
                 items_to_save.append(item)
 
+        data['itemSummaries'] = items_to_save
         filename = "inventory.json" if category_name == "LEGO" else "diecast.json"
         with open(os.path.join(SANDBOX_DIR, filename), "w") as f:
             json.dump(data, f, indent=4)
+        print(f"Success: Synced {category_name}")
         
     except Exception as e: print(f"Sync Error: {e}")
 
