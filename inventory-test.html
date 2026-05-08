@@ -8,124 +8,93 @@
         :root { --accent: #00ff41; --bg: #0a0a0a; --card: #161616; --border: #333; }
         body { background-color: var(--bg); color: #e0e0e0; font-family: 'Segoe UI', sans-serif; margin: 0; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        
-        /* Header & Nav */
         .header { border-bottom: 2px solid var(--border); padding-bottom: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: bold; letter-spacing: 2px; cursor: pointer; }
-        .logo span { color: #666; font-size: 1rem; margin-left: 10px; }
-        button { background: #222; color: white; border: 1px solid #444; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; transition: 0.2s; }
+        button { background: #222; color: white; border: 1px solid #444; padding: 10px 15px; cursor: pointer; border-radius: 4px; font-weight: bold; }
         button.active { background: var(--accent); color: #000; border-color: var(--accent); }
-
-        /* Grid Mode */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; cursor: pointer; transition: 0.2s; height: 100%; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; cursor: pointer; transition: 0.2s; height: 100%; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-5px); border-color: var(--accent); }
         .card-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid var(--border); }
-        .card-body { padding: 15px; }
+        .card-body { padding: 15px; flex-grow: 1; }
         .price { color: var(--accent); font-weight: bold; font-size: 1.3rem; margin: 10px 0; }
-
-        /* Product Detail Mode (PowerBuild Style) */
-        .product-page { display: none; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 20px; animation: fadeIn 0.4s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .gallery img { width: 100%; border: 1px solid var(--border); border-radius: 8px; }
-        .info h2 { font-size: 2rem; margin-top: 0; }
-        .buy-btn { background: var(--accent); color: #000; width: 100%; padding: 20px; font-size: 1.2rem; text-align: center; text-decoration: none; display: block; border-radius: 8px; margin: 20px 0; }
+        .product-page { display: none; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 20px; }
+        .gallery-main { width: 100%; border-radius: 8px; border: 1px solid var(--border); height: 450px; object-fit: contain; background: #000; }
+        .thumb-strip { display: flex; gap: 10px; margin-top: 15px; overflow-x: auto; padding-bottom: 5px; }
+        .thumb { width: 80px; height: 80px; object-fit: cover; cursor: pointer; border: 2px solid transparent; border-radius: 4px; }
+        .thumb:hover { border-color: var(--accent); }
+        .buy-btn { background: var(--accent); color: #000; width: 100%; padding: 20px; text-align: center; text-decoration: none; display: block; border-radius: 8px; font-weight: bold; margin: 20px 0; }
         .accordion { border-top: 1px solid var(--border); margin-top: 20px; }
         .acc-item { border-bottom: 1px solid var(--border); padding: 15px 0; cursor: pointer; }
-        .acc-content { display: none; padding: 15px 0; color: #aaa; font-size: 0.9rem; line-height: 1.6; }
-        
-        @media (max-width: 768px) { .product-page { grid-template-columns: 1fr; } }
+        .acc-content { display: none; padding: 10px 0; color: #aaa; font-size: 0.9rem; line-height: 1.6; }
+        @media (max-width: 768px) { .product-page { grid-template-columns: 1fr; } .gallery-main { height: 300px; } }
     </style>
 </head>
 <body>
-
 <div class="container">
     <header class="header">
-        <div class="logo" onclick="location.reload()">BLOCKHEADZ <span>SANDBOX v3.0</span></div>
-        <div class="btn-group" id="nav-btns">
+        <div style="font-weight:bold; letter-spacing:2px; cursor:pointer;" onclick="location.reload()">BLOCKHEADZ</div>
+        <div id="nav-btns">
             <button onclick="loadCategory('LEGO')" id="btn-LEGO">LEGO</button>
             <button onclick="loadCategory('DIECAST')" id="btn-DIECAST">DIECAST</button>
         </div>
     </header>
-
     <main id="inventory-grid" class="grid"></main>
-
     <main id="product-detail" class="product-page"></main>
 </div>
-
 <script>
     let currentData = [];
-
     async function loadCategory(cat) {
         const grid = document.getElementById('inventory-grid');
         const detail = document.getElementById('product-detail');
-        grid.style.display = 'grid';
-        detail.style.display = 'none';
-
+        grid.style.display = 'grid'; detail.style.display = 'none';
         document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
         document.getElementById(`btn-${cat}`).classList.add('active');
         
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">Updating Stock...</div>';
-        
-        const path = `./data/test/${cat === 'LEGO' ? 'inventory.json' : 'diecast.json'}`;
         try {
-            const response = await fetch(`${path}?t=${new Date().getTime()}`);
+            const response = await fetch(`./data/test/${cat === 'LEGO' ? 'inventory.json' : 'diecast.json'}?t=${Date.now()}`);
             const data = await response.json();
             currentData = data.itemSummaries || [];
-
             grid.innerHTML = currentData.map((item, index) => `
                 <div class="card" onclick="showProduct(${index})">
-                    <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" class="card-img">
+                    <img src="${item.customGallery[0] || './images/hero-parallax.jpg'}" class="card-img">
                     <div class="card-body">
                         <div style="font-weight:bold; height: 2.8em; overflow: hidden;">${item.title}</div>
                         <div class="price">$${item.price.value}</div>
-                        <div style="font-size: 0.7rem; color: #666;">Click for details</div>
+                        <div style="font-size: 0.7rem; color: #666;">View Gallery & Details</div>
                     </div>
                 </div>
             `).join('');
-        } catch (e) {
-            grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px;">Run manual sync to load items.</div>';
-        }
+        } catch (e) { grid.innerHTML = '<div style="text-align:center; padding:50px;">Syncing data...</div>'; }
     }
 
     function showProduct(index) {
         const item = currentData[index];
         const grid = document.getElementById('inventory-grid');
         const detail = document.getElementById('product-detail');
-        const nav = document.getElementById('nav-btns');
-
-        grid.style.display = 'none';
-        nav.style.display = 'none'; // Clean look for product page
-        detail.style.display = 'grid';
+        grid.style.display = 'none'; detail.style.display = 'grid';
+        
+        const galleryHtml = item.customGallery.map(img => `
+            <img src="${img}" class="thumb" onclick="document.getElementById('main-img').src='${img}'">
+        `).join('');
 
         detail.innerHTML = `
             <div class="gallery">
-                <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" alt="${item.title}">
-                <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-                    <img src="${item.image?.imageUrl || './images/hero-parallax.jpg'}" style="height: 80px; object-fit: cover;">
-                    <div style="background: #111; border: 1px solid #333; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #555;">More Photos on eBay</div>
-                </div>
+                <img src="${item.customGallery[0]}" id="main-img" class="gallery-main">
+                <div class="thumb-strip">${galleryHtml}</div>
             </div>
             <div class="info">
                 <button onclick="location.reload()" style="background:none; border:none; color:var(--accent); padding:0; margin-bottom: 20px; cursor:pointer;">← Back to Collection</button>
                 <h2>${item.title}</h2>
                 <div class="price">$${item.price.value}</div>
-                <p style="color: #888; font-size: 0.9rem;">Item Location: Tampa, FL | Ships via Professional Carrier</p>
-                
-                <a href="${item.itemWebUrl}" target="_blank" class="buy-btn">PURCHASE ON EBAY STORE</a>
-
+                <a href="${item.itemWebUrl}" target="_blank" class="buy-btn">PURCHASE ON EBAY</a>
                 <div class="accordion">
                     <div class="acc-item" onclick="toggleAcc(this)">
-                        <strong>+ PRODUCT DESCRIPTION</strong>
-                        <div class="acc-content">${item.shortDescription || 'Please see our eBay listing for full item specifics, part numbers, and high-resolution details.'}</div>
+                        <strong>+ FULL PRODUCT SPECIFICATIONS</strong>
+                        <div class="acc-content">${item.fullHtmlDescription || 'Detailed specs available on our eBay storefront.'}</div>
                     </div>
                     <div class="acc-item" onclick="toggleAcc(this)">
                         <strong>+ SHIPPING & RETURNS</strong>
-                        <div class="acc-content">We utilize reinforced packaging for all orders. 30-Day Return Policy applies to all items. Contact us via eBay for specific box dimensions.</div>
-                    </div>
-                    <div class="acc-item" onclick="toggleAcc(this)">
-                        <strong>+ ABOUT BLOCKHEADZ</strong>
-                        <div class="acc-content">IT Professionals and USAF Veterans specializing in high-end LEGO and 1/64 Diecast car sourcing. Serving collectors since 1991.</div>
+                        <div class="acc-content">Veteran owned business. We ship in reinforced boxes. 30-day return policy.</div>
                     </div>
                 </div>
             </div>
