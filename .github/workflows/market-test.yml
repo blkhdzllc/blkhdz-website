@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 
 
@@ -23,25 +23,28 @@ jobs:
       - name: Install Dependencies
         run: pip install requests beautifulsoup4
 
-      - name: Execute Sandbox Inventory Sync
+      - name: Pre-Sync and Execute
         working-directory: data
         env:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
         run: |
+          # 1. Clear the path BEFORE creating files
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main --rebase
+          
+          # 2. Now create the data
           mkdir -p test
           python sync_test.py
 
-      - name: Commit and Push Changes
+      - name: Secure Commit and Push
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Force sync with the latest web changes
-          git pull origin main --rebase
-          
-          # Stage ONLY the sandbox data to prevent path errors
+          # 3. Save only the new data
           git add data/test/*.json
           
-          git commit -m "Sandbox Sync: Updated Inventory Data" || echo "No changes to commit"
+          # The '|| true' prevents a crash if the data hasn't changed
+          git commit -m "Sandbox Sync: Updated Inventory" || true
+          
+          # 4. Final push
           git push origin main
