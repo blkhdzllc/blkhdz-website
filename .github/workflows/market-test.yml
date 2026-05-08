@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 
+          fetch-depth: 0 # CRITICAL: Fetches full history to stop Error 128
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -22,9 +22,6 @@ jobs:
 
       - name: Install Dependencies
         run: pip install requests beautifulsoup4
-
-      - name: Execute Market Scraper
-        run: python test/test_brickeconomy.py
 
       - name: Execute Sandbox Inventory Sync
         working-directory: data
@@ -39,8 +36,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Force sync before pushing
           git pull origin main --rebase
+          
           git add data/test/*.json
-          git add test/results/*.json
-          git commit -m "Sandbox Sync: Updated Inventory and Market Data" || echo "No changes to commit"
+          git commit -m "Sandbox Sync: Updated Inventory" || echo "No changes to commit"
           git push origin main
