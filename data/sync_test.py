@@ -51,10 +51,8 @@ def sync_enriched_data(category_name, query):
                     parts = item['itemId'].split('|')
                     raw_id = parts[1] if len(parts) > 1 else None
                 
+                # Direct SEO link to your store
                 item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}" if raw_id else "#"
-                
-                # SEO: Pull actual eBay description snippet ONLY. No custom text.
-                # This gives Google keywords without creating liability for you.
                 item['shortDescription'] = item.get('shortDescription', '')
                 items_to_save.append(item)
 
