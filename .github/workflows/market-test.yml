@@ -1,4 +1,4 @@
-name: Manual Market Test (BrickEconomy)
+name: Manual Market Test & Sandbox Sync
 
 on:
   workflow_dispatch: # Adds the manual button in Actions tab
@@ -15,18 +15,27 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install Scraper Tools
+      - name: Install Dependencies
         run: pip install requests beautifulsoup4
 
-      - name: Execute Scraper
-        # NPW: Points to your actual folder name: 'test'
+      - name: Execute Market Scraper
+        # Keeps your research data updated in test/results/
         run: python test/test_brickeconomy.py
 
-      - name: Commit Test Results
+      - name: Execute Sandbox Inventory Sync
+        # NPW: This step creates the missing data/test/inventory.json
+        working-directory: data
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          CERT_ID: ${{ secrets.CERT_ID }}
+        run: python sync_test.py
+
+      - name: Commit All Sandbox Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # NPW: Adds results specifically to the 'test' directory
+          # NPW: Commits both the research results AND the sandbox inventory files
           git add test/results/*
-          git commit -m "Updated BrickEconomy Test Results [Manual Run]" || echo "No changes"
+          git add data/test/*.json
+          git commit -m "Updated Sandbox Data and Market Results [Manual Run]" || echo "No changes"
           git push
