@@ -32,7 +32,7 @@
                 "imageUrl": "https://i.ebayimg.com/images/g/D6IAAeSwdYJp618p/s-l225.jpg"
             },
             "price": {
-                "value": "17.95",
+                "value": "18.95",
                 "currency": "USD"
             },
             "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117134066179%7C0",
@@ -40,17 +40,6 @@
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
                 "feedbackScore": 231
-            },
-            "marketingPrice": {
-                "originalPrice": {
-                    "value": "18.96",
-                    "currency": "USD"
-                },
-                "discountPercentage": "5",
-                "discountAmount": {
-                    "value": "1.01",
-                    "currency": "USD"
-                }
             },
             "condition": "New",
             "conditionId": "1000",
@@ -66,15 +55,15 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
             "epid": "13085394298",
-            "itemWebUrl": "https://www.ebay.com/itm/117134066179",
+            "itemWebUrl": "https://www.ebay.com/itm/117134066179?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -123,122 +112,7 @@
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
-                "./images/PR640255.jpg"
-            ],
-            "fullHtmlDescription": ""
-        },
-        {
-            "itemId": "v1|117167261432|0",
-            "title": "Pop Race PR64174 Pandem Civic EG6 Metallic Blue In Hand Ready To Ship",
-            "leafCategoryIds": [
-                "180506"
-            ],
-            "categories": [
-                {
-                    "categoryId": "180506",
-                    "categoryName": "Contemporary Manufacture"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "222",
-                    "categoryName": "Diecast & Toy Vehicles"
-                },
-                {
-                    "categoryId": "180273",
-                    "categoryName": "Cars, Trucks & Vans"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/gk4AAeSwr9dp8nI1/s-l225.jpg"
-            },
-            "price": {
-                "value": "21.84",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117167261432%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 231
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/gk4AAeSwr9dp8nI1/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "epid": "22086447548",
-            "itemWebUrl": "https://www.ebay.com/itm/117167261432",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/AdwAAeSwN~xp8Urm/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/8RIAAeSwhIJp8U9g/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/muUAAeSweFVp8U~a/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/x~MAAeSwUbhp8VBT/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/YPAAAeSwAKZp8VGZ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/e3cAAeSwzp1p8VLB/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/-mUAAeSwILhp8VLi/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/4DMAAeSw7T5p8VNW/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/PskAAeSwI-lp8VPI/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ppYAAeSwwelp8nOr/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/mk4AAeSwTFBp8nO0/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/MBIAAeSw4u1p8nO7/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117167261432",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-29T00:51:26.000Z",
-            "itemCreationDate": "2026-04-29T00:51:26.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": true,
-            "listingMarketplaceId": "EBAY_US",
-            "customGallery": [
-                "https://i.ebayimg.com/images/g/gk4AAeSwr9dp8nI1/s-l225.jpg"
+                "https://i.ebayimg.com/images/g/D6IAAeSwdYJp618p/s-l225.jpg"
             ],
             "fullHtmlDescription": ""
         },
@@ -293,15 +167,15 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE",
                 "BEST_OFFER"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117134068361",
+            "itemWebUrl": "https://www.ebay.com/itm/117134068361?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -377,7 +251,147 @@
             "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
-                "./images/MGT01046.jpg"
+                "./images/diecast/MGT01046_40.png",
+                "./images/diecast/MGT01046.jpg",
+                "./images/diecast/MGT01046_1.jpg",
+                "./images/diecast/MGT01046_11.jpg",
+                "./images/diecast/MGT01046_13.jpg",
+                "./images/diecast/MGT01046_14.jpg",
+                "./images/diecast/MGT01046_16.jpg",
+                "./images/diecast/MGT01046_18.jpg",
+                "./images/diecast/MGT01046_19.jpg",
+                "./images/diecast/MGT01046_2.jpg",
+                "./images/diecast/MGT01046_21.jpg",
+                "./images/diecast/MGT01046_22.jpg",
+                "./images/diecast/MGT01046_24.jpg",
+                "./images/diecast/MGT01046_26.jpg",
+                "./images/diecast/MGT01046_28.jpg",
+                "./images/diecast/MGT01046_3.jpg",
+                "./images/diecast/MGT01046_30.jpg",
+                "./images/diecast/MGT01046_32.jpg",
+                "./images/diecast/MGT01046_34.jpg",
+                "./images/diecast/MGT01046_37.jpg",
+                "./images/diecast/MGT01046_39.jpg",
+                "./images/diecast/MGT01046_5.jpg",
+                "./images/diecast/MGT01046_7.jpg",
+                "./images/diecast/MGT01046_8.jpg",
+                "./images/diecast/MGT01046_9.jpg",
+                "https://i.ebayimg.com/images/g/N3gAAeSwM4Zp61~~/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
+        },
+        {
+            "itemId": "v1|117167261432|0",
+            "title": "Pop Race PR64174 Pandem Civic EG6 Metallic Blue In Hand Ready To Ship",
+            "leafCategoryIds": [
+                "180506"
+            ],
+            "categories": [
+                {
+                    "categoryId": "180506",
+                    "categoryName": "Contemporary Manufacture"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "222",
+                    "categoryName": "Diecast & Toy Vehicles"
+                },
+                {
+                    "categoryId": "180273",
+                    "categoryName": "Cars, Trucks & Vans"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/gk4AAeSwr9dp8nI1/s-l225.jpg"
+            },
+            "price": {
+                "value": "21.84",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117167261432%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 231
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/gk4AAeSwr9dp8nI1/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "22086447548",
+            "itemWebUrl": "https://www.ebay.com/itm/117167261432?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/AdwAAeSwN~xp8Urm/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/8RIAAeSwhIJp8U9g/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/muUAAeSweFVp8U~a/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/x~MAAeSwUbhp8VBT/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/YPAAAeSwAKZp8VGZ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/e3cAAeSwzp1p8VLB/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/-mUAAeSwILhp8VLi/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/4DMAAeSw7T5p8VNW/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/PskAAeSwI-lp8VPI/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ppYAAeSwwelp8nOr/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/mk4AAeSwTFBp8nO0/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/MBIAAeSw4u1p8nO7/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117167261432",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-29T00:51:26.000Z",
+            "itemCreationDate": "2026-04-29T00:51:26.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US",
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/gk4AAeSwr9dp8nI1/s-l225.jpg"
             ],
             "fullHtmlDescription": ""
         },
@@ -432,15 +446,15 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE",
                 "BEST_OFFER"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117167378791",
+            "itemWebUrl": "https://www.ebay.com/itm/117167378791?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -541,15 +555,15 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
             "epid": "27080365905",
-            "itemWebUrl": "https://www.ebay.com/itm/117134065697",
+            "itemWebUrl": "https://www.ebay.com/itm/117134065697?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -601,7 +615,7 @@
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
-                "./images/PR640212.jpg"
+                "https://i.ebayimg.com/images/g/pWIAAeSwzp1p616W/s-l225.jpg"
             ],
             "fullHtmlDescription": ""
         },
@@ -656,15 +670,15 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
             "epid": "25071833374",
-            "itemWebUrl": "https://www.ebay.com/itm/117081912634",
+            "itemWebUrl": "https://www.ebay.com/itm/117081912634?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -783,14 +797,14 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117167312661",
+            "itemWebUrl": "https://www.ebay.com/itm/117167312661?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -833,6 +847,24 @@
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
+                "./images/diecast/PR64226_10.png",
+                "./images/diecast/PR64226_11.png",
+                "./images/diecast/PR64226_12.png",
+                "./images/diecast/PR64226_13.png",
+                "./images/diecast/PR64226_14.png",
+                "./images/diecast/PR64226_15.png",
+                "./images/diecast/PR64226_16.png",
+                "./images/diecast/PR64226_17.png",
+                "./images/diecast/PR64226.jpg",
+                "./images/diecast/PR64226_1.jpg",
+                "./images/diecast/PR64226_2.jpg",
+                "./images/diecast/PR64226_3.jpg",
+                "./images/diecast/PR64226_4.jpg",
+                "./images/diecast/PR64226_5.jpg",
+                "./images/diecast/PR64226_6.jpg",
+                "./images/diecast/PR64226_7.jpg",
+                "./images/diecast/PR64226_8.jpg",
+                "./images/diecast/PR64226_9.jpg",
                 "https://i.ebayimg.com/images/g/WTsAAeSwKzJp8WCR/s-l225.jpg"
             ],
             "fullHtmlDescription": ""
@@ -888,14 +920,14 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117143682451",
+            "itemWebUrl": "https://www.ebay.com/itm/117143682451?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -969,14 +1001,14 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117143695401",
+            "itemWebUrl": "https://www.ebay.com/itm/117143695401?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1050,8 +1082,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1059,7 +1091,7 @@
                 "BEST_OFFER"
             ],
             "epid": "22090601611",
-            "itemWebUrl": "https://www.ebay.com/itm/117152354845",
+            "itemWebUrl": "https://www.ebay.com/itm/117152354845?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1133,14 +1165,14 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117143699166",
+            "itemWebUrl": "https://www.ebay.com/itm/117143699166?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1214,15 +1246,15 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
             "epid": "3062712652",
-            "itemWebUrl": "https://www.ebay.com/itm/117143692918",
+            "itemWebUrl": "https://www.ebay.com/itm/117143692918?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1296,15 +1328,15 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
             "epid": "22074536855",
-            "itemWebUrl": "https://www.ebay.com/itm/117135837460",
+            "itemWebUrl": "https://www.ebay.com/itm/117135837460?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1365,7 +1397,24 @@
             "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
-                "./images/MGT00773-MJ.jpg"
+                "./images/diecast/MGT00773_10.jpg",
+                "./images/diecast/MGT00773_11.jpg",
+                "./images/diecast/MGT00773_12.jpg",
+                "./images/diecast/MGT00773_14.jpg",
+                "./images/diecast/MGT00773_15.jpg",
+                "./images/diecast/MGT00773_16.jpg",
+                "./images/diecast/MGT00773_17.jpg",
+                "./images/diecast/MGT00773_18.jpg",
+                "./images/diecast/MGT00773_19.jpg",
+                "./images/diecast/MGT00773_20.jpg",
+                "./images/diecast/MGT00773_21.jpg",
+                "./images/diecast/MGT00773_4.jpg",
+                "./images/diecast/MGT00773_5.jpg",
+                "./images/diecast/MGT00773_6.jpg",
+                "./images/diecast/MGT00773_7.jpg",
+                "./images/diecast/MGT00773_8.jpg",
+                "./images/diecast/MGT00773_9.jpg",
+                "https://i.ebayimg.com/images/g/gpUAAeSwQ5pp61-I/s-l225.jpg"
             ],
             "fullHtmlDescription": ""
         },
@@ -1420,14 +1469,14 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117112530682",
+            "itemWebUrl": "https://www.ebay.com/itm/117112530682?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1509,7 +1558,7 @@
                 "FIXED_PRICE",
                 "BEST_OFFER"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117098917766",
+            "itemWebUrl": "https://www.ebay.com/itm/117098917766?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1617,7 +1666,7 @@
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117112548829",
+            "itemWebUrl": "https://www.ebay.com/itm/117112548829?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1698,7 +1747,7 @@
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117152406099",
+            "itemWebUrl": "https://www.ebay.com/itm/117152406099?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1784,14 +1833,14 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117143680119",
+            "itemWebUrl": "https://www.ebay.com/itm/117143680119?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1865,14 +1914,14 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117112554848",
+            "itemWebUrl": "https://www.ebay.com/itm/117112554848?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -1955,14 +2004,14 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117112537891",
+            "itemWebUrl": "https://www.ebay.com/itm/117112537891?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
@@ -2045,14 +2094,14 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-05-13T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-05-19T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-05-12T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-05-16T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
                 "FIXED_PRICE"
             ],
-            "itemWebUrl": "https://www.ebay.com/itm/117112521439",
+            "itemWebUrl": "https://www.ebay.com/itm/117112521439?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
             "itemLocation": {
                 "postalCode": "336**",
                 "country": "US"
