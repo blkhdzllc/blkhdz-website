@@ -10,8 +10,8 @@ SELLER_ID = "reedpb"
 CAMPAIGN_ID = "5339053531" 
 SCRAPE_DO_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
 
-# Direct production paths - no sandbox patching
-base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Fixed Production Paths: Resolves correctly on both Local PC and GitHub Runner Workspace
+base_dir = os.getcwd()
 DATA_DIR = os.path.join(base_dir, "data")
 IMAGES_ROOT = os.path.join(base_dir, "images")
 
