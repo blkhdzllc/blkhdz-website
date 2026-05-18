@@ -22,21 +22,21 @@
             overflow-x: hidden; 
         }
 
-        /* PAGE DISPENSARY SYSTEM (STATE MANAGEMENT) */
+        /* CONFIGURING MAIN APPLICATIONS LAYOUT STATES */
         .site-page {
             display: none;
             min-height: 100vh;
+            width: 100%;
         }
         .site-page.active-page {
-            display: block;
+            display: flex !important;
+            flex-direction: column;
         }
 
-        /* --- PAGE 1: BRAND HERO (MAGAZINE COVER STYLE) --- */
+        /* --- PAGE 1: BRAND IDENTITY HERO --- */
         .magazine-cover {
             position: relative;
             height: 100vh; 
-            display: flex;
-            flex-direction: column;
             justify-content: space-between;
             overflow: hidden;
             border-bottom: 8px solid var(--blk-red);
@@ -60,6 +60,8 @@
             z-index: 10;
             padding: 40px 5% 0 5%;
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .masthead-logo {
@@ -75,11 +77,12 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 20px;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-sizing: border-box;
         }
 
         .brand-statement {
@@ -88,25 +91,23 @@
             line-height: 1.8;
             text-transform: uppercase;
             text-shadow: 0 4px 10px rgba(0,0,0,1);
-            margin-bottom: 30px;
-            color: #ffffff !important;
-            display: block !important;
-            visibility: visible !important;
+            margin-bottom: 40px;
+            color: #ffffff;
+            font-weight: bold;
         }
 
         .enter-market-btn {
             background: var(--blk-red);
             color: #fff !important;
             border: none;
-            padding: 20px 60px;
+            padding: 22px 65px;
             font-family: 'Archivo Black', Arial Black, Impact, sans-serif;
             font-size: 1.3rem;
             letter-spacing: 3px;
             cursor: pointer;
             transition: 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255,0,0,0.3);
-            display: inline-block !important;
-            visibility: visible !important;
+            box-shadow: 0 10px 30px rgba(255,0,0,0.4);
+            text-transform: uppercase;
         }
 
         .enter-market-btn:hover {
@@ -122,6 +123,8 @@
             padding: 40px;
             text-align: center;
             background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .tech-badge {
@@ -130,7 +133,7 @@
             color: #666;
         }
 
-        /* --- NAVIGATION (STICKY FOR PAGES 2 & 3) --- */
+        /* --- STICKY NAVIGATION BAR CONTROL --- */
         .market-nav {
             display: flex;
             justify-content: space-between;
@@ -173,9 +176,9 @@
             background: #000;
         }
 
-        /* --- PAGE 2: INVENTORY CATALOG --- */
-        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        /* --- PAGE 2: GRID SYSTEM CATALOGS --- */
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; width: 100%; box-sizing: border-box; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; width: 100%; }
 
         .card-clickable { cursor: pointer; display: block; height: 100%; text-decoration: none; color: inherit; }
         
@@ -200,15 +203,15 @@
         .card-title { font-size: 1.1rem; line-height: 1.3; min-height: 3em; margin-bottom: 15px; }
         .price-tag { font-size: 1.6rem; color: #fff; }
 
-        /* --- PAGE 3: PRODUCT DETAIL LAYOUT --- */
+        /* --- PAGE 3: COMPREHENSIVE PRODUCT PANEL --- */
         .detail-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             margin-top: 20px;
+            width: 100%;
         }
 
-        /* Gallery System */
         .gallery-container {
             display: flex;
             flex-direction: column;
@@ -259,7 +262,6 @@
             object-fit: contain;
         }
 
-        /* Detail Pricing and Data Elements */
         .detail-meta-box {
             display: flex;
             flex-direction: column;
@@ -282,7 +284,6 @@
             padding-bottom: 15px;
         }
 
-        /* Interactive Action Buttons */
         .action-link-box {
             display: flex;
             flex-direction: column;
@@ -314,7 +315,6 @@
             border: 1px solid #333;
         }
 
-        /* Trust Stack Panels */
         .trust-panel {
             background: var(--blk-card);
             border-left: 4px solid var(--blk-teal);
@@ -332,7 +332,6 @@
             margin-bottom: 5px;
         }
 
-        /* Compiled HTML Description Box */
         .description-header-title {
             margin-top: 50px;
             font-size: 1.5rem;
@@ -349,12 +348,11 @@
             line-height: 1.6;
         }
 
-        /* --- GENERAL FOOTER TRACK --- */
-        footer { text-align: center; padding: 60px 10%; background: #000; border-top: 1px solid #111; }
+        /* --- REVENUE COMPLIANCE FOOTER --- */
+        footer { text-align: center; padding: 60px 10%; background: #000; border-top: 1px solid #111; width: 100%; box-sizing: border-box; }
         .disclosure { font-family: sans-serif; font-size: 0.8rem; color: #777; line-height: 1.6; max-width: 700px; margin: 0 auto 30px; }
         .v-badge { color: var(--blk-teal); font-size: 1rem; letter-spacing: 5px; text-transform: uppercase; margin-top: 20px; }
 
-        /* RESPONSIVE RESPONSIVENESS */
         @media (max-width: 992px) {
             .detail-layout { grid-template-columns: 1fr; gap: 40px; }
             .main-hero-view { height: 350px; }
@@ -374,6 +372,7 @@
         <div class="cover-content-top">
             <img src="./images/BLKHDZ.png" alt="BLKHDZ" class="masthead-logo">
         </div>
+        
         <div class="cover-content-center">
             <div class="brand-statement">
                 Premium Actuations. Authentic Engineering. <br>
@@ -381,6 +380,7 @@
             </div>
             <button class="enter-market-btn" onclick="navigateToPage('page-catalog')">ENTER MARKET</button>
         </div>
+        
         <div class="cover-content-bottom">
             <div class="tech-badge">SECURED PLATFORM DEPLOYMENT // TAMPA FL</div>
         </div>
@@ -453,6 +453,13 @@
         let globalDatabaseState = [];
         let activeTargetFile = "inventory.json";
 
+        window.addEventListener('scroll', () => {
+            const hero = document.getElementById('parallax-hero');
+            if (hero && document.getElementById('page-brand').classList.contains('active-page')) {
+                hero.style.transform = `translateY(${window.pageYOffset * 0.3}px)`;
+            }
+        });
+
         function navigateToPage(pageId) {
             document.querySelectorAll('.site-page').forEach(page => {
                 page.classList.remove('active-page');
@@ -470,6 +477,7 @@
 
         async function loadCatalogDatabase() {
             const container = document.getElementById('market-grid');
+            if (!container) return;
             container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">SCANNING DATABASE...</div>';
 
             try {
@@ -477,17 +485,6 @@
                 const data = await response.json();
                 
                 globalDatabaseState = data.itemSummaries || [];
-
-                const oldScript = document.getElementById('dynamic-seo');
-                if (oldScript) oldScript.remove();
-                const schemas = globalDatabaseState.map(item => item.seo_schema).filter(Boolean);
-                if (schemas.length > 0) {
-                    const script = document.createElement('script');
-                    script.id = 'dynamic-seo';
-                    script.type = 'application/ld+json';
-                    script.text = JSON.stringify({ "@context": "https://schema.org", "@graph": schemas });
-                    document.head.appendChild(script);
-                }
 
                 if (globalDatabaseState.length === 0) {
                     container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px;">NO ACTIVE STORE ENTRIES DETECTED.</div>';
