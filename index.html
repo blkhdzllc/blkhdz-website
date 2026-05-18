@@ -96,7 +96,7 @@
         .grid { display: none; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
         .grid.active { display: grid; }
 
-        .card-link { text-decoration: none; color: inherit; display: block; height: 100%; }
+        .card-clickable { cursor: pointer; display: block; height: 100%; text-decoration: none; color: inherit; }
         
         .card { 
             background: var(--blk-card); 
@@ -120,6 +120,119 @@
         .card-title { font-size: 1.1rem; line-height: 1.3; min-height: 3em; margin-bottom: 15px; }
         .price-tag { font-size: 1.6rem; color: #fff; }
 
+        /* DETAILED MODAL LAYOUT */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-wrapper {
+            background: #050505;
+            border: 2px solid #222;
+            width: 90%;
+            max-width: 1000px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,1);
+        }
+
+        .modal-header {
+            padding: 20px;
+            background: #0a0a0a;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: #fff;
+            max-width: 85%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #777;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--blk-red);
+        }
+
+        .modal-scroll-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 30px;
+            background: #000;
+        }
+
+        /* Container styling to display raw synced HTML clean and safe */
+        .injected-description-container {
+            font-family: sans-serif;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .modal-footer-actions {
+            padding: 20px;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-price {
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .modal-buy-btn {
+            background: var(--blk-red);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .modal-buy-btn:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+
         /* FOOTER */
         footer { text-align: center; padding: 60px 10%; background: #000; border-top: 1px solid #111; }
         .disclosure { font-family: sans-serif; font-size: 0.8rem; color: #777; line-height: 1.6; max-width: 700px; margin: 0 auto 30px; }
@@ -130,6 +243,10 @@
             .nav-btn { padding: 20px; font-size: 0.8rem; }
             .grid { grid-template-columns: 1fr; }
             .masthead-logo { padding-top: 40px; }
+            .modal-wrapper { height: 95vh; width: 95%; }
+            .modal-scroll-body { padding: 15px; }
+            .modal-footer-actions { flex-direction: column; gap: 15px; text-align: center; }
+            .modal-buy-btn { width: 100%; text-align: center; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -148,8 +265,23 @@
     </nav>
 
     <div class="container">
-        <div id="market-grid" class="grid active">
+        <div id="market-grid" class="grid active"></div>
+    </div>
+
+    <div id="product-modal" class="modal-overlay" onclick="closeProductModal(event)">
+        <div class="modal-wrapper" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modal-title-text">PRODUCT DETAIL</h2>
+                <button class="modal-close" onclick="closeProductModal(null)">&times;</button>
             </div>
+            <div class="modal-scroll-body">
+                <div id="modal-description-content" class="injected-description-container"></div>
+            </div>
+            <div class="modal-footer-actions">
+                <div id="modal-price-text" class="modal-price">$0.00</div>
+                <a id="modal-target-url" href="#" target="_blank" class="modal-buy-btn">VIEW ON EBAY</a>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -161,14 +293,43 @@
     </footer>
 
     <script>
+        // Global memory array to store pulled listings for lookup on-click
+        let currentLoadedItems = [];
+
         // Parallax Logic
         window.addEventListener('scroll', () => {
             const hero = document.getElementById('parallax-hero');
             hero.style.transform = `translateY(${window.pageYOffset * 0.3}px)`;
         });
 
+        // Open Detail View Modal
+        function openProductModal(itemId) {
+            const item = currentLoadedItems.find(i => i.itemId === itemId);
+            if (!item) return;
+
+            document.getElementById('modal-title-text').innerText = item.title;
+            document.getElementById('modal-price-text').innerText = item.price ? `$${parseFloat(item.price.value).toFixed(2)}` : 'VIEW ON EBAY';
+            document.getElementById('modal-target-url').href = item.itemAffiliateWebUrl || item.itemWebUrl;
+
+            // Inject the custom scraped eBay HTML description directly
+            const rawDescription = item.fullHtmlDescription || '<div style="text-align:center; padding:50px; color:#555;">NO DESCRIPTION DETAILS COMPILED FOR THIS ITEM.</div>';
+            document.getElementById('modal-description-content').innerHTML = rawDescription;
+
+            const modal = document.getElementById('product-modal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background body crawl
+        }
+
+        // Close Detail View Modal
+        function closeProductModal(event) {
+            if (event && event.target !== document.getElementById('product-modal')) return;
+            const modal = document.getElementById('product-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore body crawl
+            document.getElementById('modal-description-content').innerHTML = ''; // Wipe content out of memory
+        }
+
         async function switchTab(fileName, el) {
-            // Update UI buttons
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             el.classList.add('active');
 
@@ -176,74 +337,49 @@
             container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">SCANNING DATABASE...</div>';
 
             try {
-                // NPW: Pointing to new clean directory structure
                 const folder = fileName === 'inventory.json' ? 'data/brick-collection/' : 'data/diecast/';
                 const response = await fetch(folder + fileName + '?v=' + Date.now());
                 const data = await response.json();
-                const items = data.itemSummaries || [];
+                
+                // Save current elements to reference globally on interaction hooks
+                currentLoadedItems = data.itemSummaries || [];
+                
                 const oldScript = document.getElementById('dynamic-seo');
-        if (oldScript) oldScript.remove();
+                if (oldScript) oldScript.remove();
 
-        // Check if items have the seo_schema we built in Python
-        const schemas = items
-            .map(item => {
-                // Handle different JSON structures from your two sync scripts
-                return item.seo_schema || (item.itemSummaries ? item.itemSummaries.map(s => s.seo_schema) : null);
-            })
-            .flat()
-            .filter(Boolean);
+                const schemas = currentLoadedItems
+                    .map(item => item.seo_schema || (item.itemSummaries ? item.itemSummaries.map(s => s.seo_schema) : null))
+                    .flat()
+                    .filter(Boolean);
 
-        if (schemas.length > 0) {
-            const fullSchema = {
-                "@context": "https://schema.org",
-                "@graph": schemas
-            };
+                if (schemas.length > 0) {
+                    const fullSchema = {
+                        "@context": "https://schema.org",
+                        "@graph": schemas
+                    };
 
-            const script = document.createElement('script');
-            script.id = 'dynamic-seo';
-            script.type = 'application/ld+json';
-            script.text = JSON.stringify(fullSchema);
-            document.head.appendChild(script);
-        }
-        // --- END SEO ENGINE ---
+                    const script = document.createElement('script');
+                    script.id = 'dynamic-seo';
+                    script.type = 'application/ld+json';
+                    script.text = JSON.stringify(fullSchema);
+                    document.head.appendChild(script);
+                }
 
-                if (items.length === 0) {
+                if (currentLoadedItems.length === 0) {
                     container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px;">NO ACTIVE LISTINGS FOUND.</div>';
                     return;
                 }
 
-                container.innerHTML = items.map(item => {
+                container.innerHTML = currentLoadedItems.map(item => {
                     const img = (item.image && item.image.imageUrl) ? item.image.imageUrl : './images/hero-parallax.jpg';
                     const price = item.price ? `$${parseFloat(item.price.value).toFixed(2)}` : 'VIEW ON EBAY';
-                    const url = item.itemAffiliateWebUrl || item.itemWebUrl;
                     
                     const skuColor = fileName === 'inventory.json' ? 'var(--blk-red)' : 'var(--blk-teal)';
                     const skuLabel = fileName === 'inventory.json' ? 'SET' : 'SKU';
 
                     return `
-                        <a href="${url}" target="_blank" class="card-link">
+                        <div class="card-clickable" onclick="openProductModal('${item.itemId}')">
                             <div class="card">
                                 <img src="${img}" class="card-img" alt="${item.title}">
                                 <div class="card-body">
-                                    <div class="card-sku" style="color:${skuColor}">${skuLabel} #${item.itemId.split('|')[1] || 'ACTIVE'}</div>
-                                    <div class="card-title">${item.title}</div>
-                                    <div class="price-tag">${price}</div>
-                                </div>
-                            </div>
-                        </a>
-                    `;
-                }).join('');
-
-            } catch (error) {
-                console.error("Market Load Error:", error);
-                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">ERROR LOADING ' + fileName + '</div>';
-            }
-        }
-
-        // Default Load
-        window.onload = () => {
-            switchTab('inventory.json', document.querySelector('.nav-btn.active'));
-        };
-    </script>
-</body>
-</html>
+                                    <div class="card-
