@@ -17,6 +17,24 @@ IMAGES_ROOT = os.path.join(base_dir, "images")
 
 os.makedirs(DATA_DIR, exist_ok=True)
 
+def load_existing_descriptions():
+    """Load already scraped descriptions to prevent re-fetching and timeouts."""
+    cached_desc = {}
+    for filename in ["inventory.json", "diecast.json"]:
+        file_path = os.path.join(DATA_DIR, filename)
+        if os.path.exists(file_path):
+            try:
+                with open(file_path, "r") as f:
+                    data = json.load(f)
+                    for item in data.get("itemSummaries", []):
+                        raw_id = item.get('legacyItemId')
+                        desc = item.get('fullHtmlDescription')
+                        if raw_id and desc:
+                            cached_desc[raw_id] = desc
+            except:
+                pass
+    return cached_desc
+
 def get_ebay_token():
     client_id = os.environ.get("APP_ID")
     client_secret = os.environ.get("CERT_ID")
@@ -47,6 +65,10 @@ def sync_store_inventory():
     if not token: 
         print("Error: Missing eBay API Tokens.")
         return
+    
+    # Load what we already downloaded previously
+    description_cache = load_existing_descriptions()
+    print(f"Loaded {len(description_cache)} existing descriptions from cache.")
     
     # Querying the entire store directly by seller ID to pull all 96+ items
     url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?filter=sellers:{{{SELLER_ID}}}&limit=100"
@@ -87,7 +109,13 @@ def sync_store_inventory():
             main_img = item.get('image', {}).get('imageUrl')
             item['customGallery'] = item_images + ([main_img] if main_img else [])
             item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}?mkcid=1&mkrid=711-53200-19255-0&campid={CAMPAIGN_ID}&toolid=10001&mkevt=1"
-            item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
+            
+            # Check cache first to avoid hitting Scrape.do timeouts
+            if raw_id in description_cache:
+                item['fullHtmlDescription'] = description_cache[raw_id]
+            else:
+                print(f"Fetching fresh description for item: {raw_id}")
+                item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
 
             # Sorting into clean lists based on branding keywords
             if "LEGO" in title or any(char.isdigit() for char in title): 
