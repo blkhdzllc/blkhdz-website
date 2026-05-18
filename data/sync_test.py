@@ -85,69 +85,77 @@ def sync_store_inventory():
     description_cache = load_existing_descriptions()
     print(f"Cache Status -> Loaded {len(description_cache)} verified descriptions.")
     
-    # HARDENED SPECIFIC TARGETING: Using your brand identifier keyword to safely limit the global search size before seller filtering applies
-    url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q=BLKHDZ&filter=sellers:{{{SELLER_ID}}}&limit=100"
     headers = {"Authorization": f"Bearer {token}"}
+    raw_items = []
     
-    try:
-        response = requests.get(url, headers=headers)
-        all_data = response.json()
+    # DUAL PASS ENGINE: Pass 1 searches for sets/items with numbers, Pass 2 captures diecast terminology
+    search_queries = ["v*", "diecast"]
+    
+    for q_term in search_queries:
+        url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={q_term}&filter=sellers:{{{SELLER_ID}}}&limit=100"
+        try:
+            response = requests.get(url, headers=headers)
+            res_json = response.json()
+            if "itemSummaries" in res_json:
+                raw_items.extend(res_json["itemSummaries"])
+        except Exception as e:
+            print(f"Pass Warning -> Search failed for query '{q_term}': {e}")
+
+    if not raw_items:
+        print("Sync Aborted -> No inventory assets returned from split query passes.")
+        return
+
+    # De-duplicate items captured by both passes
+    unique_items = {item['itemId']: item for item in raw_items}.values()
+
+    lego_items = []
+    diecast_items = []
+    
+    search_pattern = os.path.join(IMAGES_ROOT, "**", "*.*")
+    valid_images = [f for f in glob.glob(search_pattern, recursive=True) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
+
+    for item in unique_items:
+        raw_id = item.get('legacyItemId')
+        title = item.get('title', '').upper().replace("-", "")
         
-        if "itemSummaries" not in all_data:
-            print(f"Sync Aborted -> 'itemSummaries' missing from eBay search data. Full payload received: {all_data}")
-            return
+        item_images = []
+        for img_path in valid_images:
+            img_filename = os.path.basename(img_path).split('_')[0].split('.')[0].upper()
+            if img_filename in title and len(img_filename) > 3:
+                rel_path = os.path.relpath(img_path, base_dir).replace("\\", "/")
+                item_images.append(f"./{rel_path}")
 
-        lego_items = []
-        diecast_items = []
+        item_images.sort(key=lambda x: (not x.lower().endswith('.png'), x))
+        item_images = item_images[:5]
         
-        search_pattern = os.path.join(IMAGES_ROOT, "**", "*.*")
-        valid_images = [f for f in glob.glob(search_pattern, recursive=True) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
-
-        for item in all_data["itemSummaries"]:
-            raw_id = item.get('legacyItemId')
-            title = item.get('title', '').upper().replace("-", "")
-            
-            item_images = []
-            for img_path in valid_images:
-                img_filename = os.path.basename(img_path).split('_')[0].split('.')[0].upper()
-                if img_filename in title and len(img_filename) > 3:
-                    rel_path = os.path.relpath(img_path, base_dir).replace("\\", "/")
-                    item_images.append(f"./{rel_path}")
-
-            item_images.sort(key=lambda x: (not x.lower().endswith('.png'), x))
-            item_images = item_images[:5]
-            
-            main_img = item.get('image', {}).get('imageUrl')
-            item['customGallery'] = item_images + ([main_img] if main_img else [])
-            item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}?mkcid=1&mkrid=711-53200-19255-0&campid={CAMPAIGN_ID}&toolid=10001&mkevt=1"
-            
-            if raw_id in description_cache:
-                item['fullHtmlDescription'] = description_cache[raw_id]
-            else:
-                print(f"Processing -> Fetching fresh description for item: {raw_id}")
-                item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
-
-            if "LEGO" in title or any(char.isdigit() for char in title): 
-                if "DIECAST" not in title and "MINI GT" not in title and "POP RACE" not in title:
-                    lego_items.append(item)
-                    continue
-            diecast_items.append(item)
-
-        # Write clean production JSON files directly
-        inv_path = os.path.join(DATA_DIR, "inventory.json")
-        die_path = os.path.join(DATA_DIR, "diecast.json")
+        main_img = item.get('image', {}).get('imageUrl')
+        item['customGallery'] = item_images + ([main_img] if main_img else [])
+        item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}?mkcid=1&mkrid=711-53200-19255-0&campid={CAMPAIGN_ID}&toolid=10001&mkevt=1"
         
-        with open(inv_path, "w") as f:
-            json.dump({"itemSummaries": lego_items, "total": len(lego_items)}, f, indent=4)
-            
-        with open(die_path, "w") as f:
-            json.dump({"itemSummaries": diecast_items, "total": len(diecast_items)}, f, indent=4)
-            
-        print(f"Sync Complete -> Saved {len(lego_items)} LEGO items to {inv_path}")
-        print(f"Sync Complete -> Saved {len(diecast_items)} Diecast items to {die_path}")
+        if raw_id in description_cache:
+            item['fullHtmlDescription'] = description_cache[raw_id]
+        else:
+            print(f"Processing -> Fetching fresh description for item: {raw_id}")
+            item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
 
-    except Exception as e: 
-        print(f"Sync Critical Failure -> Thread exception encountered: {e}")
+        if "LEGO" in title or any(char.isdigit() for char in title): 
+            if "DIECAST" not in title and "MINI GT" not in title and "POP RACE" not in title:
+                lego_items.append(item)
+                continue
+        diecast_items.append(item)
+
+    # Write clean production JSON files directly
+    inv_path = os.path.join(DATA_DIR, "inventory.json")
+    die_path = os.path.join(DATA_DIR, "diecast.json")
+    
+    with open(inv_path, "w") as f:
+        json.dump({"itemSummaries": lego_items, "total": len(lego_items)}, f, indent=4)
+        
+    with open(die_path, "w") as f:
+        json.dump({"itemSummaries": diecast_items, "total": len(diecast_items)}, f, indent=4)
+        
+    print(f"Sync Complete -> Saved {len(lego_items)} LEGO items to {inv_path}")
+    print(f"Sync Complete -> Saved {len(diecast_items)} Diecast items to {die_path}")
 
 if __name__ == "__main__":
     sync_store_inventory()
