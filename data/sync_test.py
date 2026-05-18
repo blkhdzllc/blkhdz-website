@@ -85,8 +85,8 @@ def sync_store_inventory():
     description_cache = load_existing_descriptions()
     print(f"Cache Status -> Loaded {len(description_cache)} verified descriptions.")
     
-    # HARDENED FIXED API CALL: Appended the mandatory universal keyword parameter 'q=*' to satisfy new security constraints
-    url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q=*&filter=sellers:{{{SELLER_ID}}}&limit=100"
+    # HARDENED SPECIFIC TARGETING: Using your brand identifier keyword to safely limit the global search size before seller filtering applies
+    url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q=BLKHDZ&filter=sellers:{{{SELLER_ID}}}&limit=100"
     headers = {"Authorization": f"Bearer {token}"}
     
     try:
