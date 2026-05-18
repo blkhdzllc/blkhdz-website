@@ -18,7 +18,7 @@
             margin: 0; 
             background-color: var(--blk-bg); 
             color: #fff; 
-            font-family: 'Archivo Black', sans-serif; 
+            font-family: 'Archivo Black', Arial Black, Impact, sans-serif; 
             overflow-x: hidden; 
         }
 
@@ -76,6 +76,10 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .brand-statement {
@@ -85,24 +89,29 @@
             text-transform: uppercase;
             text-shadow: 0 4px 10px rgba(0,0,0,1);
             margin-bottom: 30px;
+            color: #ffffff !important;
+            display: block !important;
+            visibility: visible !important;
         }
 
         .enter-market-btn {
             background: var(--blk-red);
-            color: #fff;
+            color: #fff !important;
             border: none;
             padding: 20px 60px;
-            font-family: 'Archivo Black', sans-serif;
+            font-family: 'Archivo Black', Arial Black, Impact, sans-serif;
             font-size: 1.3rem;
             letter-spacing: 3px;
             cursor: pointer;
             transition: 0.3s ease;
             box-shadow: 0 10px 30px rgba(255,0,0,0.3);
+            display: inline-block !important;
+            visibility: visible !important;
         }
 
         .enter-market-btn:hover {
             background: #fff;
-            color: #000;
+            color: #000 !important;
             transform: scale(1.05);
             box-shadow: 0 10px 40px rgba(255,255,255,0.4);
         }
@@ -150,7 +159,7 @@
             border: none;
             background: none;
             color: #444;
-            font-family: 'Archivo Black', sans-serif;
+            font-family: 'Archivo Black', Arial Black, Impact, sans-serif;
             cursor: pointer;
             transition: 0.3s;
             font-size: 0.9rem;
@@ -286,7 +295,7 @@
             color: #fff;
             text-decoration: none;
             padding: 22px;
-            font-family: 'Archivo Black', sans-serif;
+            font-family: 'Archivo Black', Arial Black, Impact, sans-serif;
             font-size: 1.2rem;
             letter-spacing: 2px;
             transition: 0.3s ease;
@@ -317,7 +326,7 @@
         }
         .trust-panel strong {
             color: #fff;
-            font-family: 'Archivo Black', sans-serif;
+            font-family: 'Archivo Black', Arial Black, Impact, sans-serif;
             letter-spacing: 1px;
             display: block;
             margin-bottom: 5px;
@@ -444,15 +453,6 @@
         let globalDatabaseState = [];
         let activeTargetFile = "inventory.json";
 
-        // Parallax Vector Calculation
-        window.addEventListener('scroll', () => {
-            const hero = document.getElementById('parallax-hero');
-            if (hero && document.getElementById('page-brand').classList.contains('active-page')) {
-                hero.style.transform = `translateY(${window.pageYOffset * 0.3}px)`;
-            }
-        });
-
-        // Navigation Page Dispatcher Routing Function
         function navigateToPage(pageId) {
             document.querySelectorAll('.site-page').forEach(page => {
                 page.classList.remove('active-page');
@@ -461,7 +461,6 @@
             window.scrollTo(0, 0);
         }
 
-        // Switch Catalog Source Data Tab
         function switchCatalogTab(fileName, elementId) {
             activeTargetFile = fileName;
             document.querySelectorAll('.nav-tabs .nav-btn').forEach(btn => btn.classList.remove('active'));
@@ -469,19 +468,16 @@
             loadCatalogDatabase();
         }
 
-        // Compile and Build Catalog Grid View (Page 2)
         async function loadCatalogDatabase() {
             const container = document.getElementById('market-grid');
             container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">SCANNING DATABASE...</div>';
 
             try {
-                // FIXED NPW: Points exactly to your script's output file layout
                 const response = await fetch('data/' + activeTargetFile + '?v=' + Date.now());
                 const data = await response.json();
                 
                 globalDatabaseState = data.itemSummaries || [];
 
-                // Inject Schema Hooks for SEO Engine Tracking
                 const oldScript = document.getElementById('dynamic-seo');
                 if (oldScript) oldScript.remove();
                 const schemas = globalDatabaseState.map(item => item.seo_schema).filter(Boolean);
@@ -526,7 +522,6 @@
             }
         }
 
-        // Build Dynamic Page 3 Product Details Window
         function loadProductDetailView(itemId) {
             const item = globalDatabaseState.find(i => i.itemId === itemId);
             if (!item) return;
