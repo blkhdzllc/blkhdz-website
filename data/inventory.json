@@ -1,1 +1,226 @@
-
+{
+    "itemSummaries": [
+        {
+            "itemId": "v1|117152235497|0",
+            "title": "LEGO 41603 Kylo Ren Star Wars BrickHeadz - Sealed - Shop BLKHDZ Store",
+            "leafCategoryIds": [
+                "19006"
+            ],
+            "categories": [
+                {
+                    "categoryId": "19006",
+                    "categoryName": "LEGO (R) Complete Sets & Packs"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "183446",
+                    "categoryName": "Building Toys"
+                },
+                {
+                    "categoryId": "183447",
+                    "categoryName": "LEGO (R) Building Toys"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/DNsAAeSwAKZp5VSs/s-l225.jpg"
+            },
+            "price": {
+                "value": "34.95",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117152235497%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 239
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/DNsAAeSwAKZp5VSs/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "epid": "9053420534",
+            "itemWebUrl": "https://www.ebay.com/itm/117152235497?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/8H8AAeSw9G5p5VT4/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/UJ4AAeSw7clp5VUS/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/j5YAAeSw-Bhp5VUd/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/6tsAAeSwI-lp5VUp/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/f3gAAeSwxYdp5VU2/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/67YAAeSwaERp5VVL/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/6OkAAeSwQdhp5VVZ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/NoUAAeSweM9p5VTe/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/qd0AAeSwCB9p5VZF/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117152235497",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-19T22:32:31.000Z",
+            "itemCreationDate": "2026-04-19T22:32:31.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US",
+            "customGallery": [
+                "./images/BLKHDZ.png",
+                "https://i.ebayimg.com/images/g/DNsAAeSwAKZp5VSs/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
+        },
+        {
+            "itemId": "v1|117200358950|0",
+            "title": "LOOKSMART Ferrari 499P LSLM196",
+            "leafCategoryIds": [
+                "180506"
+            ],
+            "categories": [
+                {
+                    "categoryId": "180506",
+                    "categoryName": "Contemporary Manufacture"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "222",
+                    "categoryName": "Diecast & Toy Vehicles"
+                },
+                {
+                    "categoryId": "180273",
+                    "categoryName": "Cars, Trucks & Vans"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/BGsAAeSwSdhqCe0U/s-l225.jpg"
+            },
+            "price": {
+                "value": "145.00",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117200358950%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 239
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/BGsAAeSwSdhqCe0U/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/117200358950?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/6eoAAeSw9aNqCe0b/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Op0AAeSw6SNqCe1z/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Y~YAAeSwNylqCe03/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ox0AAeSw7cFqCe05/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/9xoAAeSw0rNqCe06/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/~68AAeSwTpVqCe1C/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/9KoAAeSwo41qCe1T/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/mhMAAeSw9fpqCe1V/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/BfoAAeSweQNqCe1d/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/a08AAeSwgsVqCe1k/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/79QAAeSwYOtqCe1n/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/qnUAAeSwUg1qCe1p/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/bhQAAeSwHpNqCe1r/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/DUcAAeSwQW9qCe1t/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/SkQAAeSwwilqCe2B/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/R2MAAeSwamJqCe2Y/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117200358950",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-05-17T16:40:02.000Z",
+            "itemCreationDate": "2026-05-17T16:40:02.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US",
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/BGsAAeSwSdhqCe0U/s-l225.jpg"
+            ],
+            "fullHtmlDescription": ""
+        }
+    ],
+    "total": 2
+}
