@@ -35,7 +35,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "marketingPrice": {
                 "originalPrice": {
@@ -119,7 +119,7 @@
             "itemOriginDate": "2026-04-29T00:51:26.000Z",
             "itemCreationDate": "2026-04-29T00:51:26.000Z",
             "topRatedBuyingExperience": false,
-            "priorityListing": true,
+            "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
                 "https://i.ebayimg.com/images/g/gk4AAeSwr9dp8nI1/s-l225.jpg"
@@ -161,7 +161,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "condition": "New",
             "conditionId": "1000",
@@ -239,6 +239,115 @@
             "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117134066179?t=1779818779000&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
         },
         {
+            "itemId": "v1|117167378791|0",
+            "title": "Pop Race PR640235 Pandem Toyota GR 86 Silver Removable Hood In Hand",
+            "leafCategoryIds": [
+                "180506"
+            ],
+            "categories": [
+                {
+                    "categoryId": "180506",
+                    "categoryName": "Contemporary Manufacture"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "222",
+                    "categoryName": "Diecast & Toy Vehicles"
+                },
+                {
+                    "categoryId": "180273",
+                    "categoryName": "Cars, Trucks & Vans"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/AGkAAeSwr9dp9K5i/s-l225.jpg"
+            },
+            "price": {
+                "value": "19.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117167378791%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 257
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/AGkAAeSwr9dp9K5i/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "6.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE",
+                "BEST_OFFER"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/117167378791?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/mZwAAeSwQdhp8Wmh/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/aRUAAeSwzdhp8W8l/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TGEAAeSweFVp8W-m/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/wNUAAeSwNw1p8W1J/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/Xx0AAeSwcIBp8Wsd/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RdwAAeSwv5dp8Wyn/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0UgAAeSwZQpp8W2t/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/FUAAAeSwPIZp8W4e/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/zZQAAeSwFbNp8W7u/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ZwkAAeSwhrZp9K51/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117167378791",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-29T02:41:28.000Z",
+            "itemCreationDate": "2026-04-29T02:41:28.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": true,
+            "listingMarketplaceId": "EBAY_US",
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/AGkAAeSwr9dp9K5i/s-l225.jpg"
+            ],
+            "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117167378791?t=1779819306000&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
+        },
+        {
             "itemId": "v1|117134065697|0",
             "title": "POP RACE 1/64 Honda Civic EG6 Pandem V1.5 Idemitsu Infinite PR640212 NEW",
             "leafCategoryIds": [
@@ -273,7 +382,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "condition": "New",
             "conditionId": "1000",
@@ -354,115 +463,6 @@
             "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117134065697?t=0&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
         },
         {
-            "itemId": "v1|117167378791|0",
-            "title": "Pop Race PR640235 Pandem Toyota GR 86 Silver Removable Hood In Hand",
-            "leafCategoryIds": [
-                "180506"
-            ],
-            "categories": [
-                {
-                    "categoryId": "180506",
-                    "categoryName": "Contemporary Manufacture"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "222",
-                    "categoryName": "Diecast & Toy Vehicles"
-                },
-                {
-                    "categoryId": "180273",
-                    "categoryName": "Cars, Trucks & Vans"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/AGkAAeSwr9dp9K5i/s-l225.jpg"
-            },
-            "price": {
-                "value": "19.99",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117167378791%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 256
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/AGkAAeSwr9dp9K5i/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "6.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE",
-                "BEST_OFFER"
-            ],
-            "itemWebUrl": "https://www.ebay.com/itm/117167378791?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/mZwAAeSwQdhp8Wmh/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/aRUAAeSwzdhp8W8l/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/TGEAAeSweFVp8W-m/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/wNUAAeSwNw1p8W1J/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/Xx0AAeSwcIBp8Wsd/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/RdwAAeSwv5dp8Wyn/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/0UgAAeSwZQpp8W2t/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/FUAAAeSwPIZp8W4e/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/zZQAAeSwFbNp8W7u/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ZwkAAeSwhrZp9K51/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117167378791",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-29T02:41:28.000Z",
-            "itemCreationDate": "2026-04-29T02:41:28.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US",
-            "customGallery": [
-                "https://i.ebayimg.com/images/g/AGkAAeSwr9dp9K5i/s-l225.jpg"
-            ],
-            "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117167378791?t=1779819306000&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
-        },
-        {
             "itemId": "v1|117167312661|0",
             "title": "Pop Race PR640226 Porsche Singer DLS Turbo White In Hand Ready To Ship",
             "leafCategoryIds": [
@@ -497,7 +497,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "condition": "New",
             "conditionId": "1000",
@@ -602,7 +602,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "condition": "New",
             "conditionId": "1000",
@@ -728,7 +728,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "condition": "New",
             "conditionId": "1000",
@@ -824,7 +824,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "condition": "New",
             "conditionId": "1000",
@@ -968,7 +968,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "marketingPrice": {
                 "originalPrice": {
@@ -1100,7 +1100,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1215,7 +1215,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1338,7 +1338,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 256
+                "feedbackScore": 257
             },
             "marketingPrice": {
                 "originalPrice": {
