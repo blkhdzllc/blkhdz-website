@@ -10,7 +10,6 @@ SELLER_ID = "reedpb"
 CAMPAIGN_ID = "5339053531" 
 SCRAPE_DO_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
 
-# Production File Target Paths
 base_dir = os.getcwd()
 DATA_DIR = os.path.join(base_dir, "data")
 IMAGES_ROOT = os.path.join(base_dir, "images")
@@ -32,7 +31,7 @@ def load_existing_descriptions():
                     for item in data.get("itemSummaries", []):
                         raw_id = item.get('legacyItemId')
                         desc = item.get('fullHtmlDescription')
-                        if raw_id and desc:
+                        if raw_id and desc and desc.strip():
                             cached_desc[raw_id] = desc
             except Exception as cache_err:
                 print(f"Cache Scan -> Skipping payload from {filename}: {cache_err}")
@@ -56,16 +55,30 @@ def get_ebay_token():
         print(f"API Critical Error -> Connection dropped during Token generation: {token_err}")
         return None
 
-def fetch_full_description(url):
+def fetch_full_description(url, item_id):
+    """Attempts to pull descriptions from the primary listing page or standard container queries."""
     try:
         target_url = f"http://api.scrape.do?token={SCRAPE_DO_TOKEN}&render=true&super_proxy=true&url={url}"
         response = requests.get(target_url, timeout=30)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # Layer 1 Check: Main Description container box
             desc_div = soup.find("div", {"id": "ds_div"})
-            return str(desc_div) if desc_div else ""
+            if desc_div and len(desc_div.text.strip()) > 5:
+                return str(desc_div)
+            
+            # Layer 2 Check: Alternative iframe container lookups
+            iframe_target = soup.find("iframe", {"id": "desc_ifr"})
+            if iframe_target and iframe_target.get("src"):
+                return f'<iframe src="{iframe_target.get("src")}" style="width:100%; min-height:500px; border:none;"></iframe>'
+
+            # Layer 3 Fallback: Generate an embedded layout container referencing the asset cleanly
+            return f'<div style="padding:20px; background:#111; border:1px solid #222; text-align:center;"><p style="margin-bottom:15px;">Specifications indexed. View full live presentation info directly on the marketplace hub.</p><a href="{url}" target="_blank" style="color:#ff0000; text-decoration:underline;">Open Official eBay Description Panel</a></div>'
+            
     except Exception as scrape_err: 
         print(f"Proxy Scan -> Description skipped for URL {url}: {scrape_err}")
+    
     return ""
 
 def sync_store_inventory():
@@ -78,11 +91,9 @@ def sync_store_inventory():
     headers = {"Authorization": f"Bearer {token}"}
     raw_items = []
     
-    # BROAD-SPECTRUM KEYWORD ARRAY: Grabs all toys, sets, or scaled items while bypassing payload limits
     search_queries = ["lego", "diecast", "scale", "gt", "tarmac", "wheels", "car", "pack", "set", "lot"]
     
     for query in search_queries:
-        # Hardcodes limit parameters to maximize collection pull sizes per query request loop
         url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={query}&filter=sellers:{{{SELLER_ID}}}&limit=100"
         try:
             response = requests.get(url, headers=headers)
@@ -96,7 +107,6 @@ def sync_store_inventory():
         print("Sync Interrupted -> No marketplace listings returned matching query arrays.")
         return
 
-    # De-duplicate inventory listings pulled multiple times across separate text query lookups
     unique_items = {item['itemId']: item for item in raw_items}.values()
 
     lego_items = []
@@ -127,7 +137,7 @@ def sync_store_inventory():
             item['fullHtmlDescription'] = description_cache[raw_id]
         else:
             print(f"Processing -> Extracting fresh description details for product ID: {raw_id}")
-            item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
+            item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}", raw_id)
 
         if "LEGO" in title or any(char.isdigit() for char in title): 
             if "DIECAST" not in title and "MINI GT" not in title and "POP RACE" not in title and "TARMAC" not in title:
@@ -138,7 +148,6 @@ def sync_store_inventory():
     inv_path = os.path.join(DATA_DIR, "inventory.json")
     die_path = os.path.join(DATA_DIR, "diecast.json")
     
-    # Always write arrays directly into an explicit "itemSummaries" root dictionary object key
     with open(inv_path, "w") as f:
         json.dump({"itemSummaries": lego_items, "total": len(lego_items)}, f, indent=4)
         
