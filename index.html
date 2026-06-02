@@ -27,6 +27,7 @@
             display: none;
             min-height: 100vh;
             width: 100%;
+            background-color: var(--blk-bg);
         }
         .site-page.active-page {
             display: flex !important;
@@ -176,9 +177,15 @@
             background: #000;
         }
 
-        /* --- PAGE 2: MARKET CATALOG GRID --- */
+        /* --- PAGE 2: MARKET CATALOG GRID (HARDENED GLOBAL RESPONSIVENESS) --- */
         .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; width: 100%; box-sizing: border-box; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; width: 100%; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 30px; 
+            width: 100%; 
+            box-sizing: border-box;
+        }
 
         .card-clickable { cursor: pointer; display: block; height: 100%; text-decoration: none; color: inherit; }
         
@@ -352,20 +359,24 @@
         .disclosure { font-family: sans-serif; font-size: 0.8rem; color: #777; line-height: 1.6; max-width: 700px; margin: 0 auto 30px; }
         .v-badge { color: var(--blk-teal); font-size: 1rem; letter-spacing: 5px; text-transform: uppercase; margin-top: 20px; }
 
+        /* MULTI-WINDOW COLUMN ADJUSTMENTS */
         @media (max-width: 992px) {
             .detail-layout { grid-template-columns: 1fr; gap: 40px; }
             .main-hero-view { height: 350px; }
         }
         @media (max-width: 768px) {
             .market-nav { flex-direction: column; padding: 15px 0; gap: 10px; }
-            .nav-btn { padding: 15px 20px; font-size: 0.8rem; }
+            .nav-btn { padding: 15px 20px; font-size: 0.8rem; letter-spacing: 1px; }
             .detail-title { font-size: 1.6rem; }
             .detail-price-display { font-size: 2rem; }
+            .enter-market-btn { padding: 18px 40px; font-size: 1.1rem; }
+            .magazine-cover { height: auto; min-height: 100vh; padding-bottom: 40px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- PAGE 1: BRAND IDENTITY COVER -->
     <section id="page-brand" class="site-page magazine-cover active-page">
         <div class="hero-bg" id="parallax-hero"></div>
         <div class="cover-content-top">
@@ -385,6 +396,7 @@
         </div>
     </section>
 
+    <!-- PAGE 2: LIVE CATALOG MARKETPLACE -->
     <section id="page-catalog" class="site-page">
         <nav class="market-nav">
             <div class="nav-left-brand" onclick="navigateToPage('page-brand')">BLKHDZ // HUB</div>
@@ -399,6 +411,7 @@
         </div>
     </section>
 
+    <!-- PAGE 3: DYNAMIC PRODUCT DETAILED SHOWCASE -->
     <section id="page-product" class="site-page">
         <nav class="market-nav">
             <div class="nav-left-brand" onclick="navigateToPage('page-catalog')">← BACK TO CATALOG</div>
@@ -452,6 +465,7 @@
         let globalDatabaseState = [];
         let activeTargetFile = "inventory.json";
 
+        // Parallax scroll driver logic
         window.addEventListener('scroll', () => {
             const hero = document.getElementById('parallax-hero');
             if (hero && document.getElementById('page-brand').classList.contains('active-page')) {
@@ -479,6 +493,16 @@
             loadCatalogDatabase();
         }
 
+        // High-definition resolution image parsing filter tool
+        function clearFuzzyImageEncoding(url) {
+            if (!url) return './images/hero-parallax.jpg';
+            if (url.includes('ebayimg.com')) {
+                // Strips miniature size tags like s-l225.jpg and replaces with crystal clear high-def variants
+                return url.replace(/\/s-l\d+\./i, '/s-l500.').replace('_225.', '_500.');
+            }
+            return url;
+        }
+
         async function loadCatalogDatabase() {
             const container = document.getElementById('market-grid');
             if (!container) return;
@@ -488,7 +512,7 @@
                 const response = await fetch('data/' + activeTargetFile + '?v=' + Date.now());
                 const data = await response.json();
                 
-                // FIXED PARSER TUNING: Safely unpacks the array hidden inside the "itemSummaries" parent wrapper
+                // Unwraps target dictionary arrays written by python server script layout templates
                 globalDatabaseState = data.itemSummaries || (Array.isArray(data) ? data : []);
 
                 if (globalDatabaseState.length === 0) {
@@ -497,9 +521,10 @@
                 }
 
                 container.innerHTML = globalDatabaseState.map(item => {
-                    const img = (item.customGallery && item.customGallery.length > 0) ? item.customGallery[0] : ((item.image && item.image.imageUrl) ? item.image.imageUrl : './images/hero-parallax.jpg');
-                    const price = item.price ? `$${parseFloat(item.price.value).toFixed(2)}` : 'VIEW DETAILS';
+                    const rawImg = (item.customGallery && item.customGallery.length > 0) ? item.customGallery[0] : ((item.image && item.image.imageUrl) ? item.image.imageUrl : '');
+                    const clearImg = clearFuzzyImageEncoding(rawImg);
                     
+                    const price = item.price ? `$${parseFloat(item.price.value).toFixed(2)}` : 'VIEW DETAILS';
                     const themeColor = activeTargetFile === 'inventory.json' ? 'var(--blk-red)' : 'var(--blk-teal)';
                     const themeLabel = activeTargetFile === 'inventory.json' ? 'SET' : 'SKU';
                     const splitSku = item.itemId ? (item.itemId.split('|')[1] || 'ACTIVE') : 'ACTIVE';
@@ -507,7 +532,7 @@
                     return `
                         <div class="card-clickable" onclick="loadProductDetailView('${item.itemId}')">
                             <div class="card">
-                                <img src="${img}" class="card-img" alt="${item.title}">
+                                <img src="${clearImg}" class="card-img" alt="${item.title}">
                                 <div class="card-body">
                                     <div class="card-sku" style="color:${themeColor}">${themeLabel} #${splitSku}</div>
                                     <div class="card-title">${item.title}</div>
@@ -551,17 +576,18 @@
             }
 
             const galleryPhotos = item.customGallery || [];
-            const fallbackImg = (item.image && item.image.imageUrl) ? item.image.imageUrl : './images/hero-parallax.jpg';
+            const fallbackImg = (item.image && item.image.imageUrl) ? item.image.imageUrl : '';
             const fullPhotoList = galleryPhotos.length > 0 ? galleryPhotos : [fallbackImg];
 
             const mainView = document.getElementById('product-main-view');
-            mainView.src = fullPhotoList[0];
+            mainView.src = clearFuzzyImageEncoding(fullPhotoList[0]);
 
             const thumbStrip = document.getElementById('product-thumb-strip');
             thumbStrip.innerHTML = fullPhotoList.map((photoUrl, index) => {
+                const crispThumb = clearFuzzyImageEncoding(photoUrl);
                 return `
-                    <div class="thumb-box ${index === 0 ? 'active-thumb' : ''}" onclick="updateMainGalleryView('${photoUrl}', this)">
-                        <img src="${photoUrl}" alt="Gallery Spec ${index}">
+                    <div class="thumb-box ${index === 0 ? 'active-thumb' : ''}" onclick="updateMainGalleryView('${crispThumb}', this)">
+                        <img src="${crispThumb}" alt="Gallery Spec ${index}">
                     </div>
                 `;
             }).join('');
