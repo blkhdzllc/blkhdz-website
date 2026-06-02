@@ -300,7 +300,6 @@
             font-size: 1.2rem;
             letter-spacing: 2px;
             transition: 0.3s ease;
-            box-shadow: none;
         }
         .market-action-btn:hover {
             background: #cc0000;
@@ -468,7 +467,6 @@
             window.scrollTo(0, 0);
         }
 
-        // Dedicated trigger function to safely load assets only after user clicks "Enter Market"
         function openCatalogDisplayState() {
             navigateToPage('page-catalog');
             loadCatalogDatabase();
@@ -490,8 +488,7 @@
                 const response = await fetch('data/' + activeTargetFile + '?v=' + Date.now());
                 const data = await response.json();
                 
-                // HARDENED FALLBACK ENGINE PARSER:
-                // Correctly reads the updated dictionary parent object format or defaults to flat array metrics
+                // FIXED PARSER TUNING: Safely unpacks the array hidden inside the "itemSummaries" parent wrapper
                 globalDatabaseState = data.itemSummaries || (Array.isArray(data) ? data : []);
 
                 if (globalDatabaseState.length === 0) {
@@ -581,10 +578,8 @@
             element.classList.add('active-thumb');
         }
 
-        // Initialize cleanly on Page 1 (Brand Hero Cover) and warm up backend file requests on startup
         window.onload = () => {
             navigateToPage('page-brand');
-            // Silent layout pre-fetch run to completely clear initialization lag
             fetch('data/inventory.json?v=' + Date.now()).catch(() => {});
             fetch('data/diecast.json?v=' + Date.now()).catch(() => {});
         };
