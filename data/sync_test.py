@@ -10,21 +10,39 @@ SELLER_ID = "reedpb"
 CAMPAIGN_ID = "5339053531" 
 SCRAPE_DO_TOKEN = "3687f040467644d5a62797baa02ffba5f13b60e27d5"
 
-# Fixed Production Paths
+# Production File Target Paths
 base_dir = os.getcwd()
 DATA_DIR = os.path.join(base_dir, "data")
-DESC_DIR = os.path.join(DATA_DIR, "descriptions")
 IMAGES_ROOT = os.path.join(base_dir, "images")
 
-print(f"System Check -> Target Data Directory: {DATA_DIR}")
+print(f"System Status -> Root Path: {base_dir}")
+print(f"System Status -> Target Folder: {DATA_DIR}")
+
 os.makedirs(DATA_DIR, exist_ok=True)
-os.makedirs(DESC_DIR, exist_ok=True)
+
+def load_existing_descriptions():
+    """Reads saved descriptions from previous runs to conserve proxy calls."""
+    cached_desc = {}
+    for filename in ["inventory.json", "diecast.json"]:
+        file_path = os.path.join(DATA_DIR, filename)
+        if os.path.exists(file_path):
+            try:
+                with open(file_path, "r") as f:
+                    data = json.load(f)
+                    for item in data.get("itemSummaries", []):
+                        raw_id = item.get('legacyItemId')
+                        desc = item.get('fullHtmlDescription')
+                        if raw_id and desc:
+                            cached_desc[raw_id] = desc
+            except Exception as cache_err:
+                print(f"Cache Scan -> Skipping payload from {filename}: {cache_err}")
+    return cached_desc
 
 def get_ebay_token():
     client_id = os.environ.get("APP_ID")
     client_secret = os.environ.get("CERT_ID")
     if not client_id or not client_secret: 
-        print("API Error -> Environment variables APP_ID or CERT_ID are missing.")
+        print("API Error -> Secrets missing: Verify APP_ID and CERT_ID settings inside GitHub.")
         return None
     auth_str = f"{client_id}:{client_secret}"
     encoded_auth = base64.b64encode(auth_str.encode()).decode()
@@ -35,55 +53,52 @@ def get_ebay_token():
         response = requests.post(url, headers=headers, data=payload)
         return response.json().get("access_token")
     except Exception as token_err: 
-        print(f"API Critical Error -> Failed to connect to eBay Auth: {token_err}")
+        print(f"API Critical Error -> Connection dropped during Token generation: {token_err}")
         return None
 
-def fetch_and_save_description(raw_id):
-    """Fetch description text and save it to an isolated lightweight text file."""
-    file_path = os.path.join(DESC_DIR, f"{raw_id}.html")
-    if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
-        return  # Cached copy looks healthy, preserve it
-
+def fetch_full_description(url):
     try:
-        url = f"https://www.ebay.com/itm/{raw_id}"
         target_url = f"http://api.scrape.do?token={SCRAPE_DO_TOKEN}&render=true&super_proxy=true&url={url}"
         response = requests.get(target_url, timeout=30)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
             desc_div = soup.find("div", {"id": "ds_div"})
-            clean_html = str(desc_div) if desc_div else '<div style="text-align:center; padding:30px;">SPECIFICATIONS RECORDED ON PARENT PLATFORM.</div>'
-            
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(clean_html)
-            print(f"Processing -> Isolated fresh description saved for item: {raw_id}")
+            return str(desc_div) if desc_div else ""
     except Exception as scrape_err: 
-        print(f"Scraper Warning -> Failed to write details for {raw_id}: {scrape_err}")
+        print(f"Proxy Scan -> Description skipped for URL {url}: {scrape_err}")
+    return ""
 
 def sync_store_inventory():
     token = get_ebay_token()
     if not token: 
-        print("Sync Aborted -> Master eBay token generation failed.")
+        print("Sync Interrupted -> Exiting because authentication token is missing.")
         return
     
+    description_cache = load_existing_descriptions()
     headers = {"Authorization": f"Bearer {token}"}
     raw_items = []
-    search_queries = ["1:64", "64", "lego", "gt", "diecast", "scale", "tarmac", "wheels", "car", "pack", "set", "lot"]
     
-    for q_term in search_queries:
-        url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={q_term}&filter=sellers:{{{SELLER_ID}}}&limit=100"
+    # BROAD-SPECTRUM KEYWORD ARRAY: Grabs all toys, sets, or scaled items while bypassing payload limits
+    search_queries = ["lego", "diecast", "scale", "gt", "tarmac", "wheels", "car", "pack", "set", "lot"]
+    
+    for query in search_queries:
+        # Hardcodes limit parameters to maximize collection pull sizes per query request loop
+        url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={query}&filter=sellers:{{{SELLER_ID}}}&limit=100"
         try:
             response = requests.get(url, headers=headers)
             res_json = response.json()
             if "itemSummaries" in res_json:
                 raw_items.extend(res_json["itemSummaries"])
         except Exception as e:
-            print(f"Pass Warning -> Search failed for query target '{q_term}': {e}")
+            print(f"API Loop Warning -> Term processing pass '{query}' hit an execution delay: {e}")
 
     if not raw_items:
-        print("Sync Aborted -> Public marketplace lookup returned zero objects.")
+        print("Sync Interrupted -> No marketplace listings returned matching query arrays.")
         return
 
+    # De-duplicate inventory listings pulled multiple times across separate text query lookups
     unique_items = {item['itemId']: item for item in raw_items}.values()
+
     lego_items = []
     diecast_items = []
     
@@ -108,8 +123,11 @@ def sync_store_inventory():
         item['customGallery'] = item_images + ([main_img] if main_img else [])
         item['itemWebUrl'] = f"https://www.ebay.com/itm/{raw_id}?mkcid=1&mkrid=711-53200-19255-0&campid={CAMPAIGN_ID}&toolid=10001&mkevt=1"
         
-        # Pull description cleanly into its own file path safely
-        fetch_and_save_description(raw_id)
+        if raw_id in description_cache:
+            item['fullHtmlDescription'] = description_cache[raw_id]
+        else:
+            print(f"Processing -> Extracting fresh description details for product ID: {raw_id}")
+            item['fullHtmlDescription'] = fetch_full_description(f"https://www.ebay.com/itm/{raw_id}")
 
         if "LEGO" in title or any(char.isdigit() for char in title): 
             if "DIECAST" not in title and "MINI GT" not in title and "POP RACE" not in title and "TARMAC" not in title:
@@ -120,14 +138,15 @@ def sync_store_inventory():
     inv_path = os.path.join(DATA_DIR, "inventory.json")
     die_path = os.path.join(DATA_DIR, "diecast.json")
     
+    # Always write arrays directly into an explicit "itemSummaries" root dictionary object key
     with open(inv_path, "w") as f:
         json.dump({"itemSummaries": lego_items, "total": len(lego_items)}, f, indent=4)
         
     with open(die_path, "w") as f:
         json.dump({"itemSummaries": diecast_items, "total": len(diecast_items)}, f, indent=4)
         
-    print(f"Sync Complete -> Saved {len(lego_items)} LEGO metadata items to {inv_path}")
-    print(f"Sync Complete -> Saved {len(diecast_items)} Diecast metadata items to {die_path}")
+    print(f"Sync Success -> Saved {len(lego_items)} active LEGO entries directly to {inv_path}")
+    print(f"Sync Success -> Saved {len(diecast_items)} active Diecast entries directly to {die_path}")
 
 if __name__ == "__main__":
     sync_store_inventory()
