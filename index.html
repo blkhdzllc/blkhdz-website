@@ -371,12 +371,17 @@
             .detail-price-display { font-size: 2rem; }
             .enter-market-btn { padding: 18px 40px; font-size: 1.1rem; }
             .magazine-cover { height: auto; min-height: 100vh; padding-bottom: 40px; }
+            
+            /* MOBILE READABILITY BOOST */
+            #product-injected-html .content, #product-injected-html .brief-box, #product-injected-html .manifest-list, #product-injected-html .section-title {
+                font-size: 18px !important;
+                line-height: 1.6 !important;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- PAGE 1: BRAND IDENTITY COVER -->
     <section id="page-brand" class="site-page magazine-cover active-page">
         <div class="hero-bg" id="parallax-hero"></div>
         <div class="cover-content-top">
@@ -396,7 +401,6 @@
         </div>
     </section>
 
-    <!-- PAGE 2: LIVE CATALOG MARKETPLACE -->
     <section id="page-catalog" class="site-page">
         <nav class="market-nav">
             <div class="nav-left-brand" onclick="navigateToPage('page-brand')">BLKHDZ // HUB</div>
@@ -411,7 +415,6 @@
         </div>
     </section>
 
-    <!-- PAGE 3: DYNAMIC PRODUCT DETAILED SHOWCASE -->
     <section id="page-product" class="site-page">
         <nav class="market-nav">
             <div class="nav-left-brand" onclick="navigateToPage('page-catalog')">← BACK TO CATALOG</div>
