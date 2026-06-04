@@ -35,7 +35,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "marketingPrice": {
                 "originalPrice": {
@@ -62,8 +62,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -119,7 +119,7 @@
             "itemOriginDate": "2026-04-29T00:51:26.000Z",
             "itemCreationDate": "2026-04-29T00:51:26.000Z",
             "topRatedBuyingExperience": false,
-            "priorityListing": false,
+            "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
                 "https://i.ebayimg.com/images/g/gk4AAeSwr9dp8nI1/s-l225.jpg"
@@ -161,7 +161,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "condition": "New",
             "conditionId": "1000",
@@ -177,8 +177,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -273,7 +273,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "condition": "New",
             "conditionId": "1000",
@@ -289,8 +289,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -340,12 +340,117 @@
             "itemOriginDate": "2026-04-29T02:41:28.000Z",
             "itemCreationDate": "2026-04-29T02:41:28.000Z",
             "topRatedBuyingExperience": false,
-            "priorityListing": true,
+            "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
                 "https://i.ebayimg.com/images/g/AGkAAeSwr9dp9K5i/s-l225.jpg"
             ],
             "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117167378791?t=1779819306000&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
+        },
+        {
+            "itemId": "v1|117167312661|0",
+            "title": "Pop Race PR640226 Porsche Singer DLS Turbo White In Hand Ready To Ship",
+            "leafCategoryIds": [
+                "180506"
+            ],
+            "categories": [
+                {
+                    "categoryId": "180506",
+                    "categoryName": "Contemporary Manufacture"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "222",
+                    "categoryName": "Diecast & Toy Vehicles"
+                },
+                {
+                    "categoryId": "180273",
+                    "categoryName": "Cars, Trucks & Vans"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/WTsAAeSwKzJp8WCR/s-l225.jpg"
+            },
+            "price": {
+                "value": "19.50",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117167312661%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 258
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/WTsAAeSwKzJp8WCR/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "5.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/117167312661?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/jmcAAeSwwatp8Vsv/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/14cAAeSw1URp8VvM/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RaIAAeSwDgxp8V9A/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/qSUAAeSwPY9p8hx0/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/tYkAAeSwzp1p8V18/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/CZ8AAeSw0t5p8V4T/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/PvkAAeSwqBdp8hxa/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/WHoAAeSwTFBp8WGp/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/EjUAAeSw5D5p8WI4/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117167312661",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-04-29T01:44:13.000Z",
+            "itemCreationDate": "2026-04-29T01:44:13.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US",
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/WTsAAeSwKzJp8WCR/s-l225.jpg"
+            ],
+            "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117167312661?t=1779819238000&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
         },
         {
             "itemId": "v1|117134065697|0",
@@ -382,7 +487,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "condition": "New",
             "conditionId": "1000",
@@ -398,8 +503,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -463,111 +568,6 @@
             "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117134065697?t=0&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
         },
         {
-            "itemId": "v1|117167312661|0",
-            "title": "Pop Race PR640226 Porsche Singer DLS Turbo White In Hand Ready To Ship",
-            "leafCategoryIds": [
-                "180506"
-            ],
-            "categories": [
-                {
-                    "categoryId": "180506",
-                    "categoryName": "Contemporary Manufacture"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "222",
-                    "categoryName": "Diecast & Toy Vehicles"
-                },
-                {
-                    "categoryId": "180273",
-                    "categoryName": "Cars, Trucks & Vans"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/WTsAAeSwKzJp8WCR/s-l225.jpg"
-            },
-            "price": {
-                "value": "19.50",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117167312661%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 257
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/WTsAAeSwKzJp8WCR/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "5.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "itemWebUrl": "https://www.ebay.com/itm/117167312661?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/jmcAAeSwwatp8Vsv/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/14cAAeSw1URp8VvM/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/RaIAAeSwDgxp8V9A/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/qSUAAeSwPY9p8hx0/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/tYkAAeSwzp1p8V18/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/CZ8AAeSw0t5p8V4T/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/PvkAAeSwqBdp8hxa/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/WHoAAeSwTFBp8WGp/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/EjUAAeSw5D5p8WI4/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117167312661",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-04-29T01:44:13.000Z",
-            "itemCreationDate": "2026-04-29T01:44:13.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US",
-            "customGallery": [
-                "https://i.ebayimg.com/images/g/WTsAAeSwKzJp8WCR/s-l225.jpg"
-            ],
-            "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117167312661?t=1779819238000&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
-        },
-        {
             "itemId": "v1|117216669883|0",
             "title": "POP RACE PR640256 NISSAN SKYLINE R33 NISMO GT-R MIDNIGHT PURPLE IN HAND",
             "leafCategoryIds": [
@@ -602,7 +602,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "condition": "New",
             "conditionId": "1000",
@@ -618,8 +618,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -728,7 +728,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "condition": "New",
             "conditionId": "1000",
@@ -744,8 +744,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -824,7 +824,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "condition": "New",
             "conditionId": "1000",
@@ -840,8 +840,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -968,7 +968,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "marketingPrice": {
                 "originalPrice": {
@@ -1100,7 +1100,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1116,8 +1116,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1215,7 +1215,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1231,8 +1231,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-04T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-08T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-05T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-09T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1338,7 +1338,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 257
+                "feedbackScore": 258
             },
             "marketingPrice": {
                 "originalPrice": {
