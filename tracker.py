@@ -1,11 +1,21 @@
 import os
 import json
+import time
 import datetime
 from services.market_intel import get_aggregated_valuation
 
+# --- 1. CONFIGURATION & FRESHNESS CHECK ---
+DATA_PATH = 'data.json'
+MAX_AGE_HOURS = 20
+
+def check_stale_data(filepath, max_age_hours):
+    """Returns True if the file is missing or older than max_age_hours."""
+    if not os.path.exists(filepath):
+        return True
+    file_age_seconds = time.time() - os.path.getmtime(filepath)
+    return file_age_seconds > (max_age_hours * 3600)
 
 # --- 2. RAW INVENTORY DATA ---
-# LEGO DATA: Standardized with your specific shipping dimensions and weights
 LEGO_DATA = [
     {"id": "75274", "name": "Star Wars Helmet Collection (Variation)", "w": 3.2, "b": "14x10x6", "url": "https://www.ebay.com/itm/116951073772", "feat": True, "img": "75274.jpg"},
     {"id": "31167", "name": "Haunted Mansion 3-in-1 Seasonal Set", "w": 3.5, "b": "15x14x3", "url": "https://www.ebay.com/itm/117037598121", "feat": True, "img": "31167.jpg"},
@@ -21,7 +31,6 @@ LEGO_DATA = [
     {"id": "41619", "name": "Brickheadz Darth Vader", "w": 0.4, "b": "5x4x3", "url": "https://www.ebay.com/itm/116928952963", "feat": False, "img": "41619.jpg"}
 ]
 
-# DIECAST DATA: Reflects your cleaned MGT00716 and MGT01046 filenames
 DIECAST_DATA = [
     {"id": "MGT00773-C", "name": "Mazda RX-7 LB-Silhouette #41 [CHASE SET]", "p": 95.00, "stat": "LIMITED CHASE SET", "url": "https://www.ebay.com/itm/117098917766", "feat": True, "img": "MGT00773-C.jpg"},
     {"id": "43SGT25016", "name": "1/43 Spark Honda Civic Type R-GT #16 2025", "p": 134.95, "stat": "PREMIUM 2025 RELEASE", "url": "https://www.ebay.com/itm/117055371825", "feat": True, "img": "43SGT25016.jpg"},
@@ -37,21 +46,20 @@ DIECAST_DATA = [
 
 # --- 3. HARMONIZATION ENGINE ---
 def run_harmonization():
-    # Initialize the output structure
+    if not check_stale_data(DATA_PATH, MAX_AGE_HOURS):
+        print("Data is fresh. Terminating to preserve API credits.")
+        return
+
     output = {
         "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "lego": [],
         "diecast": []
     }
     
-    # Define affiliate string (keep empty if not used yet)
     ebay_affiliate = "" 
 
-    # Process LEGO
     for item in LEGO_DATA:
         price_val = get_aggregated_valuation(item['id'])
-        
-        # SEO Schema Object
         seo_data = {
             "@context": "https://schema.org/",
             "@type": "Product",
@@ -68,22 +76,15 @@ def run_harmonization():
         }
         
         output["lego"].append({
-            "id": item['id'],
-            "name": item['name'],
-            "img": item['img'],
+            "id": item['id'], "name": item['name'], "img": item['img'],
             "price": str(price_val) if isinstance(price_val, str) else f"{price_val:.2f}",
-            "url": item['url'] + ebay_affiliate,
-            "featured": item['feat'],
-            "shipping": f"BOX: {item['b']} | WT: {item['w']} LBS",
-            "seo_schema": seo_data
+            "url": item['url'] + ebay_affiliate, "featured": item['feat'],
+            "shipping": f"BOX: {item['b']} | WT: {item['w']} LBS", "seo_schema": seo_data
         })
 
-    # Process Diecast
     for item in DIECAST_DATA:
-        # Use price in DIECAST_DATA if get_aggregated_valuation returns 0
         val = get_aggregated_valuation(item['id'])
         price_val = val if val != 0 else item['p']
-        
         seo_data = {
             "@context": "https://schema.org/",
             "@type": "Product",
@@ -98,25 +99,18 @@ def run_harmonization():
                 "url": item['url']
             }
         }
-
         output["diecast"].append({
-            "id": item['id'],
-            "name": item['name'],
-            "img": item['img'],
-            "price": f"{price_val:.2f}",
-            "url": item['url'] + ebay_affiliate,
-            "featured": item['feat'],
-            "status": item['stat'],
-            "seo_schema": seo_data
+            "id": item['id'], "name": item['name'], "img": item['img'],
+            "price": f"{price_val:.2f}", "url": item['url'] + ebay_affiliate,
+            "featured": item['feat'], "status": item['stat'], "seo_schema": seo_data
         })
 
-    # Save to data.json
     try:
-        with open('data.json', 'w') as f:
+        with open(DATA_PATH, 'w') as f:
             json.dump(output, f, indent=4)
-        print("Success: data.json has been synchronized.")
+        print(f"Success: {DATA_PATH} has been synchronized.")
     except Exception as e:
-        print(f"Error saving data.json: {e}")
+        print(f"Error saving {DATA_PATH}: {e}")
 
 if __name__ == "__main__":
     run_harmonization()
