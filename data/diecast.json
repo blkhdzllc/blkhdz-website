@@ -35,7 +35,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 263
+                "feedbackScore": 264
             },
             "condition": "New",
             "conditionId": "1000",
@@ -51,8 +51,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-11T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-15T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-13T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -144,7 +144,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 263
+                "feedbackScore": 264
             },
             "condition": "New",
             "conditionId": "1000",
@@ -160,8 +160,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-11T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-15T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-13T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -236,6 +236,114 @@
             "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117216669883?t=0&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=false&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
         },
         {
+            "itemId": "v1|117240364872|0",
+            "title": "POP RACE 1/64 Honda Civic EG6 Pandem V1.5 Idemitsu Infinite PR640212 NEW",
+            "leafCategoryIds": [
+                "180506"
+            ],
+            "categories": [
+                {
+                    "categoryId": "180506",
+                    "categoryName": "Contemporary Manufacture"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "222",
+                    "categoryName": "Diecast & Toy Vehicles"
+                },
+                {
+                    "categoryId": "180273",
+                    "categoryName": "Cars, Trucks & Vans"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/pWIAAeSwzp1p616W/s-l225.jpg"
+            },
+            "price": {
+                "value": "19.50",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117240364872%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 264
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/pWIAAeSwzp1p616W/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "CALCULATED"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/117240364872?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/SpoAAeSwkXJprzWD/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/WA8AAeSwDAJprzai/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/NTEAAeSwD7RprzWZ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/SVcAAeSwtZdprzWc/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/RJ8AAeSw9fpprzXc/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/QJsAAeSwFxxprzY5/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/LNQAAeSwJNBprzZ5/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/flAAAeSwdnFprzaF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/TO0AAeSwwRlprzaQ/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/S7kAAeSwbiZprzaS/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/OBkAAeSwCONprzaU/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/PlwAAeSwKO1przag/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117240364872",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-06-09T18:21:51.000Z",
+            "itemCreationDate": "2026-06-09T18:21:51.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US",
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/pWIAAeSwzp1p616W/s-l225.jpg"
+            ],
+            "fullHtmlDescription": "<div style=\"padding:20px; background:#111; border:1px solid #222; text-align:center;\"><p style=\"margin-bottom:15px;\">Specifications indexed. View full live presentation info directly on the marketplace hub.</p><a href=\"https://www.ebay.com/itm/117240364872\" target=\"_blank\" style=\"color:#ff0000; text-decoration:underline;\">Open Official eBay Description Panel</a></div>"
+        },
+        {
             "itemId": "v1|117167312661|0",
             "title": "Pop Race PR640226 Porsche Singer DLS Turbo White In Hand Ready To Ship",
             "leafCategoryIds": [
@@ -270,7 +378,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 263
+                "feedbackScore": 264
             },
             "condition": "New",
             "conditionId": "1000",
@@ -286,8 +394,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-11T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-15T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-13T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -375,7 +483,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 263
+                "feedbackScore": 264
             },
             "marketingPrice": {
                 "originalPrice": {
@@ -402,8 +510,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-11T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-15T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-13T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -467,6 +575,102 @@
             "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117167261432?t=1779818912000&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=false&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
         },
         {
+            "itemId": "v1|117216709830|0",
+            "title": "Pop Race 1:64 Darwin Pro Supra Black #013 Enigma Exclusive Edition",
+            "leafCategoryIds": [
+                "180506"
+            ],
+            "categories": [
+                {
+                    "categoryId": "180506",
+                    "categoryName": "Contemporary Manufacture"
+                },
+                {
+                    "categoryId": "220",
+                    "categoryName": "Toys & Hobbies"
+                },
+                {
+                    "categoryId": "222",
+                    "categoryName": "Diecast & Toy Vehicles"
+                },
+                {
+                    "categoryId": "180273",
+                    "categoryName": "Cars, Trucks & Vans"
+                }
+            ],
+            "image": {
+                "imageUrl": "https://i.ebayimg.com/images/g/HpIAAeSw0rNqFght/s-l225.jpg"
+            },
+            "price": {
+                "value": "59.99",
+                "currency": "USD"
+            },
+            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117216709830%7C0",
+            "seller": {
+                "username": "reedpb",
+                "feedbackPercentage": "100.0",
+                "feedbackScore": 264
+            },
+            "condition": "New",
+            "conditionId": "1000",
+            "thumbnailImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/HpIAAeSw0rNqFght/s-l1600.jpg"
+                }
+            ],
+            "shippingOptions": [
+                {
+                    "shippingCostType": "FIXED",
+                    "shippingCost": {
+                        "value": "5.99",
+                        "currency": "USD"
+                    },
+                    "minEstimatedDeliveryDate": "2026-06-13T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z"
+                }
+            ],
+            "buyingOptions": [
+                "FIXED_PRICE"
+            ],
+            "itemWebUrl": "https://www.ebay.com/itm/117216709830?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
+            "itemLocation": {
+                "postalCode": "336**",
+                "country": "US"
+            },
+            "additionalImages": [
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/cvAAAeSwvQ9qFgMS/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/04oAAeSwDe5qFlaD/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/0-QAAeSwHNFqFgjF/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/lcUAAeSw5spqFgjr/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/ua0AAeSw6YZqFgh~/s-l225.jpg"
+                },
+                {
+                    "imageUrl": "https://i.ebayimg.com/images/g/acMAAeSwCDZqFleK/s-l225.jpg"
+                }
+            ],
+            "adultOnly": false,
+            "legacyItemId": "117216709830",
+            "availableCoupons": false,
+            "itemOriginDate": "2026-05-26T20:56:47.000Z",
+            "itemCreationDate": "2026-05-26T20:56:47.000Z",
+            "topRatedBuyingExperience": false,
+            "priorityListing": false,
+            "listingMarketplaceId": "EBAY_US",
+            "customGallery": [
+                "https://i.ebayimg.com/images/g/HpIAAeSw0rNqFght/s-l225.jpg"
+            ],
+            "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117216709830?t=0&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
+        },
+        {
             "itemId": "v1|117240363979|0",
             "title": "MINI GT 1/64 Mazda RX-7 LB-Super Silhouette #41 Numero White MGT00773-MJ NEW",
             "leafCategoryIds": [
@@ -501,7 +705,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 263
+                "feedbackScore": 264
             },
             "condition": "New",
             "conditionId": "1000",
@@ -618,7 +822,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 263
+                "feedbackScore": 264
             },
             "condition": "New",
             "conditionId": "1000",
@@ -634,8 +838,8 @@
                         "value": "5.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-11T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-15T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-13T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -730,7 +934,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 263
+                "feedbackScore": 264
             },
             "marketingPrice": {
                 "originalPrice": {
@@ -828,210 +1032,6 @@
             "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117081912634?t=1779819571000&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=false&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
         },
         {
-            "itemId": "v1|117240364872|0",
-            "title": "POP RACE 1/64 Honda Civic EG6 Pandem V1.5 Idemitsu Infinite PR640212 NEW",
-            "leafCategoryIds": [
-                "180506"
-            ],
-            "categories": [
-                {
-                    "categoryId": "180506",
-                    "categoryName": "Contemporary Manufacture"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "222",
-                    "categoryName": "Diecast & Toy Vehicles"
-                },
-                {
-                    "categoryId": "180273",
-                    "categoryName": "Cars, Trucks & Vans"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/pWIAAeSwzp1p616W/s-l225.jpg"
-            },
-            "price": {
-                "value": "19.50",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117240364872%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 263
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/pWIAAeSwzp1p616W/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "CALCULATED"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "itemWebUrl": "https://www.ebay.com/itm/117240364872?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/SpoAAeSwkXJprzWD/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/WA8AAeSwDAJprzai/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/NTEAAeSwD7RprzWZ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/SVcAAeSwtZdprzWc/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/RJ8AAeSw9fpprzXc/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/QJsAAeSwFxxprzY5/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/LNQAAeSwJNBprzZ5/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/flAAAeSwdnFprzaF/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/TO0AAeSwwRlprzaQ/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/S7kAAeSwbiZprzaS/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/OBkAAeSwCONprzaU/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/PlwAAeSwKO1przag/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117240364872",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-06-09T18:21:51.000Z",
-            "itemCreationDate": "2026-06-09T18:21:51.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US",
-            "customGallery": [
-                "https://i.ebayimg.com/images/g/pWIAAeSwzp1p616W/s-l225.jpg"
-            ],
-            "fullHtmlDescription": "<div style=\"padding:20px; background:#111; border:1px solid #222; text-align:center;\"><p style=\"margin-bottom:15px;\">Specifications indexed. View full live presentation info directly on the marketplace hub.</p><a href=\"https://www.ebay.com/itm/117240364872\" target=\"_blank\" style=\"color:#ff0000; text-decoration:underline;\">Open Official eBay Description Panel</a></div>"
-        },
-        {
-            "itemId": "v1|117216709830|0",
-            "title": "Pop Race 1:64 Darwin Pro Supra Black #013 Enigma Exclusive Edition",
-            "leafCategoryIds": [
-                "180506"
-            ],
-            "categories": [
-                {
-                    "categoryId": "180506",
-                    "categoryName": "Contemporary Manufacture"
-                },
-                {
-                    "categoryId": "220",
-                    "categoryName": "Toys & Hobbies"
-                },
-                {
-                    "categoryId": "222",
-                    "categoryName": "Diecast & Toy Vehicles"
-                },
-                {
-                    "categoryId": "180273",
-                    "categoryName": "Cars, Trucks & Vans"
-                }
-            ],
-            "image": {
-                "imageUrl": "https://i.ebayimg.com/images/g/HpIAAeSw0rNqFght/s-l225.jpg"
-            },
-            "price": {
-                "value": "59.99",
-                "currency": "USD"
-            },
-            "itemHref": "https://api.ebay.com/buy/browse/v1/item/v1%7C117216709830%7C0",
-            "seller": {
-                "username": "reedpb",
-                "feedbackPercentage": "100.0",
-                "feedbackScore": 263
-            },
-            "condition": "New",
-            "conditionId": "1000",
-            "thumbnailImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/HpIAAeSw0rNqFght/s-l1600.jpg"
-                }
-            ],
-            "shippingOptions": [
-                {
-                    "shippingCostType": "FIXED",
-                    "shippingCost": {
-                        "value": "5.99",
-                        "currency": "USD"
-                    },
-                    "minEstimatedDeliveryDate": "2026-06-11T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-15T07:00:00.000Z"
-                }
-            ],
-            "buyingOptions": [
-                "FIXED_PRICE"
-            ],
-            "itemWebUrl": "https://www.ebay.com/itm/117216709830?mkcid=1&mkrid=711-53200-19255-0&campid=5339053531&toolid=10001&mkevt=1",
-            "itemLocation": {
-                "postalCode": "336**",
-                "country": "US"
-            },
-            "additionalImages": [
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/cvAAAeSwvQ9qFgMS/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/04oAAeSwDe5qFlaD/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/0-QAAeSwHNFqFgjF/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/lcUAAeSw5spqFgjr/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/ua0AAeSw6YZqFgh~/s-l225.jpg"
-                },
-                {
-                    "imageUrl": "https://i.ebayimg.com/images/g/acMAAeSwCDZqFleK/s-l225.jpg"
-                }
-            ],
-            "adultOnly": false,
-            "legacyItemId": "117216709830",
-            "availableCoupons": false,
-            "itemOriginDate": "2026-05-26T20:56:47.000Z",
-            "itemCreationDate": "2026-05-26T20:56:47.000Z",
-            "topRatedBuyingExperience": false,
-            "priorityListing": false,
-            "listingMarketplaceId": "EBAY_US",
-            "customGallery": [
-                "https://i.ebayimg.com/images/g/HpIAAeSw0rNqFght/s-l225.jpg"
-            ],
-            "fullHtmlDescription": "<iframe src=\"https://itm.ebaydesc.com/itmdesc/117216709830?t=0&category=180506&seller=reedpb&excSoj=1&ver=1&excTrk=1&lsite=0&ittenable=true&domain=ebay.com&descgauge=1&cspheader=1&oneClk=2&secureDesc=1\" style=\"width:100%; min-height:500px; border:none;\"></iframe>"
-        },
-        {
             "itemId": "v1|117098917766|0",
             "title": "MINI GT #773 MAZDA RX-7 LB-SUPER SILHOUETTE NUMERO RESERVE CHASE SET (LOT OF 2)",
             "leafCategoryIds": [
@@ -1066,7 +1066,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 263
+                "feedbackScore": 264
             },
             "condition": "New",
             "conditionId": "1000",
@@ -1082,8 +1082,8 @@
                         "value": "6.99",
                         "currency": "USD"
                     },
-                    "minEstimatedDeliveryDate": "2026-06-11T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-15T07:00:00.000Z"
+                    "minEstimatedDeliveryDate": "2026-06-13T07:00:00.000Z",
+                    "maxEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1181,7 +1181,7 @@
             "seller": {
                 "username": "reedpb",
                 "feedbackPercentage": "100.0",
-                "feedbackScore": 263
+                "feedbackScore": 264
             },
             "marketingPrice": {
                 "originalPrice": {
