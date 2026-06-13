@@ -2,8 +2,7 @@ import os
 import sys
 import json
 
-# Force the current working directory (the root) into the system path
-# This is required so 'services' is recognized as a package
+# Ensure root is in system path so 'services' is found as a package
 sys.path.insert(0, os.getcwd())
 
 from services.ebay_client import get_active_ebay_inventory 
@@ -17,7 +16,6 @@ def run_unified_sync():
     print("Starting Unified Sync...")
     live_inventory = get_active_ebay_inventory()
     
-    # Initialize structure
     output = {"lego": [], "diecast": []}
     
     if isinstance(live_inventory, list):
@@ -37,7 +35,6 @@ def run_unified_sync():
             else:
                 output["diecast"].append(entry)
     
-    # Ensure directory exists and write
     if not os.path.exists(DATA_DIR):
         os.makedirs(DATA_DIR)
         
