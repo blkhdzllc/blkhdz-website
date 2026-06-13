@@ -1,116 +1,66 @@
 import os
 import json
-import time
 import datetime
+import csv
 from services.market_intel import get_aggregated_valuation
+from services.ebay_client import get_active_ebay_inventory 
 
-# --- 1. CONFIGURATION & FRESHNESS CHECK ---
+# --- 1. CONFIGURATION ---
 DATA_PATH = 'data.json'
-MAX_AGE_HOURS = 20
+HISTORY_PATH = 'data/market_history.csv'
 
-def check_stale_data(filepath, max_age_hours):
-    """Returns True if the file is missing or older than max_age_hours."""
-    if not os.path.exists(filepath):
-        return True
-    file_age_seconds = time.time() - os.path.getmtime(filepath)
-    return file_age_seconds > (max_age_hours * 3600)
+def log_historical_data(inventory_list, category):
+    """Appends data to historical CSV for market intelligence."""
+    file_exists = os.path.isfile(HISTORY_PATH)
+    with open(HISTORY_PATH, 'a', newline='') as f:
+        writer = csv.writer(f)
+        if not file_exists:
+            writer.writerow(['date', 'category', 'id', 'name', 'price'])
+        
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d")
+        for item in inventory_list:
+            writer.writerow([timestamp, category, item['id'], item['name'], item['price']])
 
-# --- 2. RAW INVENTORY DATA ---
-LEGO_DATA = [
-    {"id": "75274", "name": "Star Wars Helmet Collection (Variation)", "w": 3.2, "b": "14x10x6", "url": "https://www.ebay.com/itm/116951073772", "feat": True, "img": "75274.jpg"},
-    {"id": "31167", "name": "Haunted Mansion 3-in-1 Seasonal Set", "w": 3.5, "b": "15x14x3", "url": "https://www.ebay.com/itm/117037598121", "feat": True, "img": "31167.jpg"},
-    {"id": "31020", "name": "LEGO Creator Twinblade Adventures", "w": 0.7, "b": "10x7x2", "url": "https://www.ebay.com/itm/117004206278", "feat": False, "img": "31020.jpg"},
-    {"id": "71738", "name": "Ninjago Zane's Titan Mech Battle", "w": 2.8, "b": "14x15x3", "url": "https://www.ebay.com/itm/117058462903", "feat": False, "img": "71738.jpg"},
-    {"id": "31144", "name": "Creator 3-in-1 Exotic Pink Parrot", "w": 0.8, "b": "10x7x2", "url": "https://www.ebay.com/itm/116989698157", "feat": False, "img": "31144.jpg"},
-    {"id": "76015", "name": "Marvel Doc Ock Truck Heist", "w": 0.9, "b": "11x7x2", "url": "https://www.ebay.com/itm/117029953980", "feat": False, "img": "76015.jpg"},
-    {"id": "77247", "name": "Speed Champions Kicks Sauber F1", "w": 0.9, "b": "10x6x3", "url": "https://www.ebay.com/itm/117089969442", "feat": False, "img": "77247.jpg"},
-    {"id": "76295", "name": "Marvel Avengers Helicarrier", "w": 1.9, "b": "15x10x3", "url": "https://www.ebay.com/itm/117007504223", "feat": False, "img": "76295.jpg"},
-    {"id": "76232", "name": "The Marvels: Hoopty Spaceship", "w": 1.8, "b": "15x10x3", "url": "https://www.ebay.com/itm/117038961595", "feat": False, "img": "76232.jpg"},
-    {"id": "60449", "name": "City Off-Road Police Car Chase", "w": 1.6, "b": "11x10x3", "url": "https://www.ebay.com/itm/117070479765", "feat": False, "img": "60449.jpg"},
-    {"id": "30726", "name": "Batman: Bruce Wayne and the Batsuit", "w": 0.6, "b": "7x5x3", "url": "https://www.ebay.com/itm/117076682926", "feat": False, "img": "30726.jpg"},
-    {"id": "41619", "name": "Brickheadz Darth Vader", "w": 0.4, "b": "5x4x3", "url": "https://www.ebay.com/itm/116928952963", "feat": False, "img": "41619.jpg"}
-]
-
-DIECAST_DATA = [
-    {"id": "MGT00773-C", "name": "Mazda RX-7 LB-Silhouette #41 [CHASE SET]", "p": 95.00, "stat": "LIMITED CHASE SET", "url": "https://www.ebay.com/itm/117098917766", "feat": True, "img": "MGT00773-C.jpg"},
-    {"id": "43SGT25016", "name": "1/43 Spark Honda Civic Type R-GT #16 2025", "p": 134.95, "stat": "PREMIUM 2025 RELEASE", "url": "https://www.ebay.com/itm/117055371825", "feat": True, "img": "43SGT25016.jpg"},
-    {"id": "MGT00773-R", "name": "Mazda RX-7 LB-Silhouette #41 [White]", "p": 14.99, "stat": "22 IN STOCK", "url": "https://www.ebay.com/itm/117080910055", "feat": False, "img": "MGT00773-MJ.jpg"},
-    {"id": "PR640255", "name": "Pop Race Mazda RX-7 FD3S RE Amemiya", "p": 28.99, "stat": "POP RACE APPROVED", "url": "https://www.ebay.com/itm/117078677592", "feat": False, "img": "PR640255.jpg"},
-    {"id": "PR640212", "name": "Pop Race Honda Civic EG6 Pandem", "p": 26.99, "stat": "IN STOCK", "url": "https://www.ebay.com/itm/117078703657", "feat": False, "img": "PR640212.jpg"},
-    {"id": "MGT01046", "name": "Mazda RX-7 FD3S RE Amemiya 20B", "p": 14.99, "stat": "IN STOCK", "url": "https://www.ebay.com/itm/117078628407", "feat": False, "img": "MGT01046.jpg"},
-    {"id": "MGT00716", "name": "Cadillac V-Series.R #2 Le Mans Blue", "p": 16.99, "stat": "LIMITED EDITION", "url": "https://www.ebay.com/itm/117081912634", "feat": False, "img": "MGT00716.jpg"},
-    {"id": "TSMV0027", "name": "1/43 Mazda RX-7 LB Silhouette IMSA", "p": 32.00, "stat": "1/43 SCALE", "url": "https://www.ebay.com/itm/117078591872", "feat": False, "img": "TSMV0027.jpg"},
-    {"id": "T64-070-51", "name": "Ferrari 488 GT3 Macau GT Cup #51", "p": 24.95, "stat": "LOW STOCK", "url": "https://www.ebay.com/itm/117056036936", "feat": False, "img": "T64-072-22MGP51.jpg"},
-    {"id": "T64-062-04", "name": "Mercedes-AMG GT3 #4 Bilstein", "p": 22.95, "stat": "LAST ONE", "url": "https://www.ebay.com/itm/117057905289", "feat": False, "img": "T64-062-23NUR04.jpg"}
-]
-
-# --- 3. HARMONIZATION ENGINE ---
+# --- 2. HARMONIZATION ENGINE ---
 def run_harmonization():
-    if not check_stale_data(DATA_PATH, MAX_AGE_HOURS):
-        print("Data is fresh. Terminating to preserve API credits.")
-        return
-
+    # 1. Fetch live inventory from eBay via your authenticated API client
+    # This function should return a list of dictionaries with keys: id, name, url, img
+    live_inventory = get_active_ebay_inventory()
+    
     output = {
         "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "lego": [],
         "diecast": []
     }
     
-    ebay_affiliate = "" 
-
-    for item in LEGO_DATA:
+    # 2. Process and Harmonize
+    for item in live_inventory:
         price_val = get_aggregated_valuation(item['id'])
-        seo_data = {
-            "@context": "https://schema.org/",
-            "@type": "Product",
+        
+        entry = {
+            "id": item['id'],
             "name": item['name'],
-            "image": f"https://www.ebay.com/str/blkhdz/images/{item['img']}", 
-            "sku": item['id'],
-            "offers": {
-                "@type": "Offer",
-                "price": str(price_val) if isinstance(price_val, str) else f"{price_val:.2f}",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "url": item['url']
-            }
+            "img": item['img'],
+            "price": str(price_val) if isinstance(price_val, str) else f"{price_val:.2f}",
+            "url": item['url'],
+            "featured": item.get('feat', False)
         }
         
-        output["lego"].append({
-            "id": item['id'], "name": item['name'], "img": item['img'],
-            "price": str(price_val) if isinstance(price_val, str) else f"{price_val:.2f}",
-            "url": item['url'] + ebay_affiliate, "featured": item['feat'],
-            "shipping": f"BOX: {item['b']} | WT: {item['w']} LBS", "seo_schema": seo_data
-        })
+        # Simple categorization logic based on keywords
+        category = "lego" if "lego" in item['name'].lower() else "diecast"
+        output[category].append(entry)
 
-    for item in DIECAST_DATA:
-        val = get_aggregated_valuation(item['id'])
-        price_val = val if val != 0 else item['p']
-        seo_data = {
-            "@context": "https://schema.org/",
-            "@type": "Product",
-            "name": item['name'],
-            "image": f"https://www.ebay.com/str/blkhdz/images/{item['img']}",
-            "sku": item['id'],
-            "offers": {
-                "@type": "Offer",
-                "price": f"{price_val:.2f}",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "url": item['url']
-            }
-        }
-        output["diecast"].append({
-            "id": item['id'], "name": item['name'], "img": item['img'],
-            "price": f"{price_val:.2f}", "url": item['url'] + ebay_affiliate,
-            "featured": item['feat'], "status": item['stat'], "seo_schema": seo_data
-        })
-
+    # 3. Persistence & History Logging
     try:
         with open(DATA_PATH, 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"Success: {DATA_PATH} has been synchronized.")
+        
+        log_historical_data(output["lego"], "LEGO")
+        log_historical_data(output["diecast"], "DIECAST")
+        print(f"Success: {len(live_inventory)} items synchronized.")
+        
     except Exception as e:
-        print(f"Error saving {DATA_PATH}: {e}")
+        print(f"Error during synchronization: {e}")
 
 if __name__ == "__main__":
     run_harmonization()
