@@ -1,9 +1,11 @@
 import os
-import json
 import sys
+import json
 
-# Force the current directory into the path to ensure 'services' is found
-sys.path.append(os.getcwd())
+# This block forces the root directory to be recognized as the package source
+project_root = os.path.abspath(os.path.dirname(__file__))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 from services.ebay_client import get_active_ebay_inventory 
 from services.market_intel import get_aggregated_valuation
@@ -30,12 +32,14 @@ def run_unified_sync():
                 "url": item.get('url', '#')
             }
             
+            # Categorize
             name_lower = entry['name'].lower()
             if "lego" in name_lower:
                 output["lego"].append(entry)
             else:
                 output["diecast"].append(entry)
     
+    # Ensure directory exists and write
     if not os.path.exists(DATA_DIR):
         os.makedirs(DATA_DIR)
         
