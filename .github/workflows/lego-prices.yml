@@ -27,7 +27,8 @@ jobs:
         env:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
-        run: python sync_unified.py
+        # CORRECTED: Pointing to the data/ folder where your script lives
+        run: python data/sync_unified.py
 
       - name: Generate Sitemap
         run: python generate_sitemap.py
