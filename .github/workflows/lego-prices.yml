@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # Allows manual trigger (M*)
+  workflow_dispatch:
 
 jobs:
   sync:
@@ -27,7 +27,7 @@ jobs:
         env:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
-        # CORRECTED: Pointing to the data/ folder where your script lives
+          PYTHONPATH: .
         run: python data/sync_unified.py
 
       - name: Generate Sitemap
