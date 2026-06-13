@@ -2,10 +2,9 @@ import os
 import sys
 import json
 
-# This block forces the root directory to be recognized as the package source
-project_root = os.path.abspath(os.path.dirname(__file__))
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
+# Force the current working directory (the root) into the system path
+# This is required so 'services' is recognized as a package
+sys.path.insert(0, os.getcwd())
 
 from services.ebay_client import get_active_ebay_inventory 
 from services.market_intel import get_aggregated_valuation
@@ -18,7 +17,7 @@ def run_unified_sync():
     print("Starting Unified Sync...")
     live_inventory = get_active_ebay_inventory()
     
-    # Initialize structure to prevent engine faults
+    # Initialize structure
     output = {"lego": [], "diecast": []}
     
     if isinstance(live_inventory, list):
@@ -32,7 +31,6 @@ def run_unified_sync():
                 "url": item.get('url', '#')
             }
             
-            # Categorize
             name_lower = entry['name'].lower()
             if "lego" in name_lower:
                 output["lego"].append(entry)
