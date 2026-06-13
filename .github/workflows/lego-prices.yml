@@ -27,7 +27,7 @@ jobs:
         env:
           APP_ID: ${{ secrets.APP_ID }}
           CERT_ID: ${{ secrets.CERT_ID }}
-        run: python data/sync_unified.py
+        run: python sync_unified.py
 
       - name: Generate Sitemap
         run: python generate_sitemap.py
@@ -36,6 +36,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
+          git add data/inventory.json
           git commit -m "Automated Inventory & Sitemap Sync" || echo "No changes to commit"
           git push
