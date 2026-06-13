@@ -7,33 +7,45 @@ from services.ebay_client import get_active_ebay_inventory
 
 # --- 1. CONFIGURATION ---
 DATA_PATH = 'data.json'
-HISTORY_PATH = 'data/market_history.csv'
+DATA_DIR = 'data'
+HISTORY_PATH = os.path.join(DATA_DIR, 'market_history.csv')
+
+# Ensure directory exists
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR)
 
 def log_historical_data(inventory_list, category):
-    """Appends data to historical CSV for market intelligence."""
-    file_exists = os.path.isfile(HISTORY_PATH)
-    with open(HISTORY_PATH, 'a', newline='') as f:
-        writer = csv.writer(f)
-        if not file_exists:
-            writer.writerow(['date', 'category', 'id', 'name', 'price'])
-        
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d")
-        for item in inventory_list:
-            writer.writerow([timestamp, category, item['id'], item['name'], item['price']])
+    """Appends data to historical CSV with error isolation."""
+    try:
+        file_exists = os.path.isfile(HISTORY_PATH)
+        with open(HISTORY_PATH, 'a', newline='') as f:
+            writer = csv.writer(f)
+            if not file_exists:
+                writer.writerow(['date', 'category', 'id', 'name', 'price'])
+            
+            timestamp = datetime.datetime.now().strftime("%Y-%m-%d")
+            for item in inventory_list:
+                writer.writerow([timestamp, category, item['id'], item['name'], item['price']])
+    except Exception as e:
+        print(f"Non-critical error logging history: {e}")
 
 # --- 2. HARMONIZATION ENGINE ---
 def run_harmonization():
-    # 1. Fetch live inventory from eBay via your authenticated API client
-    # This function should return a list of dictionaries with keys: id, name, url, img
+    # 1. Fetch live inventory
     live_inventory = get_active_ebay_inventory()
     
+    # 2. Safety Check: Don't overwrite if API failed or returned empty
+    if not live_inventory or not isinstance(live_inventory, list):
+        print("Error: API returned empty or invalid inventory. Aborting to protect store integrity.")
+        return
+
     output = {
         "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "lego": [],
         "diecast": []
     }
     
-    # 2. Process and Harmonize
+    # 3. Process and Harmonize
     for item in live_inventory:
         price_val = get_aggregated_valuation(item['id'])
         
@@ -46,21 +58,20 @@ def run_harmonization():
             "featured": item.get('feat', False)
         }
         
-        # Simple categorization logic based on keywords
         category = "lego" if "lego" in item['name'].lower() else "diecast"
         output[category].append(entry)
 
-    # 3. Persistence & History Logging
+    # 4. Persistence
     try:
         with open(DATA_PATH, 'w') as f:
             json.dump(output, f, indent=4)
         
         log_historical_data(output["lego"], "LEGO")
         log_historical_data(output["diecast"], "DIECAST")
-        print(f"Success: {len(live_inventory)} items synchronized.")
+        print(f"Success: {len(live_inventory)} items synchronized at {output['last_updated']}.")
         
     except Exception as e:
-        print(f"Error during synchronization: {e}")
+        print(f"Critical error during synchronization: {e}")
 
 if __name__ == "__main__":
     run_harmonization()
