@@ -6,8 +6,9 @@ from services.market_intel import get_aggregated_valuation
 from services.ebay_client import get_active_ebay_inventory 
 
 # --- 1. CONFIGURATION ---
-DATA_PATH = 'data.json'
+# Pointing to 'data/' folder so index.html can read the live inventory.json
 DATA_DIR = 'data'
+DATA_PATH = os.path.join(DATA_DIR, 'inventory.json')
 HISTORY_PATH = os.path.join(DATA_DIR, 'market_history.csv')
 
 # Ensure directory exists
