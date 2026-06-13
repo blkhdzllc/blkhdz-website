@@ -1,327 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="fc25e61410ef0ab8" />
-    <title>BLKHDZ | Official Market & Tracker</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    <style>
-        :root { 
-            --blk-red: #ff0000; 
-            --blk-bg: #000000; 
-            --blk-card: #111111; 
-            --blk-teal: #008080; 
-            --blk-muted: #222222;
-            --base-size: clamp(1rem, 0.8rem + 0.5vw, 1.2rem);
-        }
+async function switchTab(fileName, el) {
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+
+    const container = document.getElementById('market-grid');
+    container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">SCANNING DATABASE...</div>';
+
+    try {
+        const response = await fetch('data/inventory.json?v=' + Date.now());
+        const fullData = await response.json();
         
-        body { 
-            margin: 0; 
-            background-color: var(--blk-bg); 
-            color: #fff; 
-            font-family: 'Archivo Black', Arial Black, Impact, sans-serif; 
-            overflow-x: hidden; 
-            font-size: var(--base-size);
-            line-height: 1.6;
+        // Isolate data based on category mapping
+        const isLego = (fileName === 'inventory.json');
+        const items = isLego ? fullData.lego : fullData.diecast;
+
+        if (!items || items.length === 0) {
+            container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px;">NO ACTIVE ENTRIES IN CATEGORY.</div>';
+            return;
         }
 
-        h1 { font-size: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
-        h2 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2.5rem); }
-
-        .site-page {
-            display: none;
-            min-height: 100vh;
-            width: 100%;
-            background-color: var(--blk-bg);
-        }
-        .site-page.active-page {
-            display: flex !important;
-            flex-direction: column;
-        }
-
-        .magazine-cover {
-            position: relative;
-            min-height: 100vh; 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow: visible;
-            border-bottom: 8px solid var(--blk-red);
-            box-sizing: border-box;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 140%; 
-            background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%), 
-                        url('./images/hero-parallax.jpg') center/cover no-repeat;
-            z-index: 1;
-            will-change: transform;
-        }
-
-        .cover-content-top { position: relative; z-index: 10; padding: 40px 5% 0 5%; text-align: center; width: 100%; box-sizing: border-box; }
-        .masthead-logo { width: 100%; max-width: 1200px; height: auto; filter: drop-shadow(0 15px 40px rgba(0,0,0,1)); }
-
-        .cover-content-center {
-            position: relative; z-index: 10; text-align: center; max-width: 800px; margin: auto; padding: 20px;
-            display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; box-sizing: border-box;
-        }
-
-        .brand-statement {
-            font-size: 1.2rem; letter-spacing: 2px; line-height: 1.8; text-transform: uppercase;
-            text-shadow: 0 4px 10px rgba(0,0,0,1); margin-bottom: 40px; color: #ffffff; font-weight: bold;
-        }
-
-        .enter-market-btn {
-            background: var(--blk-red); color: #fff !important; border: none; padding: 22px 65px;
-            font-family: 'Archivo Black', sans-serif; font-size: 1.3rem; letter-spacing: 3px; cursor: pointer;
-            transition: 0.3s ease; box-shadow: 0 10px 30px rgba(255,0,0,0.4); text-transform: uppercase;
-        }
-        .enter-market-btn:hover { background: #fff; color: #000 !important; transform: scale(1.05); }
-
-        .cover-content-bottom { position: relative; z-index: 10; padding: 40px; text-align: center; background: linear-gradient(transparent, rgba(0,0,0,0.9)); width: 100%; box-sizing: border-box; }
-        .tech-badge { font-size: 0.9rem; letter-spacing: 4px; color: #666; }
-
-        .market-nav { display: flex; justify-content: space-between; align-items: center; background: #080808; border-bottom: 2px solid #222; position: sticky; top: 0; z-index: 100; padding: 0 5%; }
-        .nav-left-brand { font-size: 1.2rem; letter-spacing: 2px; color: #fff; cursor: pointer; }
-        .nav-tabs { display: flex; }
-        .nav-btn { padding: 25px 30px; border: none; background: none; color: #444; font-family: 'Archivo Black', sans-serif; cursor: pointer; transition: 0.3s; font-size: 0.9rem; letter-spacing: 2px; }
-        .nav-btn:hover { color: #fff; }
-        .nav-btn.active { color: var(--blk-red); border-bottom: 5px solid var(--blk-red); background: #000; }
-
-        .container { max-width: 1400px; margin: 0 auto; padding: 2rem; width: 95%; box-sizing: border-box; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; width: 100%; box-sizing: border-box; }
-
-        .card-clickable { cursor: pointer; display: block; height: 100%; text-decoration: none; color: inherit; }
-        .card { background: var(--blk-card); border: 1px solid #1a1a1a; transition: 0.4s; height: 100%; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--blk-red); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.8); }
-        .card-img { width: 100%; height: 300px; object-fit: contain; background: #000; padding: 10px; box-sizing: border-box; }
-        .card-body { padding: 25px; flex-grow: 1; }
-        .card-sku { font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 8px; font-family: sans-serif; }
-        .card-title { font-size: 1.1rem; line-height: 1.3; min-height: 3em; margin-bottom: 15px; }
-        .price-tag { font-size: 1.6rem; color: #fff; }
-
-        .detail-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 20px; width: 100%; }
-        .gallery-container { display: flex; flex-direction: column; gap: 20px; }
-        .main-hero-view { width: 100%; height: 500px; background: #050505; border: 1px solid #111; display: flex; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
-        .main-hero-view img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .thumbnail-strip { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
-        .thumb-box { width: 90px; height: 90px; background: var(--blk-card); border: 1px solid #222; cursor: pointer; padding: 5px; box-sizing: border-box; flex-shrink: 0; display: flex; justify-content: center; align-items: center; transition: 0.2s; }
-        .thumb-box:hover, .thumb-box.active-thumb { border-color: var(--blk-red); }
-        .thumb-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-
-        .detail-meta-box { display: flex; flex-direction: column; gap: 25px; }
-        .detail-title { font-size: 2.2rem; line-height: 1.2; letter-spacing: 1px; margin: 0; }
-        .detail-price-display { font-size: 2.8rem; border-bottom: 4px solid var(--blk-muted); padding-bottom: 15px; }
-        .market-action-btn { display: block; text-align: center; background: var(--blk-red); color: #fff; text-decoration: none; padding: 22px; font-family: 'Archivo Black', sans-serif; font-size: 1.2rem; letter-spacing: 2px; transition: 0.3s ease; }
-        .market-action-btn:hover { background: #cc0000; transform: scale(1.02); }
-        .market-action-btn.sold-out { background: var(--blk-muted) !important; color: #555 !important; cursor: not-allowed !important; pointer-events: none; border: 1px solid #333; }
-
-        .trust-panel { background: var(--blk-card); border-left: 4px solid var(--blk-teal); padding: 20px; font-family: sans-serif; font-size: 0.85rem; line-height: 1.6; color: #aaa; }
-        .trust-panel strong { color: #fff; font-family: 'Archivo Black', sans-serif; letter-spacing: 1px; display: block; margin-bottom: 5px; }
-
-        .description-header-title { margin-top: 50px; font-size: 1.5rem; letter-spacing: 2px; border-bottom: 2px solid #111; padding-bottom: 10px; color: #fff; }
-        .description-frame { background: #000; padding: 20px 0; color: #ccc; font-family: sans-serif; line-height: 1.6; }
-
-        footer { text-align: center; padding: 60px 10%; background: #000; border-top: 1px solid #111; width: 100%; box-sizing: border-box; }
-        .disclosure { font-family: sans-serif; font-size: 0.8rem; color: #777; line-height: 1.6; max-width: 700px; margin: 0 auto 30px; }
-        .v-badge { color: var(--blk-teal); font-size: 1rem; letter-spacing: 5px; text-transform: uppercase; margin-top: 20px; }
-
-        @media (max-width: 992px) { .detail-layout { grid-template-columns: 1fr; gap: 40px; } }
-        @media (max-width: 768px) {
-            .market-nav { flex-direction: column; padding: 15px 0; gap: 10px; }
-            .grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-    <section id="page-brand" class="site-page magazine-cover active-page">
-        <div class="hero-bg" id="parallax-hero"></div>
-        <div class="cover-content-top">
-            <img src="./images/BLKHDZ.png" alt="BLKHDZ" class="masthead-logo">
-        </div>
-        <div class="cover-content-center">
-            <div class="brand-statement">
-                Premium Actuations. Authentic Engineering. <br>
-                20 Years of Mission-Critical IT Architecture backing secondary toy and diecast collections.
-            </div>
-            <button class="enter-market-btn" onclick="openCatalogDisplayState()">ENTER MARKET</button>
-        </div>
-        <div class="cover-content-bottom">
-            <div class="tech-badge">SECURED PLATFORM DEPLOYMENT // TAMPA FL</div>
-        </div>
-    </section>
-
-    <section id="page-catalog" class="site-page">
-        <nav class="market-nav">
-            <div class="nav-left-brand" onclick="navigateToPage('page-brand')">BLKHDZ // HUB</div>
-            <div class="nav-tabs">
-                <button class="nav-btn active" id="btn-brick" onclick="switchCatalogTab('inventory.json', 'btn-brick')">BRICK COLLECTION</button>
-                <button class="nav-btn" id="btn-diecast" onclick="switchCatalogTab('diecast.json', 'btn-diecast')">DIECAST CARS</button>
-            </div>
-        </nav>
-        <div class="container">
-            <div id="market-grid" class="grid"></div>
-        </div>
-    </section>
-
-    <section id="page-product" class="site-page">
-        <nav class="market-nav">
-            <div class="nav-left-brand" onclick="navigateToPage('page-catalog')">← BACK TO CATALOG</div>
-            <div class="tech-badge" id="detail-nav-sku">ITEM DISPLAY</div>
-        </nav>
-        <div class="container">
-            <div class="detail-layout">
-                <div class="gallery-container">
-                    <div class="main-hero-view">
-                        <img id="product-main-view" src="./images/hero-parallax.jpg" alt="Product Target View">
-                    </div>
-                    <div class="thumbnail-strip" id="product-thumb-strip"></div>
-                </div>
-                <div class="detail-meta-box">
-                    <div class="detail-sku-tag" id="product-sku-tag" style="color: var(--blk-red);">SET CODE</div>
-                    <h1 class="detail-title" id="product-title-text">LOADING PRODUCT PACKAGES...</h1>
-                    <div class="detail-price-display" id="product-price-text">$0.00</div>
-                    <div class="action-link-box">
-                        <a id="product-action-link" href="#" target="_blank" class="market-action-btn">ACQUIRE FROM EBAY STORE</a>
-                    </div>
-                    <div class="trust-panel" style="border-left-color: var(--blk-teal);">
-                        <strong>BLKHZ Store Warranty & Returns:</strong>
-                        We take pride in the quality of our curated collections. If you are not satisfied, returns are accepted within 30 days of delivery. Please note: items must be returned in their original, unopened condition. Return shipping costs are the responsibility of the buyer. Once the returned item is received and verified, a refund will be issued to the original payment method, excluding the original shipping charges. Mistakes can happen—we are committed to working with you—but please ensure all returns are properly packaged to maintain item integrity.
-                    </div>
-                </div>
-            </div>
-            <div class="description-header-title">OFFICIAL RAW SPECIFICATIONS</div>
-            <div class="description-frame" id="product-injected-html"></div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="disclosure">
-            <strong>Disclosure:</strong> As an eBay Associate, BLKHDZ LLC may earn a commission from qualifying purchases. This helps support the shop at no additional cost to you.
-        </div>
-        <div style="font-size: 0.7rem; opacity: 0.4; letter-spacing: 3px;">&copy; 2026 BLKHDZ LLC</div>
-        <div class="v-badge"><strong>Veteran Owned</strong></div>
-    </footer>
-
-    <script>
-        let globalDatabaseState = [];
-        let activeTargetFile = "inventory.json";
-        window.addEventListener('scroll', () => {
-            const hero = document.getElementById('parallax-hero');
-            if (hero && document.getElementById('page-brand').classList.contains('active-page')) {
-                hero.style.transform = `translateY(${window.pageYOffset * 0.3}px)`;
-            }
-        });
-        function navigateToPage(pageId) {
-            document.querySelectorAll('.site-page').forEach(page => { page.classList.remove('active-page'); });
-            document.getElementById(pageId).classList.add('active-page');
-            window.scrollTo(0, 0);
-        }
-        function openCatalogDisplayState() { navigateToPage('page-catalog'); loadCatalogDatabase(); }
-        function switchCatalogTab(fileName, elementId) {
-            activeTargetFile = fileName;
-            document.querySelectorAll('.nav-tabs .nav-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(elementId).classList.add('active');
-            loadCatalogDatabase();
-        }
-        function clearFuzzyImageEncoding(url) {
-            if (!url) return './images/hero-parallax.jpg';
-            if (url.includes('ebayimg.com')) {
-                return url.replace(/\/s-l\d+\./i, '/s-l500.').replace('_225.', '_500.');
-            }
-            return url;
-        }
-        async function loadCatalogDatabase() {
-            const container = document.getElementById('market-grid');
-            if (!container) return;
-            container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">SCANNING DATABASE...</div>';
-            try {
-                const response = await fetch('data/' + activeTargetFile + '?v=' + Date.now());
-                const data = await response.json();
-                globalDatabaseState = data.itemSummaries || (Array.isArray(data) ? data : []);
-                if (globalDatabaseState.length === 0) {
-                    container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px;">NO ACTIVE STORE ENTRIES DETECTED.</div>';
-                    return;
-                }
-                container.innerHTML = globalDatabaseState.map(item => {
-                    const rawImg = (item.customGallery && item.customGallery.length > 0) ? item.customGallery[0] : ((item.image && item.image.imageUrl) ? item.image.imageUrl : '');
-                    const clearImg = clearFuzzyImageEncoding(rawImg);
-                    const price = item.price ? `$${parseFloat(item.price.value).toFixed(2)}` : 'VIEW DETAILS';
-                    const themeColor = activeTargetFile === 'inventory.json' ? 'var(--blk-red)' : 'var(--blk-teal)';
-                    const themeLabel = activeTargetFile === 'inventory.json' ? 'SET' : 'SKU';
-                    const splitSku = item.itemId ? (item.itemId.split('|')[1] || 'ACTIVE') : 'ACTIVE';
-                    return `
-                        <div class="card-clickable" onclick="loadProductDetailView('${item.itemId}')">
-                            <div class="card">
-                                <img src="${clearImg}" class="card-img" alt="${item.title}">
-                                <div class="card-body">
-                                    <div class="card-sku" style="color:${themeColor}">${themeLabel} #${splitSku}</div>
-                                    <div class="card-title">${item.title}</div>
-                                    <div class="price-tag">${price}</div>
-                                </div>
-                            </div>
+        container.innerHTML = items.map(item => {
+            const price = item.price ? `$${item.price}` : 'VIEW ON EBAY';
+            const skuColor = isLego ? 'var(--blk-red)' : 'var(--blk-teal)';
+            const skuLabel = isLego ? 'SET' : 'SKU';
+            
+            return `
+                <a href="${item.url}" target="_blank" class="card-link">
+                    <div class="card">
+                        <img src="${item.img}" class="card-img" alt="${item.name}">
+                        <div class="card-body">
+                            <div class="card-sku" style="color:${skuColor}">${skuLabel} #${item.id}</div>
+                            <div class="card-title">${item.name}</div>
+                            <div class="price-tag">${price}</div>
                         </div>
-                    `;
-                }).join('');
-            } catch (error) {
-                console.error("Database Engine Fault:", error);
-                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">ERROR LOADING ACTIVE ASSET CATALOG.</div>';
-            }
-        }
-        function loadProductDetailView(itemId) {
-            const item = globalDatabaseState.find(i => i.itemId === itemId);
-            if (!item) return;
-            const themeColor = activeTargetFile === 'inventory.json' ? 'var(--blk-red)' : 'var(--blk-teal)';
-            const themeLabel = activeTargetFile === 'inventory.json' ? 'SET' : 'SKU';
-            const splitSku = item.itemId ? (item.itemId.split('|')[1] || 'ACTIVE') : 'ACTIVE';
-            document.getElementById('detail-nav-sku').innerText = `${themeLabel} #${splitSku}`;
-            document.getElementById('product-sku-tag').innerText = `${themeLabel} #${splitSku}`;
-            document.getElementById('product-sku-tag').style.color = themeColor;
-            document.getElementById('product-title-text').innerText = item.title;
-            const actionBtn = document.getElementById('product-action-link');
-            if (!item.price || parseFloat(item.price.value) <= 0) {
-                document.getElementById('product-price-text').innerText = "SOLD OUT";
-                actionBtn.innerText = "OUT OF STOCK / SOLD OUT";
-                actionBtn.classList.add('sold-out');
-                actionBtn.href = "#";
-            } else {
-                document.getElementById('product-price-text').innerText = `$${parseFloat(item.price.value).toFixed(2)}`;
-                actionBtn.innerText = "ACQUIRE FROM EBAY STORE";
-                actionBtn.classList.remove('sold-out');
-                actionBtn.href = item.itemAffiliateWebUrl || item.itemWebUrl;
-            }
-            const galleryPhotos = item.customGallery || [];
-            const fallbackImg = (item.image && item.image.imageUrl) ? item.image.imageUrl : '';
-            const fullPhotoList = galleryPhotos.length > 0 ? galleryPhotos : [fallbackImg];
-            const mainView = document.getElementById('product-main-view');
-            mainView.src = clearFuzzyImageEncoding(fullPhotoList[0]);
-            const thumbStrip = document.getElementById('product-thumb-strip');
-            thumbStrip.innerHTML = fullPhotoList.map((photoUrl, index) => {
-                const crispThumb = clearFuzzyImageEncoding(photoUrl);
-                return `
-                    <div class="thumb-box ${index === 0 ? 'active-thumb' : ''}" onclick="updateMainGalleryView('${crispThumb}', this)">
-                        <img src="${crispThumb}" alt="Gallery Spec ${index}">
                     </div>
-                `;
-            }).join('');
-            const cleanHtmlContent = item.fullHtmlDescription || '<div style="text-align:center; padding:50px; color:#444;">RAW SOURCE CONTEXT UNCOMPARED OR SPECIFICATIONS NOT YET INDEXED.</div>';
-            document.getElementById('product-injected-html').innerHTML = cleanHtmlContent;
-            navigateToPage('page-product');
-        }
-        function updateMainGalleryView(url, element) {
-            document.getElementById('product-main-view').src = url;
-            document.querySelectorAll('.thumb-box').forEach(box => box.classList.remove('active-thumb'));
-            element.classList.add('active-thumb');
-        }
-        window.onload = () => {
-            navigateToPage('page-brand');
-            fetch('data/inventory.json?v=' + Date.now()).catch(() => {});
-            fetch('data/diecast.json?v=' + Date.now()).catch(() => {});
-        };
-    </script>
-</body>
-</html>
+                </a>
+            `;
+        }).join('');
+    } catch (error) {
+        container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px; color: var(--blk-red);">CATALOG ENGINE FAULT</div>';
+    }
+}
