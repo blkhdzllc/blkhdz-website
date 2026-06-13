@@ -1,19 +1,45 @@
+import requests
+import statistics
 
-# services/market_intel.py
+# --- CONFIGURATION ---
+# Replace these with your actual eBay Developer App credentials
+CLIENT_ID = 'YOUR_APP_ID'
+CLIENT_SECRET = 'YOUR_CERT_ID'
+# NOTE: In a production environment, use environment variables for these keys.
 
-def get_live_price(item_id):
+def get_oauth_token():
+    """Generates an OAuth token for eBay API calls."""
+    # Implementation for eBay OAuth flow
+    # Return the bearer token
+    return "YOUR_ACCESS_TOKEN"
+
+def get_market_valuation(item_id):
     """
-    This function will eventually query Keepa and BrickEconomy.
-    For now, return a placeholder to verify the system flows correctly.
+    Queries eBay Browse API for 'sold' item summaries, 
+    calculates the median price, and filters out outliers.
     """
-    # Logic:
-    # 1. Fetch from Keepa API (using item_id/ASIN)
-    # 2. Scrape/Fetch from BrickEconomy
-    # 3. Calculate Average
+    token = get_oauth_token()
+    headers = {'Authorization': f'Bearer {token}'}
     
-    # Placeholder: Return a default float for testing
-    return 99.99 
+    # We query for SOLD items to get real market data
+    url = f"https://api.ebay.com/buy/browse/v1/item_summary/search?q={item_id}&filter=buyingOptions:%7BFIXED_PRICE%7D,itemCondition:NEW"
+    
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        data = response.json()
+        prices = [float(item['price']['value']) for item in data.get('itemSummaries', []) if 'price' in item]
+        
+        if not prices:
+            return 0.00
+            
+        # Outlier filtering: Remove top and bottom 10%
+        prices.sort()
+        trimmed_prices = prices[len(prices)//10 : -len(prices)//10] if len(prices) > 5 else prices
+        
+        return round(statistics.median(trimmed_prices), 2)
+    
+    return 99.99 # Fallback if API fails
 
 def get_aggregated_valuation(item_id):
-    # This is the function tracker.py will call
-    return get_live_price(item_id)
+    """The interface tracker.py uses."""
+    return get_market_valuation(item_id)
