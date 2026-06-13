@@ -474,7 +474,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-22T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-06-23T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -686,7 +686,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-22T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-06-23T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -1070,7 +1070,7 @@
             "itemOriginDate": "2026-02-15T16:08:46.000Z",
             "itemCreationDate": "2026-02-15T16:08:46.000Z",
             "topRatedBuyingExperience": false,
-            "priorityListing": false,
+            "priorityListing": true,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
                 "https://i.ebayimg.com/images/g/oLMAAeSwir1pQFNu/s-l225.jpg"
@@ -1974,7 +1974,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-22T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-06-23T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -2505,7 +2505,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-22T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-06-23T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -2698,7 +2698,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-22T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-06-23T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -3848,12 +3848,12 @@
             },
             "marketingPrice": {
                 "originalPrice": {
-                    "value": "6.99",
+                    "value": "8.63",
                     "currency": "USD"
                 },
-                "discountPercentage": "14",
+                "discountPercentage": "30",
                 "discountAmount": {
-                    "value": "0.99",
+                    "value": "2.63",
                     "currency": "USD"
                 }
             },
@@ -5038,7 +5038,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-22T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-06-23T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -5756,7 +5756,7 @@
             "itemOriginDate": "2026-04-03T02:18:34.000Z",
             "itemCreationDate": "2026-04-03T02:18:34.000Z",
             "topRatedBuyingExperience": false,
-            "priorityListing": true,
+            "priorityListing": false,
             "listingMarketplaceId": "EBAY_US",
             "customGallery": [
                 "https://i.ebayimg.com/images/g/~rsAAeSwGvhpWNXy/s-l225.jpg"
@@ -5815,7 +5815,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-22T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-06-23T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
@@ -6709,7 +6709,7 @@
                         "currency": "USD"
                     },
                     "minEstimatedDeliveryDate": "2026-06-17T07:00:00.000Z",
-                    "maxEstimatedDeliveryDate": "2026-06-22T07:00:00.000Z"
+                    "maxEstimatedDeliveryDate": "2026-06-23T07:00:00.000Z"
                 }
             ],
             "buyingOptions": [
