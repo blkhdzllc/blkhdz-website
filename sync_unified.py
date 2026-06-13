@@ -2,8 +2,8 @@ import os
 import json
 import sys
 
-# Ensure root is in path so 'services' is found
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# Force the current directory into the path to ensure 'services' is found
+sys.path.append(os.getcwd())
 
 from services.ebay_client import get_active_ebay_inventory 
 from services.market_intel import get_aggregated_valuation
@@ -30,14 +30,12 @@ def run_unified_sync():
                 "url": item.get('url', '#')
             }
             
-            # Categorize
             name_lower = entry['name'].lower()
             if "lego" in name_lower:
                 output["lego"].append(entry)
             else:
                 output["diecast"].append(entry)
     
-    # Write to disk
     if not os.path.exists(DATA_DIR):
         os.makedirs(DATA_DIR)
         
