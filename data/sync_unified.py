@@ -1,5 +1,10 @@
 import os
 import json
+import sys
+
+# Ensure root is in path so 'services' is found
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from services.ebay_client import get_active_ebay_inventory 
 from services.market_intel import get_aggregated_valuation
 
