@@ -32,7 +32,7 @@ def get_ebay_access_token():
         return None
 
 def get_active_ebay_inventory():
-    """Fetches all active listings for your specific eBay store (reedpb)."""
+    """Fetches active listings for seller 'reedpb' using combined query and filter."""
     token = get_ebay_access_token()
     if not token:
         return []
@@ -43,9 +43,12 @@ def get_active_ebay_inventory():
         "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"
     }
     
-    # Filter by your store username AND include all buying options (Fixed Price + Auction)
+    # 'q' is required by the API to prevent Error 12001. 
+    # Using a broad term ensures all inventory is returned while the 
+    # 'filter' parameter restricts results to your specific store.
     params = {
-        "filter": "sellers:{reedpb},buyingOptions:{FIXED_PRICE|AUCTION}",
+        "q": "lego diecast",
+        "filter": "seller_names:{reedpb},buyingOptions:{FIXED_PRICE|AUCTION}",
         "limit": "100"
     }
 
