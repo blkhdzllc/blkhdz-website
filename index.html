@@ -23,7 +23,8 @@
 
         .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
         #market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: var(--blk-card); border: 1px solid #1a1a1a; padding: 20px; }
+        .card { background: var(--blk-card); border: 1px solid #1a1a1a; padding: 20px; transition: 0.3s; }
+        .card:hover { border-color: var(--blk-red); }
         .card-img { width: 100%; height: 250px; object-fit: contain; }
         .price-tag { font-size: 1.5rem; color: #fff; margin-top: 10px; }
         footer { text-align: center; padding: 40px; border-top: 1px solid #111; }
@@ -42,8 +43,8 @@
 
     <section id="page-market" class="site-page">
         <nav class="market-nav">
-            <button class="nav-btn active" onclick="switchTab('inventory.json', this)">LEGO INVENTORY</button>
-            <button class="nav-btn" onclick="switchTab('diecast.json', this)">DIECAST CARS</button>
+            <button class="nav-btn active" onclick="switchTab('lego', this)">LEGO</button>
+            <button class="nav-btn" onclick="switchTab('diecast', this)">DIECAST</button>
         </nav>
         <div class="container">
             <div id="market-grid"></div>
@@ -54,19 +55,25 @@
         function showMarket() {
             document.getElementById('page-cover').classList.remove('active');
             document.getElementById('page-market').classList.add('active');
-            switchTab('inventory.json', document.querySelector('.nav-btn'));
+            // Trigger load for the default category
+            switchTab('lego', document.querySelector('.nav-btn'));
         }
 
-        async function switchTab(fileName, el) {
+        async function switchTab(category, el) {
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             el.classList.add('active');
+            
             const container = document.getElementById('market-grid');
             container.innerHTML = 'SCANNING...';
+            
             try {
+                // Always fetch the single unified inventory file
                 const response = await fetch('data/inventory.json?v=' + Date.now());
                 const fullData = await response.json();
-                const isLego = (fileName === 'inventory.json');
-                const items = isLego ? fullData.lego : fullData.diecast;
+                
+                // Pull specifically from the category ('lego' or 'diecast')
+                const items = fullData[category] || [];
+                
                 container.innerHTML = items.map(item => `
                     <a href="${item.url}" target="_blank" style="text-decoration:none; color:inherit;">
                         <div class="card">
@@ -78,7 +85,10 @@
                         </div>
                     </a>
                 `).join('');
-            } catch (e) { container.innerHTML = 'CATALOG ENGINE FAULT'; }
+            } catch (e) { 
+                console.error(e);
+                container.innerHTML = 'CATALOG ENGINE FAULT'; 
+            }
         }
     </script>
     <footer><div class="v-badge"><strong>Veteran Owned</strong></div></footer>
