@@ -1,46 +1,46 @@
+import json
 import os
 import sys
-import json
 
-# Ensure root is in system path so 'services' is found as a package
-sys.path.insert(0, os.getcwd())
+# Ensure we can import from our services
+sys.path.append(os.getcwd())
+from services.ebay_client import get_active_ebay_inventory
 
-from services.ebay_client import get_active_ebay_inventory 
-from services.market_intel import get_aggregated_valuation
-
-# Configuration
-DATA_DIR = 'data'
-DATA_PATH = os.path.join(DATA_DIR, 'inventory.json')
-
-def run_unified_sync():
-    print("Starting Unified Sync...")
-    live_inventory = get_active_ebay_inventory()
+def sync_inventory():
+    print("Starting sync_unified process...")
     
-    output = {"lego": [], "diecast": []}
+    # 1. Fetch raw items from your eBay service
+    raw_items = get_active_ebay_inventory()
+    print(f"Total items fetched from eBay: {len(raw_items)}")
     
-    if isinstance(live_inventory, list):
-        for item in live_inventory:
-            price_val = get_aggregated_valuation(item.get('id', ''))
-            entry = {
-                "id": item.get('id', 'N/A'),
-                "name": item.get('name', 'Unknown Item'),
-                "img": item.get('img', ''),
-                "price": str(price_val),
-                "url": item.get('url', '#')
-            }
-            
-            name_lower = entry['name'].lower()
-            if "lego" in name_lower:
-                output["lego"].append(entry)
-            else:
-                output["diecast"].append(entry)
+    # 2. Initialize the structure
+    unified_data = {
+        "lego": [],
+        "diecast": []
+    }
     
-    if not os.path.exists(DATA_DIR):
-        os.makedirs(DATA_DIR)
+    # 3. Categorization logic
+    # We check the title for keywords to sort them
+    for item in raw_items:
+        title = item.get('title', '').lower()
         
-    with open(DATA_PATH, 'w') as f:
-        json.dump(output, f, indent=4)
-    print(f"Sync complete. LEGO: {len(output['lego'])}, Diecast: {len(output['diecast'])}")
+        # Simple keyword-based sorting
+        if any(keyword in title for keyword in ['lego', 'star wars', 'ninjago', 'technic', 'speed champions']):
+            unified_data["lego"].append(item)
+        else:
+            # Everything else currently defaults to diecast
+            unified_data["diecast"].append(item)
+            
+    # 4. Save to the file
+    output_path = os.path.join('data', 'inventory.json')
+    
+    # Ensure data directory exists
+    os.makedirs('data', exist_ok=True)
+    
+    with open(output_path, 'w') as f:
+        json.dump(unified_data, f, indent=4)
+        
+    print(f"Sync complete. LEGO: {len(unified_data['lego'])}, Diecast: {len(unified_data['diecast'])}")
 
 if __name__ == "__main__":
-    run_unified_sync()
+    sync_inventory()
