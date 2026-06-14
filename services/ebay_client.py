@@ -1,37 +1,46 @@
 import os
 import requests
+import base64
+
+def get_ebay_access_token():
+    """Generates an OAuth token using App ID and Cert ID."""
+    app_id = os.environ.get('APP_ID')
+    cert_id = os.environ.get('CERT_ID')
+    
+    # Encode credentials for the Basic Auth header
+    credentials = f"{app_id}:{cert_id}"
+    encoded_credentials = base64.b64encode(credentials.encode()).decode()
+    
+    url = "https://api.ebay.com/identity/v1/oauth2/token"
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": f"Basic {encoded_credentials}"
+    }
+    data = {"grant_type": "client_credentials", "scope": "https://api.ebay.com/oauth/api_scope"}
+    
+    response = requests.post(url, headers=headers, data=data)
+    if response.status_code == 200:
+        return response.json().get('access_token')
+    else:
+        print(f"Token Error {response.status_code}: {response.text}")
+        return None
 
 def get_active_ebay_inventory():
-    """
-    Fetches active inventory from the eBay API.
-    """
-    app_id = os.environ.get('APP_ID')
-    # Note: Using your app_id to authorize the request
-    
-    # This is the standard endpoint for pulling your active listings
-    # Replace the query parameters as needed for your specific store/category
-    url = "https://api.ebay.com/buy/browse/v1/item_summary/search"
-    
-    headers = {
-        "X-EBAY-C-ENDUSERCTX": "affiliateCampaignId=<YOUR_ID>,affiliateReferenceId=<YOUR_ID>",
-        "X-EBAY-C-MARKETPLACE-ID": "EBAY_US",
-        "Authorization": f"Bearer {app_id}" 
-    }
-    
-    params = {
-        "q": "lego", # Adjust this search query as needed
-        "limit": "20"
-    }
+    """Fetches items using a dynamically generated token."""
+    token = get_ebay_access_token()
+    if not token:
+        return []
 
-    try:
-        response = requests.get(url, headers=headers, params=params)
-        if response.status_code == 200:
-            data = response.json()
-            # Adjust the key path (e.g., 'itemSummaries') based on your previous working structure
-            return data.get('itemSummaries', [])
-        else:
-            print(f"API Error {response.status_code}: {response.text}")
-            return []
-    except Exception as e:
-        print(f"Request failed: {e}")
+    url = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"
+    }
+    params = {"q": "lego", "limit": "20"}
+
+    response = requests.get(url, headers=headers, params=params)
+    if response.status_code == 200:
+        return response.json().get('itemSummaries', [])
+    else:
+        print(f"API Error {response.status_code}: {response.text}")
         return []
