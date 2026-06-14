@@ -7,27 +7,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <style>
         :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; --blk-teal: #008080; }
-        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Archivo Black', sans-serif; overflow-x: hidden; }
+        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Archivo Black', sans-serif; }
         
         .site-page { display: none; min-height: 100vh; }
         .site-page.active { display: flex; flex-direction: column; }
 
         .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%), url('./images/hero-parallax.jpg') center/cover no-repeat; z-index: 1; }
-        .cover-content { position: relative; z-index: 10; text-align: center; }
+        .cover-content { position: relative; z-index: 10; text-align: center; padding-top: 20vh; }
         .enter-btn { background: var(--blk-red); color: #fff; border: none; padding: 20px 50px; font-family: inherit; cursor: pointer; font-size: 1.2rem; margin-top: 30px; }
 
-        .market-nav { display: flex; justify-content: center; background: #080808; border-bottom: 2px solid #222; padding: 20px 0; }
-        .nav-btn { padding: 15px 30px; border: none; background: none; color: #444; font-family: inherit; cursor: pointer; }
+        .market-nav { display: flex; justify-content: center; background: #080808; border-bottom: 2px solid var(--blk-red); padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+        .nav-btn { padding: 15px 30px; border: none; background: none; color: #444; font-family: inherit; cursor: pointer; font-size: 1rem; }
         .nav-btn.active { color: var(--blk-red); border-bottom: 3px solid var(--blk-red); }
 
         .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
         #market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: var(--blk-card); border: 1px solid #1a1a1a; padding: 20px; transition: 0.3s; }
+        .card { background: var(--blk-card); border: 1px solid #1a1a1a; padding: 20px; transition: 0.3s; display: flex; flex-direction: column; }
         .card:hover { border-color: var(--blk-red); }
         .card-img { width: 100%; height: 250px; object-fit: contain; }
-        .price-tag { font-size: 1.5rem; color: #fff; margin-top: 10px; }
-        footer { text-align: center; padding: 40px; border-top: 1px solid #111; }
-        .v-badge { color: var(--blk-teal); text-transform: uppercase; margin-top: 20px; }
+        .card-body h3 { font-size: 0.9rem; margin: 15px 0; height: 3em; overflow: hidden; }
+        .description { font-size: 0.8rem; color: #888; margin-bottom: 15px; font-family: sans-serif; }
+        .price-tag { font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
+        .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 10px; text-decoration: none; font-size: 0.8rem; }
+        
+        footer { text-align: center; padding: 40px; border-top: 1px solid #111; color: var(--blk-teal); }
     </style>
 </head>
 <body>
@@ -35,14 +38,16 @@
     <section id="page-cover" class="site-page active">
         <div class="hero-bg"></div>
         <div class="cover-content">
-            <img src="./images/BLKHDZ.png" alt="BLKHDZ" style="max-width: 800px; width: 90%;">
+            <img src="./images/BLKHDZ.png" alt="BLKHDZ" style="max-width: 600px; width: 90%;">
             <button class="enter-btn" onclick="showMarket()">ENTER MARKET</button>
         </div>
     </section>
 
     <section id="page-market" class="site-page">
         <nav class="market-nav">
-            <button class="nav-btn active" onclick="loadInventory()">INVENTORY</button>
+            <button class="nav-btn active" onclick="switchTab('all', this)">ALL</button>
+            <button class="nav-btn" onclick="switchTab('lego', this)">LEGO</button>
+            <button class="nav-btn" onclick="switchTab('diecast', this)">DIECAST</button>
         </nav>
         <div class="container">
             <div id="market-grid"></div>
@@ -50,46 +55,49 @@
     </section>
 
     <script>
+        let cachedItems = [];
+
         function showMarket() {
             document.getElementById('page-cover').classList.remove('active');
             document.getElementById('page-market').classList.add('active');
-            loadInventory();
+            switchTab('all');
         }
 
-        async function loadInventory() {
+        async function switchTab(category, el) {
+            if (el) {
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                el.classList.add('active');
+            }
+            
             const container = document.getElementById('market-grid');
             container.innerHTML = 'SCANNING...';
             
-            try {
-                // Fetch the unified inventory file
+            if (cachedItems.length === 0) {
                 const response = await fetch('./data/inventory.json?v=' + Date.now());
                 const fullData = await response.json();
-                
-                // Accessing the 'itemSummaries' key found in your JSON
-                const items = fullData.itemSummaries || [];
-                
-                if (items.length === 0) {
-                    container.innerHTML = 'No items found.';
-                    return;
-                }
-
-                container.innerHTML = items.map(item => `
-                    <a href="${item.itemWebUrl}" target="_blank" style="text-decoration:none; color:inherit;">
-                        <div class="card">
-                            <img src="${item.image ? item.image.imageUrl : ''}" class="card-img" alt="${item.title}">
-                            <div class="card-body">
-                                <div>${item.title}</div>
-                                <div class="price-tag">$${item.price ? item.price.value : '0.00'}</div>
-                            </div>
-                        </div>
-                    </a>
-                `).join('');
-            } catch (e) { 
-                console.error(e);
-                container.innerHTML = 'CATALOG ENGINE FAULT'; 
+                cachedItems = fullData.itemSummaries || [];
             }
+
+            let filtered = cachedItems;
+            if (category === 'lego') {
+                filtered = cachedItems.filter(i => i.title.toLowerCase().includes('lego'));
+            } else if (category === 'diecast') {
+                filtered = cachedItems.filter(i => !i.title.toLowerCase().includes('lego'));
+            }
+
+            container.innerHTML = filtered.map(item => `
+                <div class="card">
+                    <img src="${item.image ? item.image.imageUrl : ''}" class="card-img" alt="${item.title}">
+                    <div class="card-body">
+                        <h3>${item.title}</h3>
+                        <p class="description">Mission Logistics: Item ready for secure deployment.</p>
+                        <div class="price-tag">$${item.price ? item.price.value : '0.00'}</div>
+                        <a href="${item.itemWebUrl}" target="_blank" class="buy-btn">SECURE ITEM</a>
+                    </div>
+                </div>
+            `).join('');
         }
     </script>
-    <footer><div class="v-badge"><strong>Veteran Owned</strong></div></footer>
+    <footer><strong>Veteran Owned</strong></footer>
 </body>
 </html>
