@@ -47,35 +47,47 @@
         </div>
     </section>
     <script>
-        let cachedItems = [];
+        let cachedData = {}; 
+
         async function showMarket() {
             document.getElementById('page-cover').classList.remove('active');
             document.getElementById('page-market').classList.add('active');
             await loadData();
             switchTab('all');
         }
+
         async function loadData() {
-            if (cachedItems.length === 0) {
+            if (Object.keys(cachedData).length === 0) {
                 const response = await fetch('./data/inventory.json?v=' + Date.now());
-                const fullData = await response.json();
-                cachedItems = fullData.itemSummaries || [];
+                cachedData = await response.json();
             }
         }
+
         async function switchTab(category, el) {
             if (el) {
                 document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
                 el.classList.add('active');
             }
             await loadData();
+            
             const container = document.getElementById('market-grid');
             container.innerHTML = 'SCANNING...';
-            let filtered = cachedItems;
-            if (category === 'lego') {
-                filtered = cachedItems.filter(i => i.title.toLowerCase().includes('lego'));
+            
+            let itemsToShow = [];
+            if (category === 'all') {
+                itemsToShow = [...(cachedData.lego || []), ...(cachedData.diecast || [])];
+            } else if (category === 'lego') {
+                itemsToShow = cachedData.lego || [];
             } else if (category === 'diecast') {
-                filtered = cachedItems.filter(i => !i.title.toLowerCase().includes('lego'));
+                itemsToShow = cachedData.diecast || [];
             }
-            container.innerHTML = filtered.map(item => `
+
+            if (itemsToShow.length === 0) {
+                container.innerHTML = '<p style="text-align:center; width:100%;">No items found in this category.</p>';
+                return;
+            }
+
+            container.innerHTML = itemsToShow.map(item => `
                 <div class="card">
                     <img src="${item.image ? item.image.imageUrl : ''}" class="card-img" alt="${item.title}">
                     <div class="card-body">
