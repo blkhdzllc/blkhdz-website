@@ -2,45 +2,55 @@ import json
 import os
 import sys
 
-# Ensure we can import from our services
+# Ensure the root directory is in the path to allow imports from /services
 sys.path.append(os.getcwd())
+
+# Import the inventory fetcher from your services folder
 from services.ebay_client import get_active_ebay_inventory
 
 def sync_inventory():
+    """
+    Main function to sync eBay items into a unified JSON structure
+    for the BLKHDZ website.
+    """
     print("Starting sync_unified process...")
     
-    # 1. Fetch raw items from your eBay service
+    # Fetch active items from eBay via your ebay_client
     raw_items = get_active_ebay_inventory()
     print(f"Total items fetched from eBay: {len(raw_items)}")
     
-    # 2. Initialize the structure
-    unified_data = {
-        "lego": [],
-        "diecast": []
-    }
+    # Categorize items into 'lego' and 'diecast'
+    # We filter based on the title containing 'lego'
+    lego_items = []
+    diecast_items = []
     
-    # 3. Categorization logic
-    # We check the title for keywords to sort them
     for item in raw_items:
         title = item.get('title', '').lower()
-        
-        # Simple keyword-based sorting
-        if any(keyword in title for keyword in ['lego', 'star wars', 'ninjago', 'technic', 'speed champions']):
-            unified_data["lego"].append(item)
+        if 'lego' in title:
+            lego_items.append(item)
         else:
-            # Everything else currently defaults to diecast
-            unified_data["diecast"].append(item)
+            diecast_items.append(item)
             
-    # 4. Save to the file
-    output_path = os.path.join('data', 'inventory.json')
+    # Structure for the website
+    unified_data = {
+        "lego": lego_items,
+        "diecast": diecast_items
+    }
     
-    # Ensure data directory exists
+    # Prepare the output directory
+    output_path = os.path.join('data', 'inventory.json')
     os.makedirs('data', exist_ok=True)
     
+    # Write to the file
     with open(output_path, 'w') as f:
         json.dump(unified_data, f, indent=4)
         
-    print(f"Sync complete. LEGO: {len(unified_data['lego'])}, Diecast: {len(unified_data['diecast'])}")
+    # Verify file was written
+    if os.path.exists(output_path):
+        size = os.path.getsize(output_path)
+        print(f"File written successfully. Size: {size} bytes.")
+    
+    print(f"Sync complete. LEGO: {len(lego_items)}, Diecast: {len(diecast_items)}")
 
 if __name__ == "__main__":
     sync_inventory()
