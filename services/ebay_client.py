@@ -40,10 +40,10 @@ def get_active_ebay_inventory():
         "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"
     }
     
-    # category_ids=0 acts as a wildcard to get your whole store
-    # sellers:{reedpb} ensures NO ONE else's data is pulled
+    # q=(...) performs an OR search across these keywords to satisfy the API
+    # filter=sellers:{reedpb} STRICTLY isolates the results to your account
     params = {
-        "category_ids": "0",
+        "q": "(lego,diecast,hot wheels,matchbox,car,truck,vehicle)",
         "filter": "sellers:{reedpb},buyingOptions:{FIXED_PRICE|AUCTION}",
         "limit": "100"
     }
