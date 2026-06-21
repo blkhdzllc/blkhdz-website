@@ -1,6 +1,7 @@
 import os
 import requests
 import base64
+import urllib.parse
 
 def get_ebay_access_token():
     app_id = os.environ.get('APP_ID')
@@ -29,12 +30,12 @@ def get_ebay_access_token():
     return None
 
 def get_active_ebay_inventory():
-    """Fetches active inventory exclusively for your store with Affiliate Links enabled."""
+    """Fetches active inventory and performs a deep scan for full HTML descriptions."""
     token = get_ebay_access_token()
     if not token:
         return []
 
-    url = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+    search_url = "https://api.ebay.com/buy/browse/v1/item_summary/search"
     
     headers = {
         "Authorization": f"Bearer {token}",
@@ -42,17 +43,35 @@ def get_active_ebay_inventory():
         "X-EBAY-C-ENDUSERCTX": "affiliateCampaignId=5339141674" 
     }
     
-    # q=(...) performs an OR search across these keywords to satisfy the API
-    # filter=sellers:{reedpb} STRICTLY isolates the results to your account
     params = {
         "q": "(lego,diecast,hot wheels,matchbox,car,truck,vehicle)",
         "filter": "sellers:{reedpb},buyingOptions:{FIXED_PRICE|AUCTION}",
         "limit": "100"
     }
 
-    response = requests.get(url, headers=headers, params=params)
+    print("Fetching item summaries...")
+    response = requests.get(search_url, headers=headers, params=params)
+    
     if response.status_code == 200:
-        return response.json().get('itemSummaries', [])
+        item_summaries = response.json().get('itemSummaries', [])
+        print(f"Found {len(item_summaries)} items. Fetching HTML descriptions...")
+        
+        # Loop through each item to download the full custom HTML description
+        for item in item_summaries:
+            item_id = item.get('itemId')
+            if item_id:
+                # API requires the item ID to be URL encoded
+                encoded_id = urllib.parse.quote(item_id)
+                item_url = f"https://api.ebay.com/buy/browse/v1/item/{encoded_id}"
+                
+                item_response = requests.get(item_url, headers=headers)
+                if item_response.status_code == 200:
+                    item_data = item_response.json()
+                    item['fullHtmlDescription'] = item_data.get('description', '')
+                else:
+                    item['fullHtmlDescription'] = '<p>Description temporarily unavailable.</p>'
+                    
+        return item_summaries
     else:
         print(f"API Error {response.status_code}: {response.text}")
         return []
