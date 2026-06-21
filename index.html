@@ -42,7 +42,9 @@
         .buy-btn-large { background: var(--blk-red); color: white; text-align: center; padding: 15px 20px; text-decoration: none; font-size: 1.2rem; display: inline-block; border: none; cursor: pointer; font-family: inherit; margin-bottom: 20px; width: 80%; max-width: 400px; }
         .buy-btn-large:hover { background: #cc0000; }
         
-        footer { text-align: center; padding: 40px; border-top: 1px solid #111; color: var(--blk-teal); }
+        /* Footer & Disclosure CSS */
+        .affiliate-disclosure { text-align: center; font-size: 0.75rem; color: #666; max-width: 800px; margin: 40px auto 10px auto; padding: 0 20px; font-family: sans-serif; line-height: 1.5; }
+        footer { text-align: center; padding: 20px; border-top: 1px solid #111; color: var(--blk-teal); margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -65,7 +67,6 @@
         </div>
     </section>
 
-    <!-- THE POP-UP MODAL -->
     <div id="item-modal" class="modal">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal()">&times;</button>
@@ -77,7 +78,6 @@
             
             <hr style="border-color: #333; margin: 20px 0;">
             
-            <!-- Custom HTML template injection -->
             <div id="modal-desc" class="modal-desc"></div>
         </div>
     </div>
@@ -160,7 +160,10 @@
             document.getElementById('item-modal').classList.remove('active');
         }
     </script>
-    <br><br>
+    
+    <div class="affiliate-disclosure">
+        <p><em>Disclosure: When you click on links to various merchants on this site and make a purchase, this can result in this site earning a commission. Affiliate programs and affiliations include, but are not limited to, the eBay Partner Network.</em></p>
+    </div>
     <footer><strong>Veteran Owned</strong></footer>
 </body>
 </html>
