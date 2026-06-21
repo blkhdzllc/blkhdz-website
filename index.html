@@ -18,13 +18,22 @@
         .nav-btn.active { color: var(--blk-red); border-bottom: 3px solid var(--blk-red); }
         .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
         #market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: var(--blk-card); border: 1px solid #1a1a1a; padding: 20px; transition: 0.3s; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--blk-red); }
+        
+        .card { background: var(--blk-card); border: 1px solid #1a1a1a; padding: 20px; transition: 0.3s; display: flex; flex-direction: column; cursor: pointer; }
+        .card:hover { border-color: var(--blk-red); transform: translateY(-5px); }
         .card-img { width: 100%; height: 250px; object-fit: contain; }
         .card-body h3 { font-size: 0.9rem; margin: 15px 0; height: 3em; overflow: hidden; }
-        .description { font-size: 0.8rem; color: #888; margin-bottom: 15px; font-family: sans-serif; }
         .price-tag { font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
-        .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 10px; text-decoration: none; font-size: 0.8rem; }
+        .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 10px; text-decoration: none; font-size: 0.8rem; display: block; border: none; cursor: pointer; font-family: inherit; }
+        
+        /* MODAL CSS */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; }
+        .modal.active { display: flex; }
+        .modal-content { background: var(--blk-card); border: 2px solid var(--blk-red); max-width: 800px; width: 90%; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto; text-align: center; }
+        .close-btn { position: absolute; top: 10px; right: 20px; color: var(--blk-red); font-size: 2rem; background: none; border: none; cursor: pointer; }
+        .modal-img { width: 100%; max-height: 400px; object-fit: contain; margin-bottom: 20px; }
+        .modal-desc { font-size: 0.9rem; color: #ccc; margin: 20px 0; font-family: sans-serif; text-align: left; line-height: 1.5; }
+        
         footer { text-align: center; padding: 40px; border-top: 1px solid #111; color: var(--blk-teal); }
     </style>
 </head>
@@ -36,6 +45,7 @@
             <button class="enter-btn" onclick="showMarket()">ENTER MARKET</button>
         </div>
     </section>
+    
     <section id="page-market" class="site-page">
         <nav class="market-nav">
             <button class="nav-btn active" onclick="switchTab('all', this)">ALL</button>
@@ -46,8 +56,22 @@
             <div id="market-grid"></div>
         </div>
     </section>
+
+    <!-- THE POP-UP MODAL -->
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <img id="modal-img" class="modal-img" src="" alt="Item Image">
+            <h3 id="modal-title"></h3>
+            <p id="modal-desc" class="modal-desc"></p>
+            <div id="modal-price" class="price-tag"></div>
+            <a id="modal-buy-btn" href="" target="_blank" class="buy-btn">SECURE ITEM ON EBAY</a>
+        </div>
+    </div>
+
     <script>
         let cachedData = {}; 
+        let currentDisplayItems = []; 
 
         async function showMarket() {
             document.getElementById('page-cover').classList.remove('active');
@@ -73,31 +97,51 @@
             const container = document.getElementById('market-grid');
             container.innerHTML = 'SCANNING...';
             
-            let itemsToShow = [];
             if (category === 'all') {
-                itemsToShow = [...(cachedData.lego || []), ...(cachedData.diecast || [])];
+                currentDisplayItems = [...(cachedData.lego || []), ...(cachedData.diecast || [])];
             } else if (category === 'lego') {
-                itemsToShow = cachedData.lego || [];
+                currentDisplayItems = cachedData.lego || [];
             } else if (category === 'diecast') {
-                itemsToShow = cachedData.diecast || [];
+                currentDisplayItems = cachedData.diecast || [];
             }
 
-            if (itemsToShow.length === 0) {
+            if (currentDisplayItems.length === 0) {
                 container.innerHTML = '<p style="text-align:center; width:100%;">No items found in this category.</p>';
                 return;
             }
 
-            container.innerHTML = itemsToShow.map(item => `
-                <div class="card">
+            container.innerHTML = currentDisplayItems.map((item, index) => `
+                <div class="card" onclick="openModal(${index})">
                     <img src="${item.image ? item.image.imageUrl : ''}" class="card-img" alt="${item.title}">
                     <div class="card-body">
                         <h3>${item.title}</h3>
-                        <p class="description">Mission Logistics: Item ready for secure deployment.</p>
                         <div class="price-tag">$${item.price ? item.price.value : '0.00'}</div>
-                        <a href="${item.itemWebUrl}" target="_blank" class="buy-btn">SECURE ITEM</a>
+                        <button class="buy-btn">VIEW DETAILS</button>
                     </div>
                 </div>
             `).join('');
+        }
+
+        function openModal(index) {
+            const item = currentDisplayItems[index];
+            document.getElementById('modal-img').src = item.image ? item.image.imageUrl : '';
+            document.getElementById('modal-title').innerText = item.title;
+            
+            // Pull the API description or fallback to the condition
+            let desc = item.shortDescription || 'Condition: ' + (item.condition || 'Not specified');
+            document.getElementById('modal-desc').innerText = desc;
+            
+            document.getElementById('modal-price').innerText = '$' + (item.price ? item.price.value : '0.00');
+            
+            // Prioritize the affiliate link if eBay generated one
+            let checkoutUrl = item.itemAffiliateWebUrl || item.itemWebUrl;
+            document.getElementById('modal-buy-btn').href = checkoutUrl;
+            
+            document.getElementById('item-modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('item-modal').classList.remove('active');
         }
     </script>
     <footer><strong>Veteran Owned</strong></footer>
