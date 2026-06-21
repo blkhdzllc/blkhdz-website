@@ -29,15 +29,17 @@ def get_ebay_access_token():
     return None
 
 def get_active_ebay_inventory():
-    """Fetches active inventory exclusively for your store (reedpb)."""
+    """Fetches active inventory exclusively for your store with Affiliate Links enabled."""
     token = get_ebay_access_token()
     if not token:
         return []
 
     url = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+    
     headers = {
         "Authorization": f"Bearer {token}",
-        "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"
+        "X-EBAY-C-MARKETPLACE-ID": "EBAY_US",
+        "X-EBAY-C-ENDUSERCTX": "affiliateCampaignId=5339141674" 
     }
     
     # q=(...) performs an OR search across these keywords to satisfy the API
