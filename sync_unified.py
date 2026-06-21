@@ -17,7 +17,6 @@ def sync_inventory():
     for item in raw_items:
         title = item.get('title', '').lower()
         
-        # Categorize items into lego or diecast based on the title
         if 'lego' in title:
             lego_items.append(item)
         else:
