@@ -30,15 +30,22 @@
         .price-tag { font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
         .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 10px; text-decoration: none; font-size: 0.8rem; display: block; border: none; cursor: pointer; font-family: inherit; }
         
+        /* MODAL CSS */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; }
         .modal.active { display: flex; }
         .modal-content { background: var(--blk-card); border: 2px solid var(--blk-red); max-width: 1000px; width: 95%; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto; text-align: center; }
         .close-btn { position: absolute; top: 10px; right: 20px; color: var(--blk-red); font-size: 2rem; background: none; border: none; cursor: pointer; z-index: 10; }
+        
         .modal-img { width: 100%; max-height: 55vh; object-fit: contain; margin-bottom: 20px; background-color: var(--blk-bg); border-radius: 8px; }
+        
+        /* HTML Description Container CSS */
         .modal-desc { width: 100%; text-align: left; margin: 30px 0; color: #fff; font-family: sans-serif; overflow-x: auto; }
         .modal-desc img { max-width: 100%; height: auto; }
-        .buy-btn-large { background: var(--blk-red); color: white; text-align: center; padding: 15px 20px; text-decoration: none; font-size: 1.2rem; display: inline-block; border: none; cursor: pointer; font-family: inherit; margin-bottom: 20px; width: 80%; max-width: 400px; }
         
+        .buy-btn-large { background: var(--blk-red); color: white; text-align: center; padding: 15px 20px; text-decoration: none; font-size: 1.2rem; display: inline-block; border: none; cursor: pointer; font-family: inherit; margin-bottom: 20px; width: 80%; max-width: 400px; }
+        .buy-btn-large:hover { background: #cc0000; }
+        
+        /* Footer & Disclosure CSS */
         .affiliate-disclosure { text-align: center; font-size: 0.8rem; color: var(--blk-teal); max-width: 800px; margin: 0 auto 15px auto; padding: 0 20px; font-family: sans-serif; line-height: 1.5; }
         footer { text-align: center; padding: 30px 20px; border-top: 1px solid #111; color: var(--blk-teal); margin-top: auto; }
     </style>
@@ -111,5 +118,9 @@
         <div class="affiliate-disclosure"><p><em>Disclosure: When you click on links to various merchants on this site and make a purchase, this can result in this site earning a commission. Affiliate programs and affiliations include, but are not limited to, the eBay Partner Network.</em></p></div>
         <strong>Veteran Owned</strong>
     </footer>
+
+    <!-- CLOUDFLARE WEB ANALYTICS ENGINE (SAFE / SECURE) -->
+    <!-- When you set up your free Cloudflare Web Analytics token dashboard, replace the token string below to view accurate traffic metrics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_CLOUDFLARE_ANALYTICS_TOKEN_HERE"}'></script>
 </body>
 </html>
