@@ -5,7 +5,11 @@ sys.path.append(os.getcwd())
 from services.ebay_client import get_active_ebay_inventory
 
 def assign_tags(title):
-    t = title.lower()
+    # Safety check: If eBay sends a blank or missing title, default to 'other'
+    if not title:
+        return ['all', 'other']
+        
+    t = str(title).lower()
     tags = ['all']
     
     # 1. LEGO Sub-categories
@@ -40,14 +44,24 @@ def assign_tags(title):
         if 'playstation' in t or 'ps4' in t or 'ps5' in t: tags.append('playstation')
         if 'pc' in t or 'gpu' in t or 'motherboard' in t: tags.append('pc hardware')
         
+    # If no specific tags were found, assign it to 'other'
+    if len(tags) == 1:
+        tags.append('other')
+        
     return list(set(tags))
 
 def sync_inventory():
     raw_items = get_active_ebay_inventory()
+    
+    # Safety check: If eBay returns nothing at all
+    if raw_items is None:
+        raw_items = []
+        
     processed = []
     
     for item in raw_items:
-        item['tags'] = assign_tags(item.get('title', ''))
+        title = item.get('title', '')
+        item['tags'] = assign_tags(title)
         processed.append(item)
             
     output_path = os.path.join(os.getcwd(), 'data', 'inventory.json')
