@@ -39,8 +39,8 @@ def get_active_ebay_inventory():
     }
     
     params = {
-        "q": "item",
-        "filter": "sellers:{blkhdz},buyingOptions:{FIXED_PRICE|AUCTION}",
+        "q": " ", # A blank space acts as a wildcard to stop filtering out items
+        "filter": "sellers:{reedpb},buyingOptions:{FIXED_PRICE|AUCTION}",
         "limit": "100"
     }
     
