@@ -30,7 +30,7 @@ def get_ebay_access_token():
     return None
 
 def get_active_ebay_inventory():
-    """Fetches ALL active inventory without keyword restrictions."""
+    """Fetches ALL active inventory using an expanded keyword catch-all."""
     token = get_ebay_access_token()
     if not token:
         return []
@@ -43,8 +43,9 @@ def get_active_ebay_inventory():
         "X-EBAY-C-ENDUSERCTX": "affiliateCampaignId=5339141674" 
     }
     
-    # The 'q' parameter is completely removed. It will pull everything for this seller.
+    # The 'q' parameter is restored with an expanded OR list matching your specific inventory
     params = {
+        "q": "(lego,diecast,hot wheels,matchbox,car,truck,vehicle,pop race,mini gt,tarmac,spark,tsm,looksmart,pc,gaming,electronics,gpu,motherboard,nintendo,sega,mattel,minifig,polybag,brickheadz)",
         "filter": "sellers:{reedpb},buyingOptions:{FIXED_PRICE|AUCTION}",
         "limit": "100"
     }
