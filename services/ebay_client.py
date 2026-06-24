@@ -1,37 +1,222 @@
-import os
-import requests
-import base64
-
-def get_ebay_access_token():
-    app_id = os.environ.get('APP_ID')
-    cert_id = os.environ.get('CERT_ID')
-    if not app_id or not cert_id:
-        return None
-    credentials = f"{app_id}:{cert_id}"
-    encoded = base64.b64encode(credentials.encode()).decode()
-    url = "https://api.ebay.com/identity/v1/oauth2/token"
-    headers = {"Content-Type": "application/x-www-form-urlencoded", "Authorization": f"Basic {encoded}"}
-    data = {"grant_type": "client_credentials", "scope": "https://api.ebay.com/oauth/api_scope"}
-    response = requests.post(url, headers=headers, data=data)
-    if response.status_code == 200:
-        return response.json().get('access_token')
-    return None
-
-def get_active_ebay_inventory():
-    token = get_ebay_access_token()
-    if not token:
-        return []
-    
-    headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"}
-    params = {
-        "q": "item",
-        "filter": "sellers:{reedpb},buyingOptions:{FIXED_PRICE|AUCTION}",
-        "limit": "100"
-    }
-    
-    response = requests.get("https://api.ebay.com/buy/browse/v1/item_summary/search", headers=headers, params=params)
-    
-    if response.status_code != 200:
-        return []
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLKHDZ | Official Market & Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
+        :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; --blk-teal: #008080; }
+        body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Archivo Black', sans-serif; }
+        .site-page { display: none; min-height: 100vh; }
+        .site-page.active { display: flex; flex-direction: column; }
         
-    return response.json().get('itemSummaries', [])
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%); z-index: 1; }
+        .cover-content { position: relative; z-index: 10; text-align: center; padding-top: 20vh; }
+        .enter-btn { background: var(--blk-red); color: #fff; border: none; padding: 20px 50px; font-family: inherit; cursor: pointer; font-size: 1.2rem; margin-top: 30px; transition: 0.2s; }
+        .enter-btn:hover { transform: scale(1.05); background: #cc0000; }
+        
+        .market-nav { display: flex; justify-content: center; flex-wrap: wrap; background: #080808; border-bottom: 2px solid var(--blk-red); padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+        .nav-btn { padding: 15px 30px; border: none; background: none; color: #444; font-family: inherit; cursor: pointer; font-size: 1rem; text-transform: uppercase; transition: 0.2s; }
+        .nav-btn:hover { color: #888; }
+        .nav-btn.active { color: var(--blk-red); border-bottom: 3px solid var(--blk-red); }
+        
+        .sub-nav { display: none; justify-content: center; flex-wrap: wrap; gap: 10px; padding: 15px; background: #0a0a0a; border-bottom: 1px solid #222; }
+        .sub-btn { background: #222; color: #aaa; border: 1px solid #444; padding: 8px 15px; font-family: inherit; font-size: 0.8rem; cursor: pointer; transition: 0.2s; text-transform: uppercase; }
+        .sub-btn:hover, .sub-btn.active { background: var(--blk-red); color: #fff; border-color: var(--blk-red); }
+        
+        .search-container { max-width: 600px; margin: 20px auto; padding: 0 20px; width: 100%; box-sizing: border-box; }
+        .search-input { width: 100%; padding: 15px 20px; background: #111; border: 1px solid #333; color: white; font-family: inherit; font-size: 1rem; outline: none; transition: 0.3s; box-sizing: border-box; text-transform: uppercase; }
+        .search-input:focus { border-color: var(--blk-red); box-shadow: 0 0 15px rgba(255,0,0,0.2); }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px 20px 60px 20px; width: 100%; box-sizing: border-box; }
+        #market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+        
+        .card { background: var(--blk-card); border: 1px solid #1a1a1a; padding: 20px; transition: 0.3s; display: flex; flex-direction: column; cursor: pointer; }
+        .card:hover { border-color: var(--blk-red); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .card-img { width: 100%; height: 250px; object-fit: contain; }
+        .card-body h3 { font-size: 0.9rem; margin: 15px 0; height: 3em; overflow: hidden; line-height: 1.5; }
+        .price-tag { font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
+        .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 10px; text-decoration: none; font-size: 0.8rem; display: block; border: none; cursor: pointer; font-family: inherit; margin-top: auto; }
+        
+        .about-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-title { color: var(--blk-red); font-size: 4rem; margin-bottom: 20px; line-height: 1; text-transform: uppercase; }
+        .about-text p { font-family: sans-serif; font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 20px; }
+        .about-image-stack { display: flex; flex-direction: column; gap: 30px; }
+        .about-img { width: 100%; border: 2px solid #222; border-radius: 4px; box-shadow: 0 15px 40px rgba(0,0,0,0.9); transition: transform 0.4s ease; }
+        .about-img:hover { transform: scale(1.03); border-color: var(--blk-red); }
+        
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; }
+        .modal.active { display: flex; }
+        .modal-content { background: var(--blk-card); border: 2px solid var(--blk-red); max-width: 1000px; width: 95%; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto; text-align: center; box-sizing: border-box; }
+        .close-btn { position: absolute; top: 10px; right: 20px; color: var(--blk-red); font-size: 2rem; background: none; border: none; cursor: pointer; z-index: 10; }
+        .modal-img { width: 100%; max-height: 55vh; object-fit: contain; margin-bottom: 20px; background-color: var(--blk-bg); border-radius: 8px; }
+        .modal-desc { width: 100%; text-align: left; margin: 30px 0; color: #fff; font-family: sans-serif; overflow-x: auto; line-height: 1.6; }
+        .buy-btn-large { background: var(--blk-red); color: white; text-align: center; padding: 15px 20px; text-decoration: none; font-size: 1.2rem; display: inline-block; border: none; cursor: pointer; font-family: inherit; margin-bottom: 20px; width: 80%; max-width: 400px; transition: 0.2s; }
+        .buy-btn-large:hover { background: #cc0000; transform: scale(1.02); }
+        
+        footer { text-align: center; padding: 40px 20px; border-top: 1px solid #111; color: var(--blk-teal); background: #050505; }
+    </style>
+</head>
+<body>
+    <section id="page-cover" class="site-page active" style="position: relative; overflow: hidden;">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="./images/drop.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="cover-content">
+            <img src="./images/BLKHDZ.png" alt="BLKHDZ" style="max-width: 600px; width: 90%;">
+            <br>
+            <button class="enter-btn" onclick="showMarket()">ENTER MARKET</button>
+        </div>
+    </section>
+    
+    <nav class="market-nav" id="main-nav" style="display: none;">
+        <button class="nav-btn active" onclick="setMainFilter('all', this)">ALL</button>
+        <button class="nav-btn" onclick="setMainFilter('lego', this)">LEGO</button>
+        <button class="nav-btn" onclick="setMainFilter('diecast', this)">DIECAST</button>
+        <button class="nav-btn" onclick="setMainFilter('electronics', this)">ELECTRONICS</button>
+        <button class="nav-btn" onclick="showAbout(this)">ABOUT</button>
+    </nav>
+
+    <section id="page-market" class="site-page">
+        <div id="sub-filters" class="sub-nav"></div>
+        <div class="search-container">
+            <input type="text" id="search-bar" class="search-input" placeholder="SEARCH FOR SETS, SCALES, OR MAKES..." oninput="renderGrid()">
+        </div>
+        <div class="container">
+            <div id="market-grid"></div>
+        </div>
+    </section>
+
+    <section id="page-about" class="site-page">
+        <div class="about-container">
+            <div class="about-text">
+                <h1 class="about-title">Legacy is Built.<br>Not Bought.</h1>
+                <p>Welcome to BLKHDZ LLC. We aren't your standard big-box retailer throwing a highly-sought-after collectible into a flimsy bubble mailer and hoping for the best. We are collectors, builders, and curators.</p>
+                <p>We supply the artifacts of your obsession. That means rigorous standards, zero compromises, and a guarantee that your items are handled with absolute precision. Every premium item ships protected in a box, because your legacy shouldn't arrive crushed.</p>
+                <p><strong>Driven by detail. Built for the vault.</strong></p>
+            </div>
+            <div class="about-image-stack">
+                <img src="./images/custom-car.jpg" alt="BLKHDZ Custom Car" class="about-img" onerror="this.style.display='none'">
+                <img src="./images/lego-crosswalk.jpg" alt="The Abbey Road Setup" class="about-img" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </section>
+
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <img id="modal-img" class="modal-img" src="" alt="Item Image">
+            <h3 id="modal-title" style="font-size: 1.5rem;"></h3>
+            <div id="modal-price" class="price-tag" style="font-size: 2rem;"></div>
+            <a id="modal-buy-btn" href="" target="_blank" class="buy-btn-large">SECURE ITEM ON EBAY</a>
+            <div id="modal-desc" class="modal-desc"></div>
+        </div>
+    </div>
+
+    <script>
+        let allItems = []; 
+        let currentDisplayItems = []; 
+        let currentMainFilter = 'all';
+        let currentSubFilter = 'all';
+
+        async function showMarket() { 
+            document.getElementById('page-cover').classList.remove('active'); 
+            document.getElementById('page-market').classList.add('active');
+            document.getElementById('main-nav').style.display = 'flex'; 
+            await loadData(); 
+            setMainFilter('all', document.querySelector('.market-nav .nav-btn')); 
+        }
+
+        function showAbout(el) {
+            document.querySelectorAll('.market-nav .nav-btn').forEach(b => b.classList.remove('active')); 
+            if(el) el.classList.add('active');
+            document.getElementById('page-market').classList.remove('active');
+            document.getElementById('page-about').classList.add('active');
+        }
+
+        async function loadData() { 
+            if (allItems.length === 0) { 
+                try {
+                    const response = await fetch('/blkhdz-website/data/inventory.json?v=' + Date.now()); 
+                    const data = await response.json(); 
+                    let rawData = data.inventory || data.itemSummaries || [];
+                    allItems = rawData.map(item => {
+                        return { ...item, tags: Array.isArray(item.tags) ? item.tags : ['all'] };
+                    });
+                    renderGrid();
+                } catch(e) { console.error("Data load error:", e); }
+            } 
+        }
+
+        function setMainFilter(category, el) {
+            document.getElementById('page-about').classList.remove('active');
+            document.getElementById('page-market').classList.add('active');
+            if (el) { document.querySelectorAll('.market-nav .nav-btn').forEach(b => b.classList.remove('active')); el.classList.add('active'); }
+            currentMainFilter = category;
+            currentSubFilter = 'all';
+            renderSubFilters();
+            renderGrid();
+        }
+
+        function setSubFilter(tag, el) {
+            if (el) { document.querySelectorAll('.sub-nav .sub-btn').forEach(b => b.classList.remove('active')); el.classList.add('active'); }
+            currentSubFilter = tag;
+            renderGrid();
+        }
+
+        function renderSubFilters() {
+            const subContainer = document.getElementById('sub-filters');
+            subContainer.innerHTML = '';
+            if (currentMainFilter === 'all') { subContainer.style.display = 'none'; return; }
+            const filteredItems = allItems.filter(item => item.tags && item.tags.includes(currentMainFilter));
+            const uniqueTags = new Set();
+            filteredItems.forEach(item => { item.tags.forEach(tag => { if (tag !== currentMainFilter && tag !== 'other' && tag !== 'all') uniqueTags.add(tag); }); });
+            const sortedTags = Array.from(uniqueTags).sort();
+            if (sortedTags.length === 0) { subContainer.style.display = 'none'; return; }
+            subContainer.style.display = 'flex';
+            let html = `<button class="sub-btn active" onclick="setSubFilter('all', this)">ALL ${currentMainFilter.toUpperCase()}</button>`;
+            sortedTags.forEach(tag => { html += `<button class="sub-btn" onclick="setSubFilter('${tag}', this)">${tag.toUpperCase()}</button>`; });
+            subContainer.innerHTML = html;
+        }
+
+        function renderGrid() {
+            const container = document.getElementById('market-grid');
+            const searchQuery = document.getElementById('search-bar').value.toLowerCase();
+            let itemsToShow = allItems;
+            if (currentMainFilter !== 'all') itemsToShow = itemsToShow.filter(item => item.tags && item.tags.includes(currentMainFilter));
+            if (currentSubFilter !== 'all') itemsToShow = itemsToShow.filter(item => item.tags && item.tags.includes(currentSubFilter));
+            if (searchQuery) itemsToShow = itemsToShow.filter(item => item.title && item.title.toLowerCase().includes(searchQuery));
+            currentDisplayItems = itemsToShow; 
+            container.innerHTML = itemsToShow.length === 0 ? '<p style="text-align:center; width:100%; color: #666;">NO ITEMS MATCH YOUR SCAN.</p>' : itemsToShow.map((item, index) => {
+                const price = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
+                const img = item.image ? (typeof item.image === 'object' ? item.image.imageUrl : item.image) : '';
+                return `
+                <div class="card" onclick="openModal(${index})">
+                    <img src="${img}" class="card-img" alt="${item.title}">
+                    <div class="card-body"><h3>${item.title}</h3><div class="price-tag">$${price}</div><button class="buy-btn">VIEW DETAILS</button></div>
+                </div>`;
+            }).join('');
+        }
+
+        function openModal(index) {
+            const item = currentDisplayItems[index];
+            document.getElementById('modal-img').src = item.image ? (typeof item.image === 'object' ? item.image.imageUrl.replace(/s-l\d+/, 's-l1600') : item.image) : '';
+            document.getElementById('modal-title').innerText = item.title;
+            const price = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
+            document.getElementById('modal-price').innerText = '$' + price;
+            document.getElementById('modal-buy-btn').href = item.itemAffiliateWebUrl || item.itemWebUrl;
+            document.getElementById('modal-desc').innerHTML = item.fullHtmlDescription || '<p>Condition: ' + (item.condition || 'Not specified') + '</p>';
+            document.getElementById('item-modal').classList.add('active');
+        }
+        function closeModal() { document.getElementById('item-modal').classList.remove('active'); }
+    </script>
+    <footer>
+        <div class="affiliate-disclosure"><p><em>Affiliate links listed with items result in a small commission to BLKHDZ LLC. Programs and affiliations include but are not limited to the ebay partner network.</em></p></div>
+        <strong>Veteran Owned</strong>
+    </footer>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a46d6c114a04f47a39d55747c4aa226"}'></script>
+</body>
+</html>
