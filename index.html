@@ -161,7 +161,14 @@
                 try {
                     const response = await fetch('./data/inventory.json?v=' + Date.now()); 
                     const data = await response.json(); 
-                    allItems = data.inventory || []; 
+                    
+                    // Tell the site to look for itemSummaries if inventory doesn't exist
+                    allItems = data.inventory || data.itemSummaries || []; 
+                    
+                    // Safety check: if the backend missed the tags, assign a default so the page doesn't break
+                    allItems.forEach(item => {
+                        if (!item.tags) item.tags = ['all'];
+                    });
                 } catch(e) {
                     console.log("Awaiting inventory data sync...");
                 }
@@ -207,7 +214,7 @@
             const uniqueTags = new Set();
             filteredItems.forEach(item => {
                 item.tags.forEach(tag => {
-                    if (tag !== currentMainFilter && tag !== 'other') {
+                    if (tag !== currentMainFilter && tag !== 'other' && tag !== 'all') {
                         uniqueTags.add(tag);
                     }
                 });
