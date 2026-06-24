@@ -30,7 +30,7 @@ def get_ebay_access_token():
     return None
 
 def get_active_ebay_inventory():
-    """Fetches active inventory and performs a deep scan for full HTML descriptions."""
+    """Fetches ALL active inventory without keyword restrictions."""
     token = get_ebay_access_token()
     if not token:
         return []
@@ -43,8 +43,8 @@ def get_active_ebay_inventory():
         "X-EBAY-C-ENDUSERCTX": "affiliateCampaignId=5339141674" 
     }
     
+    # The 'q' parameter is completely removed. It will pull everything for this seller.
     params = {
-        "q": "(lego,diecast,hot wheels,matchbox,car,truck,vehicle)",
         "filter": "sellers:{reedpb},buyingOptions:{FIXED_PRICE|AUCTION}",
         "limit": "100"
     }
@@ -56,11 +56,9 @@ def get_active_ebay_inventory():
         item_summaries = response.json().get('itemSummaries', [])
         print(f"Found {len(item_summaries)} items. Fetching HTML descriptions...")
         
-        # Loop through each item to download the full custom HTML description
         for item in item_summaries:
             item_id = item.get('itemId')
             if item_id:
-                # API requires the item ID to be URL encoded
                 encoded_id = urllib.parse.quote(item_id)
                 item_url = f"https://api.ebay.com/buy/browse/v1/item/{encoded_id}"
                 
