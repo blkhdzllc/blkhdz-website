@@ -2,44 +2,39 @@ import json
 import os
 import sys
 
-# Ensure import works
 sys.path.append(os.getcwd())
 from services.ebay_client import get_active_ebay_inventory
 
-def assign_tags(title):
-    t = title.lower()
-    tags = ['all']
-    if any(x in t for x in ['lego', 'minifig', 'brickheadz', 'polybag']): tags.append('lego')
-    elif any(x in t for x in ['diecast', 'pop race', 'hot wheels', 'mini gt', 'tarmac', 'spark']): tags.append('diecast')
-    elif any(x in t for x in ['pc', 'gaming', 'electronics', 'gpu']): tags.append('electronics')
-    return list(set(tags))
-
 def sync_inventory():
-    print("Starting sync...")
+    print("Starting sync_unified process...")
+    
     raw_items = get_active_ebay_inventory()
+    print(f"Total items fetched from eBay: {len(raw_items)}")
     
-    if not raw_items:
-        print("No items returned. Inventory file will be empty.")
-
-    processed_items = []
+    lego_items = []
+    diecast_items = []
+    
     for item in raw_items:
-        item['tags'] = assign_tags(item.get('title', ''))
-        processed_items.append(item)
+        title = item.get('title', '').lower()
+        
+        # Categorize items into lego or diecast based on the title
+        if 'lego' in title:
+            lego_items.append(item)
+        else:
+            diecast_items.append(item)
             
-    output_path = os.path.join(os.getcwd(), 'data', 'inventory.json')
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
-    data_structure = {
-        "inventory": processed_items,
-        "itemSummaries": processed_items
+    unified_data = {
+        "lego": lego_items,
+        "diecast": diecast_items
     }
     
+    output_path = os.path.join('data', 'inventory.json')
+    os.makedirs('data', exist_ok=True)
+    
     with open(output_path, 'w') as f:
-        json.dump(data_structure, f, indent=4)
-        f.flush()
-        os.fsync(f.fileno())
+        json.dump(unified_data, f, indent=4)
         
-    print(f"Successfully saved {len(processed_items)} items.")
+    print(f"Sync complete. LEGO: {len(lego_items)}, Diecast: {len(diecast_items)}")
 
 if __name__ == "__main__":
     sync_inventory()
