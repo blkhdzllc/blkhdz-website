@@ -142,10 +142,12 @@
                 try {
                     const response = await fetch('/blkhdz-website/data/inventory.json?v=' + Date.now()); 
                     const data = await response.json(); 
-                    allItems = data.inventory || data.itemSummaries || []; 
-                    allItems.forEach(item => { if (!item.tags) item.tags = ['all']; });
+                    let rawData = data.inventory || data.itemSummaries || [];
+                    allItems = rawData.map(item => {
+                        return { ...item, tags: Array.isArray(item.tags) ? item.tags : ['all'] };
+                    });
                     renderGrid();
-                } catch(e) { console.error("Data fetch error:", e); }
+                } catch(e) { console.error("Data load error:", e); }
             } 
         }
 
@@ -188,18 +190,23 @@
             if (currentSubFilter !== 'all') itemsToShow = itemsToShow.filter(item => item.tags && item.tags.includes(currentSubFilter));
             if (searchQuery) itemsToShow = itemsToShow.filter(item => item.title && item.title.toLowerCase().includes(searchQuery));
             currentDisplayItems = itemsToShow; 
-            container.innerHTML = itemsToShow.length === 0 ? '<p style="text-align:center; width:100%; color: #666;">NO ITEMS MATCH YOUR SEARCH.</p>' : itemsToShow.map((item, index) => `
+            container.innerHTML = itemsToShow.length === 0 ? '<p style="text-align:center; width:100%; color: #666;">NO ITEMS MATCH YOUR SCAN.</p>' : itemsToShow.map((item, index) => {
+                const price = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
+                const img = item.image ? (typeof item.image === 'object' ? item.image.imageUrl : item.image) : '';
+                return `
                 <div class="card" onclick="openModal(${index})">
-                    <img src="${item.image ? item.image.imageUrl : ''}" class="card-img" alt="${item.title}">
-                    <div class="card-body"><h3>${item.title}</h3><div class="price-tag">$${item.price ? item.price.value : '0.00'}</div><button class="buy-btn">VIEW DETAILS</button></div>
-                </div>`).join('');
+                    <img src="${img}" class="card-img" alt="${item.title}">
+                    <div class="card-body"><h3>${item.title}</h3><div class="price-tag">$${price}</div><button class="buy-btn">VIEW DETAILS</button></div>
+                </div>`;
+            }).join('');
         }
 
         function openModal(index) {
             const item = currentDisplayItems[index];
-            document.getElementById('modal-img').src = item.image ? item.image.imageUrl.replace(/s-l\d+/, 's-l1600') : '';
+            document.getElementById('modal-img').src = item.image ? (typeof item.image === 'object' ? item.image.imageUrl.replace(/s-l\d+/, 's-l1600') : item.image) : '';
             document.getElementById('modal-title').innerText = item.title;
-            document.getElementById('modal-price').innerText = '$' + (item.price ? item.price.value : '0.00');
+            const price = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
+            document.getElementById('modal-price').innerText = '$' + price;
             document.getElementById('modal-buy-btn').href = item.itemAffiliateWebUrl || item.itemWebUrl;
             document.getElementById('modal-desc').innerHTML = item.fullHtmlDescription || '<p>Condition: ' + (item.condition || 'Not specified') + '</p>';
             document.getElementById('item-modal').classList.add('active');
