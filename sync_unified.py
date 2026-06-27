@@ -5,14 +5,12 @@ sys.path.append(os.getcwd())
 from services.ebay_client import get_active_ebay_inventory
 
 def assign_tags(title):
-    # Safety check: If eBay sends a blank or missing title, default to 'other'
     if not title:
         return ['all', 'other']
         
     t = str(title).lower()
     tags = ['all']
     
-    # 1. LEGO Sub-categories
     if any(kw in t for kw in ['lego', 'minifig', 'brickheadz', 'polybag', 'star wars', 'ninjago', 'city', 'technic', 'creator', 'icons', 'speed champions']): 
         tags.append('lego')
         if 'star wars' in t: tags.append('star wars')
@@ -25,7 +23,6 @@ def assign_tags(title):
         if 'brickheadz' in t: tags.append('brickheadz')
         if 'minifig' in t: tags.append('minifigures')
 
-    # 2. DIECAST Sub-categories
     if any(kw in t for kw in ['diecast', 'pop race', 'hot wheels', 'mini gt', 'tarmac', 'spark', 'looksmart', '1/64', '1/43']): 
         tags.append('diecast')
         if 'hot wheels' in t: tags.append('hot wheels')
@@ -35,7 +32,6 @@ def assign_tags(title):
         if '1/64' in t: tags.append('1/64 scale')
         if '1/43' in t: tags.append('1/43 scale')
 
-    # 3. ELECTRONICS Sub-categories
     if any(kw in t for kw in ['pc', 'gaming', 'electronics', 'gpu', 'motherboard', 'nintendo', 'sega', 'playstation', 'xbox']):
         tags.append('electronics')
         if 'nintendo' in t: tags.append('nintendo')
@@ -44,7 +40,6 @@ def assign_tags(title):
         if 'playstation' in t or 'ps4' in t or 'ps5' in t: tags.append('playstation')
         if 'pc' in t or 'gpu' in t or 'motherboard' in t: tags.append('pc hardware')
         
-    # If no specific tags were found, assign it to 'other'
     if len(tags) == 1:
         tags.append('other')
         
@@ -53,7 +48,6 @@ def assign_tags(title):
 def sync_inventory():
     raw_items = get_active_ebay_inventory()
     
-    # Safety check: If eBay returns nothing at all
     if raw_items is None:
         raw_items = []
         
