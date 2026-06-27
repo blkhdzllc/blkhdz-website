@@ -94,7 +94,7 @@
         <div class="about-container">
             <div class="about-text">
                 <h1 class="about-title">Legacy is Built.<br>Not Bought.</h1>
-                <p>Welcome to BLKHDZ LLC. We aren't your standard big-box retailer throwing a highly-sought-after collectible into a collectible into a box and hoping for the best. We are collectors, builders, and curators.</p>
+                <p>Welcome to BLKHDZ LLC. We aren't your standard big-box retailer throwing a highly-sought-after collectible into a box and hoping for the best. We are collectors, builders, and curators.</p>
                 <p>We supply the artifacts of your obsession. That means rigorous standards, zero compromises, and a guarantee that your items are handled with absolute precision. Every premium item ships protected in a box, because your legacy shouldn't arrive crushed.</p>
                 <p><strong>Driven by detail. Built for the vault.</strong></p>
             </div>
@@ -208,7 +208,14 @@
             const price = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
             document.getElementById('modal-price').innerText = '$' + price;
             document.getElementById('modal-buy-btn').href = item.itemAffiliateWebUrl || item.itemWebUrl;
-            document.getElementById('modal-desc').innerHTML = item.fullHtmlDescription || '<p>Condition: ' + (item.condition || 'Not specified') + '</p>';
+            
+            const desc = item.fullHtmlDescription || `
+                <div style="padding: 20px; border: 1px solid #333; color: #888; background: #0a0a0a; border-radius: 4px; text-align: left;">
+                    <p><strong>Item Condition:</strong> ${item.condition || 'New'}</p>
+                    <p style="margin-top: 15px;">Full description specifics are managed on the primary marketplace layer.</p>
+                    <p>Click <strong>SECURE ITEM ON EBAY</strong> above to view exact package dimensions, high-resolution gallery angles, and comprehensive lot details.</p>
+                </div>`;
+            document.getElementById('modal-desc').innerHTML = desc;
             document.getElementById('item-modal').classList.add('active');
         }
         function closeModal() { document.getElementById('item-modal').classList.remove('active'); }
