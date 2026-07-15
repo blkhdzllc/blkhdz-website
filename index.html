@@ -120,14 +120,13 @@
         let allItems = []; 
         let currentDisplayItems = []; 
         let currentMainFilter = 'all';
-        let currentSubFilter = 'all';
 
         async function showMarket() { 
             document.getElementById('page-cover').classList.remove('active'); 
             document.getElementById('page-market').classList.add('active');
             document.getElementById('main-nav').style.display = 'flex'; 
             await loadData(); 
-            setMainFilter('all', document.querySelector('.market-nav .nav-btn')); 
+            renderGrid();
         }
 
         function showAbout(el) {
@@ -140,13 +139,9 @@
         async function loadData() { 
             if (allItems.length === 0) { 
                 try {
-                    const response = await fetch('/blkhdz-website/data/inventory.json?v=' + Date.now()); 
+                    const response = await fetch('./data/inventory.json?v=' + Date.now()); 
                     const data = await response.json(); 
-                    let rawData = data.inventory || data.itemSummaries || [];
-                    allItems = rawData.map(item => {
-                        return { ...item, tags: Array.isArray(item.tags) ? item.tags : ['all'] };
-                    });
-                    renderGrid();
+                    allItems = data.itemSummaries || [];
                 } catch(e) { console.error("Data load error:", e); }
             } 
         }
@@ -156,39 +151,29 @@
             document.getElementById('page-market').classList.add('active');
             if (el) { document.querySelectorAll('.market-nav .nav-btn').forEach(b => b.classList.remove('active')); el.classList.add('active'); }
             currentMainFilter = category;
-            currentSubFilter = 'all';
-            renderSubFilters();
             renderGrid();
-        }
-
-        function setSubFilter(tag, el) {
-            if (el) { document.querySelectorAll('.sub-nav .sub-btn').forEach(b => b.classList.remove('active')); el.classList.add('active'); }
-            currentSubFilter = tag;
-            renderGrid();
-        }
-
-        function renderSubFilters() {
-            const subContainer = document.getElementById('sub-filters');
-            subContainer.innerHTML = '';
-            if (currentMainFilter === 'all') { subContainer.style.display = 'none'; return; }
-            const filteredItems = allItems.filter(item => item.tags && item.tags.includes(currentMainFilter));
-            const uniqueTags = new Set();
-            filteredItems.forEach(item => { item.tags.forEach(tag => { if (tag !== currentMainFilter && tag !== 'other' && tag !== 'all') uniqueTags.add(tag); }); });
-            const sortedTags = Array.from(uniqueTags).sort();
-            if (sortedTags.length === 0) { subContainer.style.display = 'none'; return; }
-            subContainer.style.display = 'flex';
-            let html = `<button class="sub-btn active" onclick="setSubFilter('all', this)">ALL ${currentMainFilter.toUpperCase()}</button>`;
-            sortedTags.forEach(tag => { html += `<button class="sub-btn" onclick="setSubFilter('${tag}', this)">${tag.toUpperCase()}</button>`; });
-            subContainer.innerHTML = html;
         }
 
         function renderGrid() {
             const container = document.getElementById('market-grid');
             const searchQuery = document.getElementById('search-bar').value.toLowerCase();
-            let itemsToShow = allItems;
-            if (currentMainFilter !== 'all') itemsToShow = itemsToShow.filter(item => item.tags && item.tags.includes(currentMainFilter));
-            if (currentSubFilter !== 'all') itemsToShow = itemsToShow.filter(item => item.tags && item.tags.includes(currentSubFilter));
+            
+            let itemsToShow = allItems.filter(item => {
+                // 1. Category Filter
+                if (currentMainFilter !== 'all') {
+                    const title = item.title ? item.title.toLowerCase() : "";
+                    const catNames = item.categories ? item.categories.map(c => c.categoryName.toLowerCase()).join(" ") : "";
+                    
+                    if (currentMainFilter === 'lego') return title.includes('lego') || catNames.includes('lego');
+                    if (currentMainFilter === 'diecast') return title.includes('diecast') || catNames.includes('diecast');
+                    if (currentMainFilter === 'electronics') return title.includes('electronic');
+                }
+                return true;
+            });
+
+            // 2. Search Filter
             if (searchQuery) itemsToShow = itemsToShow.filter(item => item.title && item.title.toLowerCase().includes(searchQuery));
+            
             currentDisplayItems = itemsToShow; 
             container.innerHTML = itemsToShow.length === 0 ? '<p style="text-align:center; width:100%; color: #666;">NO ITEMS MATCH YOUR SCAN.</p>' : itemsToShow.map((item, index) => {
                 const price = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
@@ -207,13 +192,12 @@
             document.getElementById('modal-title').innerText = item.title;
             const price = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
             document.getElementById('modal-price').innerText = '$' + price;
-            document.getElementById('modal-buy-btn').href = item.itemAffiliateWebUrl || item.itemWebUrl;
+            document.getElementById('modal-buy-btn').href = item.itemWebUrl;
             
-            const desc = item.fullHtmlDescription || `
+            const desc = `
                 <div style="padding: 20px; border: 1px solid #333; color: #888; background: #0a0a0a; border-radius: 4px; text-align: left;">
-                    <p><strong>Item Condition:</strong> ${item.condition || 'New'}</p>
-                    <p style="margin-top: 15px;">Full description specifics are managed on the primary marketplace layer.</p>
-                    <p>Click <strong>SECURE ITEM ON EBAY</strong> above to view exact package dimensions, high-resolution gallery angles, and comprehensive lot details.</p>
+                    <p><strong>Condition:</strong> ${item.condition || 'New'}</p>
+                    <p><strong>Location:</strong> ${item.itemLocation ? item.itemLocation.country : 'US'}</p>
                 </div>`;
             document.getElementById('modal-desc').innerHTML = desc;
             document.getElementById('item-modal').classList.add('active');
@@ -221,9 +205,8 @@
         function closeModal() { document.getElementById('item-modal').classList.remove('active'); }
     </script>
     <footer>
-        <div class="affiliate-disclosure"><p><em>Affiliate links listed with items result in a small commission to BLKHDZ LLC. Programs and affiliations include but are not limited to the ebay partner network.</em></p></div>
+        <div class="affiliate-disclosure"><p><em>Affiliate links listed with items result in a small commission to BLKHDZ LLC.</em></p></div>
         <strong>Veteran Owned</strong>
     </footer>
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a46d6c114a04f47a39d55747c4aa226"}'></script>
 </body>
 </html>
