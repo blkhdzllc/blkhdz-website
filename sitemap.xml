@@ -1,8 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Website Root -->
   <url>
     <loc>https://blkhdzllc.github.io/blkhdz-website/</loc>
-    <lastmod>2026-06-13</lastmod>
-    <priority>1.0</priority>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
   </url>
+
+  <!-- Main Catalog & Storefront -->
+  <url>
+    <loc>https://blkhdzllc.github.io/blkhdz-website/#/catalog</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Store Categories -->
+  <url>
+    <loc>https://blkhdzllc.github.io/blkhdz-website/#/category/speed-champions</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://blkhdzllc.github.io/blkhdz-website/#/category/star-wars</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://blkhdzllc.github.io/blkhdz-website/#/category/brickheadz</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://blkhdzllc.github.io/blkhdz-website/#/category/creator</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://blkhdzllc.github.io/blkhdz-website/#/category/architecture</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://blkhdzllc.github.io/blkhdz-website/#/category/1-64-diecast</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://blkhdzllc.github.io/blkhdz-website/#/category/1-43-diecast</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Example Product Link (Duplicate and adjust this block for your other sets) -->
+  <url>
+    <loc>https://blkhdzllc.github.io/blkhdz-website/#/item/77260</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
 </urlset>
