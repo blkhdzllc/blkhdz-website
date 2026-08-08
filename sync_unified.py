@@ -37,11 +37,12 @@ def assign_tags(title):
         if 'brickheadz' in t: tags.append('brickheadz')
         if 'minifig' in t: tags.append('minifigures')
 
-    # Diecast detection
-    if any(kw in t for kw in ['diecast', 'pop race', 'mini gt', 'tarmac', 'spark', 'looksmart', '1/64', '1/43']): 
+    # Diecast detection (Now tracking Hot Wheels alongside Pop Race & Mini GT)
+    if any(kw in t for kw in ['diecast', 'pop race', 'mini gt', 'hot wheels', 'tarmac', 'spark', 'looksmart', '1/64', '1/43']): 
         tags.append('diecast')
         if 'mini gt' in t: tags.append('mini gt')
         if 'pop race' in t: tags.append('pop race')
+        if 'hot wheels' in t: tags.append('hot wheels')
         if 'tarmac' in t: tags.append('tarmac works')
         if '1/64' in t: tags.append('1/64 scale')
         if '1/43' in t: tags.append('1/43 scale')
