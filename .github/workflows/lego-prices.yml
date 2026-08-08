@@ -5,6 +5,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    # Runs automatically at midnight and noon UTC every day
+    - cron: '0 0,12 * * *'
 
 jobs:
   sync:
@@ -36,6 +39,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/inventory.json
+          git add data/inventory.json sitemap.xml
           git commit -m "Automated Inventory & Sitemap Sync" || echo "No changes to commit"
           git push
