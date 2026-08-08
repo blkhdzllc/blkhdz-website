@@ -1,10 +1,20 @@
 import json
 import os
 import sys
+import time
 
 # Ensure we can find our internal modules
 sys.path.append(os.getcwd())
 from services.ebay_client import get_active_ebay_inventory
+
+# Attempt to load your description fetching function if it exists in ebay_client
+try:
+    from services.ebay_client import get_item_description
+except ImportError:
+    try:
+        from services.ebay_client import get_ebay_item_description as get_item_description
+    except ImportError:
+        get_item_description = None
 
 def assign_tags(title):
     """Assigns category tags based on title keywords."""
@@ -28,9 +38,8 @@ def assign_tags(title):
         if 'minifig' in t: tags.append('minifigures')
 
     # Diecast detection
-    if any(kw in t for kw in ['diecast', 'pop race', 'hot wheels', 'mini gt', 'tarmac', 'spark', 'looksmart', '1/64', '1/43']): 
+    if any(kw in t for kw in ['diecast', 'pop race', 'mini gt', 'tarmac', 'spark', 'looksmart', '1/64', '1/43']): 
         tags.append('diecast')
-        if 'hot wheels' in t: tags.append('hot wheels')
         if 'mini gt' in t: tags.append('mini gt')
         if 'pop race' in t: tags.append('pop race')
         if 'tarmac' in t: tags.append('tarmac works')
@@ -52,25 +61,65 @@ def assign_tags(title):
     return list(set(tags))
 
 def sync_inventory():
-    """Fetches data and saves as 'itemSummaries' for site compatibility."""
+    """Fetches data, caches HTML descriptions, and saves as 'itemSummaries' for site compatibility."""
     raw_items = get_active_ebay_inventory()
     
     if raw_items is None:
         raw_items = []
-        
-    processed = []
+
+    output_path = os.path.join(os.getcwd(), 'data', 'inventory.json')
     
+    # THE SMART CACHE: Load existing inventory to preserve previously fetched descriptions
+    cached_descriptions = {}
+    if os.path.exists(output_path):
+        try:
+            with open(output_path, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+                items_list = existing_data.get("itemSummaries", [])
+                for item in items_list:
+                    item_id = item.get('itemId') or item.get('id')
+                    desc = item.get('description') or item.get('html_description')
+                    if item_id and desc:
+                        cached_descriptions[str(item_id)] = desc
+        except Exception as e:
+            print(f"Warning: Could not read existing cache: {e}")
+
+    processed = []
+    new_description_count = 0
+
     for item in raw_items:
         title = item.get('title', '')
         item['tags'] = assign_tags(title)
+        
+        # Determine the unique item identifier from eBay data
+        item_id = str(item.get('itemId') or item.get('id') or '')
+        current_desc = item.get('description') or item.get('html_description')
+        
+        # Check cache first to avoid pinging eBay
+        if not current_desc and item_id in cached_descriptions:
+            item['description'] = cached_descriptions[item_id]
+        elif not current_desc and item_id and get_item_description is not None:
+            print(f"Fetching description for new item {item_id}...")
+            try:
+                # Executes eBay API fetch
+                desc = get_item_description(item_id)
+                if desc:
+                    item['description'] = desc
+                    new_description_count += 1
+                    
+                    # THE RATE LIMITER: Force a 3-second pause to protect API standing
+                    time.sleep(3)
+            except Exception as e:
+                print(f"Error fetching description for {item_id}: {e}")
+
         processed.append(item)
             
-    output_path = os.path.join(os.getcwd(), 'data', 'inventory.json')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
-    # FIXED: Using 'itemSummaries' so it matches the fetch() in index.html
-    with open(output_path, 'w') as f:
+    with open(output_path, 'w', encoding='utf-8') as f:
         json.dump({"itemSummaries": processed}, f, indent=4)
+        
+    print(f"Sync completed successfully. {len(processed)} items synced ({new_description_count} new descriptions pulled).")
 
 if __name__ == "__main__":
     sync_inventory()
