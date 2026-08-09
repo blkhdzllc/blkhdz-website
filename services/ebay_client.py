@@ -57,3 +57,26 @@ def get_active_ebay_inventory():
     items = response.json().get('itemSummaries', [])
     print(f"SUCCESS: Retrieved {len(items)} items from eBay.")
     return items
+
+def get_item_description(item_id):
+    """Fetches the detailed HTML description for a single eBay item."""
+    token = get_ebay_access_token()
+    if not token:
+        return None
+
+    # eBay Item IDs often contain pipes (|), which must be URL-encoded as %7C for this specific endpoint
+    encoded_item_id = item_id.replace("|", "%7C")
+    url = f"https://api.ebay.com/buy/browse/v1/item/{encoded_item_id}"
+    
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "X-EBAY-C-MARKETPLACE-ID": "EBAY_US"
+    }
+    
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 200:
+        return response.json().get('description', '')
+    else:
+        print(f"Failed to fetch description for {item_id}. Status: {response.status_code}")
+        return None
