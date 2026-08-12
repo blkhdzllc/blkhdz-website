@@ -10,7 +10,7 @@ SCRAPE_DO_TOKEN = os.environ.get("SCRAPE_DO_TOKEN")
 # Target Walmart items
 TARGET_URLS = [
     "https://www.walmart.com/ip/18239062303", # Hot Wheels '94 Toyota Supra MKIV
-    "https://www.walmart.com/ip/18050316088"  # Hot Wheels Custom 62 Chevy Pickup
+    "https://www.walmart.com/ip/HW-Speed-Chevy/18257406985"  # Mattel Brick Shop Hot Wheels '83 Chevy Silverado (Black Edition)
 ]
 
 def check_walmart_inventory(url):
