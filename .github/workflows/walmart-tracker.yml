@@ -21,11 +21,9 @@ jobs:
           python-version: '3.10'
           
       - name: Install dependencies
-        # Reuses the requirements from your existing scraping setup
-        run: pip install -r requirements.txt 
+        run: pip install requests beautifulsoup4
 
       - name: Run Walmart Scraper
         env:
-          # Pulls your Scrape.do API token from the repository secrets
           SCRAPE_DO_TOKEN: ${{ secrets.SCRAPE_DO_TOKEN }} 
-        run: python scripts/walmart_tracker.py
+        run: python walmart_tracker.py
