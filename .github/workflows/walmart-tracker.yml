@@ -2,8 +2,8 @@ name: Walmart Inventory Tracker
 
 on:
   schedule:
-    # Runs automatically every 15 minutes
-    - cron: '*/15 * * * *' 
+    # Runs automatically every 2 hours
+    - cron: '0 */2 * * *' 
   workflow_dispatch: 
     # Allows you to trigger it manually from the Actions tab
 
