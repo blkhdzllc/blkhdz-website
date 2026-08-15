@@ -1,83 +1,29 @@
-import os
-import requests
-from bs4 import BeautifulSoup
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+name: Walmart Inventory Tracker
 
-# Configuration & Secrets (Loaded from GitHub Environment)
-SCRAPE_DO_TOKEN = os.getenv("SCRAPE_DO_TOKEN")
-# Make sure you have added GMAIL_USER and GMAIL_APP_PASSWORD as GitHub Secrets if using Gmail
-EMAIL_USER = os.getenv("GMAIL_USER") 
-EMAIL_PASS = os.getenv("GMAIL_APP_PASSWORD")
-RECIPIENT_EMAIL = os.getenv("GMAIL_USER") # Sends to yourself
+on:
+  schedule:
+    # Runs automatically every 2 hours
+    - cron: '0 */2 * * *' 
+  workflow_dispatch: 
+    # Allows you to trigger it manually from the Actions tab
 
-TARGET_URL = "https://www.walmart.com/ip/your-target-item-link" # Replace with your product URL
+jobs:
+  check-inventory:
+    runs-on: ubuntu-latest
 
-def send_email(subject, body):
-    """Sends an email notification."""
-    if not EMAIL_USER or not EMAIL_PASS:
-        print("Email credentials not configured in environment secrets.")
-        return
-    
-    try:
-        msg = MIMEMultipart()
-        msg['From'] = EMAIL_USER
-        msg['To'] = RECIPIENT_EMAIL
-        msg['Subject'] = subject
-        
-        msg.attach(MIMEText(body, 'plain'))
-        
-        # Example using Gmail SMTP
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.starttls()
-        server.login(EMAIL_USER, EMAIL_PASS)
-        server.send_message(msg)
-        server.quit()
-        print("Email notification sent successfully!")
-    except Exception as e:
-        print(f"Failed to send email: {e}")
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-def send_test_email():
-    """Forces a test notification email for pipeline verification."""
-    print("Triggering test email...")
-    send_email(
-        subject="[TEST] Walmart Tracker Pipeline Verified", 
-        body="This is a test notification confirming that GitHub Actions and email routing are working correctly."
-    )
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
 
-def check_walmart_stock():
-    """Scrapes Walmart product page via Scrape.do API."""
-    if not SCRAPE_DO_TOKEN:
-        print("Error: SCRAPE_DO_TOKEN is missing.")
-        return
-
-    # Scrape.do proxy endpoint formatting
-    target = f"https://api.scrape.do?token={SCRAPE_DO_TOKEN}&url={TARGET_URL}"
-    
-    try:
-        response = requests.get(target, timeout=30)
-        if response.status_code != 200:
-            print(f"Failed to fetch page. Status code: {response.status_code}")
-            return
-
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # Add your stock detection parsing logic here
-        # Example check:
-        print("Successfully scraped Walmart page. Analyzing stock...")
-        
-    except Exception as e:
-        print(f"Error during scraping execution: {e}")
-
-if __name__ == "__main__":
-    print("Starting Walmart Inventory Tracker script...")
-    
-    # ---------------------------------------------------------
-    # TEMPORARY TEST OVERRIDE: Remove or comment this line 
-    # after confirming you receive the test email.
-    # ---------------------------------------------------------
-    send_test_email()
-    
-    # Regular scheduled check
-    # check_walmart_stock()
+      - name: Run Walmart Scraper
+        env:
+          SCRAPE_DO_TOKEN: ${{ secrets.SCRAPE_TOKEN }} 
+        run: python walmart_tracker.py
