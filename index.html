@@ -48,10 +48,6 @@
         
         footer { text-align: center; padding: 40px 20px; border-top: 1px solid #111; color: var(--blk-teal); background: #050505; }
     </style>
-
-    <!-- eBay Partner Network Smart Links -->
-    <script>window._epn = {campaign: 5339141674, smartPopover:false};</script>
-    <script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
 </head>
 <body>
     <section id="page-cover" class="site-page active" style="position: relative; overflow: hidden;">
@@ -168,13 +164,22 @@
             document.getElementById('modal-img').src = item.image ? (typeof item.image === 'object' ? item.image.imageUrl.replace(/s-l\d+/, 's-l1600') : item.image) : '';
             document.getElementById('modal-title').innerText = item.title;
             document.getElementById('modal-price').innerText = '$' + (item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00');
-            document.getElementById('modal-buy-btn').href = item.itemWebUrl;
+            
+            // Modern, unblockable direct ePN tracking
+            const ebayUrl = new URL(item.itemWebUrl);
+            ebayUrl.searchParams.set('mkevt', '1');
+            ebayUrl.searchParams.set('mkcid', '1');
+            ebayUrl.searchParams.set('mkrid', '711-53200-19255-0');
+            ebayUrl.searchParams.set('campid', '5339141674');
+            ebayUrl.searchParams.set('toolid', '10001');
+            document.getElementById('modal-buy-btn').href = ebayUrl.toString();
             
             const itemDescription = item.description ? item.description : `<p><strong>Condition:</strong> ${item.condition || 'New'}</p>`;
             document.getElementById('modal-desc').innerHTML = `<div style="padding: 20px; border: 1px solid #333; color: #ccc; background: #0a0a0a; border-radius: 4px; text-align: left;">${itemDescription}</div>`;
             
             document.getElementById('item-modal').classList.add('active');
         }
+        
         function closeModal() { document.getElementById('item-modal').classList.remove('active'); }
     </script>
     <footer>
