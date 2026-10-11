@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLKHDZ | Official Market & Tracker</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BL6NYT2HY3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BL6NYT2HY3');
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <style>
         :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; --blk-teal: #008080; }
@@ -96,7 +107,7 @@
 
         async function showMarket() { 
             document.getElementById('page-cover').classList.remove('active'); 
-            document.getElementById('page-market').classList.add('active');
+            document.getElementById('page-market').classList.add('active'); 
             document.getElementById('main-nav').style.display = 'flex'; 
             await loadData(); 
             renderGrid();
@@ -132,7 +143,6 @@
                 const catString = categories.map(c => (c.categoryName || "").toLowerCase()).join(" ");
                 const catIds = categories.map(c => String(c.categoryId)).join(" ");
 
-                // Filter logic
                 if (currentMainFilter === 'lego') {
                     return title.includes('lego') || catString.includes('lego') || catIds.includes('19006');
                 }
@@ -161,18 +171,32 @@
 
         function openModal(index) {
             const item = currentDisplayItems[index];
+            const rawPrice = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
+
             document.getElementById('modal-img').src = item.image ? (typeof item.image === 'object' ? item.image.imageUrl.replace(/s-l\d+/, 's-l1600') : item.image) : '';
             document.getElementById('modal-title').innerText = item.title;
-            document.getElementById('modal-price').innerText = '$' + (item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00');
+            document.getElementById('modal-price').innerText = '$' + rawPrice;
             
-            // Modern, unblockable direct ePN tracking
+            // Direct ePN tracking
             const ebayUrl = new URL(item.itemWebUrl);
             ebayUrl.searchParams.set('mkevt', '1');
             ebayUrl.searchParams.set('mkcid', '1');
             ebayUrl.searchParams.set('mkrid', '711-53200-19255-0');
             ebayUrl.searchParams.set('campid', '5339141674');
             ebayUrl.searchParams.set('toolid', '10001');
-            document.getElementById('modal-buy-btn').href = ebayUrl.toString();
+            
+            const buyBtn = document.getElementById('modal-buy-btn');
+            buyBtn.href = ebayUrl.toString();
+
+            // Track outbound click to Google Analytics
+            buyBtn.onclick = function() {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'click_to_ebay', {
+                        'item_title': item.title,
+                        'item_price': Number(rawPrice) || 0
+                    });
+                }
+            };
             
             const itemDescription = item.description ? item.description : `<p><strong>Condition:</strong> ${item.condition || 'New'}</p>`;
             document.getElementById('modal-desc').innerHTML = `<div style="padding: 20px; border: 1px solid #333; color: #ccc; background: #0a0a0a; border-radius: 4px; text-align: left;">${itemDescription}</div>`;
