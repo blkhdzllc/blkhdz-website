@@ -32,14 +32,17 @@ def check_walmart_inventory(url):
         
         if next_data_script:
             page_data = json.loads(next_data_script.string)
-            data_string = json.dumps(page_data).lower()
             
-            if "out of stock" in data_string:
-                print("Result: Item is currently Out of Stock.\n")
-                return False
-            else:
+            # Target the specific product's status instead of the whole page
+            product_data = page_data.get("props", {}).get("pageProps", {}).get("initialData", {}).get("data", {}).get("product", {})
+            inventory_status = product_data.get("inventoryStatus", "").upper()
+            
+            if inventory_status == "IN_STOCK":
                 print("Result: Item might be IN STOCK! Trigger alerts.\n")
                 return True
+            else:
+                print("Result: Item is currently Out of Stock.\n")
+                return False
         else:
             page_text = soup.get_text().lower()
             if "add to cart" in page_text and "out of stock" not in page_text:
