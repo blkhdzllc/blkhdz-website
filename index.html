@@ -12,12 +12,10 @@
     :root { --blk-red: #ff0000; --blk-bg: #000000; --blk-card: #111111; --blk-teal: #008080; }
     body { margin: 0; background-color: var(--blk-bg); color: #fff; font-family: 'Archivo Black', sans-serif; }
     
-    /* New Safe Video Header Banner */
+    /* Header Video Banner & Logo Overlay */
     .header-banner-container { width: 100%; height: 300px; position: relative; overflow: hidden; border-bottom: 2px solid var(--blk-red); }
     .hero-video-banner { width: 100%; height: 100%; object-fit: cover; }
     .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; }
-    
-    /* Logo styling */
     .banner-logo { max-width: 500px; width: 80%; height: auto; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.8)); transition: 0.3s; }
     .banner-logo:hover { transform: scale(1.02); }
 
@@ -55,12 +53,11 @@
     footer { text-align: center; padding: 40px 20px; border-top: 1px solid #111; color: var(--blk-teal); background: #050505; }
 </style>
 
-<!-- New Header Banner Video with Logo -->
+<!-- Header Banner Video with Logo Overlay -->
 <div class="header-banner-container">
     <video autoplay loop muted playsinline class="hero-video-banner" src="images/header-loop.mp4"></video>
     <div class="banner-overlay">
-        <!-- Bulletproof image path (Requires renaming the file in GitHub to White_Logo.jpg) -->
-        <img src="images/White_Logo.jpg" alt="BLKHDZ Logo" class="banner-logo">
+        <img src="images/White%20Logo.png" alt="BLKHDZ Logo" class="banner-logo">
     </div>
 </div>
 
@@ -96,7 +93,6 @@
     let currentDisplayItems = []; 
     let currentMainFilter = 'all';
 
-    // Auto-load inventory for SEO indexing and remove the roadblock
     window.onload = async () => {
         await loadData(); 
         renderGrid();
@@ -134,7 +130,6 @@
             const catString = categories.map(c => (c.categoryName || "").toLowerCase()).join(" ");
             const catIds = categories.map(c => String(c.categoryId)).join(" ");
             
-            // Map the new Z-Family categories dynamically from your backend tags and old schema
             if (currentMainFilter === 'BLKHDZ') {
                 return tags.includes('BLKHDZ') || tags.includes('lego') || title.includes('lego') || catString.includes('lego') || catIds.includes('19006');
             }
@@ -169,7 +164,6 @@
         document.getElementById('modal-title').innerText = item.title;
         document.getElementById('modal-price').innerText = '$' + rawPrice;
         
-        // Direct ePN tracking
         const ebayUrl = new URL(item.itemWebUrl);
         ebayUrl.searchParams.set('mkevt', '1');
         ebayUrl.searchParams.set('mkcid', '1');
@@ -180,7 +174,6 @@
         const buyBtn = document.getElementById('modal-buy-btn');
         buyBtn.href = ebayUrl.toString();
 
-        // Track outbound click to Google Analytics
         buyBtn.onclick = function() {
             if (typeof gtag === 'function') {
                 gtag('event', 'click_to_ebay', {
