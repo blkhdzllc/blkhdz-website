@@ -28,25 +28,30 @@
 
         .site-page { display: flex; flex-direction: column; min-height: 100vh; }
         
-        /* Enhanced Navigation for Mobile & Desktop Readability */
-        .market-nav { display: flex; justify-content: center; flex-wrap: wrap; background: #080808; border-bottom: 2px solid var(--blk-red); padding: 10px 0; position: sticky; top: 0; z-index: 100; gap: 5px; }
-        .nav-btn { padding: 14px 24px; border: none; background: none; color: #777; font-family: inherit; cursor: pointer; font-size: 1.15rem; text-transform: uppercase; transition: 0.2s; letter-spacing: 0.5px; }
+        /* Navigation Buttons scaled to 1.65rem */
+        .market-nav { display: flex; justify-content: center; flex-wrap: wrap; background: #080808; border-bottom: 2px solid var(--blk-red); padding: 12px 0; position: sticky; top: 0; z-index: 100; gap: 8px; }
+        .nav-btn { padding: 14px 24px; border: none; background: none; color: #777; font-family: inherit; cursor: pointer; font-size: 1.65rem; text-transform: uppercase; transition: 0.2s; letter-spacing: 0.5px; }
         .nav-btn:hover { color: #bbb; }
         .nav-btn.active { color: var(--blk-red); border-bottom: 3px solid var(--blk-red); }
         
         .search-container { max-width: 700px; margin: 25px auto; padding: 0 20px; width: 100%; box-sizing: border-box; }
-        .search-input { width: 100%; padding: 18px 22px; background: #111; border: 2px solid #333; color: white; font-family: inherit; font-size: 1.1rem; outline: none; transition: 0.3s; box-sizing: border-box; text-transform: uppercase; border-radius: 4px; }
+        .search-input { width: 100%; padding: 18px 22px; background: #111; border: 2px solid #333; color: white; font-family: inherit; font-size: 1.3rem; outline: none; transition: 0.3s; box-sizing: border-box; text-transform: uppercase; border-radius: 4px; }
         .search-input:focus { border-color: var(--blk-red); box-shadow: 0 0 15px rgba(255,0,0,0.3); }
 
         .container { max-width: 1400px; margin: 0 auto; padding: 10px 20px 60px 20px; width: 100%; box-sizing: border-box; }
-        #market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+        #market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
         
         .card { background: var(--blk-card); border: 1px solid #1a1a1a; padding: 20px; transition: 0.3s; display: flex; flex-direction: column; cursor: pointer; border-radius: 6px; }
         .card:hover { border-color: var(--blk-red); transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255,0,0,0.15); }
         .card-img { width: 100%; height: 260px; object-fit: contain; background: #050505; border-radius: 4px; }
-        .card-body h3 { font-size: 1.05rem; margin: 18px 0 12px 0; height: 3.2em; overflow: hidden; line-height: 1.4; color: #f0f0f0; }
-        .price-tag { font-size: 1.65rem; color: #fff; margin-bottom: 12px; }
-        .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 14px; text-decoration: none; font-size: 0.95rem; display: block; border: none; cursor: pointer; font-family: inherit; margin-top: auto; border-radius: 4px; transition: background 0.2s; }
+        
+        /* Card Titles scaled to 1.65rem */
+        .card-body h3 { font-size: 1.65rem; margin: 18px 0 12px 0; height: 3.2em; overflow: hidden; line-height: 1.4; color: #f0f0f0; }
+        
+        /* Price Tags scaled to 2.0rem */
+        .price-tag { font-size: 2.0rem; color: #fff; margin-bottom: 12px; }
+        
+        .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 14px; text-decoration: none; font-size: 1.1rem; display: block; border: none; cursor: pointer; font-family: inherit; margin-top: auto; border-radius: 4px; transition: background 0.2s; }
         .buy-btn:hover { background: #cc0000; }
         
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box; }
@@ -54,20 +59,20 @@
         .modal-content { background: var(--blk-card); border: 2px solid var(--blk-red); max-width: 900px; width: 100%; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto; text-align: center; box-sizing: border-box; border-radius: 8px; }
         .close-btn { position: absolute; top: 12px; right: 20px; color: var(--blk-red); font-size: 2.5rem; background: none; border: none; cursor: pointer; z-index: 10; line-height: 1; }
         .modal-img { width: 100%; max-height: 50vh; object-fit: contain; margin-bottom: 20px; background-color: var(--blk-bg); border-radius: 6px; }
-        .modal-desc { width: 100%; text-align: left; margin: 25px 0; color: #ddd; font-family: sans-serif; font-size: 1.05rem; overflow-x: auto; line-height: 1.6; }
+        .modal-desc { width: 100%; text-align: left; margin: 25px 0; color: #ddd; font-family: sans-serif; font-size: 1.1rem; overflow-x: auto; line-height: 1.6; }
         .modal-desc * { background-color: transparent !important; color: inherit !important; }
-        .buy-btn-large { background: var(--blk-red); color: white; text-align: center; padding: 16px 24px; text-decoration: none; font-size: 1.25rem; display: inline-block; border: none; cursor: pointer; font-family: inherit; margin-bottom: 15px; width: 90%; max-width: 450px; border-radius: 4px; transition: 0.2s; }
+        .buy-btn-large { background: var(--blk-red); color: white; text-align: center; padding: 16px 24px; text-decoration: none; font-size: 1.3rem; display: inline-block; border: none; cursor: pointer; font-family: inherit; margin-bottom: 15px; width: 90%; max-width: 450px; border-radius: 4px; transition: 0.2s; }
         .buy-btn-large:hover { background: #cc0000; transform: scale(1.02); }
         
-        footer { text-align: center; padding: 40px 20px; border-top: 1px solid #111; color: var(--blk-teal); background: #050505; font-size: 0.95rem; }
+        footer { text-align: center; padding: 40px 20px; border-top: 1px solid #111; color: var(--blk-teal); background: #050505; font-size: 1rem; }
 
         /* Responsive adjustments for smaller screens */
         @media (max-width: 600px) {
             .header-banner-container { height: 220px; }
-            .nav-btn { padding: 12px 16px; font-size: 0.95rem; }
-            .card-body h3 { font-size: 1rem; }
-            .price-tag { font-size: 1.4rem; }
-            .search-input { font-size: 1rem; padding: 14px 16px; }
+            .nav-btn { font-size: 1.3rem; padding: 10px 14px; }
+            .card-body h3 { font-size: 1.4rem; }
+            .price-tag { font-size: 1.8rem; }
+            .search-input { font-size: 1.1rem; padding: 14px 16px; }
         }
     </style>
 </head>
@@ -101,8 +106,8 @@
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal()">&times;</button>
         <img id="modal-img" class="modal-img" src="" alt="Item Image">
-        <h3 id="modal-title" style="font-size: 1.4rem;"></h3>
-        <div id="modal-price" class="price-tag"></div>
+        <h3 id="modal-title" style="font-size: 1.8rem;"></h3>
+        <div id="modal-price" class="price-tag" style="font-size: 2.3rem;"></div>
         <a id="modal-buy-btn" href="" target="_blank" class="buy-btn-large">SECURE ITEM ON EBAY</a>
         <div id="modal-desc" class="modal-desc"></div>
     </div>
@@ -126,7 +131,7 @@
             console.log("System Status: Loaded", allItems.length, "items.");
         } catch(e) { 
             console.error("System Error: Could not load inventory.json", e);
-            document.getElementById('market-grid').innerHTML = '<p style="text-align:center; width:100%; color: #ff0000; font-size: 1.2rem;">Sync Error: Failed to load inventory data.</p>';
+            document.getElementById('market-grid').innerHTML = '<p style="text-align:center; width:100%; color: #ff0000; font-size: 1.3rem;">Sync Error: Failed to load inventory data.</p>';
         }
     }
 
@@ -165,7 +170,7 @@
         if (searchQuery) itemsToShow = itemsToShow.filter(item => item.title && item.title.toLowerCase().includes(searchQuery));
         
         currentDisplayItems = itemsToShow; 
-        container.innerHTML = itemsToShow.length === 0 ? '<p style="text-align:center; width:100%; color: #888; font-size: 1.2rem; grid-column: 1/-1; padding: 40px 0;">NO ITEMS MATCH YOUR SCAN.</p>' : itemsToShow.map((item, index) => {
+        container.innerHTML = itemsToShow.length === 0 ? '<p style="text-align:center; width:100%; color: #888; font-size: 1.3rem; grid-column: 1/-1; padding: 40px 0;">NO ITEMS MATCH YOUR SCAN.</p>' : itemsToShow.map((item, index) => {
             const price = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
             const img = item.image ? (typeof item.image === 'object' ? item.image.imageUrl : item.image) : '';
             return `
