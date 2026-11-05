@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BLKHDZ | Legacy Collectibles</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BL6NYT2HY3"></script>
@@ -51,9 +51,14 @@
         .banner-logo { max-width: 500px; width: 85%; height: auto; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.8)); transition: 0.3s; }
         .banner-logo:hover { transform: scale(1.02); }
 
-        /* --- NAVIGATION --- */
-        .market-nav { display: flex; justify-content: center; flex-wrap: wrap; background: #080808; border-bottom: 2px solid var(--blk-red); padding: 12px 0; position: sticky; top: 0; z-index: 1000; gap: 8px; }
-        .nav-btn { padding: 14px 24px; border: none; background: none; color: #777; font-family: 'Archivo Black', sans-serif; cursor: pointer; font-size: 1.4rem; text-transform: uppercase; transition: 0.2s; letter-spacing: 0.5px; }
+        /* --- STICKY NAVIGATION & HAMBURGER MENU --- */
+        .nav-wrapper { position: sticky; top: 0; z-index: 1000; width: 100%; background: #080808; border-bottom: 2px solid var(--blk-red); }
+        
+        .mobile-menu-btn { display: none; width: 100%; background: #080808; color: white; border: none; padding: 18px 20px; font-size: 1.2rem; font-family: 'Archivo Black', sans-serif; cursor: pointer; text-align: left; text-transform: uppercase; }
+        .mobile-menu-btn::before { content: '☰ MENU'; color: var(--blk-red); margin-right: 10px; }
+        
+        .market-nav { display: flex; justify-content: center; flex-wrap: wrap; padding: 10px 0; gap: 8px; }
+        .nav-btn { padding: 12px 20px; border: none; background: none; color: #777; font-family: 'Archivo Black', sans-serif; cursor: pointer; font-size: 1.1rem; text-transform: uppercase; transition: 0.2s; letter-spacing: 0.5px; }
         .nav-btn:hover { color: #bbb; }
         .nav-btn.active { color: var(--blk-red); border-bottom: 3px solid var(--blk-red); }
 
@@ -97,52 +102,13 @@
             text-shadow: 2px 2px 15px rgba(0,0,0,0.9);
         }
 
-        .magazine-hero h1 { 
-            font-size: 6.0rem; 
-            line-height: 0.85; 
-            margin-bottom: 25px; 
-            color: var(--text-white);
-            font-weight: 700;
-        }
+        .magazine-hero h1 { font-size: 6.0rem; line-height: 0.85; margin-bottom: 25px; color: var(--text-white); font-weight: 700; }
+        .magazine-hero p { font-size: 1.8rem; color: #e0e0e0; margin-bottom: 35px; font-weight: 300; max-width: 700px; line-height: 1.2; font-family: 'Roboto', sans-serif; }
 
-        .magazine-hero p {
-            font-size: 1.8rem;
-            color: #e0e0e0;
-            margin-bottom: 35px;
-            font-weight: 300;
-            max-width: 700px;
-            line-height: 1.2;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .split-section {
-            display: flex;
-            flex-wrap: wrap;
-            min-height: 600px;
-            background-color: var(--black);
-            z-index: 10;
-            position: relative;
-        }
-
+        .split-section { display: flex; flex-wrap: wrap; min-height: 600px; background-color: var(--black); z-index: 10; position: relative; }
         .split-section.reverse { flex-direction: row-reverse; }
-
-        .split-image {
-            flex: 1;
-            min-width: 400px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .split-content {
-            flex: 1;
-            min-width: 400px;
-            padding: 80px;
-            background-color: var(--dark-gray);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
+        .split-image { flex: 1; min-width: 400px; background-size: cover; background-position: center; }
+        .split-content { flex: 1; min-width: 400px; padding: 80px; background-color: var(--dark-gray); display: flex; flex-direction: column; justify-content: center; }
         .split-content h2 { font-size: 3rem; margin-bottom: 15px; color: var(--lego-yellow); }
         .split-content p { margin-bottom: 15px; line-height: 1.8; color: #dcdcdc; font-size: 1.2rem; font-family: 'Roboto', sans-serif; }
 
@@ -156,24 +122,24 @@
         .search-input:focus { border-color: var(--blk-red); box-shadow: 0 0 15px rgba(255,0,0,0.3); }
 
         .container { max-width: 1400px; margin: 0 auto; padding: 10px 20px 60px 20px; width: 100%; box-sizing: border-box; }
-        #market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+        #market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
         
-        .card { background: var(--dark-gray); border: 1px solid #1a1a1a; padding: 20px; transition: 0.3s; display: flex; flex-direction: column; cursor: pointer; border-radius: 6px; }
+        .card { background: var(--dark-gray); border: 1px solid #1a1a1a; padding: 15px; transition: 0.3s; display: flex; flex-direction: column; cursor: pointer; border-radius: 6px; }
         .card:hover { border-color: var(--blk-red); transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255,0,0,0.15); }
-        .card-img { width: 100%; height: 260px; object-fit: contain; background: #050505; border-radius: 4px; }
+        .card-img { width: 100%; height: 240px; object-fit: contain; background: #050505; border-radius: 4px; }
         
-        .card-body h3 { font-size: 1.4rem; margin: 18px 0 12px 0; height: 3.2em; overflow: hidden; line-height: 1.4; color: #f0f0f0; font-family: 'Archivo Black', sans-serif; }
+        .card-body h3 { font-size: 1.2rem; margin: 15px 0 10px 0; height: 3.0em; overflow: hidden; line-height: 1.4; color: #f0f0f0; font-family: 'Archivo Black', sans-serif; }
         .price-tag { font-size: 2.0rem; color: #fff; margin-bottom: 12px; font-family: 'Archivo Black', sans-serif; }
-        .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 14px; text-decoration: none; font-size: 1.0rem; display: block; border: none; cursor: pointer; font-family: 'Archivo Black', sans-serif; margin-top: auto; border-radius: 4px; transition: background 0.2s; }
+        .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 12px; text-decoration: none; font-size: 1.0rem; display: block; border: none; cursor: pointer; font-family: 'Archivo Black', sans-serif; margin-top: auto; border-radius: 4px; transition: background 0.2s; }
         .buy-btn:hover { background: #cc0000; }
         
-        /* --- FULL PAGE ITEM DETAILS (REPLACES MODAL) --- */
+        /* --- FULL PAGE ITEM DETAILS --- */
         .item-page-container { max-width: 1000px; margin: 0 auto; padding: 30px 20px 60px 20px; width: 100%; box-sizing: border-box; text-align: center; }
         .back-btn { background: none; border: 2px solid var(--blk-red); color: white; padding: 12px 24px; font-family: 'Archivo Black', sans-serif; font-size: 1.1rem; cursor: pointer; margin-bottom: 30px; transition: 0.2s; border-radius: 4px; display: inline-block; text-transform: uppercase; }
         .back-btn:hover { background: var(--blk-red); transform: scale(1.02); }
         
-        .item-page-img { width: 100%; max-height: 60vh; object-fit: contain; background-color: var(--black); border-radius: 8px; margin-bottom: 25px; }
-        .item-page-title { font-size: 2.0rem; margin-bottom: 15px; color: #fff; font-family: 'Archivo Black', sans-serif; line-height: 1.4; }
+        .item-page-img { width: 100%; max-height: 50vh; object-fit: contain; background-color: var(--black); border-radius: 8px; margin-bottom: 25px; }
+        .item-page-title { font-size: 1.8rem; margin-bottom: 15px; color: #fff; font-family: 'Archivo Black', sans-serif; line-height: 1.4; }
         
         .buy-btn-large { background: var(--blk-red); color: white; text-align: center; padding: 16px 24px; text-decoration: none; font-size: 1.3rem; display: inline-block; border: none; cursor: pointer; font-family: 'Archivo Black', sans-serif; margin: 20px 0; width: 90%; max-width: 450px; border-radius: 4px; transition: 0.2s; }
         .buy-btn-large:hover { background: #cc0000; transform: scale(1.02); }
@@ -181,37 +147,27 @@
         .item-page-desc { text-align: left; margin: 30px 0; color: #ddd; font-family: sans-serif; font-size: 1.1rem; line-height: 1.6; width: 100%; overflow-x: hidden; }
         
         /* Aggressive eBay Template Override within the Full Page */
-        .item-page-desc * { 
-            background-color: transparent !important; 
-            color: inherit !important; 
-            max-width: 100% !important; 
-            box-sizing: border-box !important; 
-            word-wrap: break-word !important; 
-        }
-        
+        .item-page-desc * { background-color: transparent !important; color: inherit !important; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important; }
         @media (max-width: 768px) {
-            .item-page-desc table, 
-            .item-page-desc tbody, 
-            .item-page-desc tr, 
-            .item-page-desc td,
-            .item-page-desc div {
-                display: block !important;
-                width: 100% !important;
-            }
-            .item-page-desc img { 
-                max-width: 100% !important; 
-                height: auto !important; 
-            }
+            .item-page-desc table, .item-page-desc tbody, .item-page-desc tr, .item-page-desc td, .item-page-desc div { display: block !important; width: 100% !important; }
+            .item-page-desc img { max-width: 100% !important; height: auto !important; }
         }
         
         footer { text-align: center; padding: 40px 20px; border-top: 1px solid #111; color: var(--blk-teal); background: #050505; font-size: 1rem; font-family: 'Archivo Black', sans-serif; }
         .disclaimer { font-size: 0.85rem; color: #666; max-width: 800px; margin: 15px auto 0; line-height: 1.6; font-family: 'Roboto', sans-serif; }
 
+        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
             .magazine-hero h1 { font-size: 3.5rem; }
-            .market-nav { padding: 15px 20px; flex-direction: column; gap: 10px; }
             .split-content { padding: 40px 20px; }
-            .item-page-title { font-size: 1.6rem; }
+            .item-page-title { font-size: 1.4rem; }
+            
+            /* Hamburger Menu Execution */
+            .mobile-menu-btn { display: block; }
+            .market-nav { display: none; flex-direction: column; padding: 0; width: 100%; background: #111; position: absolute; top: 100%; left: 0; border-bottom: 2px solid var(--blk-red); }
+            .market-nav.open { display: flex; }
+            .nav-btn { width: 100%; text-align: left; padding: 15px 20px; border-bottom: 1px solid #1a1a1a; font-size: 1.1rem; border-left: 4px solid transparent; }
+            .nav-btn.active { border-bottom: 1px solid #1a1a1a; border-left: 4px solid var(--blk-red); }
         }
     </style>
 </head>
@@ -225,14 +181,17 @@
     </div>
 </div>
 
-<!-- Navigation Bar -->
-<nav class="market-nav" id="main-nav">
-    <button class="nav-btn active" onclick="switchTab('market', this)">ALL</button>
-    <button class="nav-btn" onclick="switchTab('market', this, 'BLKHDZ')">BLKHDZ</button>
-    <button class="nav-btn" onclick="switchTab('market', this, 'DYCASTZ')">DYCASTZ</button>
-    <button class="nav-btn" onclick="switchTab('market', this, 'TRONIXZ')">TRONIXZ</button>
-    <button class="nav-btn" onclick="switchTab('about', this)">ABOUT</button>
-</nav>
+<!-- Sticky Navigation with Mobile Hamburger Menu -->
+<div class="nav-wrapper">
+    <button class="mobile-menu-btn" onclick="toggleMenu()"></button>
+    <nav class="market-nav" id="main-nav">
+        <button class="nav-btn active" onclick="switchTab('market', this)">ALL</button>
+        <button class="nav-btn" onclick="switchTab('market', this, 'BLKHDZ')">BLKHDZ</button>
+        <button class="nav-btn" onclick="switchTab('market', this, 'DYCASTZ')">DYCASTZ</button>
+        <button class="nav-btn" onclick="switchTab('market', this, 'TRONIXZ')">TRONIXZ</button>
+        <button class="nav-btn" onclick="switchTab('about', this)">ABOUT</button>
+    </nav>
+</div>
 
 <!-- Marketplace Catalog View (Default Active) -->
 <section id="page-market" class="site-page active">
@@ -335,6 +294,10 @@
         }
     }
 
+    function toggleMenu() {
+        document.getElementById('main-nav').classList.toggle('open');
+    }
+
     function switchTab(pageId, el, category = 'all') {
         document.querySelectorAll('.market-nav .nav-btn').forEach(b => b.classList.remove('active'));
         if (el && el.classList.contains('nav-btn')) {
@@ -350,6 +313,12 @@
             currentMainFilter = category;
             renderGrid();
         }
+        
+        // Fold the mobile menu up when an option is selected
+        if (window.innerWidth <= 768) {
+            document.getElementById('main-nav').classList.remove('open');
+        }
+        
         window.scrollTo(0, 0);
     }
 
