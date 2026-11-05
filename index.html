@@ -167,16 +167,21 @@
         .buy-btn { background: var(--blk-red); color: white; text-align: center; padding: 14px; text-decoration: none; font-size: 1.0rem; display: block; border: none; cursor: pointer; font-family: 'Archivo Black', sans-serif; margin-top: auto; border-radius: 4px; transition: background 0.2s; }
         .buy-btn:hover { background: #cc0000; }
         
-        /* --- MODAL STYLES --- */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box; }
-        .modal.active { display: flex; }
-        .modal-content { background: var(--dark-gray); border: 2px solid var(--blk-red); max-width: 900px; width: 100%; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto; text-align: center; box-sizing: border-box; border-radius: 8px; }
-        .close-btn { position: absolute; top: 12px; right: 20px; color: var(--blk-red); font-size: 2.5rem; background: none; border: none; cursor: pointer; z-index: 10; line-height: 1; }
-        .modal-img { width: 100%; max-height: 50vh; object-fit: contain; margin-bottom: 20px; background-color: var(--black); border-radius: 6px; }
-        .modal-desc { width: 100%; text-align: left; margin: 25px 0; color: #ddd; font-family: sans-serif; font-size: 1.1rem; overflow-x: hidden; line-height: 1.6; }
+        /* --- FULL PAGE ITEM DETAILS (REPLACES MODAL) --- */
+        .item-page-container { max-width: 1000px; margin: 0 auto; padding: 30px 20px 60px 20px; width: 100%; box-sizing: border-box; text-align: center; }
+        .back-btn { background: none; border: 2px solid var(--blk-red); color: white; padding: 12px 24px; font-family: 'Archivo Black', sans-serif; font-size: 1.1rem; cursor: pointer; margin-bottom: 30px; transition: 0.2s; border-radius: 4px; display: inline-block; text-transform: uppercase; }
+        .back-btn:hover { background: var(--blk-red); transform: scale(1.02); }
         
-        /* OPTION 1: eBay Template Override */
-        .modal-desc * { 
+        .item-page-img { width: 100%; max-height: 60vh; object-fit: contain; background-color: var(--black); border-radius: 8px; margin-bottom: 25px; }
+        .item-page-title { font-size: 2.0rem; margin-bottom: 15px; color: #fff; font-family: 'Archivo Black', sans-serif; line-height: 1.4; }
+        
+        .buy-btn-large { background: var(--blk-red); color: white; text-align: center; padding: 16px 24px; text-decoration: none; font-size: 1.3rem; display: inline-block; border: none; cursor: pointer; font-family: 'Archivo Black', sans-serif; margin: 20px 0; width: 90%; max-width: 450px; border-radius: 4px; transition: 0.2s; }
+        .buy-btn-large:hover { background: #cc0000; transform: scale(1.02); }
+
+        .item-page-desc { text-align: left; margin: 30px 0; color: #ddd; font-family: sans-serif; font-size: 1.1rem; line-height: 1.6; width: 100%; overflow-x: hidden; }
+        
+        /* Aggressive eBay Template Override within the Full Page */
+        .item-page-desc * { 
             background-color: transparent !important; 
             color: inherit !important; 
             max-width: 100% !important; 
@@ -184,24 +189,20 @@
             word-wrap: break-word !important; 
         }
         
-        /* Aggressive Mobile Reset for eBay Injections */
         @media (max-width: 768px) {
-            .modal-desc table, 
-            .modal-desc tbody, 
-            .modal-desc tr, 
-            .modal-desc td,
-            .modal-desc div {
+            .item-page-desc table, 
+            .item-page-desc tbody, 
+            .item-page-desc tr, 
+            .item-page-desc td,
+            .item-page-desc div {
                 display: block !important;
                 width: 100% !important;
             }
-            .modal-desc img { 
+            .item-page-desc img { 
                 max-width: 100% !important; 
                 height: auto !important; 
             }
         }
-        
-        .buy-btn-large { background: var(--blk-red); color: white; text-align: center; padding: 16px 24px; text-decoration: none; font-size: 1.3rem; display: inline-block; border: none; cursor: pointer; font-family: 'Archivo Black', sans-serif; margin-bottom: 15px; width: 90%; max-width: 450px; border-radius: 4px; transition: 0.2s; }
-        .buy-btn-large:hover { background: #cc0000; transform: scale(1.02); }
         
         footer { text-align: center; padding: 40px 20px; border-top: 1px solid #111; color: var(--blk-teal); background: #050505; font-size: 1rem; font-family: 'Archivo Black', sans-serif; }
         .disclaimer { font-size: 0.85rem; color: #666; max-width: 800px; margin: 15px auto 0; line-height: 1.6; font-family: 'Roboto', sans-serif; }
@@ -210,6 +211,7 @@
             .magazine-hero h1 { font-size: 3.5rem; }
             .market-nav { padding: 15px 20px; flex-direction: column; gap: 10px; }
             .split-content { padding: 40px 20px; }
+            .item-page-title { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -291,17 +293,17 @@
     </section>
 </section>
 
-<!-- Item Details Modal -->
-<div id="item-modal" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeModal()">&times;</button>
-        <img id="modal-img" class="modal-img" src="" alt="Item Image">
-        <h3 id="modal-title" style="font-size: 1.6rem;"></h3>
-        <div id="modal-price" class="price-tag" style="font-size: 2.0rem;"></div>
-        <a id="modal-buy-btn" href="" target="_blank" class="buy-btn-large">SECURE ITEM ON EBAY</a>
-        <div id="modal-desc" class="modal-desc"></div>
+<!-- Full Page Item Details View -->
+<section id="page-item" class="site-page">
+    <div class="item-page-container">
+        <button class="back-btn" onclick="closeItemPage()">&#8592; BACK TO MARKET</button>
+        <img id="item-page-img" class="item-page-img" src="" alt="Item Image">
+        <h3 id="item-page-title" class="item-page-title"></h3>
+        <div id="item-page-price" class="price-tag" style="font-size: 2.5rem;"></div>
+        <a id="item-page-buy-btn" href="" target="_blank" class="buy-btn-large">SECURE ITEM ON EBAY</a>
+        <div id="item-page-desc" class="item-page-desc"></div>
     </div>
-</div>
+</section>
 
 <footer>
     <div class="footer-logo" style="font-family: 'Oswald'; font-size: 2.2rem; color: white;">BLK<span>HDZ</span> LLC</div>
@@ -389,20 +391,20 @@
             const price = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
             const img = item.image ? (typeof item.image === 'object' ? item.image.imageUrl : item.image) : '';
             return `
-            <div class="card" onclick="openModal(${index})">
+            <div class="card" onclick="openItemPage(${index})">
                 <img src="${img}" class="card-img" alt="${item.title}">
                 <div class="card-body"><h3>${item.title}</h3><div class="price-tag">$${price}</div><button class="buy-btn">VIEW DETAILS</button></div>
             </div>`;
         }).join('');
     }
 
-    function openModal(index) {
+    function openItemPage(index) {
         const item = currentDisplayItems[index];
         const rawPrice = item.price ? (typeof item.price === 'object' ? item.price.value : item.price) : '0.00';
 
-        document.getElementById('modal-img').src = item.image ? (typeof item.image === 'object' ? item.image.imageUrl.replace(/s-l\d+/, 's-l1600') : item.image) : '';
-        document.getElementById('modal-title').innerText = item.title;
-        document.getElementById('modal-price').innerText = '$' + rawPrice;
+        document.getElementById('item-page-img').src = item.image ? (typeof item.image === 'object' ? item.image.imageUrl.replace(/s-l\d+/, 's-l1600') : item.image) : '';
+        document.getElementById('item-page-title').innerText = item.title;
+        document.getElementById('item-page-price').innerText = '$' + rawPrice;
         
         const ebayUrl = new URL(item.itemWebUrl);
         ebayUrl.searchParams.set('mkevt', '1');
@@ -411,7 +413,7 @@
         ebayUrl.searchParams.set('campid', '5339141674');
         ebayUrl.searchParams.set('toolid', '10001');
         
-        const buyBtn = document.getElementById('modal-buy-btn');
+        const buyBtn = document.getElementById('item-page-buy-btn');
         buyBtn.href = ebayUrl.toString();
 
         buyBtn.onclick = function() {
@@ -424,12 +426,18 @@
         };
         
         const itemDescription = item.description ? item.description : `<p><strong>Condition:</strong> ${item.condition || 'New'}</p>`;
-        document.getElementById('modal-desc').innerHTML = `<div style="padding: 20px; border: 1px solid #333; color: #ccc; background: #0a0a0a; border-radius: 6px; text-align: left;">${itemDescription}</div>`;
+        document.getElementById('item-page-desc').innerHTML = `<div style="padding: 25px; border: 1px solid #333; color: #ccc; background: #0a0a0a; border-radius: 6px; text-align: left;">${itemDescription}</div>`;
         
-        document.getElementById('item-modal').classList.add('active');
+        document.querySelectorAll('.site-page').forEach(p => p.classList.remove('active'));
+        document.getElementById('page-item').classList.add('active');
+        window.scrollTo(0, 0);
     }
     
-    function closeModal() { document.getElementById('item-modal').classList.remove('active'); }
+    function closeItemPage() { 
+        document.querySelectorAll('.site-page').forEach(p => p.classList.remove('active'));
+        document.getElementById('page-market').classList.add('active');
+        window.scrollTo(0, 0);
+    }
 </script>
 </body>
 </html>
